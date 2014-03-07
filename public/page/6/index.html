@@ -64,6 +64,7 @@ var _js2load = [];
         <li><a href="/" title="主页">主页</a></li>      
         <li><a href="/about/" title="关于">关于</a></li>      
         <li><a href="/archives/" title="归档">归档</a></li>      
+        <li><a href="/sitemap.xml" title="SiteMap">SiteMap</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -80,6 +81,8 @@ var _js2load = [];
       
         <li><a href="https://twitter.com/ChenZaichun">twitter</a></li>
       
+      
+        <li><a href="https://www.facebook.com/ChenZaichun">facebook</a></li>
       
       
       
@@ -103,9 +106,55 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-01-13-speed-up-ssh-x11-forwarding.html">X11 Forwarding提速</a></h1>
+      <h1 class="title"><a href="/ssh-local-tunnel.html">ssh本地tunnel代理</a></h1>
       
-        <span>发表于<time datetime="2012-01-13T17:16:14.000Z"> <a href="/2012-01-13-speed-up-ssh-x11-forwarding.html">1月 13 2012</a></time></span>      
+        <span>发表于<time datetime="2012-01-18T11:22:33.000Z"> <a href="/ssh-local-tunnel.html">1月 18 2012</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>ssh命令用法</p>
+<blockquote>
+<p>ssh -qTfnN -D 7070 用户名@远程ssh主机名</p>
+<p>-q :- be very quite, we are acting only as a tunnel.
+-T :- Do not allocate a pseudo tty, we are only acting a tunnel.
+-f :- move the ssh process to background, as we don’t want to interact with this ssh session directly.
+-N :- Do not execute remote command.
+-n :- redirect standard input to /dev/null.</p>
+</blockquote>
+<p>plink用法</p>
+<figure class="highlight sh"><pre>plink <span class="attribute">-C</span> <span class="attribute">-D</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">7070</span> <span class="attribute">-N</span> <span class="attribute">-pw</span> 密码 用户名@服务器地址
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:04"datetime="2014-03-05 06:30:04"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/ssh-local-tunnel.html#comments" class="ds-thread-count comment-link" data-thread-key="ssh-local-tunnel" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/speed-up-ssh-x11-forwarding.html">X11 Forwarding提速</a></h1>
+      
+        <span>发表于<time datetime="2012-01-13T17:16:14.000Z"> <a href="/speed-up-ssh-x11-forwarding.html">1月 13 2012</a></time></span>      
     </header>
     
     
@@ -129,7 +178,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:03"datetime="2014-03-05 06:30:03"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-01-13-speed-up-ssh-x11-forwarding.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-01-13-speed-up-ssh-x11-forwarding" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/speed-up-ssh-x11-forwarding.html#comments" class="ds-thread-count comment-link" data-thread-key="speed-up-ssh-x11-forwarding" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -144,9 +193,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-01-05-gcc-mudflap.html">gcc mudflap用来检测内存越界的问题</a></h1>
+      <h1 class="title"><a href="/gcc-mudflap.html">gcc mudflap用来检测内存越界的问题</a></h1>
       
-        <span>发表于<time datetime="2012-01-05T16:12:33.000Z"> <a href="/2012-01-05-gcc-mudflap.html">1月 5 2012</a></time></span>      
+        <span>发表于<time datetime="2012-01-05T16:12:33.000Z"> <a href="/gcc-mudflap.html">1月 5 2012</a></time></span>      
     </header>
     
     
@@ -169,7 +218,7 @@ Aborted</p>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:02"datetime="2014-03-05 06:30:02"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-01-05-gcc-mudflap.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-01-05-gcc-mudflap" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/gcc-mudflap.html#comments" class="ds-thread-count comment-link" data-thread-key="gcc-mudflap" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -184,9 +233,9 @@ Aborted</p>
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-12-31-git-rpc-error-56.html">git rpc error 56</a></h1>
+      <h1 class="title"><a href="/git-rpc-error-56.html">git rpc error 56</a></h1>
       
-        <span>发表于<time datetime="2011-12-31T19:23:56.000Z"> <a href="/2011-12-31-git-rpc-error-56.html">12月 31 2011</a></time></span>      
+        <span>发表于<time datetime="2011-12-31T19:23:56.000Z"> <a href="/git-rpc-error-56.html">12月 31 2011</a></time></span>      
     </header>
     
     
@@ -220,7 +269,7 @@ fatal: expected ok/error, helper said &#39;4004?Va???6?)&amp;?&#39;?~$latex ?pt?
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/emacs/" class="label label-success">emacs</a><a href="/tags/git/" class="label label-info">git</a><a href="/tags/org2blog/" class="label label-warning">org2blog</a><a href="/tags/VCS/" class="label label-primary">VCS</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:59"datetime="2014-03-05 06:29:59"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-12-31-git-rpc-error-56.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-12-31-git-rpc-error-56" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/git-rpc-error-56.html#comments" class="ds-thread-count comment-link" data-thread-key="git-rpc-error-56" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -235,9 +284,9 @@ fatal: expected ok/error, helper said &#39;4004?Va???6?)&amp;?&#39;?~$latex ?pt?
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-12-31-git-remove-untracked-files-and-directories.html">git remove untracked files and directories</a></h1>
+      <h1 class="title"><a href="/git-remove-untracked-files-and-directories.html">git remove untracked files and directories</a></h1>
       
-        <span>发表于<time datetime="2011-12-31T17:32:11.000Z"> <a href="/2011-12-31-git-remove-untracked-files-and-directories.html">12月 31 2011</a></time></span>      
+        <span>发表于<time datetime="2011-12-31T17:32:11.000Z"> <a href="/git-remove-untracked-files-and-directories.html">12月 31 2011</a></time></span>      
     </header>
     
     
@@ -257,7 +306,7 @@ git clean <span class="operator">-f</span> <span class="operator">-d</span> <spa
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/emacs/" class="label label-success">emacs</a><a href="/tags/git/" class="label label-info">git</a><a href="/tags/org2blog/" class="label label-warning">org2blog</a><a href="/tags/VCS/" class="label label-primary">VCS</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:58"datetime="2014-03-05 06:29:58"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-12-31-git-remove-untracked-files-and-directories.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-12-31-git-remove-untracked-files-and-directories" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/git-remove-untracked-files-and-directories.html#comments" class="ds-thread-count comment-link" data-thread-key="git-remove-untracked-files-and-directories" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -272,9 +321,9 @@ git clean <span class="operator">-f</span> <span class="operator">-d</span> <spa
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-12-31-show-all-files-in-finder-on-mac.html">让Finder显示所有文件</a></h1>
+      <h1 class="title"><a href="/show-all-files-in-finder-on-mac.html">让Finder显示所有文件</a></h1>
       
-        <span>发表于<time datetime="2011-12-31T17:31:00.000Z"> <a href="/2011-12-31-show-all-files-in-finder-on-mac.html">12月 31 2011</a></time></span>      
+        <span>发表于<time datetime="2011-12-31T17:31:00.000Z"> <a href="/show-all-files-in-finder-on-mac.html">12月 31 2011</a></time></span>      
     </header>
     
     
@@ -302,7 +351,7 @@ killall Finder
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/macos/" class="label label-success">macos</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:01"datetime="2014-03-05 06:30:01"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-12-31-show-all-files-in-finder-on-mac.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-12-31-show-all-files-in-finder-on-mac" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/show-all-files-in-finder-on-mac.html#comments" class="ds-thread-count comment-link" data-thread-key="show-all-files-in-finder-on-mac" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -317,9 +366,9 @@ killall Finder
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-12-30-mac-os-x-emacs-chinese-font-setting.html">终于搞定Mac OS X上emacs中文的显示</a></h1>
+      <h1 class="title"><a href="/mac-os-x-emacs-chinese-font-setting.html">终于搞定Mac OS X上emacs中文的显示</a></h1>
       
-        <span>发表于<time datetime="2011-12-30T23:11:23.000Z"> <a href="/2011-12-30-mac-os-x-emacs-chinese-font-setting.html">12月 30 2011</a></time></span>      
+        <span>发表于<time datetime="2011-12-30T23:11:23.000Z"> <a href="/mac-os-x-emacs-chinese-font-setting.html">12月 30 2011</a></time></span>      
     </header>
     
     
@@ -367,7 +416,7 @@ killall Finder
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/macos/" class="label label-success">macos</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:56"datetime="2014-03-05 06:29:56"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-12-30-mac-os-x-emacs-chinese-font-setting.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-12-30-mac-os-x-emacs-chinese-font-setting" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/mac-os-x-emacs-chinese-font-setting.html#comments" class="ds-thread-count comment-link" data-thread-key="mac-os-x-emacs-chinese-font-setting" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -382,9 +431,9 @@ killall Finder
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-12-30-mac-os-x-homebrew.html">抛弃MacPorts，用Homebrew吧</a></h1>
+      <h1 class="title"><a href="/mac-os-x-homebrew.html">抛弃MacPorts，用Homebrew吧</a></h1>
       
-        <span>发表于<time datetime="2011-12-30T22:22:22.000Z"> <a href="/2011-12-30-mac-os-x-homebrew.html">12月 30 2011</a></time></span>      
+        <span>发表于<time datetime="2011-12-30T22:22:22.000Z"> <a href="/mac-os-x-homebrew.html">12月 30 2011</a></time></span>      
     </header>
     
     
@@ -409,7 +458,7 @@ killall Finder
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/org2blog/" class="label label-success">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:57"datetime="2014-03-05 06:29:57"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-12-30-mac-os-x-homebrew.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-12-30-mac-os-x-homebrew" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/mac-os-x-homebrew.html#comments" class="ds-thread-count comment-link" data-thread-key="mac-os-x-homebrew" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -424,9 +473,9 @@ killall Finder
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-12-30-macos-x-swap-dan-du-fen-qu.html">MacOS X Swap单独分区</a></h1>
+      <h1 class="title"><a href="/macos-x-swap-dan-du-fen-qu.html">MacOS X Swap单独分区</a></h1>
       
-        <span>发表于<time datetime="2011-12-30T12:23:33.000Z"> <a href="/2011-12-30-macos-x-swap-dan-du-fen-qu.html">12月 30 2011</a></time></span>      
+        <span>发表于<time datetime="2011-12-30T12:23:33.000Z"> <a href="/macos-x-swap-dan-du-fen-qu.html">12月 30 2011</a></time></span>      
     </header>
     
     
@@ -453,7 +502,7 @@ sudo <span class="keyword">cp</span> <span class="keyword">com</span><span class
       
       <div id='more-link'>
         <div align="left">
-          <a href="/2011-12-30-macos-x-swap-dan-du-fen-qu.html#more" class="more-link fa fa-play">阅读全文</a>
+          <a href="/macos-x-swap-dan-du-fen-qu.html#more" class="more-link fa fa-play">阅读全文</a>
         </div>
       </div>
       
@@ -461,7 +510,7 @@ sudo <span class="keyword">cp</span> <span class="keyword">com</span><span class
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/macos/" class="label label-success">macos</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:58"datetime="2014-03-05 06:29:58"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-12-30-macos-x-swap-dan-du-fen-qu.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-12-30-macos-x-swap-dan-du-fen-qu" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/macos-x-swap-dan-du-fen-qu.html#comments" class="ds-thread-count comment-link" data-thread-key="macos-x-swap-dan-du-fen-qu" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -476,9 +525,9 @@ sudo <span class="keyword">cp</span> <span class="keyword">com</span><span class
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-12-15-archlinux-etc-rc-d-functions-error.html">archlinux functions脚本错误</a></h1>
+      <h1 class="title"><a href="/archlinux-etc-rc-d-functions-error.html">archlinux functions脚本错误</a></h1>
       
-        <span>发表于<time datetime="2011-12-15T10:23:33.000Z"> <a href="/2011-12-15-archlinux-etc-rc-d-functions-error.html">12月 15 2011</a></time></span>      
+        <span>发表于<time datetime="2011-12-15T10:23:33.000Z"> <a href="/archlinux-etc-rc-d-functions-error.html">12月 15 2011</a></time></span>      
     </header>
     
     
@@ -514,99 +563,7 @@ sudo <span class="keyword">cp</span> <span class="keyword">com</span><span class
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:56"datetime="2014-03-05 06:29:56"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-12-15-archlinux-etc-rc-d-functions-error.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-12-15-archlinux-etc-rc-d-functions-error" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-12-12-gnustep-env-on-archlinux.html">archlinux下配置GNUStep环境</a></h1>
-      
-        <span>发表于<time datetime="2011-12-12T11:11:33.000Z"> <a href="/2011-12-12-gnustep-env-on-archlinux.html">12月 12 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>GNUStep 主要有一下四部分组成，对应着在 Archlinux 系统下面我们也需要安装四个软件包。</p>
-<ol>
-<li><p>GNUstep Make: 提供类似 Makefile 的功能, 称为 GNUmakefile, 较 Makefile 好用许多。</p>
-</li>
-<li><p>GNUstep Base: 提供 OpenStep 的 Foundation 程式库, 处理非图形介面的功能。</p>
-</li>
-<li><p>GNUstep GUI: 提供 OpenStep 的 AppKit 程式库, 处理图形介面的功能。</p>
-</li>
-<li><p>GNUstep Back: 提供与作业系统相关的后端处理, 提供 GNUstep GUI 有关绘图及字型的功能。 </p>
-</li>
-</ol>
-<p>安装GNUStep：</p>
-<figure class="highlight sh"><pre>sudo pacman <span class="attribute">-S</span> gnustep<span class="attribute">-base</span> gnustep<span class="attribute">-make</span> gnustep<span class="attribute">-gui</span> gnustep<span class="attribute">-back</span>
-</pre></figure>
-
-<p>当然也需要安装gcc objc支持:</p>
-<figure class="highlight sh"><pre>sudo pacman <span class="attribute">-S</span> gcc<span class="attribute">-objc</span>
-</pre></figure>
-
-<p>编译obj-c所需命令:</p>
-<figure class="highlight sh"><pre>gcc <span class="string">`gnustep-config --objc-flags`</span> <span class="attribute">-lgnustep</span><span class="attribute">-base</span> <span class="attribute">-lobjc</span> xxx<span class="built_in">.</span>m <span class="attribute">-o</span> xxx
-</pre></figure>
-
-<p>Hello World测试:</p>
-<figure class="highlight objc"><pre><span class="comment">//helloworld.m</span>
-<span class="preprocessor">#import <span class="title">"Foundation/Foundation.h"</span></span>
-
-<span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])
-{
-    <span class="built_in">NSAutoreleasePool</span> *pool = [[<span class="built_in">NSAutoreleasePool</span> alloc] init];
-    <span class="built_in">NSLog</span>(@<span class="string">"Hello World\n"</span>);
-    [pool drain];
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</pre></figure>
-
-<p>编译运行：</p>
-<figure class="highlight sh"><pre>gcc <span class="string">`gnustep-config --objc-flags`</span> <span class="attribute">-lgnustep</span><span class="attribute">-base</span> <span class="attribute">-lobjc</span> helloworld<span class="built_in">.</span>m <span class="attribute">-o</span> helloworld
-</pre></figure>
-
-<p>如果没有添加-lobjc的话，新版的gcc编辑器会出现链接错误：</p>
-<blockquote>
-<p>/usr/bin/ld: /usr/lib/gcc/i686-pc-linux-gnu/4.6.2/../../../libgnustep-base.so: undefined reference to symbol &#39;objc_get_class&#39;
-/usr/bin/ld: note: &#39;objc_get_class&#39; is defined in DSO /usr/lib/libobjc.so.3 so try adding it to the linker command line
-/usr/lib/libobjc.so.3: could not read symbols: Invalid operation
-collect2: ld returned 1 exit status</p>
-</blockquote>
-<p>运行结果：</p>
-<figure class="highlight"><pre>$ ./helloworld
-<span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.391</span> helloworld[<span class="number">6928</span>] No <span class="built_in">local</span> <span class="built_in">time</span> zone specified.
-<span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.392</span> helloworld[<span class="number">6928</span>] Using <span class="built_in">time</span> zone <span class="operator">with</span> absolute <span class="built_in">offset</span> <span class="number">0.</span>
-<span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.338</span> helloworld[<span class="number">6928</span>] Hello World
-</pre></figure>
-
-<p>这里有2个warning, 设置一下: </p>
-<figure class="highlight sh"><pre>defaults <span class="built_in">write</span> NSGlobalDomain <span class="string">"Local Time Zone"</span> <span class="string">'Asia/Chongqing'</span>
-</pre></figure>
-
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:55"datetime="2014-03-05 06:29:55"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-12-12-gnustep-env-on-archlinux.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-12-12-gnustep-env-on-archlinux" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/archlinux-etc-rc-d-functions-error.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux-etc-rc-d-functions-error" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -619,7 +576,7 @@ collect2: ld returned 1 exit status</p>
 
 
 <ul id="pagination" class="pagination pagination-lg">
-  <li><a class="extend prev" href="/page/5/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><a class="page-number" href="/page/3/">3</a></li><li><a class="page-number" href="/page/4/">4</a></li><li><a class="page-number" href="/page/5/">5</a></li><li class="active"><li><span class="page-number current">6</span></li><li><a class="page-number" href="/page/7/">7</a></li><li><a class="page-number" href="/page/8/">8</a></li><li><a class="page-number" href="/page/9/">9</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="extend next" href="/page/7/">&raquo;</a></li>
+  <li><a class="extend prev" href="/page/5/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><a class="page-number" href="/page/3/">3</a></li><li><a class="page-number" href="/page/4/">4</a></li><li><a class="page-number" href="/page/5/">5</a></li><li class="active"><li><span class="page-number current">6</span></li><li><a class="page-number" href="/page/7/">7</a></li><li><a class="page-number" href="/page/8/">8</a></li><li><a class="page-number" href="/page/9/">9</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="page-number" href="/page/25/">25</a></li><li><a class="extend next" href="/page/7/">&raquo;</a></li>
   <div class="clearfix"></div>
 </ul></div><!--wapper-->
        </div><!-- ID main-col END -->
@@ -650,7 +607,7 @@ collect2: ld returned 1 exit status</p>
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-06-01-sudo_environment.html">sudo环境变量</a></li><li class="list-group-item"><a href="/2011-11-13-emacs_sys_process_environment.html">Emacs进程/系统环境变量</a></li><li class="list-group-item"><a href="/2010-12-12-pywin32_excel.html">pywin32访问excel</a></li><li class="list-group-item"><a href="/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html">MacOS X emacs拖拽打开文件</a></li><li class="list-group-item"><a href="/2010-05-31-boost_progress_display.html">boost::progress_display</a></li><li class="list-group-item"><a href="/2010-12-12-pefile.html">pefile</a></li><li class="list-group-item"><a href="/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html">SUSE Enterprise Linux 10下安装Oracle 11gr2</a></li><li class="list-group-item"><a href="/2011-11-03-add_css_support_for_rss_output.html">RSS输出添加css支持</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/qt_incredibuild_compile.html">windows下使用incredibuild编译Qt</a></li><li class="list-group-item"><a href="/speed-up-ssh-x11-forwarding.html">X11 Forwarding提速</a></li><li class="list-group-item"><a href="/mac_os_x_emacs_chinese_font.html">emacs中文显示方框</a></li><li class="list-group-item"><a href="/install-pptp-vnp-server-on-debian-linux.html">Debian Linux下安装pptp vpn服务器</a></li><li class="list-group-item"><a href="/android.md5_string.html">android md5 string</a></li><li class="list-group-item"><a href="/git-remove-untracked-files-and-directories.html">git remove untracked files and directories</a></li><li class="list-group-item"><a href="/ubuntu_emacs_android.html">ubuntu下配置emacs android开发环境</a></li><li class="list-group-item"><a href="/sudo_environment.html">sudo环境变量</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -693,7 +650,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:00</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 08:02:10</em></span></div>
 </div>
 <div class="clearfix"></div>
 

@@ -64,6 +64,7 @@ var _js2load = [];
         <li><a href="/" title="主页">主页</a></li>      
         <li><a href="/about/" title="关于">关于</a></li>      
         <li><a href="/archives/" title="归档">归档</a></li>      
+        <li><a href="/sitemap.xml" title="SiteMap">SiteMap</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -80,6 +81,8 @@ var _js2load = [];
       
         <li><a href="https://twitter.com/ChenZaichun">twitter</a></li>
       
+      
+        <li><a href="https://www.facebook.com/ChenZaichun">facebook</a></li>
       
       
       
@@ -103,9 +106,70 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-02-28-gsoap-error-500.html">gsoap Error 500</a></h1>
+      <h1 class="title"><a href="/soappy-error-xml-parsers-expat-expaterror.html">SOAPpy Error</a></h1>
       
-        <span>发表于<time datetime="2012-02-28T22:31:48.000Z"> <a href="/2012-02-28-gsoap-error-500.html">2月 28 2012</a></time></span>      
+        <span>发表于<time datetime="2012-04-10T20:13:24.000Z"> <a href="/soappy-error-xml-parsers-expat-expaterror.html">4月 10 2012</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>今天准备用SOAPpy来写一个最简单的soap client，代码如下：</p>
+<figure class="highlight python"><pre><span class="comment">#!/usr/bin/env python</span>
+<span class="comment"># -*- encoding: utf-8 -*-</span>
+
+<span class="keyword">from</span> SOAPpy <span class="keyword">import</span> WSDL
+WSDLfile = <span class="string">"/path/to/webservice"</span>
+
+wsdlObject = WSDL.Proxy(WSDLfile)
+
+<span class="keyword">print</span> <span class="string">'Available methods:'</span>
+<span class="keyword">for</span> method <span class="keyword">in</span> wsdlObject.methods.keys() :
+    <span class="keyword">print</span> method
+    ci = wsdlObject.methods[method]
+    <span class="comment"># you can also use ci.inparams</span>
+    <span class="keyword">for</span> param <span class="keyword">in</span> ci.outparams :
+        <span class="comment"># list of the function and type </span>
+        <span class="comment"># depending of the wsdl...</span>
+        <span class="keyword">print</span> param.name.ljust(<span class="number">20</span>) , param.type
+    <span class="keyword">print</span>
+</pre></figure>
+
+<p>运行的时候出现了这个问题：</p>
+
+      
+    </div>
+    
+    
+      
+      <div id='more-link'>
+        <div align="left">
+          <a href="/soappy-error-xml-parsers-expat-expaterror.html#more" class="more-link fa fa-play">阅读全文</a>
+        </div>
+      </div>
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/org2blog/" class="label label-success">org2blog</a><a href="/tags/python/" class="label label-info">python</a><a href="/tags/web service/" class="label label-warning">web service</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:11"datetime="2014-03-05 06:30:11"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/soappy-error-xml-parsers-expat-expaterror.html#comments" class="ds-thread-count comment-link" data-thread-key="soappy-error-xml-parsers-expat-expaterror" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/gsoap-error-500.html">gsoap Error 500</a></h1>
+      
+        <span>发表于<time datetime="2012-02-28T22:31:48.000Z"> <a href="/gsoap-error-500.html">2月 28 2012</a></time></span>      
     </header>
     
     
@@ -144,7 +208,7 @@ soap.mustUnderstand=<span class="number">0</span>;
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/gsoap/" class="label label-success">gsoap</a><a href="/tags/org2blog/" class="label label-info">org2blog</a><a href="/tags/web service/" class="label label-warning">web service</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:10"datetime="2014-03-05 06:30:10"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-02-28-gsoap-error-500.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-02-28-gsoap-error-500" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/gsoap-error-500.html#comments" class="ds-thread-count comment-link" data-thread-key="gsoap-error-500" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -159,9 +223,9 @@ soap.mustUnderstand=<span class="number">0</span>;
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-02-28-using-tcpdump-analysis-soap-protocol.html">使用tcpdump分析soap包</a></h1>
+      <h1 class="title"><a href="/using-tcpdump-analysis-soap-protocol.html">使用tcpdump分析soap包</a></h1>
       
-        <span>发表于<time datetime="2012-02-28T13:24:20.000Z"> <a href="/2012-02-28-using-tcpdump-analysis-soap-protocol.html">2月 28 2012</a></time></span>      
+        <span>发表于<time datetime="2012-02-28T13:24:20.000Z"> <a href="/using-tcpdump-analysis-soap-protocol.html">2月 28 2012</a></time></span>      
     </header>
     
     
@@ -181,7 +245,7 @@ soap.mustUnderstand=<span class="number">0</span>;
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/gsoap/" class="label label-success">gsoap</a><a href="/tags/Linux/" class="label label-info">Linux</a><a href="/tags/org2blog/" class="label label-warning">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:10"datetime="2014-03-05 06:30:10"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-02-28-using-tcpdump-analysis-soap-protocol.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-02-28-using-tcpdump-analysis-soap-protocol" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/using-tcpdump-analysis-soap-protocol.html#comments" class="ds-thread-count comment-link" data-thread-key="using-tcpdump-analysis-soap-protocol" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -196,9 +260,9 @@ soap.mustUnderstand=<span class="number">0</span>;
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-02-28-gsoap-error-200.html">gsoap Error 200</a></h1>
+      <h1 class="title"><a href="/gsoap-error-200.html">gsoap Error 200</a></h1>
       
-        <span>发表于<time datetime="2012-02-28T13:22:22.000Z"> <a href="/2012-02-28-gsoap-error-200.html">2月 28 2012</a></time></span>      
+        <span>发表于<time datetime="2012-02-28T13:22:22.000Z"> <a href="/gsoap-error-200.html">2月 28 2012</a></time></span>      
     </header>
     
     
@@ -220,7 +284,7 @@ soap.mustUnderstand=<span class="number">0</span>;
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/gsoap/" class="label label-success">gsoap</a><a href="/tags/org2blog/" class="label label-info">org2blog</a><a href="/tags/web service/" class="label label-warning">web service</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:09"datetime="2014-03-05 06:30:09"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-02-28-gsoap-error-200.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-02-28-gsoap-error-200" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/gsoap-error-200.html#comments" class="ds-thread-count comment-link" data-thread-key="gsoap-error-200" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -235,9 +299,9 @@ soap.mustUnderstand=<span class="number">0</span>;
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html">MacOS X emacs拖拽打开文件</a></h1>
+      <h1 class="title"><a href="/emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html">MacOS X emacs拖拽打开文件</a></h1>
       
-        <span>发表于<time datetime="2012-02-06T18:32:34.000Z"> <a href="/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html">2月 6 2012</a></time></span>      
+        <span>发表于<time datetime="2012-02-06T18:32:34.000Z"> <a href="/emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html">2月 6 2012</a></time></span>      
     </header>
     
     
@@ -264,7 +328,7 @@ soap.mustUnderstand=<span class="number">0</span>;
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/macos/" class="label label-success">macos</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:08"datetime="2014-03-05 06:30:08"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html#comments" class="ds-thread-count comment-link" data-thread-key="emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -279,9 +343,9 @@ soap.mustUnderstand=<span class="number">0</span>;
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-02-03-compile-gsoap-on-mac-os-x.html">MacOS X上编译gSOAP</a></h1>
+      <h1 class="title"><a href="/compile-gsoap-on-mac-os-x.html">MacOS X上编译gSOAP</a></h1>
       
-        <span>发表于<time datetime="2012-02-03T23:32:11.000Z"> <a href="/2012-02-03-compile-gsoap-on-mac-os-x.html">2月 3 2012</a></time></span>      
+        <span>发表于<time datetime="2012-02-03T23:32:11.000Z"> <a href="/compile-gsoap-on-mac-os-x.html">2月 3 2012</a></time></span>      
     </header>
     
     
@@ -305,7 +369,7 @@ soap.mustUnderstand=<span class="number">0</span>;
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/macos/" class="label label-success">macos</a><a href="/tags/org2blog/" class="label label-info">org2blog</a><a href="/tags/soap/" class="label label-warning">soap</a><a href="/tags/web service/" class="label label-primary">web service</a><a href="/tags/xml/" class="label label-success">xml</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:07"datetime="2014-03-05 06:30:07"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-02-03-compile-gsoap-on-mac-os-x.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-02-03-compile-gsoap-on-mac-os-x" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/compile-gsoap-on-mac-os-x.html#comments" class="ds-thread-count comment-link" data-thread-key="compile-gsoap-on-mac-os-x" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -320,9 +384,9 @@ soap.mustUnderstand=<span class="number">0</span>;
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc.html">Git svn – Can’t locate Term/ReadKey.pm in @INC</a></h1>
+      <h1 class="title"><a href="/git-svn-cant-locate-termreadkey-pm-in-inc.html">Git svn – Can’t locate Term/ReadKey.pm in @INC</a></h1>
       
-        <span>发表于<time datetime="2012-02-02T22:31:11.000Z"> <a href="/2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc.html">2月 2 2012</a></time></span>      
+        <span>发表于<time datetime="2012-02-02T22:31:11.000Z"> <a href="/git-svn-cant-locate-termreadkey-pm-in-inc.html">2月 2 2012</a></time></span>      
     </header>
     
     
@@ -349,7 +413,7 @@ perl -MCPAN <span class="operator">-e</span> shellinstall Term::ReadKeyexit
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/emacs/" class="label label-success">emacs</a><a href="/tags/git/" class="label label-info">git</a><a href="/tags/org2blog/" class="label label-warning">org2blog</a><a href="/tags/VCS/" class="label label-primary">VCS</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:06"datetime="2014-03-05 06:30:06"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/git-svn-cant-locate-termreadkey-pm-in-inc.html#comments" class="ds-thread-count comment-link" data-thread-key="git-svn-cant-locate-termreadkey-pm-in-inc" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -364,9 +428,9 @@ perl -MCPAN <span class="operator">-e</span> shellinstall Term::ReadKeyexit
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-01-30-git-svn-proxy-setting.html">git svn代理设置</a></h1>
+      <h1 class="title"><a href="/git-svn-proxy-setting.html">git svn代理设置</a></h1>
       
-        <span>发表于<time datetime="2012-01-30T11:33:11.000Z"> <a href="/2012-01-30-git-svn-proxy-setting.html">1月 30 2012</a></time></span>      
+        <span>发表于<time datetime="2012-01-30T11:33:11.000Z"> <a href="/git-svn-proxy-setting.html">1月 30 2012</a></time></span>      
     </header>
     
     
@@ -396,7 +460,7 @@ username = yesokay
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/emacs/" class="label label-success">emacs</a><a href="/tags/org2blog/" class="label label-info">org2blog</a><a href="/tags/programming/" class="label label-warning">programming</a><a href="/tags/tools/" class="label label-primary">tools</a><a href="/tags/VCS/" class="label label-success">VCS</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:06"datetime="2014-03-05 06:30:06"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-01-30-git-svn-proxy-setting.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-01-30-git-svn-proxy-setting" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/git-svn-proxy-setting.html#comments" class="ds-thread-count comment-link" data-thread-key="git-svn-proxy-setting" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -411,9 +475,9 @@ username = yesokay
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-01-19-run-app-directly-on-ios-simulator.html">直接用模拟器运行ios app</a></h1>
+      <h1 class="title"><a href="/run-app-directly-on-ios-simulator.html">直接用模拟器运行ios app</a></h1>
       
-        <span>发表于<time datetime="2012-01-19T18:13:22.000Z"> <a href="/2012-01-19-run-app-directly-on-ios-simulator.html">1月 19 2012</a></time></span>      
+        <span>发表于<time datetime="2012-01-19T18:13:22.000Z"> <a href="/run-app-directly-on-ios-simulator.html">1月 19 2012</a></time></span>      
     </header>
     
     
@@ -434,7 +498,7 @@ username = yesokay
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/ios/" class="label label-success">ios</a><a href="/tags/macos/" class="label label-info">macos</a><a href="/tags/org2blog/" class="label label-warning">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:05"datetime="2014-03-05 06:30:05"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-01-19-run-app-directly-on-ios-simulator.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-01-19-run-app-directly-on-ios-simulator" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/run-app-directly-on-ios-simulator.html#comments" class="ds-thread-count comment-link" data-thread-key="run-app-directly-on-ios-simulator" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -449,9 +513,9 @@ username = yesokay
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-01-18-git-line-ending.html">git换行符问题</a></h1>
+      <h1 class="title"><a href="/git-line-ending.html">git换行符问题</a></h1>
       
-        <span>发表于<time datetime="2012-01-18T22:12:13.000Z"> <a href="/2012-01-18-git-line-ending.html">1月 18 2012</a></time></span>      
+        <span>发表于<time datetime="2012-01-18T22:12:13.000Z"> <a href="/git-line-ending.html">1月 18 2012</a></time></span>      
     </header>
     
     
@@ -472,53 +536,7 @@ username = yesokay
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/emacs/" class="label label-success">emacs</a><a href="/tags/git/" class="label label-info">git</a><a href="/tags/org2blog/" class="label label-warning">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:03"datetime="2014-03-05 06:30:03"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-01-18-git-line-ending.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-01-18-git-line-ending" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-01-18-ssh-local-tunnel.html">ssh本地tunnel代理</a></h1>
-      
-        <span>发表于<time datetime="2012-01-18T11:22:33.000Z"> <a href="/2012-01-18-ssh-local-tunnel.html">1月 18 2012</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>ssh命令用法</p>
-<blockquote>
-<p>ssh -qTfnN -D 7070 用户名@远程ssh主机名</p>
-<p>-q :- be very quite, we are acting only as a tunnel.
--T :- Do not allocate a pseudo tty, we are only acting a tunnel.
--f :- move the ssh process to background, as we don’t want to interact with this ssh session directly.
--N :- Do not execute remote command.
--n :- redirect standard input to /dev/null.</p>
-</blockquote>
-<p>plink用法</p>
-<figure class="highlight sh"><pre>plink <span class="attribute">-C</span> <span class="attribute">-D</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">7070</span> <span class="attribute">-N</span> <span class="attribute">-pw</span> 密码 用户名@服务器地址
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:04"datetime="2014-03-05 06:30:04"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-01-18-ssh-local-tunnel.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-01-18-ssh-local-tunnel" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/git-line-ending.html#comments" class="ds-thread-count comment-link" data-thread-key="git-line-ending" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -531,7 +549,7 @@ username = yesokay
 
 
 <ul id="pagination" class="pagination pagination-lg">
-  <li><a class="extend prev" href="/page/4/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><a class="page-number" href="/page/4/">4</a></li><li class="active"><li><span class="page-number current">5</span></li><li><a class="page-number" href="/page/6/">6</a></li><li><a class="page-number" href="/page/7/">7</a></li><li><a class="page-number" href="/page/8/">8</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="extend next" href="/page/6/">&raquo;</a></li>
+  <li><a class="extend prev" href="/page/4/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><a class="page-number" href="/page/4/">4</a></li><li class="active"><li><span class="page-number current">5</span></li><li><a class="page-number" href="/page/6/">6</a></li><li><a class="page-number" href="/page/7/">7</a></li><li><a class="page-number" href="/page/8/">8</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="page-number" href="/page/25/">25</a></li><li><a class="extend next" href="/page/6/">&raquo;</a></li>
   <div class="clearfix"></div>
 </ul></div><!--wapper-->
        </div><!-- ID main-col END -->
@@ -562,7 +580,7 @@ username = yesokay
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-10-27-zenburn_code_css_test.html">zenburn-code css</a></li><li class="list-group-item"><a href="/2012-11-23-change-ibus-googlepinyin-default-candidates-number.html">修改ibus-googlepinyin候选词的个数</a></li><li class="list-group-item"><a href="/2010-06-18-ubuntu_emacs_android.html">ubuntu下配置emacs android开发环境</a></li><li class="list-group-item"><a href="/2012-10-22-xiami-auto-checkin-with-golang.html">虾米自动签到go语言版本</a></li><li class="list-group-item"><a href="/2011-11-13-pymacs.html">Pymacs</a></li><li class="list-group-item"><a href="/2010-12-09-ps.html">ps应该这样玩</a></li><li class="list-group-item"><a href="/2012-11-21-avoids-ssh-timeouts.html">Avoids ssh timeouts</a></li><li class="list-group-item"><a href="/2013-06-03-cheat.html">这是开挂了吧</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/ubuntu_linux_flashget.html">ubuntu下使用flashget</a></li><li class="list-group-item"><a href="/emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html">MacOS X emacs拖拽打开文件</a></li><li class="list-group-item"><a href="/android_apn_setting.html">android设置APN</a></li><li class="list-group-item"><a href="/run-app-directly-on-ios-simulator.html">直接用模拟器运行ios app</a></li><li class="list-group-item"><a href="/add_css_support_for_rss_output.html">RSS输出添加css支持</a></li><li class="list-group-item"><a href="/git-remove-untracked-files-and-directories.html">git remove untracked files and directories</a></li><li class="list-group-item"><a href="/windows_hide_taskbar.html">在任务栏中隐藏windows程序</a></li><li class="list-group-item"><a href="/android_emulator_proxy.html">android模拟器使用代理</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -605,7 +623,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:00</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 08:02:10</em></span></div>
 </div>
 <div class="clearfix"></div>
 

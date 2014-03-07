@@ -64,6 +64,7 @@ var _js2load = [];
         <li><a href="/" title="主页">主页</a></li>      
         <li><a href="/about/" title="关于">关于</a></li>      
         <li><a href="/archives/" title="归档">归档</a></li>      
+        <li><a href="/sitemap.xml" title="SiteMap">SiteMap</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -80,6 +81,8 @@ var _js2load = [];
       
         <li><a href="https://twitter.com/ChenZaichun">twitter</a></li>
       
+      
+        <li><a href="https://www.facebook.com/ChenZaichun">facebook</a></li>
       
       
       
@@ -103,9 +106,94 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-31-boost_progress_display.html">boost::progress_display</a></h1>
+      <h1 class="title"><a href="/boost_timer.html">boost::timer</a></h1>
       
-        <span>发表于<time datetime="2010-05-31T11:12:33.000Z"> <a href="/2010-05-31-boost_progress_display.html">5月 31 2010</a></time></span>      
+        <span>发表于<time datetime="2010-05-31T13:12:32.000Z"> <a href="/boost_timer.html">5月 31 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>在linux平台下使用boost::timer,得到的并不是所经过的时间,比如以下代码，因为sleep了1s，所以得到的结果应该大于1s，但是得出来的结果确是0</p>
+<figure class="highlight cpp"><pre><span class="preprocessor">#include &lt;boost/timer.hpp&gt;</span>
+<span class="preprocessor">#include &lt;iostream&gt;</span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+<span class="keyword">using</span> <span class="keyword">namespace</span> boost;
+
+<span class="keyword">int</span> main()
+{
+    <span class="built_in">cout</span> &lt;&lt; <span class="string">"test boost::timer"</span> &lt;&lt; endl;
+    timer tmer;
+    sleep(<span class="number">1</span>);
+    <span class="built_in">cout</span> &lt;&lt; tmer.elapsed() &lt;&lt; endl;
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</pre></figure>
+
+<figure class="highlight sh"><pre><span class="variable">$ </span>./boosttimer
+test <span class="symbol">boost:</span><span class="symbol">:timer</span>
+<span class="number">0</span>
+</pre></figure>
+
+<p>究其原因：察看boost::timer的源代码/usr/include/boost/timer.hpp</p>
+<figure class="highlight cpp"><pre><span class="keyword">class</span> timer
+{
+ <span class="keyword">public</span>:
+         timer() { _start_time = <span class="built_in">std</span>::clock(); } <span class="comment">// postcondition: elapsed()==0</span>
+<span class="comment">//         timer( const timer& src );      // post: elapsed()==src.elapsed()</span>
+<span class="comment">//        ~timer(){}</span>
+<span class="comment">//  timer& operator=( const timer& src );  // post: elapsed()==src.elapsed()</span>
+  <span class="keyword">void</span>   restart() { _start_time = <span class="built_in">std</span>::clock(); } <span class="comment">// post: elapsed()==0</span>
+  <span class="keyword">double</span> elapsed() <span class="keyword">const</span>                  <span class="comment">// return elapsed time in seconds</span>
+    { <span class="keyword">return</span>  <span class="keyword">double</span>(<span class="built_in">std</span>::clock() - _start_time) / CLOCKS_PER_SEC; }
+
+  <span class="keyword">double</span> elapsed_max() <span class="keyword">const</span>   <span class="comment">// return estimated maximum value for elapsed()</span>
+  <span class="comment">// Portability warning: elapsed_max() may return too high a value on systems</span>
+  <span class="comment">// where std::clock_t overflows or resets at surprising values.</span>
+  {
+    <span class="keyword">return</span> (<span class="keyword">double</span>((<span class="built_in">std</span>::numeric_limits&lt;<span class="built_in">std</span>::clock_t&gt;::max)())
+       - <span class="keyword">double</span>(_start_time)) / <span class="keyword">double</span>(CLOCKS_PER_SEC);
+  }
+
+  <span class="keyword">double</span> elapsed_min() <span class="keyword">const</span>            <span class="comment">// return minimum value for elapsed()</span>
+   { <span class="keyword">return</span> <span class="keyword">double</span>(<span class="number">1</span>)/<span class="keyword">double</span>(CLOCKS_PER_SEC); }
+
+ <span class="keyword">private</span>:
+  <span class="built_in">std</span>::clock_t _start_time;
+}; <span class="comment">// timer</span>
+</pre></figure>
+
+<p>可以看到boost::timer的实现在linux下是通过std::clock()实现的.经测试std::clock()每次返回的值都是一样的。原因就是我们在这里使用的是sleep，而man 3 clock得到的是function returns an approximation of processor time used by the program.即得到的是cpu执行的时间，sleep的时候cpu执行时间（cpu  time）为0，所以每次都得到的一样的值，最后结果为0，如果我们将sleep改为一个循环，结果就将是这是的值了！测试的时候不能被sleep所迷惑了，所以我们用来测实际经过的时间的时候不能用boost::timer!可以选择alarm</p>
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/boost/" class="label label-primary">boost</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:09"datetime="2014-03-05 06:28:09"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/boost_timer.html#comments" class="ds-thread-count comment-link" data-thread-key="boost_timer" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/boost_progress_display.html">boost::progress_display</a></h1>
+      
+        <span>发表于<time datetime="2010-05-31T11:12:33.000Z"> <a href="/boost_progress_display.html">5月 31 2010</a></time></span>      
     </header>
     
     
@@ -146,7 +234,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/boost/" class="label label-primary">boost</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:07"datetime="2014-03-05 06:28:07"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-31-boost_progress_display.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-31-boost_progress_display" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/boost_progress_display.html#comments" class="ds-thread-count comment-link" data-thread-key="boost_progress_display" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -161,9 +249,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-18-grub2_boot_default.html">修改Grub2,XP默认首启动</a></h1>
+      <h1 class="title"><a href="/grub2_boot_default.html">修改Grub2,XP默认首启动</a></h1>
       
-        <span>发表于<time datetime="2010-05-18T12:12:23.000Z"> <a href="/2010-05-18-grub2_boot_default.html">5月 18 2010</a></time></span>      
+        <span>发表于<time datetime="2010-05-18T12:12:23.000Z"> <a href="/grub2_boot_default.html">5月 18 2010</a></time></span>      
     </header>
     
     
@@ -198,7 +286,7 @@ sudo mv <span class="number">30</span>_os<span class="attribute">-prober</span> 
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/grub2/" class="label label-primary">grub2</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/ubuntu/" class="label label-info">ubuntu</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:07"datetime="2014-03-05 06:28:07"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-18-grub2_boot_default.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-18-grub2_boot_default" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/grub2_boot_default.html#comments" class="ds-thread-count comment-link" data-thread-key="grub2_boot_default" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -213,9 +301,9 @@ sudo mv <span class="number">30</span>_os<span class="attribute">-prober</span> 
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-16-mercurial_hg_proxy.html">mercurial hg代理设置</a></h1>
+      <h1 class="title"><a href="/mercurial_hg_proxy.html">mercurial hg代理设置</a></h1>
       
-        <span>发表于<time datetime="2010-05-16T17:11:23.000Z"> <a href="/2010-05-16-mercurial_hg_proxy.html">5月 16 2010</a></time></span>      
+        <span>发表于<time datetime="2010-05-16T17:11:23.000Z"> <a href="/mercurial_hg_proxy.html">5月 16 2010</a></time></span>      
     </header>
     
     
@@ -237,7 +325,7 @@ sudo mv <span class="number">30</span>_os<span class="attribute">-prober</span> 
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/hg/" class="label label-success">hg</a><a href="/tags/mercurial/" class="label label-info">mercurial</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:06"datetime="2014-03-05 06:28:06"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-16-mercurial_hg_proxy.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-16-mercurial_hg_proxy" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/mercurial_hg_proxy.html#comments" class="ds-thread-count comment-link" data-thread-key="mercurial_hg_proxy" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -252,9 +340,9 @@ sudo mv <span class="number">30</span>_os<span class="attribute">-prober</span> 
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-11-archlinux_x11_forwarding.html">archlinux x11 forwarding</a></h1>
+      <h1 class="title"><a href="/archlinux_x11_forwarding.html">archlinux x11 forwarding</a></h1>
       
-        <span>发表于<time datetime="2010-05-11T13:11:32.000Z"> <a href="/2010-05-11-archlinux_x11_forwarding.html">5月 11 2010</a></time></span>      
+        <span>发表于<time datetime="2010-05-11T13:11:32.000Z"> <a href="/archlinux_x11_forwarding.html">5月 11 2010</a></time></span>      
     </header>
     
     
@@ -277,7 +365,7 @@ X11UseLocalhost <span class="literal">yes</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:05"datetime="2014-03-05 06:28:05"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-11-archlinux_x11_forwarding.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-11-archlinux_x11_forwarding" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/archlinux_x11_forwarding.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_x11_forwarding" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -292,9 +380,9 @@ X11UseLocalhost <span class="literal">yes</span>
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-10-archlinux_install_yaourt.html">archlinux安装yaourt</a></h1>
+      <h1 class="title"><a href="/archlinux_install_yaourt.html">archlinux安装yaourt</a></h1>
       
-        <span>发表于<time datetime="2010-05-10T23:11:13.000Z"> <a href="/2010-05-10-archlinux_install_yaourt.html">5月 10 2010</a></time></span>      
+        <span>发表于<time datetime="2010-05-10T23:11:13.000Z"> <a href="/archlinux_install_yaourt.html">5月 10 2010</a></time></span>      
     </header>
     
     
@@ -327,7 +415,7 @@ pacman <span class="attribute">-S</span> yaourt
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:05"datetime="2014-03-05 06:28:05"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-10-archlinux_install_yaourt.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-10-archlinux_install_yaourt" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/archlinux_install_yaourt.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_install_yaourt" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -342,9 +430,9 @@ pacman <span class="attribute">-S</span> yaourt
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-10-archlinux_global_proxy.html">archlinux全局代理</a></h1>
+      <h1 class="title"><a href="/archlinux_global_proxy.html">archlinux全局代理</a></h1>
       
-        <span>发表于<time datetime="2010-05-10T13:11:11.000Z"> <a href="/2010-05-10-archlinux_global_proxy.html">5月 10 2010</a></time></span>      
+        <span>发表于<time datetime="2010-05-10T13:11:11.000Z"> <a href="/archlinux_global_proxy.html">5月 10 2010</a></time></span>      
     </header>
     
     
@@ -385,7 +473,7 @@ function <span class="function"><span class="title">proxyoff</span></span>(){
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:04"datetime="2014-03-05 06:28:04"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-10-archlinux_global_proxy.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-10-archlinux_global_proxy" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/archlinux_global_proxy.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_global_proxy" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -400,9 +488,9 @@ function <span class="function"><span class="title">proxyoff</span></span>(){
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-09-archlinux_usb_pen.html">将archlinux安装到u盘</a></h1>
+      <h1 class="title"><a href="/archlinux_usb_pen.html">将archlinux安装到u盘</a></h1>
       
-        <span>发表于<time datetime="2010-05-09T21:13:43.000Z"> <a href="/2010-05-09-archlinux_usb_pen.html">5月 9 2010</a></time></span>      
+        <span>发表于<time datetime="2010-05-09T21:13:43.000Z"> <a href="/archlinux_usb_pen.html">5月 9 2010</a></time></span>      
     </header>
     
     
@@ -429,7 +517,7 @@ e2fsck -b <span class="number">8193</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/portable/" class="label label-info">portable</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:04"datetime="2014-03-05 06:28:04"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-09-archlinux_usb_pen.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-09-archlinux_usb_pen" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/archlinux_usb_pen.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_usb_pen" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -444,9 +532,9 @@ e2fsck -b <span class="number">8193</span>
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-08-git_svn_clone_revision.html">git svn clone 特定版本</a></h1>
+      <h1 class="title"><a href="/git_svn_clone_revision.html">git svn clone 特定版本</a></h1>
       
-        <span>发表于<time datetime="2010-05-08T23:11:38.000Z"> <a href="/2010-05-08-git_svn_clone_revision.html">5月 8 2010</a></time></span>      
+        <span>发表于<time datetime="2010-05-08T23:11:38.000Z"> <a href="/git_svn_clone_revision.html">5月 8 2010</a></time></span>      
     </header>
     
     
@@ -466,7 +554,7 @@ e2fsck -b <span class="number">8193</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/scm/" class="label label-info">scm</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:00"datetime="2014-03-05 06:28:00"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-08-git_svn_clone_revision.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-08-git_svn_clone_revision" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/git_svn_clone_revision.html#comments" class="ds-thread-count comment-link" data-thread-key="git_svn_clone_revision" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -481,9 +569,9 @@ e2fsck -b <span class="number">8193</span>
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-08-archlinux_chrome_autoproxy.html">archlinux 下chrome autoproxy</a></h1>
+      <h1 class="title"><a href="/archlinux_chrome_autoproxy.html">archlinux 下chrome autoproxy</a></h1>
       
-        <span>发表于<time datetime="2010-05-08T22:11:22.000Z"> <a href="/2010-05-08-archlinux_chrome_autoproxy.html">5月 8 2010</a></time></span>      
+        <span>发表于<time datetime="2010-05-08T22:11:22.000Z"> <a href="/archlinux_chrome_autoproxy.html">5月 8 2010</a></time></span>      
     </header>
     
     
@@ -500,45 +588,7 @@ e2fsck -b <span class="number">8193</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/autoproxy/" class="label label-success">autoproxy</a><a href="/tags/chrome/" class="label label-info">chrome</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:27:59"datetime="2014-03-05 06:27:59"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-08-archlinux_chrome_autoproxy.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-08-archlinux_chrome_autoproxy" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-08-ubuntu_kernel_clean.html">ubuntu删除无用旧内核</a></h1>
-      
-        <span>发表于<time datetime="2010-05-08T19:33:11.000Z"> <a href="/2010-05-08-ubuntu_kernel_clean.html">5月 8 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>用这个可以删除旧内核</p>
-<figure class="highlight sh"><pre>sudo aptitude purge ~ilinux-image-.*(!<span class="escape">`u</span>name -r<span class="escape">`)</span>
-</pre></figure>
-
-<p><a class="postlink" href="http://forum.ubuntu.org.cn/viewtopic.php?t=129876" target="_blank"><a href="http://forum.ubuntu.org.cn/viewtopic.php?t=129876">http://forum.ubuntu.org.cn/viewtopic.php?t=129876</a></a></p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/kernel/" class="label label-primary">kernel</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/ubuntu/" class="label label-info">ubuntu</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:03"datetime="2014-03-05 06:28:03"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-08-ubuntu_kernel_clean.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-08-ubuntu_kernel_clean" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/archlinux_chrome_autoproxy.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_chrome_autoproxy" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -551,7 +601,7 @@ e2fsck -b <span class="number">8193</span>
 
 
 <ul id="pagination" class="pagination pagination-lg">
-  <li><a class="extend prev" href="/page/21/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/19/">19</a></li><li><a class="page-number" href="/page/20/">20</a></li><li><a class="page-number" href="/page/21/">21</a></li><li class="active"><li><span class="page-number current">22</span></li></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="extend next" href="/page/23/">&raquo;</a></li>
+  <li><a class="extend prev" href="/page/21/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/19/">19</a></li><li><a class="page-number" href="/page/20/">20</a></li><li><a class="page-number" href="/page/21/">21</a></li><li class="active"><li><span class="page-number current">22</span></li></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="page-number" href="/page/25/">25</a></li><li><a class="extend next" href="/page/23/">&raquo;</a></li>
   <div class="clearfix"></div>
 </ul></div><!--wapper-->
        </div><!-- ID main-col END -->
@@ -582,7 +632,7 @@ e2fsck -b <span class="number">8193</span>
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html">通过git将bitbucket当做无限容量的dropbox</a></li><li class="list-group-item"><a href="/2010-06-01-boost_parse_environment.html">boost::parse_environment</a></li><li class="list-group-item"><a href="/2010-12-09-ps.html">ps应该这样玩</a></li><li class="list-group-item"><a href="/2011-08-05-vmware_io_performance.html">增加vmware虚拟机的性能</a></li><li class="list-group-item"><a href="/2012-06-26-open-chinese-convert.html">Open Chinese Convert</a></li><li class="list-group-item"><a href="/2012-12-26-git-submodule-remove.html">删除git submodule</a></li><li class="list-group-item"><a href="/2012-02-03-compile-gsoap-on-mac-os-x.html">MacOS X上编译gSOAP</a></li><li class="list-group-item"><a href="/2011-10-24-extract_specified_files_in_tar.html">解压tar包中特定文件</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/test-blog-with-org-mode.html">test blog with org-mode</a></li><li class="list-group-item"><a href="/archlinux_sound_alsamixer.html">lxde音量调节</a></li><li class="list-group-item"><a href="/how_hackerr_playing_game.html">看看黑客是怎么玩游戏的</a></li><li class="list-group-item"><a href="/mercurial-hg-add-progress.html">为Mercurial（hg）添加进度条</a></li><li class="list-group-item"><a href="/emacs_python_ide.html">emacs下配置python开发环境</a></li><li class="list-group-item"><a href="/mapview_overlay.html">MapView中画图</a></li><li class="list-group-item"><a href="/hp_ux_font_error_fix.html">X Server连接到hp-ux字体问题解决办法</a></li><li class="list-group-item"><a href="/rpm_command.html">rpm常用命令</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -625,7 +675,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:01</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 08:02:10</em></span></div>
 </div>
 <div class="clearfix"></div>
 

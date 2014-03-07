@@ -64,6 +64,7 @@ var _js2load = [];
         <li><a href="/" title="主页">主页</a></li>      
         <li><a href="/about/" title="关于">关于</a></li>      
         <li><a href="/archives/" title="归档">归档</a></li>      
+        <li><a href="/sitemap.xml" title="SiteMap">SiteMap</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -80,6 +81,8 @@ var _js2load = [];
       
         <li><a href="https://twitter.com/ChenZaichun">twitter</a></li>
       
+      
+        <li><a href="https://www.facebook.com/ChenZaichun">facebook</a></li>
       
       
       
@@ -103,9 +106,68 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-07-09-ios_exit_program_in_code.html">iOS退出程序</a></h1>
+      <h1 class="title"><a href="/cocos2d_iphone_popscenewithtransition.html">cocos2d-iphone popSceneWithTransition</a></h1>
       
-        <span>发表于<time datetime="2011-07-09T20:56:31.000Z"> <a href="/2011-07-09-ios_exit_program_in_code.html">7月 9 2011</a></time></span>      
+        <span>发表于<time datetime="2011-07-13T20:56:31.000Z"> <a href="/cocos2d_iphone_popscenewithtransition.html">7月 13 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>原文链接：<a href="http://www.cocos2d-iphone.org/forum/topic/1076" target="_blank"><a href="http://www.cocos2d-iphone.org/forum/topic/1076">http://www.cocos2d-iphone.org/forum/topic/1076</a></a>
+在CCDirector.h添加</p>
+<figure class="highlight objc"><pre><span class="pp">- <span class="params">(void)</span> popSceneWithTransition: <span class="params">(<span class="variable">Class</span>)</span>c duration:<span class="params">(cc<span class="variable">Time</span>)</span>t;</span>
+</pre></figure>
+
+<p>在CCDirector.m中添加</p>
+<figure class="highlight objc"><pre>-(void) popSceneWithTransition: (Class)transitionClass duration:(ccTime)t;
+{
+	NSAssert( runningScene_ != nil, @<span class="string">"A running Scene is needed"</span>);
+
+	[scenesStack_ removeLastObject];
+	NSUInteger c = [scenesStack_ count];
+	if( c == 0 ) {
+		[self end];
+	} else {
+		CCScene* scene = [transitionClass transitionWithDuration:t scene:[scenesStack_ objectAtIndex:c-1]];
+		[scenesStack_ replaceObjectAtIndex:c-1 withObject:scene];
+		nextScene_ = scene;
+	}
+}
+</pre></figure>
+
+<p>调用方式</p>
+<figure class="highlight objc"><pre><span class="attr_selector">[[CCDirector sharedDirector]</span> <span class="tag">popSceneWithTransition</span>:<span class="attr_selector">[CCSlideInRTransition class]</span> <span class="tag">duration</span><span class="pseudo">:0</span><span class="class">.5f</span>];
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/ios/">ios</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/ios/" class="label label-primary">ios</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:26"datetime="2014-03-05 06:29:26"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/cocos2d_iphone_popscenewithtransition.html#comments" class="ds-thread-count comment-link" data-thread-key="cocos2d_iphone_popscenewithtransition" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/ios_exit_program_in_code.html">iOS退出程序</a></h1>
+      
+        <span>发表于<time datetime="2011-07-09T20:56:31.000Z"> <a href="/ios_exit_program_in_code.html">7月 9 2011</a></time></span>      
     </header>
     
     
@@ -130,7 +192,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/ios/">ios</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/ios/" class="label label-primary">ios</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:25"datetime="2014-03-05 06:29:25"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-07-09-ios_exit_program_in_code.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-07-09-ios_exit_program_in_code" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/ios_exit_program_in_code.html#comments" class="ds-thread-count comment-link" data-thread-key="ios_exit_program_in_code" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -145,9 +207,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-07-05-uiwebview_current_url.html">UIWebView获取当前加载的URL</a></h1>
+      <h1 class="title"><a href="/uiwebview_current_url.html">UIWebView获取当前加载的URL</a></h1>
       
-        <span>发表于<time datetime="2011-07-05T20:56:31.000Z"> <a href="/2011-07-05-uiwebview_current_url.html">7月 5 2011</a></time></span>      
+        <span>发表于<time datetime="2011-07-05T20:56:31.000Z"> <a href="/uiwebview_current_url.html">7月 5 2011</a></time></span>      
     </header>
     
     
@@ -172,7 +234,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/ios/" class="label label-primary">ios</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:24"datetime="2014-03-05 06:29:24"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-07-05-uiwebview_current_url.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-07-05-uiwebview_current_url" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/uiwebview_current_url.html#comments" class="ds-thread-count comment-link" data-thread-key="uiwebview_current_url" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -187,9 +249,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-07-05-ios_input_dialog.html">iOS弹出输入框</a></h1>
+      <h1 class="title"><a href="/ios_input_dialog.html">iOS弹出输入框</a></h1>
       
-        <span>发表于<time datetime="2011-07-05T19:56:31.000Z"> <a href="/2011-07-05-ios_input_dialog.html">7月 5 2011</a></time></span>      
+        <span>发表于<time datetime="2011-07-05T19:56:31.000Z"> <a href="/ios_input_dialog.html">7月 5 2011</a></time></span>      
     </header>
     
     
@@ -218,7 +280,7 @@ CGAffineTransform myTransform = CGAffineTransformMakeTranslation(<span class="nu
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/ios/" class="label label-primary">ios</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:24"datetime="2014-03-05 06:29:24"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-07-05-ios_input_dialog.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-07-05-ios_input_dialog" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/ios_input_dialog.html#comments" class="ds-thread-count comment-link" data-thread-key="ios_input_dialog" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -233,9 +295,9 @@ CGAffineTransform myTransform = CGAffineTransformMakeTranslation(<span class="nu
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-07-03-build_emacs_on_mac_osx.html">Build Emacs on Mac OS X</a></h1>
+      <h1 class="title"><a href="/build_emacs_on_mac_osx.html">Build Emacs on Mac OS X</a></h1>
       
-        <span>发表于<time datetime="2011-07-03T19:56:31.000Z"> <a href="/2011-07-03-build_emacs_on_mac_osx.html">7月 3 2011</a></time></span>      
+        <span>发表于<time datetime="2011-07-03T19:56:31.000Z"> <a href="/build_emacs_on_mac_osx.html">7月 3 2011</a></time></span>      
     </header>
     
     
@@ -264,7 +326,7 @@ make
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/macos/" class="label label-success">macos</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:23"datetime="2014-03-05 06:29:23"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-07-03-build_emacs_on_mac_osx.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-07-03-build_emacs_on_mac_osx" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/build_emacs_on_mac_osx.html#comments" class="ds-thread-count comment-link" data-thread-key="build_emacs_on_mac_osx" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -279,9 +341,9 @@ make
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-07-01-ios_uiwebview_current_url.html">iOS获取UIWebView当前浏览页面的地址</a></h1>
+      <h1 class="title"><a href="/ios_uiwebview_current_url.html">iOS获取UIWebView当前浏览页面的地址</a></h1>
       
-        <span>发表于<time datetime="2011-07-01T19:56:31.000Z"> <a href="/2011-07-01-ios_uiwebview_current_url.html">7月 1 2011</a></time></span>      
+        <span>发表于<time datetime="2011-07-01T19:56:31.000Z"> <a href="/ios_uiwebview_current_url.html">7月 1 2011</a></time></span>      
     </header>
     
     
@@ -301,7 +363,7 @@ make
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/ios/" class="label label-primary">ios</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:23"datetime="2014-03-05 06:29:23"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-07-01-ios_uiwebview_current_url.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-07-01-ios_uiwebview_current_url" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/ios_uiwebview_current_url.html#comments" class="ds-thread-count comment-link" data-thread-key="ios_uiwebview_current_url" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -316,9 +378,9 @@ make
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-07-01-enable_zoom_in_out_uiwebview.html">UIWebView启用放大缩小</a></h1>
+      <h1 class="title"><a href="/enable_zoom_in_out_uiwebview.html">UIWebView启用放大缩小</a></h1>
       
-        <span>发表于<time datetime="2011-07-01T19:54:31.000Z"> <a href="/2011-07-01-enable_zoom_in_out_uiwebview.html">7月 1 2011</a></time></span>      
+        <span>发表于<time datetime="2011-07-01T19:54:31.000Z"> <a href="/enable_zoom_in_out_uiwebview.html">7月 1 2011</a></time></span>      
     </header>
     
     
@@ -338,7 +400,7 @@ make
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/ios/" class="label label-primary">ios</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:22"datetime="2014-03-05 06:29:22"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-07-01-enable_zoom_in_out_uiwebview.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-07-01-enable_zoom_in_out_uiwebview" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/enable_zoom_in_out_uiwebview.html#comments" class="ds-thread-count comment-link" data-thread-key="enable_zoom_in_out_uiwebview" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -353,9 +415,9 @@ make
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html">Mac OS X Snow Leopard下移动swap到另外的分区</a></h1>
+      <h1 class="title"><a href="/mac_os_x_snow_leopard_swap_paritition_driver.html">Mac OS X Snow Leopard下移动swap到另外的分区</a></h1>
       
-        <span>发表于<time datetime="2011-06-29T19:54:31.000Z"> <a href="/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html">6月 29 2011</a></time></span>      
+        <span>发表于<time datetime="2011-06-29T19:54:31.000Z"> <a href="/mac_os_x_snow_leopard_swap_paritition_driver.html">6月 29 2011</a></time></span>      
     </header>
     
     
@@ -396,7 +458,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/macos/" class="label label-primary">macos</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:21"datetime="2014-03-05 06:29:21"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/mac_os_x_snow_leopard_swap_paritition_driver.html#comments" class="ds-thread-count comment-link" data-thread-key="mac_os_x_snow_leopard_swap_paritition_driver" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -411,9 +473,9 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-06-29-linux_core_dump.html">linux下生成core dump文件</a></h1>
+      <h1 class="title"><a href="/linux_core_dump.html">linux下生成core dump文件</a></h1>
       
-        <span>发表于<time datetime="2011-06-29T19:44:31.000Z"> <a href="/2011-06-29-linux_core_dump.html">6月 29 2011</a></time></span>      
+        <span>发表于<time datetime="2011-06-29T19:44:31.000Z"> <a href="/linux_core_dump.html">6月 29 2011</a></time></span>      
     </header>
     
     
@@ -433,7 +495,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/Linux/" class="label label-primary">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:21"datetime="2014-03-05 06:29:21"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-06-29-linux_core_dump.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-06-29-linux_core_dump" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/linux_core_dump.html#comments" class="ds-thread-count comment-link" data-thread-key="linux_core_dump" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -448,9 +510,9 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-06-26-mac_os_x_emacs_chinese_font.html">emacs中文显示方框</a></h1>
+      <h1 class="title"><a href="/mac_os_x_emacs_chinese_font.html">emacs中文显示方框</a></h1>
       
-        <span>发表于<time datetime="2011-06-26T19:44:31.000Z"> <a href="/2011-06-26-mac_os_x_emacs_chinese_font.html">6月 26 2011</a></time></span>      
+        <span>发表于<time datetime="2011-06-26T19:44:31.000Z"> <a href="/mac_os_x_emacs_chinese_font.html">6月 26 2011</a></time></span>      
     </header>
     
     
@@ -480,55 +542,7 @@ nil
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:20"datetime="2014-03-05 06:29:20"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-06-26-mac_os_x_emacs_chinese_font.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-06-26-mac_os_x_emacs_chinese_font" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-06-25-hg_merge_repositories.html">hg合并多个repository</a></h1>
-      
-        <span>发表于<time datetime="2011-06-25T19:44:31.000Z"> <a href="/2011-06-25-hg_merge_repositories.html">6月 25 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>假如我已经有了一个repo A，并且其中有了一些change set。现在有另外一个repo B，同时里面也有一些change set。现在我想把B移到A中的一个目录，并且保留所有的change set。在mercurial中应该怎么办呢？</p>
-<ol>
-<li>通过pull -f的方式</li>
-</ol>
-<figure class="highlight sh"><pre>hg clone A Adir
-<span class="built_in">cd</span> Adir
-hg pull <span class="operator">-f</span> B
-hg merge
-hg commit
-</pre></figure>
-
-<ol>
-<li>通过subrepo的方式，传送门<a href="http://mercurial.selenic.com/wiki/Subrepository" target="_blank"><a href="http://mercurial.selenic.com/wiki/Subrepository">http://mercurial.selenic.com/wiki/Subrepository</a></a></li>
-</ol>
-<p>这里第一种方法适用，第二种方法适用与子项目或者库的情况.</p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/hg/" class="label label-success">hg</a><a href="/tags/mercurial/" class="label label-info">mercurial</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:19"datetime="2014-03-05 06:29:19"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-06-25-hg_merge_repositories.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-06-25-hg_merge_repositories" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/mac_os_x_emacs_chinese_font.html#comments" class="ds-thread-count comment-link" data-thread-key="mac_os_x_emacs_chinese_font" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -541,7 +555,7 @@ hg commit
 
 
 <ul id="pagination" class="pagination pagination-lg">
-  <li><a class="extend prev" href="/page/10/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/8/">8</a></li><li><a class="page-number" href="/page/9/">9</a></li><li><a class="page-number" href="/page/10/">10</a></li><li class="active"><li><span class="page-number current">11</span></li><li><a class="page-number" href="/page/12/">12</a></li><li><a class="page-number" href="/page/13/">13</a></li><li><a class="page-number" href="/page/14/">14</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="extend next" href="/page/12/">&raquo;</a></li>
+  <li><a class="extend prev" href="/page/10/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/8/">8</a></li><li><a class="page-number" href="/page/9/">9</a></li><li><a class="page-number" href="/page/10/">10</a></li><li class="active"><li><span class="page-number current">11</span></li><li><a class="page-number" href="/page/12/">12</a></li><li><a class="page-number" href="/page/13/">13</a></li><li><a class="page-number" href="/page/14/">14</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="page-number" href="/page/25/">25</a></li><li><a class="extend next" href="/page/12/">&raquo;</a></li>
   <div class="clearfix"></div>
 </ul></div><!--wapper-->
        </div><!-- ID main-col END -->
@@ -572,7 +586,7 @@ hg commit
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-05-08-git_svn_clone_revision.html">git svn clone 特定版本</a></li><li class="list-group-item"><a href="/2010-06-20-chrome_dev_channel_source.html">chrome dev channel的更新源</a></li><li class="list-group-item"><a href="/2010-12-12-pywin32_access.html">pywin32访问access数据</a></li><li class="list-group-item"><a href="/2011-07-03-build_emacs_on_mac_osx.html">Build Emacs on Mac OS X</a></li><li class="list-group-item"><a href="/2011-10-21-emacs_ibus_cannot_input_chinese.html">ibus在emacs下不能输入</a></li><li class="list-group-item"><a href="/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html">SUSE Enterprise Linux 10下安装Oracle 11gr2</a></li><li class="list-group-item"><a href="/2012-06-26-open-chinese-convert.html">Open Chinese Convert</a></li><li class="list-group-item"><a href="/2011-04-24-archlinux_mingw_cross_compile_testdisk.html">archlinux下使用MinGW交叉编译testdisk</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/emacs_sys_process_environment.html">Emacs进程/系统环境变量</a></li><li class="list-group-item"><a href="/gtk_button.html">GTK+按钮</a></li><li class="list-group-item"><a href="/install-oracle-11gr2-on-suse-enterprise-linux.html">SUSE Enterprise Linux 10下安装Oracle 11gr2</a></li><li class="list-group-item"><a href="/xiami-auto-checkin-with-golang.html">虾米自动签到go语言版本</a></li><li class="list-group-item"><a href="/chrome_proxy_.md_arg.html">chrome代理相关命令行总结</a></li><li class="list-group-item"><a href="/mac_os_x_snow_leopard_swap_paritition_driver.html">Mac OS X Snow Leopard下移动swap到另外的分区</a></li><li class="list-group-item"><a href="/pet.html">塑料瓶底数字的意思</a></li><li class="list-group-item"><a href="/convert-hg-to-git.html">将hg转换为git</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -615,7 +629,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:01</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 08:02:10</em></span></div>
 </div>
 <div class="clearfix"></div>
 

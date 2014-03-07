@@ -64,6 +64,7 @@ var _js2load = [];
         <li><a href="/" title="主页">主页</a></li>      
         <li><a href="/about/" title="关于">关于</a></li>      
         <li><a href="/archives/" title="归档">归档</a></li>      
+        <li><a href="/sitemap.xml" title="SiteMap">SiteMap</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -80,6 +81,8 @@ var _js2load = [];
       
         <li><a href="https://twitter.com/ChenZaichun">twitter</a></li>
       
+      
+        <li><a href="https://www.facebook.com/ChenZaichun">facebook</a></li>
       
       
       
@@ -107,9 +110,57 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-04-24-gdb_remote_debuging.html">GDB远程调试</a></h1>
+      <h1 class="title"><a href="/hg_merge_repositories.html">hg合并多个repository</a></h1>
       
-        <span>发表于<time datetime="2011-04-24T19:44:31.000Z"> <a href="/2011-04-24-gdb_remote_debuging.html">4月 24 2011</a></time></span>      
+        <span>发表于<time datetime="2011-06-25T19:44:31.000Z"> <a href="/hg_merge_repositories.html">6月 25 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>假如我已经有了一个repo A，并且其中有了一些change set。现在有另外一个repo B，同时里面也有一些change set。现在我想把B移到A中的一个目录，并且保留所有的change set。在mercurial中应该怎么办呢？</p>
+<ol>
+<li>通过pull -f的方式</li>
+</ol>
+<figure class="highlight sh"><pre>hg clone A Adir
+<span class="built_in">cd</span> Adir
+hg pull <span class="operator">-f</span> B
+hg merge
+hg commit
+</pre></figure>
+
+<ol>
+<li>通过subrepo的方式，传送门<a href="http://mercurial.selenic.com/wiki/Subrepository" target="_blank"><a href="http://mercurial.selenic.com/wiki/Subrepository">http://mercurial.selenic.com/wiki/Subrepository</a></a></li>
+</ol>
+<p>这里第一种方法适用，第二种方法适用与子项目或者库的情况.</p>
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/hg/" class="label label-success">hg</a><a href="/tags/mercurial/" class="label label-info">mercurial</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:19"datetime="2014-03-05 06:29:19"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/hg_merge_repositories.html#comments" class="ds-thread-count comment-link" data-thread-key="hg_merge_repositories" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/gdb_remote_debuging.html">GDB远程调试</a></h1>
+      
+        <span>发表于<time datetime="2011-04-24T19:44:31.000Z"> <a href="/gdb_remote_debuging.html">4月 24 2011</a></time></span>      
     </header>
     
     
@@ -139,7 +190,7 @@ gdb &gt; ....
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/gdb/" class="label label-success">gdb</a><a href="/tags/Linux/" class="label label-info">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:18"datetime="2014-03-05 06:29:18"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-04-24-gdb_remote_debuging.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-04-24-gdb_remote_debuging" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/gdb_remote_debuging.html#comments" class="ds-thread-count comment-link" data-thread-key="gdb_remote_debuging" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -154,9 +205,9 @@ gdb &gt; ....
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-04-24-archlinux_mingw_cross_compile_testdisk.html">archlinux下使用MinGW交叉编译testdisk</a></h1>
+      <h1 class="title"><a href="/archlinux_mingw_cross_compile_testdisk.html">archlinux下使用MinGW交叉编译testdisk</a></h1>
       
-        <span>发表于<time datetime="2011-04-24T19:34:31.000Z"> <a href="/2011-04-24-archlinux_mingw_cross_compile_testdisk.html">4月 24 2011</a></time></span>      
+        <span>发表于<time datetime="2011-04-24T19:34:31.000Z"> <a href="/archlinux_mingw_cross_compile_testdisk.html">4月 24 2011</a></time></span>      
     </header>
     
     
@@ -182,7 +233,7 @@ gdb &gt; ....
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/mingw/" class="label label-info">mingw</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:18"datetime="2014-03-05 06:29:18"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-04-24-archlinux_mingw_cross_compile_testdisk.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-04-24-archlinux_mingw_cross_compile_testdisk" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/archlinux_mingw_cross_compile_testdisk.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_mingw_cross_compile_testdisk" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -197,9 +248,9 @@ gdb &gt; ....
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-04-24-archlinux_mingw_cross_compile_environment.html">archlinux搭建MinGW跨平台编译环境</a></h1>
+      <h1 class="title"><a href="/archlinux_mingw_cross_compile_environment.html">archlinux搭建MinGW跨平台编译环境</a></h1>
       
-        <span>发表于<time datetime="2011-04-24T19:24:31.000Z"> <a href="/2011-04-24-archlinux_mingw_cross_compile_environment.html">4月 24 2011</a></time></span>      
+        <span>发表于<time datetime="2011-04-24T19:24:31.000Z"> <a href="/archlinux_mingw_cross_compile_environment.html">4月 24 2011</a></time></span>      
     </header>
     
     
@@ -244,7 +295,7 @@ make
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/mingw/" class="label label-info">mingw</a><a href="/tags/Windows/" class="label label-warning">Windows</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:17"datetime="2014-03-05 06:29:17"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-04-24-archlinux_mingw_cross_compile_environment.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-04-24-archlinux_mingw_cross_compile_environment" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/archlinux_mingw_cross_compile_environment.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_mingw_cross_compile_environment" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -259,9 +310,9 @@ make
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-04-19-gdb_save_breakpoints.html">gdb保存和加载断点等信息</a></h1>
+      <h1 class="title"><a href="/gdb_save_breakpoints.html">gdb保存和加载断点等信息</a></h1>
       
-        <span>发表于<time datetime="2011-04-19T19:24:31.000Z"> <a href="/2011-04-19-gdb_save_breakpoints.html">4月 19 2011</a></time></span>      
+        <span>发表于<time datetime="2011-04-19T19:24:31.000Z"> <a href="/gdb_save_breakpoints.html">4月 19 2011</a></time></span>      
     </header>
     
     
@@ -312,7 +363,7 @@ define setterminfo
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/gdb/" class="label label-primary">gdb</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:17"datetime="2014-03-05 06:29:17"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-04-19-gdb_save_breakpoints.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-04-19-gdb_save_breakpoints" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/gdb_save_breakpoints.html#comments" class="ds-thread-count comment-link" data-thread-key="gdb_save_breakpoints" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -327,9 +378,9 @@ define setterminfo
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-04-08-install_oracle_10g_enterprise_on_archlinux.html">archlinux下安装oracle 10g enterprise</a></h1>
+      <h1 class="title"><a href="/install_oracle_10g_enterprise_on_archlinux.html">archlinux下安装oracle 10g enterprise</a></h1>
       
-        <span>发表于<time datetime="2011-04-08T19:24:31.000Z"> <a href="/2011-04-08-install_oracle_10g_enterprise_on_archlinux.html">4月 8 2011</a></time></span>      
+        <span>发表于<time datetime="2011-04-08T19:24:31.000Z"> <a href="/install_oracle_10g_enterprise_on_archlinux.html">4月 8 2011</a></time></span>      
     </header>
     
     
@@ -360,7 +411,7 @@ define setterminfo
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/oracle/">oracle</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/database/" class="label label-success">database</a><a href="/tags/Linux/" class="label label-info">Linux</a><a href="/tags/oracle/" class="label label-warning">oracle</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:16"datetime="2014-03-05 06:29:16"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-04-08-install_oracle_10g_enterprise_on_archlinux.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-04-08-install_oracle_10g_enterprise_on_archlinux" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/install_oracle_10g_enterprise_on_archlinux.html#comments" class="ds-thread-count comment-link" data-thread-key="install_oracle_10g_enterprise_on_archlinux" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -375,9 +426,9 @@ define setterminfo
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-03-30-change_oracle_ui_to_english.html">修改oracle的默认界面语言为英文</a></h1>
+      <h1 class="title"><a href="/change_oracle_ui_to_english.html">修改oracle的默认界面语言为英文</a></h1>
       
-        <span>发表于<time datetime="2011-03-30T19:24:31.000Z"> <a href="/2011-03-30-change_oracle_ui_to_english.html">3月 30 2011</a></time></span>      
+        <span>发表于<time datetime="2011-03-30T19:24:31.000Z"> <a href="/change_oracle_ui_to_english.html">3月 30 2011</a></time></span>      
     </header>
     
     
@@ -398,7 +449,7 @@ define setterminfo
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/database/" class="label label-primary">database</a><a href="/tags/oracle/" class="label label-success">oracle</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:15"datetime="2014-03-05 06:29:15"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-03-30-change_oracle_ui_to_english.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-03-30-change_oracle_ui_to_english" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/change_oracle_ui_to_english.html#comments" class="ds-thread-count comment-link" data-thread-key="change_oracle_ui_to_english" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -413,9 +464,9 @@ define setterminfo
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-03-01-sudo_keep_env.html">sudo环境变量</a></h1>
+      <h1 class="title"><a href="/sudo_keep_env.html">sudo环境变量</a></h1>
       
-        <span>发表于<time datetime="2011-03-01T19:34:31.000Z"> <a href="/2011-03-01-sudo_keep_env.html">3月 1 2011</a></time></span>      
+        <span>发表于<time datetime="2011-03-01T19:34:31.000Z"> <a href="/sudo_keep_env.html">3月 1 2011</a></time></span>      
     </header>
     
     
@@ -437,7 +488,7 @@ define setterminfo
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/Linux/" class="label label-primary">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:14"datetime="2014-03-05 06:29:14"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-03-01-sudo_keep_env.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-03-01-sudo_keep_env" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/sudo_keep_env.html#comments" class="ds-thread-count comment-link" data-thread-key="sudo_keep_env" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -452,9 +503,9 @@ define setterminfo
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-03-01-yaourt_proxy.html">yaourt代理设置</a></h1>
+      <h1 class="title"><a href="/yaourt_proxy.html">yaourt代理设置</a></h1>
       
-        <span>发表于<time datetime="2011-03-01T19:24:31.000Z"> <a href="/2011-03-01-yaourt_proxy.html">3月 1 2011</a></time></span>      
+        <span>发表于<time datetime="2011-03-01T19:24:31.000Z"> <a href="/yaourt_proxy.html">3月 1 2011</a></time></span>      
     </header>
     
     
@@ -481,7 +532,7 @@ define setterminfo
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:15"datetime="2014-03-05 06:29:15"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-03-01-yaourt_proxy.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-03-01-yaourt_proxy" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/yaourt_proxy.html#comments" class="ds-thread-count comment-link" data-thread-key="yaourt_proxy" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -496,9 +547,9 @@ define setterminfo
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-01-28-qt_text_codec.html">QT中文乱码问题</a></h1>
+      <h1 class="title"><a href="/qt_text_codec.html">QT中文乱码问题</a></h1>
       
-        <span>发表于<time datetime="2011-01-28T19:34:31.000Z"> <a href="/2011-01-28-qt_text_codec.html">1月 28 2011</a></time></span>      
+        <span>发表于<time datetime="2011-01-28T19:34:31.000Z"> <a href="/qt_text_codec.html">1月 28 2011</a></time></span>      
     </header>
     
     
@@ -528,98 +579,7 @@ define setterminfo
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/Qt/" class="label label-primary">Qt</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:14"datetime="2014-03-05 06:29:14"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-01-28-qt_text_codec.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-28-qt_text_codec" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-01-26-view_process_with_python_and_pywin32.html">在Windows下用Python查看进程信息</a></h1>
-      
-        <span>发表于<time datetime="2011-01-26T19:34:31.000Z"> <a href="/2011-01-26-view_process_with_python_and_pywin32.html">1月 26 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>得益于PyWin32的强大，在Windows下可以通过Python调用Performon COM接口来查看进程的信息。下面的代码就是查看svhost进程的相关信息的示例代码，如果需要其他信息，请自行添加counter</p>
-<figure class="highlight python"><pre><span class="comment">#/!/usr/bin/env python</span>
-<span class="comment"># -*- coding: utf-8 -*-</span>
-
-<span class="keyword">import</span> win32api, win32pdh, win32pdhutil
-<span class="keyword">import</span> time
-
-<span class="function"><span class="keyword">def</span> <span class="title">ShowAllProcesses</span><span class="params">()</span>:</span>
-
-    procs = []
-    object = win32pdhutil.find_pdh_counter_localized_name(<span class="string">"Process"</span>)
-
-    items, instances = win32pdh.EnumObjectItems(<span class="keyword">None</span>,<span class="keyword">None</span>,object,win32pdh.PERF_DETAIL_WIZARD)
-    instance_dict = {}
-
-    <span class="keyword">for</span> instance <span class="keyword">in</span> instances:
-        <span class="keyword">try</span>:
-            <span class="keyword">if</span> instance == <span class="string">'svchost'</span>:
-                instance_dict[instance] = instance_dict[instance] + <span class="number">1</span>
-        <span class="keyword">except</span> KeyError:
-            instance_dict[instance] = <span class="number">0</span>
-
-    items = [win32pdhutil.find_pdh_counter_localized_name(<span class="string">"ID Process"</span>)] + items[<span class="number">0</span>:]
-
-    <span class="keyword">for</span> instance, max_instances <span class="keyword">in</span> instance_dict.items():
-
-        <span class="keyword">for</span> inum <span class="keyword">in</span> xrange(max_instances+<span class="number">1</span>):
-
-            hq = win32pdh.OpenQuery()
-
-            hcs = []
-            <span class="keyword">for</span> item <span class="keyword">in</span> items:
-                path = win32pdh.MakeCounterPath((<span class="keyword">None</span>,object, instance,<span class="keyword">None</span>, inum, item))
-                hcs.append(win32pdh.AddCounter(hq, path))
-
-            win32pdh.CollectQueryData(hq)
-
-            time.sleep(<span class="number">0.01</span>)
-            win32pdh.CollectQueryData(hq)
-            proc = instance[:<span class="number">15</span>]
-            hc = hcs[<span class="number">0</span>]
-
-            vals = []
-            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(hcs)):
-                hc = hcs[i]
-                type, val = win32pdh.GetFormattedCounterValue(hc, win32pdh.PDH_FMT_LONG)
-                vals.append(val)
-
-            win32pdh.RemoveCounter(hc)
-
-            procs.append([proc, [vals] ])
-            win32pdh.CloseQuery(hq)
-
-    <span class="keyword">print</span> procs
-    <span class="keyword">return</span> procs
-ShowAllProcesses()
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a><a href="/tags/Windows/" class="label label-success">Windows</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:13"datetime="2014-03-05 06:29:13"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-01-26-view_process_with_python_and_pywin32.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-26-view_process_with_python_and_pywin32" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/qt_text_codec.html#comments" class="ds-thread-count comment-link" data-thread-key="qt_text_codec" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -631,7 +591,7 @@ ShowAllProcesses()
   
   
 <ul id="pagination" class="pagination pagination-lg">
-  <li><a class="extend prev" href="/archives/page/11/">&laquo;</a></li><li><a class="page-number" href="/archives/">1</a></li><li><a class="page-number" href="/archives/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/archives/page/9/">9</a></li><li><a class="page-number" href="/archives/page/10/">10</a></li><li><a class="page-number" href="/archives/page/11/">11</a></li><li class="active"><li><span class="page-number current">12</span></li><li><a class="page-number" href="/archives/page/13/">13</a></li><li><a class="page-number" href="/archives/page/14/">14</a></li><li><a class="page-number" href="/archives/page/15/">15</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/archives/page/23/">23</a></li><li><a class="page-number" href="/archives/page/24/">24</a></li><li><a class="extend next" href="/archives/page/13/">&raquo;</a></li>
+  <li><a class="extend prev" href="/archives/page/11/">&laquo;</a></li><li><a class="page-number" href="/archives/">1</a></li><li><a class="page-number" href="/archives/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/archives/page/9/">9</a></li><li><a class="page-number" href="/archives/page/10/">10</a></li><li><a class="page-number" href="/archives/page/11/">11</a></li><li class="active"><li><span class="page-number current">12</span></li><li><a class="page-number" href="/archives/page/13/">13</a></li><li><a class="page-number" href="/archives/page/14/">14</a></li><li><a class="page-number" href="/archives/page/15/">15</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/archives/page/24/">24</a></li><li><a class="page-number" href="/archives/page/25/">25</a></li><li><a class="extend next" href="/archives/page/13/">&raquo;</a></li>
   <div class="clearfix"></div>
 </ul></div><!--wapper-->
        </div><!-- ID main-col END -->
@@ -662,7 +622,7 @@ ShowAllProcesses()
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-06-20-chrome_dev_channel_source.html">chrome dev channel的更新源</a></li><li class="list-group-item"><a href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html">通过git将bitbucket当做无限容量的dropbox</a></li><li class="list-group-item"><a href="/2011-08-27-respondstoselector_not_found_in_protocol.html">'-respondsToSelector:' not found in protocol(s)</a></li><li class="list-group-item"><a href="/2010-07-14-mencoder_extract_audio.html">mencoder提取音频</a></li><li class="list-group-item"><a href="/2010-05-07-ms_vc_stderr_file.html">ms vc下stderr到文件</a></li><li class="list-group-item"><a href="/2012-05-23-xiami-checkin.html">xiami自动签到</a></li><li class="list-group-item"><a href="/2012-05-24-get-chinese-pinyin-python.html">python获取中文拼音首字母以进行检索</a></li><li class="list-group-item"><a href="/2010-11-30-resize_portable_ubuntu_image.html">Resize a Portable Ubuntu Image</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/p2pnat.html">p2pnat通过nat实现p2p</a></li><li class="list-group-item"><a href="/boost_program_options.html">boost::program_options</a></li><li class="list-group-item"><a href="/yaourt_install.html">安装yaourt遇到failed retrieving yaourt</a></li><li class="list-group-item"><a href="/flush_dns_on_windows.html">windows下清空系统dns</a></li><li class="list-group-item"><a href="/mac_os_x_emacs_chinese_font.html">emacs中文显示方框</a></li><li class="list-group-item"><a href="/google_code_hg_password_save.html">google code hg 保存密码</a></li><li class="list-group-item"><a href="/install-gevent-on-mac-os-x.html">Mac OS X下安装gevent</a></li><li class="list-group-item"><a href="/archlinux_x11_forwarding.html">archlinux x11 forwarding</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -705,7 +665,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:21:58</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 08:02:07</em></span></div>
 </div>
 <div class="clearfix"></div>
 

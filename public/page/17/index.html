@@ -64,6 +64,7 @@ var _js2load = [];
         <li><a href="/" title="主页">主页</a></li>      
         <li><a href="/about/" title="关于">关于</a></li>      
         <li><a href="/archives/" title="归档">归档</a></li>      
+        <li><a href="/sitemap.xml" title="SiteMap">SiteMap</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -80,6 +81,8 @@ var _js2load = [];
       
         <li><a href="https://twitter.com/ChenZaichun">twitter</a></li>
       
+      
+        <li><a href="https://www.facebook.com/ChenZaichun">facebook</a></li>
       
       
       
@@ -103,9 +106,76 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-09-17-gtk_button.html">GTK+按钮</a></h1>
+      <h1 class="title"><a href="/archlinux_google_talkplugin_x86_64.html">archlinux x86_64安装google-talkplugin</a></h1>
       
-        <span>发表于<time datetime="2010-09-17T17:37:21.000Z"> <a href="/2010-09-17-gtk_button.html">9月 17 2010</a></time></span>      
+        <span>发表于<time datetime="2010-09-21T18:17:15.000Z"> <a href="/archlinux_google_talkplugin_x86_64.html">9月 21 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>要想在gmail里面使用视频，音频或者打电话，需要安装google-talkplugin，官方网站提供了deb和rpm包，archlinux下安装可以通过aur安装</p>
+<figure class="highlight sh"><pre>yaourt <span class="attribute">-S</span> google<span class="attribute">-talkplugin</span>
+</pre></figure>
+
+<p>这个时候直接不能安装，因为安装过程会提示lib32-openssl-compatible找不到，修改PKGBUILD，改为lib32-openssl
+然后安装之后，会发现启动不了</p>
+<figure class="highlight"><pre>[226:202] Waiting for GoogleTalkPlugin to <span class="operator"><span class="keyword">start</span>...
+[<span class="number">227</span>:<span class="number">297</span>] Warning(clientchannel.cc:<span class="number">583</span>): Unreadable <span class="keyword">or</span> <span class="keyword">no</span> port file.  Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span>
+[<span class="number">227</span>:<span class="number">298</span>] Warning(clientchannel.cc:<span class="number">439</span>): Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span></span>
+</pre></figure>
+
+<p>执行/opt/google/talkplugin/GoogleTalkPlugin会提示找不到libssl.so.0.9.8</p>
+<figure class="highlight"><pre>./GoogleTalkPlugin: error <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libssl.so<span class="number">.0</span><span class="number">.9</span><span class="number">.8</span>: cannot <span class="keyword">open</span> <span class="keyword">shared</span> object <span class="keyword">file</span>: No such <span class="keyword">file</span> <span class="keyword">or</span> directory
+</pre></figure>
+
+<p>创建一个软链接</p>
+<figure class="highlight sh"><pre><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/lib32/libssl.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libssl.so.<span class="number">0.9</span>.<span class="number">8</span>
+</pre></figure>
+
+<p>还缺少一个东东</p>
+<figure class="highlight"><pre>./GoogleTalkPlugin: error <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libcrypto.so<span class="number">.0</span><span class="number">.9</span><span class="number">.8</span>: cannot <span class="keyword">open</span> <span class="keyword">shared</span> object <span class="keyword">file</span>: No such <span class="keyword">file</span> <span class="keyword">or</span> directory
+</pre></figure>
+
+<p>再创建一个软链接</p>
+<figure class="highlight sh"><pre><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/lib32/libcrypto.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libcrypto.so.<span class="number">0.9</span>.<span class="number">8</span>
+</pre></figure>
+
+<p>（注意，file GoogleTalkPlugin竟然是一个32位的elf）</p>
+<figure class="highlight sh"><pre>[chenzaichun<span class="keyword">@czc</span>-laptop talkplugin]$ file GoogleTalkPlugin
+GoogleTalkPlugin: ELF <span class="number">32</span>-bit LSB executable, Intel <span class="number">80386</span>, <span class="keyword">version</span> <span class="number">1</span> (SYSV), dynamically linked (uses <span class="keyword">shared</span> libs), stripped
+</pre></figure>
+
+<p>所以链接目录应该在/usr/lib32，而不是/usr/lib</p>
+<p>完毕，可以正常使用了。</p>
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Google/" class="label label-success">Google</a><a href="/tags/Linux/" class="label label-info">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:44"datetime="2014-03-05 06:28:44"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/archlinux_google_talkplugin_x86_64.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_google_talkplugin_x86_64" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/gtk_button.html">GTK+按钮</a></h1>
+      
+        <span>发表于<time datetime="2010-09-17T17:37:21.000Z"> <a href="/gtk_button.html">9月 17 2010</a></time></span>      
     </header>
     
     
@@ -172,7 +242,7 @@ destroy(GtkWidget *window,
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/gtk/" class="label label-primary">gtk</a><a href="/tags/GUI/" class="label label-success">GUI</a><a href="/tags/Linux/" class="label label-info">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:43"datetime="2014-03-05 06:28:43"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-09-17-gtk_button.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-09-17-gtk_button" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/gtk_button.html#comments" class="ds-thread-count comment-link" data-thread-key="gtk_button" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -187,9 +257,9 @@ destroy(GtkWidget *window,
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-09-16-chrome_proxy_.md_arg.html">chrome代理相关命令行总结</a></h1>
+      <h1 class="title"><a href="/chrome_proxy_.md_arg.html">chrome代理相关命令行总结</a></h1>
       
-        <span>发表于<time datetime="2010-09-16T17:32:33.000Z"> <a href="/2010-09-16-chrome_proxy_.md_arg.html">9月 16 2010</a></time></span>      
+        <span>发表于<time datetime="2010-09-16T17:32:33.000Z"> <a href="/chrome_proxy_.md_arg.html">9月 16 2010</a></time></span>      
     </header>
     
     
@@ -212,7 +282,7 @@ destroy(GtkWidget *window,
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/chrome/" class="label label-primary">chrome</a><a href="/tags/Google/" class="label label-success">Google</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:42"datetime="2014-03-05 06:28:42"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-09-16-chrome_proxy_.md_arg.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-09-16-chrome_proxy_.md_arg" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/chrome_proxy_.md_arg.html#comments" class="ds-thread-count comment-link" data-thread-key="chrome_proxy_.md_arg" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -227,9 +297,9 @@ destroy(GtkWidget *window,
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-09-15-first_gtk_program.html">第一个GTK+程序</a></h1>
+      <h1 class="title"><a href="/first_gtk_program.html">第一个GTK+程序</a></h1>
       
-        <span>发表于<time datetime="2010-09-15T17:37:37.000Z"> <a href="/2010-09-15-first_gtk_program.html">9月 15 2010</a></time></span>      
+        <span>发表于<time datetime="2010-09-15T17:37:37.000Z"> <a href="/first_gtk_program.html">9月 15 2010</a></time></span>      
     </header>
     
     
@@ -282,7 +352,7 @@ destroy(GtkWidget *window,
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/gtk/" class="label label-primary">gtk</a><a href="/tags/GUI/" class="label label-success">GUI</a><a href="/tags/Linux/" class="label label-info">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:41"datetime="2014-03-05 06:28:41"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-09-15-first_gtk_program.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-09-15-first_gtk_program" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/first_gtk_program.html#comments" class="ds-thread-count comment-link" data-thread-key="first_gtk_program" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -297,9 +367,9 @@ destroy(GtkWidget *window,
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-09-05-chrome_html5.html">原来chromium不支持youtube html5</a></h1>
+      <h1 class="title"><a href="/chrome_html5.html">原来chromium不支持youtube html5</a></h1>
       
-        <span>发表于<time datetime="2010-09-05T17:32:36.000Z"> <a href="/2010-09-05-chrome_html5.html">9月 5 2010</a></time></span>      
+        <span>发表于<time datetime="2010-09-05T17:32:36.000Z"> <a href="/chrome_html5.html">9月 5 2010</a></time></span>      
     </header>
     
     
@@ -320,7 +390,7 @@ destroy(GtkWidget *window,
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/chrome/" class="label label-primary">chrome</a><a href="/tags/Google/" class="label label-success">Google</a><a href="/tags/无所事事/" class="label label-info">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:40"datetime="2014-03-05 06:28:40"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-09-05-chrome_html5.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-09-05-chrome_html5" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/chrome_html5.html#comments" class="ds-thread-count comment-link" data-thread-key="chrome_html5" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -335,9 +405,9 @@ destroy(GtkWidget *window,
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-08-29-archlinux_xelatex.html">xelatex</a></h1>
+      <h1 class="title"><a href="/archlinux_xelatex.html">xelatex</a></h1>
       
-        <span>发表于<time datetime="2010-08-29T23:32:33.000Z"> <a href="/2010-08-29-archlinux_xelatex.html">8月 29 2010</a></time></span>      
+        <span>发表于<time datetime="2010-08-29T23:32:33.000Z"> <a href="/archlinux_xelatex.html">8月 29 2010</a></time></span>      
     </header>
     
     
@@ -358,7 +428,7 @@ destroy(GtkWidget *window,
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:39"datetime="2014-03-05 06:28:39"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-08-29-archlinux_xelatex.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-08-29-archlinux_xelatex" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/archlinux_xelatex.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_xelatex" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -373,9 +443,9 @@ destroy(GtkWidget *window,
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-08-25-emacs23_xim.html">emacs23不能切换输入法的问题</a></h1>
+      <h1 class="title"><a href="/emacs23_xim.html">emacs23不能切换输入法的问题</a></h1>
       
-        <span>发表于<time datetime="2010-08-25T23:33:11.000Z"> <a href="/2010-08-25-emacs23_xim.html">8月 25 2010</a></time></span>      
+        <span>发表于<time datetime="2010-08-25T23:33:11.000Z"> <a href="/emacs23_xim.html">8月 25 2010</a></time></span>      
     </header>
     
     
@@ -395,7 +465,7 @@ destroy(GtkWidget *window,
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:38"datetime="2014-03-05 06:28:38"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-08-25-emacs23_xim.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-08-25-emacs23_xim" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/emacs23_xim.html#comments" class="ds-thread-count comment-link" data-thread-key="emacs23_xim" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -410,9 +480,9 @@ destroy(GtkWidget *window,
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-08-24-grub_framebuffer.html">archlinux console分辨率</a></h1>
+      <h1 class="title"><a href="/grub_framebuffer.html">archlinux console分辨率</a></h1>
       
-        <span>发表于<time datetime="2010-08-24T23:23:33.000Z"> <a href="/2010-08-24-grub_framebuffer.html">8月 24 2010</a></time></span>      
+        <span>发表于<time datetime="2010-08-24T23:23:33.000Z"> <a href="/grub_framebuffer.html">8月 24 2010</a></time></span>      
     </header>
     
     
@@ -432,7 +502,7 @@ destroy(GtkWidget *window,
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:37"datetime="2014-03-05 06:28:37"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-08-24-grub_framebuffer.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-08-24-grub_framebuffer" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/grub_framebuffer.html#comments" class="ds-thread-count comment-link" data-thread-key="grub_framebuffer" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -447,9 +517,9 @@ destroy(GtkWidget *window,
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-08-25-archlinux_aur_update.html">archlinux自动升级aur</a></h1>
+      <h1 class="title"><a href="/archlinux_aur_update.html">archlinux自动升级aur</a></h1>
       
-        <span>发表于<time datetime="2010-08-24T17:37:33.000Z"> <a href="/2010-08-25-archlinux_aur_update.html">8月 24 2010</a></time></span>      
+        <span>发表于<time datetime="2010-08-24T17:37:33.000Z"> <a href="/archlinux_aur_update.html">8月 24 2010</a></time></span>      
     </header>
     
     
@@ -470,7 +540,7 @@ destroy(GtkWidget *window,
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:38"datetime="2014-03-05 06:28:38"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-08-25-archlinux_aur_update.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-08-25-archlinux_aur_update" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/archlinux_aur_update.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_aur_update" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -485,9 +555,9 @@ destroy(GtkWidget *window,
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-08-24-archlinux_sound_alsamixer.html">lxde音量调节</a></h1>
+      <h1 class="title"><a href="/archlinux_sound_alsamixer.html">lxde音量调节</a></h1>
       
-        <span>发表于<time datetime="2010-08-24T17:17:33.000Z"> <a href="/2010-08-24-archlinux_sound_alsamixer.html">8月 24 2010</a></time></span>      
+        <span>发表于<time datetime="2010-08-24T17:17:33.000Z"> <a href="/archlinux_sound_alsamixer.html">8月 24 2010</a></time></span>      
     </header>
     
     
@@ -518,49 +588,7 @@ destroy(GtkWidget *window,
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:36"datetime="2014-03-05 06:28:36"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-08-24-archlinux_sound_alsamixer.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-08-24-archlinux_sound_alsamixer" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-08-23-yaourt_install.html">安装yaourt遇到failed retrieving yaourt</a></h1>
-      
-        <span>发表于<time datetime="2010-08-23T23:17:11.000Z"> <a href="/2010-08-23-yaourt_install.html">8月 23 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>添加源：</p>
-<figure class="highlight conf"><pre><span class="title">[archlinuxfr]</span>
-<span class="setting">Server = <span class="value">http://repo.archlinux.fr/x86_64</span></span>
-</pre></figure>
-
-<p>安装x86_64版本的yaourt的时候，出现failed retrieving yaourt，解决办法：</p>
-<figure class="highlight sh"><pre>pacman <span class="attribute">-Syy</span> yaourt
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:36"datetime="2014-03-05 06:28:36"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-08-23-yaourt_install.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-08-23-yaourt_install" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/archlinux_sound_alsamixer.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_sound_alsamixer" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -573,7 +601,7 @@ destroy(GtkWidget *window,
 
 
 <ul id="pagination" class="pagination pagination-lg">
-  <li><a class="extend prev" href="/page/16/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/14/">14</a></li><li><a class="page-number" href="/page/15/">15</a></li><li><a class="page-number" href="/page/16/">16</a></li><li class="active"><li><span class="page-number current">17</span></li><li><a class="page-number" href="/page/18/">18</a></li><li><a class="page-number" href="/page/19/">19</a></li><li><a class="page-number" href="/page/20/">20</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="extend next" href="/page/18/">&raquo;</a></li>
+  <li><a class="extend prev" href="/page/16/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/14/">14</a></li><li><a class="page-number" href="/page/15/">15</a></li><li><a class="page-number" href="/page/16/">16</a></li><li class="active"><li><span class="page-number current">17</span></li><li><a class="page-number" href="/page/18/">18</a></li><li><a class="page-number" href="/page/19/">19</a></li><li><a class="page-number" href="/page/20/">20</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="page-number" href="/page/25/">25</a></li><li><a class="extend next" href="/page/18/">&raquo;</a></li>
   <div class="clearfix"></div>
 </ul></div><!--wapper-->
        </div><!-- ID main-col END -->
@@ -604,7 +632,7 @@ destroy(GtkWidget *window,
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-06-29-linux_core_dump.html">linux下生成core dump文件</a></li><li class="list-group-item"><a href="/2010-08-24-grub_framebuffer.html">archlinux console分辨率</a></li><li class="list-group-item"><a href="/2010-08-23-archlinux_auto_mount_windows.html">archlinux中自动挂载windows分区</a></li><li class="list-group-item"><a href="/2010-12-12-pefile.html">pefile</a></li><li class="list-group-item"><a href="/2010-06-24-pyexpect.html">pyexpect</a></li><li class="list-group-item"><a href="/2010-08-29-archlinux_xelatex.html">xelatex</a></li><li class="list-group-item"><a href="/2010-07-27-ubuntu_adb_driver.html">ubuntu下adb驱动问题</a></li><li class="list-group-item"><a href="/2011-10-29-get_user_name_by_python.html">Python获取当前用户名</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/archlinux_usb_pen.html">将archlinux安装到u盘</a></li><li class="list-group-item"><a href="/mercurial-hg-add-progress.html">为Mercurial（hg）添加进度条</a></li><li class="list-group-item"><a href="/hg-git.html">hg-git--hg下直接操作git</a></li><li class="list-group-item"><a href="/unlock-mcafee-user-interface.html">Unlock the McAfee VirusScan Enterprise 8.5i User Interface</a></li><li class="list-group-item"><a href="/mount-bind.html">mount –bind</a></li><li class="list-group-item"><a href="/compile-gsoap-on-mac-os-x.html">MacOS X上编译gSOAP</a></li><li class="list-group-item"><a href="/linux_emacs_color.html">Linux下修改 emacs默认背景颜色</a></li><li class="list-group-item"><a href="/ubuntu_lucid_failed_query_glx_vendor.html">ubuntu 10.04 beta Fail to query the GLX server vendor</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -647,7 +675,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:01</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 08:02:10</em></span></div>
 </div>
 <div class="clearfix"></div>
 

@@ -64,6 +64,7 @@ var _js2load = [];
         <li><a href="/" title="主页">主页</a></li>      
         <li><a href="/about/" title="关于">关于</a></li>      
         <li><a href="/archives/" title="归档">归档</a></li>      
+        <li><a href="/sitemap.xml" title="SiteMap">SiteMap</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -80,6 +81,8 @@ var _js2load = [];
       
         <li><a href="https://twitter.com/ChenZaichun">twitter</a></li>
       
+      
+        <li><a href="https://www.facebook.com/ChenZaichun">facebook</a></li>
       
       
       
@@ -103,9 +106,71 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-11-dota.html">【元首】DOTA输掉之后……</a></h1>
+      <h1 class="title"><a href="/pywin32-excel.html">pywin32访问excel</a></h1>
       
-        <span>发表于<time datetime="2010-12-11T18:19:11.000Z"> <a href="/2010-12-11-dota.html">12月 11 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-12T14:13:08.000Z"> <a href="/pywin32-excel.html">12月 12 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p><a href="http://www.blog.pythonlibrary.org/2010/07/16/python-and-microsoft-office-using-pywin32/" target="_blank">参考链接</a></p>
+<p>直接用上面的代码吧</p>
+<figure class="highlight python"><pre><span class="keyword">import</span> time
+<span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32
+
+<span class="comment">#----------------------------------------------------------------------</span>
+<span class="function"><span class="keyword">def</span> <span class="title">excel</span><span class="params">()</span>:</span>
+    <span class="string">"""这只是测试"""</span>
+    xl = win32.gencache.EnsureDispatch(<span class="string">'Excel.Application'</span>)
+    ss = xl.Workbooks.Add()
+    sh = ss.ActiveSheet
+
+    xl.Visible = <span class="keyword">True</span>
+    time.sleep(<span class="number">1</span>)
+
+    sh.Cells(<span class="number">1</span>,<span class="number">1</span>).Value = <span class="string">'Hacking Excel with Python Demo'</span>
+
+    time.sleep(<span class="number">1</span>)
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">8</span>):
+        sh.Cells(i,<span class="number">1</span>).Value = <span class="string">'Line %i'</span> % i
+        time.sleep(<span class="number">1</span>)
+
+    ss.Close(<span class="keyword">False</span>)
+    xl.Application.Quit()
+
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    excel()
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:02"datetime="2014-03-05 06:29:02"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/pywin32-excel.html#comments" class="ds-thread-count comment-link" data-thread-key="pywin32-excel" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/dota.html">【元首】DOTA输掉之后……</a></h1>
+      
+        <span>发表于<time datetime="2010-12-11T18:19:11.000Z"> <a href="/dota.html">12月 11 2010</a></time></span>      
     </header>
     
     
@@ -123,7 +188,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:58"datetime="2014-03-05 06:28:58"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-11-dota.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-11-dota" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/dota.html#comments" class="ds-thread-count comment-link" data-thread-key="dota" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -138,9 +203,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-09-ps.html">ps应该这样玩</a></h1>
+      <h1 class="title"><a href="/ps.html">ps应该这样玩</a></h1>
       
-        <span>发表于<time datetime="2010-12-09T18:19:19.000Z"> <a href="/2010-12-09-ps.html">12月 9 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-09T18:19:19.000Z"> <a href="/ps.html">12月 9 2010</a></time></span>      
     </header>
     
     
@@ -159,7 +224,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:57"datetime="2014-03-05 06:28:57"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-09-ps.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-09-ps" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/ps.html#comments" class="ds-thread-count comment-link" data-thread-key="ps" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -174,9 +239,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-08-wuti.html">无题</a></h1>
+      <h1 class="title"><a href="/wuti.html">无题</a></h1>
       
-        <span>发表于<time datetime="2010-12-08T17:17:27.000Z"> <a href="/2010-12-08-wuti.html">12月 8 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-08T17:17:27.000Z"> <a href="/wuti.html">12月 8 2010</a></time></span>      
     </header>
     
     
@@ -196,7 +261,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:57"datetime="2014-03-05 06:28:57"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-08-wuti.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-08-wuti" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/wuti.html#comments" class="ds-thread-count comment-link" data-thread-key="wuti" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -211,9 +276,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-05-redis_links.html">redis</a></h1>
+      <h1 class="title"><a href="/redis_links.html">redis</a></h1>
       
-        <span>发表于<time datetime="2010-12-05T18:17:16.000Z"> <a href="/2010-12-05-redis_links.html">12月 5 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-05T18:17:16.000Z"> <a href="/redis_links.html">12月 5 2010</a></time></span>      
     </header>
     
     
@@ -233,7 +298,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/redis/" class="label label-primary">redis</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:55"datetime="2014-03-05 06:28:55"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-05-redis_links.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-05-redis_links" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/redis_links.html#comments" class="ds-thread-count comment-link" data-thread-key="redis_links" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -248,9 +313,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-05-never_marry_you.html">“我绝不嫁给你”的英语表达</a></h1>
+      <h1 class="title"><a href="/never_marry_you.html">“我绝不嫁给你”的英语表达</a></h1>
       
-        <span>发表于<time datetime="2010-12-05T17:19:11.000Z"> <a href="/2010-12-05-never_marry_you.html">12月 5 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-05T17:19:11.000Z"> <a href="/never_marry_you.html">12月 5 2010</a></time></span>      
     </header>
     
     
@@ -278,7 +343,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:55"datetime="2014-03-05 06:28:55"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-05-never_marry_you.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-05-never_marry_you" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/never_marry_you.html#comments" class="ds-thread-count comment-link" data-thread-key="never_marry_you" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -293,9 +358,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-05-sun.html">千万别惹姓孙的</a></h1>
+      <h1 class="title"><a href="/sun.html">千万别惹姓孙的</a></h1>
       
-        <span>发表于<time datetime="2010-12-05T12:47:11.000Z"> <a href="/2010-12-05-sun.html">12月 5 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-05T12:47:11.000Z"> <a href="/sun.html">12月 5 2010</a></time></span>      
     </header>
     
     
@@ -312,7 +377,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:56"datetime="2014-03-05 06:28:56"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-05-sun.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-05-sun" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/sun.html#comments" class="ds-thread-count comment-link" data-thread-key="sun" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -327,9 +392,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-03-how_hackerr_playing_game.html">看看黑客是怎么玩游戏的</a></h1>
+      <h1 class="title"><a href="/how_hackerr_playing_game.html">看看黑客是怎么玩游戏的</a></h1>
       
-        <span>发表于<time datetime="2010-12-03T17:17:17.000Z"> <a href="/2010-12-03-how_hackerr_playing_game.html">12月 3 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-03T17:17:17.000Z"> <a href="/how_hackerr_playing_game.html">12月 3 2010</a></time></span>      
     </header>
     
     
@@ -348,7 +413,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:54"datetime="2014-03-05 06:28:54"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-03-how_hackerr_playing_game.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-03-how_hackerr_playing_game" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/how_hackerr_playing_game.html#comments" class="ds-thread-count comment-link" data-thread-key="how_hackerr_playing_game" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -363,9 +428,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-01-android_emulator_proxy.html">android模拟器使用代理</a></h1>
+      <h1 class="title"><a href="/android_emulator_proxy.html">android模拟器使用代理</a></h1>
       
-        <span>发表于<time datetime="2010-12-01T17:32:37.000Z"> <a href="/2010-12-01-android_emulator_proxy.html">12月 1 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-01T17:32:37.000Z"> <a href="/android_emulator_proxy.html">12月 1 2010</a></time></span>      
     </header>
     
     
@@ -385,7 +450,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/android/" class="label label-primary">android</a><a href="/tags/Google/" class="label label-success">Google</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:53"datetime="2014-03-05 06:28:53"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-01-android_emulator_proxy.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-01-android_emulator_proxy" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/android_emulator_proxy.html#comments" class="ds-thread-count comment-link" data-thread-key="android_emulator_proxy" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -400,9 +465,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-11-30-resize_portable_ubuntu_image.html">Resize a Portable Ubuntu Image</a></h1>
+      <h1 class="title"><a href="/resize_portable_ubuntu_image.html">Resize a Portable Ubuntu Image</a></h1>
       
-        <span>发表于<time datetime="2010-11-30T17:32:11.000Z"> <a href="/2010-11-30-resize_portable_ubuntu_image.html">11月 30 2010</a></time></span>      
+        <span>发表于<time datetime="2010-11-30T17:32:11.000Z"> <a href="/resize_portable_ubuntu_image.html">11月 30 2010</a></time></span>      
     </header>
     
     
@@ -449,47 +514,7 @@ Now you can run Portable Ubuntu again and you&#39;ll have a useful amount of fre
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/Linux/" class="label label-primary">Linux</a><a href="/tags/ubuntu/" class="label label-success">ubuntu</a><a href="/tags/Windows/" class="label label-info">Windows</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:53"datetime="2014-03-05 06:28:53"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-11-30-resize_portable_ubuntu_image.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-11-30-resize_portable_ubuntu_image" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-11-30-android_invoke_maps_to_direction.html">android调用Google Maps导航</a></h1>
-      
-        <span>发表于<time datetime="2010-11-30T17:27:32.000Z"> <a href="/2010-11-30-android_invoke_maps_to_direction.html">11月 30 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>直接代码：</p>
-<figure class="highlight java"><pre>String s = String.format(<span class="string">"http://maps.google.com/maps?f=d&saddr=jiangbei,chongqing&daddr=shapingba,chongqing&hl=en"</span>);
-Uri uri = Uri.parse(s);
-Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);
-startActivity(intent);
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/android/" class="label label-primary">android</a><a href="/tags/Google/" class="label label-success">Google</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:52"datetime="2014-03-05 06:28:52"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-11-30-android_invoke_maps_to_direction.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-11-30-android_invoke_maps_to_direction" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/resize_portable_ubuntu_image.html#comments" class="ds-thread-count comment-link" data-thread-key="resize_portable_ubuntu_image" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -502,7 +527,7 @@ startActivity(intent);
 
 
 <ul id="pagination" class="pagination pagination-lg">
-  <li><a class="extend prev" href="/page/14/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/12/">12</a></li><li><a class="page-number" href="/page/13/">13</a></li><li><a class="page-number" href="/page/14/">14</a></li><li class="active"><li><span class="page-number current">15</span></li><li><a class="page-number" href="/page/16/">16</a></li><li><a class="page-number" href="/page/17/">17</a></li><li><a class="page-number" href="/page/18/">18</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="extend next" href="/page/16/">&raquo;</a></li>
+  <li><a class="extend prev" href="/page/14/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/12/">12</a></li><li><a class="page-number" href="/page/13/">13</a></li><li><a class="page-number" href="/page/14/">14</a></li><li class="active"><li><span class="page-number current">15</span></li><li><a class="page-number" href="/page/16/">16</a></li><li><a class="page-number" href="/page/17/">17</a></li><li><a class="page-number" href="/page/18/">18</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="page-number" href="/page/25/">25</a></li><li><a class="extend next" href="/page/16/">&raquo;</a></li>
   <div class="clearfix"></div>
 </ul></div><!--wapper-->
        </div><!-- ID main-col END -->
@@ -533,7 +558,7 @@ startActivity(intent);
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-06-29-android_screen_rotation.html">android屏幕旋转问题</a></li><li class="list-group-item"><a href="/2010-08-24-grub_framebuffer.html">archlinux console分辨率</a></li><li class="list-group-item"><a href="/2010-05-07-p2pnat.html">p2pnat通过nat实现p2p</a></li><li class="list-group-item"><a href="/2012-07-31-adbputty.html">adb putty</a></li><li class="list-group-item"><a href="/2010-07-14-srt2lrc_py.html">srt2lrc python版本</a></li><li class="list-group-item"><a href="/2011-12-31-show-all-files-in-finder-on-mac.html">让Finder显示所有文件</a></li><li class="list-group-item"><a href="/2011-11-13-emacs_sys_process_environment.html">Emacs进程/系统环境变量</a></li><li class="list-group-item"><a href="/2010-12-12-modify_windows_environment_variables_from_python.html">python修改windows环境变量</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/pyexpect.html">pyexpect</a></li><li class="list-group-item"><a href="/mac-os-x-homebrew.html">抛弃MacPorts，用Homebrew吧</a></li><li class="list-group-item"><a href="/emacs23_xim.html">emacs23不能切换输入法的问题</a></li><li class="list-group-item"><a href="/chrome-vim-key-binding.html">chrome vim按键绑定</a></li><li class="list-group-item"><a href="/windows_get_resolution.html">windows下获取屏幕分辨率</a></li><li class="list-group-item"><a href="/turn-on-coredump-on-linux.html">linux下开启coredump</a></li><li class="list-group-item"><a href="/android_call_google_maps_apk.html">android下程序直接调用Google自己的地图程序</a></li><li class="list-group-item"><a href="/libcurl_http_download_error.html">libcurl http下载时文件不存在的问题</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -576,7 +601,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:01</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 08:02:10</em></span></div>
 </div>
 <div class="clearfix"></div>
 

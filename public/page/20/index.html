@@ -64,6 +64,7 @@ var _js2load = [];
         <li><a href="/" title="主页">主页</a></li>      
         <li><a href="/about/" title="关于">关于</a></li>      
         <li><a href="/archives/" title="归档">归档</a></li>      
+        <li><a href="/sitemap.xml" title="SiteMap">SiteMap</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -80,6 +81,8 @@ var _js2load = [];
       
         <li><a href="https://twitter.com/ChenZaichun">twitter</a></li>
       
+      
+        <li><a href="https://www.facebook.com/ChenZaichun">facebook</a></li>
       
       
       
@@ -103,9 +106,62 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-27-android_set_default_apn.html">android下设置默认APN</a></h1>
+      <h1 class="title"><a href="/android_apn_setting.html">android设置APN</a></h1>
       
-        <span>发表于<time datetime="2010-06-27T12:22:11.000Z"> <a href="/2010-06-27-android_set_default_apn.html">6月 27 2010</a></time></span>      
+        <span>发表于<time datetime="2010-06-27T23:22:11.000Z"> <a href="/android_apn_setting.html">6月 27 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>在android下如何通过程序设置APN连接呢，比如我想通过一个私有的APN连接到网络。查询到的结果是：</p>
+<ol>
+<li>第一步，创建activity，使用如下代码设置APN： </li>
+</ol>
+<figure class="highlight java"><pre>ContentValues values = <span class="keyword">new</span> ContentValues();
+values.put(<span class="string">"NAME"</span>, <span class="string">"CMCC"</span>);
+values.put(<span class="string">"APN"</span>, <span class="string">"CMCC"</span>);
+values.put(<span class="string">"PROXY"</span>, <span class="string">"192.168.0.171"</span>);
+values.put(<span class="string">"PORT"</span>, <span class="string">"80"</span>);
+values.put(<span class="string">"USER"</span>, <span class="string">""</span>);
+values.put(<span class="string">"PASSWORD"</span>, <span class="string">""</span>);
+<span class="keyword">this</span>.getContentResolver().insert(Uri.parse(<span class="string">"content://telephony/carriers"</span>), values);
+</pre></figure>
+
+<ol>
+<li>在AndroidManifest.xml中添加如下内容：</li>
+</ol>
+<figure class="highlight xml"><pre><span class="tag">&lt;<span class="title">uses-permission</span> <span class="attribute">android:name</span>=<span class="value">"android.permission.WRITE_APN_SETTINGS"</span> /&gt;</span>
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/android/" class="label label-primary">android</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:22"datetime="2014-03-05 06:28:22"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/android_apn_setting.html#comments" class="ds-thread-count comment-link" data-thread-key="android_apn_setting" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/android_set_default_apn.html">android下设置默认APN</a></h1>
+      
+        <span>发表于<time datetime="2010-06-27T12:22:11.000Z"> <a href="/android_set_default_apn.html">6月 27 2010</a></time></span>      
     </header>
     
     
@@ -140,7 +196,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/android/" class="label label-primary">android</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:22"datetime="2014-03-05 06:28:22"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-27-android_set_default_apn.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-27-android_set_default_apn" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/android_set_default_apn.html#comments" class="ds-thread-count comment-link" data-thread-key="android_set_default_apn" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -155,9 +211,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-24-pyexpect.html">pyexpect</a></h1>
+      <h1 class="title"><a href="/pyexpect.html">pyexpect</a></h1>
       
-        <span>发表于<time datetime="2010-06-24T23:11:11.000Z"> <a href="/2010-06-24-pyexpect.html">6月 24 2010</a></time></span>      
+        <span>发表于<time datetime="2010-06-24T23:11:11.000Z"> <a href="/pyexpect.html">6月 24 2010</a></time></span>      
     </header>
     
     
@@ -189,7 +245,7 @@ child.sendline (<span class="string">'bye'</span>)
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:21"datetime="2014-03-05 06:28:21"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-24-pyexpect.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-24-pyexpect" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/pyexpect.html#comments" class="ds-thread-count comment-link" data-thread-key="pyexpect" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -204,9 +260,9 @@ child.sendline (<span class="string">'bye'</span>)
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-22-emacs_python_ide.html">emacs下配置python开发环境</a></h1>
+      <h1 class="title"><a href="/emacs_python_ide.html">emacs下配置python开发环境</a></h1>
       
-        <span>发表于<time datetime="2010-06-22T21:12:33.000Z"> <a href="/2010-06-22-emacs_python_ide.html">6月 22 2010</a></time></span>      
+        <span>发表于<time datetime="2010-06-22T21:12:33.000Z"> <a href="/emacs_python_ide.html">6月 22 2010</a></time></span>      
     </header>
     
     
@@ -248,7 +304,7 @@ child.sendline (<span class="string">'bye'</span>)
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/python/" class="label label-success">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:21"datetime="2014-03-05 06:28:21"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-22-emacs_python_ide.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-22-emacs_python_ide" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/emacs_python_ide.html#comments" class="ds-thread-count comment-link" data-thread-key="emacs_python_ide" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -263,9 +319,9 @@ child.sendline (<span class="string">'bye'</span>)
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-21-ubuntu_telnet_server.html">ubuntu下安装telnet服务器</a></h1>
+      <h1 class="title"><a href="/ubuntu_telnet_server.html">ubuntu下安装telnet服务器</a></h1>
       
-        <span>发表于<time datetime="2010-06-21T23:11:34.000Z"> <a href="/2010-06-21-ubuntu_telnet_server.html">6月 21 2010</a></time></span>      
+        <span>发表于<time datetime="2010-06-21T23:11:34.000Z"> <a href="/ubuntu_telnet_server.html">6月 21 2010</a></time></span>      
     </header>
     
     
@@ -335,7 +391,7 @@ child.sendline (<span class="string">'bye'</span>)
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/telnet/" class="label label-primary">telnet</a><a href="/tags/ubuntu/" class="label label-success">ubuntu</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:20"datetime="2014-03-05 06:28:20"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-21-ubuntu_telnet_server.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-21-ubuntu_telnet_server" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/ubuntu_telnet_server.html#comments" class="ds-thread-count comment-link" data-thread-key="ubuntu_telnet_server" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -350,9 +406,9 @@ child.sendline (<span class="string">'bye'</span>)
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-21-android_phone_number.html">android获取手机号码</a></h1>
+      <h1 class="title"><a href="/android_phone_number.html">android获取手机号码</a></h1>
       
-        <span>发表于<time datetime="2010-06-21T13:21:33.000Z"> <a href="/2010-06-21-android_phone_number.html">6月 21 2010</a></time></span>      
+        <span>发表于<time datetime="2010-06-21T13:21:33.000Z"> <a href="/android_phone_number.html">6月 21 2010</a></time></span>      
     </header>
     
     
@@ -386,7 +442,7 @@ String phoneId = tm.getLine1Number();
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/android/" class="label label-primary">android</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:18"datetime="2014-03-05 06:28:18"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-21-android_phone_number.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-21-android_phone_number" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/android_phone_number.html#comments" class="ds-thread-count comment-link" data-thread-key="android_phone_number" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -401,9 +457,9 @@ String phoneId = tm.getLine1Number();
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-21-python_telnetlib_sample.html">python telnetlib第一例</a></h1>
+      <h1 class="title"><a href="/python_telnetlib_sample.html">python telnetlib第一例</a></h1>
       
-        <span>发表于<time datetime="2010-06-21T11:23:31.000Z"> <a href="/2010-06-21-python_telnetlib_sample.html">6月 21 2010</a></time></span>      
+        <span>发表于<time datetime="2010-06-21T11:23:31.000Z"> <a href="/python_telnetlib_sample.html">6月 21 2010</a></time></span>      
     </header>
     
     
@@ -451,7 +507,7 @@ do(host)
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a><a href="/tags/telnet/" class="label label-success">telnet</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:19"datetime="2014-03-05 06:28:19"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-21-python_telnetlib_sample.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-21-python_telnetlib_sample" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/python_telnetlib_sample.html#comments" class="ds-thread-count comment-link" data-thread-key="python_telnetlib_sample" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -466,9 +522,9 @@ do(host)
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-20-chrome_dev_channel_source.html">chrome dev channel的更新源</a></h1>
+      <h1 class="title"><a href="/chrome_dev_channel_source.html">chrome dev channel的更新源</a></h1>
       
-        <span>发表于<time datetime="2010-06-20T22:11:25.000Z"> <a href="/2010-06-20-chrome_dev_channel_source.html">6月 20 2010</a></time></span>      
+        <span>发表于<time datetime="2010-06-20T22:11:25.000Z"> <a href="/chrome_dev_channel_source.html">6月 20 2010</a></time></span>      
     </header>
     
     
@@ -489,7 +545,7 @@ do(host)
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/chrome/" class="label label-primary">chrome</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/ubunut/" class="label label-info">ubunut</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:18"datetime="2014-03-05 06:28:18"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-20-chrome_dev_channel_source.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-20-chrome_dev_channel_source" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/chrome_dev_channel_source.html#comments" class="ds-thread-count comment-link" data-thread-key="chrome_dev_channel_source" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -504,9 +560,9 @@ do(host)
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-20-android.md5_string.html">android md5 string</a></h1>
+      <h1 class="title"><a href="/android.md5_string.html">android md5 string</a></h1>
       
-        <span>发表于<time datetime="2010-06-20T21:11:33.000Z"> <a href="/2010-06-20-android.md5_string.html">6月 20 2010</a></time></span>      
+        <span>发表于<time datetime="2010-06-20T21:11:33.000Z"> <a href="/android.md5_string.html">6月 20 2010</a></time></span>      
     </header>
     
     
@@ -545,7 +601,7 @@ do(host)
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/android/" class="label label-primary">android</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:17"datetime="2014-03-05 06:28:17"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-20-android.md5_string.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-20-android.md5_string" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/android.md5_string.html#comments" class="ds-thread-count comment-link" data-thread-key="android.md5_string" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -560,9 +616,9 @@ do(host)
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-18-ubuntu_emacs_android.html">ubuntu下配置emacs android开发环境</a></h1>
+      <h1 class="title"><a href="/ubuntu_emacs_android.html">ubuntu下配置emacs android开发环境</a></h1>
       
-        <span>发表于<time datetime="2010-06-18T12:32:33.000Z"> <a href="/2010-06-18-ubuntu_emacs_android.html">6月 18 2010</a></time></span>      
+        <span>发表于<time datetime="2010-06-18T12:32:33.000Z"> <a href="/ubuntu_emacs_android.html">6月 18 2010</a></time></span>      
     </header>
     
     
@@ -636,45 +692,7 @@ do(host)
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/android/" class="label label-primary">android</a><a href="/tags/emacs/" class="label label-success">emacs</a><a href="/tags/Linux/" class="label label-info">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:16"datetime="2014-03-05 06:28:16"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-18-ubuntu_emacs_android.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-18-ubuntu_emacs_android" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-07-qt_incredibuild_compile.html">windows下使用incredibuild编译Qt</a></h1>
-      
-        <span>发表于<time datetime="2010-06-07T23:33:11.000Z"> <a href="/2010-06-07-qt_incredibuild_compile.html">6月 7 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>默认configure的时候qt的编译程序会检测incredibuild的xge支持，所以如果安装了incredibuild的话，会检测到xge选项，而configure的时候得到using incredibuildxge --yes</p>
-<figure class="highlight sh"><pre>configure <span class="attribute">-no</span><span class="attribute">-qt3support</span> <span class="attribute">-no</span><span class="attribute">-webkit</span> <span class="attribute">-release</span> <span class="attribute">-opensource</span> <span class="attribute">-platform</span> win32<span class="attribute">-msvc2008</span>
-</pre></figure>
-
-<p>完成configure之后，会在根目录生成一个projects.sln，这个时候就可以使用incredibuild编译了。</p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/Qt/" class="label label-primary">Qt</a><a href="/tags/Windows/" class="label label-success">Windows</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:15"datetime="2014-03-05 06:28:15"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-07-qt_incredibuild_compile.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-07-qt_incredibuild_compile" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/ubuntu_emacs_android.html#comments" class="ds-thread-count comment-link" data-thread-key="ubuntu_emacs_android" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -687,7 +705,7 @@ do(host)
 
 
 <ul id="pagination" class="pagination pagination-lg">
-  <li><a class="extend prev" href="/page/19/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/17/">17</a></li><li><a class="page-number" href="/page/18/">18</a></li><li><a class="page-number" href="/page/19/">19</a></li><li class="active"><li><span class="page-number current">20</span></li></li><li><a class="page-number" href="/page/21/">21</a></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="extend next" href="/page/21/">&raquo;</a></li>
+  <li><a class="extend prev" href="/page/19/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/17/">17</a></li><li><a class="page-number" href="/page/18/">18</a></li><li><a class="page-number" href="/page/19/">19</a></li><li class="active"><li><span class="page-number current">20</span></li></li><li><a class="page-number" href="/page/21/">21</a></li><li><a class="page-number" href="/page/22/">22</a></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="page-number" href="/page/25/">25</a></li><li><a class="extend next" href="/page/21/">&raquo;</a></li>
   <div class="clearfix"></div>
 </ul></div><!--wapper-->
        </div><!-- ID main-col END -->
@@ -718,7 +736,7 @@ do(host)
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-11-28-say_goodbye_to_ads.html">和广告说再见</a></li><li class="list-group-item"><a href="/2010-07-14-srt2lrc_py.html">srt2lrc python版本</a></li><li class="list-group-item"><a href="/2011-07-05-ios_input_dialog.html">iOS弹出输入框</a></li><li class="list-group-item"><a href="/2010-10-10-android_google_map_view.html">Android地图MapView</a></li><li class="list-group-item"><a href="/2011-01-26-view_process_with_python_and_pywin32.html">在Windows下用Python查看进程信息</a></li><li class="list-group-item"><a href="/2011-12-31-rsync-ignore-svn-direcotry.html">rsync忽略svn目录</a></li><li class="list-group-item"><a href="/2011-10-29-get_user_name_by_python.html">Python获取当前用户名</a></li><li class="list-group-item"><a href="/2010-05-08-ubuntu_kernel_clean.html">ubuntu删除无用旧内核</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/get_user_name_by_python.html">Python获取当前用户名</a></li><li class="list-group-item"><a href="/git-svn-cant-locate-termreadkey-pm-in-inc.html">Git svn – Can’t locate Term/ReadKey.pm in @INC</a></li><li class="list-group-item"><a href="/mercurial_hg_proxy.html">mercurial hg代理设置</a></li><li class="list-group-item"><a href="/archlinux_sound.html">archlinux声卡配置</a></li><li class="list-group-item"><a href="/vs2005_boost.html">vs2005下编译boost</a></li><li class="list-group-item"><a href="/get_glsl_version.html">获取glsl version</a></li><li class="list-group-item"><a href="/how_hackerr_playing_game.html">看看黑客是怎么玩游戏的</a></li><li class="list-group-item"><a href="/ssh_sock_5.html">ssh sock 5代理</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -761,7 +779,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:01</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 08:02:10</em></span></div>
 </div>
 <div class="clearfix"></div>
 

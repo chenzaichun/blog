@@ -64,6 +64,7 @@ var _js2load = [];
         <li><a href="/" title="主页">主页</a></li>      
         <li><a href="/about/" title="关于">关于</a></li>      
         <li><a href="/archives/" title="归档">归档</a></li>      
+        <li><a href="/sitemap.xml" title="SiteMap">SiteMap</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -80,6 +81,8 @@ var _js2load = [];
       
         <li><a href="https://twitter.com/ChenZaichun">twitter</a></li>
       
+      
+        <li><a href="https://www.facebook.com/ChenZaichun">facebook</a></li>
       
       
       
@@ -107,9 +110,55 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html">Mac OS X Snow Leopard下移动swap到另外的分区</a></h1>
+      <h1 class="title"><a href="/vmware_io_performance.html">增加vmware虚拟机的性能</a></h1>
       
-        <span>发表于<time datetime="2011-06-29T19:54:31.000Z"> <a href="/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html">6月 29 2011</a></time></span>      
+        <span>发表于<time datetime="2011-08-15T20:56:31.000Z"> <a href="/vmware_io_performance.html">8月 15 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>vmware跑mac确实卡呀。网上抄了一段，目前还在体验中，效果具体怎么样，还有待观察。</p>
+<figure class="highlight conf"><pre>MemTrimRate=<span class="number">0</span>
+sched<span class="preprocessor">.mem</span><span class="preprocessor">.pshare</span><span class="preprocessor">.enable</span> = <span class="string">"FALSE"</span>
+prefvmx<span class="preprocessor">.useRecommendedLockedMemSize</span> = <span class="string">"TRUE"</span>
+prefvmx<span class="preprocessor">.minVmMemPct</span> = <span class="string">"100"</span>
+mainMem<span class="preprocessor">.useNamedFile</span> = <span class="string">"FALSE"</span>
+MemAllowAutoScaleDown = <span class="string">"FALSE"</span>
+mks<span class="preprocessor">.enable</span>3d = <span class="string">"FALSE"</span>
+mks<span class="preprocessor">.noBeep</span> = <span class="string">"true"</span>
+logging = <span class="string">"FALSE"</span>
+hv<span class="preprocessor">.enableIfUnlocked</span> = <span class="string">"TRUE"</span>
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:27"datetime="2014-03-05 06:29:27"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/vmware_io_performance.html#comments" class="ds-thread-count comment-link" data-thread-key="vmware_io_performance" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/mac_os_x_snow_leopard_swap_paritition_driver.html">Mac OS X Snow Leopard下移动swap到另外的分区</a></h1>
+      
+        <span>发表于<time datetime="2011-06-29T19:54:31.000Z"> <a href="/mac_os_x_snow_leopard_swap_paritition_driver.html">6月 29 2011</a></time></span>      
     </header>
     
     
@@ -150,7 +199,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/macos/" class="label label-primary">macos</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:21"datetime="2014-03-05 06:29:21"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/mac_os_x_snow_leopard_swap_paritition_driver.html#comments" class="ds-thread-count comment-link" data-thread-key="mac_os_x_snow_leopard_swap_paritition_driver" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -165,9 +214,9 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-01-10-easy_install_upgrade.html">easy_install升级</a></h1>
+      <h1 class="title"><a href="/easy_install_upgrade.html">easy_install升级</a></h1>
       
-        <span>发表于<time datetime="2011-01-10T19:14:31.000Z"> <a href="/2011-01-10-easy_install_upgrade.html">1月 10 2011</a></time></span>      
+        <span>发表于<time datetime="2011-01-10T19:14:31.000Z"> <a href="/easy_install_upgrade.html">1月 10 2011</a></time></span>      
     </header>
     
     
@@ -191,7 +240,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a><a href="/tags/无所事事/" class="label label-success">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:10"datetime="2014-03-05 06:29:10"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-01-10-easy_install_upgrade.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-10-easy_install_upgrade" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/easy_install_upgrade.html#comments" class="ds-thread-count comment-link" data-thread-key="easy_install_upgrade" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -206,9 +255,9 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-25-notitle.html">保持队形看下去</a></h1>
+      <h1 class="title"><a href="/notitle.html">保持队形看下去</a></h1>
       
-        <span>发表于<time datetime="2010-12-25T19:14:31.000Z"> <a href="/2010-12-25-notitle.html">12月 25 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-25T19:14:31.000Z"> <a href="/notitle.html">12月 25 2010</a></time></span>      
     </header>
     
     
@@ -228,7 +277,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:10"datetime="2014-03-05 06:29:10"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-25-notitle.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-25-notitle" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/notitle.html#comments" class="ds-thread-count comment-link" data-thread-key="notitle" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -243,9 +292,9 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-19-chrome_for_cause_cheating_code.html">chrome for cause作弊码</a></h1>
+      <h1 class="title"><a href="/chrome_for_cause_cheating_code.html">chrome for cause作弊码</a></h1>
       
-        <span>发表于<time datetime="2010-12-19T19:14:31.000Z"> <a href="/2010-12-19-chrome_for_cause_cheating_code.html">12月 19 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-19T19:14:31.000Z"> <a href="/chrome_for_cause_cheating_code.html">12月 19 2010</a></time></span>      
     </header>
     
     
@@ -265,7 +314,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/chrome/" class="label label-primary">chrome</a><a href="/tags/Google/" class="label label-success">Google</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:09"datetime="2014-03-05 06:29:09"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-19-chrome_for_cause_cheating_code.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-19-chrome_for_cause_cheating_code" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/chrome_for_cause_cheating_code.html#comments" class="ds-thread-count comment-link" data-thread-key="chrome_for_cause_cheating_code" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -280,9 +329,9 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-18-chrome_dev_update_error.html">chrome dev无法升级</a></h1>
+      <h1 class="title"><a href="/chrome_dev_update_error.html">chrome dev无法升级</a></h1>
       
-        <span>发表于<time datetime="2010-12-18T19:54:31.000Z"> <a href="/2010-12-18-chrome_dev_update_error.html">12月 18 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-18T19:54:31.000Z"> <a href="/chrome_dev_update_error.html">12月 18 2010</a></time></span>      
     </header>
     
     
@@ -300,7 +349,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/chrome/" class="label label-primary">chrome</a><a href="/tags/Google/" class="label label-success">Google</a><a href="/tags/无所事事/" class="label label-info">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:08"datetime="2014-03-05 06:29:08"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-18-chrome_dev_update_error.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-18-chrome_dev_update_error" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/chrome_dev_update_error.html#comments" class="ds-thread-count comment-link" data-thread-key="chrome_dev_update_error" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -315,9 +364,9 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-18-chrome_for_a_cause.html">安装Chrome行善事</a></h1>
+      <h1 class="title"><a href="/chrome_for_a_cause.html">安装Chrome行善事</a></h1>
       
-        <span>发表于<time datetime="2010-12-18T19:14:31.000Z"> <a href="/2010-12-18-chrome_for_a_cause.html">12月 18 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-18T19:14:31.000Z"> <a href="/chrome_for_a_cause.html">12月 18 2010</a></time></span>      
     </header>
     
     
@@ -337,7 +386,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/chrome/" class="label label-primary">chrome</a><a href="/tags/Google/" class="label label-success">Google</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:08"datetime="2014-03-05 06:29:08"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-18-chrome_for_a_cause.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-18-chrome_for_a_cause" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/chrome_for_a_cause.html#comments" class="ds-thread-count comment-link" data-thread-key="chrome_for_a_cause" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -352,9 +401,9 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-16-course_of_foreign_university.html">值得推荐的国外名牌大学网络课程视频下载</a></h1>
+      <h1 class="title"><a href="/course_of_foreign_university.html">值得推荐的国外名牌大学网络课程视频下载</a></h1>
       
-        <span>发表于<time datetime="2010-12-16T19:54:31.000Z"> <a href="/2010-12-16-course_of_foreign_university.html">12月 16 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-16T19:54:31.000Z"> <a href="/course_of_foreign_university.html">12月 16 2010</a></time></span>      
     </header>
     
     
@@ -371,7 +420,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a><a href="/tags/转载/" class="label label-success">转载</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:07"datetime="2014-03-05 06:29:07"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-16-course_of_foreign_university.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-16-course_of_foreign_university" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/course_of_foreign_university.html#comments" class="ds-thread-count comment-link" data-thread-key="course_of_foreign_university" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -386,9 +435,9 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-14-mr_liu.html">我最崇拜的人姓刘总结贴</a></h1>
+      <h1 class="title"><a href="/mr_liu.html">我最崇拜的人姓刘总结贴</a></h1>
       
-        <span>发表于<time datetime="2010-12-14T19:54:31.000Z"> <a href="/2010-12-14-mr_liu.html">12月 14 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-14T19:54:31.000Z"> <a href="/mr_liu.html">12月 14 2010</a></time></span>      
     </header>
     
     
@@ -424,7 +473,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a><a href="/tags/转载/" class="label label-success">转载</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:06"datetime="2014-03-05 06:29:06"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-14-mr_liu.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-14-mr_liu" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/mr_liu.html#comments" class="ds-thread-count comment-link" data-thread-key="mr_liu" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -439,9 +488,9 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-11-dota.html">【元首】DOTA输掉之后……</a></h1>
+      <h1 class="title"><a href="/dota.html">【元首】DOTA输掉之后……</a></h1>
       
-        <span>发表于<time datetime="2010-12-11T18:19:11.000Z"> <a href="/2010-12-11-dota.html">12月 11 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-11T18:19:11.000Z"> <a href="/dota.html">12月 11 2010</a></time></span>      
     </header>
     
     
@@ -459,43 +508,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:58"datetime="2014-03-05 06:28:58"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-11-dota.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-11-dota" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-09-ps.html">ps应该这样玩</a></h1>
-      
-        <span>发表于<time datetime="2010-12-09T18:19:19.000Z"> <a href="/2010-12-09-ps.html">12月 9 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p><object width="600" height="480" data="http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&embedid=-&showAd=0" type="application/x-shockwave-flash"></p>
-<p><param name="src" value="http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&embedid=-&showAd=0"></object>
-<a href="http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&embedid=-&showAd=0" target="_blank">弹出</a></p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:57"datetime="2014-03-05 06:28:57"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-09-ps.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-09-ps" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/dota.html#comments" class="ds-thread-count comment-link" data-thread-key="dota" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -538,7 +551,7 @@ $ sudo plutil -convert binary1 <span class="keyword">com</span><span class="prep
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-07-27-ubuntu_adb_driver.html">ubuntu下adb驱动问题</a></li><li class="list-group-item"><a href="/2010-11-29-free_private_git_service.html">免费private git服务</a></li><li class="list-group-item"><a href="/2011-10-28-flush_dns_on_windows.html">windows下清空系统dns</a></li><li class="list-group-item"><a href="/2011-08-27-respondstoselector_not_found_in_protocol.html">'-respondsToSelector:' not found in protocol(s)</a></li><li class="list-group-item"><a href="/2011-04-19-gdb_save_breakpoints.html">gdb保存和加载断点等信息</a></li><li class="list-group-item"><a href="/2010-05-07-ogre_resources.html">ogre资源整理</a></li><li class="list-group-item"><a href="/2010-05-10-archlinux_global_proxy.html">archlinux全局代理</a></li><li class="list-group-item"><a href="/2010-11-28-tell_me_more.html">Tell Me More</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/run-app-directly-on-ios-simulator.html">直接用模拟器运行ios app</a></li><li class="list-group-item"><a href="/common-proxy-settings.html">常用软件的代理设置</a></li><li class="list-group-item"><a href="/python_manipulate_windows_service.html">Python操作Windows Service</a></li><li class="list-group-item"><a href="/ssh_sock_5.html">ssh sock 5代理</a></li><li class="list-group-item"><a href="/archlinux_lxde_bluetooth.html">archlinux+LXDE蓝牙传输文件</a></li><li class="list-group-item"><a href="/libcurl_http_download_error.html">libcurl http下载时文件不存在的问题</a></li><li class="list-group-item"><a href="/use-bitbucket-as-dropbox-by-git.html">通过git将bitbucket当做无限容量的dropbox</a></li><li class="list-group-item"><a href="/extract_specified_files_in_tar.html">解压tar包中特定文件</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -581,7 +594,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:00</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 08:02:09</em></span></div>
 </div>
 <div class="clearfix"></div>
 

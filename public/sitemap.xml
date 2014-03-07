@@ -2,1202 +2,1207 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html</loc>
+    <loc>http://yesokay.herokuapp.com/long-time-no-update.html</loc>
     <lastmod>2013-06-23T11:08:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2013-06-03-cheat.html</loc>
+    <loc>http://yesokay.herokuapp.com/install-gevent-on-mac-os-x.html</loc>
+    <lastmod>2013-06-23T11:08:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yesokay.herokuapp.com/cheat.html</loc>
     <lastmod>2013-06-13T15:22:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-12-26-open-large-file-with-emacs.html</loc>
-    <lastmod>2012-11-26T08:48:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yesokay.herokuapp.com/2013-01-13-archlinux-enable-vbox-service.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux-enable-vbox-service.html</loc>
     <lastmod>2013-01-03T17:47:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-12-26-insert-current-time-in-emacs.html</loc>
-    <lastmod>2012-11-26T08:49:00.000Z</lastmod>
+    <loc>http://yesokay.herokuapp.com/open-large-file-with-emacs.html</loc>
+    <lastmod>2012-11-26T08:48:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-12-26-git-submodule-remove.html</loc>
+    <loc>http://yesokay.herokuapp.com/git-submodule-remove.html</loc>
     <lastmod>2012-12-26T14:02:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-12-26-archlinux-fontconfig-for-chinese.html</loc>
+    <loc>http://yesokay.herokuapp.com/insert-current-time-in-emacs.html</loc>
+    <lastmod>2012-11-26T08:49:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yesokay.herokuapp.com/archlinux-fontconfig-for-chinese.html</loc>
     <lastmod>2012-12-26T11:17:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-11-28-start-x-font-server-on-hp-ux.html</loc>
+    <loc>http://yesokay.herokuapp.com/start-x-font-server-on-hp-ux.html</loc>
     <lastmod>2012-11-28T11:08:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-11-27-iphone.html</loc>
+    <loc>http://yesokay.herokuapp.com/iphone.html</loc>
     <lastmod>2012-11-27T12:24:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-11-27-emacs-mac-like-key-binding.html</loc>
+    <loc>http://yesokay.herokuapp.com/emacs-mac-like-key-binding.html</loc>
     <lastmod>2012-11-27T13:28:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-11-26-generate-core-dump-on-linux.html</loc>
+    <loc>http://yesokay.herokuapp.com/generate-core-dump-on-linux.html</loc>
     <lastmod>2012-11-26T11:22:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-11-23-change-ibus-googlepinyin-default-candidates-number.html</loc>
+    <loc>http://yesokay.herokuapp.com/change-ibus-googlepinyin-default-candidates-number.html</loc>
     <lastmod>2012-11-21T16:17:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-10-26-floating-point-exception-on-suse.html</loc>
+    <loc>http://yesokay.herokuapp.com/avoids-ssh-timeouts.html</loc>
+    <lastmod>2012-11-21T16:17:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yesokay.herokuapp.com/floating-point-exception-on-suse.html</loc>
     <lastmod>2012-10-26T16:40:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-11-21-avoids-ssh-timeouts.html</loc>
-    <lastmod>2012-11-21T16:17:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yesokay.herokuapp.com/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html</loc>
+    <loc>http://yesokay.herokuapp.com/install-oracle-11gr2-on-suse-enterprise-linux.html</loc>
     <lastmod>2012-10-25T10:09:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-10-25-install-jdk-slash-jre-on-suse-10-dot-x.html</loc>
+    <loc>http://yesokay.herokuapp.com/install-jdk-slash-jre-on-suse-10-dot-x.html</loc>
     <lastmod>2012-10-25T15:06:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-10-22-xiami-auto-checkin-with-golang.html</loc>
+    <loc>http://yesokay.herokuapp.com/xiami-auto-checkin-with-golang.html</loc>
     <lastmod>2012-10-22T14:12:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-09-26-use-bitbucket-as-dropbox-by-git.html</loc>
+    <loc>http://yesokay.herokuapp.com/use-bitbucket-as-dropbox-by-git.html</loc>
     <lastmod>2012-09-26T15:47:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-09-26-golang-emacs-setting.html</loc>
+    <loc>http://yesokay.herokuapp.com/golang-emacs-setting.html</loc>
     <lastmod>2012-09-26T14:12:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-09-21-the-right-way-of-eating-fruit.html</loc>
+    <loc>http://yesokay.herokuapp.com/the-right-way-of-eating-fruit.html</loc>
     <lastmod>2012-09-21T20:05:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-09-21-show-depends-on-mac-os-x.html</loc>
+    <loc>http://yesokay.herokuapp.com/show-depends-on-mac-os-x.html</loc>
     <lastmod>2012-09-21T10:22:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-09-21-anshanshuji.html</loc>
+    <loc>http://yesokay.herokuapp.com/anshanshuji.html</loc>
     <lastmod>2012-09-21T12:46:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-07-31-adbputty.html</loc>
+    <loc>http://yesokay.herokuapp.com/adbputty.html</loc>
     <lastmod>2012-07-31T14:08:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-07-27-remove-android-lock-screen-pin-with-sqlite3.html</loc>
+    <loc>http://yesokay.herokuapp.com/remove-android-lock-screen-pin-with-sqlite3.html</loc>
     <lastmod>2012-07-27T16:16:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-06-28-certificate-not-installed-on-the-node.html</loc>
-    <lastmod>2012-06-28T13:21:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yesokay.herokuapp.com/2012-07-03-install-pptp-vnp-server-on-debian-linux.html</loc>
+    <loc>http://yesokay.herokuapp.com/install-pptp-vnp-server-on-debian-linux.html</loc>
     <lastmod>2012-07-03T10:03:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-06-27-pet.html</loc>
+    <loc>http://yesokay.herokuapp.com/certificate-not-installed-on-the-node.html</loc>
+    <lastmod>2012-06-28T13:21:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yesokay.herokuapp.com/pet.html</loc>
     <lastmod>2012-06-27T11:21:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-06-26-open-chinese-convert.html</loc>
+    <loc>http://yesokay.herokuapp.com/open-chinese-convert.html</loc>
     <lastmod>2012-06-26T14:38:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-06-07-modify-svn-log.html</loc>
+    <loc>http://yesokay.herokuapp.com/modify-svn-log.html</loc>
     <lastmod>2012-06-07T13:30:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-06-01-python-get-os-information.html</loc>
+    <loc>http://yesokay.herokuapp.com/python-get-os-information.html</loc>
     <lastmod>2012-06-01T09:28:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-05-31-xin-wen-wan-zhi-dao.html</loc>
-    <lastmod>2012-05-31T15:28:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yesokay.herokuapp.com/2012-05-31-test-blog-with-org-mode.html</loc>
+    <loc>http://yesokay.herokuapp.com/test-blog-with-org-mode.html</loc>
     <lastmod>2012-05-31T13:33:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-05-31-add-border-radius-support-to-ie.html</loc>
+    <loc>http://yesokay.herokuapp.com/xin-wen-wan-zhi-dao.html</loc>
+    <lastmod>2012-05-31T15:28:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yesokay.herokuapp.com/add-border-radius-support-to-ie.html</loc>
     <lastmod>2012-05-31T22:45:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-05-24-get-chinese-pinyin-python.html</loc>
+    <loc>http://yesokay.herokuapp.com/get-chinese-pinyin-python.html</loc>
     <lastmod>2012-05-24T14:11:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-05-23-xiami-checkin.html</loc>
+    <loc>http://yesokay.herokuapp.com/xiami-checkin.html</loc>
     <lastmod>2012-05-23T13:10:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-05-23-pygments-dot-rb-on-heroku.html</loc>
+    <loc>http://yesokay.herokuapp.com/pygments-dot-rb-on-heroku.html</loc>
     <lastmod>2012-05-23T17:27:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-05-14-calculate-elapsed-time-in-milliseconds-unix-slash-linux.html</loc>
+    <loc>http://yesokay.herokuapp.com/calculate-elapsed-time-in-milliseconds-unix-slash-linux.html</loc>
     <lastmod>2012-05-14T10:16:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-05-12-add-robots-dot-txt-to-octopress.html</loc>
-    <lastmod>2012-05-12T21:05:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yesokay.herokuapp.com/2012-05-12-octopress-useful-links.html</loc>
+    <loc>http://yesokay.herokuapp.com/octopress-useful-links.html</loc>
     <lastmod>2012-05-12T11:54:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-04-10-soappy-error-xml-parsers-expat-expaterror.html</loc>
+    <loc>http://yesokay.herokuapp.com/add-robots-dot-txt-to-octopress.html</loc>
+    <lastmod>2012-05-12T21:05:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yesokay.herokuapp.com/soappy-error-xml-parsers-expat-expaterror.html</loc>
     <lastmod>2012-04-10T20:13:24.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-02-28-using-tcpdump-analysis-soap-protocol.html</loc>
-    <lastmod>2012-02-28T13:24:20.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yesokay.herokuapp.com/2012-02-28-gsoap-error-500.html</loc>
+    <loc>http://yesokay.herokuapp.com/gsoap-error-500.html</loc>
     <lastmod>2012-02-28T22:31:48.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-02-28-gsoap-error-200.html</loc>
+    <loc>http://yesokay.herokuapp.com/using-tcpdump-analysis-soap-protocol.html</loc>
+    <lastmod>2012-02-28T13:24:20.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yesokay.herokuapp.com/gsoap-error-200.html</loc>
     <lastmod>2012-02-28T13:22:22.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html</loc>
+    <loc>http://yesokay.herokuapp.com/emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html</loc>
     <lastmod>2012-02-06T18:32:34.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-02-03-compile-gsoap-on-mac-os-x.html</loc>
+    <loc>http://yesokay.herokuapp.com/compile-gsoap-on-mac-os-x.html</loc>
     <lastmod>2012-02-03T23:32:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc.html</loc>
+    <loc>http://yesokay.herokuapp.com/git-svn-cant-locate-termreadkey-pm-in-inc.html</loc>
     <lastmod>2012-02-02T22:31:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-01-30-git-svn-proxy-setting.html</loc>
+    <loc>http://yesokay.herokuapp.com/git-svn-proxy-setting.html</loc>
     <lastmod>2012-01-30T11:33:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-01-19-run-app-directly-on-ios-simulator.html</loc>
+    <loc>http://yesokay.herokuapp.com/run-app-directly-on-ios-simulator.html</loc>
     <lastmod>2012-01-19T18:13:22.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-01-18-ssh-local-tunnel.html</loc>
+    <loc>http://yesokay.herokuapp.com/ssh-local-tunnel.html</loc>
     <lastmod>2012-01-18T11:22:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-01-18-git-line-ending.html</loc>
+    <loc>http://yesokay.herokuapp.com/git-line-ending.html</loc>
     <lastmod>2012-01-18T22:12:13.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-01-13-speed-up-ssh-x11-forwarding.html</loc>
+    <loc>http://yesokay.herokuapp.com/speed-up-ssh-x11-forwarding.html</loc>
     <lastmod>2012-01-13T17:16:14.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-01-05-gcc-mudflap.html</loc>
+    <loc>http://yesokay.herokuapp.com/gcc-mudflap.html</loc>
     <lastmod>2012-01-05T16:12:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-31-show-all-files-in-finder-on-mac.html</loc>
+    <loc>http://yesokay.herokuapp.com/show-all-files-in-finder-on-mac.html</loc>
     <lastmod>2011-12-31T17:31:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-31-rsync-ignore-svn-direcotry.html</loc>
+    <loc>http://yesokay.herokuapp.com/rsync-ignore-svn-direcotry.html</loc>
     <lastmod>1011-12-31T11:23:58.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-31-git-rpc-error-56.html</loc>
+    <loc>http://yesokay.herokuapp.com/git-rpc-error-56.html</loc>
     <lastmod>2011-12-31T19:23:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-31-git-remove-untracked-files-and-directories.html</loc>
+    <loc>http://yesokay.herokuapp.com/git-remove-untracked-files-and-directories.html</loc>
     <lastmod>2011-12-31T17:32:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-30-macos-x-swap-dan-du-fen-qu.html</loc>
+    <loc>http://yesokay.herokuapp.com/macos-x-swap-dan-du-fen-qu.html</loc>
     <lastmod>2011-12-30T12:23:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-30-mac-os-x-homebrew.html</loc>
+    <loc>http://yesokay.herokuapp.com/mac-os-x-homebrew.html</loc>
     <lastmod>2011-12-30T22:22:22.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-30-mac-os-x-emacs-chinese-font-setting.html</loc>
+    <loc>http://yesokay.herokuapp.com/mac-os-x-emacs-chinese-font-setting.html</loc>
     <lastmod>2011-12-30T23:11:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-15-archlinux-etc-rc-d-functions-error.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux-etc-rc-d-functions-error.html</loc>
     <lastmod>2011-12-15T10:23:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-12-gnustep-env-on-archlinux.html</loc>
+    <loc>http://yesokay.herokuapp.com/gnustep-env-on-archlinux.html</loc>
     <lastmod>2011-12-12T11:11:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-12-first-gnustep-gui.html</loc>
+    <loc>http://yesokay.herokuapp.com/first-gnustep-gui.html</loc>
     <lastmod>2011-12-12T09:11:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-09-org-save-outline-visibility.html</loc>
+    <loc>http://yesokay.herokuapp.com/org-save-outline-visibility.html</loc>
     <lastmod>2011-12-09T22:23:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-09-unlock-mcafee-user-interface.html</loc>
+    <loc>http://yesokay.herokuapp.com/unlock-mcafee-user-interface.html</loc>
     <lastmod>2011-12-09T22:30:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-09-emacs-http-proxy-setting.html</loc>
+    <loc>http://yesokay.herokuapp.com/emacs-http-proxy-setting.html</loc>
     <lastmod>2011-12-09T11:23:21.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-01-turn-on-coredump-on-linux.html</loc>
+    <loc>http://yesokay.herokuapp.com/turn-on-coredump-on-linux.html</loc>
     <lastmod>2011-12-01T22:01:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-30-mercurial-hg-add-progress.html</loc>
+    <loc>http://yesokay.herokuapp.com/mercurial-hg-add-progress.html</loc>
     <lastmod>2011-11-30T10:20:30.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-12-01-genenv-assignment-makes-pointer-from-integer-without-a-cast.html</loc>
+    <loc>http://yesokay.herokuapp.com/genenv-assignment-makes-pointer-from-integer-without-a-cast.html</loc>
     <lastmod>2011-12-01T22:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-18-mount-bind.html</loc>
+    <loc>http://yesokay.herokuapp.com/mount-bind.html</loc>
     <lastmod>2011-11-18T21:10:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-18-chrome-vim-key-binding.html</loc>
+    <loc>http://yesokay.herokuapp.com/chrome-vim-key-binding.html</loc>
     <lastmod>2011-11-18T22:13:47.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-17-common-proxy-settings.html</loc>
+    <loc>http://yesokay.herokuapp.com/common-proxy-settings.html</loc>
     <lastmod>2011-11-17T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-16-merge-git-repositories-to-subdirectory.html</loc>
+    <loc>http://yesokay.herokuapp.com/merge-git-repositories-to-subdirectory.html</loc>
     <lastmod>2011-11-16T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-15-install-oracle-10gr2-on-archlinux.html</loc>
+    <loc>http://yesokay.herokuapp.com/install-oracle-10gr2-on-archlinux.html</loc>
     <lastmod>2011-11-15T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-15-convert-hg-to-git.html</loc>
+    <loc>http://yesokay.herokuapp.com/convert-hg-to-git.html</loc>
     <lastmod>2011-11-15T10:10:10.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-13-pymacs.html</loc>
+    <loc>http://yesokay.herokuapp.com/pymacs.html</loc>
     <lastmod>2011-11-13T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-13-emacs_sys_process_environment.html</loc>
+    <loc>http://yesokay.herokuapp.com/emacs_sys_process_environment.html</loc>
     <lastmod>2011-11-13T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-12-stty_erase_key.html</loc>
+    <loc>http://yesokay.herokuapp.com/stty_erase_key.html</loc>
     <lastmod>2011-11-12T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-07-rpm_command.html</loc>
+    <loc>http://yesokay.herokuapp.com/rpm_command.html</loc>
     <lastmod>2011-11-07T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-05-python_ftplib.html</loc>
+    <loc>http://yesokay.herokuapp.com/python_ftplib.html</loc>
     <lastmod>2011-11-05T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-04-use_google_chrome_as_emacs_default_browser.html</loc>
+    <loc>http://yesokay.herokuapp.com/use_google_chrome_as_emacs_default_browser.html</loc>
     <lastmod>2011-11-04T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-03-add_css_support_for_rss_output.html</loc>
+    <loc>http://yesokay.herokuapp.com/add_css_support_for_rss_output.html</loc>
     <lastmod>2011-11-03T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-03-my-org_post_process_hook.html</loc>
+    <loc>http://yesokay.herokuapp.com/my-org_post_process_hook.html</loc>
     <lastmod>2011-11-03T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-02-micolog_code_backgroud_in_rss_output.html</loc>
+    <loc>http://yesokay.herokuapp.com/micolog_code_backgroud_in_rss_output.html</loc>
     <lastmod>2011-11-02T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-11-02-disable_zsh_git_prompt.html</loc>
+    <loc>http://yesokay.herokuapp.com/disable_zsh_git_prompt.html</loc>
     <lastmod>2011-11-02T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-29-get_user_name_by_python.html</loc>
+    <loc>http://yesokay.herokuapp.com/get_user_name_by_python.html</loc>
     <lastmod>2011-10-29T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-28-python_get_public_ip.html</loc>
+    <loc>http://yesokay.herokuapp.com/python_get_public_ip.html</loc>
     <lastmod>2011-10-28T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-28-flush_dns_on_windows.html</loc>
+    <loc>http://yesokay.herokuapp.com/flush_dns_on_windows.html</loc>
     <lastmod>2011-10-28T10:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-28-colored_man_page_output.html</loc>
+    <loc>http://yesokay.herokuapp.com/colored_man_page_output.html</loc>
     <lastmod>2011-10-28T10:11:13.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-27-zenburn_code_css_test.html</loc>
+    <loc>http://yesokay.herokuapp.com/zenburn_code_css_test.html</loc>
     <lastmod>2011-10-27T09:10:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-27-orgblog_code_theme.html</loc>
+    <loc>http://yesokay.herokuapp.com/orgblog_code_theme.html</loc>
     <lastmod>2011-10-27T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-26-python_barcode_generate.html</loc>
+    <loc>http://yesokay.herokuapp.com/python_barcode_generate.html</loc>
     <lastmod>2011-10-26T09:10:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-24-ibus_sunpinyin_cadidates.html</loc>
+    <loc>http://yesokay.herokuapp.com/ibus_sunpinyin_cadidates.html</loc>
     <lastmod>2011-10-24T09:10:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-24-extract_specified_files_in_tar.html</loc>
+    <loc>http://yesokay.herokuapp.com/extract_specified_files_in_tar.html</loc>
     <lastmod>2011-10-24T08:10:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-24-archlinux_ssh_http_privoxy.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_ssh_http_privoxy.html</loc>
     <lastmod>2011-10-24T06:10:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-21-usegitbehindproxy.html</loc>
+    <loc>http://yesokay.herokuapp.com/usegitbehindproxy.html</loc>
     <lastmod>2011-10-21T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-21-spark_display_chinese_on_linux.html</loc>
+    <loc>http://yesokay.herokuapp.com/spark_display_chinese_on_linux.html</loc>
     <lastmod>2011-10-21T21:56:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-10-21-emacs_ibus_cannot_input_chinese.html</loc>
+    <loc>http://yesokay.herokuapp.com/emacs_ibus_cannot_input_chinese.html</loc>
     <lastmod>2011-10-21T20:56:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-08-27-respondstoselector_not_found_in_protocol.html</loc>
+    <loc>http://yesokay.herokuapp.com/respondstoselector_not_found_in_protocol.html</loc>
     <lastmod>2011-08-27T20:56:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-08-05-vmware_io_performance.html</loc>
+    <loc>http://yesokay.herokuapp.com/vmware_io_performance.html</loc>
     <lastmod>2011-08-15T20:56:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-07-13-cocos2d_iphone_popscenewithtransition.html</loc>
+    <loc>http://yesokay.herokuapp.com/cocos2d_iphone_popscenewithtransition.html</loc>
     <lastmod>2011-07-13T20:56:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-07-17-hp_ux_font_error_fix.html</loc>
+    <loc>http://yesokay.herokuapp.com/hp_ux_font_error_fix.html</loc>
     <lastmod>2011-07-17T20:56:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-07-09-ios_exit_program_in_code.html</loc>
+    <loc>http://yesokay.herokuapp.com/ios_exit_program_in_code.html</loc>
     <lastmod>2011-07-09T20:56:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-07-05-uiwebview_current_url.html</loc>
+    <loc>http://yesokay.herokuapp.com/uiwebview_current_url.html</loc>
     <lastmod>2011-07-05T20:56:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-07-05-ios_input_dialog.html</loc>
+    <loc>http://yesokay.herokuapp.com/ios_input_dialog.html</loc>
     <lastmod>2011-07-05T19:56:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-07-03-build_emacs_on_mac_osx.html</loc>
+    <loc>http://yesokay.herokuapp.com/build_emacs_on_mac_osx.html</loc>
     <lastmod>2011-07-03T19:56:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-07-01-ios_uiwebview_current_url.html</loc>
+    <loc>http://yesokay.herokuapp.com/ios_uiwebview_current_url.html</loc>
     <lastmod>2011-07-01T19:56:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-07-01-enable_zoom_in_out_uiwebview.html</loc>
+    <loc>http://yesokay.herokuapp.com/enable_zoom_in_out_uiwebview.html</loc>
     <lastmod>2011-07-01T19:54:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-06-29-linux_core_dump.html</loc>
+    <loc>http://yesokay.herokuapp.com/linux_core_dump.html</loc>
     <lastmod>2011-06-29T19:44:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html</loc>
+    <loc>http://yesokay.herokuapp.com/mac_os_x_snow_leopard_swap_paritition_driver.html</loc>
     <lastmod>2011-06-29T19:54:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-06-26-mac_os_x_emacs_chinese_font.html</loc>
+    <loc>http://yesokay.herokuapp.com/mac_os_x_emacs_chinese_font.html</loc>
     <lastmod>2011-06-26T19:44:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-06-25-hg_merge_repositories.html</loc>
+    <loc>http://yesokay.herokuapp.com/hg_merge_repositories.html</loc>
     <lastmod>2011-06-25T19:44:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-04-24-gdb_remote_debuging.html</loc>
+    <loc>http://yesokay.herokuapp.com/gdb_remote_debuging.html</loc>
     <lastmod>2011-04-24T19:44:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-04-24-archlinux_mingw_cross_compile_testdisk.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_mingw_cross_compile_testdisk.html</loc>
     <lastmod>2011-04-24T19:34:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-04-24-archlinux_mingw_cross_compile_environment.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_mingw_cross_compile_environment.html</loc>
     <lastmod>2011-04-24T19:24:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-04-19-gdb_save_breakpoints.html</loc>
+    <loc>http://yesokay.herokuapp.com/gdb_save_breakpoints.html</loc>
     <lastmod>2011-04-19T19:24:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-04-08-install_oracle_10g_enterprise_on_archlinux.html</loc>
+    <loc>http://yesokay.herokuapp.com/install_oracle_10g_enterprise_on_archlinux.html</loc>
     <lastmod>2011-04-08T19:24:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-03-30-change_oracle_ui_to_english.html</loc>
+    <loc>http://yesokay.herokuapp.com/change_oracle_ui_to_english.html</loc>
     <lastmod>2011-03-30T19:24:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-03-01-yaourt_proxy.html</loc>
+    <loc>http://yesokay.herokuapp.com/yaourt_proxy.html</loc>
     <lastmod>2011-03-01T19:24:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-01-28-qt_text_codec.html</loc>
+    <loc>http://yesokay.herokuapp.com/qt_text_codec.html</loc>
     <lastmod>2011-01-28T19:34:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-03-01-sudo_keep_env.html</loc>
+    <loc>http://yesokay.herokuapp.com/sudo_keep_env.html</loc>
     <lastmod>2011-03-01T19:34:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-01-26-view_process_with_python_and_pywin32.html</loc>
+    <loc>http://yesokay.herokuapp.com/view_process_with_python_and_pywin32.html</loc>
     <lastmod>2011-01-26T19:34:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html</loc>
+    <loc>http://yesokay.herokuapp.com/hg_cert_warning.html</loc>
     <lastmod>2011-01-16T19:34:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-01-16-compile_subversion_python2-7_binding_on_windows.html</loc>
+    <loc>http://yesokay.herokuapp.com/compile_subversion_python2-7_binding_on_windows.html</loc>
     <lastmod>2011-01-16T19:14:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-01-16-hg-git.html</loc>
+    <loc>http://yesokay.herokuapp.com/hg-git.html</loc>
     <lastmod>2011-01-16T19:24:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-01-10-easy_install_upgrade.html</loc>
+    <loc>http://yesokay.herokuapp.com/easy_install_upgrade.html</loc>
     <lastmod>2011-01-10T19:14:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-25-notitle.html</loc>
+    <loc>http://yesokay.herokuapp.com/notitle.html</loc>
     <lastmod>2010-12-25T19:14:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-19-chrome_for_cause_cheating_code.html</loc>
+    <loc>http://yesokay.herokuapp.com/chrome_for_cause_cheating_code.html</loc>
     <lastmod>2010-12-19T19:14:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-18-chrome_dev_update_error.html</loc>
+    <loc>http://yesokay.herokuapp.com/chrome_dev_update_error.html</loc>
     <lastmod>2010-12-18T19:54:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-18-chrome_for_a_cause.html</loc>
+    <loc>http://yesokay.herokuapp.com/chrome_for_a_cause.html</loc>
     <lastmod>2010-12-18T19:14:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-16-course_of_foreign_university.html</loc>
+    <loc>http://yesokay.herokuapp.com/course_of_foreign_university.html</loc>
     <lastmod>2010-12-16T19:54:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-14-mr_liu.html</loc>
+    <loc>http://yesokay.herokuapp.com/mr_liu.html</loc>
     <lastmod>2010-12-14T19:54:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-13-python_manipulate_windows_service.html</loc>
+    <loc>http://yesokay.herokuapp.com/python_manipulate_windows_service.html</loc>
     <lastmod>2010-12-13T19:54:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-12-pywin32_excel.html</loc>
+    <loc>http://yesokay.herokuapp.com/pywin32_excel.html</loc>
     <lastmod>2010-12-12T19:44:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-12-pywin32_word.html</loc>
+    <loc>http://yesokay.herokuapp.com/pywin32_word.html</loc>
     <lastmod>2010-12-12T19:54:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-12-pywin32_access.html</loc>
+    <loc>http://yesokay.herokuapp.com/pywin32_access.html</loc>
     <lastmod>2010-12-12T19:42:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-12-pythoncom_lnk_file_path.html</loc>
+    <loc>http://yesokay.herokuapp.com/pythoncom_lnk_file_path.html</loc>
     <lastmod>2010-12-12T19:32:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-12-pywin32-excel.html</loc>
+    <loc>http://yesokay.herokuapp.com/pywin32-excel.html</loc>
     <lastmod>2010-12-12T14:13:08.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-12-python_get_pe_version_info.html</loc>
+    <loc>http://yesokay.herokuapp.com/python_get_pe_version_info.html</loc>
     <lastmod>2010-12-12T19:22:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-12-pefile.html</loc>
+    <loc>http://yesokay.herokuapp.com/pefile.html</loc>
     <lastmod>2010-12-12T19:12:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-12-modify_windows_environment_variables_from_python.html</loc>
+    <loc>http://yesokay.herokuapp.com/modify_windows_environment_variables_from_python.html</loc>
     <lastmod>2010-12-12T18:18:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-11-dota.html</loc>
+    <loc>http://yesokay.herokuapp.com/dota.html</loc>
     <lastmod>2010-12-11T18:19:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-12-get_user_desktop_path_from_python.html</loc>
+    <loc>http://yesokay.herokuapp.com/get_user_desktop_path_from_python.html</loc>
     <lastmod>2010-12-12T18:19:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-09-ps.html</loc>
+    <loc>http://yesokay.herokuapp.com/ps.html</loc>
     <lastmod>2010-12-09T18:19:19.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-08-wuti.html</loc>
+    <loc>http://yesokay.herokuapp.com/wuti.html</loc>
     <lastmod>2010-12-08T17:17:27.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-05-sun.html</loc>
+    <loc>http://yesokay.herokuapp.com/sun.html</loc>
     <lastmod>2010-12-05T12:47:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-05-redis_links.html</loc>
+    <loc>http://yesokay.herokuapp.com/redis_links.html</loc>
     <lastmod>2010-12-05T18:17:16.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-05-never_marry_you.html</loc>
+    <loc>http://yesokay.herokuapp.com/never_marry_you.html</loc>
     <lastmod>2010-12-05T17:19:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-03-how_hackerr_playing_game.html</loc>
+    <loc>http://yesokay.herokuapp.com/how_hackerr_playing_game.html</loc>
     <lastmod>2010-12-03T17:17:17.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-12-01-android_emulator_proxy.html</loc>
+    <loc>http://yesokay.herokuapp.com/android_emulator_proxy.html</loc>
     <lastmod>2010-12-01T17:32:37.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-11-30-resize_portable_ubuntu_image.html</loc>
+    <loc>http://yesokay.herokuapp.com/resize_portable_ubuntu_image.html</loc>
     <lastmod>2010-11-30T17:32:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-11-30-android_invoke_maps_to_direction.html</loc>
+    <loc>http://yesokay.herokuapp.com/android_invoke_maps_to_direction.html</loc>
     <lastmod>2010-11-30T17:27:32.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-11-30-android_intent_usage.html</loc>
+    <loc>http://yesokay.herokuapp.com/android_intent_usage.html</loc>
     <lastmod>2010-11-30T12:32:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-11-30-android_call_google_maps_apk.html</loc>
+    <loc>http://yesokay.herokuapp.com/android_call_google_maps_apk.html</loc>
     <lastmod>2010-11-30T12:37:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-11-29-res_protocol.html</loc>
+    <loc>http://yesokay.herokuapp.com/res_protocol.html</loc>
     <lastmod>2010-11-29T23:33:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-11-29-free_private_mercurial_service.html</loc>
+    <loc>http://yesokay.herokuapp.com/free_private_mercurial_service.html</loc>
     <lastmod>2010-11-19T23:33:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-11-29-free_private_git_service.html</loc>
+    <loc>http://yesokay.herokuapp.com/free_private_git_service.html</loc>
     <lastmod>2010-11-29T18:37:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-11-28-tell_me_more.html</loc>
+    <loc>http://yesokay.herokuapp.com/tell_me_more.html</loc>
     <lastmod>2010-11-28T21:27:17.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-10-10-mapview_overlay.html</loc>
+    <loc>http://yesokay.herokuapp.com/mapview_overlay.html</loc>
     <lastmod>2010-10-10T23:16:17.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-11-28-say_goodbye_to_ads.html</loc>
+    <loc>http://yesokay.herokuapp.com/say_goodbye_to_ads.html</loc>
     <lastmod>2010-11-28T17:27:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-10-10-android_google_map_view.html</loc>
+    <loc>http://yesokay.herokuapp.com/android_google_map_view.html</loc>
     <lastmod>2010-10-10T17:17:17.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-09-21-archlinux_google_talkplugin_x86_64.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_google_talkplugin_x86_64.html</loc>
     <lastmod>2010-09-21T18:17:15.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-09-17-gtk_button.html</loc>
+    <loc>http://yesokay.herokuapp.com/gtk_button.html</loc>
     <lastmod>2010-09-17T17:37:21.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-09-16-chrome_proxy_.md_arg.html</loc>
+    <loc>http://yesokay.herokuapp.com/chrome_proxy_.md_arg.html</loc>
     <lastmod>2010-09-16T17:32:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-09-15-first_gtk_program.html</loc>
+    <loc>http://yesokay.herokuapp.com/first_gtk_program.html</loc>
     <lastmod>2010-09-15T17:37:37.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-09-05-chrome_html5.html</loc>
+    <loc>http://yesokay.herokuapp.com/chrome_html5.html</loc>
     <lastmod>2010-09-05T17:32:36.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-08-29-archlinux_xelatex.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_xelatex.html</loc>
     <lastmod>2010-08-29T23:32:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-08-25-emacs23_xim.html</loc>
+    <loc>http://yesokay.herokuapp.com/emacs23_xim.html</loc>
     <lastmod>2010-08-25T23:33:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-08-25-archlinux_aur_update.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_aur_update.html</loc>
     <lastmod>2010-08-24T17:37:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-08-24-grub_framebuffer.html</loc>
+    <loc>http://yesokay.herokuapp.com/grub_framebuffer.html</loc>
     <lastmod>2010-08-24T23:23:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-08-23-yaourt_install.html</loc>
+    <loc>http://yesokay.herokuapp.com/yaourt_install.html</loc>
     <lastmod>2010-08-23T23:17:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-08-24-archlinux_sound_alsamixer.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_sound_alsamixer.html</loc>
     <lastmod>2010-08-24T17:17:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-08-23-archlinux_sound.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_sound.html</loc>
     <lastmod>2010-08-23T12:32:27.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-08-23-archlinux_lxde_bluetooth.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_lxde_bluetooth.html</loc>
     <lastmod>2010-08-23T12:32:37.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-08-23-archlinux_auto_mount_windows.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_auto_mount_windows.html</loc>
     <lastmod>2010-08-03T18:32:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-08-08-fuse-python.html</loc>
+    <loc>http://yesokay.herokuapp.com/fuse-python.html</loc>
     <lastmod>2010-08-08T17:37:32.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-08-02-ubuntu_linux_flashget.html</loc>
+    <loc>http://yesokay.herokuapp.com/ubuntu_linux_flashget.html</loc>
     <lastmod>2010-08-02T17:32:37.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-29-android-x86_halt.html</loc>
+    <loc>http://yesokay.herokuapp.com/android-x86_halt.html</loc>
     <lastmod>2010-07-29T18:23:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-27-ubuntu_adb_driver.html</loc>
+    <loc>http://yesokay.herokuapp.com/ubuntu_adb_driver.html</loc>
     <lastmod>2010-07-27T11:23:22.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-22-windows_task_bar_height.html</loc>
+    <loc>http://yesokay.herokuapp.com/windows_task_bar_height.html</loc>
     <lastmod>2010-07-22T16:23:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-22-windows_hide_taskbar.html</loc>
+    <loc>http://yesokay.herokuapp.com/windows_hide_taskbar.html</loc>
     <lastmod>2010-07-22T23:11:37.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-22-windows_get_resolution.html</loc>
+    <loc>http://yesokay.herokuapp.com/windows_get_resolution.html</loc>
     <lastmod>2010-07-22T18:33:16.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-22-cdhtmldialog_scrollbar.html</loc>
+    <loc>http://yesokay.herokuapp.com/cdhtmldialog_scrollbar.html</loc>
     <lastmod>2010-07-22T19:23:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-22-cdhtmldialog_disable_context_menu_and_f5.html</loc>
+    <loc>http://yesokay.herokuapp.com/cdhtmldialog_disable_context_menu_and_f5.html</loc>
     <lastmod>2010-07-22T17:26:22.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-21-android_aapt_error.html</loc>
+    <loc>http://yesokay.herokuapp.com/android_aapt_error.html</loc>
     <lastmod>2010-07-21T17:23:37.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-20-hg_ssh_access.html</loc>
+    <loc>http://yesokay.herokuapp.com/hg_ssh_access.html</loc>
     <lastmod>2010-07-20T17:23:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-14-srt2lrc_py.html</loc>
+    <loc>http://yesokay.herokuapp.com/srt2lrc_py.html</loc>
     <lastmod>2010-07-14T17:32:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-05-eclipse_crash.html</loc>
+    <loc>http://yesokay.herokuapp.com/eclipse_crash.html</loc>
     <lastmod>2010-07-05T12:32:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-07-14-mencoder_extract_audio.html</loc>
+    <loc>http://yesokay.herokuapp.com/mencoder_extract_audio.html</loc>
     <lastmod>2010-07-14T11:36:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-29-android_screen_rotation.html</loc>
+    <loc>http://yesokay.herokuapp.com/android_screen_rotation.html</loc>
     <lastmod>2010-06-29T12:21:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-28-android_emulator_appstore.html</loc>
+    <loc>http://yesokay.herokuapp.com/android_emulator_appstore.html</loc>
     <lastmod>2010-06-28T23:11:13.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-27-android_apn_setting.html</loc>
+    <loc>http://yesokay.herokuapp.com/android_apn_setting.html</loc>
     <lastmod>2010-06-27T23:22:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-27-android_set_default_apn.html</loc>
+    <loc>http://yesokay.herokuapp.com/android_set_default_apn.html</loc>
     <lastmod>2010-06-27T12:22:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-24-pyexpect.html</loc>
+    <loc>http://yesokay.herokuapp.com/pyexpect.html</loc>
     <lastmod>2010-06-24T23:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-22-emacs_python_ide.html</loc>
+    <loc>http://yesokay.herokuapp.com/emacs_python_ide.html</loc>
     <lastmod>2010-06-22T21:12:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-21-ubuntu_telnet_server.html</loc>
+    <loc>http://yesokay.herokuapp.com/ubuntu_telnet_server.html</loc>
     <lastmod>2010-06-21T23:11:34.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-21-python_telnetlib_sample.html</loc>
+    <loc>http://yesokay.herokuapp.com/python_telnetlib_sample.html</loc>
     <lastmod>2010-06-21T11:23:31.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-20-chrome_dev_channel_source.html</loc>
+    <loc>http://yesokay.herokuapp.com/chrome_dev_channel_source.html</loc>
     <lastmod>2010-06-20T22:11:25.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-21-android_phone_number.html</loc>
+    <loc>http://yesokay.herokuapp.com/android_phone_number.html</loc>
     <lastmod>2010-06-21T13:21:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-20-android.md5_string.html</loc>
+    <loc>http://yesokay.herokuapp.com/android.md5_string.html</loc>
     <lastmod>2010-06-20T21:11:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-18-ubuntu_emacs_android.html</loc>
+    <loc>http://yesokay.herokuapp.com/ubuntu_emacs_android.html</loc>
     <lastmod>2010-06-18T12:32:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-06-norton_google_dns.html</loc>
+    <loc>http://yesokay.herokuapp.com/norton_google_dns.html</loc>
     <lastmod>2010-06-06T21:19:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-07-qt_incredibuild_compile.html</loc>
+    <loc>http://yesokay.herokuapp.com/qt_incredibuild_compile.html</loc>
     <lastmod>2010-06-07T23:33:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-06-first_qt.html</loc>
+    <loc>http://yesokay.herokuapp.com/first_qt.html</loc>
     <lastmod>2010-06-06T18:18:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-06-debian_depends.html</loc>
+    <loc>http://yesokay.herokuapp.com/debian_depends.html</loc>
     <lastmod>2010-06-06T12:37:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-03-boost_program_options_unregistered_param.html</loc>
+    <loc>http://yesokay.herokuapp.com/boost_program_options_unregistered_param.html</loc>
     <lastmod>2010-06-03T11:37:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-02-vs2005_boost.html</loc>
+    <loc>http://yesokay.herokuapp.com/vs2005_boost.html</loc>
     <lastmod>2010-06-02T11:33:13.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-01-sudo_environment.html</loc>
+    <loc>http://yesokay.herokuapp.com/sudo_environment.html</loc>
     <lastmod>2010-06-01T11:43:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-01-boost_program_options.html</loc>
+    <loc>http://yesokay.herokuapp.com/boost_program_options.html</loc>
     <lastmod>2010-06-01T12:32:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-06-01-boost_parse_environment.html</loc>
+    <loc>http://yesokay.herokuapp.com/boost_parse_environment.html</loc>
     <lastmod>2010-06-01T12:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-31-emacs_htmlize_el_mono_font.html</loc>
+    <loc>http://yesokay.herokuapp.com/emacs_htmlize_el_mono_font.html</loc>
     <lastmod>2010-05-31T22:43:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-31-boost_timer.html</loc>
+    <loc>http://yesokay.herokuapp.com/boost_timer.html</loc>
     <lastmod>2010-05-31T13:12:32.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-31-boost_progress_display.html</loc>
+    <loc>http://yesokay.herokuapp.com/boost_progress_display.html</loc>
     <lastmod>2010-05-31T11:12:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-18-grub2_boot_default.html</loc>
+    <loc>http://yesokay.herokuapp.com/grub2_boot_default.html</loc>
     <lastmod>2010-05-18T12:12:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-16-mercurial_hg_proxy.html</loc>
+    <loc>http://yesokay.herokuapp.com/mercurial_hg_proxy.html</loc>
     <lastmod>2010-05-16T17:11:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-11-archlinux_x11_forwarding.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_x11_forwarding.html</loc>
     <lastmod>2010-05-11T13:11:32.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-10-archlinux_install_yaourt.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_install_yaourt.html</loc>
     <lastmod>2010-05-10T23:11:13.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-10-archlinux_global_proxy.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_global_proxy.html</loc>
     <lastmod>2010-05-10T13:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-09-archlinux_usb_pen.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_usb_pen.html</loc>
     <lastmod>2010-05-09T21:13:43.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-08-ubuntu_kernel_clean.html</loc>
+    <loc>http://yesokay.herokuapp.com/ubuntu_kernel_clean.html</loc>
     <lastmod>2010-05-08T19:33:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-08-ssh_sock_5.html</loc>
+    <loc>http://yesokay.herokuapp.com/ssh_sock_5.html</loc>
     <lastmod>2010-05-08T13:11:32.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-08-ogre_chinese_path_filename.html</loc>
+    <loc>http://yesokay.herokuapp.com/ogre_chinese_path_filename.html</loc>
     <lastmod>2010-05-08T16:11:38.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-08-mount_cifs_umask.html</loc>
+    <loc>http://yesokay.herokuapp.com/mount_cifs_umask.html</loc>
     <lastmod>2010-05-08T18:23:34.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-08-git_svn_clone_revision.html</loc>
+    <loc>http://yesokay.herokuapp.com/git_svn_clone_revision.html</loc>
     <lastmod>2010-05-08T23:11:38.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-08-archlinux_chrome_autoproxy.html</loc>
+    <loc>http://yesokay.herokuapp.com/archlinux_chrome_autoproxy.html</loc>
     <lastmod>2010-05-08T22:11:22.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-08-apache2_start_error.html</loc>
+    <loc>http://yesokay.herokuapp.com/apache2_start_error.html</loc>
     <lastmod>2010-05-08T11:12:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-vs2010_ultimate_sn.html</loc>
+    <loc>http://yesokay.herokuapp.com/vs2010_ultimate_sn.html</loc>
     <lastmod>2010-05-07T18:53:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-ubuntu_lucid_failed_query_glx_vendor.html</loc>
+    <loc>http://yesokay.herokuapp.com/ubuntu_lucid_failed_query_glx_vendor.html</loc>
     <lastmod>2010-05-07T09:11:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-ubuntu_nvidia_ko.html</loc>
+    <loc>http://yesokay.herokuapp.com/ubuntu_nvidia_ko.html</loc>
     <lastmod>2010-05-07T16:14:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-ubuntu_lucid_distcc.html</loc>
+    <loc>http://yesokay.herokuapp.com/ubuntu_lucid_distcc.html</loc>
     <lastmod>2010-05-07T12:11:33.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-scribefire_chrome.html</loc>
+    <loc>http://yesokay.herokuapp.com/scribefire_chrome.html</loc>
     <lastmod>2010-05-07T11:31:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-p2pnat.html</loc>
+    <loc>http://yesokay.herokuapp.com/p2pnat.html</loc>
     <lastmod>2010-05-07T18:33:21.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-ogre_resources.html</loc>
+    <loc>http://yesokay.herokuapp.com/ogre_resources.html</loc>
     <lastmod>2010-05-07T17:23:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-ms_vc_stderr_file.html</loc>
+    <loc>http://yesokay.herokuapp.com/ms_vc_stderr_file.html</loc>
     <lastmod>2010-05-07T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-linux_emacs_color.html</loc>
+    <loc>http://yesokay.herokuapp.com/linux_emacs_color.html</loc>
     <lastmod>2010-05-07T18:19:20.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-libcurl_http_download_error.html</loc>
+    <loc>http://yesokay.herokuapp.com/libcurl_http_download_error.html</loc>
     <lastmod>2010-05-07T08:21:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-googlechrome_firefox_feeling.html</loc>
+    <loc>http://yesokay.herokuapp.com/googlechrome_firefox_feeling.html</loc>
     <lastmod>2010-05-07T22:22:22.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-google_voice_orkut_active.html</loc>
+    <loc>http://yesokay.herokuapp.com/google_voice_orkut_active.html</loc>
     <lastmod>2010-05-07T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-google_code_hg_password_save.html</loc>
+    <loc>http://yesokay.herokuapp.com/google_code_hg_password_save.html</loc>
     <lastmod>2010-05-07T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-git_windows.html</loc>
+    <loc>http://yesokay.herokuapp.com/git_windows.html</loc>
     <lastmod>2010-05-07T11:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-get_glsl_version.html</loc>
+    <loc>http://yesokay.herokuapp.com/get_glsl_version.html</loc>
     <lastmod>2010-05-07T11:11:11.000Z</lastmod>
   </url>
   

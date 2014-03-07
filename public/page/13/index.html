@@ -64,6 +64,7 @@ var _js2load = [];
         <li><a href="/" title="主页">主页</a></li>      
         <li><a href="/about/" title="关于">关于</a></li>      
         <li><a href="/archives/" title="归档">归档</a></li>      
+        <li><a href="/sitemap.xml" title="SiteMap">SiteMap</a></li>      
       <li class='dropdown'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
         <ul class='dropdown-menu'>
@@ -80,6 +81,8 @@ var _js2load = [];
       
         <li><a href="https://twitter.com/ChenZaichun">twitter</a></li>
       
+      
+        <li><a href="https://www.facebook.com/ChenZaichun">facebook</a></li>
       
       
       
@@ -103,9 +106,100 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-01-16-hg_cert_warning.html">hg certificate warnings</a></h1>
+      <h1 class="title"><a href="/view_process_with_python_and_pywin32.html">在Windows下用Python查看进程信息</a></h1>
       
-        <span>发表于<time datetime="2011-01-16T19:34:31.000Z"> <a href="/2011-01-16-hg_cert_warning.html">1月 16 2011</a></time></span>      
+        <span>发表于<time datetime="2011-01-26T19:34:31.000Z"> <a href="/view_process_with_python_and_pywin32.html">1月 26 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>得益于PyWin32的强大，在Windows下可以通过Python调用Performon COM接口来查看进程的信息。下面的代码就是查看svhost进程的相关信息的示例代码，如果需要其他信息，请自行添加counter</p>
+<figure class="highlight python"><pre><span class="comment">#/!/usr/bin/env python</span>
+<span class="comment"># -*- coding: utf-8 -*-</span>
+
+<span class="keyword">import</span> win32api, win32pdh, win32pdhutil
+<span class="keyword">import</span> time
+
+<span class="function"><span class="keyword">def</span> <span class="title">ShowAllProcesses</span><span class="params">()</span>:</span>
+
+    procs = []
+    object = win32pdhutil.find_pdh_counter_localized_name(<span class="string">"Process"</span>)
+
+    items, instances = win32pdh.EnumObjectItems(<span class="keyword">None</span>,<span class="keyword">None</span>,object,win32pdh.PERF_DETAIL_WIZARD)
+    instance_dict = {}
+
+    <span class="keyword">for</span> instance <span class="keyword">in</span> instances:
+        <span class="keyword">try</span>:
+            <span class="keyword">if</span> instance == <span class="string">'svchost'</span>:
+                instance_dict[instance] = instance_dict[instance] + <span class="number">1</span>
+        <span class="keyword">except</span> KeyError:
+            instance_dict[instance] = <span class="number">0</span>
+
+    items = [win32pdhutil.find_pdh_counter_localized_name(<span class="string">"ID Process"</span>)] + items[<span class="number">0</span>:]
+
+    <span class="keyword">for</span> instance, max_instances <span class="keyword">in</span> instance_dict.items():
+
+        <span class="keyword">for</span> inum <span class="keyword">in</span> xrange(max_instances+<span class="number">1</span>):
+
+            hq = win32pdh.OpenQuery()
+
+            hcs = []
+            <span class="keyword">for</span> item <span class="keyword">in</span> items:
+                path = win32pdh.MakeCounterPath((<span class="keyword">None</span>,object, instance,<span class="keyword">None</span>, inum, item))
+                hcs.append(win32pdh.AddCounter(hq, path))
+
+            win32pdh.CollectQueryData(hq)
+
+            time.sleep(<span class="number">0.01</span>)
+            win32pdh.CollectQueryData(hq)
+            proc = instance[:<span class="number">15</span>]
+            hc = hcs[<span class="number">0</span>]
+
+            vals = []
+            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(hcs)):
+                hc = hcs[i]
+                type, val = win32pdh.GetFormattedCounterValue(hc, win32pdh.PDH_FMT_LONG)
+                vals.append(val)
+
+            win32pdh.RemoveCounter(hc)
+
+            procs.append([proc, [vals] ])
+            win32pdh.CloseQuery(hq)
+
+    <span class="keyword">print</span> procs
+    <span class="keyword">return</span> procs
+ShowAllProcesses()
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a><a href="/tags/Windows/" class="label label-success">Windows</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:13"datetime="2014-03-05 06:29:13"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/view_process_with_python_and_pywin32.html#comments" class="ds-thread-count comment-link" data-thread-key="view_process_with_python_and_pywin32" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/hg_cert_warning.html">hg certificate warnings</a></h1>
+      
+        <span>发表于<time datetime="2011-01-16T19:34:31.000Z"> <a href="/hg_cert_warning.html">1月 16 2011</a></time></span>      
     </header>
     
     
@@ -136,7 +230,7 @@ var _js2load = [];
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/hg/" class="label label-success">hg</a><a href="/tags/mercurial/" class="label label-info">mercurial</a><a href="/tags/python/" class="label label-warning">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:12"datetime="2014-03-05 06:29:12"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-16-hg_cert_warning" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/hg_cert_warning.html#comments" class="ds-thread-count comment-link" data-thread-key="hg_cert_warning" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -151,9 +245,9 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-01-16-hg-git.html">hg-git--hg下直接操作git</a></h1>
+      <h1 class="title"><a href="/hg-git.html">hg-git--hg下直接操作git</a></h1>
       
-        <span>发表于<time datetime="2011-01-16T19:24:31.000Z"> <a href="/2011-01-16-hg-git.html">1月 16 2011</a></time></span>      
+        <span>发表于<time datetime="2011-01-16T19:24:31.000Z"> <a href="/hg-git.html">1月 16 2011</a></time></span>      
     </header>
     
     
@@ -192,7 +286,7 @@ $ hg <span class="keyword">push</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/git/" class="label label-success">git</a><a href="/tags/hg/" class="label label-info">hg</a><a href="/tags/mercurial/" class="label label-warning">mercurial</a><a href="/tags/python/" class="label label-primary">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:11"datetime="2014-03-05 06:29:11"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-01-16-hg-git.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-16-hg-git" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/hg-git.html#comments" class="ds-thread-count comment-link" data-thread-key="hg-git" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -207,9 +301,9 @@ $ hg <span class="keyword">push</span>
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-01-16-compile_subversion_python2-7_binding_on_windows.html">windows下编译subversion的Python绑定（附下载）</a></h1>
+      <h1 class="title"><a href="/compile_subversion_python2-7_binding_on_windows.html">windows下编译subversion的Python绑定（附下载）</a></h1>
       
-        <span>发表于<time datetime="2011-01-16T19:14:31.000Z"> <a href="/2011-01-16-compile_subversion_python2-7_binding_on_windows.html">1月 16 2011</a></time></span>      
+        <span>发表于<time datetime="2011-01-16T19:14:31.000Z"> <a href="/compile_subversion_python2-7_binding_on_windows.html">1月 16 2011</a></time></span>      
     </header>
     
     
@@ -255,7 +349,7 @@ $ hg <span class="keyword">push</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a><a href="/tags/svn/" class="label label-success">svn</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:11"datetime="2014-03-05 06:29:11"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-01-16-compile_subversion_python2-7_binding_on_windows.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-16-compile_subversion_python2-7_binding_on_windows" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/compile_subversion_python2-7_binding_on_windows.html#comments" class="ds-thread-count comment-link" data-thread-key="compile_subversion_python2-7_binding_on_windows" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -270,9 +364,9 @@ $ hg <span class="keyword">push</span>
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-01-10-easy_install_upgrade.html">easy_install升级</a></h1>
+      <h1 class="title"><a href="/easy_install_upgrade.html">easy_install升级</a></h1>
       
-        <span>发表于<time datetime="2011-01-10T19:14:31.000Z"> <a href="/2011-01-10-easy_install_upgrade.html">1月 10 2011</a></time></span>      
+        <span>发表于<time datetime="2011-01-10T19:14:31.000Z"> <a href="/easy_install_upgrade.html">1月 10 2011</a></time></span>      
     </header>
     
     
@@ -296,7 +390,7 @@ $ hg <span class="keyword">push</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a><a href="/tags/无所事事/" class="label label-success">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:10"datetime="2014-03-05 06:29:10"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-01-10-easy_install_upgrade.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-10-easy_install_upgrade" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/easy_install_upgrade.html#comments" class="ds-thread-count comment-link" data-thread-key="easy_install_upgrade" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -311,9 +405,9 @@ $ hg <span class="keyword">push</span>
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-25-notitle.html">保持队形看下去</a></h1>
+      <h1 class="title"><a href="/notitle.html">保持队形看下去</a></h1>
       
-        <span>发表于<time datetime="2010-12-25T19:14:31.000Z"> <a href="/2010-12-25-notitle.html">12月 25 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-25T19:14:31.000Z"> <a href="/notitle.html">12月 25 2010</a></time></span>      
     </header>
     
     
@@ -333,7 +427,7 @@ $ hg <span class="keyword">push</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:10"datetime="2014-03-05 06:29:10"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-25-notitle.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-25-notitle" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/notitle.html#comments" class="ds-thread-count comment-link" data-thread-key="notitle" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -348,9 +442,9 @@ $ hg <span class="keyword">push</span>
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-19-chrome_for_cause_cheating_code.html">chrome for cause作弊码</a></h1>
+      <h1 class="title"><a href="/chrome_for_cause_cheating_code.html">chrome for cause作弊码</a></h1>
       
-        <span>发表于<time datetime="2010-12-19T19:14:31.000Z"> <a href="/2010-12-19-chrome_for_cause_cheating_code.html">12月 19 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-19T19:14:31.000Z"> <a href="/chrome_for_cause_cheating_code.html">12月 19 2010</a></time></span>      
     </header>
     
     
@@ -370,7 +464,7 @@ $ hg <span class="keyword">push</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/chrome/" class="label label-primary">chrome</a><a href="/tags/Google/" class="label label-success">Google</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:09"datetime="2014-03-05 06:29:09"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-19-chrome_for_cause_cheating_code.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-19-chrome_for_cause_cheating_code" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/chrome_for_cause_cheating_code.html#comments" class="ds-thread-count comment-link" data-thread-key="chrome_for_cause_cheating_code" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -385,9 +479,9 @@ $ hg <span class="keyword">push</span>
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-18-chrome_dev_update_error.html">chrome dev无法升级</a></h1>
+      <h1 class="title"><a href="/chrome_dev_update_error.html">chrome dev无法升级</a></h1>
       
-        <span>发表于<time datetime="2010-12-18T19:54:31.000Z"> <a href="/2010-12-18-chrome_dev_update_error.html">12月 18 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-18T19:54:31.000Z"> <a href="/chrome_dev_update_error.html">12月 18 2010</a></time></span>      
     </header>
     
     
@@ -405,7 +499,7 @@ $ hg <span class="keyword">push</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/chrome/" class="label label-primary">chrome</a><a href="/tags/Google/" class="label label-success">Google</a><a href="/tags/无所事事/" class="label label-info">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:08"datetime="2014-03-05 06:29:08"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-18-chrome_dev_update_error.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-18-chrome_dev_update_error" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/chrome_dev_update_error.html#comments" class="ds-thread-count comment-link" data-thread-key="chrome_dev_update_error" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -420,9 +514,9 @@ $ hg <span class="keyword">push</span>
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-18-chrome_for_a_cause.html">安装Chrome行善事</a></h1>
+      <h1 class="title"><a href="/chrome_for_a_cause.html">安装Chrome行善事</a></h1>
       
-        <span>发表于<time datetime="2010-12-18T19:14:31.000Z"> <a href="/2010-12-18-chrome_for_a_cause.html">12月 18 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-18T19:14:31.000Z"> <a href="/chrome_for_a_cause.html">12月 18 2010</a></time></span>      
     </header>
     
     
@@ -442,7 +536,7 @@ $ hg <span class="keyword">push</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/chrome/" class="label label-primary">chrome</a><a href="/tags/Google/" class="label label-success">Google</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:08"datetime="2014-03-05 06:29:08"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-18-chrome_for_a_cause.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-18-chrome_for_a_cause" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/chrome_for_a_cause.html#comments" class="ds-thread-count comment-link" data-thread-key="chrome_for_a_cause" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -457,9 +551,9 @@ $ hg <span class="keyword">push</span>
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-16-course_of_foreign_university.html">值得推荐的国外名牌大学网络课程视频下载</a></h1>
+      <h1 class="title"><a href="/course_of_foreign_university.html">值得推荐的国外名牌大学网络课程视频下载</a></h1>
       
-        <span>发表于<time datetime="2010-12-16T19:54:31.000Z"> <a href="/2010-12-16-course_of_foreign_university.html">12月 16 2010</a></time></span>      
+        <span>发表于<time datetime="2010-12-16T19:54:31.000Z"> <a href="/course_of_foreign_university.html">12月 16 2010</a></time></span>      
     </header>
     
     
@@ -476,60 +570,7 @@ $ hg <span class="keyword">push</span>
     
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a><a href="/tags/转载/" class="label label-success">转载</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:07"datetime="2014-03-05 06:29:07"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-16-course_of_foreign_university.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-16-course_of_foreign_university" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-14-mr_liu.html">我最崇拜的人姓刘总结贴</a></h1>
-      
-        <span>发表于<time datetime="2010-12-14T19:54:31.000Z"> <a href="/2010-12-14-mr_liu.html">12月 14 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>@<a href="http://hxyl.net/2010/12/12/xin-liu/" target="_blank">河蟹娱乐</a></p>
-<p>我最崇拜的人姓刘，他获得过国际大奖，他的所作所为激发了国人的斗志，虽然有一段时间他从我们眼前消失了，但是我相信他的精神永存。他的名字叫刘翔。</p>
-<p>我最崇拜的人姓刘，他对这个国家以及生活在这片土地上的人满怀悲悯；他想做一番轰轰烈烈的大事业；要拯救万民于水火；他有一帮志同道合并同样令人敬仰的朋友与伙伴；他的人格魅力使很多人都愿意追随着他，为理想而奋斗。他名备字玄德，人称皇叔。</p>
-<p>我最崇拜的人姓刘，他领导过学生闹学运，出过书，得过外国的奖，后来被冤枉做了很多年牢。但我相信，这些都是历史给他的考验，因为他说过，好在历史是人民写的。他的名字是刘少奇。</p>
-<p>我最崇拜的人姓刘。他是个博士，他出过书、当过被告。得过西方很多国家的大奖，以及香港台湾等境外组织颁发的奖。他是很多中国人的偶像，他是中国人的自豪和骄傲。他叫刘德华！</p>
-<p>我最崇拜的人姓刘，ta面对暴力无所畏惧，坚定信仰自己的理念。尽管ta早早地被强权迫害，但ta的名字直到今天仍在流传。ta是刘胡兰。</p>
-<p>我最崇拜的人姓刘，他是一个和文艺有过不解之缘的名人，他发表的文字曾经引起过轩然大波，他在国内一度名声狼狈，在国外却得到很多同情和帮助。他曾因违反中国法律而入狱，并因此失去自由。他，噢错了是她，她的名字叫刘晓庆。</p>
-<p>我最崇拜的人姓刘，他获得了世界性的奖项，因为他的推手技惊全球以至于不得不说：我没有敌人。有时候面对记者会结结巴巴，他一度消失在人们的视野。整个世界都经常默念他的名字：国家的未来栋梁！他的名字叫刘国梁。</p>
-<p>我最崇拜的人姓刘，他十几年如一日，忍辱负重，勤奋耕耘，从一个东北土鳖成长为亿万人瞩目的理性楷模。他致力于一个理想化的行动，让自己备受磨难，但人们心里为他树起了一座丰碑，他的名字叫刘老根儿。</p>
-<p>我最崇拜的人他姓刘，他一生传奇，80年代就名扬国际，热衷挑战强拳，获得过无数国际大奖。他的一生没有敌人。他就是拳王刘易斯。</p>
-<p>我崇拜的人姓刘，从80年代开始就写出了一系列传世佳作，在一代又一代爱好自由的人手中传颂。尽管关于他的作品有一些争议，但好无偏见的说他的文字影响和改变了很多推友。他就是刘欣慈。</p>
-<p>我最崇拜的人姓刘，他获得过很多境外组织的奖杯，他的作品流行海内外，他忠厚的面貌总是让人感到亲切，他也很关心缅甸昂山阿姨的情况，他的名字叫刘青云。</p>
-<p>我最崇拜的人姓刘，他以人性化的实践，经历和见证了封建小农经济下个人良心的最大发挥。他清白而廉洁，但却历经诬陷，一个好人被钉在耻辱里，体现了专制政权的强横与无耻。然而，他被人传颂为良知的化身和尊严的维护者。他的名字叫刘文彩。</p>
-<p>我不崇拜的人姓刘，他某年因为因为被央视现场报道使用幕后黑手欺骗全国人民而一举闻名。他荣获过那个领域的国际大奖，他的成就可以说在中国没有敌人。网上关于他的争议一直很多，不过丝毫不影响他的影响力。他就魔术师刘谦。</p>
-<p>我最崇拜的人姓刘，ta是一个东北人，ta于1989年春夏之交正式登上历史舞台，ta在世界上拥有极高的声望，ta就是我国著名游泳运动员刘子歌。</p>
-<p>我最崇拜的人姓刘，他为了反抗强权暴政忍辱负重，尽管他有很多先天缺陷，但是仍然不能阻止他成为时代的领袖，他的名字刘邦。</p>
-<p>我最崇拜的人姓刘，虽然我没有见过他，但他一直为大家的幸福生活在默默的努力。现在越来越多的人知道他喜欢他的作品，甚至还有人盗版他的东西冒充来卖，这是一件好事，他叫刘一手。</p>
-<p>我最崇拜的人姓刘，Ta和Ta的同志们为了自由和人权与专制进行了不懈的斗争，Ta用自身惨痛的牺牲证明了专制的残暴，人们铭记着Ta的事迹，专制却从学校课本里把Ta的名字拿走，Ta的名字叫刘和珍。</p>
-<p>我最崇拜的人姓刘，每当我觉得社会太黑暗、生活得太辛苦要放弃时，脑海中出现ta的身影又让我重燃斗志。ta是刘亦菲。</p>
-<p>我最崇拜的人姓刘。念过大学，刚正不阿，曾被当权者剥夺工作，中年后又被关入监狱。每个中国人都应该记住他的名字。他叫刘墉！</p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a><a href="/tags/转载/" class="label label-success">转载</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:06"datetime="2014-03-05 06:29:06"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-14-mr_liu.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-14-mr_liu" data-count-type="comments">暂无评论</a></span>
+<a href="http://yesokay.herokuapp.com/course_of_foreign_university.html#comments" class="ds-thread-count comment-link" data-thread-key="course_of_foreign_university" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -542,7 +583,7 @@ $ hg <span class="keyword">push</span>
 
 
 <ul id="pagination" class="pagination pagination-lg">
-  <li><a class="extend prev" href="/page/12/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/10/">10</a></li><li><a class="page-number" href="/page/11/">11</a></li><li><a class="page-number" href="/page/12/">12</a></li><li class="active"><li><span class="page-number current">13</span></li><li><a class="page-number" href="/page/14/">14</a></li><li><a class="page-number" href="/page/15/">15</a></li><li><a class="page-number" href="/page/16/">16</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/23/">23</a></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="extend next" href="/page/14/">&raquo;</a></li>
+  <li><a class="extend prev" href="/page/12/">&laquo;</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/page/10/">10</a></li><li><a class="page-number" href="/page/11/">11</a></li><li><a class="page-number" href="/page/12/">12</a></li><li class="active"><li><span class="page-number current">13</span></li><li><a class="page-number" href="/page/14/">14</a></li><li><a class="page-number" href="/page/15/">15</a></li><li><a class="page-number" href="/page/16/">16</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/page/24/">24</a></li><li><a class="page-number" href="/page/25/">25</a></li><li><a class="extend next" href="/page/14/">&raquo;</a></li>
   <div class="clearfix"></div>
 </ul></div><!--wapper-->
        </div><!-- ID main-col END -->
@@ -573,7 +614,7 @@ $ hg <span class="keyword">push</span>
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-01-26-view_process_with_python_and_pywin32.html">在Windows下用Python查看进程信息</a></li><li class="list-group-item"><a href="/2011-10-28-flush_dns_on_windows.html">windows下清空系统dns</a></li><li class="list-group-item"><a href="/2011-11-15-convert-hg-to-git.html">将hg转换为git</a></li><li class="list-group-item"><a href="/2010-06-22-emacs_python_ide.html">emacs下配置python开发环境</a></li><li class="list-group-item"><a href="/2011-10-29-get_user_name_by_python.html">Python获取当前用户名</a></li><li class="list-group-item"><a href="/2012-11-28-start-x-font-server-on-hp-ux.html">在hp-ux上启动x font server</a></li><li class="list-group-item"><a href="/2010-08-23-archlinux_auto_mount_windows.html">archlinux中自动挂载windows分区</a></li><li class="list-group-item"><a href="/2011-07-13-cocos2d_iphone_popscenewithtransition.html">cocos2d-iphone popSceneWithTransition</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/test-blog-with-org-mode.html">test blog with org-mode</a></li><li class="list-group-item"><a href="/sudo_keep_env.html">sudo环境变量</a></li><li class="list-group-item"><a href="/windows_hide_taskbar.html">在任务栏中隐藏windows程序</a></li><li class="list-group-item"><a href="/mount_cifs_umask.html">Mount.cifs 中设置文件权限</a></li><li class="list-group-item"><a href="/archlinux-enable-vbox-service.html">archlinux下启用virtualbox service</a></li><li class="list-group-item"><a href="/norton_google_dns.html">使用诺顿dns服务器</a></li><li class="list-group-item"><a href="/qt_text_codec.html">QT中文乱码问题</a></li><li class="list-group-item"><a href="/ibus_sunpinyin_cadidates.html">ibus-sunpinyin翻页设置</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -616,7 +657,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:01</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 08:02:10</em></span></div>
 </div>
 <div class="clearfix"></div>
 
