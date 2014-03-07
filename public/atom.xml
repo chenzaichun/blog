@@ -4,7 +4,7 @@
   <subtitle><![CDATA[阿尔萨斯，没有霜之哀伤你就是一坨屎！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yesokay.herokuapp.com/"/>
-  <updated>2014-03-07T07:05:37.587Z</updated>
+  <updated>2014-03-07T07:21:50.142Z</updated>
   <id>http://yesokay.herokuapp.com/</id>
   
   <author>
@@ -13,6 +13,63 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Mac OS X下安装gevent]]></title>
+    <link href="http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html"/>
+    <id>http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html</id>
+    <published>2013-06-23T11:08:00.000Z</published>
+    <updated>2014-03-07T07:17:01.000Z</updated>
+    <content type="html"><![CDATA[<p>(请确保xcode command line tools已经安装)</p>
+<p>直接使用 =pip install= 会出现 =event.h= 找不到：</p>
+<figure class="highlight"><pre>   clang: warning: argument unused during compilation: <span class="string">'-mno-fused-madd'</span>
+    In <span class="built_in">file</span> included <span class="built_in">from</span> gevent/core.c:<span class="number">253</span>:
+    gevent/libevent.h:<span class="number">9</span>:<span class="number">10</span>: fatal error: <span class="string">'event.h'</span> <span class="built_in">file</span> <span class="operator">not</span> found
+    <span class="comment">#include "event.h"</span>
+             ^
+    <span class="number">1</span> error generated.
+    error: <span class="command"><span class="keyword">command</span> <span class="string">'clang'</span> <span class="title">failed</span> <span class="title">with</span> <span class="title">exit</span> <span class="title">status</span> <span class="title">1</span></span>
+</pre></figure>
+
+<p>这个时候需要安装 =libevent=:</p>
+<figure class="highlight"><pre>brew <span class="keyword">install</span> libevent
+</pre></figure>
+
+<p>然后安装 =gevent=</p>
+<figure class="highlight"><pre><span class="built_in">sudo</span> pip install gevent
+</pre></figure>
+
+<p>安装成功之后，测试一下发现会出错：</p>
+<figure class="highlight"><pre>&gt;&gt;&gt; import gevent
+<span class="constant">Traceback</span> (most recent call last)<span class="symbol">:</span>
+  <span class="constant">File</span> <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;<span class="class"><span class="keyword">module</span>&gt;</span>
+  <span class="constant">File</span> <span class="string">"/Library/Python/2.7/site-packages/gevent/__init__.py"</span>, line <span class="number">40</span>, <span class="keyword">in</span> &lt;<span class="class"><span class="keyword">module</span>&gt;</span>
+<span class="constant">ImportError</span><span class="symbol">:</span> cannot import name core
+</pre></figure>
+
+<p>原来是因为没有安装 =cython=, 安装之</p>
+<figure class="highlight"><pre><span class="built_in">sudo</span> pip install cython
+</pre></figure>
+
+<p>并重新安装 =greenlet= 和 =gevent=</p>
+<figure class="highlight"><pre><span class="built_in">sudo</span> pip uninstall gevent
+<span class="built_in">sudo</span> pip uninstall greenlet
+<span class="built_in">sudo</span> pip install greenlet
+<span class="built_in">sudo</span> pip install gevent
+</pre></figure>
+
+]]></content>
+    
+    
+      <category term="tools" scheme="http://yesokay.herokuapp.com/tags/tools/"/>
+    
+      <category term="python" scheme="http://yesokay.herokuapp.com/tags/python/"/>
+    
+      <category term="macosx" scheme="http://yesokay.herokuapp.com/tags/macosx/"/>
+    
+      <category term="programming" scheme="http://yesokay.herokuapp.com/categories/programming/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[这是开挂了吧]]></title>
@@ -1582,23 +1639,6 @@ lib-path <span class="string">"/Volumes/home/chenza/gopath/pkg/darwin_amd64"</sp
     <published>2012-09-21T20:05:00.000Z</published>
     <updated>2014-03-05T06:30:27.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/media/the-right-way-of-eating-fruit.jpg" alt="各种水果的正常吃法"></p>
-]]></content>
-    
-    
-      <category term="无所事事" scheme="http://yesokay.herokuapp.com/tags/%E6%97%A0%E6%89%80%E4%BA%8B%E4%BA%8B/"/>
-    
-      <category term="无所事事" scheme="http://yesokay.herokuapp.com/categories/%E6%97%A0%E6%89%80%E4%BA%8B%E4%BA%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[鞍山书记]]></title>
-    <link href="http://yesokay.herokuapp.com/2012-09-21-anshanshuji.html"/>
-    <id>http://yesokay.herokuapp.com/2012-09-21-anshanshuji.html</id>
-    <published>2012-09-21T12:46:00.000Z</published>
-    <updated>2014-03-05T06:30:25.000Z</updated>
-    <content type="html"><![CDATA[<p>看那旧时光从你的面庞溜走，你老了，国家却因你变好了！</p>
-<p><img src="/media/assj.jpg" alt="assj.jpg"></p>
 ]]></content>
     
     

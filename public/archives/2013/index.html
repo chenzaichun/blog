@@ -107,6 +107,77 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2013-06-23-install-gevent-on-mac-os-x.html">Mac OS X下安装gevent</a></h1>
+      
+        <span>发表于<time datetime="2013-06-23T11:08:00.000Z"> <a href="/2013-06-23-install-gevent-on-mac-os-x.html">6月 23 2013</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>(请确保xcode command line tools已经安装)</p>
+<p>直接使用 =pip install= 会出现 =event.h= 找不到：</p>
+<figure class="highlight"><pre>   clang: warning: argument unused during compilation: <span class="string">'-mno-fused-madd'</span>
+    In <span class="built_in">file</span> included <span class="built_in">from</span> gevent/core.c:<span class="number">253</span>:
+    gevent/libevent.h:<span class="number">9</span>:<span class="number">10</span>: fatal error: <span class="string">'event.h'</span> <span class="built_in">file</span> <span class="operator">not</span> found
+    <span class="comment">#include "event.h"</span>
+             ^
+    <span class="number">1</span> error generated.
+    error: <span class="command"><span class="keyword">command</span> <span class="string">'clang'</span> <span class="title">failed</span> <span class="title">with</span> <span class="title">exit</span> <span class="title">status</span> <span class="title">1</span></span>
+</pre></figure>
+
+<p>这个时候需要安装 =libevent=:</p>
+<figure class="highlight"><pre>brew <span class="keyword">install</span> libevent
+</pre></figure>
+
+<p>然后安装 =gevent=</p>
+<figure class="highlight"><pre><span class="built_in">sudo</span> pip install gevent
+</pre></figure>
+
+<p>安装成功之后，测试一下发现会出错：</p>
+<figure class="highlight"><pre>&gt;&gt;&gt; import gevent
+<span class="constant">Traceback</span> (most recent call last)<span class="symbol">:</span>
+  <span class="constant">File</span> <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;<span class="class"><span class="keyword">module</span>&gt;</span>
+  <span class="constant">File</span> <span class="string">"/Library/Python/2.7/site-packages/gevent/__init__.py"</span>, line <span class="number">40</span>, <span class="keyword">in</span> &lt;<span class="class"><span class="keyword">module</span>&gt;</span>
+<span class="constant">ImportError</span><span class="symbol">:</span> cannot import name core
+</pre></figure>
+
+<p>原来是因为没有安装 =cython=, 安装之</p>
+<figure class="highlight"><pre><span class="built_in">sudo</span> pip install cython
+</pre></figure>
+
+<p>并重新安装 =greenlet= 和 =gevent=</p>
+<figure class="highlight"><pre><span class="built_in">sudo</span> pip uninstall gevent
+<span class="built_in">sudo</span> pip uninstall greenlet
+<span class="built_in">sudo</span> pip install greenlet
+<span class="built_in">sudo</span> pip install gevent
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/tools/" class="label label-primary">tools</a><a href="/tags/python/" class="label label-success">python</a><a href="/tags/macosx/" class="label label-info">macosx</a></span> | <span class="time">最近更新:<time title="2014-03-07 07:17:01"datetime="2014-03-07 07:17:01"> 3月 7 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html#comments" class="ds-thread-count comment-link" data-thread-key="2013-06-23-install-gevent-on-mac-os-x" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2013-06-03-cheat.html">这是开挂了吧</a></h1>
       
         <span>发表于<time datetime="2013-06-13T15:22:00.000Z"> <a href="/2013-06-03-cheat.html">6月 13 2013</a></time></span>      
@@ -207,7 +278,7 @@ var _js2load = [];
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-12-12-pythoncom_lnk_file_path.html">在windows下通过pythoncom获取快捷方式所指定的路径</a></li><li class="list-group-item"><a href="/2011-10-29-get_user_name_by_python.html">Python获取当前用户名</a></li><li class="list-group-item"><a href="/2012-05-12-add-robots-dot-txt-to-octopress.html">Octopress添加robots.txt</a></li><li class="list-group-item"><a href="/2010-07-21-android_aapt_error.html">解决Error executing aapt. Please check aapt is present at %错误</a></li><li class="list-group-item"><a href="/2010-05-31-boost_timer.html">boost::timer</a></li><li class="list-group-item"><a href="/2011-12-12-gnustep-env-on-archlinux.html">archlinux下配置GNUStep环境</a></li><li class="list-group-item"><a href="/2011-10-27-orgblog_code_theme.html">org2blog代码背景色</a></li><li class="list-group-item"><a href="/2010-07-22-windows_hide_taskbar.html">在任务栏中隐藏windows程序</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2012-05-31-test-blog-with-org-mode.html">test blog with org-mode</a></li><li class="list-group-item"><a href="/2010-05-07-ogre_resources.html">ogre资源整理</a></li><li class="list-group-item"><a href="/2012-02-03-compile-gsoap-on-mac-os-x.html">MacOS X上编译gSOAP</a></li><li class="list-group-item"><a href="/2011-11-03-add_css_support_for_rss_output.html">RSS输出添加css支持</a></li><li class="list-group-item"><a href="/2010-08-23-archlinux_auto_mount_windows.html">archlinux中自动挂载windows分区</a></li><li class="list-group-item"><a href="/2010-07-22-windows_task_bar_height.html">windows获取任务栏高度</a></li><li class="list-group-item"><a href="/2011-10-28-colored_man_page_output.html">colored man page output</a></li><li class="list-group-item"><a href="/2012-05-24-get-chinese-pinyin-python.html">python获取中文拼音首字母以进行检索</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -250,7 +321,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:49</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:00</em></span></div>
 </div>
 <div class="clearfix"></div>
 

@@ -107,6 +107,58 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2010-06-27-android_set_default_apn.html">android下设置默认APN</a></h1>
+      
+        <span>发表于<time datetime="2010-06-27T12:22:11.000Z"> <a href="/2010-06-27-android_set_default_apn.html">6月 27 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <figure class="highlight java"><pre><span class="javadoc">/**
+ * set default apn
+ *<span class="javadoctag"> @param</span> id
+ */</span>
+<span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setDefaultApn</span>(<span class="keyword">int</span> id) {
+    <span class="comment">// TODO Auto-generated method stub</span>
+　　ContentResolver cr = getContentResolver();
+　　ContentValues cv = <span class="keyword">new</span> ContentValues();
+　　cv.put(<span class="string">"apn_id"</span>, id);
+
+　　<span class="keyword">try</span> {
+　　　　cr.update(preferapnUri, cv, <span class="keyword">null</span>, <span class="keyword">null</span>);
+　  } <span class="keyword">catch</span> (Exception e) {
+　　　　<span class="comment">// TODO Auto-generated catch block</span>
+     　 e.printStackTrace();
+　 }
+}
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/android/" class="label label-primary">android</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:22"datetime="2014-03-05 06:28:22"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2010-06-27-android_set_default_apn.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-27-android_set_default_apn" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2010-06-24-pyexpect.html">pyexpect</a></h1>
       
         <span>发表于<time datetime="2010-06-24T23:11:11.000Z"> <a href="/2010-06-24-pyexpect.html">6月 24 2010</a></time></span>      
@@ -636,44 +688,6 @@ do(host)
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-06-norton_google_dns.html">使用诺顿dns服务器</a></h1>
-      
-        <span>发表于<time datetime="2010-06-06T21:19:11.000Z"> <a href="/2010-06-06-norton_google_dns.html">6月 6 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>今天将dns服务器换为诺顿的和google的了，诺顿默认情况下给出了一些危险网站的建议，加上google chrome的危险建议，所以相对来说上网就比较安全，我的dns服务器配置 cat /etc/resolve.conf</p>
-<figure class="highlight conf"><pre><span class="title">nameserver</span> <span class="number">198.153.192.1</span>
-nameserver <span class="number">8.8.8.8</span>
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/dns/" class="label label-primary">dns</a><a href="/tags/Google/" class="label label-success">Google</a><a href="/tags/norton/" class="label label-info">norton</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:15"datetime="2014-03-05 06:28:15"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-06-norton_google_dns.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-06-norton_google_dns" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/archives/page/19/">&laquo;</a></li><li><a class="page-number" href="/archives/">1</a></li><li><a class="page-number" href="/archives/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/archives/page/17/">17</a></li><li><a class="page-number" href="/archives/page/18/">18</a></li><li><a class="page-number" href="/archives/page/19/">19</a></li><li class="active"><li><span class="page-number current">20</span></li></li><li><a class="page-number" href="/archives/page/21/">21</a></li><li><a class="page-number" href="/archives/page/23/">23</a></li><li><a class="page-number" href="/archives/page/24/">24</a></li><li><a class="extend next" href="/archives/page/21/">&raquo;</a></li>
@@ -707,7 +721,7 @@ nameserver <span class="number">8.8.8.8</span>
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-05-07-vs2010_ultimate_sn.html">visual studio 2010 ultimate正式版注册码</a></li><li class="list-group-item"><a href="/2011-06-26-mac_os_x_emacs_chinese_font.html">emacs中文显示方框</a></li><li class="list-group-item"><a href="/2010-07-22-windows_get_resolution.html">windows下获取屏幕分辨率</a></li><li class="list-group-item"><a href="/2010-09-16-chrome_proxy_.md_arg.html">chrome代理相关命令行总结</a></li><li class="list-group-item"><a href="/2010-08-25-emacs23_xim.html">emacs23不能切换输入法的问题</a></li><li class="list-group-item"><a href="/2010-05-31-boost_progress_display.html">boost::progress_display</a></li><li class="list-group-item"><a href="/2010-05-08-ogre_chinese_path_filename.html">ogre中文路径和文件名</a></li><li class="list-group-item"><a href="/2012-12-26-insert-current-time-in-emacs.html">emacs中插入当前时间</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-05-08-git_svn_clone_revision.html">git svn clone 特定版本</a></li><li class="list-group-item"><a href="/2010-05-07-libcurl_http_download_error.html">libcurl http下载时文件不存在的问题</a></li><li class="list-group-item"><a href="/2010-06-03-boost_program_options_unregistered_param.html">让boost::program_options支持未注册的参数</a></li><li class="list-group-item"><a href="/2010-08-25-emacs23_xim.html">emacs23不能切换输入法的问题</a></li><li class="list-group-item"><a href="/2011-03-30-change_oracle_ui_to_english.html">修改oracle的默认界面语言为英文</a></li><li class="list-group-item"><a href="/2011-11-02-micolog_code_backgroud_in_rss_output.html">Micolog RSS输出代码背景色问题</a></li><li class="list-group-item"><a href="/2010-12-05-never_marry_you.html">“我绝不嫁给你”的英语表达</a></li><li class="list-group-item"><a href="/2012-12-26-git-submodule-remove.html">删除git submodule</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -750,7 +764,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:47</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:21:58</em></span></div>
 </div>
 <div class="clearfix"></div>
 

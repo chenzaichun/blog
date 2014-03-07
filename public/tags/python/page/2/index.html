@@ -107,6 +107,97 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2011-01-26-view_process_with_python_and_pywin32.html">在Windows下用Python查看进程信息</a></h1>
+      
+        <span>发表于<time datetime="2011-01-26T19:34:31.000Z"> <a href="/2011-01-26-view_process_with_python_and_pywin32.html">1月 26 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>得益于PyWin32的强大，在Windows下可以通过Python调用Performon COM接口来查看进程的信息。下面的代码就是查看svhost进程的相关信息的示例代码，如果需要其他信息，请自行添加counter</p>
+<figure class="highlight python"><pre><span class="comment">#/!/usr/bin/env python</span>
+<span class="comment"># -*- coding: utf-8 -*-</span>
+
+<span class="keyword">import</span> win32api, win32pdh, win32pdhutil
+<span class="keyword">import</span> time
+
+<span class="function"><span class="keyword">def</span> <span class="title">ShowAllProcesses</span><span class="params">()</span>:</span>
+
+    procs = []
+    object = win32pdhutil.find_pdh_counter_localized_name(<span class="string">"Process"</span>)
+
+    items, instances = win32pdh.EnumObjectItems(<span class="keyword">None</span>,<span class="keyword">None</span>,object,win32pdh.PERF_DETAIL_WIZARD)
+    instance_dict = {}
+
+    <span class="keyword">for</span> instance <span class="keyword">in</span> instances:
+        <span class="keyword">try</span>:
+            <span class="keyword">if</span> instance == <span class="string">'svchost'</span>:
+                instance_dict[instance] = instance_dict[instance] + <span class="number">1</span>
+        <span class="keyword">except</span> KeyError:
+            instance_dict[instance] = <span class="number">0</span>
+
+    items = [win32pdhutil.find_pdh_counter_localized_name(<span class="string">"ID Process"</span>)] + items[<span class="number">0</span>:]
+
+    <span class="keyword">for</span> instance, max_instances <span class="keyword">in</span> instance_dict.items():
+
+        <span class="keyword">for</span> inum <span class="keyword">in</span> xrange(max_instances+<span class="number">1</span>):
+
+            hq = win32pdh.OpenQuery()
+
+            hcs = []
+            <span class="keyword">for</span> item <span class="keyword">in</span> items:
+                path = win32pdh.MakeCounterPath((<span class="keyword">None</span>,object, instance,<span class="keyword">None</span>, inum, item))
+                hcs.append(win32pdh.AddCounter(hq, path))
+
+            win32pdh.CollectQueryData(hq)
+
+            time.sleep(<span class="number">0.01</span>)
+            win32pdh.CollectQueryData(hq)
+            proc = instance[:<span class="number">15</span>]
+            hc = hcs[<span class="number">0</span>]
+
+            vals = []
+            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(hcs)):
+                hc = hcs[i]
+                type, val = win32pdh.GetFormattedCounterValue(hc, win32pdh.PDH_FMT_LONG)
+                vals.append(val)
+
+            win32pdh.RemoveCounter(hc)
+
+            procs.append([proc, [vals] ])
+            win32pdh.CloseQuery(hq)
+
+    <span class="keyword">print</span> procs
+    <span class="keyword">return</span> procs
+ShowAllProcesses()
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a><a href="/tags/Windows/" class="label label-success">Windows</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:13"datetime="2014-03-05 06:29:13"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2011-01-26-view_process_with_python_and_pywin32.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-26-view_process_with_python_and_pywin32" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2011-01-16-hg_cert_warning.html">hg certificate warnings</a></h1>
       
         <span>发表于<time datetime="2011-01-16T19:34:31.000Z"> <a href="/2011-01-16-hg_cert_warning.html">1月 16 2011</a></time></span>      
@@ -611,86 +702,6 @@ rs.Open( <span class="string">"[test]"</span>, conn, <span class="number">1</spa
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-12-python_get_pe_version_info.html">python获取PE文件版本信息</a></h1>
-      
-        <span>发表于<time datetime="2010-12-12T19:22:11.000Z"> <a href="/2010-12-12-python_get_pe_version_info.html">12月 12 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>通过pywin32中的win32api.GetFileVersionInfo来获取</p>
-<figure class="highlight python"><pre>#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# Get the version information from Windows PE
-
-from win32api import GetFileVersionInfo, LOWORD, HIWORD
-
-def get_version_number (filename):
-    try:
-        info = GetFileVersionInfo (filename, "\")
-        ms = info['FileVersionMS']
-        ls = info['FileVersionLS']
-        return HIWORD (ms), LOWORD (ms), HIWORD (ls), LOWORD (ls)
-    except:
-        return 0,0,0,0
-
-def printOtherInfo(filename):
-    try:
-        info = GetFileVersionInfo(filename, "\")
-        print(info)
-
-	# In order to get the company information, we need to get the lang 
-	# and code page first, then get the related strings
-        trans = GetFileVersionInfo(filename, "\VarFileInfo\Translation")
-        if not trans:
-            return 
-        print(info)
-
-        # Common string lists:
-        # "CompanyName","FileDescription", "FileVersion", "InternalName",
-        # "LegalCopyright", "OriginalFilename", "ProductName", "ProductVersion"
-        # You can use this way to get custom defined strings.
-
-        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "CompanyName"))
-        print(info)
-        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "FileVersion"))
-        print(info)
-    except:
-        pass
-
-if __name__ == '__main__':
-    import os
-    filename = os.environ["COMSPEC"]
-    print ".".join ([str (i) for i in get_version_number (filename)])
-    printOtherInfo(filename)
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:01"datetime="2014-03-05 06:29:01"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-12-python_get_pe_version_info.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-12-python_get_pe_version_info" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/tags/python/">&laquo;</a></li><li><a class="page-number" href="/tags/python/">1</a></li><li class="active"><li><span class="page-number current">2</span></li></li><li><a class="page-number" href="/tags/python/page/3/">3</a></li><li><a class="extend next" href="/tags/python/page/3/">&raquo;</a></li>
@@ -724,7 +735,7 @@ if __name__ == '__main__':
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-05-07-ms_vc_stderr_file.html">ms vc下stderr到文件</a></li><li class="list-group-item"><a href="/2010-05-07-git_windows.html">git windows</a></li><li class="list-group-item"><a href="/2011-03-01-yaourt_proxy.html">yaourt代理设置</a></li><li class="list-group-item"><a href="/2012-01-30-git-svn-proxy-setting.html">git svn代理设置</a></li><li class="list-group-item"><a href="/2012-07-03-install-pptp-vnp-server-on-debian-linux.html">Debian Linux下安装pptp vpn服务器</a></li><li class="list-group-item"><a href="/2010-05-08-git_svn_clone_revision.html">git svn clone 特定版本</a></li><li class="list-group-item"><a href="/2011-10-28-python_get_public_ip.html">python获取本机公网IP</a></li><li class="list-group-item"><a href="/2011-11-12-stty_erase_key.html">Linux默认Erase Key(Backspace Key)</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2012-09-21-show-depends-on-mac-os-x.html">MacOS X下查看可执行程序依赖</a></li><li class="list-group-item"><a href="/2010-11-29-res_protocol.html">使用res协议打开exe里面资源文件</a></li><li class="list-group-item"><a href="/2012-11-21-avoids-ssh-timeouts.html">Avoids ssh timeouts</a></li><li class="list-group-item"><a href="/2011-10-21-usegitbehindproxy.html">git代理设置</a></li><li class="list-group-item"><a href="/2010-05-08-archlinux_chrome_autoproxy.html">archlinux 下chrome autoproxy</a></li><li class="list-group-item"><a href="/2011-11-03-my-org_post_process_hook.html">OrgMode Post Process Hook</a></li><li class="list-group-item"><a href="/2011-11-13-emacs_sys_process_environment.html">Emacs进程/系统环境变量</a></li><li class="list-group-item"><a href="/2010-05-10-archlinux_global_proxy.html">archlinux全局代理</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -767,7 +778,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:56</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:06</em></span></div>
 </div>
 <div class="clearfix"></div>
 

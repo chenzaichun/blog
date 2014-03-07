@@ -107,6 +107,62 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2012-02-28-gsoap-error-500.html">gsoap Error 500</a></h1>
+      
+        <span>发表于<time datetime="2012-02-28T22:31:48.000Z"> <a href="/2012-02-28-gsoap-error-500.html">2月 28 2012</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>解决了Error 200之后又遇到了Error 500：</p>
+<blockquote>
+<p>Error 500 fault: SOAP-ENV:Server[no subcode]</p>
+</blockquote>
+<p>通过tcpdump分析得到，gsoap强制加入了一个SOAP-ENV:mustUnderstand=&quot;1&quot;属性，而web service方不能解析该属性。</p>
+<p>解决办法, </p>
+<figure class="highlight c"><pre><span class="comment">// set mustUnderstand to 0</span>
+soap.mustUnderstand=<span class="number">0</span>;
+</pre></figure>
+
+<p>修改soapC.cpp, 注释掉<code>soap-&gt;mustUnderstand=1</code>这一行：</p>
+<figure class="highlight c"><pre>SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 soap_out_SOAP_ENV__Header(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)
+{
+  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;
+  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))
+    <span class="keyword">return</span> soap-&gt;error;
+  <span class="comment">//soap-&gt;mustUnderstand = 1;</span>
+  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))
+    <span class="keyword">return</span> soap-&gt;error;
+  <span class="keyword">return</span> soap_element_end_out(soap, tag);
+}
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/gsoap/" class="label label-success">gsoap</a><a href="/tags/org2blog/" class="label label-info">org2blog</a><a href="/tags/web service/" class="label label-warning">web service</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:10"datetime="2014-03-05 06:30:10"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2012-02-28-gsoap-error-500.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-02-28-gsoap-error-500" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2012-02-28-using-tcpdump-analysis-soap-protocol.html">使用tcpdump分析soap包</a></h1>
       
         <span>发表于<time datetime="2012-02-28T13:24:20.000Z"> <a href="/2012-02-28-using-tcpdump-analysis-soap-protocol.html">2月 28 2012</a></time></span>      
@@ -476,47 +532,6 @@ username = yesokay
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-01-13-speed-up-ssh-x11-forwarding.html">X11 Forwarding提速</a></h1>
-      
-        <span>发表于<time datetime="2012-01-13T17:16:14.000Z"> <a href="/2012-01-13-speed-up-ssh-x11-forwarding.html">1月 13 2012</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p><a href="http://www.miscdebris.net/blog/2007/06/01/speed-up-ssh-x11-forwarding/&quot;" target="_blank">参考链接</a>, 原理就是通过-C压缩传输，-c修改加密算法来提高传输</p>
-<figure class="highlight sh"><pre>ssh <span class="attribute">-c</span> arcfour,blowfish<span class="attribute">-cbc</span> <span class="attribute">-XC</span> host<span class="built_in">.</span>com
-</pre></figure>
-
-<p>通过alias设置:</p>
-<figure class="highlight sh"><pre><span class="keyword">alias</span> ssh-x=<span class="string">'ssh -c arcfour,blowfish-cbc -XC'</span>
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:03"datetime="2014-03-05 06:30:03"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-01-13-speed-up-ssh-x11-forwarding.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-01-13-speed-up-ssh-x11-forwarding" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/archives/page/4/">&laquo;</a></li><li><a class="page-number" href="/archives/">1</a></li><li><a class="page-number" href="/archives/page/2/">2</a></li><li><a class="page-number" href="/archives/page/4/">4</a></li><li class="active"><li><span class="page-number current">5</span></li><li><a class="page-number" href="/archives/page/6/">6</a></li><li><a class="page-number" href="/archives/page/7/">7</a></li><li><a class="page-number" href="/archives/page/8/">8</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/archives/page/23/">23</a></li><li><a class="page-number" href="/archives/page/24/">24</a></li><li><a class="extend next" href="/archives/page/6/">&raquo;</a></li>
@@ -550,7 +565,7 @@ username = yesokay
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-11-03-my-org_post_process_hook.html">OrgMode Post Process Hook</a></li><li class="list-group-item"><a href="/2012-01-13-speed-up-ssh-x11-forwarding.html">X11 Forwarding提速</a></li><li class="list-group-item"><a href="/2010-05-08-apache2_start_error.html">Apache 2 启动错误的解决</a></li><li class="list-group-item"><a href="/2010-05-07-get_glsl_version.html">获取glsl version</a></li><li class="list-group-item"><a href="/2013-01-13-archlinux-enable-vbox-service.html">archlinux下启用virtualbox service</a></li><li class="list-group-item"><a href="/2011-11-18-chrome-vim-key-binding.html">chrome vim按键绑定</a></li><li class="list-group-item"><a href="/2010-07-22-windows_hide_taskbar.html">在任务栏中隐藏windows程序</a></li><li class="list-group-item"><a href="/2010-11-30-android_call_google_maps_apk.html">android下程序直接调用Google自己的地图程序</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-12-12-get_user_desktop_path_from_python.html">windows下通过python获取用户桌面路径</a></li><li class="list-group-item"><a href="/2011-01-10-easy_install_upgrade.html">easy_install升级</a></li><li class="list-group-item"><a href="/2010-05-31-emacs_htmlize_el_mono_font.html">设置emacs htmlize.el为等宽字体</a></li><li class="list-group-item"><a href="/2010-05-07-libcurl_http_download_error.html">libcurl http下载时文件不存在的问题</a></li><li class="list-group-item"><a href="/2010-08-02-ubuntu_linux_flashget.html">ubuntu下使用flashget</a></li><li class="list-group-item"><a href="/2011-10-28-python_get_public_ip.html">python获取本机公网IP</a></li><li class="list-group-item"><a href="/2010-06-21-ubuntu_telnet_server.html">ubuntu下安装telnet服务器</a></li><li class="list-group-item"><a href="/2011-07-05-ios_input_dialog.html">iOS弹出输入框</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -593,7 +608,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:47</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:21:58</em></span></div>
 </div>
 <div class="clearfix"></div>
 

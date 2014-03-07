@@ -107,6 +107,48 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2011-07-09-ios_exit_program_in_code.html">iOS退出程序</a></h1>
+      
+        <span>发表于<time datetime="2011-07-09T20:56:31.000Z"> <a href="/2011-07-09-ios_exit_program_in_code.html">7月 9 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>如果想在程序里面添加一个按钮“退出”，可以调用</p>
+<figure class="highlight objc"><pre><span class="attr_selector">[[UIApplication sharedApplication]</span> <span class="tag">terminateWithSuccess</span>];
+</pre></figure>
+
+<p>在cocos2d-iphone中添加退出按钮后的响应函数：</p>
+<figure class="highlight objc"><pre><span class="attr_selector">[[CCDirector sharedDirector]</span> <span class="tag">end</span>];
+<span class="attr_selector">[[UIApplication sharedApplication]</span> <span class="tag">terminateWithSuccess</span>];
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/ios/">ios</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/ios/" class="label label-primary">ios</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:25"datetime="2014-03-05 06:29:25"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2011-07-09-ios_exit_program_in_code.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-07-09-ios_exit_program_in_code" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2011-07-05-uiwebview_current_url.html">UIWebView获取当前加载的URL</a></h1>
       
         <span>发表于<time datetime="2011-07-05T20:56:31.000Z"> <a href="/2011-07-05-uiwebview_current_url.html">7月 5 2011</a></time></span>      
@@ -500,53 +542,6 @@ hg commit
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-04-24-gdb_remote_debuging.html">GDB远程调试</a></h1>
-      
-        <span>发表于<time datetime="2011-04-24T19:44:31.000Z"> <a href="/2011-04-24-gdb_remote_debuging.html">4月 24 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>参考链接：<a href="http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx" target="_blank"><a href="http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx">http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx</a></a></p>
-<p>前面已经做好跨平台的交叉编译的工作，如果需要调试怎么办呢？这个时候就可以GDB的远程调试来实现。</p>
-<p>P.S. 如果没有windows的GDB，可以去<a href="http://www.gnu.org/software/gdb/" target="_blank">下载</a>或者自行编译。
-在windows端执行 </p>
-<figure class="highlight sh"><pre><span class="tag">gdbserver</span> <span class="tag">localhost</span><span class="pseudo">:2345</span> <span class="tag">photorec</span><span class="class">.exe</span>
-</pre></figure>
-
-<p>在archlinux下执行</p>
-<figure class="highlight sh"><pre><span class="comment"># 这里我用的virtualbox，所以ip为10.0.2.2，请自行替换成windows的ip</span>
-<span class="variable">$gdb</span> photorec.exe
-gdb&gt; target remote <span class="number">10.0</span>.<span class="number">2.2</span>:<span class="number">2345</span>
-gdb &gt; ....
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/gdb/" class="label label-success">gdb</a><a href="/tags/Linux/" class="label label-info">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:18"datetime="2014-03-05 06:29:18"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-04-24-gdb_remote_debuging.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-04-24-gdb_remote_debuging" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/archives/page/10/">&laquo;</a></li><li><a class="page-number" href="/archives/">1</a></li><li><a class="page-number" href="/archives/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/archives/page/8/">8</a></li><li><a class="page-number" href="/archives/page/9/">9</a></li><li><a class="page-number" href="/archives/page/10/">10</a></li><li class="active"><li><span class="page-number current">11</span></li><li><a class="page-number" href="/archives/page/12/">12</a></li><li><a class="page-number" href="/archives/page/13/">13</a></li><li><a class="page-number" href="/archives/page/14/">14</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/archives/page/23/">23</a></li><li><a class="page-number" href="/archives/page/24/">24</a></li><li><a class="extend next" href="/archives/page/12/">&raquo;</a></li>
@@ -580,7 +575,7 @@ gdb &gt; ....
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-07-27-ubuntu_adb_driver.html">ubuntu下adb驱动问题</a></li><li class="list-group-item"><a href="/2011-10-21-usegitbehindproxy.html">git代理设置</a></li><li class="list-group-item"><a href="/2010-12-05-sun.html">千万别惹姓孙的</a></li><li class="list-group-item"><a href="/2010-05-07-google_code_hg_password_save.html">google code hg 保存密码</a></li><li class="list-group-item"><a href="/2010-06-02-vs2005_boost.html">vs2005下编译boost</a></li><li class="list-group-item"><a href="/2011-03-30-change_oracle_ui_to_english.html">修改oracle的默认界面语言为英文</a></li><li class="list-group-item"><a href="/2011-04-24-gdb_remote_debuging.html">GDB远程调试</a></li><li class="list-group-item"><a href="/2010-12-12-pywin32_word.html">pywin32访问word文件</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-12-18-chrome_dev_update_error.html">chrome dev无法升级</a></li><li class="list-group-item"><a href="/2012-05-12-octopress-useful-links.html">octopress常用链接整理</a></li><li class="list-group-item"><a href="/2011-01-16-hg_cert_warning.html">hg certificate warnings</a></li><li class="list-group-item"><a href="/2010-11-28-tell_me_more.html">Tell Me More</a></li><li class="list-group-item"><a href="/2012-10-22-xiami-auto-checkin-with-golang.html">虾米自动签到go语言版本</a></li><li class="list-group-item"><a href="/2010-05-07-google_voice_orkut_active.html">使用 google voice激活orkut</a></li><li class="list-group-item"><a href="/2010-08-08-fuse-python.html">安装fuse-python出现错误</a></li><li class="list-group-item"><a href="/2010-06-20-android.md5_string.html">android md5 string</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -623,7 +618,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:47</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:21:58</em></span></div>
 </div>
 <div class="clearfix"></div>
 

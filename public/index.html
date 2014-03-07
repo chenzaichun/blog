@@ -103,6 +103,77 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2013-06-23-install-gevent-on-mac-os-x.html">Mac OS X下安装gevent</a></h1>
+      
+        <span>发表于<time datetime="2013-06-23T11:08:00.000Z"> <a href="/2013-06-23-install-gevent-on-mac-os-x.html">6月 23 2013</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>(请确保xcode command line tools已经安装)</p>
+<p>直接使用 =pip install= 会出现 =event.h= 找不到：</p>
+<figure class="highlight"><pre>   clang: warning: argument unused during compilation: <span class="string">'-mno-fused-madd'</span>
+    In <span class="built_in">file</span> included <span class="built_in">from</span> gevent/core.c:<span class="number">253</span>:
+    gevent/libevent.h:<span class="number">9</span>:<span class="number">10</span>: fatal error: <span class="string">'event.h'</span> <span class="built_in">file</span> <span class="operator">not</span> found
+    <span class="comment">#include "event.h"</span>
+             ^
+    <span class="number">1</span> error generated.
+    error: <span class="command"><span class="keyword">command</span> <span class="string">'clang'</span> <span class="title">failed</span> <span class="title">with</span> <span class="title">exit</span> <span class="title">status</span> <span class="title">1</span></span>
+</pre></figure>
+
+<p>这个时候需要安装 =libevent=:</p>
+<figure class="highlight"><pre>brew <span class="keyword">install</span> libevent
+</pre></figure>
+
+<p>然后安装 =gevent=</p>
+<figure class="highlight"><pre><span class="built_in">sudo</span> pip install gevent
+</pre></figure>
+
+<p>安装成功之后，测试一下发现会出错：</p>
+<figure class="highlight"><pre>&gt;&gt;&gt; import gevent
+<span class="constant">Traceback</span> (most recent call last)<span class="symbol">:</span>
+  <span class="constant">File</span> <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;<span class="class"><span class="keyword">module</span>&gt;</span>
+  <span class="constant">File</span> <span class="string">"/Library/Python/2.7/site-packages/gevent/__init__.py"</span>, line <span class="number">40</span>, <span class="keyword">in</span> &lt;<span class="class"><span class="keyword">module</span>&gt;</span>
+<span class="constant">ImportError</span><span class="symbol">:</span> cannot import name core
+</pre></figure>
+
+<p>原来是因为没有安装 =cython=, 安装之</p>
+<figure class="highlight"><pre><span class="built_in">sudo</span> pip install cython
+</pre></figure>
+
+<p>并重新安装 =greenlet= 和 =gevent=</p>
+<figure class="highlight"><pre><span class="built_in">sudo</span> pip uninstall gevent
+<span class="built_in">sudo</span> pip uninstall greenlet
+<span class="built_in">sudo</span> pip install greenlet
+<span class="built_in">sudo</span> pip install gevent
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/tools/" class="label label-primary">tools</a><a href="/tags/python/" class="label label-success">python</a><a href="/tags/macosx/" class="label label-info">macosx</a></span> | <span class="time">最近更新:<time title="2014-03-07 07:17:01"datetime="2014-03-07 07:17:01"> 3月 7 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html#comments" class="ds-thread-count comment-link" data-thread-key="2013-06-23-install-gevent-on-mac-os-x" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2013-06-03-cheat.html">这是开挂了吧</a></h1>
       
         <span>发表于<time datetime="2013-06-13T15:22:00.000Z"> <a href="/2013-06-03-cheat.html">6月 13 2013</a></time></span>      
@@ -496,48 +567,6 @@ netstat -an<span class="string">|grep 7000</span>
 
 
 
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-12-26-open-large-file-with-emacs.html">使用emacs打开大文件</a></h1>
-      
-        <span>发表于<time datetime="2012-11-26T08:48:00.000Z"> <a href="/2012-12-26-open-large-file-with-emacs.html">11月 26 2012</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>经常使用<code>emacs</code>来查看日志文件，当日至文件特别大的时候，<code>emacs</code>的反应速度实在是不敢恭维。</p>
-<p>网上查了一下，有两个有趣的elisp，分享一下：</p>
-<ol>
-<li><a href="http://www.cnblogs.com/yangyingchao/archive/2011/09/20/2182176.html" target="_blank">http://www.cnblogs.com/yangyingchao/archive/2011/09/20/2182176.html</a></li>
-<li><a href="http://www.emacswiki.org/emacs/vlf.el" target="_blank">http://www.emacswiki.org/emacs/vlf.el</a></li>
-</ol>
-<p><code>logviewer-mode</code> 是针对log4j格式优化的，带有高亮显示，带有文件分块读取</p>
-<p><code>vlf</code> 则是将文件分块读取。</p>
-<p>于是乎我尝试了一下 <code>logviewer-mode</code>, 感觉很不错的。</p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:39"datetime="2014-03-05 06:30:39"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-12-26-open-large-file-with-emacs.html#comments" class="ds-thread-count comment-link" data-thread-key="2012-12-26-open-large-file-with-emacs" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
 
 
 <ul id="pagination" class="pagination pagination-lg">
@@ -572,7 +601,7 @@ netstat -an<span class="string">|grep 7000</span>
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-08-23-archlinux_sound.html">archlinux声卡配置</a></li><li class="list-group-item"><a href="/2012-05-31-test-blog-with-org-mode.html">test blog with org-mode</a></li><li class="list-group-item"><a href="/2011-04-24-archlinux_mingw_cross_compile_environment.html">archlinux搭建MinGW跨平台编译环境</a></li><li class="list-group-item"><a href="/2011-10-28-python_get_public_ip.html">python获取本机公网IP</a></li><li class="list-group-item"><a href="/2012-06-26-open-chinese-convert.html">Open Chinese Convert</a></li><li class="list-group-item"><a href="/2011-12-31-rsync-ignore-svn-direcotry.html">rsync忽略svn目录</a></li><li class="list-group-item"><a href="/2012-11-23-change-ibus-googlepinyin-default-candidates-number.html">修改ibus-googlepinyin候选词的个数</a></li><li class="list-group-item"><a href="/2010-08-08-fuse-python.html">安装fuse-python出现错误</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-12-18-chrome_for_a_cause.html">安装Chrome行善事</a></li><li class="list-group-item"><a href="/2011-07-01-ios_uiwebview_current_url.html">iOS获取UIWebView当前浏览页面的地址</a></li><li class="list-group-item"><a href="/2010-05-07-googlechrome_firefox_feeling.html">Google chrome与firefox</a></li><li class="list-group-item"><a href="/2010-05-07-ms_vc_stderr_file.html">ms vc下stderr到文件</a></li><li class="list-group-item"><a href="/2011-10-21-usegitbehindproxy.html">git代理设置</a></li><li class="list-group-item"><a href="/2011-12-31-git-remove-untracked-files-and-directories.html">git remove untracked files and directories</a></li><li class="list-group-item"><a href="/2012-07-03-install-pptp-vnp-server-on-debian-linux.html">Debian Linux下安装pptp vpn服务器</a></li><li class="list-group-item"><a href="/2012-09-26-golang-emacs-setting.html">emacs下golang的配置</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -615,7 +644,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:50</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:00</em></span></div>
 </div>
 <div class="clearfix"></div>
 

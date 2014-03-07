@@ -103,6 +103,54 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2011-01-16-hg_cert_warning.html">hg certificate warnings</a></h1>
+      
+        <span>发表于<time datetime="2011-01-16T19:34:31.000Z"> <a href="/2011-01-16-hg_cert_warning.html">1月 16 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>升级到mercurial 1.7.3之后，频繁会遇到像这样的错误：</p>
+<figure class="highlight"><pre><span class="label">warning:</span> bitbucket<span class="preprocessor">.org</span> certificate not verified (check web<span class="preprocessor">.cacerts</span> config setting)
+</pre></figure>
+
+<p>解决办法，参考链接：<a href="http://mercurial.selenic.com/wiki/CACertificates" target="_blank"><a href="http://mercurial.selenic.com/wiki/CACertificates">http://mercurial.selenic.com/wiki/CACertificates</a></a></p>
+<p>下载<a href="http://curl.haxx.se/ca/cacert.pem" target="_blank"><a href="http://curl.haxx.se/ca/cacert.pem">http://curl.haxx.se/ca/cacert.pem</a></a>到本地，然后在～/.hgrc里面添加这样一句：</p>
+<figure class="highlight conf"><pre><span class="title">[web]</span>
+<span class="setting">cacerts=<span class="value">/path/to/cacert.pem</span></span>
+</pre></figure>
+
+<p>或者直接禁用：</p>
+<figure class="highlight conf"><pre><span class="title">[web]</span>
+<span class="setting">cacerts =<span class="value"></span></span>
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/hg/" class="label label-success">hg</a><a href="/tags/mercurial/" class="label label-info">mercurial</a><a href="/tags/python/" class="label label-warning">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:12"datetime="2014-03-05 06:29:12"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-16-hg_cert_warning" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2011-01-16-hg-git.html">hg-git--hg下直接操作git</a></h1>
       
         <span>发表于<time datetime="2011-01-16T19:24:31.000Z"> <a href="/2011-01-16-hg-git.html">1月 16 2011</a></time></span>      
@@ -491,82 +539,6 @@ $ hg <span class="keyword">push</span>
 
 
 
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-13-python_manipulate_windows_service.html">Python操作Windows Service</a></h1>
-      
-        <span>发表于<time datetime="2010-12-13T19:54:31.000Z"> <a href="/2010-12-13-python_manipulate_windows_service.html">12月 13 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>python中可以通过pywin32操作Windows Service：</p>
-<figure class="highlight python"><pre><span class="keyword">import</span> win32service
-
-<span class="function"><span class="keyword">def</span> <span class="title">PrintServiceStatus</span><span class="params">(status)</span>:</span>
-    svcType, svcState, svcControls, err, svcErr, svcCP, svcWH = status
-    <span class="keyword">if</span> svcType & win32service.SERVICE_WIN32_OWN_PROCESS:
-        <span class="keyword">print</span> <span class="string">"The service runs in its own process"</span>
-    <span class="keyword">if</span> svcType & win32service.SERVICE_WIN32_SHARE_PROCESS:
-        <span class="keyword">print</span> <span class="string">"The service shares a process with other services"</span>
-    <span class="keyword">if</span> svcType & win32service.SERVICE_INTERACTIVE_PROCESS:
-        <span class="keyword">print</span> <span class="string">"The service can interact with the desktop"</span>
-    <span class="comment"># Other svcType flags not shown.</span>
-    <span class="keyword">if</span> svcState==win32service.SERVICE_STOPPED:
-        <span class="keyword">print</span> <span class="string">"The service is stopped"</span>
-    <span class="keyword">elif</span> svcState==win32service.SERVICE_START_PENDING:
-        <span class="keyword">print</span> <span class="string">"The service is starting"</span>
-    <span class="keyword">elif</span> svcState==win32service.SERVICE_STOP_PENDING:
-        <span class="keyword">print</span> <span class="string">"The service is stopping"</span>
-    <span class="keyword">elif</span> svcState==win32service.SERVICE_RUNNING:
-        <span class="keyword">print</span> <span class="string">"The service is running"</span>
-    <span class="comment"># Other svcState flags not shown.</span>
-    <span class="keyword">if</span> svcControls & win32service.SERVICE_ACCEPT_STOP:
-        <span class="keyword">print</span> <span class="string">"The service can be stopped"</span>
-    <span class="keyword">if</span> svcControls & win32service.SERVICE_ACCEPT_PAUSE_CONTINUE:
-        <span class="keyword">print</span> <span class="string">"The service can be paused"</span>
-    <span class="comment"># Other svcControls flags not shown</span>
-
-<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
-    scm = win32service.OpenSCManager(<span class="keyword">None</span>, <span class="keyword">None</span>,
-                                     win32service.SC_MANAGER_ALL_ACCESS)
-    allservice = win32service.EnumServicesStatus(scm, win32service.SERVICE_WIN32, win32service.SERVICE_STATE_ALL)
-    svc = win32service.OpenService(scm, <span class="string">'Cash Download'</span>,
-                                   win32service.SC_MANAGER_ALL_ACCESS)
-    win32service.ChangeServiceConfig(svc, win32service.SERVICE_NO_CHANGE,
-                                     win32service.SERVICE_AUTO_START,
-                                     win32service.SERVICE_NO_CHANGE,
-                                     <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="number">0</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>)
-    win32service.StartService(svc, <span class="string">""</span>)
-    win32service.ControlService(svc, win32service.SERVICE_CONTROL_STOP)
-    win32service.ControlService(svc, win32service.SERVICE_CONTROL_START)
-    PrintServiceStatus(win32service.QueryServiceStatus(svc))
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:05"datetime="2014-03-05 06:29:05"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-13-python_manipulate_windows_service.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-13-python_manipulate_windows_service" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
 
 
 <ul id="pagination" class="pagination pagination-lg">
@@ -601,7 +573,7 @@ $ hg <span class="keyword">push</span>
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2012-06-28-certificate-not-installed-on-the-node.html">Certificate not Installed on the Node</a></li><li class="list-group-item"><a href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html">通过git将bitbucket当做无限容量的dropbox</a></li><li class="list-group-item"><a href="/2012-05-14-calculate-elapsed-time-in-milliseconds-unix-slash-linux.html">Unix/Linux计算程序消耗的时间（毫秒)</a></li><li class="list-group-item"><a href="/2012-09-21-anshanshuji.html">鞍山书记</a></li><li class="list-group-item"><a href="/2011-10-24-ibus_sunpinyin_cadidates.html">ibus-sunpinyin翻页设置</a></li><li class="list-group-item"><a href="/2010-11-29-res_protocol.html">使用res协议打开exe里面资源文件</a></li><li class="list-group-item"><a href="/2011-10-29-get_user_name_by_python.html">Python获取当前用户名</a></li><li class="list-group-item"><a href="/2011-12-31-git-remove-untracked-files-and-directories.html">git remove untracked files and directories</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-01-26-view_process_with_python_and_pywin32.html">在Windows下用Python查看进程信息</a></li><li class="list-group-item"><a href="/2011-10-28-flush_dns_on_windows.html">windows下清空系统dns</a></li><li class="list-group-item"><a href="/2011-11-15-convert-hg-to-git.html">将hg转换为git</a></li><li class="list-group-item"><a href="/2010-06-22-emacs_python_ide.html">emacs下配置python开发环境</a></li><li class="list-group-item"><a href="/2011-10-29-get_user_name_by_python.html">Python获取当前用户名</a></li><li class="list-group-item"><a href="/2012-11-28-start-x-font-server-on-hp-ux.html">在hp-ux上启动x font server</a></li><li class="list-group-item"><a href="/2010-08-23-archlinux_auto_mount_windows.html">archlinux中自动挂载windows分区</a></li><li class="list-group-item"><a href="/2011-07-13-cocos2d_iphone_popscenewithtransition.html">cocos2d-iphone popSceneWithTransition</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -644,7 +616,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:50</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:01</em></span></div>
 </div>
 <div class="clearfix"></div>
 

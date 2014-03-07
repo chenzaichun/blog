@@ -107,6 +107,49 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2010-06-03-boost_program_options_unregistered_param.html">让boost::program_options支持未注册的参数</a></h1>
+      
+        <span>发表于<time datetime="2010-06-03T11:37:11.000Z"> <a href="/2010-06-03-boost_program_options_unregistered_param.html">6月 3 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>如果在使用boost::program_options的时候传递了未注册的参数，则会throw exception，要想无视我们不需要的参数，可以通过使用<code>basic_command_line_parser</code>类来分析 (而不是<code>parse_command_line</code>) ，并且调用该类的 allow_unregistered 方法：</p>
+<figure class="highlight cpp"><pre>parsed_options = 
+    command_line_parser(argv, argc).
+    options(desc).allow_unregistered().run();
+</pre></figure>
+
+<p>如果使用配置文件，则在调用<code>parse_config_file</code>的时候第三个参数传递true:</p>
+<figure class="highlight cpp"><pre>parse_config_file&lt;<span class="keyword">char</span>&gt;(cfgfilename, desc, <span class="keyword">true</span>)
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/boost/" class="label label-primary">boost</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:13"datetime="2014-03-05 06:28:13"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2010-06-03-boost_program_options_unregistered_param.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-03-boost_program_options_unregistered_param" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2010-06-02-vs2005_boost.html">vs2005下编译boost</a></h1>
       
         <span>发表于<time datetime="2010-06-02T11:33:13.000Z"> <a href="/2010-06-02-vs2005_boost.html">6月 2 2010</a></time></span>      
@@ -645,41 +688,6 @@ test <span class="symbol">boost:</span><span class="symbol">:timer</span>
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-07-vs2010_ultimate_sn.html">visual studio 2010 ultimate正式版注册码</a></h1>
-      
-        <span>发表于<time datetime="2010-05-07T18:53:11.000Z"> <a href="/2010-05-07-vs2010_ultimate_sn.html">5月 7 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>从官方下载试用版,初次安装后版本为试用版。这时进入控制面板的添加删除程序，点卸载VS2010后，有个Update Key的框，输入注册码就OK了。注意，这里主要是输入Key，请不要真的把它卸载掉喔。</p>
-<p>VS2010旗舰版 可用Key：<code>YCFHQ9DWCYDKV88T2TMHG7BHP</code></p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/visualstudio/" class="label label-primary">visualstudio</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:27:58"datetime="2014-03-05 06:27:58"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-07-vs2010_ultimate_sn.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-07-vs2010_ultimate_sn" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/categories/programming/page/12/">&laquo;</a></li><li><a class="page-number" href="/categories/programming/">1</a></li><li><a class="page-number" href="/categories/programming/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/categories/programming/page/10/">10</a></li><li><a class="page-number" href="/categories/programming/page/11/">11</a></li><li><a class="page-number" href="/categories/programming/page/12/">12</a></li><li class="active"><li><span class="page-number current">13</span></li></li><li><a class="page-number" href="/categories/programming/page/14/">14</a></li><li><a class="extend next" href="/categories/programming/page/14/">&raquo;</a></li>
@@ -713,7 +721,7 @@ test <span class="symbol">boost:</span><span class="symbol">:timer</span>
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-06-21-ubuntu_telnet_server.html">ubuntu下安装telnet服务器</a></li><li class="list-group-item"><a href="/2011-10-21-emacs_ibus_cannot_input_chinese.html">ibus在emacs下不能输入</a></li><li class="list-group-item"><a href="/2011-01-10-easy_install_upgrade.html">easy_install升级</a></li><li class="list-group-item"><a href="/2010-05-08-archlinux_chrome_autoproxy.html">archlinux 下chrome autoproxy</a></li><li class="list-group-item"><a href="/2010-05-08-mount_cifs_umask.html">Mount.cifs 中设置文件权限</a></li><li class="list-group-item"><a href="/2011-04-24-archlinux_mingw_cross_compile_environment.html">archlinux搭建MinGW跨平台编译环境</a></li><li class="list-group-item"><a href="/2011-11-18-chrome-vim-key-binding.html">chrome vim按键绑定</a></li><li class="list-group-item"><a href="/2012-11-27-emacs-mac-like-key-binding.html">让emacs具有mac下的按键绑定</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-08-25-archlinux_aur_update.html">archlinux自动升级aur</a></li><li class="list-group-item"><a href="/2010-06-02-vs2005_boost.html">vs2005下编译boost</a></li><li class="list-group-item"><a href="/2010-09-05-chrome_html5.html">原来chromium不支持youtube html5</a></li><li class="list-group-item"><a href="/2011-10-28-colored_man_page_output.html">colored man page output</a></li><li class="list-group-item"><a href="/2010-06-01-sudo_environment.html">sudo环境变量</a></li><li class="list-group-item"><a href="/2013-01-13-archlinux-enable-vbox-service.html">archlinux下启用virtualbox service</a></li><li class="list-group-item"><a href="/2012-02-28-gsoap-error-200.html">gsoap Error 200</a></li><li class="list-group-item"><a href="/2011-07-01-enable_zoom_in_out_uiwebview.html">UIWebView启用放大缩小</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -756,7 +764,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:49</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:00</em></span></div>
 </div>
 <div class="clearfix"></div>
 

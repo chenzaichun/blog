@@ -103,6 +103,61 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2010-07-22-cdhtmldialog_disable_context_menu_and_f5.html">CDHtmlDialog中禁用右键菜单和F5刷新</a></h1>
+      
+        <span>发表于<time datetime="2010-07-22T17:26:22.000Z"> <a href="/2010-07-22-cdhtmldialog_disable_context_menu_and_f5.html">7月 22 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>参考：<a href="http://www.codeproject.com/KB/MFC/dhtmldialog.aspx?msg=2016381#xx2016381xx" target="_blank">猛击这里</a>
+在头文件中加入：</p>
+<figure class="highlight cpp"><pre>STDMETHOD(ShowContextMenu)(DWORD dwID, POINT *ppt, IUnknown *pcmdtReserved, IDispatch *pdispReserved);
+STDMETHOD(TranslateAccelerator)(LPMSG lpMsg, <span class="keyword">const</span> GUID * pguidCmdGroup, DWORD nCmdID);
+</pre></figure>
+
+<p>在cpp中加入：</p>
+<figure class="highlight cpp"><pre>STDMETHODIMP ChtmldialogDlg::ShowContextMenu(DWORD dwID, POINT *ppt, IUnknown *pcmdtReserved, IDispatch *pdispReserved)
+{
+<span class="comment">//return CDHtmlDialog::ShowContextMenu(dwID, ppt, pcmdtReserved, pdispReserved);</span>
+<span class="keyword">return</span> S_OK;
+}
+
+STDMETHODIMP ChtmldialogDlg::TranslateAccelerator(LPMSG lpMsg, <span class="keyword">const</span> GUID * pguidCmdGroup, DWORD nCmdID)
+{
+<span class="keyword">if</span> (lpMsg && lpMsg-&gt;message == WM_KEYDOWN && lpMsg-&gt;wParam == VK_F5) {
+<span class="keyword">return</span> S_OK;
+}
+<span class="keyword">return</span> CDHtmlDialog::TranslateAccelerator(lpMsg, pguidCmdGroup, nCmdID);
+}
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/VC/" class="label label-primary">VC</a><a href="/tags/Windows/" class="label label-success">Windows</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:28"datetime="2014-03-05 06:28:28"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2010-07-22-cdhtmldialog_disable_context_menu_and_f5.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-07-22-cdhtmldialog_disable_context_menu_and_f5" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2010-07-22-windows_task_bar_height.html">windows获取任务栏高度</a></h1>
       
         <span>发表于<time datetime="2010-07-22T16:23:11.000Z"> <a href="/2010-07-22-windows_task_bar_height.html">7月 22 2010</a></time></span>      
@@ -543,58 +598,6 @@ values.put(<span class="string">"PASSWORD"</span>, <span class="string">""</span
 
 
 
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-27-android_set_default_apn.html">android下设置默认APN</a></h1>
-      
-        <span>发表于<time datetime="2010-06-27T12:22:11.000Z"> <a href="/2010-06-27-android_set_default_apn.html">6月 27 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <figure class="highlight java"><pre><span class="javadoc">/**
- * set default apn
- *<span class="javadoctag"> @param</span> id
- */</span>
-<span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setDefaultApn</span>(<span class="keyword">int</span> id) {
-    <span class="comment">// TODO Auto-generated method stub</span>
-　　ContentResolver cr = getContentResolver();
-　　ContentValues cv = <span class="keyword">new</span> ContentValues();
-　　cv.put(<span class="string">"apn_id"</span>, id);
-
-　　<span class="keyword">try</span> {
-　　　　cr.update(preferapnUri, cv, <span class="keyword">null</span>, <span class="keyword">null</span>);
-　  } <span class="keyword">catch</span> (Exception e) {
-　　　　<span class="comment">// TODO Auto-generated catch block</span>
-     　 e.printStackTrace();
-　 }
-}
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/android/" class="label label-primary">android</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:22"datetime="2014-03-05 06:28:22"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-27-android_set_default_apn.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-27-android_set_default_apn" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
 
 
 <ul id="pagination" class="pagination pagination-lg">
@@ -629,7 +632,7 @@ values.put(<span class="string">"PASSWORD"</span>, <span class="string">""</span
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-05-07-git_windows.html">git windows</a></li><li class="list-group-item"><a href="/2010-06-06-norton_google_dns.html">使用诺顿dns服务器</a></li><li class="list-group-item"><a href="/2011-07-01-enable_zoom_in_out_uiwebview.html">UIWebView启用放大缩小</a></li><li class="list-group-item"><a href="/2010-06-02-vs2005_boost.html">vs2005下编译boost</a></li><li class="list-group-item"><a href="/2011-12-15-archlinux-etc-rc-d-functions-error.html">archlinux functions脚本错误</a></li><li class="list-group-item"><a href="/2011-10-27-zenburn_code_css_test.html">zenburn-code css</a></li><li class="list-group-item"><a href="/2010-11-28-say_goodbye_to_ads.html">和广告说再见</a></li><li class="list-group-item"><a href="/2010-12-12-pywin32_word.html">pywin32访问word文件</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-12-05-redis_links.html">redis</a></li><li class="list-group-item"><a href="/2010-06-20-android.md5_string.html">android md5 string</a></li><li class="list-group-item"><a href="/2010-06-21-ubuntu_telnet_server.html">ubuntu下安装telnet服务器</a></li><li class="list-group-item"><a href="/2010-06-18-ubuntu_emacs_android.html">ubuntu下配置emacs android开发环境</a></li><li class="list-group-item"><a href="/2011-08-27-respondstoselector_not_found_in_protocol.html">'-respondsToSelector:' not found in protocol(s)</a></li><li class="list-group-item"><a href="/2010-06-21-python_telnetlib_sample.html">python telnetlib第一例</a></li><li class="list-group-item"><a href="/2011-12-30-mac-os-x-homebrew.html">抛弃MacPorts，用Homebrew吧</a></li><li class="list-group-item"><a href="/2012-06-27-pet.html">塑料瓶底数字的意思</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -672,7 +675,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:50</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:01</em></span></div>
 </div>
 <div class="clearfix"></div>
 

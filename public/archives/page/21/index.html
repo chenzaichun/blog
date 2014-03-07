@@ -107,6 +107,44 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2010-06-06-norton_google_dns.html">使用诺顿dns服务器</a></h1>
+      
+        <span>发表于<time datetime="2010-06-06T21:19:11.000Z"> <a href="/2010-06-06-norton_google_dns.html">6月 6 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>今天将dns服务器换为诺顿的和google的了，诺顿默认情况下给出了一些危险网站的建议，加上google chrome的危险建议，所以相对来说上网就比较安全，我的dns服务器配置 cat /etc/resolve.conf</p>
+<figure class="highlight conf"><pre><span class="title">nameserver</span> <span class="number">198.153.192.1</span>
+nameserver <span class="number">8.8.8.8</span>
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span><span class="breadcrumb"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/dns/" class="label label-primary">dns</a><a href="/tags/Google/" class="label label-success">Google</a><a href="/tags/norton/" class="label label-info">norton</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:15"datetime="2014-03-05 06:28:15"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2010-06-06-norton_google_dns.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-06-norton_google_dns" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2010-06-06-first_qt.html">第一个Qt程序</a></h1>
       
         <span>发表于<time datetime="2010-06-06T18:18:11.000Z"> <a href="/2010-06-06-first_qt.html">6月 6 2010</a></time></span>      
@@ -644,64 +682,6 @@ test <span class="symbol">boost:</span><span class="symbol">:timer</span>
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-31-boost_progress_display.html">boost::progress_display</a></h1>
-      
-        <span>发表于<time datetime="2010-05-31T11:12:33.000Z"> <a href="/2010-05-31-boost_progress_display.html">5月 31 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>boost::progress_display是个好玩的东东,用来现实一个进度条。测试代码：</p>
-<figure class="highlight cpp"><pre><span class="preprocessor">#include &lt;boost/progress.hpp&gt;</span>
-
-<span class="keyword">using</span> <span class="keyword">namespace</span> boost;
-
-<span class="keyword">int</span> main()
-{
-    progress_display p(<span class="number">10</span>);     
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) {
-        sleep(<span class="number">1</span>);
-        ++p;
-    }
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</pre></figure>
-
-<p>运行结果:</p>
-<figure class="highlight sh"><pre><span class="comment">$</span> <span class="string">.</span><span class="comment">/boostprogress</span>
-
-<span class="comment">0%</span>   <span class="comment">10</span>   <span class="comment">20</span>   <span class="comment">30</span>   <span class="comment">40</span>   <span class="comment">50</span>   <span class="comment">60</span>   <span class="comment">70</span>   <span class="comment">80</span>   <span class="comment">90</span>   <span class="comment">100%</span>
-<span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span>
-<span class="comment">****************************************</span>
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/boost/" class="label label-primary">boost</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:07"datetime="2014-03-05 06:28:07"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-31-boost_progress_display.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-31-boost_progress_display" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/archives/page/20/">&laquo;</a></li><li><a class="page-number" href="/archives/">1</a></li><li><a class="page-number" href="/archives/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/archives/page/18/">18</a></li><li><a class="page-number" href="/archives/page/19/">19</a></li><li><a class="page-number" href="/archives/page/20/">20</a></li><li class="active"><li><span class="page-number current">21</span></li></li><li><a class="page-number" href="/archives/page/22/">22</a></li><li><a class="page-number" href="/archives/page/23/">23</a></li><li><a class="page-number" href="/archives/page/24/">24</a></li><li><a class="extend next" href="/archives/page/22/">&raquo;</a></li>
@@ -735,7 +715,7 @@ test <span class="symbol">boost:</span><span class="symbol">:timer</span>
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-12-09-emacs-http-proxy-setting.html">emacs代理设置</a></li><li class="list-group-item"><a href="/2010-05-08-apache2_start_error.html">Apache 2 启动错误的解决</a></li><li class="list-group-item"><a href="/2011-10-27-orgblog_code_theme.html">org2blog代码背景色</a></li><li class="list-group-item"><a href="/2010-05-08-git_svn_clone_revision.html">git svn clone 特定版本</a></li><li class="list-group-item"><a href="/2010-09-05-chrome_html5.html">原来chromium不支持youtube html5</a></li><li class="list-group-item"><a href="/2010-06-21-android_phone_number.html">android获取手机号码</a></li><li class="list-group-item"><a href="/2010-12-14-mr_liu.html">我最崇拜的人姓刘总结贴</a></li><li class="list-group-item"><a href="/2011-11-30-mercurial-hg-add-progress.html">为Mercurial（hg）添加进度条</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-06-29-linux_core_dump.html">linux下生成core dump文件</a></li><li class="list-group-item"><a href="/2010-05-07-ms_vc_stderr_file.html">ms vc下stderr到文件</a></li><li class="list-group-item"><a href="/2012-01-30-git-svn-proxy-setting.html">git svn代理设置</a></li><li class="list-group-item"><a href="/2010-11-29-free_private_mercurial_service.html">免费private mercurial服务</a></li><li class="list-group-item"><a href="/2010-08-24-grub_framebuffer.html">archlinux console分辨率</a></li><li class="list-group-item"><a href="/2012-05-24-get-chinese-pinyin-python.html">python获取中文拼音首字母以进行检索</a></li><li class="list-group-item"><a href="/2010-05-07-git_windows.html">git windows</a></li><li class="list-group-item"><a href="/2011-10-28-python_get_public_ip.html">python获取本机公网IP</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -778,7 +758,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:47</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:21:58</em></span></div>
 </div>
 <div class="clearfix"></div>
 

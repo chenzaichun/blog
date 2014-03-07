@@ -107,6 +107,53 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2011-01-28-qt_text_codec.html">QT中文乱码问题</a></h1>
+      
+        <span>发表于<time datetime="2011-01-28T19:34:31.000Z"> <a href="/2011-01-28-qt_text_codec.html">1月 28 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>参考链接：<a href="http://hi.baidu.com/ilinux/blog/item/3603b801e8ce5907738da581.html" target="_blank"><a href="http://hi.baidu.com/ilinux/blog/item/3603b801e8ce5907738da581.html">http://hi.baidu.com/ilinux/blog/item/3603b801e8ce5907738da581.html</a></a></p>
+<p>因为我emacs的默认编码设置的是utf-8，所以这种方法是最方便的。</p>
+<figure class="highlight cpp"><pre><span class="preprocessor">#include &lt;QTextCodec&gt;</span>
+
+<span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])
+{
+    QTextCodec::setCodecForTr(QTextCodec::codecForName(<span class="string">"UTF8"</span>));
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName(<span class="string">"UTF8"</span>));
+    QTextCodec::setCodecForCStrings(QTextCodec::codecForName(<span class="string">"UTF8"</span>));
+
+...
+}
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/Qt/" class="label label-primary">Qt</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:14"datetime="2014-03-05 06:29:14"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2011-01-28-qt_text_codec.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-28-qt_text_codec" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2011-01-26-view_process_with_python_and_pywin32.html">在Windows下用Python查看进程信息</a></h1>
       
         <span>发表于<time datetime="2011-01-26T19:34:31.000Z"> <a href="/2011-01-26-view_process_with_python_and_pywin32.html">1月 26 2011</a></time></span>      
@@ -656,52 +703,6 @@ rs.Open( <span class="string">"[test]"</span>, conn, <span class="number">1</spa
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-12-pythoncom_lnk_file_path.html">在windows下通过pythoncom获取快捷方式所指定的路径</a></h1>
-      
-        <span>发表于<time datetime="2010-12-12T19:32:11.000Z"> <a href="/2010-12-12-pythoncom_lnk_file_path.html">12月 12 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>直接代码：</p>
-<figure class="highlight python"><pre><span class="keyword">import</span> pythoncom
-
-<span class="function"><span class="keyword">def</span> <span class="title">GetURLFromShortcut</span><span class="params">(url)</span>:</span>
-    shortcut = pythoncom.CoCreateInstance(
-                                shell.CLSID_ShellLink, <span class="keyword">None</span>,
-        			pythoncom.CLSCTX_INPROC_SERVER, shell.IID_IShellLink)
-    shortcut.QueryInterface( pythoncom.IID_IPersistFile ).Load(url)
-    url = shortcut.GetPath(shell.SLGP_SHORTPATH)[<span class="number">0</span>]
-
-    <span class="keyword">return</span> url
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:02"datetime="2014-03-05 06:29:02"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-12-pythoncom_lnk_file_path.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-12-pythoncom_lnk_file_path" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/categories/programming/page/7/">&laquo;</a></li><li><a class="page-number" href="/categories/programming/">1</a></li><li><a class="page-number" href="/categories/programming/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/categories/programming/page/5/">5</a></li><li><a class="page-number" href="/categories/programming/page/6/">6</a></li><li><a class="page-number" href="/categories/programming/page/7/">7</a></li><li class="active"><li><span class="page-number current">8</span></li><li><a class="page-number" href="/categories/programming/page/9/">9</a></li><li><a class="page-number" href="/categories/programming/page/10/">10</a></li><li><a class="page-number" href="/categories/programming/page/11/">11</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/categories/programming/page/13/">13</a></li><li><a class="page-number" href="/categories/programming/page/14/">14</a></li><li><a class="extend next" href="/categories/programming/page/9/">&raquo;</a></li>
@@ -735,7 +736,7 @@ rs.Open( <span class="string">"[test]"</span>, conn, <span class="number">1</spa
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-05-07-google_voice_orkut_active.html">使用 google voice激活orkut</a></li><li class="list-group-item"><a href="/2010-05-07-vs2010_ultimate_sn.html">visual studio 2010 ultimate正式版注册码</a></li><li class="list-group-item"><a href="/2011-08-05-vmware_io_performance.html">增加vmware虚拟机的性能</a></li><li class="list-group-item"><a href="/2010-12-12-pythoncom_lnk_file_path.html">在windows下通过pythoncom获取快捷方式所指定的路径</a></li><li class="list-group-item"><a href="/2011-01-28-qt_text_codec.html">QT中文乱码问题</a></li><li class="list-group-item"><a href="/2011-10-28-colored_man_page_output.html">colored man page output</a></li><li class="list-group-item"><a href="/2011-10-24-ibus_sunpinyin_cadidates.html">ibus-sunpinyin翻页设置</a></li><li class="list-group-item"><a href="/2010-05-08-mount_cifs_umask.html">Mount.cifs 中设置文件权限</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-05-09-archlinux_usb_pen.html">将archlinux安装到u盘</a></li><li class="list-group-item"><a href="/2010-08-25-emacs23_xim.html">emacs23不能切换输入法的问题</a></li><li class="list-group-item"><a href="/2010-05-07-ms_vc_stderr_file.html">ms vc下stderr到文件</a></li><li class="list-group-item"><a href="/2010-05-31-boost_timer.html">boost::timer</a></li><li class="list-group-item"><a href="/2010-08-23-yaourt_install.html">安装yaourt遇到failed retrieving yaourt</a></li><li class="list-group-item"><a href="/2011-12-01-turn-on-coredump-on-linux.html">linux下开启coredump</a></li><li class="list-group-item"><a href="/2010-11-30-android_call_google_maps_apk.html">android下程序直接调用Google自己的地图程序</a></li><li class="list-group-item"><a href="/2010-12-03-how_hackerr_playing_game.html">看看黑客是怎么玩游戏的</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -778,7 +779,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:49</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:00</em></span></div>
 </div>
 <div class="clearfix"></div>
 

@@ -107,6 +107,82 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2010-12-13-python_manipulate_windows_service.html">Python操作Windows Service</a></h1>
+      
+        <span>发表于<time datetime="2010-12-13T19:54:31.000Z"> <a href="/2010-12-13-python_manipulate_windows_service.html">12月 13 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>python中可以通过pywin32操作Windows Service：</p>
+<figure class="highlight python"><pre><span class="keyword">import</span> win32service
+
+<span class="function"><span class="keyword">def</span> <span class="title">PrintServiceStatus</span><span class="params">(status)</span>:</span>
+    svcType, svcState, svcControls, err, svcErr, svcCP, svcWH = status
+    <span class="keyword">if</span> svcType & win32service.SERVICE_WIN32_OWN_PROCESS:
+        <span class="keyword">print</span> <span class="string">"The service runs in its own process"</span>
+    <span class="keyword">if</span> svcType & win32service.SERVICE_WIN32_SHARE_PROCESS:
+        <span class="keyword">print</span> <span class="string">"The service shares a process with other services"</span>
+    <span class="keyword">if</span> svcType & win32service.SERVICE_INTERACTIVE_PROCESS:
+        <span class="keyword">print</span> <span class="string">"The service can interact with the desktop"</span>
+    <span class="comment"># Other svcType flags not shown.</span>
+    <span class="keyword">if</span> svcState==win32service.SERVICE_STOPPED:
+        <span class="keyword">print</span> <span class="string">"The service is stopped"</span>
+    <span class="keyword">elif</span> svcState==win32service.SERVICE_START_PENDING:
+        <span class="keyword">print</span> <span class="string">"The service is starting"</span>
+    <span class="keyword">elif</span> svcState==win32service.SERVICE_STOP_PENDING:
+        <span class="keyword">print</span> <span class="string">"The service is stopping"</span>
+    <span class="keyword">elif</span> svcState==win32service.SERVICE_RUNNING:
+        <span class="keyword">print</span> <span class="string">"The service is running"</span>
+    <span class="comment"># Other svcState flags not shown.</span>
+    <span class="keyword">if</span> svcControls & win32service.SERVICE_ACCEPT_STOP:
+        <span class="keyword">print</span> <span class="string">"The service can be stopped"</span>
+    <span class="keyword">if</span> svcControls & win32service.SERVICE_ACCEPT_PAUSE_CONTINUE:
+        <span class="keyword">print</span> <span class="string">"The service can be paused"</span>
+    <span class="comment"># Other svcControls flags not shown</span>
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    scm = win32service.OpenSCManager(<span class="keyword">None</span>, <span class="keyword">None</span>,
+                                     win32service.SC_MANAGER_ALL_ACCESS)
+    allservice = win32service.EnumServicesStatus(scm, win32service.SERVICE_WIN32, win32service.SERVICE_STATE_ALL)
+    svc = win32service.OpenService(scm, <span class="string">'Cash Download'</span>,
+                                   win32service.SC_MANAGER_ALL_ACCESS)
+    win32service.ChangeServiceConfig(svc, win32service.SERVICE_NO_CHANGE,
+                                     win32service.SERVICE_AUTO_START,
+                                     win32service.SERVICE_NO_CHANGE,
+                                     <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="number">0</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>)
+    win32service.StartService(svc, <span class="string">""</span>)
+    win32service.ControlService(svc, win32service.SERVICE_CONTROL_STOP)
+    win32service.ControlService(svc, win32service.SERVICE_CONTROL_START)
+    PrintServiceStatus(win32service.QueryServiceStatus(svc))
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:05"datetime="2014-03-05 06:29:05"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2010-12-13-python_manipulate_windows_service.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-13-python_manipulate_windows_service" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2010-12-12-pywin32_word.html">pywin32访问word文件</a></h1>
       
         <span>发表于<time datetime="2010-12-12T19:54:11.000Z"> <a href="/2010-12-12-pywin32_word.html">12月 12 2010</a></time></span>      
@@ -599,41 +675,6 @@ Some of the tasks that <em>pefile</em> makes possible are:</p>
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-12-11-dota.html">【元首】DOTA输掉之后……</a></h1>
-      
-        <span>发表于<time datetime="2010-12-11T18:19:11.000Z"> <a href="/2010-12-11-dota.html">12月 11 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <object width="600" height="480" data="http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf" type="application/x-shockwave-flash">
-<param name="src" value="http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf"></object>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/无所事事/">无所事事</a></li></span></span> | <span class="tags">标签 <a href="/tags/无所事事/" class="label label-primary">无所事事</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:58"datetime="2014-03-05 06:28:58"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-12-11-dota.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-11-dota" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/archives/page/13/">&laquo;</a></li><li><a class="page-number" href="/archives/">1</a></li><li><a class="page-number" href="/archives/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/archives/page/11/">11</a></li><li><a class="page-number" href="/archives/page/12/">12</a></li><li><a class="page-number" href="/archives/page/13/">13</a></li><li class="active"><li><span class="page-number current">14</span></li><li><a class="page-number" href="/archives/page/15/">15</a></li><li><a class="page-number" href="/archives/page/16/">16</a></li><li><a class="page-number" href="/archives/page/17/">17</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/archives/page/23/">23</a></li><li><a class="page-number" href="/archives/page/24/">24</a></li><li><a class="extend next" href="/archives/page/15/">&raquo;</a></li>
@@ -667,7 +708,7 @@ Some of the tasks that <em>pefile</em> makes possible are:</p>
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2012-09-21-anshanshuji.html">鞍山书记</a></li><li class="list-group-item"><a href="/2011-10-24-extract_specified_files_in_tar.html">解压tar包中特定文件</a></li><li class="list-group-item"><a href="/2011-01-16-hg_cert_warning.html">hg certificate warnings</a></li><li class="list-group-item"><a href="/2011-07-17-hp_ux_font_error_fix.html">X Server连接到hp-ux字体问题解决办法</a></li><li class="list-group-item"><a href="/2011-04-24-gdb_remote_debuging.html">GDB远程调试</a></li><li class="list-group-item"><a href="/2011-06-29-linux_core_dump.html">linux下生成core dump文件</a></li><li class="list-group-item"><a href="/2010-05-11-archlinux_x11_forwarding.html">archlinux x11 forwarding</a></li><li class="list-group-item"><a href="/2013-06-03-cheat.html">这是开挂了吧</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-12-31-git-rpc-error-56.html">git rpc error 56</a></li><li class="list-group-item"><a href="/2010-05-07-googlechrome_firefox_feeling.html">Google chrome与firefox</a></li><li class="list-group-item"><a href="/2011-12-09-unlock-mcafee-user-interface.html">Unlock the McAfee VirusScan Enterprise 8.5i User Interface</a></li><li class="list-group-item"><a href="/2010-07-22-cdhtmldialog_scrollbar.html">CDHtmlDialog启用滚动条</a></li><li class="list-group-item"><a href="/2012-05-12-octopress-useful-links.html">octopress常用链接整理</a></li><li class="list-group-item"><a href="/2010-12-16-course_of_foreign_university.html">值得推荐的国外名牌大学网络课程视频下载</a></li><li class="list-group-item"><a href="/2010-06-01-boost_parse_environment.html">boost::parse_environment</a></li><li class="list-group-item"><a href="/2010-07-22-windows_get_resolution.html">windows下获取屏幕分辨率</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -710,7 +751,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:47</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:21:58</em></span></div>
 </div>
 <div class="clearfix"></div>
 

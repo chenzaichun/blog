@@ -107,6 +107,43 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2010-07-22-cdhtmldialog_scrollbar.html">CDHtmlDialog启用滚动条</a></h1>
+      
+        <span>发表于<time datetime="2010-07-22T19:23:23.000Z"> <a href="/2010-07-22-cdhtmldialog_scrollbar.html">7月 22 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>在CDHtmlDialog中启用滚动条：</p>
+<figure class="highlight cpp"><pre>SetHostFlags(DOCHOSTUIFLAG_NO3DBORDER);
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/VC/" class="label label-primary">VC</a><a href="/tags/Windows/" class="label label-success">Windows</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:29"datetime="2014-03-05 06:28:29"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2010-07-22-cdhtmldialog_scrollbar.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-07-22-cdhtmldialog_scrollbar" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2010-07-22-windows_get_resolution.html">windows下获取屏幕分辨率</a></h1>
       
         <span>发表于<time datetime="2010-07-22T18:33:16.000Z"> <a href="/2010-07-22-windows_get_resolution.html">7月 22 2010</a></time></span>      
@@ -549,59 +586,6 @@ f.close()
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-06-27-android_apn_setting.html">android设置APN</a></h1>
-      
-        <span>发表于<time datetime="2010-06-27T23:22:11.000Z"> <a href="/2010-06-27-android_apn_setting.html">6月 27 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>在android下如何通过程序设置APN连接呢，比如我想通过一个私有的APN连接到网络。查询到的结果是：</p>
-<ol>
-<li>第一步，创建activity，使用如下代码设置APN： </li>
-</ol>
-<figure class="highlight java"><pre>ContentValues values = <span class="keyword">new</span> ContentValues();
-values.put(<span class="string">"NAME"</span>, <span class="string">"CMCC"</span>);
-values.put(<span class="string">"APN"</span>, <span class="string">"CMCC"</span>);
-values.put(<span class="string">"PROXY"</span>, <span class="string">"192.168.0.171"</span>);
-values.put(<span class="string">"PORT"</span>, <span class="string">"80"</span>);
-values.put(<span class="string">"USER"</span>, <span class="string">""</span>);
-values.put(<span class="string">"PASSWORD"</span>, <span class="string">""</span>);
-<span class="keyword">this</span>.getContentResolver().insert(Uri.parse(<span class="string">"content://telephony/carriers"</span>), values);
-</pre></figure>
-
-<ol>
-<li>在AndroidManifest.xml中添加如下内容：</li>
-</ol>
-<figure class="highlight xml"><pre><span class="tag">&lt;<span class="title">uses-permission</span> <span class="attribute">android:name</span>=<span class="value">"android.permission.WRITE_APN_SETTINGS"</span> /&gt;</span>
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/android/" class="label label-primary">android</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:22"datetime="2014-03-05 06:28:22"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-06-27-android_apn_setting.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-06-27-android_apn_setting" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/categories/programming/page/10/">&laquo;</a></li><li><a class="page-number" href="/categories/programming/">1</a></li><li><a class="page-number" href="/categories/programming/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/categories/programming/page/8/">8</a></li><li><a class="page-number" href="/categories/programming/page/9/">9</a></li><li><a class="page-number" href="/categories/programming/page/10/">10</a></li><li class="active"><li><span class="page-number current">11</span></li></li><li><a class="page-number" href="/categories/programming/page/12/">12</a></li><li><a class="page-number" href="/categories/programming/page/13/">13</a></li><li><a class="page-number" href="/categories/programming/page/14/">14</a></li><li><a class="extend next" href="/categories/programming/page/12/">&raquo;</a></li>
@@ -635,7 +619,7 @@ values.put(<span class="string">"PASSWORD"</span>, <span class="string">""</span
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-06-28-android_emulator_appstore.html">android模拟器中使用应用商店(appstore)</a></li><li class="list-group-item"><a href="/2011-04-08-install_oracle_10g_enterprise_on_archlinux.html">archlinux下安装oracle 10g enterprise</a></li><li class="list-group-item"><a href="/2010-07-29-android-x86_halt.html">android-x86关机</a></li><li class="list-group-item"><a href="/2012-01-05-gcc-mudflap.html">gcc mudflap用来检测内存越界的问题</a></li><li class="list-group-item"><a href="/2010-12-09-ps.html">ps应该这样玩</a></li><li class="list-group-item"><a href="/2010-06-24-pyexpect.html">pyexpect</a></li><li class="list-group-item"><a href="/2012-05-23-xiami-checkin.html">xiami自动签到</a></li><li class="list-group-item"><a href="/2010-08-02-ubuntu_linux_flashget.html">ubuntu下使用flashget</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-07-22-windows_task_bar_height.html">windows获取任务栏高度</a></li><li class="list-group-item"><a href="/2012-05-31-xin-wen-wan-zhi-dao.html">新闻晚知道</a></li><li class="list-group-item"><a href="/2011-12-31-show-all-files-in-finder-on-mac.html">让Finder显示所有文件</a></li><li class="list-group-item"><a href="/2010-12-01-android_emulator_proxy.html">android模拟器使用代理</a></li><li class="list-group-item"><a href="/2010-07-27-ubuntu_adb_driver.html">ubuntu下adb驱动问题</a></li><li class="list-group-item"><a href="/2010-05-07-ms_vc_stderr_file.html">ms vc下stderr到文件</a></li><li class="list-group-item"><a href="/2010-11-28-tell_me_more.html">Tell Me More</a></li><li class="list-group-item"><a href="/2010-11-30-android_invoke_maps_to_direction.html">android调用Google Maps导航</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -678,7 +662,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:49</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:00</em></span></div>
 </div>
 <div class="clearfix"></div>
 

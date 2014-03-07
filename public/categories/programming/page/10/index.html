@@ -107,6 +107,173 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2010-11-30-android_intent_usage.html">Android Intent的几种用法全面总结</a></h1>
+      
+        <span>发表于<time datetime="2010-11-30T12:32:33.000Z"> <a href="/2010-11-30-android_intent_usage.html">11月 30 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>@<a href="http://hi.baidu.com/devil%B6%C0%B0%AE/blog/item/5f5caf5e3ce43f48faf2c004.html" target="_blank">Devil独爱的空间 </a></p>
+<p><span class="t_tag" style="line-height: normal;">Intent</span>应该算是Android中特有的东西。你可以在Intent中指定<span class="t_tag" style="line-height: normal;">程序</span>要执行的动作（比如：view,edit,dial），以及程序执行到该动作时所需要的<span class="t_tag" style="line-height: normal;">资料</span>。都指定好后，只要调用startActivity()，Android<span class="t_tag" style="line-height: normal;">系统</span>会自动寻找最符合你指定要求的<span class="t_tag" style="line-height: normal;">应用</span>程序，并执行该程序。<br style="line-height: normal;"><br style="line-height: normal;">下面列出几种Intent的用法<br style="line-height: normal;">显示网页:</p>
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Uri uri = Uri.parse(&quot;<a href="http://www.google.com" target="_blank">http://www.google.com</a>&quot;);</li>
+<li style="line-height: normal;">Intent it   = new Intent(Intent.ACTION_VIEW,uri);</li>
+<li style="line-height: normal;">startActivity(it);</li>
+</ol></div>
+</div>
+显示地图:
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Uri uri = Uri.parse(&quot;geo:38.899533,-77.036476&quot;);</li>
+<li style="line-height: normal;">Intent it = new Intent(Intent.Action_VIEW,uri);</li>
+<li style="line-height: normal;">startActivity(it);</li>
+</ol></div>
+</div>
+路径规划:
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Uri uri = Uri.parse(&quot;<a href="http://maps.google.com/maps?f=d&amp;saddr=startLat%20startLng&amp;daddr=endLat%20endLng&amp;hl=en" target="_blank">http://maps.google.com/maps?f=d&amp;saddr=startLat%20startLng&amp;daddr=endLat%20endLng&amp;hl=en</a>&quot;);</li>
+<li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW,URI);</li>
+<li style="line-height: normal;">startActivity(it);</li>
+</ol></div>
+</div>
+拨打电话:<br style="line-height: normal;">调用拨号程序
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Uri uri = Uri.parse(&quot;tel:xxxxxx&quot;);</li>
+<li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_DIAL, uri);  </li>
+<li style="line-height: normal;">startActivity(it);  </li>
+</ol></div>
+</div>
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Uri uri = Uri.parse(&quot;tel.xxxxxx&quot;);</li>
+<li style="line-height: normal;">Intent it =new Intent(Intent.ACTION_CALL,uri);</li>
+<li style="line-height: normal;">要使用这个必须在配置<span class="t_tag" style="line-height: normal;">文件</span>中加入<uses-permission id="<span class="t_tag" style="line-height: normal;">android</span>.permission.CALL_PHONE" /></li>
+</ol></div>
+</div>
+发送SMS/MMS<br style="line-height: normal;">调用发送<span class="t_tag" style="line-height: normal;">短信</span>的程序
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW);</li>
+<li style="line-height: normal;">it.putExtra(&quot;sms_body&quot;, &quot;The SMS text&quot;);</li>
+<li style="line-height: normal;">it.setType(&quot;vnd.android-dir/mms-sms&quot;);</li>
+<li style="line-height: normal;">startActivity(it);  </li>
+</ol></div>
+</div>
+发送短信
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Uri uri = Uri.parse(&quot;smsto:0800000123&quot;);</li>
+<li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SENDTO, uri);</li>
+<li style="line-height: normal;">it.putExtra(&quot;sms_body&quot;, &quot;The SMS text&quot;);</li>
+<li style="line-height: normal;">startActivity(it);  </li>
+</ol></div>
+</div>
+发送彩信
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Uri uri = Uri.parse(&quot;content://media/external/images/media/23&quot;);</li>
+<li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SEND);</li>
+<li style="line-height: normal;">it.putExtra(&quot;sms_body&quot;, &quot;some text&quot;);</li>
+<li style="line-height: normal;">it.putExtra(Intent.EXTRA_STREAM, uri);</li>
+<li style="line-height: normal;">it.setType(&quot;image/png&quot;);</li>
+<li style="line-height: normal;">startActivity(it);</li>
+</ol></div>
+</div>
+发送Email
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Uri uri = Uri.parse(&quot;mailto:xxx@abc.com&quot;);</li>
+<li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SENDTO, uri);</li>
+<li style="line-height: normal;">startActivity(it);</li>
+</ol></div>
+</div>
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SEND);</li>
+<li style="line-height: normal;">it.putExtra(Intent.EXTRA_EMAIL, &quot;me@abc.com&quot;);</li>
+<li style="line-height: normal;">it.putExtra(Intent.EXTRA_TEXT, &quot;The email body text&quot;);</li>
+<li style="line-height: normal;">it.setType(&quot;text/plain&quot;);</li>
+<li style="line-height: normal;">startActivity(Intent.createChooser(it, &quot;Choose Email Client&quot;));  </li>
+</ol></div>
+</div>
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Intent it=new Intent(Intent.ACTION_SEND);    </li>
+<li style="line-height: normal;">String[] tos={&quot;me@abc.com&quot;};    </li>
+<li style="line-height: normal;">String[] ccs={&quot;you@abc.com&quot;};    </li>
+<li style="line-height: normal;">it.putExtra(Intent.EXTRA_EMAIL, tos);    </li>
+<li style="line-height: normal;">it.putExtra(Intent.EXTRA_CC, ccs);    </li>
+<li style="line-height: normal;">it.putExtra(Intent.EXTRA_TEXT, &quot;The email body text&quot;);    </li>
+<li style="line-height: normal;">it.putExtra(Intent.EXTRA_SUBJECT, &quot;The email subject text&quot;);    </li>
+<li style="line-height: normal;">it.setType(&quot;message/rfc822&quot;);    </li>
+<li style="line-height: normal;">startActivity(Intent.createChooser(it, &quot;Choose Email Client&quot;));</li>
+</ol></div>
+</div>
+添加附件
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SEND);</li>
+<li style="line-height: normal;">it.putExtra(Intent.EXTRA_SUBJECT, &quot;The email subject text&quot;);</li>
+<li style="line-height: normal;">it.putExtra(Intent.EXTRA_STREAM, &quot;file:///sdcard/mysong.mp3&quot;);</li>
+<li style="line-height: normal;">sendIntent.setType(&quot;audio/mp3&quot;);</li>
+<li style="line-height: normal;">startActivity(Intent.createChooser(it, &quot;Choose Email Client&quot;));</li>
+</ol></div>
+</div>
+<span class="t_tag" style="line-height: normal;">播放</span>多媒体
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">  </li>
+<li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW);</li>
+<li style="line-height: normal;">Uri uri = Uri.parse(&quot;file:///sdcard/song.mp3&quot;);</li>
+<li style="line-height: normal;">it.setDataAndType(uri, &quot;audio/mp3&quot;);</li>
+<li style="line-height: normal;">startActivity(it);</li>
+</ol></div>
+</div>
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Uri uri = Uri.withAppendedPath(MediaStore.Audio.Media.INTERNAL_CONTENT_URI, &quot;1&quot;);</li>
+<li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW, uri);</li>
+<li style="line-height: normal;">startActivity(it);  </li>
+</ol></div>
+</div>
+Uninstall 程序
+<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;">
+<li style="line-height: normal;">Uri uri = Uri.fromParts(&quot;package&quot;, strPackageName, null);</li>
+<li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_DELETE, uri);</li>
+<li style="line-height: normal;">startActivity(it);</li>
+</ol></div>
+</div>
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/android/" class="label label-primary">android</a><a href="/tags/Google/" class="label label-success">Google</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:51"datetime="2014-03-05 06:28:51"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2010-11-30-android_intent_usage.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-11-30-android_intent_usage" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2010-11-29-res_protocol.html">使用res协议打开exe里面资源文件</a></h1>
       
         <span>发表于<time datetime="2010-11-29T23:33:11.000Z"> <a href="/2010-11-29-res_protocol.html">11月 29 2010</a></time></span>      
@@ -612,43 +779,6 @@ cd android<span class="attribute">-tools</span><span class="attribute">-dir</spa
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-07-22-cdhtmldialog_scrollbar.html">CDHtmlDialog启用滚动条</a></h1>
-      
-        <span>发表于<time datetime="2010-07-22T19:23:23.000Z"> <a href="/2010-07-22-cdhtmldialog_scrollbar.html">7月 22 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>在CDHtmlDialog中启用滚动条：</p>
-<figure class="highlight cpp"><pre>SetHostFlags(DOCHOSTUIFLAG_NO3DBORDER);
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/VC/" class="label label-primary">VC</a><a href="/tags/Windows/" class="label label-success">Windows</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:29"datetime="2014-03-05 06:28:29"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-07-22-cdhtmldialog_scrollbar.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-07-22-cdhtmldialog_scrollbar" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/categories/programming/page/9/">&laquo;</a></li><li><a class="page-number" href="/categories/programming/">1</a></li><li><a class="page-number" href="/categories/programming/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/categories/programming/page/7/">7</a></li><li><a class="page-number" href="/categories/programming/page/8/">8</a></li><li><a class="page-number" href="/categories/programming/page/9/">9</a></li><li class="active"><li><span class="page-number current">10</span></li></li><li><a class="page-number" href="/categories/programming/page/11/">11</a></li><li><a class="page-number" href="/categories/programming/page/13/">13</a></li><li><a class="page-number" href="/categories/programming/page/14/">14</a></li><li><a class="extend next" href="/categories/programming/page/11/">&raquo;</a></li>
@@ -682,7 +812,7 @@ cd android<span class="attribute">-tools</span><span class="attribute">-dir</spa
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-12-12-pythoncom_lnk_file_path.html">在windows下通过pythoncom获取快捷方式所指定的路径</a></li><li class="list-group-item"><a href="/2010-11-30-android_intent_usage.html">Android Intent的几种用法全面总结</a></li><li class="list-group-item"><a href="/2011-03-01-yaourt_proxy.html">yaourt代理设置</a></li><li class="list-group-item"><a href="/2010-08-23-yaourt_install.html">安装yaourt遇到failed retrieving yaourt</a></li><li class="list-group-item"><a href="/2011-10-24-archlinux_ssh_http_privoxy.html">ArchLinux下配置ssh/http代理</a></li><li class="list-group-item"><a href="/2011-06-29-linux_core_dump.html">linux下生成core dump文件</a></li><li class="list-group-item"><a href="/2010-07-22-windows_hide_taskbar.html">在任务栏中隐藏windows程序</a></li><li class="list-group-item"><a href="/2010-12-14-mr_liu.html">我最崇拜的人姓刘总结贴</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-08-23-archlinux_auto_mount_windows.html">archlinux中自动挂载windows分区</a></li><li class="list-group-item"><a href="/2011-12-30-mac-os-x-emacs-chinese-font-setting.html">终于搞定Mac OS X上emacs中文的显示</a></li><li class="list-group-item"><a href="/2011-12-31-git-remove-untracked-files-and-directories.html">git remove untracked files and directories</a></li><li class="list-group-item"><a href="/2011-10-29-get_user_name_by_python.html">Python获取当前用户名</a></li><li class="list-group-item"><a href="/2010-12-12-pywin32_excel.html">pywin32访问excel</a></li><li class="list-group-item"><a href="/2010-05-08-ssh_sock_5.html">ssh sock 5代理</a></li><li class="list-group-item"><a href="/2012-05-31-xin-wen-wan-zhi-dao.html">新闻晚知道</a></li><li class="list-group-item"><a href="/2010-11-28-tell_me_more.html">Tell Me More</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -725,7 +855,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:49</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:00</em></span></div>
 </div>
 <div class="clearfix"></div>
 

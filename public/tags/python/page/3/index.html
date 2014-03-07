@@ -107,6 +107,86 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2010-12-12-python_get_pe_version_info.html">python获取PE文件版本信息</a></h1>
+      
+        <span>发表于<time datetime="2010-12-12T19:22:11.000Z"> <a href="/2010-12-12-python_get_pe_version_info.html">12月 12 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>通过pywin32中的win32api.GetFileVersionInfo来获取</p>
+<figure class="highlight python"><pre>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Get the version information from Windows PE
+
+from win32api import GetFileVersionInfo, LOWORD, HIWORD
+
+def get_version_number (filename):
+    try:
+        info = GetFileVersionInfo (filename, "\")
+        ms = info['FileVersionMS']
+        ls = info['FileVersionLS']
+        return HIWORD (ms), LOWORD (ms), HIWORD (ls), LOWORD (ls)
+    except:
+        return 0,0,0,0
+
+def printOtherInfo(filename):
+    try:
+        info = GetFileVersionInfo(filename, "\")
+        print(info)
+
+	# In order to get the company information, we need to get the lang 
+	# and code page first, then get the related strings
+        trans = GetFileVersionInfo(filename, "\VarFileInfo\Translation")
+        if not trans:
+            return 
+        print(info)
+
+        # Common string lists:
+        # "CompanyName","FileDescription", "FileVersion", "InternalName",
+        # "LegalCopyright", "OriginalFilename", "ProductName", "ProductVersion"
+        # You can use this way to get custom defined strings.
+
+        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "CompanyName"))
+        print(info)
+        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "FileVersion"))
+        print(info)
+    except:
+        pass
+
+if __name__ == '__main__':
+    import os
+    filename = os.environ["COMSPEC"]
+    print ".".join ([str (i) for i in get_version_number (filename)])
+    printOtherInfo(filename)
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/python/" class="label label-primary">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:01"datetime="2014-03-05 06:29:01"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2010-12-12-python_get_pe_version_info.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-12-12-python_get_pe_version_info" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2010-12-12-pefile.html">pefile</a></h1>
       
         <span>发表于<time datetime="2010-12-12T19:12:11.000Z"> <a href="/2010-12-12-pefile.html">12月 12 2010</a></time></span>      
@@ -628,7 +708,7 @@ do(host)
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-08-24-archlinux_sound_alsamixer.html">lxde音量调节</a></li><li class="list-group-item"><a href="/2012-02-28-gsoap-error-500.html">gsoap Error 500</a></li><li class="list-group-item"><a href="/2010-05-31-boost_progress_display.html">boost::progress_display</a></li><li class="list-group-item"><a href="/2012-12-26-open-large-file-with-emacs.html">使用emacs打开大文件</a></li><li class="list-group-item"><a href="/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html">SUSE Enterprise Linux 10下安装Oracle 11gr2</a></li><li class="list-group-item"><a href="/2011-12-12-first-gnustep-gui.html">第一个GNUstep窗口程序</a></li><li class="list-group-item"><a href="/2012-09-21-anshanshuji.html">鞍山书记</a></li><li class="list-group-item"><a href="/2010-07-20-hg_ssh_access.html">hg ssh 访问</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-03-01-sudo_keep_env.html">sudo环境变量</a></li><li class="list-group-item"><a href="/2010-07-22-windows_get_resolution.html">windows下获取屏幕分辨率</a></li><li class="list-group-item"><a href="/2010-09-15-first_gtk_program.html">第一个GTK+程序</a></li><li class="list-group-item"><a href="/2012-11-23-change-ibus-googlepinyin-default-candidates-number.html">修改ibus-googlepinyin候选词的个数</a></li><li class="list-group-item"><a href="/2011-11-05-python_ftplib.html">Python ftplib</a></li><li class="list-group-item"><a href="/2011-11-12-stty_erase_key.html">Linux默认Erase Key(Backspace Key)</a></li><li class="list-group-item"><a href="/2010-12-18-chrome_for_a_cause.html">安装Chrome行善事</a></li><li class="list-group-item"><a href="/2010-12-16-course_of_foreign_university.html">值得推荐的国外名牌大学网络课程视频下载</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -671,7 +751,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:56</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:06</em></span></div>
 </div>
 <div class="clearfix"></div>
 

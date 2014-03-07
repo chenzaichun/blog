@@ -103,6 +103,66 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2011-11-16-merge-git-repositories-to-subdirectory.html">git合并多个repositories到子目录</a></h1>
+      
+        <span>发表于<time datetime="2011-11-16T11:11:11.000Z"> <a href="/2011-11-16-merge-git-repositories-to-subdirectory.html">11月 16 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>在每个repo都很小的情况下，维护多个repo是很麻烦的事情。如何在保留原来版本信息的情况下将repo合并到另外一个repo的子目录下呢？有很多的方法，比如在不删除原来的repo，使用submodule。或者使用subtree的方式。但是我不想用submodule保留原来的repo，而且感觉subtree也是一个比较麻烦的东东。这里要介绍git的read-tree（可以参考<a href="http://blog.ossxp.com/2010/10/2041/" target="_blank">这里</a>)。   网上讲了很多，我总结一下并写了一个脚本repomerge.sh。先把脚本贴出来 </p>
+<figure class="highlight sh"><pre><span class="shebang">#!/bin/sh
+</span>
+git remote add <span class="operator">-f</span> <span class="variable">$1</span> <span class="variable">$2</span>
+git merge <span class="operator">-s</span> ours --no-commit <span class="variable">$1</span>/master
+git <span class="built_in">read</span>-tree --prefix=<span class="variable">$1</span>/ -u <span class="variable">$1</span>/master
+git commit -m <span class="string">"merging <span class="variable">$1</span> into subdirectory"</span>
+</pre></figure>
+
+
+<p>使用的方法是$1为子目录名字，$2为repo的路径。</p>
+<p>这里有一个问题需要注意，合并到的repo（即目标repo）不能为空（至少要有一个commit)。</p>
+<p>比如要合并一个repo A 到A目录，repo B到B目录 </p>
+<figure class="highlight sh"><pre>cd dest-repo-dir
+git init .
+
+<span class="comment"># add one file and commit</span>
+touch just-test-<span class="built_in">file</span>
+git <span class="built_in">add</span> just-test-<span class="built_in">file</span>
+git commit -am <span class="string">"init"</span>
+
+/path/<span class="built_in">to</span>/repomerge.sh A /path/<span class="built_in">to</span>/repo/A
+/path/<span class="built_in">to</span>/repomerge.sh B /path/<span class="built_in">to</span>/repo/B
+</pre></figure>
+
+
+<p>这样repo A和repo B就分别被合并到了A、B目录了。 </p>
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/emacs/" class="label label-success">emacs</a><a href="/tags/git/" class="label label-info">git</a><a href="/tags/org2blog/" class="label label-warning">org2blog</a><a href="/tags/VCS/" class="label label-primary">VCS</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:47"datetime="2014-03-05 06:29:47"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2011-11-16-merge-git-repositories-to-subdirectory.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-11-16-merge-git-repositories-to-subdirectory" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2011-11-15-install-oracle-10gr2-on-archlinux.html">Archlinux下安装oracle 10gr2 Enterprise</a></h1>
       
         <span>发表于<time datetime="2011-11-15T11:11:11.000Z"> <a href="/2011-11-15-install-oracle-10gr2-on-archlinux.html">11月 15 2011</a></time></span>      
@@ -176,6 +236,45 @@ git push origin master
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/emacs/" class="label label-success">emacs</a><a href="/tags/git/" class="label label-info">git</a><a href="/tags/hg/" class="label label-warning">hg</a><a href="/tags/org2blog/" class="label label-primary">org2blog</a><a href="/tags/VCS/" class="label label-success">VCS</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:45"datetime="2014-03-05 06:29:45"> 3月 5 2014</time></span> | <span class="comment-link">
 <a href="http://yesokay.herokuapp.com/2011-11-15-convert-hg-to-git.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-11-15-convert-hg-to-git" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2011-11-13-emacs_sys_process_environment.html">Emacs进程/系统环境变量</a></h1>
+      
+        <span>发表于<time datetime="2011-11-13T11:11:11.000Z"> <a href="/2011-11-13-emacs_sys_process_environment.html">11月 13 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>Emacs中获取进程（系统）环境变量并进行修改，比如<code>http_proxy</code>:</p>
+<figure class="highlight lisp"><pre><span class="list">(<span class="title">getenv</span> <span class="string">"http_proxy"</span>)</span>
+<span class="list">(<span class="title">setenv</span> <span class="string">"http_proxy"</span> <span class="string">"http://proxy-server:port"</span>)</span>
+</pre></figure>
+
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/org2blog/" class="label label-success">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:44"datetime="2014-03-05 06:29:44"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2011-11-13-emacs_sys_process_environment.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-11-13-emacs_sys_process_environment" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -288,45 +387,6 @@ proxysgn.interaction = ""
         <footer id="post-meta">
         <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/org2blog/" class="label label-success">org2blog</a><a href="/tags/python/" class="label label-info">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:45"datetime="2014-03-05 06:29:45"> 3月 5 2014</time></span> | <span class="comment-link">
 <a href="http://yesokay.herokuapp.com/2011-11-13-pymacs.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-11-13-pymacs" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-11-13-emacs_sys_process_environment.html">Emacs进程/系统环境变量</a></h1>
-      
-        <span>发表于<time datetime="2011-11-13T11:11:11.000Z"> <a href="/2011-11-13-emacs_sys_process_environment.html">11月 13 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>Emacs中获取进程（系统）环境变量并进行修改，比如<code>http_proxy</code>:</p>
-<figure class="highlight lisp"><pre><span class="list">(<span class="title">getenv</span> <span class="string">"http_proxy"</span>)</span>
-<span class="list">(<span class="title">setenv</span> <span class="string">"http_proxy"</span> <span class="string">"http://proxy-server:port"</span>)</span>
-</pre></figure>
-
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/org2blog/" class="label label-success">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:44"datetime="2014-03-05 06:29:44"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-11-13-emacs_sys_process_environment.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-11-13-emacs_sys_process_environment" data-count-type="comments">暂无评论</a></span>
         </footer>
     
     <div class="clearfix"></div>
@@ -546,44 +606,6 @@ session.quit()
 
 
 
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-11-03-add_css_support_for_rss_output.html">RSS输出添加css支持</a></h1>
-      
-        <span>发表于<time datetime="2011-11-03T11:11:11.000Z"> <a href="/2011-11-03-add_css_support_for_rss_output.html">11月 3 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>修改views/rss.xml， 在xml版本定义下加入：</p>
-<figure class="highlight xml"><pre><span class="pi">&lt;?xml-stylesheet type="text/css" href="/themes/iNove/style.css" ?&gt;</span>
-</pre></figure>
-
-<p>测试一下是否成功:) </p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/micolog/" class="label label-success">micolog</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:40"datetime="2014-03-05 06:29:40"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-11-03-add_css_support_for_rss_output.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-11-03-add_css_support_for_rss_output" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
 
 
 <ul id="pagination" class="pagination pagination-lg">
@@ -618,7 +640,7 @@ session.quit()
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-05-07-ms_vc_stderr_file.html">ms vc下stderr到文件</a></li><li class="list-group-item"><a href="/2011-10-21-emacs_ibus_cannot_input_chinese.html">ibus在emacs下不能输入</a></li><li class="list-group-item"><a href="/2010-06-20-chrome_dev_channel_source.html">chrome dev channel的更新源</a></li><li class="list-group-item"><a href="/2011-11-07-rpm_command.html">rpm常用命令</a></li><li class="list-group-item"><a href="/2011-11-15-convert-hg-to-git.html">将hg转换为git</a></li><li class="list-group-item"><a href="/2010-11-28-say_goodbye_to_ads.html">和广告说再见</a></li><li class="list-group-item"><a href="/2010-07-05-eclipse_crash.html">eclipse老是自动退出</a></li><li class="list-group-item"><a href="/2012-01-18-ssh-local-tunnel.html">ssh本地tunnel代理</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-03-01-yaourt_proxy.html">yaourt代理设置</a></li><li class="list-group-item"><a href="/2011-03-01-sudo_keep_env.html">sudo环境变量</a></li><li class="list-group-item"><a href="/2010-08-02-ubuntu_linux_flashget.html">ubuntu下使用flashget</a></li><li class="list-group-item"><a href="/2011-12-09-org-save-outline-visibility.html">void: org-save-outline-visibility</a></li><li class="list-group-item"><a href="/2010-08-23-archlinux_sound.html">archlinux声卡配置</a></li><li class="list-group-item"><a href="/2010-07-21-android_aapt_error.html">解决Error executing aapt. Please check aapt is present at %错误</a></li><li class="list-group-item"><a href="/2012-11-21-avoids-ssh-timeouts.html">Avoids ssh timeouts</a></li><li class="list-group-item"><a href="/2010-07-29-android-x86_halt.html">android-x86关机</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -661,7 +683,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:50</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:01</em></span></div>
 </div>
 <div class="clearfix"></div>
 

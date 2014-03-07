@@ -103,6 +103,64 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2010-05-31-boost_progress_display.html">boost::progress_display</a></h1>
+      
+        <span>发表于<time datetime="2010-05-31T11:12:33.000Z"> <a href="/2010-05-31-boost_progress_display.html">5月 31 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>boost::progress_display是个好玩的东东,用来现实一个进度条。测试代码：</p>
+<figure class="highlight cpp"><pre><span class="preprocessor">#include &lt;boost/progress.hpp&gt;</span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> boost;
+
+<span class="keyword">int</span> main()
+{
+    progress_display p(<span class="number">10</span>);     
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) {
+        sleep(<span class="number">1</span>);
+        ++p;
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</pre></figure>
+
+<p>运行结果:</p>
+<figure class="highlight sh"><pre><span class="comment">$</span> <span class="string">.</span><span class="comment">/boostprogress</span>
+
+<span class="comment">0%</span>   <span class="comment">10</span>   <span class="comment">20</span>   <span class="comment">30</span>   <span class="comment">40</span>   <span class="comment">50</span>   <span class="comment">60</span>   <span class="comment">70</span>   <span class="comment">80</span>   <span class="comment">90</span>   <span class="comment">100%</span>
+<span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">|</span>
+<span class="comment">****************************************</span>
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/boost/" class="label label-primary">boost</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:07"datetime="2014-03-05 06:28:07"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2010-05-31-boost_progress_display.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-31-boost_progress_display" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+
+  <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2010-05-18-grub2_boot_default.html">修改Grub2,XP默认首启动</a></h1>
       
         <span>发表于<time datetime="2010-05-18T12:12:23.000Z"> <a href="/2010-05-18-grub2_boot_default.html">5月 18 2010</a></time></span>      
@@ -490,44 +548,6 @@ e2fsck -b <span class="number">8193</span>
 
 
 
-  <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-05-08-mount_cifs_umask.html">Mount.cifs 中设置文件权限</a></h1>
-      
-        <span>发表于<time datetime="2010-05-08T18:23:34.000Z"> <a href="/2010-05-08-mount_cifs_umask.html">5月 8 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>在以往常用的Mount命令里，使用<code>umask=xxxx</code>设置挂载目录文件的权限，然后在使用Smbfs的Mount工具时，便不是使用umask了，而是用</p>
-<figure class="highlight conf"><pre><span class="attribute">-o file_mode</span>=<span class="string">0666 dir_mode=0755</span>
-</pre></figure>
-
-<p>这个问题纠结了我半天，终于在Google上找到答案</p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/Linux/" class="label label-primary">Linux</a><a href="/tags/samba/" class="label label-success">samba</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:00"datetime="2014-03-05 06:28:00"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-05-08-mount_cifs_umask.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-05-08-mount_cifs_umask" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-
 
 
 <ul id="pagination" class="pagination pagination-lg">
@@ -562,7 +582,7 @@ e2fsck -b <span class="number">8193</span>
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-05-07-p2pnat.html">p2pnat通过nat实现p2p</a></li><li class="list-group-item"><a href="/2010-12-01-android_emulator_proxy.html">android模拟器使用代理</a></li><li class="list-group-item"><a href="/2010-06-22-emacs_python_ide.html">emacs下配置python开发环境</a></li><li class="list-group-item"><a href="/2011-11-03-add_css_support_for_rss_output.html">RSS输出添加css支持</a></li><li class="list-group-item"><a href="/2010-06-06-debian_depends.html">命令行下查看deb包的依赖</a></li><li class="list-group-item"><a href="/2010-05-07-ubuntu_nvidia_ko.html">ubuntu 10.04 unable to load the kernel module 'nvidia.ko'</a></li><li class="list-group-item"><a href="/2010-12-16-course_of_foreign_university.html">值得推荐的国外名牌大学网络课程视频下载</a></li><li class="list-group-item"><a href="/2012-06-27-pet.html">塑料瓶底数字的意思</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html">通过git将bitbucket当做无限容量的dropbox</a></li><li class="list-group-item"><a href="/2010-06-01-boost_parse_environment.html">boost::parse_environment</a></li><li class="list-group-item"><a href="/2010-12-09-ps.html">ps应该这样玩</a></li><li class="list-group-item"><a href="/2011-08-05-vmware_io_performance.html">增加vmware虚拟机的性能</a></li><li class="list-group-item"><a href="/2012-06-26-open-chinese-convert.html">Open Chinese Convert</a></li><li class="list-group-item"><a href="/2012-12-26-git-submodule-remove.html">删除git submodule</a></li><li class="list-group-item"><a href="/2012-02-03-compile-gsoap-on-mac-os-x.html">MacOS X上编译gSOAP</a></li><li class="list-group-item"><a href="/2011-10-24-extract_specified_files_in_tar.html">解压tar包中特定文件</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -605,7 +625,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:50</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:01</em></span></div>
 </div>
 <div class="clearfix"></div>
 

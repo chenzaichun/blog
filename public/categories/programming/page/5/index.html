@@ -107,6 +107,57 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2011-12-31-git-rpc-error-56.html">git rpc error 56</a></h1>
+      
+        <span>发表于<time datetime="2011-12-31T19:23:56.000Z"> <a href="/2011-12-31-git-rpc-error-56.html">12月 31 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>今天使用git push origin master的时候出现了这个问题： </p>
+<blockquote>
+<p>Counting objects: 592, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (584/584), done.
+error: RPC failed; result=56, HTTP code = 0
+fatal: The remote end hung up unexpectedly
+Writing objects: 100% (592/592), 12.77 MiB | 10.10 MiB/s, done.
+Total 592 (delta 159), reused 0 (delta 0)
+fatal: The remote end hung up unexpectedly
+fatal: expected ok/error, helper said &#39;4004?Va???6?)&amp;?&#39;?~$latex ?pt?-i?BS??Κ?hSK}??lmZri?=kf?v??????AqG?<em>??</em>|q??k?+$?\0Q?</p>
+</blockquote>
+<p>解决办法参考<a href="http://codaset.com/codaset/codaset/tickets/723" target="_blank">这里</a></p>
+<p>失败的原因就是git <code>HTTP buffer</code>太小，设置大一点就没有问题，比如：</p>
+<figure class="highlight sh"><pre>git config <span class="keyword">http</span>.postBuffer <span class="number">524288000</span>
+</pre></figure>
+
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/emacs/" class="label label-success">emacs</a><a href="/tags/git/" class="label label-info">git</a><a href="/tags/org2blog/" class="label label-warning">org2blog</a><a href="/tags/VCS/" class="label label-primary">VCS</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:59"datetime="2014-03-05 06:29:59"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2011-12-31-git-rpc-error-56.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-12-31-git-rpc-error-56" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2011-12-31-git-remove-untracked-files-and-directories.html">git remove untracked files and directories</a></h1>
       
         <span>发表于<time datetime="2011-12-31T17:32:11.000Z"> <a href="/2011-12-31-git-remove-untracked-files-and-directories.html">12月 31 2011</a></time></span>      
@@ -586,57 +637,6 @@ git push origin master
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-11-07-rpm_command.html">rpm常用命令</a></h1>
-      
-        <span>发表于<time datetime="2011-11-07T11:11:11.000Z"> <a href="/2011-11-07-rpm_command.html">11月 7 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <ol>
-<li>安装rpm文件</li>
-</ol>
-<figure class="highlight sh"><pre>rpm -ivh *<span class="preprocessor">.rpm</span>
-</pre></figure>
-
-<ol>
-<li>查找已经安装的包</li>
-</ol>
-<figure class="highlight sh"><pre>rpm -ivh *<span class="preprocessor">.rpm</span>
-</pre></figure>
-
-<ol>
-<li>删除已经安装的包</li>
-</ol>
-<figure class="highlight sh"><pre>rpm -ivh *<span class="preprocessor">.rpm</span>
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/org2blog/" class="label label-info">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:43"datetime="2014-03-05 06:29:43"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-11-07-rpm_command.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-11-07-rpm_command" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/categories/programming/page/4/">&laquo;</a></li><li><a class="page-number" href="/categories/programming/">1</a></li><li><a class="page-number" href="/categories/programming/page/2/">2</a></li><li><a class="page-number" href="/categories/programming/page/4/">4</a></li><li class="active"><li><span class="page-number current">5</span></li><li><a class="page-number" href="/categories/programming/page/6/">6</a></li><li><a class="page-number" href="/categories/programming/page/7/">7</a></li><li><a class="page-number" href="/categories/programming/page/8/">8</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/categories/programming/page/13/">13</a></li><li><a class="page-number" href="/categories/programming/page/14/">14</a></li><li><a class="extend next" href="/categories/programming/page/6/">&raquo;</a></li>
@@ -670,7 +670,7 @@ git push origin master
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-07-05-ios_input_dialog.html">iOS弹出输入框</a></li><li class="list-group-item"><a href="/2010-05-07-vs2010_ultimate_sn.html">visual studio 2010 ultimate正式版注册码</a></li><li class="list-group-item"><a href="/2011-11-16-merge-git-repositories-to-subdirectory.html">git合并多个repositories到子目录</a></li><li class="list-group-item"><a href="/2010-06-03-boost_program_options_unregistered_param.html">让boost::program_options支持未注册的参数</a></li><li class="list-group-item"><a href="/2012-01-18-git-line-ending.html">git换行符问题</a></li><li class="list-group-item"><a href="/2012-02-28-gsoap-error-200.html">gsoap Error 200</a></li><li class="list-group-item"><a href="/2012-05-24-get-chinese-pinyin-python.html">python获取中文拼音首字母以进行检索</a></li><li class="list-group-item"><a href="/2012-01-30-git-svn-proxy-setting.html">git svn代理设置</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-12-12-python_get_pe_version_info.html">python获取PE文件版本信息</a></li><li class="list-group-item"><a href="/2011-10-27-zenburn_code_css_test.html">zenburn-code css</a></li><li class="list-group-item"><a href="/2011-10-21-emacs_ibus_cannot_input_chinese.html">ibus在emacs下不能输入</a></li><li class="list-group-item"><a href="/2010-12-12-pefile.html">pefile</a></li><li class="list-group-item"><a href="/2010-05-08-ssh_sock_5.html">ssh sock 5代理</a></li><li class="list-group-item"><a href="/2012-05-23-xiami-checkin.html">xiami自动签到</a></li><li class="list-group-item"><a href="/2010-05-08-ogre_chinese_path_filename.html">ogre中文路径和文件名</a></li><li class="list-group-item"><a href="/2011-06-25-hg_merge_repositories.html">hg合并多个repository</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -713,7 +713,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:49</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:00</em></span></div>
 </div>
 <div class="clearfix"></div>
 

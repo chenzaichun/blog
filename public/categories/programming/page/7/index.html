@@ -107,6 +107,52 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2011-07-05-ios_input_dialog.html">iOS弹出输入框</a></h1>
+      
+        <span>发表于<time datetime="2011-07-05T19:56:31.000Z"> <a href="/2011-07-05-ios_input_dialog.html">7月 5 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>最简单的弹出输入框的方法是添加一个UITextField到UIAlertView中：</p>
+<figure class="highlight objc"><pre>UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@<span class="string">"Your title here"</span> message:@<span class="string">"this gets covered"</span> delegate:<span class="keyword">self</span> cancelButtonTitle:@<span class="string">"Cancel"</span> otherButtonTitles:@<span class="string">"OK"</span>, <span class="literal">nil</span>];
+UITextField *myTextField = [[UITextField alloc] initWithFrame:CGRectMake(<span class="number">12.0</span>, <span class="number">45.0</span>, <span class="number">260.0</span>, <span class="number">25.0</span>)];
+
+CGAffineTransform myTransform = CGAffineTransformMakeTranslation(<span class="number">0.0</span>, <span class="number">130.0</span>);
+[myAlertView setTransform:myTransform];
+
+[myTextField setBackgroundColor:[<span class="built_in">UIColor</span> whiteColor]];
+[myAlertView addSubview:myTextField];
+[myAlertView show];
+[myAlertView release];
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/ios/" class="label label-primary">ios</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:24"datetime="2014-03-05 06:29:24"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2011-07-05-ios_input_dialog.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-07-05-ios_input_dialog" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2011-07-01-ios_uiwebview_current_url.html">iOS获取UIWebView当前浏览页面的地址</a></h1>
       
         <span>发表于<time datetime="2011-07-01T19:56:31.000Z"> <a href="/2011-07-01-ios_uiwebview_current_url.html">7月 1 2011</a></time></span>      
@@ -530,53 +576,6 @@ define setterminfo
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-01-28-qt_text_codec.html">QT中文乱码问题</a></h1>
-      
-        <span>发表于<time datetime="2011-01-28T19:34:31.000Z"> <a href="/2011-01-28-qt_text_codec.html">1月 28 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>参考链接：<a href="http://hi.baidu.com/ilinux/blog/item/3603b801e8ce5907738da581.html" target="_blank"><a href="http://hi.baidu.com/ilinux/blog/item/3603b801e8ce5907738da581.html">http://hi.baidu.com/ilinux/blog/item/3603b801e8ce5907738da581.html</a></a></p>
-<p>因为我emacs的默认编码设置的是utf-8，所以这种方法是最方便的。</p>
-<figure class="highlight cpp"><pre><span class="preprocessor">#include &lt;QTextCodec&gt;</span>
-
-<span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])
-{
-    QTextCodec::setCodecForTr(QTextCodec::codecForName(<span class="string">"UTF8"</span>));
-    QTextCodec::setCodecForLocale(QTextCodec::codecForName(<span class="string">"UTF8"</span>));
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName(<span class="string">"UTF8"</span>));
-
-...
-}
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/Qt/" class="label label-primary">Qt</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:14"datetime="2014-03-05 06:29:14"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-01-28-qt_text_codec.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-28-qt_text_codec" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/categories/programming/page/6/">&laquo;</a></li><li><a class="page-number" href="/categories/programming/">1</a></li><li><a class="page-number" href="/categories/programming/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/categories/programming/page/4/">4</a></li><li><a class="page-number" href="/categories/programming/page/5/">5</a></li><li><a class="page-number" href="/categories/programming/page/6/">6</a></li><li class="active"><li><span class="page-number current">7</span></li><li><a class="page-number" href="/categories/programming/page/8/">8</a></li><li><a class="page-number" href="/categories/programming/page/9/">9</a></li><li><a class="page-number" href="/categories/programming/page/10/">10</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/categories/programming/page/13/">13</a></li><li><a class="page-number" href="/categories/programming/page/14/">14</a></li><li><a class="extend next" href="/categories/programming/page/8/">&raquo;</a></li>
@@ -610,7 +609,7 @@ define setterminfo
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2012-05-12-octopress-useful-links.html">octopress常用链接整理</a></li><li class="list-group-item"><a href="/2013-06-03-cheat.html">这是开挂了吧</a></li><li class="list-group-item"><a href="/2011-12-31-git-remove-untracked-files-and-directories.html">git remove untracked files and directories</a></li><li class="list-group-item"><a href="/2010-08-25-emacs23_xim.html">emacs23不能切换输入法的问题</a></li><li class="list-group-item"><a href="/2010-11-29-res_protocol.html">使用res协议打开exe里面资源文件</a></li><li class="list-group-item"><a href="/2010-05-08-apache2_start_error.html">Apache 2 启动错误的解决</a></li><li class="list-group-item"><a href="/2011-04-24-gdb_remote_debuging.html">GDB远程调试</a></li><li class="list-group-item"><a href="/2011-12-30-mac-os-x-emacs-chinese-font-setting.html">终于搞定Mac OS X上emacs中文的显示</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-11-16-merge-git-repositories-to-subdirectory.html">git合并多个repositories到子目录</a></li><li class="list-group-item"><a href="/2010-05-07-scribefire_chrome.html">scribefire 推出chrome插件了</a></li><li class="list-group-item"><a href="/2012-09-21-anshanshuji.html">鞍山书记</a></li><li class="list-group-item"><a href="/2010-08-29-archlinux_xelatex.html">xelatex</a></li><li class="list-group-item"><a href="/2013-01-13-archlinux-enable-vbox-service.html">archlinux下启用virtualbox service</a></li><li class="list-group-item"><a href="/2012-05-14-calculate-elapsed-time-in-milliseconds-unix-slash-linux.html">Unix/Linux计算程序消耗的时间（毫秒)</a></li><li class="list-group-item"><a href="/2012-02-03-compile-gsoap-on-mac-os-x.html">MacOS X上编译gSOAP</a></li><li class="list-group-item"><a href="/2010-05-07-ubuntu_nvidia_ko.html">ubuntu 10.04 unable to load the kernel module 'nvidia.ko'</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -653,7 +652,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:49</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:22:00</em></span></div>
 </div>
 <div class="clearfix"></div>
 

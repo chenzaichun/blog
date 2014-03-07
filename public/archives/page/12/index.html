@@ -107,6 +107,53 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2011-04-24-gdb_remote_debuging.html">GDB远程调试</a></h1>
+      
+        <span>发表于<time datetime="2011-04-24T19:44:31.000Z"> <a href="/2011-04-24-gdb_remote_debuging.html">4月 24 2011</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <p>参考链接：<a href="http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx" target="_blank"><a href="http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx">http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx</a></a></p>
+<p>前面已经做好跨平台的交叉编译的工作，如果需要调试怎么办呢？这个时候就可以GDB的远程调试来实现。</p>
+<p>P.S. 如果没有windows的GDB，可以去<a href="http://www.gnu.org/software/gdb/" target="_blank">下载</a>或者自行编译。
+在windows端执行 </p>
+<figure class="highlight sh"><pre><span class="tag">gdbserver</span> <span class="tag">localhost</span><span class="pseudo">:2345</span> <span class="tag">photorec</span><span class="class">.exe</span>
+</pre></figure>
+
+<p>在archlinux下执行</p>
+<figure class="highlight sh"><pre><span class="comment"># 这里我用的virtualbox，所以ip为10.0.2.2，请自行替换成windows的ip</span>
+<span class="variable">$gdb</span> photorec.exe
+gdb&gt; target remote <span class="number">10.0</span>.<span class="number">2.2</span>:<span class="number">2345</span>
+gdb &gt; ....
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/gdb/" class="label label-success">gdb</a><a href="/tags/Linux/" class="label label-info">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:18"datetime="2014-03-05 06:29:18"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2011-04-24-gdb_remote_debuging.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-04-24-gdb_remote_debuging" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2011-04-24-archlinux_mingw_cross_compile_testdisk.html">archlinux下使用MinGW交叉编译testdisk</a></h1>
       
         <span>发表于<time datetime="2011-04-24T19:34:31.000Z"> <a href="/2011-04-24-archlinux_mingw_cross_compile_testdisk.html">4月 24 2011</a></time></span>      
@@ -582,54 +629,6 @@ ShowAllProcesses()
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-01-16-hg_cert_warning.html">hg certificate warnings</a></h1>
-      
-        <span>发表于<time datetime="2011-01-16T19:34:31.000Z"> <a href="/2011-01-16-hg_cert_warning.html">1月 16 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>升级到mercurial 1.7.3之后，频繁会遇到像这样的错误：</p>
-<figure class="highlight"><pre><span class="label">warning:</span> bitbucket<span class="preprocessor">.org</span> certificate not verified (check web<span class="preprocessor">.cacerts</span> config setting)
-</pre></figure>
-
-<p>解决办法，参考链接：<a href="http://mercurial.selenic.com/wiki/CACertificates" target="_blank"><a href="http://mercurial.selenic.com/wiki/CACertificates">http://mercurial.selenic.com/wiki/CACertificates</a></a></p>
-<p>下载<a href="http://curl.haxx.se/ca/cacert.pem" target="_blank"><a href="http://curl.haxx.se/ca/cacert.pem">http://curl.haxx.se/ca/cacert.pem</a></a>到本地，然后在～/.hgrc里面添加这样一句：</p>
-<figure class="highlight conf"><pre><span class="title">[web]</span>
-<span class="setting">cacerts=<span class="value">/path/to/cacert.pem</span></span>
-</pre></figure>
-
-<p>或者直接禁用：</p>
-<figure class="highlight conf"><pre><span class="title">[web]</span>
-<span class="setting">cacerts =<span class="value"></span></span>
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/hg/" class="label label-success">hg</a><a href="/tags/mercurial/" class="label label-info">mercurial</a><a href="/tags/python/" class="label label-warning">python</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:12"datetime="2014-03-05 06:29:12"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html#comments" class="ds-thread-count comment-link" data-thread-key="2011-01-16-hg_cert_warning" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/archives/page/11/">&laquo;</a></li><li><a class="page-number" href="/archives/">1</a></li><li><a class="page-number" href="/archives/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/archives/page/9/">9</a></li><li><a class="page-number" href="/archives/page/10/">10</a></li><li><a class="page-number" href="/archives/page/11/">11</a></li><li class="active"><li><span class="page-number current">12</span></li><li><a class="page-number" href="/archives/page/13/">13</a></li><li><a class="page-number" href="/archives/page/14/">14</a></li><li><a class="page-number" href="/archives/page/15/">15</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/archives/page/23/">23</a></li><li><a class="page-number" href="/archives/page/24/">24</a></li><li><a class="extend next" href="/archives/page/13/">&raquo;</a></li>
@@ -663,7 +662,7 @@ ShowAllProcesses()
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-12-12-modify_windows_environment_variables_from_python.html">python修改windows环境变量</a></li><li class="list-group-item"><a href="/2012-06-07-modify-svn-log.html">修改SVN中已提交的日志</a></li><li class="list-group-item"><a href="/2010-11-28-tell_me_more.html">Tell Me More</a></li><li class="list-group-item"><a href="/2010-12-25-notitle.html">保持队形看下去</a></li><li class="list-group-item"><a href="/2010-06-02-vs2005_boost.html">vs2005下编译boost</a></li><li class="list-group-item"><a href="/2011-04-24-gdb_remote_debuging.html">GDB远程调试</a></li><li class="list-group-item"><a href="/2012-06-01-python-get-os-information.html">Python获取操作系统版本信息</a></li><li class="list-group-item"><a href="/2010-05-08-mount_cifs_umask.html">Mount.cifs 中设置文件权限</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-06-20-chrome_dev_channel_source.html">chrome dev channel的更新源</a></li><li class="list-group-item"><a href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html">通过git将bitbucket当做无限容量的dropbox</a></li><li class="list-group-item"><a href="/2011-08-27-respondstoselector_not_found_in_protocol.html">'-respondsToSelector:' not found in protocol(s)</a></li><li class="list-group-item"><a href="/2010-07-14-mencoder_extract_audio.html">mencoder提取音频</a></li><li class="list-group-item"><a href="/2010-05-07-ms_vc_stderr_file.html">ms vc下stderr到文件</a></li><li class="list-group-item"><a href="/2012-05-23-xiami-checkin.html">xiami自动签到</a></li><li class="list-group-item"><a href="/2012-05-24-get-chinese-pinyin-python.html">python获取中文拼音首字母以进行检索</a></li><li class="list-group-item"><a href="/2010-11-30-resize_portable_ubuntu_image.html">Resize a Portable Ubuntu Image</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -706,7 +705,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:47</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:21:58</em></span></div>
 </div>
 <div class="clearfix"></div>
 

@@ -107,6 +107,90 @@ var _js2load = [];
   <div class="post-content">
     <header class="well-sm">
       <i class="fa icon fa-5x pull-left"></i>
+      <h1 class="title"><a href="/2010-09-17-gtk_button.html">GTK+按钮</a></h1>
+      
+        <span>发表于<time datetime="2010-09-17T17:37:21.000Z"> <a href="/2010-09-17-gtk_button.html">9月 17 2010</a></time></span>      
+    </header>
+    
+    
+    <div class="entry">
+      
+        <figure class="highlight cpp"><pre><span class="comment">/* compile command:
+   gcc -o button button.c `pkg-config --libs --cflags gtk+-2.0`
+*/</span>
+<span class="preprocessor">#include &lt;gtk/gtk.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keyword">void</span> destroy(GtkWidget*, gpointer);
+
+<span class="keyword">int</span> main(<span class="keyword">int</span> argc,
+		 <span class="keyword">char</span> *argv[])
+{
+	GtkWidget *window, *button;
+
+	gtk_init(&argc, &argv);
+
+	window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+	gtk_window_set_title(GTK_WINDOW(window), <span class="string">"Buttons"</span>);
+	gtk_container_set_border_width(GTK_CONTAINER(window), <span class="number">25</span>);
+	gtk_widget_set_size_request(window, <span class="number">200</span>, <span class="number">100</span>);
+
+	g_signal_connect(G_OBJECT(window), <span class="string">"destroy"</span>,
+					 G_CALLBACK(destroy), NULL);
+
+	<span class="comment">/* Create a new button that has a mnemonic key of Alt+c. */</span>
+	button = gtk_button_new_with_mnemonic(<span class="string">"_Close"</span>);
+	gtk_button_set_relief(GTK_BUTTON(button), GTK_RELIEF_NONE);
+
+	<span class="comment">/* Connect the button to the clicked signal. The callback function
+	 * recieves the window followed by the button because the arguments
+	 * are swapped
+	 */</span>
+	g_signal_connect_swapped(G_OBJECT(button), <span class="string">"clicked"</span>,
+							 G_CALLBACK(gtk_widget_destroy),
+							 (gpointer)window);
+
+	gtk_container_add(GTK_CONTAINER(window), button);
+	gtk_widget_show_all(window);
+
+	gtk_main();
+
+	<span class="keyword">return</span> <span class="number">0</span>;
+}
+
+<span class="comment">/* Stop the GTK+ main loop function */</span>
+<span class="keyword">static</span> <span class="keyword">void</span>
+destroy(GtkWidget *window,
+		gpointer data)
+{
+	gtk_main_quit();
+}
+</pre></figure>
+
+
+      
+    </div>
+    
+    
+      
+    
+    
+        <footer id="post-meta">
+        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span></span> | <span class="tags">标签 <a href="/tags/gtk/" class="label label-primary">gtk</a><a href="/tags/GUI/" class="label label-success">GUI</a><a href="/tags/Linux/" class="label label-info">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:43"datetime="2014-03-05 06:28:43"> 3月 5 2014</time></span> | <span class="comment-link">
+<a href="http://yesokay.herokuapp.com/2010-09-17-gtk_button.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-09-17-gtk_button" data-count-type="comments">暂无评论</a></span>
+        </footer>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+</article>
+
+
+  
+    <article>
+<div id="post" class="post well">
+  <div class="post-content">
+    <header class="well-sm">
+      <i class="fa icon fa-5x pull-left"></i>
       <h1 class="title"><a href="/2010-09-16-chrome_proxy_.md_arg.html">chrome代理相关命令行总结</a></h1>
       
         <span>发表于<time datetime="2010-09-16T17:32:33.000Z"> <a href="/2010-09-16-chrome_proxy_.md_arg.html">9月 16 2010</a></time></span>      
@@ -490,59 +574,6 @@ var _js2load = [];
 
 
   
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-08-23-archlinux_lxde_bluetooth.html">archlinux+LXDE蓝牙传输文件</a></h1>
-      
-        <span>发表于<time datetime="2010-08-23T12:32:37.000Z"> <a href="/2010-08-23-archlinux_lxde_bluetooth.html">8月 23 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>首先安装bluez, obexfs</p>
-<figure class="highlight sh"><pre><span class="built_in">sudo</span> pacman -S bluez obexfs
-</pre></figure>
-
-<p>启动bluetooth（也可以加入/etc/rc.conf的daemon中）</p>
-<figure class="highlight sh"><pre>/etc/rc.d/bluetooth <span class="operator"><span class="keyword">start</span></span>
-</pre></figure>
-
-<p>获取蓝牙的mac地址</p>
-<figure class="highlight sh"><pre>hcitool scan
-</pre></figure>
-
-<p>启动另外一个term，然后进行连接，如：</p>
-<figure class="highlight sh"><pre><span class="tag">bluez-simple-agent</span> <span class="tag">hci0</span> 00<span class="pseudo">:26</span><span class="pseudo">:37</span><span class="pseudo">:45</span><span class="pseudo">:29</span><span class="pseudo">:8F</span>
-</pre></figure>
-
-<p>在其他term中可以进行文件传输了：</p>
-<figure class="highlight sh"><pre><span class="tag">obexftp</span> <span class="tag">-b</span> 00<span class="pseudo">:26</span><span class="pseudo">:37</span><span class="pseudo">:45</span><span class="pseudo">:29</span><span class="pseudo">:8F</span> <span class="tag">-p</span> <span class="tag">xxx</span><span class="class">.txt</span>
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:35"datetime="2014-03-05 06:28:35"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-08-23-archlinux_lxde_bluetooth.html#comments" class="ds-thread-count comment-link" data-thread-key="2010-08-23-archlinux_lxde_bluetooth" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
   
 <ul id="pagination" class="pagination pagination-lg">
   <li><a class="extend prev" href="/archives/page/16/">&laquo;</a></li><li><a class="page-number" href="/archives/">1</a></li><li><a class="page-number" href="/archives/page/2/">2</a></li><li><span class="space">&hellip;</span></li><li><a class="page-number" href="/archives/page/14/">14</a></li><li><a class="page-number" href="/archives/page/15/">15</a></li><li><a class="page-number" href="/archives/page/16/">16</a></li><li class="active"><li><span class="page-number current">17</span></li><li><a class="page-number" href="/archives/page/18/">18</a></li><li><a class="page-number" href="/archives/page/19/">19</a></li><li><a class="page-number" href="/archives/page/20/">20</a></li><li><span class="space">&hellip;</span></li></li><li><a class="page-number" href="/archives/page/23/">23</a></li><li><a class="page-number" href="/archives/page/24/">24</a></li><li><a class="extend next" href="/archives/page/18/">&raquo;</a></li>
@@ -576,7 +607,7 @@ var _js2load = [];
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-07-29-android-x86_halt.html">android-x86关机</a></li><li class="list-group-item"><a href="/2010-11-30-android_invoke_maps_to_direction.html">android调用Google Maps导航</a></li><li class="list-group-item"><a href="/2010-08-08-fuse-python.html">安装fuse-python出现错误</a></li><li class="list-group-item"><a href="/2010-12-18-chrome_dev_update_error.html">chrome dev无法升级</a></li><li class="list-group-item"><a href="/2010-11-30-resize_portable_ubuntu_image.html">Resize a Portable Ubuntu Image</a></li><li class="list-group-item"><a href="/2011-03-01-sudo_keep_env.html">sudo环境变量</a></li><li class="list-group-item"><a href="/2013-06-03-cheat.html">这是开挂了吧</a></li><li class="list-group-item"><a href="/2012-02-28-using-tcpdump-analysis-soap-protocol.html">使用tcpdump分析soap包</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-07-13-cocos2d_iphone_popscenewithtransition.html">cocos2d-iphone popSceneWithTransition</a></li><li class="list-group-item"><a href="/2011-11-15-install-oracle-10gr2-on-archlinux.html">Archlinux下安装oracle 10gr2 Enterprise</a></li><li class="list-group-item"><a href="/2010-06-01-sudo_environment.html">sudo环境变量</a></li><li class="list-group-item"><a href="/2011-12-12-first-gnustep-gui.html">第一个GNUstep窗口程序</a></li><li class="list-group-item"><a href="/2010-12-12-pythoncom_lnk_file_path.html">在windows下通过pythoncom获取快捷方式所指定的路径</a></li><li class="list-group-item"><a href="/2011-01-16-hg-git.html">hg-git--hg下直接操作git</a></li><li class="list-group-item"><a href="/2010-05-07-linux_emacs_color.html">Linux下修改 emacs默认背景颜色</a></li><li class="list-group-item"><a href="/2010-12-16-course_of_foreign_university.html">值得推荐的国外名牌大学网络课程视频下载</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -619,7 +650,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:47</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:21:58</em></span></div>
 </div>
 <div class="clearfix"></div>
 
