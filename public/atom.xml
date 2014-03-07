@@ -4,7 +4,7 @@
   <subtitle><![CDATA[阿尔萨斯，没有霜之哀伤你就是一坨屎！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yesokay.herokuapp.com/"/>
-  <updated>2014-03-07T08:01:58.809Z</updated>
+  <updated>2014-03-07T08:12:43.905Z</updated>
   <id>http://yesokay.herokuapp.com/</id>
   
   <author>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[确实很久没有更新了]]></title>
-    <link href="http://yesokay.herokuapp.com/long-time-no-update.html"/>
-    <id>http://yesokay.herokuapp.com/long-time-no-update.html</id>
+    <link href="http://yesokay.herokuapp.com/2013-06-23-long-time-no-update.html"/>
+    <id>http://yesokay.herokuapp.com/2013-06-23-long-time-no-update.html</id>
     <published>2013-06-23T11:08:00.000Z</published>
     <updated>2014-03-07T07:51:52.000Z</updated>
     <content type="html"><![CDATA[<p>很久没更新了，尽量更新吧。不然都没有动力了。</p>
@@ -32,8 +32,8 @@
   
   <entry>
     <title><![CDATA[Mac OS X下安装gevent]]></title>
-    <link href="http://yesokay.herokuapp.com/install-gevent-on-mac-os-x.html"/>
-    <id>http://yesokay.herokuapp.com/install-gevent-on-mac-os-x.html</id>
+    <link href="http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html"/>
+    <id>http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html</id>
     <published>2013-06-23T11:08:00.000Z</published>
     <updated>2014-03-07T07:17:01.000Z</updated>
     <content type="html"><![CDATA[<p>(请确保xcode command line tools已经安装)</p>
@@ -89,8 +89,8 @@
   
   <entry>
     <title><![CDATA[这是开挂了吧]]></title>
-    <link href="http://yesokay.herokuapp.com/cheat.html"/>
-    <id>http://yesokay.herokuapp.com/cheat.html</id>
+    <link href="http://yesokay.herokuapp.com/2013-06-13-cheat.html"/>
+    <id>http://yesokay.herokuapp.com/2013-06-13-cheat.html</id>
     <published>2013-06-13T15:22:00.000Z</published>
     <updated>2014-03-05T06:30:40.000Z</updated>
     <content type="html"><![CDATA[<p>这肯定是开挂了, ;-)</p>
@@ -108,8 +108,8 @@
   
   <entry>
     <title><![CDATA[archlinux下启用virtualbox service]]></title>
-    <link href="http://yesokay.herokuapp.com/archlinux-enable-vbox-service.html"/>
-    <id>http://yesokay.herokuapp.com/archlinux-enable-vbox-service.html</id>
+    <link href="http://yesokay.herokuapp.com/2013-01-03-archlinux-enable-vbox-service.html"/>
+    <id>http://yesokay.herokuapp.com/2013-01-03-archlinux-enable-vbox-service.html</id>
     <published>2013-01-03T17:47:00.000Z</published>
     <updated>2014-03-05T06:30:39.000Z</updated>
     <content type="html"><![CDATA[<p>安装好 <code>virtualbox-guest-utils</code> 之后，没有并没有启用 <code>vboxservice</code>, 这个时候如果windows休眠，则archlinux的时间将不会跟host同步，需要启动vboxservice才行。</p>
@@ -141,8 +141,8 @@
   
   <entry>
     <title><![CDATA[删除git submodule]]></title>
-    <link href="http://yesokay.herokuapp.com/git-submodule-remove.html"/>
-    <id>http://yesokay.herokuapp.com/git-submodule-remove.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-12-26-git-submodule-remove.html"/>
+    <id>http://yesokay.herokuapp.com/2012-12-26-git-submodule-remove.html</id>
     <published>2012-12-26T14:02:00.000Z</published>
     <updated>2014-03-05T06:30:38.000Z</updated>
     <content type="html"><![CDATA[<p>git并没有提供删除submodule的方法，只有手动删除。</p>
@@ -174,8 +174,8 @@
   
   <entry>
     <title><![CDATA[archlinux下修改默认中文字体]]></title>
-    <link href="http://yesokay.herokuapp.com/archlinux-fontconfig-for-chinese.html"/>
-    <id>http://yesokay.herokuapp.com/archlinux-fontconfig-for-chinese.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-12-26-archlinux-fontconfig-for-chinese.html"/>
+    <id>http://yesokay.herokuapp.com/2012-12-26-archlinux-fontconfig-for-chinese.html</id>
     <published>2012-12-26T11:17:00.000Z</published>
     <updated>2014-03-05T06:30:37.000Z</updated>
     <content type="html"><![CDATA[<p>archlinux中的字体看起来真的很搓，试过ubuntu patch过的版本，还是不尽如人意。后来发现了<code>fontconfig-infinality</code>, 整个世界突然美好了。跟windows下的<code>MacType</code>差不多。</p>
@@ -651,8 +651,8 @@
   
   <entry>
     <title><![CDATA[在hp-ux上启动x font server]]></title>
-    <link href="http://yesokay.herokuapp.com/start-x-font-server-on-hp-ux.html"/>
-    <id>http://yesokay.herokuapp.com/start-x-font-server-on-hp-ux.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-11-28-start-x-font-server-on-hp-ux.html"/>
+    <id>http://yesokay.herokuapp.com/2012-11-28-start-x-font-server-on-hp-ux.html</id>
     <published>2012-11-28T11:08:00.000Z</published>
     <updated>2014-03-05T06:30:36.000Z</updated>
     <content type="html"><![CDATA[<p>编辑<code>/etc/rc.config.d/xfs</code></p>
@@ -685,8 +685,8 @@ netstat -an<span class="string">|grep 7000</span>
   
   <entry>
     <title><![CDATA[让emacs具有mac下的按键绑定]]></title>
-    <link href="http://yesokay.herokuapp.com/emacs-mac-like-key-binding.html"/>
-    <id>http://yesokay.herokuapp.com/emacs-mac-like-key-binding.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-11-27-emacs-mac-like-key-binding.html"/>
+    <id>http://yesokay.herokuapp.com/2012-11-27-emacs-mac-like-key-binding.html</id>
     <published>2012-11-27T13:28:00.000Z</published>
     <updated>2014-03-05T06:30:35.000Z</updated>
     <content type="html"><![CDATA[<figure class="highlight lisp"><pre><span class="list">(<span class="title">setq</span> <span class="variable">*true-mac-cut-buffer*</span> <span class="string">""</span>)</span>
@@ -753,8 +753,8 @@ netstat -an<span class="string">|grep 7000</span>
   
   <entry>
     <title><![CDATA[你以为]]></title>
-    <link href="http://yesokay.herokuapp.com/iphone.html"/>
-    <id>http://yesokay.herokuapp.com/iphone.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-11-27-iphone.html"/>
+    <id>http://yesokay.herokuapp.com/2012-11-27-iphone.html</id>
     <published>2012-11-27T12:24:00.000Z</published>
     <updated>2014-03-05T06:30:35.000Z</updated>
     <content type="html"><![CDATA[<p><img src="../media/iphone.png" alt="iphone"></p>
@@ -771,8 +771,8 @@ netstat -an<span class="string">|grep 7000</span>
   
   <entry>
     <title><![CDATA[Linux下让进程生成core文件]]></title>
-    <link href="http://yesokay.herokuapp.com/generate-core-dump-on-linux.html"/>
-    <id>http://yesokay.herokuapp.com/generate-core-dump-on-linux.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-11-26-generate-core-dump-on-linux.html"/>
+    <id>http://yesokay.herokuapp.com/2012-11-26-generate-core-dump-on-linux.html</id>
     <published>2012-11-26T11:22:00.000Z</published>
     <updated>2014-03-05T06:30:34.000Z</updated>
     <content type="html"><![CDATA[<p>在linux下让进程强制生成core dump文件：</p>
@@ -792,8 +792,8 @@ netstat -an<span class="string">|grep 7000</span>
   
   <entry>
     <title><![CDATA[emacs中插入当前时间]]></title>
-    <link href="http://yesokay.herokuapp.com/insert-current-time-in-emacs.html"/>
-    <id>http://yesokay.herokuapp.com/insert-current-time-in-emacs.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-11-26-insert-current-time-in-emacs.html"/>
+    <id>http://yesokay.herokuapp.com/2012-11-26-insert-current-time-in-emacs.html</id>
     <published>2012-11-26T08:49:00.000Z</published>
     <updated>2014-03-05T06:30:38.000Z</updated>
     <content type="html"><![CDATA[<p>emacs中插入当前时间是可以自定义格式的，方法如下：</p>
@@ -815,8 +815,8 @@ netstat -an<span class="string">|grep 7000</span>
   
   <entry>
     <title><![CDATA[使用emacs打开大文件]]></title>
-    <link href="http://yesokay.herokuapp.com/open-large-file-with-emacs.html"/>
-    <id>http://yesokay.herokuapp.com/open-large-file-with-emacs.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-11-26-open-large-file-with-emacs.html"/>
+    <id>http://yesokay.herokuapp.com/2012-11-26-open-large-file-with-emacs.html</id>
     <published>2012-11-26T08:48:00.000Z</published>
     <updated>2014-03-05T06:30:39.000Z</updated>
     <content type="html"><![CDATA[<p>经常使用<code>emacs</code>来查看日志文件，当日至文件特别大的时候，<code>emacs</code>的反应速度实在是不敢恭维。</p>
@@ -841,8 +841,8 @@ netstat -an<span class="string">|grep 7000</span>
   
   <entry>
     <title><![CDATA[修改ibus-googlepinyin候选词的个数]]></title>
-    <link href="http://yesokay.herokuapp.com/change-ibus-googlepinyin-default-candidates-number.html"/>
-    <id>http://yesokay.herokuapp.com/change-ibus-googlepinyin-default-candidates-number.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-11-21-change-ibus-googlepinyin-default-candidates-number.html"/>
+    <id>http://yesokay.herokuapp.com/2012-11-21-change-ibus-googlepinyin-default-candidates-number.html</id>
     <published>2012-11-21T16:17:00.000Z</published>
     <updated>2014-03-05T06:30:33.000Z</updated>
     <content type="html"><![CDATA[<p>默认情况下ibus-googlepinyin的默认候选词个数是5个，但是ibus-googlepinyin并没有提供设置选项的功能，同时也没有配置文件。研究ibus的代码发现原来是写死了的 :(</p>
@@ -873,8 +873,8 @@ netstat -an<span class="string">|grep 7000</span>
   
   <entry>
     <title><![CDATA[Avoids ssh timeouts]]></title>
-    <link href="http://yesokay.herokuapp.com/avoids-ssh-timeouts.html"/>
-    <id>http://yesokay.herokuapp.com/avoids-ssh-timeouts.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-11-21-avoids-ssh-timeouts.html"/>
+    <id>http://yesokay.herokuapp.com/2012-11-21-avoids-ssh-timeouts.html</id>
     <published>2012-11-21T16:17:00.000Z</published>
     <updated>2014-03-05T06:30:32.000Z</updated>
     <content type="html"><![CDATA[<figure class="highlight sh"><pre><span class="comment"># to set it globally</span>
@@ -897,8 +897,8 @@ netstat -an<span class="string">|grep 7000</span>
   
   <entry>
     <title><![CDATA[Floating point exception on SUSE]]></title>
-    <link href="http://yesokay.herokuapp.com/floating-point-exception-on-suse.html"/>
-    <id>http://yesokay.herokuapp.com/floating-point-exception-on-suse.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-10-26-floating-point-exception-on-suse.html"/>
+    <id>http://yesokay.herokuapp.com/2012-10-26-floating-point-exception-on-suse.html</id>
     <published>2012-10-26T16:40:00.000Z</published>
     <updated>2014-03-05T06:30:32.000Z</updated>
     <content type="html"><![CDATA[<p>今天想将redhat上面的程序放到suse 10上面运行，结果遇到了这个错误：</p>
@@ -1047,8 +1047,8 @@ Linux temipll1 <span class="number">2.6</span>.<span class="number">18</span>-<s
   
   <entry>
     <title><![CDATA[SUSE Enterprise Linux 10.x下安装JDK/JRE]]></title>
-    <link href="http://yesokay.herokuapp.com/install-jdk-slash-jre-on-suse-10-dot-x.html"/>
-    <id>http://yesokay.herokuapp.com/install-jdk-slash-jre-on-suse-10-dot-x.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-10-25-install-jdk-slash-jre-on-suse-10-dot-x.html"/>
+    <id>http://yesokay.herokuapp.com/2012-10-25-install-jdk-slash-jre-on-suse-10-dot-x.html</id>
     <published>2012-10-25T15:06:00.000Z</published>
     <updated>2014-03-05T06:30:30.000Z</updated>
     <content type="html"><![CDATA[<p>SUSE Enterprise Linux安装盘中是不包含non-public的安装文件的，
@@ -1162,8 +1162,8 @@ yast2 -i java-<span class="number">1</span>_5_0-ibm-devel-<span class="number">3
   
   <entry>
     <title><![CDATA[SUSE Enterprise Linux 10下安装Oracle 11gr2]]></title>
-    <link href="http://yesokay.herokuapp.com/install-oracle-11gr2-on-suse-enterprise-linux.html"/>
-    <id>http://yesokay.herokuapp.com/install-oracle-11gr2-on-suse-enterprise-linux.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html"/>
+    <id>http://yesokay.herokuapp.com/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html</id>
     <published>2012-10-25T10:09:00.000Z</published>
     <updated>2014-03-05T06:30:31.000Z</updated>
     <content type="html"><![CDATA[<ol>
@@ -1303,8 +1303,8 @@ unzip linux<span class="preprocessor">.x</span>64_11gR2_database_2of2<span class
   
   <entry>
     <title><![CDATA[虾米自动签到go语言版本]]></title>
-    <link href="http://yesokay.herokuapp.com/xiami-auto-checkin-with-golang.html"/>
-    <id>http://yesokay.herokuapp.com/xiami-auto-checkin-with-golang.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-10-22-xiami-auto-checkin-with-golang.html"/>
+    <id>http://yesokay.herokuapp.com/2012-10-22-xiami-auto-checkin-with-golang.html</id>
     <published>2012-10-22T14:12:00.000Z</published>
     <updated>2014-03-05T06:30:29.000Z</updated>
     <content type="html"><![CDATA[<p>原来在网上找了一份python版实现, 见<a href="http://yesokay.herokuapp.com/xiami-checkin.html">这里</a> ，仿照着这个用go语言实现了一编。</p>
@@ -1457,8 +1457,8 @@ unzip linux<span class="preprocessor">.x</span>64_11gR2_database_2of2<span class
   
   <entry>
     <title><![CDATA[通过git将bitbucket当做无限容量的dropbox]]></title>
-    <link href="http://yesokay.herokuapp.com/use-bitbucket-as-dropbox-by-git.html"/>
-    <id>http://yesokay.herokuapp.com/use-bitbucket-as-dropbox-by-git.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-09-26-use-bitbucket-as-dropbox-by-git.html"/>
+    <id>http://yesokay.herokuapp.com/2012-09-26-use-bitbucket-as-dropbox-by-git.html</id>
     <published>2012-09-26T15:47:00.000Z</published>
     <updated>2014-03-05T06:30:29.000Z</updated>
     <content type="html"><![CDATA[<p>网上找一个网盘很麻烦，一般都有容量限制，要不就是有诸多限制。有没有geek一点的方法，使用git和bitbucket来作为网盘呢？</p>
@@ -1488,8 +1488,8 @@ unzip linux<span class="preprocessor">.x</span>64_11gR2_database_2of2<span class
   
   <entry>
     <title><![CDATA[emacs下golang的配置]]></title>
-    <link href="http://yesokay.herokuapp.com/golang-emacs-setting.html"/>
-    <id>http://yesokay.herokuapp.com/golang-emacs-setting.html</id>
+    <link href="http://yesokay.herokuapp.com/2012-09-26-golang-emacs-setting.html"/>
+    <id>http://yesokay.herokuapp.com/2012-09-26-golang-emacs-setting.html</id>
     <published>2012-09-26T14:12:00.000Z</published>
     <updated>2014-03-05T06:30:28.000Z</updated>
     <content type="html"><![CDATA[<p><a href="https://github.com/astaxie/build-web-application-with-golang/blob/master/1.4.md#emacs" target="_blank">参考链接</a></p>
