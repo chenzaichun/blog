@@ -17,7 +17,7 @@
 
 <meta property="og:site_name" content="木哈哈"/>
 
-<style>.testIE{display:none;}</style><!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
+<!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
 <!--[if lte IE 7]><link rel="stylesheet" href="/css/ie7.css" type="text/css"><![endif]-->
 <!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
 <!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
@@ -56,7 +56,7 @@ var _js2load = [];
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/">木哈哈[<span class='testIE IE9'>IE9</span><span class='testIE IE8'>IE8</span><span class='testIE IE7'>lte IE7</span>]</a>
+    <a class="navbar-brand" href="/">木哈哈</a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
@@ -374,7 +374,7 @@ curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &code);
   <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
 
 <div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html">通过git将bitbucket当做无限容量的dropbox</a></li><li class="list-group-item"><a href="/2011-07-03-build_emacs_on_mac_osx.html">Build Emacs on Mac OS X</a></li><li class="list-group-item"><a href="/2012-09-21-show-depends-on-mac-os-x.html">MacOS X下查看可执行程序依赖</a></li><li class="list-group-item"><a href="/2011-07-05-ios_input_dialog.html">iOS弹出输入框</a></li><li class="list-group-item"><a href="/2011-07-01-enable_zoom_in_out_uiwebview.html">UIWebView启用放大缩小</a></li><li class="list-group-item"><a href="/2011-10-28-flush_dns_on_windows.html">windows下清空系统dns</a></li><li class="list-group-item"><a href="/2010-12-12-pefile.html">pefile</a></li><li class="list-group-item"><a href="/2010-06-21-android_phone_number.html">android获取手机号码</a></li></ul></div>
+  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2010-06-27-android_set_default_apn.html">android下设置默认APN</a></li><li class="list-group-item"><a href="/2012-11-26-generate-core-dump-on-linux.html">Linux下让进程生成core文件</a></li><li class="list-group-item"><a href="/2010-12-25-notitle.html">保持队形看下去</a></li><li class="list-group-item"><a href="/2011-12-09-unlock-mcafee-user-interface.html">Unlock the McAfee VirusScan Enterprise 8.5i User Interface</a></li><li class="list-group-item"><a href="/2012-01-18-ssh-local-tunnel.html">ssh本地tunnel代理</a></li><li class="list-group-item"><a href="/2011-11-18-mount-bind.html">mount –bind</a></li><li class="list-group-item"><a href="/2011-12-31-show-all-files-in-finder-on-mac.html">让Finder显示所有文件</a></li><li class="list-group-item"><a href="/2012-01-30-git-svn-proxy-setting.html">git svn代理设置</a></li></ul></div>
 
 <div id="widget_sina_weiboshow" class="widget panel panel-primary">
   <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
@@ -403,7 +403,13 @@ curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &code);
   
     &nbsp;&nbsp;</span>
   
-  <span id='analytics-51la'></span><span id='analytics-google'></span><span id='analytics-cnzz'>
+  <span id='analytics-51la'></span><span id='analytics-google'>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31585781-1']);
+  _gaq.push(['_trackPageview']);
+  _js2load.push({src:('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'});
+</script></span><span id='analytics-cnzz'>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </span><span id='analytics-baidu'>
 <script>
@@ -411,7 +417,7 @@ var _hmt = _hmt || [];
 _js2load.push({src:"//hm.baidu.com/hm.js?"});
 </script>
 </span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 06:23:48</em></span></div>
+  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 07:05:48</em></span></div>
 </div>
 <div class="clearfix"></div>
 
@@ -464,7 +470,7 @@ _js2load.push({src:'http://static.duoshuo.com/embed.js',charset:'UTF-8'});
             <!--wumii_relatedItems-->
     
             
-<script type="text/javascript">var ujian_config = {num:6,showType:0,picSize:84,textHeight:45};_js2load.push({src:'http://v1.ujian.cc/code/ujian.js?uid=1880458'});</script>
+<script type="text/javascript">var ujian_config = {num:6,showType:0,picSize:84,textHeight:45};_js2load.push({src:'http://v1.ujian.cc/code/ujian.js?uid=1901235'});</script>
 <a href="http://www.ujian.cc" style="border:0;"><img src="http://img.ujian.cc/pixel.png" alt="友荐云推荐" style="border:0;padding:0;margin:0;" /></a>
     
         <script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js"></script>    <script type="text/javascript">
