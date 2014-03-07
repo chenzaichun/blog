@@ -15,7 +15,7 @@ language: zh-CN
 url: http://yesokay.herokuapp.com
 root: /
 #permalink: :year/:month/:day/:title/
-permalink: :title.html
+permalink: :year-:month-:day-:title.html
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
