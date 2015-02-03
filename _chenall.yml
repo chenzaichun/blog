@@ -111,7 +111,7 @@ widgets:
     - tagcloud
     - latest_update_posts
     - random_posts
-    - sina_weiboshow
+    #- sina_weiboshow
     - recent_comments
   before_content: # 文章内容前
   after_content:  # 文章内容后
