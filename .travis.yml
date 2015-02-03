@@ -24,7 +24,7 @@ before_install:
 - npm install -g hexo
 
 install:
-- npm install
+- npm install chenzaichun@hexo@2.8.3
 
 # Notice: Replace 'YOUR NAME' and 'YOUR EMAIL'
 before_script:
