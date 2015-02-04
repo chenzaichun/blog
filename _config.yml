@@ -38,7 +38,7 @@ render_drafts: false
 post_asset_folder: false
 highlight:
   enable: true
-  line_number: false
+  line_number: true
   tab_replace:
 
 # Category & Tag
@@ -60,7 +60,7 @@ tag: 2
 ## http://www.senchalabs.org/connect/logger.html
 port: 4000
 logger: false
-logger_format:
+logger_format: dev
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -80,8 +80,14 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
-theme: landscape-jr0cket
+#theme: landscape-jr0cket
+theme: freemind
+#theme: wixo
 exclude_generator:
+
+plugins:
+  - hexo-generator-feed
+
 
 # Markdown
 ## https://github.com/chjj/marked
@@ -90,9 +96,11 @@ markdown:
   pedantic: false
   sanitize: false
   tables: true
-  breaks: true
+  breaks: false
   smartLists: true
   smartypants: true
+
+
 
 # Deployment
 ## Docs: http://zespia.tw/hexo/docs/deployment.html

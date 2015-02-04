@@ -7,8 +7,9 @@ date: 2013-06-23 11:08
 
 测试一下
 
+感谢`jkeylu`
 
-```
+```yml
 # Deploy hexo site by travis-ci
 # https://github.com/jkeylu/deploy-hexo-site-by-travis-ci
 # LICENSE: MIT
@@ -57,3 +58,5 @@ after_success:
 - git branch -m master
 - git push -q -u origin master
 ```
+
+是不是很简单

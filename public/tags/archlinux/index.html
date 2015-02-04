@@ -1,761 +1,440 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  
+  <title>archlinux | 木哈哈</title>
+  <meta name="author" content="Chen, Zai-Chun">
+  
+  <meta name="description" content="不想写">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<title>archlinux | 木哈哈</title>
-<meta name="author" content="Chen, Zai-Chun">
+  
+  <meta property="og:site_name" content="木哈哈"/>
 
-<meta name="description" content="不想写">
+  
+    <meta property="og:image" content="undefined"/>
+  
 
+  
+    <link rel="alternative" href="/atom.xml" title="木哈哈" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script src="/js/jquery-2.0.3.min.js"></script>
 
-
-<meta property="og:site_name" content="木哈哈"/>
-
-<!--[if IE]><style>.testIE.IE{display:inline;}</style><![endif]-->
-<!--[if lte IE 7]><link rel="stylesheet" href="/css/ie7.css" type="text/css"><![endif]-->
-<!--[if (lt IE 9)&(gt IE 7)]><style>.testIE.IE8{display:inline;}</style><![endif]-->
-<!--[if gt IE 8]><style>.testIE.IE9{display:inline;}</style><![endif]-->
-
-<link href="/favicon.png" rel="icon">
-<link rel="alternate" href="/atom.xml" title="木哈哈 Feed" type="application/atom+xml">
-
-<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.0.3/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="http://cdn.bootcss.com/prettify/r298/prettify.min.css" type="text/css">
-<link rel="stylesheet" href="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" type="text/css">
-<link rel="stylesheet" href="/css/style.css" type="text/css">
-<!--[if lt IE 9]>
-   <style>article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}</style>
-   <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-   <script src="http://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-<link href="http://cdn.staticfile.org/respond.js/1.4.2/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
-<link href="/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
-<script src="/js/respond.proxy.js"></script>
-   <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
-<![endif]-->
+  <!-- analytics -->
+  
 <script type="text/javascript">
-function loadjs(c,d){var a=document.createElement("script");a.async=!0;a.type="text/javascript";a.src=c;a.charset=d||"gbk";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)};
-var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-var _js2load = [];
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-31585781-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 </script>
+
 
 </head>
-<body>
-      <header id="header" class="container"><nav id="main-nav" class="navbar navbar-default navbar-fixed-top " role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="/">木哈哈</a>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-  
-        <li><a href="/" title="主页">主页</a></li>      
-        <li><a href="/about/" title="关于">关于</a></li>      
-        <li><a href="/archives/" title="归档">归档</a></li>      
-        <li><a href="/sitemap.xml" title="SiteMap">SiteMap</a></li>      
-      <li class='dropdown'>
-        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>其它链接<b class='caret'></b></a>
-        <ul class='dropdown-menu'>
-    
-          <li><a href="https://github.com/chenzaichun" title="gihtub">gihtub</a></li>    
-        </ul>
-      </li>
-    
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-      
-        <li><a href="/atom.xml">RSS</a></li>
-      
-      
-        <li><a href="https://twitter.com/ChenZaichun">twitter</a></li>
-      
-      
-        <li><a href="https://www.facebook.com/ChenZaichun">facebook</a></li>
-      
-      
-      
-        <li><a href="https://github.com/ChenZaichun">github</a></li>
-      
-      </ul>
-    </div>
-  </div>
-</nav>
-<div class="clearfix"></div></header>
-  <div id='content' class="container">
-     <div class="page-header-wrapper">
-      <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" title="IE9">IE9</a></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
-      <div class="page-header"><h1>木哈哈 <small>阿尔萨斯，没有霜之哀伤你就是一坨屎！</small></h1></div>
-     </div>
-     <div class="row">
-       <div id="main-col" class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9">
-      <section id='header_widget'></section>
-          <div id="wrapper"><h2 class="archive-title tag">archlinux</h2>
 
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2013-01-03-archlinux-enable-vbox-service.html">archlinux下启用virtualbox service</a></h1>
-      
-        <span>发表于<time datetime="2013-01-03T17:47:00.000Z"> <a href="/2013-01-03-archlinux-enable-vbox-service.html">1月 3 2013</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>安装好 <code>virtualbox-guest-utils</code> 之后，没有并没有启用 <code>vboxservice</code>, 这个时候如果windows休眠，则archlinux的时间将不会跟host同步，需要启动vboxservice才行。</p>
-<figure class="highlight sh"><pre>systemctl enable vboxservice<span class="preprocessor">.service</span>
-</pre></figure>
-
-<p>重启之后生效，当然也可以直接启动</p>
-<figure class="highlight sh"><pre>systemctl <span class="operator"><span class="keyword">start</span> vboxservice.service</span>
-</pre></figure>
-
-<p>virtualbox也提供了参数来控制同步，详情见<a href="http://www.virtualbox.org/manual/ch09.html#changetimesync" target="_blank">这里</a></p>
-<figure class="highlight sh"><pre>VBoxManage guestproperty <span class="keyword">set</span> “<span class="keyword">the</span> <span class="property">name</span> <span class="keyword">of</span> your guest VM” “/VirtualBox/GuestAdd/VBoxService/–timesync-<span class="keyword">set</span>-threshold” <span class="number">15000</span>
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/archlinux/" class="label label-info">archlinux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:39"datetime="2014-03-05 06:30:39"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2013-01-03-archlinux-enable-vbox-service.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux-enable-vbox-service" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-12-26-git-submodule-remove.html">删除git submodule</a></h1>
-      
-        <span>发表于<time datetime="2012-12-26T14:02:00.000Z"> <a href="/2012-12-26-git-submodule-remove.html">12月 26 2012</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>git并没有提供删除submodule的方法，只有手动删除。</p>
-<ol>
-<li>删除<code>.gitmodules</code>下submodule的信息</li>
-<li>删除<code>.git/config</code>下submodule的信息</li>
-<li>git rm --cache <submodule/path></li>
-</ol>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/archlinux/" class="label label-info">archlinux</a><a href="/tags/VCS/" class="label label-warning">VCS</a><a href="/tags/DVCS/" class="label label-primary">DVCS</a><a href="/tags/git/" class="label label-success">git</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:38"datetime="2014-03-05 06:30:38"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-12-26-git-submodule-remove.html#comments" class="ds-thread-count comment-link" data-thread-key="git-submodule-remove" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2012-12-26-archlinux-fontconfig-for-chinese.html">archlinux下修改默认中文字体</a></h1>
-      
-        <span>发表于<time datetime="2012-12-26T11:17:00.000Z"> <a href="/2012-12-26-archlinux-fontconfig-for-chinese.html">12月 26 2012</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>archlinux中的字体看起来真的很搓，试过ubuntu patch过的版本，还是不尽如人意。后来发现了<code>fontconfig-infinality</code>, 整个世界突然美好了。跟windows下的<code>MacType</code>差不多。</p>
-<p>当我将ibus换成fcitx之后，问题又出现了，3.6版本之后的fcitx竟然没有字体设置了，对于字体的控制必须使用fontconfig。这必须的修改默认的中文字体。</p>
-
-      
-    </div>
-    
-    
-      
-      <div id='more-link'>
-        <div align="left">
-          <a href="/2012-12-26-archlinux-fontconfig-for-chinese.html#more" class="more-link fa fa-play">阅读全文</a>
-        </div>
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">木哈哈</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Atom 1.0 feed">
+			  <i class="fa fa-rss"></i>rss
+			</a>
+		  </li>
+		  
+		</ul>
       </div>
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/emacs/" class="label label-primary">emacs</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/archlinux/" class="label label-info">archlinux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:30:37"datetime="2014-03-05 06:30:37"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2012-12-26-archlinux-fontconfig-for-chinese.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux-fontconfig-for-chinese" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-10-28-colored_man_page_output.html">colored man page output</a></h1>
-      
-        <span>发表于<time datetime="2011-10-28T10:11:13.000Z"> <a href="/2011-10-28-colored_man_page_output.html">10月 28 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <figure class="highlight sh"><pre><span class="comment"># colorful man page</span>
-<span class="keyword">export</span> PAGER=<span class="string">"`which less` -s"</span>
-<span class="keyword">export</span> BROWSER=<span class="string">"<span class="variable">$PAGER</span>"</span>
-<span class="keyword">export</span> LESS_TERMCAP_mb=$<span class="string">'E[01;34m'</span>
-<span class="keyword">export</span> LESS_TERMCAP_md=$<span class="string">'E[01;34m'</span>
-<span class="keyword">export</span> LESS_TERMCAP_me=$<span class="string">'E[0m'</span>
-<span class="keyword">export</span> LESS_TERMCAP_se=$<span class="string">'E[0m'</span>
-<span class="keyword">export</span> LESS_TERMCAP_so=$<span class="string">'E[01;44;33m'</span>
-<span class="keyword">export</span> LESS_TERMCAP_ue=$<span class="string">'E[0m'</span>
-<span class="keyword">export</span> LESS_TERMCAP_us=$<span class="string">'E[01;33m'</span>
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/emacs/">emacs</a></li></span><span class="breadcrumb"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/org2blog/">org2blog</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/emacs/" class="label label-success">emacs</a><a href="/tags/Linux/" class="label label-info">Linux</a><a href="/tags/org2blog/" class="label label-warning">org2blog</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:36"datetime="2014-03-05 06:29:36"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-10-28-colored_man_page_output.html#comments" class="ds-thread-count comment-link" data-thread-key="colored_man_page_output" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-04-24-gdb_remote_debuging.html">GDB远程调试</a></h1>
-      
-        <span>发表于<time datetime="2011-04-24T19:44:31.000Z"> <a href="/2011-04-24-gdb_remote_debuging.html">4月 24 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>参考链接：<a href="http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx" target="_blank"><a href="http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx">http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx</a></a></p>
-<p>前面已经做好跨平台的交叉编译的工作，如果需要调试怎么办呢？这个时候就可以GDB的远程调试来实现。</p>
-<p>P.S. 如果没有windows的GDB，可以去<a href="http://www.gnu.org/software/gdb/" target="_blank">下载</a>或者自行编译。
-在windows端执行 </p>
-<figure class="highlight sh"><pre><span class="tag">gdbserver</span> <span class="tag">localhost</span><span class="pseudo">:2345</span> <span class="tag">photorec</span><span class="class">.exe</span>
-</pre></figure>
-
-<p>在archlinux下执行</p>
-<figure class="highlight sh"><pre><span class="comment"># 这里我用的virtualbox，所以ip为10.0.2.2，请自行替换成windows的ip</span>
-<span class="variable">$gdb</span> photorec.exe
-gdb&gt; target remote <span class="number">10.0</span>.<span class="number">2.2</span>:<span class="number">2345</span>
-gdb &gt; ....
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/gdb/" class="label label-success">gdb</a><a href="/tags/Linux/" class="label label-info">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:18"datetime="2014-03-05 06:29:18"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-04-24-gdb_remote_debuging.html#comments" class="ds-thread-count comment-link" data-thread-key="gdb_remote_debuging" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-04-24-archlinux_mingw_cross_compile_testdisk.html">archlinux下使用MinGW交叉编译testdisk</a></h1>
-      
-        <span>发表于<time datetime="2011-04-24T19:34:31.000Z"> <a href="/2011-04-24-archlinux_mingw_cross_compile_testdisk.html">4月 24 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>前面已经配置好了MinGW的交叉编译环境，现在就可以在archlinux下编译testdisk了。由于testdisk需要curses的支持，可以使用PDcureses。</p>
-<p>安装PDCurses</p>
-<figure class="highlight sh"><pre>yaourt <span class="attribute">-S</span> mingw32<span class="attribute">-pdcurses</span>
-</pre></figure>
-
-<p>编译testdisk</p>
-<figure class="highlight sh"><pre><span class="built_in">.</span>/configure <span class="subst">--</span>host<span class="subst">=</span>i486<span class="attribute">-mingw32</span> <span class="subst">--</span>disable<span class="attribute">-missing</span><span class="attribute">-uuid</span><span class="attribute">-ok</span> <span class="subst">&&</span> make
-</pre></figure>
-
-<p>这样就编译好了。在windows下运行发现没有问题。:) （终于可以不用忍受windows下mingw的蜗牛速度了）</p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/mingw/" class="label label-info">mingw</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:18"datetime="2014-03-05 06:29:18"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-04-24-archlinux_mingw_cross_compile_testdisk.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_mingw_cross_compile_testdisk" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-04-24-archlinux_mingw_cross_compile_environment.html">archlinux搭建MinGW跨平台编译环境</a></h1>
-      
-        <span>发表于<time datetime="2011-04-24T19:24:31.000Z"> <a href="/2011-04-24-archlinux_mingw_cross_compile_environment.html">4月 24 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>由于MinGW在Windows上的速度实在不敢恭维，所以决定在archlinux下搭建MinGW的跨平台编译环境。方法有两种。</p>
-<ol>
-<li>通过安装community中的mingw32-gcc实现</li>
-</ol>
-<figure class="highlight sh"><pre><span class="comment"># 安装mingw32-gcc就行，其他的如mingw32-base, mingw32-runtime...等会作为依赖安装</span>
-<span class="built_in">sudo</span> pacman -S mingw32-gcc
-</pre></figure>
-
-<p>这种方法安装了最基本的编译环境，如果需要其他的库，则需要自行编译或者通过aur安装。</p>
-<ol>
-<li>通过MinGW cross compiling environment来实现。<a href="http://mingw-cross-env.nongnu.org/" target="_blank"><a href="http://mingw-cross-env.nongnu.org">http://mingw-cross-env.nongnu.org</a></a></li>
-</ol>
-<figure class="highlight sh"><pre><span class="variable">#1</span><span class="built_in">.</span> 下载
-wget https:<span class="comment">//bitbucket.org/vog/mingw-cross-env/downloads/mingw-cross-env-2.20.tar.gz</span>
-
-<span class="variable">#2</span><span class="built_in">.</span> 解压
-tar <span class="attribute">-xzvf</span> mingw<span class="attribute">-cross</span><span class="attribute">-env</span><span class="subst">-</span><span class="number">2.20</span><span class="built_in">.</span>tar<span class="built_in">.</span>gz
-
-<span class="variable">#3</span><span class="built_in">.</span> 移动到/opt目录（可选）
-mv mingw<span class="attribute">-cross</span><span class="attribute">-env</span><span class="subst">-</span><span class="number">2.20</span> /opt/mingw
-
-<span class="variable">#4</span><span class="built_in">.</span> 安装
-su <span class="subst">-</span>
-cd /opt/mingw
-make
-
-<span class="variable">#5</span><span class="built_in">.</span> 其他的包可以参见mingw<span class="attribute">-cross</span><span class="attribute">-env</span>的文档
-</pre></figure>
-
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a><a href="/tags/mingw/" class="label label-info">mingw</a><a href="/tags/Windows/" class="label label-warning">Windows</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:17"datetime="2014-03-05 06:29:17"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-04-24-archlinux_mingw_cross_compile_environment.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_mingw_cross_compile_environment" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-04-08-install_oracle_10g_enterprise_on_archlinux.html">archlinux下安装oracle 10g enterprise</a></h1>
-      
-        <span>发表于<time datetime="2011-04-08T19:24:31.000Z"> <a href="/2011-04-08-install_oracle_10g_enterprise_on_archlinux.html">4月 8 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>按照arch wiki做就可以了。参考链接<a href="https://wiki.archlinux.org/index.php/Oracle" target="_blank"><a href="https://wiki.archlinux.org/index.php/Oracle">https://wiki.archlinux.org/index.php/Oracle</a></a></p>
-<p>这里，安装ksh的步骤可以跳过，直接安装pdksh</p>
-<figure class="highlight sh"><pre><span class="built_in">sudo</span> pacman -S pdksh
-</pre></figure>
-
-<p>安装过程中可能在62%左右提示一个错误，点continue不影响使用。</p>
-<p>默认安装完成之后，重新启动archlinux之后，oracle是不会启动的。手动启动的方法：</p>
-<ol>
-<li>su - oracle # 这里得以oracle启动</li>
-<li>sqlplus /nologo</li>
-<li>sql&gt; conn / as sysdba</li>
-<li>sql&gt; startup</li>
-<li>sql&gt; exit</li>
-<li>lsnrctl start</li>
-</ol>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/oracle/">oracle</a></li></span><span class="breadcrumb"><li><a href="/categories/programming/">programming</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/database/" class="label label-success">database</a><a href="/tags/Linux/" class="label label-info">Linux</a><a href="/tags/oracle/" class="label label-warning">oracle</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:16"datetime="2014-03-05 06:29:16"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-04-08-install_oracle_10g_enterprise_on_archlinux.html#comments" class="ds-thread-count comment-link" data-thread-key="install_oracle_10g_enterprise_on_archlinux" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2011-03-01-yaourt_proxy.html">yaourt代理设置</a></h1>
-      
-        <span>发表于<time datetime="2011-03-01T19:24:31.000Z"> <a href="/2011-03-01-yaourt_proxy.html">3月 1 2011</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>一直以来不知道原来yaourt是调用makepkg来实现下载、编译、安装的</p>
-<figure class="highlight"><pre>cat /etc/makepkg.conf
-
-<span class="label">DLAGENTS=('ftp::</span>/usr/bin/wget -c --passive-ftp -t <span class="number">3</span> --waitretry=<span class="number">3</span> -O <span class="var_expand">%o %</span>u'
-<span class="label">                  'http::</span>/usr/bin/wget -c -t <span class="number">3</span> --waitretry=<span class="number">3</span> -O <span class="var_expand">%o %</span>u'
-<span class="label">                  'https::</span>/usr/bin/wget -c -t <span class="number">3</span> --waitretry=<span class="number">3</span> --no-check-certificate -O <span class="var_expand">%o %</span>u'
-<span class="label">                  'rsync::</span>/usr/bin/rsync -z <span class="var_expand">%u %</span>o'
-<span class="label">                  'scp::</span>/usr/bin/scp -C <span class="var_expand">%u %</span>o')
-</pre></figure>
-
-<p>很多时候可能用到了rsync的协议，所以添加一个RSYNC_PROX的环境变量比较保险。</p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Linux/" class="label label-success">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:29:15"datetime="2014-03-05 06:29:15"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2011-03-01-yaourt_proxy.html#comments" class="ds-thread-count comment-link" data-thread-key="yaourt_proxy" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-    <article>
-<div id="post" class="post well">
-  <div class="post-content">
-    <header class="well-sm">
-      <i class="fa icon fa-5x pull-left"></i>
-      <h1 class="title"><a href="/2010-09-21-archlinux_google_talkplugin_x86_64.html">archlinux x86_64安装google-talkplugin</a></h1>
-      
-        <span>发表于<time datetime="2010-09-21T18:17:15.000Z"> <a href="/2010-09-21-archlinux_google_talkplugin_x86_64.html">9月 21 2010</a></time></span>      
-    </header>
-    
-    
-    <div class="entry">
-      
-        <p>要想在gmail里面使用视频，音频或者打电话，需要安装google-talkplugin，官方网站提供了deb和rpm包，archlinux下安装可以通过aur安装</p>
-<figure class="highlight sh"><pre>yaourt <span class="attribute">-S</span> google<span class="attribute">-talkplugin</span>
-</pre></figure>
-
-<p>这个时候直接不能安装，因为安装过程会提示lib32-openssl-compatible找不到，修改PKGBUILD，改为lib32-openssl
-然后安装之后，会发现启动不了</p>
-<figure class="highlight"><pre>[226:202] Waiting for GoogleTalkPlugin to <span class="operator"><span class="keyword">start</span>...
-[<span class="number">227</span>:<span class="number">297</span>] Warning(clientchannel.cc:<span class="number">583</span>): Unreadable <span class="keyword">or</span> <span class="keyword">no</span> port file.  Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span>
-[<span class="number">227</span>:<span class="number">298</span>] Warning(clientchannel.cc:<span class="number">439</span>): Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span></span>
-</pre></figure>
-
-<p>执行/opt/google/talkplugin/GoogleTalkPlugin会提示找不到libssl.so.0.9.8</p>
-<figure class="highlight"><pre>./GoogleTalkPlugin: error <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libssl.so<span class="number">.0</span><span class="number">.9</span><span class="number">.8</span>: cannot <span class="keyword">open</span> <span class="keyword">shared</span> object <span class="keyword">file</span>: No such <span class="keyword">file</span> <span class="keyword">or</span> directory
-</pre></figure>
-
-<p>创建一个软链接</p>
-<figure class="highlight sh"><pre><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/lib32/libssl.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libssl.so.<span class="number">0.9</span>.<span class="number">8</span>
-</pre></figure>
-
-<p>还缺少一个东东</p>
-<figure class="highlight"><pre>./GoogleTalkPlugin: error <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libcrypto.so<span class="number">.0</span><span class="number">.9</span><span class="number">.8</span>: cannot <span class="keyword">open</span> <span class="keyword">shared</span> object <span class="keyword">file</span>: No such <span class="keyword">file</span> <span class="keyword">or</span> directory
-</pre></figure>
-
-<p>再创建一个软链接</p>
-<figure class="highlight sh"><pre><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/lib32/libcrypto.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libcrypto.so.<span class="number">0.9</span>.<span class="number">8</span>
-</pre></figure>
-
-<p>（注意，file GoogleTalkPlugin竟然是一个32位的elf）</p>
-<figure class="highlight sh"><pre>[chenzaichun<span class="keyword">@czc</span>-laptop talkplugin]$ file GoogleTalkPlugin
-GoogleTalkPlugin: ELF <span class="number">32</span>-bit LSB executable, Intel <span class="number">80386</span>, <span class="keyword">version</span> <span class="number">1</span> (SYSV), dynamically linked (uses <span class="keyword">shared</span> libs), stripped
-</pre></figure>
-
-<p>所以链接目录应该在/usr/lib32，而不是/usr/lib</p>
-<p>完毕，可以正常使用了。</p>
-
-      
-    </div>
-    
-    
-      
-    
-    
-        <footer id="post-meta">
-        <span class="categories">归类<span class="breadcrumb fa fa-folder"><li><a href="/categories/Linux/">Linux</a></li></span><span class="breadcrumb"><li><a href="/categories/tools/">tools</a></li></span></span> | <span class="tags">标签 <a href="/tags/archlinux/" class="label label-primary">archlinux</a><a href="/tags/Google/" class="label label-success">Google</a><a href="/tags/Linux/" class="label label-info">Linux</a></span> | <span class="time">最近更新:<time title="2014-03-05 06:28:44"datetime="2014-03-05 06:28:44"> 3月 5 2014</time></span> | <span class="comment-link">
-<a href="http://yesokay.herokuapp.com/2010-09-21-archlinux_google_talkplugin_x86_64.html#comments" class="ds-thread-count comment-link" data-thread-key="archlinux_google_talkplugin_x86_64" data-count-type="comments">暂无评论</a></span>
-        </footer>
-    
-    <div class="clearfix"></div>
-  </div>
-</div>
-</article>
-
-
-  
-  
-<ul id="pagination" class="pagination pagination-lg">
-  <li class="active"><li><span class="page-number current">1</span></li></li><li><a class="page-number" href="/tags/archlinux/page/2/">2</a></li><li><a class="page-number" href="/tags/archlinux/page/2/">2</a></li><li><a class="page-number" href="/tags/archlinux/page/3/">3</a></li><li><a class="extend next" href="/tags/archlinux/page/2/">&raquo;</a></li>
-  <div class="clearfix"></div>
-</ul></div><!--wapper-->
-       </div><!-- ID main-col END -->
-       <aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3">
-<div id="widget_search" class="widget panel panel-primary">
-    <form action="//google.com/search" method="get" accept-charset="utf-8">
-  <div class="input-group">
-    <input class="form-control" id="searchbox" type="search" name="q" results="0" placeholder="search">
-    <span class="input-group-btn">
-      <button class="btn btn-default" type="submit">Go!</button>
-    </span>
-    <input type="hidden" name="q" value="site:yesokay.herokuapp.com">
-  </div>
-</form>
-</div>
-
-<div id="widget_category" class="widget panel panel-primary">
-  <div class="panel-heading">分类</div>  <div data-src='category' class='ajax_widgets'>正在加载...</div>
-</div>
-
-<div id="widget_recent_posts" class="widget panel panel-primary">
-  <div class="panel-heading">最近文章</div>  <div data-src='recent_posts' class='ajax_widgets'>正在加载...</div></div>
-
-<div id="widget_tagcloud" class="widget panel panel-primary">
-  <div class="panel-heading">标签云</div>  <div data-src='tagcloud' class='ajax_widgets'>正在加载...</div></div>
-
-<div id="widget_latest_update_posts" class="widget panel panel-primary">
-  <div class="panel-heading">最近更新</div>  <div data-src='latest_update_posts' class='ajax_widgets'>正在加载...</div></div>
-
-<div id="widget_random_posts" class="widget panel panel-primary">
-  <div class="panel-heading">随机文章</div>  <ul class="list-group"><li class="list-group-item"><a href="/2011-10-28-colored_man_page_output.html">colored man page output</a></li><li class="list-group-item"><a href="/2011-11-12-stty_erase_key.html">Linux默认Erase Key(Backspace Key)</a></li><li class="list-group-item"><a href="/2010-08-24-grub_framebuffer.html">archlinux console分辨率</a></li><li class="list-group-item"><a href="/2011-01-26-view_process_with_python_and_pywin32.html">在Windows下用Python查看进程信息</a></li><li class="list-group-item"><a href="/2010-05-10-archlinux_global_proxy.html">archlinux全局代理</a></li><li class="list-group-item"><a href="/2010-06-01-boost_program_options.html">boost::program_options</a></li><li class="list-group-item"><a href="/2010-06-29-android_screen_rotation.html">android屏幕旋转问题</a></li><li class="list-group-item"><a href="/2010-08-25-emacs23_xim.html">emacs23不能切换输入法的问题</a></li></ul></div>
-
-<div id="widget_sina_weiboshow" class="widget panel panel-primary">
-  <div class="panel-heading">新浪微搏秀</div>  <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=0&ptype=0&speed=0&skin=5&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1082888172&verifier=1a4946c5&dpc=1"></iframe>
-</div>
-
-<div id="widget_recent_comments" class="widget panel panel-primary">
-  <div class="panel-heading">最近评论</div>  
-
-<div class="list-group-item ds-recent-comments" data-num-items="6" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="50"></div>
-
-
-
-</div>
-
-</aside>
-       <div class="clearfix"></div>
-     </div><!-- row END -->
-  </div>
-  <footer id="footer" class="container">
-  <div class="panel panel-info">
-  <section id='footer_widget'></section>  <div class="panel-footer">
-  <div id="site-info">
-    <span class='author'>
-  
-  &copy; 2014 Chen, Zai-Chun
-  
-    &nbsp;&nbsp;</span>
-  
-  <span id='analytics-51la'></span><span id='analytics-google'>
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-31585781-1']);
-  _gaq.push(['_trackPageview']);
-  _js2load.push({src:('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'});
-</script></span><span id='analytics-cnzz'>
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-</span><span id='analytics-baidu'>
-<script>
-var _hmt = _hmt || [];
-_js2load.push({src:"//hm.baidu.com/hm.js?"});
-</script>
-</span>  </div>
-  <div id="copyright">Blog powered by <a href='http://zespia.tw/hexo/'><strong>hexo</strong></a> Theme <strong><a href='https://github.com/chenall/hexo-theme-chenall'>chenall</a></strong><span class="pull-right"> 更新时间: <em>2014-03-07 08:13:00</em></span></div>
-</div>
+    </div> <!-- container -->
+</nav>
 <div class="clearfix"></div>
 
+  <div class="container">
+  	<div class="content">
+    	 
 
-  </div>
-  </footer>
+<!-- title -->
+<div class="page-header">
+  <h1 class="archive-title-tag">archlinux</h1>
+</div>
+
+<div class="row page">
+  <!-- cols -->
   
-        <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>        
-        <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>        
-                
-        <script src="http://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>    <script type="text/javascript">
-   var lang=["bsh", "c", "cc", "cpp", "cs", "csh", "cyc", "cv", "htm", "html",
-    "java", "js", "m", "mxml", "perl", "pl", "pm", "py", "rb", "sh",
-    "xhtml", "xml", "xsl"];
-   var pretty_base='';
-   $('script').each(function(){
-	var c = $(this).attr('src');
-	if (!c)
-	    return;
-	if (c.match(/(\/)?prettify(\.min)?\.js/i))
-	{
-	    var index = c.lastIndexOf('/');
-	    if (index != -1)
-		pretty_base = c.substr(0,index + 1);
-	    return false;
-	}
-   })
-   $('pre code').each(function(){
-	var c = $(this).attr('class')
-	if (!c)
-	    return;
-	c = c.match(/\s?(lang\-\w+)/i);
-	if (c && lang.indexOf(c[1]) == -1)
-	{
-	    lang.push(c[1]);
-	    $.getScript(pretty_base + c[1] + '.min.js');
-	}
-   })
+  <div class="col-md-9">
+	
 
-    $(window).load(function(){
-       $("pre").addClass("prettyprint");
-       prettyPrint();
-    })
-</script>    
-            <script type="text/javascript">
-var duoshuoQuery = {short_name:"yesokay"};
-_js2load.push({src:'http://static.duoshuo.com/embed.js',charset:'UTF-8'});
+	  <div class="archive">
+				
+		
+		
+			
+			
+			<h4 class="archive-ul" data-toggle="collapse" data-target="#2013">2013<b class="caret"></b></h4>
+			<ul id="2013" class="collapse in">
+			
+		
+		<li class="listing-item">
+		<span class="date_class"> 2013-01-03 </span> &raquo;
+		
+		<span class="title"><a href="/2013-01-03-archlinux-enable-vbox-service.html" >archlinux下启用virtualbox service</a></span>
+		
+		</li>			
+				
+		
+		
+			
+			</ul>
+			
+			
+			<h4 class="archive-ul" data-toggle="collapse" data-target="#2012">2012<b class="caret"></b></h4>
+			<ul id="2012" class="collapse in">
+			
+		
+		<li class="listing-item">
+		<span class="date_class"> 2012-12-26 </span> &raquo;
+		
+		<span class="title"><a href="/2012-12-26-git-submodule-remove.html" >删除git submodule</a></span>
+		
+		</li>			
+				
+		
+		
+		<li class="listing-item">
+		<span class="date_class"> 2012-12-26 </span> &raquo;
+		
+		<span class="title"><a href="/2012-12-26-archlinux-fontconfig-for-chinese.html" >archlinux下修改默认中文字体</a></span>
+		
+		</li>			
+				
+		
+		
+			
+			</ul>
+			
+			
+			<h4 class="archive-ul" data-toggle="collapse" data-target="#2011">2011<b class="caret"></b></h4>
+			<ul id="2011" class="collapse in">
+			
+		
+		<li class="listing-item">
+		<span class="date_class"> 2011-10-28 </span> &raquo;
+		
+		<span class="title"><a href="/2011-10-28-colored_man_page_output.html" >colored man page output</a></span>
+		
+		</li>			
+				
+		
+		
+		<li class="listing-item">
+		<span class="date_class"> 2011-04-24 </span> &raquo;
+		
+		<span class="title"><a href="/2011-04-24-gdb_remote_debuging.html" >GDB远程调试</a></span>
+		
+		</li>			
+				
+		
+		
+		<li class="listing-item">
+		<span class="date_class"> 2011-04-24 </span> &raquo;
+		
+		<span class="title"><a href="/2011-04-24-archlinux_mingw_cross_compile_testdisk.html" >archlinux下使用MinGW交叉编译testdisk</a></span>
+		
+		</li>			
+				
+		
+		
+		<li class="listing-item">
+		<span class="date_class"> 2011-04-24 </span> &raquo;
+		
+		<span class="title"><a href="/2011-04-24-archlinux_mingw_cross_compile_environment.html" >archlinux搭建MinGW跨平台编译环境</a></span>
+		
+		</li>			
+				
+		
+		
+		<li class="listing-item">
+		<span class="date_class"> 2011-04-08 </span> &raquo;
+		
+		<span class="title"><a href="/2011-04-08-install_oracle_10g_enterprise_on_archlinux.html" >archlinux下安装oracle 10g enterprise</a></span>
+		
+		</li>			
+				
+		
+		
+		<li class="listing-item">
+		<span class="date_class"> 2011-03-01 </span> &raquo;
+		
+		<span class="title"><a href="/2011-03-01-yaourt_proxy.html" >yaourt代理设置</a></span>
+		
+		</li>			
+				
+		
+		
+			
+			</ul>
+			
+			
+			<h4 class="archive-ul" data-toggle="collapse" data-target="#2010">2010<b class="caret"></b></h4>
+			<ul id="2010" class="collapse in">
+			
+		
+		<li class="listing-item">
+		<span class="date_class"> 2010-09-21 </span> &raquo;
+		
+		<span class="title"><a href="/2010-09-21-archlinux_google_talkplugin_x86_64.html" >archlinux x86_64安装google-talkplugin</a></span>
+		
+		</li>			
+		
+		</ul>
+		</div>
+
+</div> <!-- col-md-9/col-md-12 -->
+
+
+<div class="col-md-3">
+	<div id="sidebar">
+	
+			<div class="form-group has-success has-feedback">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
+    <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
+    <input type="hidden" name="q" value="site:chenzaichun.github.io">	
+  </form>
+</div>
+
+		
+			
+	<div class="widget">
+		<h4>分类</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/Google-Chrome/">Google Chrome<span>1</span></a></li>
+		
+			<li><a href="/categories/Linux/">Linux<span>69</span></a></li>
+		
+			<li><a href="/categories/Tools/">Tools<span>1</span></a></li>
+		
+			<li><a href="/categories/emacs/">emacs<span>61</span></a></li>
+		
+			<li><a href="/categories/gamedev/">gamedev<span>5</span></a></li>
+		
+			<li><a href="/categories/ios/">ios<span>3</span></a></li>
+		
+			<li><a href="/categories/opengl/">opengl<span>1</span></a></li>
+		
+			<li><a href="/categories/oracle/">oracle<span>1</span></a></li>
+		
+			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
+		
+			<li><a href="/categories/programming/">programming<span>138</span></a></li>
+		
+			<li><a href="/categories/tools/">tools<span>142</span></a></li>
+		
+			<li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
+		
+		</ul>
+	</div>
+
+		
+			
+	<div class="widget">
+		<h4>标签云</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+		
+			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
+		
+			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+		
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+		
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+		
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+		
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+		
+			<li><a href="/tags/go/">go<span>2</span></a></li>
+		
+			<li><a href="/tags/english/">english<span>1</span></a></li>
+		
+			<li><a href="/tags/network/">network<span>1</span></a></li>
+		
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+		
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+		
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+		
+			<li><a href="/tags/macos/">macos<span>9</span></a></li>
+		
+			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
+		
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+		
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>87</span></a></li>
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>最新文章</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+      </li>
+    
+      <li>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了</a>
+      </li>
+    
+      <li>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent</a>
+      </li>
+    
+      <li>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+      </li>
+    
+      <li>
+        <a href="/2013-01-03-archlinux-enable-vbox-service.html" ><i class="fa fa-file-o"></i>archlinux下启用virtualbox service</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>链接</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+	
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
+	
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2015 Chen, Zai-Chun
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'yesokay' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
 </script>
-    
-            <!--wumii_relatedItems-->
-    
-            
-<script type="text/javascript">var ujian_config = {num:6,showType:0,picSize:84,textHeight:45};_js2load.push({src:'http://v1.ujian.cc/code/ujian.js?uid=1901235'});</script>
-<a href="http://www.ujian.cc" style="border:0;"><img src="http://img.ujian.cc/pixel.png" alt="友荐云推荐" style="border:0;padding:0;margin:0;" /></a>
-    
-        <script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js"></script>    <script type="text/javascript">
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
 (function($){
-  $('.entry').each(function(i){
-    $(this).find('img').each(function(){
-      var alt = this.alt;
-
-      if (alt){
-        $(this).before('<span class="caption">' + alt + '</span>');
-      }
-
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="fancybox' + i + '" />');
-    });
-  });
-
   $('.fancybox').fancybox();
 })(jQuery);
-</script>    
-        <script src="http://cdn.bootcss.com/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>    <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-    
-<script type="text/javascript">
-$('.ajax_widgets').each(function(){var src=$(this).attr('data-src');if(src)$(this).load('/widgets/'+src+'.html');});
-$.each(_js2load,function(index,obj){loadjs(obj.src,obj.charset)});
 </script>
 
 
-  </body>
-</html>
+</body>
+   </html>
+
