@@ -15,14 +15,14 @@ hg不能像svn那样保存密码，每次都要输入密码不太方便，可以
 
 编辑工程目录下`.hg/hgrc`
 
-```conf
+```
 [paths]
 default = https://projectname.googlecode.com/hg
 ```
 
 把密码和用户名填到`URL`里就行啦
 
-```conf
+```
 [paths]
 default = https://user:pwd@projectname.googlecode.com/hg
 ```
