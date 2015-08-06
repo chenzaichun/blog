@@ -6,7 +6,7 @@
   <title>archlinux+LXDE蓝牙传输文件 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,19 +125,19 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>首先安装bluez, obexfs</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> pacman -S bluez obexfs</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pacman -S bluez obexfs</div></pre></td></tr></table></figure>
 
 <p>启动bluetooth（也可以加入/etc/rc.conf的daemon中）</p>
-<figure class="highlight sh"><pre><div class="line">/etc/rc.d/bluetooth start</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/rc.d/bluetooth start</div></pre></td></tr></table></figure>
 
 <p>获取蓝牙的mac地址</p>
-<figure class="highlight sh"><pre><div class="line">hcitool scan</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hcitool scan</div></pre></td></tr></table></figure>
 
 <p>启动另外一个term，然后进行连接，如：</p>
-<figure class="highlight sh"><pre><div class="line">bluez-simple-agent hci0 <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bluez-simple-agent hci0 <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F</div></pre></td></tr></table></figure>
 
 <p>在其他term中可以进行文件传输了：</p>
-<figure class="highlight sh"><pre><div class="line">obexftp -b <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F -p xxx.txt</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">obexftp -b <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F -p xxx.txt</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -169,7 +169,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-08-23-archlinux_lxde_bluetooth.html" data-title="archlinux+LXDE蓝牙传输文件" data-url="http://chenzaichun.github.io/2010-08-23-archlinux_lxde_bluetooth.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-08-23-archlinux_lxde_bluetooth.html" data-title="archlinux+LXDE蓝牙传输文件" data-url="http://yesokay.herokuapp.com/2010-08-23-archlinux_lxde_bluetooth.html"></div>  
   
 </section>
 

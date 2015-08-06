@@ -6,7 +6,7 @@
   <title>archlinux x86_64安装google-talkplugin | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,25 +125,25 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>要想在gmail里面使用视频，音频或者打电话，需要安装google-talkplugin，官方网站提供了deb和rpm包，archlinux下安装可以通过aur安装</p>
-<figure class="highlight sh"><pre><div class="line">yaourt -S google-talkplugin</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yaourt -S google-talkplugin</div></pre></td></tr></table></figure>
 
 <p>这个时候直接不能安装，因为安装过程会提示lib32-openssl-compatible找不到，修改PKGBUILD，改为lib32-openssl<br>然后安装之后，会发现启动不了</p>
-<figure class="highlight"><pre><div class="line">[226:202] Waiting for GoogleTalkPlugin to <span class="operator"><span class="keyword">start</span>...</span></div><div class="line">[<span class="number">227</span>:<span class="number">297</span>] Warning(clientchannel.cc:<span class="number">583</span>): Unreadable <span class="keyword">or</span> <span class="keyword">no</span> port file.  Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span></div><div class="line">[<span class="number">227</span>:<span class="number">298</span>] Warning(clientchannel.cc:<span class="number">439</span>): Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[226:202] Waiting for GoogleTalkPlugin to <span class="operator"><span class="keyword">start</span>...</span></div><div class="line">[<span class="number">227</span>:<span class="number">297</span>] Warning(clientchannel.cc:<span class="number">583</span>): Unreadable <span class="keyword">or</span> <span class="keyword">no</span> port file.  Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span></div><div class="line">[<span class="number">227</span>:<span class="number">298</span>] Warning(clientchannel.cc:<span class="number">439</span>): Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span></div></pre></td></tr></table></figure>
 
 <p>执行/opt/google/talkplugin/GoogleTalkPlugin会提示找不到libssl.so.0.9.8</p>
-<figure class="highlight"><pre><div class="line">./GoogleTalkPlugin: error <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libssl.so<span class="number">.0</span><span class="number">.9</span><span class="number">.8</span>: cannot <span class="keyword">open</span> <span class="keyword">shared</span> object <span class="keyword">file</span>: No such <span class="keyword">file</span> <span class="keyword">or</span> directory</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./GoogleTalkPlugin: error <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libssl.so<span class="number">.0</span><span class="number">.9</span><span class="number">.8</span>: cannot <span class="keyword">open</span> <span class="keyword">shared</span> object <span class="keyword">file</span>: No such <span class="keyword">file</span> <span class="keyword">or</span> directory</div></pre></td></tr></table></figure>
 
 <p>创建一个软链接</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/lib32/libssl.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libssl.so.<span class="number">0.9</span>.<span class="number">8</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/lib32/libssl.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libssl.so.<span class="number">0.9</span>.<span class="number">8</span></div></pre></td></tr></table></figure>
 
 <p>还缺少一个东东</p>
-<figure class="highlight"><pre><div class="line">./GoogleTalkPlugin: error <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libcrypto.so<span class="number">.0</span><span class="number">.9</span><span class="number">.8</span>: cannot <span class="keyword">open</span> <span class="keyword">shared</span> object <span class="keyword">file</span>: No such <span class="keyword">file</span> <span class="keyword">or</span> directory</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./GoogleTalkPlugin: error <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libcrypto.so<span class="number">.0</span><span class="number">.9</span><span class="number">.8</span>: cannot <span class="keyword">open</span> <span class="keyword">shared</span> object <span class="keyword">file</span>: No such <span class="keyword">file</span> <span class="keyword">or</span> directory</div></pre></td></tr></table></figure>
 
 <p>再创建一个软链接</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/lib32/libcrypto.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libcrypto.so.<span class="number">0.9</span>.<span class="number">8</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/lib32/libcrypto.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libcrypto.so.<span class="number">0.9</span>.<span class="number">8</span></div></pre></td></tr></table></figure>
 
 <p>（注意，file GoogleTalkPlugin竟然是一个32位的elf）</p>
-<figure class="highlight sh"><pre><div class="line">[chenzaichun@czc-laptop talkplugin]$ file GoogleTalkPlugin</div><div class="line">GoogleTalkPlugin: ELF <span class="number">32</span>-bit LSB executable, Intel <span class="number">80386</span>, version <span class="number">1</span> (SYSV), dynamically linked (uses shared libs), stripped</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[chenzaichun@czc-laptop talkplugin]$ file GoogleTalkPlugin</div><div class="line">GoogleTalkPlugin: ELF <span class="number">32</span>-bit LSB executable, Intel <span class="number">80386</span>, version <span class="number">1</span> (SYSV), dynamically linked (uses shared libs), stripped</div></pre></td></tr></table></figure>
 
 <p>所以链接目录应该在/usr/lib32，而不是/usr/lib</p>
 <p>完毕，可以正常使用了。</p>
@@ -177,7 +177,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-09-21-archlinux_google_talkplugin_x86_64.html" data-title="archlinux x86_64安装google-talkplugin" data-url="http://chenzaichun.github.io/2010-09-21-archlinux_google_talkplugin_x86_64.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-09-21-archlinux_google_talkplugin_x86_64.html" data-title="archlinux x86_64安装google-talkplugin" data-url="http://yesokay.herokuapp.com/2010-09-21-archlinux_google_talkplugin_x86_64.html"></div>  
   
 </section>
 

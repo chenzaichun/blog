@@ -6,7 +6,7 @@
   <title>sudo环境变量 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -126,7 +126,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="mypage">		
 	    <p>由于很多时候访问网络需要通过代理，虽然export了http_proxy, https_proxy等等，但是sudo下这些环境变量是不会被保持的。</p>
 <p>解决办法：修改/etc/sudoers文件（visudo），添加你想保留的环境变量</p>
-<figure class="highlight conf"><pre><div class="line"><span class="constant">Defaults env_keep +</span>= <span class="string">"http_proxy https_proxy ftp_proxy"</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="constant">Defaults env_keep +</span>= <span class="string">"http_proxy https_proxy ftp_proxy"</span></div></pre></td></tr></table></figure>
 
 <p>这样sudo就可以保留变量了</p>
 	  
@@ -159,7 +159,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-03-01-sudo_keep_env.html" data-title="sudo环境变量" data-url="http://chenzaichun.github.io/2011-03-01-sudo_keep_env.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-03-01-sudo_keep_env.html" data-title="sudo环境变量" data-url="http://yesokay.herokuapp.com/2011-03-01-sudo_keep_env.html"></div>  
   
 </section>
 

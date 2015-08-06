@@ -6,7 +6,7 @@
   <title>修改Grub2,XP默认首启动 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,16 +125,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>参考： <a href="http://swsw4321.blog.163.com/blog/static/3245245201003121842841/" target="_blank" rel="external">http://swsw4321.blog.163.com/blog/static/3245245201003121842841/</a><br>修改启动项, 终端输入：</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">cd</span> /etc/grub.d && ls</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /etc/grub.d && ls</div></pre></td></tr></table></figure>
 
 <p>显示的文件是这样的：</p>
-<figure class="highlight"><pre><div class="line">00_header  05_debian_theme  10_linux  20_memtest86+ 30_os-prober  40_custom  README</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00_header  05_debian_theme  10_linux  20_memtest86+ 30_os-prober  40_custom  README</div></pre></td></tr></table></figure>
 
 <p>其中：10_linux就是当前所使用的操作系统，30_os-prober的作用是自动查找计算机的其他系统，比如是windows xp，要XP默认首启动只要执行命令：</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> mv <span class="number">20</span>_os-prober <span class="number">06</span>_os-prober，把<span class="number">20</span>_os-prober 改成<span class="number">06</span>_os-prober</div><div class="line"><span class="built_in">sudo</span> mv <span class="number">30</span>_os-prober <span class="number">06</span>_os-prober</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> mv <span class="number">20</span>_os-prober <span class="number">06</span>_os-prober，把<span class="number">20</span>_os-prober 改成<span class="number">06</span>_os-prober</div><div class="line"><span class="built_in">sudo</span> mv <span class="number">30</span>_os-prober <span class="number">06</span>_os-prober</div></pre></td></tr></table></figure>
 
 <p>这样，以后grub再次更新时，XP就默认在linux前启动了。</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> update-grub</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> update-grub</div></pre></td></tr></table></figure>
 
 <p>看看效果吧，这样以后每次更新grub,都是默认XP启动。</p>
 	  
@@ -167,7 +167,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-05-18-grub2_boot_default.html" data-title="修改Grub2,XP默认首启动" data-url="http://chenzaichun.github.io/2010-05-18-grub2_boot_default.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-05-18-grub2_boot_default.html" data-title="修改Grub2,XP默认首启动" data-url="http://yesokay.herokuapp.com/2010-05-18-grub2_boot_default.html"></div>  
   
 </section>
 

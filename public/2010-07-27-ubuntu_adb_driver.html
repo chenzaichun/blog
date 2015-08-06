@@ -6,7 +6,7 @@
   <title>ubuntu下adb驱动问题 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -128,22 +128,22 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ol>
 <li>使用root账户(su到root账户)</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">su</div><div class="line"><span class="built_in">cd</span> android-tools-dir</div><div class="line">./adb kill-server</div><div class="line">./adb start-server</div><div class="line">./adb devices</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">su</div><div class="line"><span class="built_in">cd</span> android-tools-dir</div><div class="line">./adb kill-server</div><div class="line">./adb start-server</div><div class="line">./adb devices</div></pre></td></tr></table></figure>
 
 <ol>
 <li>修改udev的权限,<a href="http://bradchow.wordpress.com/2009/02/16/adb-on-windows-and-ubuntu-linux/" target="_blank">猛击这里</a>,添加/etc/udev/rules.d/50-android.rules</li>
 </ol>
-<figure class="highlight conf"><pre><div class="line"><span class="variable">SUBSYSTEM=</span>=<span class="string">"usb"</span>, SYSFS(idVendor)==<span class="string">"18d1"</span>, <span class="variable">MODE=</span><span class="string">"0666"</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">SUBSYSTEM=</span>=<span class="string">"usb"</span>, SYSFS(idVendor)==<span class="string">"18d1"</span>, <span class="variable">MODE=</span><span class="string">"0666"</span></div></pre></td></tr></table></figure>
 
 <p>然后修改执行权限</p>
-<figure class="highlight sh"><pre><div class="line">chmod a+rx /etc/udev/rules.d/<span class="number">50</span>-android.rules</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod a+rx /etc/udev/rules.d/<span class="number">50</span>-android.rules</div></pre></td></tr></table></figure>
 
 <p>重启udev</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> restart udev</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> restart udev</div></pre></td></tr></table></figure>
 
 
 
-<figure class="highlight sh"><pre><div class="line">su</div><div class="line"><span class="built_in">cd</span> android-tools-dir</div><div class="line">./adb kill-server</div><div class="line">./adb start-server</div><div class="line">./adb devices</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">su</div><div class="line"><span class="built_in">cd</span> android-tools-dir</div><div class="line">./adb kill-server</div><div class="line">./adb start-server</div><div class="line">./adb devices</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -175,7 +175,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-07-27-ubuntu_adb_driver.html" data-title="ubuntu下adb驱动问题" data-url="http://chenzaichun.github.io/2010-07-27-ubuntu_adb_driver.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-07-27-ubuntu_adb_driver.html" data-title="ubuntu下adb驱动问题" data-url="http://yesokay.herokuapp.com/2010-07-27-ubuntu_adb_driver.html"></div>  
   
 </section>
 
@@ -200,7 +200,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li> <li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
+    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li> <li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
   </li>
 
     </ul>

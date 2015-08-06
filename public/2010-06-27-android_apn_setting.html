@@ -6,7 +6,7 @@
   <title>android设置APN | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -128,12 +128,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ol>
 <li>第一步，创建activity，使用如下代码设置APN： </li>
 </ol>
-<figure class="highlight java"><pre><div class="line">ContentValues values = <span class="keyword">new</span> ContentValues();</div><div class="line">values.put(<span class="string">"NAME"</span>, <span class="string">"CMCC"</span>);</div><div class="line">values.put(<span class="string">"APN"</span>, <span class="string">"CMCC"</span>);</div><div class="line">values.put(<span class="string">"PROXY"</span>, <span class="string">"192.168.0.171"</span>);</div><div class="line">values.put(<span class="string">"PORT"</span>, <span class="string">"80"</span>);</div><div class="line">values.put(<span class="string">"USER"</span>, <span class="string">""</span>);</div><div class="line">values.put(<span class="string">"PASSWORD"</span>, <span class="string">""</span>);</div><div class="line"><span class="keyword">this</span>.getContentResolver().insert(Uri.parse(<span class="string">"content://telephony/carriers"</span>), values);</div></pre></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ContentValues values = <span class="keyword">new</span> ContentValues();</div><div class="line">values.put(<span class="string">"NAME"</span>, <span class="string">"CMCC"</span>);</div><div class="line">values.put(<span class="string">"APN"</span>, <span class="string">"CMCC"</span>);</div><div class="line">values.put(<span class="string">"PROXY"</span>, <span class="string">"192.168.0.171"</span>);</div><div class="line">values.put(<span class="string">"PORT"</span>, <span class="string">"80"</span>);</div><div class="line">values.put(<span class="string">"USER"</span>, <span class="string">""</span>);</div><div class="line">values.put(<span class="string">"PASSWORD"</span>, <span class="string">""</span>);</div><div class="line"><span class="keyword">this</span>.getContentResolver().insert(Uri.parse(<span class="string">"content://telephony/carriers"</span>), values);</div></pre></td></tr></table></figure>
 
 <ol>
 <li>在AndroidManifest.xml中添加如下内容：</li>
 </ol>
-<figure class="highlight xml"><pre><div class="line"><span class="tag">&lt;<span class="title">uses-permission</span> <span class="attribute">android:name</span>=<span class="value">"android.permission.WRITE_APN_SETTINGS"</span> /&gt;</span></div></pre></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">uses-permission</span> <span class="attribute">android:name</span>=<span class="value">"android.permission.WRITE_APN_SETTINGS"</span> /&gt;</span></div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -165,7 +165,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-06-27-android_apn_setting.html" data-title="android设置APN" data-url="http://chenzaichun.github.io/2010-06-27-android_apn_setting.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-06-27-android_apn_setting.html" data-title="android设置APN" data-url="http://yesokay.herokuapp.com/2010-06-27-android_apn_setting.html"></div>  
   
 </section>
 
@@ -190,7 +190,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li>
   </li>
 
     </ul>

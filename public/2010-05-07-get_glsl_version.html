@@ -6,7 +6,7 @@
   <title>获取glsl version | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,7 +124,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">		
-	    <figure class="highlight c"><pre><div class="line"><span class="keyword">void</span> getGlslVersion(<span class="keyword">int</span>* major, <span class="keyword">int</span>* minor)</div><div class="line">{</div><div class="line">    <span class="keyword">int</span> gl_major, gl_minor;</div><div class="line">    getGlVersion(&gl_major, &gl_minor);</div><div class="line"></div><div class="line">    *major = *minor = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (gl_major == <span class="number">1</span>) {</div><div class="line">        <span class="comment">// GL v1.x can only provide GLSL v1.00 as an extension</span></div><div class="line">        <span class="keyword">const</span> <span class="keyword">char</span>* extstr = (<span class="keyword">const</span> <span class="keyword">char</span>*)glGetString(GL_EXTENSIONS);</div><div class="line">        <span class="keyword">if</span> ((extstr != NULL) &&</div><div class="line">            (<span class="built_in">strstr</span>(extstr, <span class="string">"GL_ARB_shading_lanuage_100"</span>) != NULL)) {</div><div class="line">            *major = <span class="number">1</span>;</div><div class="line">            *minor = <span class="number">0</span>;</div><div class="line">        }</div><div class="line">    } <span class="keyword">else</span> <span class="keyword">if</span> (gl_major &gt;= <span class="number">2</span>) {</div><div class="line">        <span class="comment">// GL v2.0 and greater must parse the version string</span></div><div class="line">        <span class="keyword">const</span> <span class="keyword">char</span>* verstr =</div><div class="line">            (<span class="keyword">const</span> <span class="keyword">char</span>*)glGetString(GL_SHADING_LANGUAGE_VERSION);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> ((verstr != NULL) ||</div><div class="line">            (<span class="built_in">sscanf</span>(verstr, <span class="string">"%d.%d"</span>, major, minor) != <span class="number">2</span>)) {</div><div class="line">            *major = *minor = <span class="number">0</span>;</div><div class="line">            <span class="built_in">fprintf</span>(stderr,</div><div class="line">                    <span class="string">"Invalid GL_SHADING_LANGUAGE_VERSION format!!!n"</span>);</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre></figure>
+	    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> getGlslVersion(<span class="keyword">int</span>* major, <span class="keyword">int</span>* minor)</div><div class="line">{</div><div class="line">    <span class="keyword">int</span> gl_major, gl_minor;</div><div class="line">    getGlVersion(&gl_major, &gl_minor);</div><div class="line"></div><div class="line">    *major = *minor = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (gl_major == <span class="number">1</span>) {</div><div class="line">        <span class="comment">// GL v1.x can only provide GLSL v1.00 as an extension</span></div><div class="line">        <span class="keyword">const</span> <span class="keyword">char</span>* extstr = (<span class="keyword">const</span> <span class="keyword">char</span>*)glGetString(GL_EXTENSIONS);</div><div class="line">        <span class="keyword">if</span> ((extstr != NULL) &&</div><div class="line">            (<span class="built_in">strstr</span>(extstr, <span class="string">"GL_ARB_shading_lanuage_100"</span>) != NULL)) {</div><div class="line">            *major = <span class="number">1</span>;</div><div class="line">            *minor = <span class="number">0</span>;</div><div class="line">        }</div><div class="line">    } <span class="keyword">else</span> <span class="keyword">if</span> (gl_major &gt;= <span class="number">2</span>) {</div><div class="line">        <span class="comment">// GL v2.0 and greater must parse the version string</span></div><div class="line">        <span class="keyword">const</span> <span class="keyword">char</span>* verstr =</div><div class="line">            (<span class="keyword">const</span> <span class="keyword">char</span>*)glGetString(GL_SHADING_LANGUAGE_VERSION);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> ((verstr != NULL) ||</div><div class="line">            (<span class="built_in">sscanf</span>(verstr, <span class="string">"%d.%d"</span>, major, minor) != <span class="number">2</span>)) {</div><div class="line">            *major = *minor = <span class="number">0</span>;</div><div class="line">            <span class="built_in">fprintf</span>(stderr,</div><div class="line">                    <span class="string">"Invalid GL_SHADING_LANGUAGE_VERSION format!!!n"</span>);</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -135,13 +135,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ul class="pagination">
 	 
 				
-    	<li class="prev"><a href="/2010-05-07-google_code_hg_password_save.html" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+    	<li class="prev"><a href="/2010-05-07-scribefire_chrome.html" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2010-05-07-git_windows.html" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2010-05-07-google_voice_orkut_active.html" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -156,7 +156,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-05-07-get_glsl_version.html" data-title="获取glsl version" data-url="http://chenzaichun.github.io/2010-05-07-get_glsl_version.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-05-07-get_glsl_version.html" data-title="获取glsl version" data-url="http://yesokay.herokuapp.com/2010-05-07-get_glsl_version.html"></div>  
   
 </section>
 

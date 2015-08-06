@@ -6,7 +6,7 @@
   <title>Mount.cifs 中设置文件权限 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,7 +125,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>在以往常用的Mount命令里，使用<code>umask=xxxx</code>设置挂载目录文件的权限，然后在使用Smbfs的Mount工具时，便不是使用umask了，而是用</p>
-<figure class="highlight conf"><pre><div class="line">-o <span class="variable">file_mode=</span><span class="number">0666</span> <span class="variable">dir_mode=</span><span class="number">0755</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-o <span class="variable">file_mode=</span><span class="number">0666</span> <span class="variable">dir_mode=</span><span class="number">0755</span></div></pre></td></tr></table></figure>
 
 <p>这个问题纠结了我半天，终于在Google上找到答案</p>
 	  
@@ -158,7 +158,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-05-08-mount_cifs_umask.html" data-title="Mount.cifs 中设置文件权限" data-url="http://chenzaichun.github.io/2010-05-08-mount_cifs_umask.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-05-08-mount_cifs_umask.html" data-title="Mount.cifs 中设置文件权限" data-url="http://yesokay.herokuapp.com/2010-05-08-mount_cifs_umask.html"></div>  
   
 </section>
 

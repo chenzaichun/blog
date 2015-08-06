@@ -6,7 +6,7 @@
   <title>pywin32访问access数据 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,7 +125,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>pywin32真强大，可以通过com接口做你想做的事。比如操作excel, access等等。下面是访问access数据库的例子：</p>
-<figure class="highlight python"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> win32com.client</div><div class="line"></div><div class="line">conn = win32com.client.Dispatch(<span class="string">"ADODB.Connection"</span>)</div><div class="line"></div><div class="line"><span class="comment"># Either way works: one is the Jet OLEDB driver, the other is the</span></div><div class="line"><span class="comment"># Access ODBC driver.  OLEDB is probably better.</span></div><div class="line"></div><div class="line">db = <span class="string">r"c:test.mdb"</span></div><div class="line">DSN=<span class="string">"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="</span> + db</div><div class="line"><span class="comment">#DSN="Driver={Microsoft Access Driver (*.mdb)};DBQ=" + db</span></div><div class="line">conn.Open(DSN)</div><div class="line"></div><div class="line">rs = win32com.client.Dispatch(<span class="string">"ADODB.Recordset"</span>)</div><div class="line">rs.Open( <span class="string">"[test]"</span>, conn, <span class="number">1</span>, <span class="number">3</span> )</div><div class="line"></div><div class="line"><span class="keyword">print</span> rs.Fields.Count, <span class="string">" fields found:"</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(rs.Fields.Count):</div><div class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Name,</div><div class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Type,</div><div class="line">    <span class="keyword">print</span> rs.Fields.Item(x).DefinedSize,</div><div class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Value</div></pre></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> win32com.client</div><div class="line"></div><div class="line">conn = win32com.client.Dispatch(<span class="string">"ADODB.Connection"</span>)</div><div class="line"></div><div class="line"><span class="comment"># Either way works: one is the Jet OLEDB driver, the other is the</span></div><div class="line"><span class="comment"># Access ODBC driver.  OLEDB is probably better.</span></div><div class="line"></div><div class="line">db = <span class="string">r"c:test.mdb"</span></div><div class="line">DSN=<span class="string">"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="</span> + db</div><div class="line"><span class="comment">#DSN="Driver={Microsoft Access Driver (*.mdb)};DBQ=" + db</span></div><div class="line">conn.Open(DSN)</div><div class="line"></div><div class="line">rs = win32com.client.Dispatch(<span class="string">"ADODB.Recordset"</span>)</div><div class="line">rs.Open( <span class="string">"[test]"</span>, conn, <span class="number">1</span>, <span class="number">3</span> )</div><div class="line"></div><div class="line"><span class="keyword">print</span> rs.Fields.Count, <span class="string">" fields found:"</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(rs.Fields.Count):</div><div class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Name,</div><div class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Type,</div><div class="line">    <span class="keyword">print</span> rs.Fields.Item(x).DefinedSize,</div><div class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Value</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -157,7 +157,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-12-12-pywin32_access.html" data-title="pywin32访问access数据" data-url="http://chenzaichun.github.io/2010-12-12-pywin32_access.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-12-12-pywin32_access.html" data-title="pywin32访问access数据" data-url="http://yesokay.herokuapp.com/2010-12-12-pywin32_access.html"></div>  
   
 </section>
 
@@ -182,7 +182,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
   </li>
 
     </ul>

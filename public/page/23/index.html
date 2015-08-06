@@ -6,7 +6,7 @@
   <title>第 23 页 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,6 +124,35 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="title">
+			<a href="/2010-05-08-git_svn_clone_revision.html" >git svn clone 特定版本</a>
+			<span class="date"> 5月 8 2010 </span>
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>使用git从svn中clone特定版本：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git svn clone --prefix=svn/ <span class="operator">-s</span> -r<span class="variable">$revision</span>:HEAD http://some/svn/repo</div></pre></td></tr></table></figure>
+
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-05-08-git_svn_clone_revision.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
 			<a href="/2010-05-08-archlinux_chrome_autoproxy.html" >archlinux 下chrome autoproxy</a>
 			<span class="date"> 5月 8 2010 </span>
 		</h3>
@@ -164,7 +193,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>用这个可以删除旧内核</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> aptitude purge ~ilinux-image-.*(!`uname -r`)</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> aptitude purge ~ilinux-image-.*(!`uname -r`)</div></pre></td></tr></table></figure>
 
 <p><a class="postlink" href="http://forum.ubuntu.org.cn/viewtopic.php?t=129876" target="_blank" rel="external">http://forum.ubuntu.org.cn/viewtopic.php?t=129876</a></p>
 
@@ -194,7 +223,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>在以往常用的Mount命令里，使用<code>umask=xxxx</code>设置挂载目录文件的权限，然后在使用Smbfs的Mount工具时，便不是使用umask了，而是用</p>
-<figure class="highlight conf"><pre><div class="line">-o <span class="variable">file_mode=</span><span class="number">0666</span> <span class="variable">dir_mode=</span><span class="number">0755</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-o <span class="variable">file_mode=</span><span class="number">0666</span> <span class="variable">dir_mode=</span><span class="number">0755</span></div></pre></td></tr></table></figure>
 
 <p>这个问题纠结了我半天，终于在Google上找到答案</p>
 
@@ -225,7 +254,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>VS2005之后版本的std::fstream对中文路径处理不正确的原因，所以加载中文路径或文件名不成功，解决办法：</p>
 <p>在主函数开始加入</p>
-<figure class="highlight cpp"><pre><div class="line">setlocale(LC_ALL,<span class="string">"Chinese-simplified"</span>);</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setlocale(LC_ALL,<span class="string">"Chinese-simplified"</span>);</div></pre></td></tr></table></figure>
 
 
 	
@@ -254,7 +283,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>由于学校使用drcom，在Windows下任何代理都无解。在linux下可以通过iptable  forward实现，在Windows下使用andlinux的时候如何挂代理呢，通过plink开sock5代理的方法：</p>
-<figure class="highlight sh"><pre><div class="line">plink -C -D myip:port -N -pw pasword username@<span class="number">127.0</span>.<span class="number">0.1</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plink -C -D myip:port -N -pw pasword username@<span class="number">127.0</span>.<span class="number">0.1</span></div></pre></td></tr></table></figure>
 
 <p>则外面就能使用sock5代理上 网了（使用sockscap尤其方便）。</p>
 
@@ -285,7 +314,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p><a href="http://www.ourcampus.cn/blog/?action=show&amp;id=27" target="_blank" rel="external">参考地址</a></p>
 <p>启动Apache服务，测试一下环境是否正确，在浏览器中输入 <a href="http://127.0.0.1/" target="_blank" rel="external">http://127.0.0.1</a> 或是 <a href="http://localhost/" target="_blank" rel="external">http://localhost</a> 均半天不出页面，查看Apache状态为启动，估计Apache有问题，于是转到Apache安装目录的logs目录下，发现果然有一个error.log, 打开看到里面的内容如下：</p>
-<figure class="highlight"><pre><div class="line"><span class="attr_selector">[Thu Nov 22 15:19:53 2007]</span> <span class="attr_selector">[notice]</span> <span class="tag">Parent</span>: <span class="tag">Created</span> <span class="tag">child</span> <span class="tag">process</span> 2816</div><div class="line"><span class="attr_selector">[Thu Nov 22 15:19:53 2007]</span> <span class="attr_selector">[notice]</span> <span class="tag">Child</span> 2816: <span class="tag">Child</span> <span class="tag">process</span> <span class="tag">is</span> <span class="tag">running</span></div><div class="line"><span class="attr_selector">[Thu Nov 22 15:19:53 2007]</span> <span class="attr_selector">[crit]</span> (<span class="tag">OS</span> 10022)提供了一个无效的参数。<span class="tag">Child</span> 2816:</div><div class="line"><span class="tag">setup_inherited_listeners</span>(), <span class="tag">WSASocket</span> <span class="tag">failed</span> <span class="tag">to</span> <span class="tag">open</span> <span class="tag">the</span> <span class="tag">inherited</span></div><div class="line"><span class="tag">socket</span>.</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr_selector">[Thu Nov 22 15:19:53 2007]</span> <span class="attr_selector">[notice]</span> <span class="tag">Parent</span>: <span class="tag">Created</span> <span class="tag">child</span> <span class="tag">process</span> 2816</div><div class="line"><span class="attr_selector">[Thu Nov 22 15:19:53 2007]</span> <span class="attr_selector">[notice]</span> <span class="tag">Child</span> 2816: <span class="tag">Child</span> <span class="tag">process</span> <span class="tag">is</span> <span class="tag">running</span></div><div class="line"><span class="attr_selector">[Thu Nov 22 15:19:53 2007]</span> <span class="attr_selector">[crit]</span> (<span class="tag">OS</span> 10022)提供了一个无效的参数。<span class="tag">Child</span> 2816:</div><div class="line"><span class="tag">setup_inherited_listeners</span>(), <span class="tag">WSASocket</span> <span class="tag">failed</span> <span class="tag">to</span> <span class="tag">open</span> <span class="tag">the</span> <span class="tag">inherited</span></div><div class="line"><span class="tag">socket</span>.</div></pre></td></tr></table></figure>
 
 <p>解决方案如下：</p>
 <ol>
@@ -397,39 +426,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </div>
 
 		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2010-05-07-linux_emacs_color.html" >Linux下修改 emacs默认背景颜色</a>
-			<span class="date"> 5月 7 2010 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>创建<code>~/.Xresources</code>，添加：</p>
-<figure class="highlight conf"><pre><div class="line"><span class="attribute">Xft.antialias</span>: <span class="string">1</span></div><div class="line"><span class="attribute">Xft.hinting</span>: <span class="string">1</span></div><div class="line"><span class="attribute">Xft.hintstyle</span>: <span class="string">hintfull</span></div><div class="line"><span class="attribute">Emacs.FontBackend</span>: <span class="string">xft</span></div><div class="line"><span class="attribute">Emacs.Font</span>: <span class="string">WenQuanYi Zen Hei Mono-16</span></div><div class="line"><span class="attribute">Emacs.Geometry</span>: <span class="string">80x25</span></div><div class="line"><span class="attribute">Emacs*Foreground</span>: <span class="string">white</span></div><div class="line"><span class="attribute">Emacs*Background</span>: <span class="string">black</span></div></pre></figure>
-
-<p>执行:</p>
-<figure class="highlight sh"><pre><div class="line">xdb ~/.Xresources</div></pre></figure>
-
-<p>重启emacs。下次启动背景色自动就改变了！;-)</p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-05-07-linux_emacs_color.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -466,7 +462,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<div class="form-group has-success has-feedback">
   <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
-    <input type="hidden" name="q" value="site:chenzaichun.github.io">	
+    <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
 
@@ -494,7 +490,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/categories/programming/">programming<span>138</span></a></li>
+			<li><a href="/categories/programming/">programming<span>139</span></a></li>
 		
 			<li><a href="/categories/tools/">tools<span>142</span></a></li>
 		
@@ -509,45 +505,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
+			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+		
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+		
+			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+		
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+		
 			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
-		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
-		
-			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
-		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
-		
-			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
-		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
 		
 			<li><a href="/tags/tools/">tools<span>4</span></a></li>
 		
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+		
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+		
 			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
 		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
 		
-			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
 		
 			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
 		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
 		
-			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
 		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
 		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
 		
-			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
 		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
-		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -563,7 +559,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
       </li>
     
       <li>
@@ -575,11 +571,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
       </li>
     
       <li>
-        <a href="/2013-01-03-archlinux-enable-vbox-service.html" ><i class="fa fa-file-o"></i>archlinux下启用virtualbox service</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
       </li>
     
   </ul>

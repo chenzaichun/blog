@@ -6,7 +6,7 @@
   <title>ubuntu下使用flashget | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,13 +125,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>按照官方说明安装:</p>
-<figure class="highlight"><pre><div class="line">Ubunt <span class="number">10.04</span>下面无法启动,提示找不到libexpat.so<span class="number">.0</span></div><div class="line">  error <span class="keyword">while</span> loading shared libraries: libexpat.so<span class="number">.0</span>: cannot <span class="built_in">open</span> shared object <span class="built_in">file</span>: No such <span class="built_in">file</span> <span class="operator">or</span> <span class="built_in">directory</span></div><div class="line">  原因,编译flashget使用的是libexpat.so<span class="number">.0</span>版本,系统默认为libexpat.so<span class="number">.1</span><span class="number">.5</span><span class="number">.2</span>,做软连接即可.</div><div class="line">  $cd /usr/lib</div><div class="line">  $sudo <span class="built_in">ln</span> -s libexpat.so<span class="number">.1</span><span class="number">.5</span><span class="number">.2</span> libexpat.so<span class="number">.0</span></div><div class="line">  $sudo ldconfig</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Ubunt <span class="number">10.04</span>下面无法启动,提示找不到libexpat.so<span class="number">.0</span></div><div class="line">  error <span class="keyword">while</span> loading shared libraries: libexpat.so<span class="number">.0</span>: cannot <span class="built_in">open</span> shared object <span class="built_in">file</span>: No such <span class="built_in">file</span> <span class="operator">or</span> <span class="built_in">directory</span></div><div class="line">  原因,编译flashget使用的是libexpat.so<span class="number">.0</span>版本,系统默认为libexpat.so<span class="number">.1</span><span class="number">.5</span><span class="number">.2</span>,做软连接即可.</div><div class="line">  $cd /usr/lib</div><div class="line">  $sudo <span class="built_in">ln</span> -s libexpat.so<span class="number">.1</span><span class="number">.5</span><span class="number">.2</span> libexpat.so<span class="number">.0</span></div><div class="line">  $sudo ldconfig</div></pre></td></tr></table></figure>
 
 <p>但是会出现:</p>
-<figure class="highlight"><pre><div class="line">flashget: <span class="keyword">error</span> <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libexpat.so<span class="number">.0</span>: wrong ELF <span class="keyword">class</span>: ELFCLASS64</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flashget: <span class="keyword">error</span> <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libexpat.so<span class="number">.0</span>: wrong ELF <span class="keyword">class</span>: ELFCLASS64</div></pre></td></tr></table></figure>
 
 <p>原因是因为我使用的64为系统,而flashget是用32位程序.怎么办呢?因为装有lib32,所以可以直接创建lib32中libexpat.so的软链接</p>
-<figure class="highlight"><pre><div class="line">sudo <span class="keyword">ln</span> -<span class="keyword">s</span> /lib32/libexpat.<span class="keyword">so</span>.<span class="number">1.5</span>.<span class="number">2</span> /usr/lib/libexpat.<span class="keyword">so</span>.<span class="number">0</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo <span class="keyword">ln</span> -<span class="keyword">s</span> /lib32/libexpat.<span class="keyword">so</span>.<span class="number">1.5</span>.<span class="number">2</span> /usr/lib/libexpat.<span class="keyword">so</span>.<span class="number">0</span></div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -163,7 +163,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-08-02-ubuntu_linux_flashget.html" data-title="ubuntu下使用flashget" data-url="http://chenzaichun.github.io/2010-08-02-ubuntu_linux_flashget.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-08-02-ubuntu_linux_flashget.html" data-title="ubuntu下使用flashget" data-url="http://yesokay.herokuapp.com/2010-08-02-ubuntu_linux_flashget.html"></div>  
   
 </section>
 

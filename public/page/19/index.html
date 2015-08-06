@@ -6,7 +6,7 @@
   <title>第 19 页 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,6 +124,35 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="title">
+			<a href="/2010-07-22-windows_hide_taskbar.html" >在任务栏中隐藏windows程序</a>
+			<span class="date"> 7月 22 2010 </span>
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>直接代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ModifyStyleEx(WS_EX_APPWINDOW,WS_EX_TOOLWINDOW, SWP_DRAWFRAME);</div></pre></td></tr></table></figure>
+
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-07-22-windows_hide_taskbar.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
 			<a href="/2010-07-22-cdhtmldialog_scrollbar.html" >CDHtmlDialog启用滚动条</a>
 			<span class="date"> 7月 22 2010 </span>
 		</h3>
@@ -137,7 +166,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>在CDHtmlDialog中启用滚动条：</p>
-<figure class="highlight cpp"><pre><div class="line">SetHostFlags(DOCHOSTUIFLAG_NO3DBORDER);</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SetHostFlags(DOCHOSTUIFLAG_NO3DBORDER);</div></pre></td></tr></table></figure>
 
 
 	
@@ -166,7 +195,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>windows下获取屏幕分辨率:</p>
-<figure class="highlight cpp"><pre><div class="line"><span class="keyword">int</span> nWidth = GetSystemMetrics(SM_CXSCREEN); <span class="comment">//屏幕宽度   </span></div><div class="line"><span class="keyword">int</span> nHeight = GetSystemMetrics(SM_CYSCREEN); <span class="comment">//屏幕高度</span></div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> nWidth = GetSystemMetrics(SM_CXSCREEN); <span class="comment">//屏幕宽度   </span></div><div class="line"><span class="keyword">int</span> nHeight = GetSystemMetrics(SM_CYSCREEN); <span class="comment">//屏幕高度</span></div></pre></td></tr></table></figure>
 
 
 	
@@ -195,10 +224,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>参考：<a href="http://www.codeproject.com/KB/MFC/dhtmldialog.aspx?msg=2016381#xx2016381xx" target="_blank">猛击这里</a><br>在头文件中加入：</p>
-<figure class="highlight cpp"><pre><div class="line">STDMETHOD(ShowContextMenu)(DWORD dwID, POINT *ppt, IUnknown *pcmdtReserved, IDispatch *pdispReserved);</div><div class="line">STDMETHOD(TranslateAccelerator)(LPMSG lpMsg, <span class="keyword">const</span> GUID * pguidCmdGroup, DWORD nCmdID);</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">STDMETHOD(ShowContextMenu)(DWORD dwID, POINT *ppt, IUnknown *pcmdtReserved, IDispatch *pdispReserved);</div><div class="line">STDMETHOD(TranslateAccelerator)(LPMSG lpMsg, <span class="keyword">const</span> GUID * pguidCmdGroup, DWORD nCmdID);</div></pre></td></tr></table></figure>
 
 <p>在cpp中加入：</p>
-<figure class="highlight cpp"><pre><div class="line">STDMETHODIMP ChtmldialogDlg::ShowContextMenu(DWORD dwID, POINT *ppt, IUnknown *pcmdtReserved, IDispatch *pdispReserved)</div><div class="line">{</div><div class="line"><span class="comment">//return CDHtmlDialog::ShowContextMenu(dwID, ppt, pcmdtReserved, pdispReserved);</span></div><div class="line"><span class="keyword">return</span> S_OK;</div><div class="line">}</div><div class="line"></div><div class="line">STDMETHODIMP ChtmldialogDlg::TranslateAccelerator(LPMSG lpMsg, <span class="keyword">const</span> GUID * pguidCmdGroup, DWORD nCmdID)</div><div class="line">{</div><div class="line"><span class="keyword">if</span> (lpMsg && lpMsg-&gt;message == WM_KEYDOWN && lpMsg-&gt;wParam == VK_F5) {</div><div class="line"><span class="keyword">return</span> S_OK;</div><div class="line">}</div><div class="line"><span class="keyword">return</span> CDHtmlDialog::TranslateAccelerator(lpMsg, pguidCmdGroup, nCmdID);</div><div class="line">}</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">STDMETHODIMP ChtmldialogDlg::ShowContextMenu(DWORD dwID, POINT *ppt, IUnknown *pcmdtReserved, IDispatch *pdispReserved)</div><div class="line">{</div><div class="line"><span class="comment">//return CDHtmlDialog::ShowContextMenu(dwID, ppt, pcmdtReserved, pdispReserved);</span></div><div class="line"><span class="keyword">return</span> S_OK;</div><div class="line">}</div><div class="line"></div><div class="line">STDMETHODIMP ChtmldialogDlg::TranslateAccelerator(LPMSG lpMsg, <span class="keyword">const</span> GUID * pguidCmdGroup, DWORD nCmdID)</div><div class="line">{</div><div class="line"><span class="keyword">if</span> (lpMsg && lpMsg-&gt;message == WM_KEYDOWN && lpMsg-&gt;wParam == VK_F5) {</div><div class="line"><span class="keyword">return</span> S_OK;</div><div class="line">}</div><div class="line"><span class="keyword">return</span> CDHtmlDialog::TranslateAccelerator(lpMsg, pguidCmdGroup, nCmdID);</div><div class="line">}</div></pre></td></tr></table></figure>
 
 
 	
@@ -226,7 +255,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight cpp"><pre><div class="line">RECT Rect;</div><div class="line">HWND hWnd = FindWindow(<span class="string">"Shell_TrayWnd"</span>, <span class="number">0</span>);</div><div class="line"><span class="keyword">if</span> (GetWindowRect(hWnd, &Rect)) {</div><div class="line">        <span class="comment">//Rect.bottom-Rect.top   就是任务栏的高度</span></div><div class="line">}</div></pre></figure>
+	  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">RECT Rect;</div><div class="line">HWND hWnd = FindWindow(<span class="string">"Shell_TrayWnd"</span>, <span class="number">0</span>);</div><div class="line"><span class="keyword">if</span> (GetWindowRect(hWnd, &Rect)) {</div><div class="line">        <span class="comment">//Rect.bottom-Rect.top   就是任务栏的高度</span></div><div class="line">}</div></pre></td></tr></table></figure>
 
 
 	
@@ -259,7 +288,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>Error executing aapt. Please check aapt is present at %</p>
 <p>解决方案：在eclipse–&gt;window–&gt;属性–&gt;android–&gt;设置sdk的路径为解压缩的<code>android_sdk_&lt;platform&gt;_&lt;release&gt;_&lt;build&gt;</code>.确定ＯＫ　小红叉没有了</p>
 <p>但是在linux下还是出现了这个问题（因为更新了sdk），后来发现是因为platform/android-1.x/tools/下的工具没有执行权限</p>
-<figure class="highlight sh"><pre><div class="line">chmod +x *</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x *</div></pre></td></tr></table></figure>
 
 
 	
@@ -288,7 +317,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>hg通过ssh访问时，地址的格式是ssh://user:pwd@host//path,注意这里的两个/，如果只是使用一个，则找不到repo，这个与scp等的方式不一样（scp的格式是：scp user:pwd@host:/path）详情见<code>hg help urls</code></p>
-<figure class="highlight sh"><pre><div class="line">hg <span class="built_in">help</span> urls</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hg <span class="built_in">help</span> urls</div></pre></td></tr></table></figure>
 
 
 	
@@ -317,7 +346,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>今天想把经典的电影拿来当听力训练，可惜找了很久都没有找到直接下载方式，没有办法，只好下载电影然后提取音频并配上字幕。网上找了一个perl版的srt2lrc.pl，因为完全不懂perl，该脚本无法运行，所以只好自己想办法。没有仔细研究过srt与lrc格式，只是找了两个文件来看，勉强知道是怎么回事，用python写了一个转化的脚本（ps. python不熟，代码很难看，只是勉强实现了功能）</p>
-<figure class="highlight python"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">import</span> re</div><div class="line"></div><div class="line"><span class="keyword">if</span> len(sys.argv) != <span class="number">2</span>:</div><div class="line">    print(<span class="string">"Usage srt2lrc.py file"</span>)</div><div class="line">    sys.exit(<span class="number">1</span>)</div><div class="line"></div><div class="line">f = open(sys.argv[<span class="number">1</span>])</div><div class="line">lines = f.readlines()</div><div class="line">i = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> i &lt; len(lines):</div><div class="line">    line = lines[i]</div><div class="line">    <span class="keyword">if</span> line.find(<span class="string">'--&gt;'</span>) == -<span class="number">1</span>:</div><div class="line">        i = i + <span class="number">1</span></div><div class="line">        <span class="keyword">continue</span></div><div class="line"></div><div class="line">    s = line.split(<span class="string">'--&gt;'</span>)</div><div class="line">    time = s[<span class="number">0</span>].split(<span class="string">':'</span>)</div><div class="line">    ms = <span class="string">'00'</span></div><div class="line">    <span class="keyword">if</span> len(time) &gt;= <span class="number">3</span>:</div><div class="line">        hour = time[<span class="number">0</span>]</div><div class="line">        minute = time[<span class="number">1</span>]</div><div class="line">        seconds = time[<span class="number">2</span>].split(<span class="string">','</span>)</div><div class="line">        second = seconds[<span class="number">0</span>]</div><div class="line">        ms = seconds[<span class="number">1</span>]</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        hour = <span class="number">0</span></div><div class="line">        minute = time[<span class="number">2</span>]</div><div class="line">        seconds = time[<span class="number">3</span>].split(<span class="string">','</span>)</div><div class="line">        second = seconds[<span class="number">0</span>]</div><div class="line">        ms = seconds[<span class="number">1</span>]</div><div class="line"></div><div class="line">    <span class="keyword">if</span> int(hour) == <span class="number">0</span> <span class="keyword">and</span> int(minute) == <span class="number">0</span> <span class="keyword">and</span> int(second) == <span class="number">0</span> <span class="keyword">and</span> int(ms) == <span class="number">0</span>:</div><div class="line">        i = i + <span class="number">1</span></div><div class="line">        <span class="keyword">continue</span></div><div class="line"></div><div class="line">    i = i + <span class="number">1</span></div><div class="line">    s = lines[i].strip()</div><div class="line">    i = i + <span class="number">1</span></div><div class="line">    <span class="keyword">while</span> i &lt; len(lines) <span class="keyword">and</span> len(lines[i].strip()) &gt; <span class="number">0</span>:</div><div class="line">        s = s + lines[i].strip()</div><div class="line">        i = i + <span class="number">1</span></div><div class="line"></div><div class="line">    s = re.sub(<span class="string">"&lt;.*&gt;"</span>, <span class="string">""</span>, s)</div><div class="line">    <span class="keyword">if</span> len(s) &gt; <span class="number">0</span>:</div><div class="line">        print(<span class="string">"[%.2d:%s.%.2s]%s"</span> % (int(hour)*<span class="number">60</span>+int(minute.strip()), second.strip(), ms.strip(), s))</div><div class="line"></div><div class="line">f.close()</div></pre></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">import</span> re</div><div class="line"></div><div class="line"><span class="keyword">if</span> len(sys.argv) != <span class="number">2</span>:</div><div class="line">    print(<span class="string">"Usage srt2lrc.py file"</span>)</div><div class="line">    sys.exit(<span class="number">1</span>)</div><div class="line"></div><div class="line">f = open(sys.argv[<span class="number">1</span>])</div><div class="line">lines = f.readlines()</div><div class="line">i = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> i &lt; len(lines):</div><div class="line">    line = lines[i]</div><div class="line">    <span class="keyword">if</span> line.find(<span class="string">'--&gt;'</span>) == -<span class="number">1</span>:</div><div class="line">        i = i + <span class="number">1</span></div><div class="line">        <span class="keyword">continue</span></div><div class="line"></div><div class="line">    s = line.split(<span class="string">'--&gt;'</span>)</div><div class="line">    time = s[<span class="number">0</span>].split(<span class="string">':'</span>)</div><div class="line">    ms = <span class="string">'00'</span></div><div class="line">    <span class="keyword">if</span> len(time) &gt;= <span class="number">3</span>:</div><div class="line">        hour = time[<span class="number">0</span>]</div><div class="line">        minute = time[<span class="number">1</span>]</div><div class="line">        seconds = time[<span class="number">2</span>].split(<span class="string">','</span>)</div><div class="line">        second = seconds[<span class="number">0</span>]</div><div class="line">        ms = seconds[<span class="number">1</span>]</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        hour = <span class="number">0</span></div><div class="line">        minute = time[<span class="number">2</span>]</div><div class="line">        seconds = time[<span class="number">3</span>].split(<span class="string">','</span>)</div><div class="line">        second = seconds[<span class="number">0</span>]</div><div class="line">        ms = seconds[<span class="number">1</span>]</div><div class="line"></div><div class="line">    <span class="keyword">if</span> int(hour) == <span class="number">0</span> <span class="keyword">and</span> int(minute) == <span class="number">0</span> <span class="keyword">and</span> int(second) == <span class="number">0</span> <span class="keyword">and</span> int(ms) == <span class="number">0</span>:</div><div class="line">        i = i + <span class="number">1</span></div><div class="line">        <span class="keyword">continue</span></div><div class="line"></div><div class="line">    i = i + <span class="number">1</span></div><div class="line">    s = lines[i].strip()</div><div class="line">    i = i + <span class="number">1</span></div><div class="line">    <span class="keyword">while</span> i &lt; len(lines) <span class="keyword">and</span> len(lines[i].strip()) &gt; <span class="number">0</span>:</div><div class="line">        s = s + lines[i].strip()</div><div class="line">        i = i + <span class="number">1</span></div><div class="line"></div><div class="line">    s = re.sub(<span class="string">"&lt;.*&gt;"</span>, <span class="string">""</span>, s)</div><div class="line">    <span class="keyword">if</span> len(s) &gt; <span class="number">0</span>:</div><div class="line">        print(<span class="string">"[%.2d:%s.%.2s]%s"</span> % (int(hour)*<span class="number">60</span>+int(minute.strip()), second.strip(), ms.strip(), s))</div><div class="line"></div><div class="line">f.close()</div></pre></td></tr></table></figure>
 
 
 	
@@ -345,7 +374,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight sh"><pre><div class="line"><span class="comment"># $1 -- input file</span></div><div class="line"><span class="comment"># $2 -- output file</span></div><div class="line">mencoder -oac mp3lame -ovc copy -of rawaudio <span class="variable">$1</span> -o <span class="variable">$2</span></div></pre></figure>
+	  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># $1 -- input file</span></div><div class="line"><span class="comment"># $2 -- output file</span></div><div class="line">mencoder -oac mp3lame -ovc copy -of rawaudio <span class="variable">$1</span> -o <span class="variable">$2</span></div></pre></td></tr></table></figure>
 
 
 	
@@ -374,7 +403,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>今天在使用eclipse的时候，一会儿就自动退出，重试很多次无果！前两天都还是好好的，怎么会这样呢？后来一想，昨天升级ubuntu的时候升级了openjdk，难道是这个原因？删除openjdk，然后安装sun-java6-jdk。ubuntu下在/etc/apt/sources.list添加：</p>
-<figure class="highlight conf"><pre><div class="line"><span class="title">deb</span> <span class="url">http://archive.canonical.com/</span> lucid partner</div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">deb</span> <span class="url">http://archive.canonical.com/</span> lucid partner</div></pre></td></tr></table></figure>
 
 <p>测试之后，搞定！如果遇到同样问题，多半是jdk的问题。</p>
 
@@ -384,40 +413,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2010-07-05-eclipse_crash.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2010-06-29-android_screen_rotation.html" >android屏幕旋转问题</a>
-			<span class="date"> 6月 29 2010 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>转自：<a href="http://blog.csdn.net/jump_1990/archive/2009/11/04/4766853.aspx" target="_blank">http://blog.csdn.net/jump_1990/archive/2009/11/04/4766853.aspx</a></p>
-<p>要让程序界面保持一个方向，不随手机方向转动而变化的处理办法：<br>在AndroidManifest.xml里面配置一下就可以了。加入这一行android:screenOrientation=”landscape”。</p>
-<p>例如（landscape是横向，portrait是纵向）：</p>
-<figure class="highlight xml"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="title">manifest</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span> </span></div><div class="line">      <span class="attribute">package</span>=<span class="value">"com.ray.linkit"</span> </div><div class="line">      <span class="attribute">android:versionCode</span>=<span class="value">"1"</span> </div><div class="line">      <span class="attribute">android:versionName</span>=<span class="value">"1.0"</span>&gt; </div><div class="line">    <span class="tag">&lt;<span class="title">application</span> <span class="attribute">android:icon</span>=<span class="value">"@drawable/icon"</span> <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span>&gt;</span> </div><div class="line">        <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".Main"</span> </span></div><div class="line">                  <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span> </div><div class="line">                  <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt; </div><div class="line">            <span class="tag">&lt;<span class="title">intent-filter</span>&gt;</span> </div><div class="line">                <span class="tag">&lt;<span class="title">action</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.action.MAIN"</span> /&gt;</span> </div><div class="line">                <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.category.LAUNCHER"</span> /&gt;</span> </div><div class="line">            <span class="tag">&lt;/<span class="title">intent-filter</span>&gt;</span> </div><div class="line">        <span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </div><div class="line">                <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".GamePlay"</span> </span></div><div class="line">                <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt;<span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </div><div class="line">                <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".OptionView"</span> </span></div><div class="line">                <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt;<span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;/<span class="title">application</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="title">uses-sdk</span> <span class="attribute">android:minSdkVersion</span>=<span class="value">"3"</span> /&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="title">manifest</span>&gt;</span></div></pre></figure>
-
-<p>另外，android中每次屏幕的切换都会重启Activity，所以应该在Activity销毁前保存当前活动的状态，在Activity再次 Create的时候载入配置，那样，进行中的游戏就不会自动重启了！也可以给每个activity加上 android:configChanges=”keyboardHidden|orientation”属性，就不会重启activity，而是去调用 onConfigurationChanged(Configuration newConfig)。这样就可以在这个方法里调整显示方式：</p>
-<figure class="highlight java"><pre><div class="line"><span class="keyword">if</span>(newConfig.orientation==Configuration.</div></pre></figure>
-
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-06-29-android_screen_rotation.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -457,7 +452,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<div class="form-group has-success has-feedback">
   <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
-    <input type="hidden" name="q" value="site:chenzaichun.github.io">	
+    <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
 
@@ -485,7 +480,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/categories/programming/">programming<span>138</span></a></li>
+			<li><a href="/categories/programming/">programming<span>139</span></a></li>
 		
 			<li><a href="/categories/tools/">tools<span>142</span></a></li>
 		
@@ -500,45 +495,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+			<li><a href="/tags/network/">network<span>1</span></a></li>
 		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
+			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
 		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
-		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
-		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
 		
+			<li><a href="/tags/soap/">soap<span>1</span></a></li>
+		
+			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
+		
+			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
+		
+			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
+		
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+		
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+		
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+		
 			<li><a href="/tags/Google/">Google<span>14</span></a></li>
 		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+		
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
 		
 			<li><a href="/tags/macos/">macos<span>9</span></a></li>
 		
-			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
 		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
 		
-			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
 		
 			<li><a href="/tags/tools/">tools<span>4</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
-		
-			<li><a href="/tags/suse/">suse<span>3</span></a></li>
-		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
-		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
-		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
-		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -554,7 +549,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
       </li>
     
       <li>
@@ -566,11 +561,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
       </li>
     
       <li>
-        <a href="/2013-01-03-archlinux-enable-vbox-service.html" ><i class="fa fa-file-o"></i>archlinux下启用virtualbox service</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
       </li>
     
   </ul>

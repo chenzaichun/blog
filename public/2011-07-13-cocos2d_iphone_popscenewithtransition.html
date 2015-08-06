@@ -6,7 +6,7 @@
   <title>cocos2d-iphone popSceneWithTransition | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,13 +125,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>原文链接：<a href="http://www.cocos2d-iphone.org/forum/topic/1076" target="_blank">http://www.cocos2d-iphone.org/forum/topic/1076</a><br>在CCDirector.h添加</p>
-<figure class="highlight objc"><pre><div class="line">- (<span class="keyword">void</span>) popSceneWithTransition: (Class)c duration:(ccTime)t;</div></pre></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>) popSceneWithTransition: (Class)c duration:(ccTime)t;</div></pre></td></tr></table></figure>
 
 <p>在CCDirector.m中添加</p>
-<figure class="highlight objc"><pre><div class="line">-(<span class="keyword">void</span>) popSceneWithTransition: (Class)transitionClass duration:(ccTime)t;</div><div class="line">{</div><div class="line">	NSAssert( runningScene_ != <span class="literal">nil</span>, <span class="string">@"A running Scene is needed"</span>);</div><div class="line"></div><div class="line">	[scenesStack_ removeLastObject];</div><div class="line">	NSUInteger c = [scenesStack_ count];</div><div class="line">	<span class="keyword">if</span>( c == <span class="number">0</span> ) {</div><div class="line">		[<span class="keyword">self</span> end];</div><div class="line">	} <span class="keyword">else</span> {</div><div class="line">		CCScene* scene = [transitionClass transitionWithDuration:t scene:[scenesStack_ objectAtIndex:c-<span class="number">1</span>]];</div><div class="line">		[scenesStack_ replaceObjectAtIndex:c-<span class="number">1</span> withObject:scene];</div><div class="line">		nextScene_ = scene;</div><div class="line">	}</div><div class="line">}</div></pre></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>) popSceneWithTransition: (Class)transitionClass duration:(ccTime)t;</div><div class="line">{</div><div class="line">	NSAssert( runningScene_ != <span class="literal">nil</span>, <span class="string">@"A running Scene is needed"</span>);</div><div class="line"></div><div class="line">	[scenesStack_ removeLastObject];</div><div class="line">	NSUInteger c = [scenesStack_ count];</div><div class="line">	<span class="keyword">if</span>( c == <span class="number">0</span> ) {</div><div class="line">		[<span class="keyword">self</span> end];</div><div class="line">	} <span class="keyword">else</span> {</div><div class="line">		CCScene* scene = [transitionClass transitionWithDuration:t scene:[scenesStack_ objectAtIndex:c-<span class="number">1</span>]];</div><div class="line">		[scenesStack_ replaceObjectAtIndex:c-<span class="number">1</span> withObject:scene];</div><div class="line">		nextScene_ = scene;</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>调用方式</p>
-<figure class="highlight objc"><pre><div class="line">[[CCDirector sharedDirector] popSceneWithTransition:[CCSlideInRTransition class] duration:<span class="number">0.5</span>f];</div></pre></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[CCDirector sharedDirector] popSceneWithTransition:[CCSlideInRTransition class] duration:<span class="number">0.5</span>f];</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -163,7 +163,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-07-13-cocos2d_iphone_popscenewithtransition.html" data-title="cocos2d-iphone popSceneWithTransition" data-url="http://chenzaichun.github.io/2011-07-13-cocos2d_iphone_popscenewithtransition.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-07-13-cocos2d_iphone_popscenewithtransition.html" data-title="cocos2d-iphone popSceneWithTransition" data-url="http://yesokay.herokuapp.com/2011-07-13-cocos2d_iphone_popscenewithtransition.html"></div>  
   
 </section>
 
@@ -188,7 +188,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/ios/">ios<span>3</span></a></li> <li><a href="/categories/programming/">programming<span>138</span></a></li>
+    <li><a href="/categories/ios/">ios<span>3</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li>
   </li>
 
     </ul>

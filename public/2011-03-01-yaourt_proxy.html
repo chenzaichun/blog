@@ -6,7 +6,7 @@
   <title>yaourt代理设置 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,7 +125,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>一直以来不知道原来yaourt是调用makepkg来实现下载、编译、安装的</p>
-<figure class="highlight"><pre><div class="line">cat /etc/makepkg.conf</div><div class="line"></div><div class="line"><span class="label">DLAGENTS=('ftp::</span>/usr/bin/wget -c --passive-ftp -t <span class="number">3</span> --waitretry=<span class="number">3</span> -O <span class="var_expand">%o %</span>u'</div><div class="line"><span class="label">                  'http::</span>/usr/bin/wget -c -t <span class="number">3</span> --waitretry=<span class="number">3</span> -O <span class="var_expand">%o %</span>u'</div><div class="line"><span class="label">                  'https::</span>/usr/bin/wget -c -t <span class="number">3</span> --waitretry=<span class="number">3</span> --no-check-certificate -O <span class="var_expand">%o %</span>u'</div><div class="line"><span class="label">                  'rsync::</span>/usr/bin/rsync -z <span class="var_expand">%u %</span>o'</div><div class="line"><span class="label">                  'scp::</span>/usr/bin/scp -C <span class="var_expand">%u %</span>o')</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cat /etc/makepkg.conf</div><div class="line"></div><div class="line"><span class="label">DLAGENTS=('ftp::</span>/usr/bin/wget -c --passive-ftp -t <span class="number">3</span> --waitretry=<span class="number">3</span> -O <span class="var_expand">%o %</span>u'</div><div class="line"><span class="label">                  'http::</span>/usr/bin/wget -c -t <span class="number">3</span> --waitretry=<span class="number">3</span> -O <span class="var_expand">%o %</span>u'</div><div class="line"><span class="label">                  'https::</span>/usr/bin/wget -c -t <span class="number">3</span> --waitretry=<span class="number">3</span> --no-check-certificate -O <span class="var_expand">%o %</span>u'</div><div class="line"><span class="label">                  'rsync::</span>/usr/bin/rsync -z <span class="var_expand">%u %</span>o'</div><div class="line"><span class="label">                  'scp::</span>/usr/bin/scp -C <span class="var_expand">%u %</span>o')</div></pre></td></tr></table></figure>
 
 <p>很多时候可能用到了rsync的协议，所以添加一个RSYNC_PROX的环境变量比较保险。</p>
 	  
@@ -158,7 +158,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-03-01-yaourt_proxy.html" data-title="yaourt代理设置" data-url="http://chenzaichun.github.io/2011-03-01-yaourt_proxy.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-03-01-yaourt_proxy.html" data-title="yaourt代理设置" data-url="http://yesokay.herokuapp.com/2011-03-01-yaourt_proxy.html"></div>  
   
 </section>
 

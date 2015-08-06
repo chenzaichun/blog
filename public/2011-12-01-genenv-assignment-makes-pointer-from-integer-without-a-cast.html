@@ -6,7 +6,7 @@
   <title>getenv assignment makes pointer from integer without a cast | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,15 +125,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>今天在使用getenv获取环境变量的时候遇到这个问题，代码类似于这样</p>
-<figure class="highlight c"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt; </span></div><div class="line"></div><div class="line"><span class="keyword">extern</span> <span class="string">"C"</span> {</div><div class="line">   <span class="keyword">char</span>* getenv(<span class="keyword">const</span> <span class="keyword">char</span>*);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">void</span>) {</div><div class="line">  <span class="keyword">char</span> *value;</div><div class="line">  value = getenv(<span class="string">"HOME"</span>);</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, value);</div><div class="line">}</div></pre></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt; </span></div><div class="line"></div><div class="line"><span class="keyword">extern</span> <span class="string">"C"</span> {</div><div class="line">   <span class="keyword">char</span>* getenv(<span class="keyword">const</span> <span class="keyword">char</span>*);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">void</span>) {</div><div class="line">  <span class="keyword">char</span> *value;</div><div class="line">  value = getenv(<span class="string">"HOME"</span>);</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, value);</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>编译的时候会出现一个warning</p>
-<figure class="highlight"><pre><div class="line">test.c: In function <span class="smartquote">`main'</span>: </div><div class="line">test.c:9: warning: assignment makes pointer from integer without a cast</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">test.c: In function <span class="smartquote">`main'</span>: </div><div class="line">test.c:9: warning: assignment makes pointer from integer without a cast</div></pre></td></tr></table></figure>
 
 <p>运行的时候会出现segment fault</p>
 <p>原来是缺少stdlib.h的问题（可是我已经申明了原型呀……）</p>
 <p>加入stdlib.h解决问题:</p>
-<figure class="highlight c"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdlib.h&gt;</span></div></pre></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdlib.h&gt;</span></div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -165,7 +165,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-12-01-genenv-assignment-makes-pointer-from-integer-without-a-cast.html" data-title="getenv assignment makes pointer from integer without a cast" data-url="http://chenzaichun.github.io/2011-12-01-genenv-assignment-makes-pointer-from-integer-without-a-cast.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-12-01-genenv-assignment-makes-pointer-from-integer-without-a-cast.html" data-title="getenv assignment makes pointer from integer without a cast" data-url="http://yesokay.herokuapp.com/2011-12-01-genenv-assignment-makes-pointer-from-integer-without-a-cast.html"></div>  
   
 </section>
 
@@ -190,7 +190,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>57</span></a></li> <li><a href="/categories/programming/">programming<span>138</span></a></li>
+    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>57</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li>
   </li>
 
     </ul>

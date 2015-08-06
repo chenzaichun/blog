@@ -6,7 +6,7 @@
   <title>emacs中文显示方框 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,10 +125,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>emacs从23版本开始，对于unicode支持就很好了，在windows和linux下对于中文字体的设置也比较方便：</p>
-<figure class="highlight lisp"><pre><div class="line"><span class="list">(<span class="title">set-default-font</span> <span class="string">"WenQuanYi Zen Hei Mono-12"</span>)</span></div><div class="line"><span class="list">(<span class="title">set-fontset-font</span> <span class="string">"fontset-default"</span></span></div><div class="line">                  <span class="quoted">'unicode</span> <span class="quoted">'(<span class="string">"WenQuanYi Zen Hei Mono-12"</span> . <span class="string">"unicode-bmp"</span>)</span>)</div><div class="line"><span class="list">(<span class="title">setq</span> default-frame-alist</span></div><div class="line">      <span class="list">(<span class="title">append</span> <span class="quoted">'((font . <span class="string">"WenQuanYi Zen Hei Mono-12"</span>))</span> default-frame-alist)</span>)</div></pre></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="list">(<span class="title">set-default-font</span> <span class="string">"WenQuanYi Zen Hei Mono-12"</span>)</span></div><div class="line"><span class="list">(<span class="title">set-fontset-font</span> <span class="string">"fontset-default"</span></span></div><div class="line">                  <span class="quoted">'unicode</span> <span class="quoted">'(<span class="string">"WenQuanYi Zen Hei Mono-12"</span> . <span class="string">"unicode-bmp"</span>)</span>)</div><div class="line"><span class="list">(<span class="title">setq</span> default-frame-alist</span></div><div class="line">      <span class="list">(<span class="title">append</span> <span class="quoted">'((font . <span class="string">"WenQuanYi Zen Hei Mono-12"</span>))</span> default-frame-alist)</span>)</div></pre></td></tr></table></figure>
 
 <p>可是在mac os X下，这样设置出来的emacs，中文显示为方框。google了一下，没有找到解决办法 :(</p>
-<figure class="highlight lisp"><pre><div class="line">(x-list-fonts "gb") # ctrl+j</div><div class="line">nil</div></pre></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(x-list-fonts "gb") # ctrl+j</div><div class="line">nil</div></pre></td></tr></table></figure>
 
 <p>gb编码的所有字符在字体中找不到。求高手解答.</p>
 	  
@@ -161,7 +161,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-06-26-mac_os_x_emacs_chinese_font.html" data-title="emacs中文显示方框" data-url="http://chenzaichun.github.io/2011-06-26-mac_os_x_emacs_chinese_font.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-06-26-mac_os_x_emacs_chinese_font.html" data-title="emacs中文显示方框" data-url="http://yesokay.herokuapp.com/2011-06-26-mac_os_x_emacs_chinese_font.html"></div>  
   
 </section>
 

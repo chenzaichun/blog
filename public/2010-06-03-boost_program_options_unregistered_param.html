@@ -6,7 +6,7 @@
   <title>让boost::program_options支持未注册的参数 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,10 +125,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>如果在使用boost::program_options的时候传递了未注册的参数，则会throw exception，要想无视我们不需要的参数，可以通过使用<code>basic_command_line_parser</code>类来分析 (而不是<code>parse_command_line</code>) ，并且调用该类的 allow_unregistered 方法：</p>
-<figure class="highlight cpp"><pre><div class="line">parsed_options = </div><div class="line">    command_line_parser(argv, argc).</div><div class="line">    options(desc).allow_unregistered().run();</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">parsed_options = </div><div class="line">    command_line_parser(argv, argc).</div><div class="line">    options(desc).allow_unregistered().run();</div></pre></td></tr></table></figure>
 
 <p>如果使用配置文件，则在调用<code>parse_config_file</code>的时候第三个参数传递true:</p>
-<figure class="highlight cpp"><pre><div class="line">parse_config_file&lt;<span class="keyword">char</span>&gt;(cfgfilename, desc, <span class="keyword">true</span>)</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">parse_config_file&lt;<span class="keyword">char</span>&gt;(cfgfilename, desc, <span class="keyword">true</span>)</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -160,7 +160,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-06-03-boost_program_options_unregistered_param.html" data-title="让boost::program_options支持未注册的参数" data-url="http://chenzaichun.github.io/2010-06-03-boost_program_options_unregistered_param.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-06-03-boost_program_options_unregistered_param.html" data-title="让boost::program_options支持未注册的参数" data-url="http://yesokay.herokuapp.com/2010-06-03-boost_program_options_unregistered_param.html"></div>  
   
 </section>
 
@@ -185,7 +185,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li>
   </li>
 
     </ul>

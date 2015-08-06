@@ -6,7 +6,7 @@
   <title>pywin32访问excel | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -126,7 +126,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="mypage">		
 	    <p><a href="http://www.blog.pythonlibrary.org/2010/07/16/python-and-microsoft-office-using-pywin32/" target="_blank">参考链接</a></p>
 <p>直接用上面的代码吧</p>
-<figure class="highlight python"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</div><div class="line"> </div><div class="line"><span class="comment">#----------------------------------------------------------------------</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">excel</span><span class="params">()</span>:</span></div><div class="line">    <span class="string">""""""</span></div><div class="line">    xl = win32.gencache.EnsureDispatch(<span class="string">'Excel.Application'</span>)</div><div class="line">    ss = xl.Workbooks.Add()</div><div class="line">    sh = ss.ActiveSheet</div><div class="line"> </div><div class="line">    xl.Visible = <span class="keyword">True</span></div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line"> </div><div class="line">    sh.Cells(<span class="number">1</span>,<span class="number">1</span>).Value = <span class="string">'Hacking Excel with Python Demo'</span></div><div class="line"> </div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">8</span>):</div><div class="line">        sh.Cells(i,<span class="number">1</span>).Value = <span class="string">'Line %i'</span> % i</div><div class="line">        time.sleep(<span class="number">1</span>)</div><div class="line"> </div><div class="line">    ss.Close(<span class="keyword">False</span>)</div><div class="line">    xl.Application.Quit()</div><div class="line"> </div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    excel()</div></pre></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</div><div class="line"> </div><div class="line"><span class="comment">#----------------------------------------------------------------------</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">excel</span><span class="params">()</span>:</span></div><div class="line">    <span class="string">""""""</span></div><div class="line">    xl = win32.gencache.EnsureDispatch(<span class="string">'Excel.Application'</span>)</div><div class="line">    ss = xl.Workbooks.Add()</div><div class="line">    sh = ss.ActiveSheet</div><div class="line"> </div><div class="line">    xl.Visible = <span class="keyword">True</span></div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line"> </div><div class="line">    sh.Cells(<span class="number">1</span>,<span class="number">1</span>).Value = <span class="string">'Hacking Excel with Python Demo'</span></div><div class="line"> </div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">8</span>):</div><div class="line">        sh.Cells(i,<span class="number">1</span>).Value = <span class="string">'Line %i'</span> % i</div><div class="line">        time.sleep(<span class="number">1</span>)</div><div class="line"> </div><div class="line">    ss.Close(<span class="keyword">False</span>)</div><div class="line">    xl.Application.Quit()</div><div class="line"> </div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    excel()</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -158,7 +158,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-12-12-pywin32_excel.html" data-title="pywin32访问excel" data-url="http://chenzaichun.github.io/2010-12-12-pywin32_excel.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-12-12-pywin32_excel.html" data-title="pywin32访问excel" data-url="http://yesokay.herokuapp.com/2010-12-12-pywin32_excel.html"></div>  
   
 </section>
 
@@ -183,7 +183,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
   </li>
 
     </ul>

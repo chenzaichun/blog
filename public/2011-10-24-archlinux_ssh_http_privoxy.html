@@ -6,7 +6,7 @@
   <title>ArchLinux下配置ssh/http代理 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,23 +125,23 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>被墙煎的滋味确实很难受，ssh转发大家的方法还是比较方便的。</p>
-<figure class="highlight sh"><pre><div class="line">ssh -C <span class="operator">-f</span> -N -g -D port user@Server</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -C <span class="operator">-f</span> -N -g -D port user@Server</div></pre></td></tr></table></figure>
 
 <p>但是很多的软件并不一定支持sock5代理，这个时候就需要将sock5代理转化为http代理。ArchLinux下的配置安装方法为：</p>
 <ol>
 <li>安装Privoxy</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> pacman -S privoxy</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pacman -S privoxy</div></pre></td></tr></table></figure>
 
 <ol>
 <li>修改<code>/etc/privoxy/config</code> , 添加以下语句</li>
 </ol>
-<figure class="highlight conf"><pre><div class="line">forward-socks5   /               <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span><span class="symbol">:sock_port</span> .</div><div class="line">listen-address  <span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span><span class="symbol">:http_port</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">forward-socks5   /               <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span><span class="symbol">:sock_port</span> .</div><div class="line">listen-address  <span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span><span class="symbol">:http_port</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>重新启动privoxy </li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> /etc/rc.d/privoxy restart</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> /etc/rc.d/privoxy restart</div></pre></td></tr></table></figure>
 
 <p>Bingo! Enjoy it:) </p>
 	  
@@ -174,7 +174,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-10-24-archlinux_ssh_http_privoxy.html" data-title="ArchLinux下配置ssh/http代理" data-url="http://chenzaichun.github.io/2011-10-24-archlinux_ssh_http_privoxy.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-10-24-archlinux_ssh_http_privoxy.html" data-title="ArchLinux下配置ssh/http代理" data-url="http://yesokay.herokuapp.com/2011-10-24-archlinux_ssh_http_privoxy.html"></div>  
   
 </section>
 

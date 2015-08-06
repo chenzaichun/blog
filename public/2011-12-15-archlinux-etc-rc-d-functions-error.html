@@ -6,7 +6,7 @@
   <title>archlinux functions脚本错误 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,11 +125,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>今天升级了archlinux，启动过程中出现了错误：</p>
-<figure class="highlight"><pre><div class="line">/etc/rc.d/functions: line 497: syntax error near unexpected token <span class="smartquote">`&lt;'</span></div><div class="line">/etc/rc.d/functions: line 497: <span class="smartquote">`        done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)'</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/etc/rc.d/functions: line 497: syntax error near unexpected token <span class="smartquote">`&lt;'</span></div><div class="line">/etc/rc.d/functions: line 497: <span class="smartquote">`        done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)'</span></div></pre></td></tr></table></figure>
 
 <p>archlinux.org上给出了一个<a href="https://bugs.archlinux.org/task/27098" target="_blank" rel="external">patch</a></p>
 <p>patch的内容如下：</p>
-<figure class="highlight diff"><pre><div class="line"><span class="header">--- functions_old       2011-11-19 13:05:47.921522255 +0400</span></div><div class="line"><span class="header">+++ functions   2011-11-19 12:55:17.411565127 +0400</span></div><div class="line"><span class="chunk">@@ -494,7 +494,7 @@</span></div><div class="line">                fi</div><div class="line"></div><div class="line">                mounts+=("$target")</div><div class="line"><span class="deletion">-       done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></div><div class="line"><span class="addition">+       done &lt; $(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></div><div class="line"></div><div class="line">        umount -r "${mounts[@]}"</div></pre></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="header">--- functions_old       2011-11-19 13:05:47.921522255 +0400</span></div><div class="line"><span class="header">+++ functions   2011-11-19 12:55:17.411565127 +0400</span></div><div class="line"><span class="chunk">@@ -494,7 +494,7 @@</span></div><div class="line">                fi</div><div class="line"></div><div class="line">                mounts+=("$target")</div><div class="line"><span class="deletion">-       done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></div><div class="line"><span class="addition">+       done &lt; $(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></div><div class="line"></div><div class="line">        umount -r "${mounts[@]}"</div></pre></td></tr></table></figure>
 
 <p>下载<a href="/media/wpid-rc-functions-typo.patch_.zip">patch</a></p>
 	  
@@ -162,7 +162,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-12-15-archlinux-etc-rc-d-functions-error.html" data-title="archlinux functions脚本错误" data-url="http://chenzaichun.github.io/2011-12-15-archlinux-etc-rc-d-functions-error.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-12-15-archlinux-etc-rc-d-functions-error.html" data-title="archlinux functions脚本错误" data-url="http://yesokay.herokuapp.com/2011-12-15-archlinux-etc-rc-d-functions-error.html"></div>  
   
 </section>
 

@@ -6,7 +6,7 @@
   <title>CDHtmlDialog中禁用右键菜单和F5刷新 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,10 +125,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>参考：<a href="http://www.codeproject.com/KB/MFC/dhtmldialog.aspx?msg=2016381#xx2016381xx" target="_blank">猛击这里</a><br>在头文件中加入：</p>
-<figure class="highlight cpp"><pre><div class="line">STDMETHOD(ShowContextMenu)(DWORD dwID, POINT *ppt, IUnknown *pcmdtReserved, IDispatch *pdispReserved);</div><div class="line">STDMETHOD(TranslateAccelerator)(LPMSG lpMsg, <span class="keyword">const</span> GUID * pguidCmdGroup, DWORD nCmdID);</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">STDMETHOD(ShowContextMenu)(DWORD dwID, POINT *ppt, IUnknown *pcmdtReserved, IDispatch *pdispReserved);</div><div class="line">STDMETHOD(TranslateAccelerator)(LPMSG lpMsg, <span class="keyword">const</span> GUID * pguidCmdGroup, DWORD nCmdID);</div></pre></td></tr></table></figure>
 
 <p>在cpp中加入：</p>
-<figure class="highlight cpp"><pre><div class="line">STDMETHODIMP ChtmldialogDlg::ShowContextMenu(DWORD dwID, POINT *ppt, IUnknown *pcmdtReserved, IDispatch *pdispReserved)</div><div class="line">{</div><div class="line"><span class="comment">//return CDHtmlDialog::ShowContextMenu(dwID, ppt, pcmdtReserved, pdispReserved);</span></div><div class="line"><span class="keyword">return</span> S_OK;</div><div class="line">}</div><div class="line"></div><div class="line">STDMETHODIMP ChtmldialogDlg::TranslateAccelerator(LPMSG lpMsg, <span class="keyword">const</span> GUID * pguidCmdGroup, DWORD nCmdID)</div><div class="line">{</div><div class="line"><span class="keyword">if</span> (lpMsg && lpMsg-&gt;message == WM_KEYDOWN && lpMsg-&gt;wParam == VK_F5) {</div><div class="line"><span class="keyword">return</span> S_OK;</div><div class="line">}</div><div class="line"><span class="keyword">return</span> CDHtmlDialog::TranslateAccelerator(lpMsg, pguidCmdGroup, nCmdID);</div><div class="line">}</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">STDMETHODIMP ChtmldialogDlg::ShowContextMenu(DWORD dwID, POINT *ppt, IUnknown *pcmdtReserved, IDispatch *pdispReserved)</div><div class="line">{</div><div class="line"><span class="comment">//return CDHtmlDialog::ShowContextMenu(dwID, ppt, pcmdtReserved, pdispReserved);</span></div><div class="line"><span class="keyword">return</span> S_OK;</div><div class="line">}</div><div class="line"></div><div class="line">STDMETHODIMP ChtmldialogDlg::TranslateAccelerator(LPMSG lpMsg, <span class="keyword">const</span> GUID * pguidCmdGroup, DWORD nCmdID)</div><div class="line">{</div><div class="line"><span class="keyword">if</span> (lpMsg && lpMsg-&gt;message == WM_KEYDOWN && lpMsg-&gt;wParam == VK_F5) {</div><div class="line"><span class="keyword">return</span> S_OK;</div><div class="line">}</div><div class="line"><span class="keyword">return</span> CDHtmlDialog::TranslateAccelerator(lpMsg, pguidCmdGroup, nCmdID);</div><div class="line">}</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -160,7 +160,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-07-22-cdhtmldialog_disable_context_menu_and_f5.html" data-title="CDHtmlDialog中禁用右键菜单和F5刷新" data-url="http://chenzaichun.github.io/2010-07-22-cdhtmldialog_disable_context_menu_and_f5.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-07-22-cdhtmldialog_disable_context_menu_and_f5.html" data-title="CDHtmlDialog中禁用右键菜单和F5刷新" data-url="http://yesokay.herokuapp.com/2010-07-22-cdhtmldialog_disable_context_menu_and_f5.html"></div>  
   
 </section>
 
@@ -185,7 +185,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
   </li>
 
     </ul>

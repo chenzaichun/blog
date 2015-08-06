@@ -6,7 +6,7 @@
   <title>git代理设置 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -129,27 +129,27 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <li>Set the http_proxy environment if git repository supports http connections. </li>
 </ol>
 <p>find a proxy command to bypass the connection: <a href="https://bitbucket.org/chenzaichun/org2blog/src/e82a0244f078/media/connect.c" target="_blank" rel="external">connect.c</a> </p>
-<figure class="highlight sh"><pre><div class="line">gcc -o connect connect.c</div><div class="line">mv connect ~/bin</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gcc -o connect connect.c</div><div class="line">mv connect ~/bin</div></pre></td></tr></table></figure>
 
 
 <ol>
 <li>Set up a wrapper </li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"/home/gigi/bin/connect -H proxy.bupt.edu.cn:8080 <span class="variable">$@</span>"</span> &gt;&gt; ~/bin/proxy</div><div class="line">chmod +x ~/bin/proxy</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"/home/gigi/bin/connect -H proxy.bupt.edu.cn:8080 <span class="variable">$@</span>"</span> &gt;&gt; ~/bin/proxy</div><div class="line">chmod +x ~/bin/proxy</div></pre></td></tr></table></figure>
 
 
 <p>Here I’m using a http proxy offered by my school, which uses port 8080     The connect command also support socket proxy. Use -S host:port to indicate that. </p>
 <ol>
 <li>Update bashrc </li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"export CONNECT_USER=bergwolf"</span> &gt;&gt; .bashrc</div><div class="line"><span class="built_in">echo</span> <span class="string">"export GIT_PROXY_COMMAND=proxexport GIT_PROXY_COMMAND=proxy"</span> &gt;&gt; .bashrc</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"export CONNECT_USER=bergwolf"</span> &gt;&gt; .bashrc</div><div class="line"><span class="built_in">echo</span> <span class="string">"export GIT_PROXY_COMMAND=proxexport GIT_PROXY_COMMAND=proxy"</span> &gt;&gt; .bashrc</div></pre></td></tr></table></figure>
 
 
 <blockquote>
 <p>The connect command reads proxy username and password from <code>CONNECT_USER</code> and <code>CONNECT_PASSWORD</code> evironment. The default username is current login user if no CONNECT_USER is set. Password will be requested interactively if CONNECT_PASSWORD is empty.   GIT_PROXY_COMMAND indicates that git should use the command “proxy”(the wrapper we setup at step 2) as its proxy_command. This can also be set in .git/config. </p>
 </blockquote>
 <p>Now, everything we need is done. Have a try: </p>
-<figure class="highlight"><pre><div class="line">[gigi-<span class="constant">Ubuntu</span><span class="symbol">:bin</span>]<span class="variable">$git</span> clone <span class="symbol">git:</span>/<span class="regexp">/git.kernel.org/pub</span><span class="regexp">/scm/fs</span><span class="regexp">/ext2/e</span>2fsprogs.git</div><div class="line"><span class="constant">Initialized</span> empty <span class="constant">Git</span> repository <span class="keyword">in</span> /home/gigi/bin/e2fsprogs/.git/</div><div class="line"><span class="constant">Enter</span> proxy authentication password <span class="keyword">for</span> bergwolf<span class="variable">@proxy</span>.bupt.edu.<span class="symbol">cn:</span></div><div class="line"><span class="symbol">remote:</span> <span class="constant">Counting</span> <span class="symbol">objects:</span> <span class="number">24006</span>, done.</div><div class="line"><span class="symbol">remote:</span> <span class="constant">Compressing</span> <span class="symbol">objects:</span> <span class="number">100</span>% (<span class="number">4701</span>/<span class="number">4701</span>), done.</div><div class="line">ceiving <span class="symbol">objects:</span> <span class="number">1</span>% (<span class="number">241</span>/<span class="number">24006</span>), <span class="number">43.99</span> <span class="constant">KiB</span> | <span class="number">56</span> <span class="constant">KiB</span>/s</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[gigi-<span class="constant">Ubuntu</span><span class="symbol">:bin</span>]<span class="variable">$git</span> clone <span class="symbol">git:</span>/<span class="regexp">/git.kernel.org/pub</span><span class="regexp">/scm/fs</span><span class="regexp">/ext2/e</span>2fsprogs.git</div><div class="line"><span class="constant">Initialized</span> empty <span class="constant">Git</span> repository <span class="keyword">in</span> /home/gigi/bin/e2fsprogs/.git/</div><div class="line"><span class="constant">Enter</span> proxy authentication password <span class="keyword">for</span> bergwolf<span class="variable">@proxy</span>.bupt.edu.<span class="symbol">cn:</span></div><div class="line"><span class="symbol">remote:</span> <span class="constant">Counting</span> <span class="symbol">objects:</span> <span class="number">24006</span>, done.</div><div class="line"><span class="symbol">remote:</span> <span class="constant">Compressing</span> <span class="symbol">objects:</span> <span class="number">100</span>% (<span class="number">4701</span>/<span class="number">4701</span>), done.</div><div class="line">ceiving <span class="symbol">objects:</span> <span class="number">1</span>% (<span class="number">241</span>/<span class="number">24006</span>), <span class="number">43.99</span> <span class="constant">KiB</span> | <span class="number">56</span> <span class="constant">KiB</span>/s</div></pre></td></tr></table></figure>
 
 
 	  
@@ -182,7 +182,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-10-21-usegitbehindproxy.html" data-title="git代理设置" data-url="http://chenzaichun.github.io/2011-10-21-usegitbehindproxy.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-10-21-usegitbehindproxy.html" data-title="git代理设置" data-url="http://yesokay.herokuapp.com/2011-10-21-usegitbehindproxy.html"></div>  
   
 </section>
 

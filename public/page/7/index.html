@@ -6,7 +6,7 @@
   <title>第 7 页 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,6 +124,43 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="title">
+			<a href="/2011-12-30-macos-x-swap-dan-du-fen-qu.html" >MacOS X Swap单独分区</a>
+			<span class="date"> 12月 30 2011 </span>
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p><a href="http://superuser.com/questions/28414/moving-the-swapfiles-to-a-dedicated-partition-in-snow-leopard" target="_blank" rel="external">参考链接</a></p>
+<ol>
+<li>备份dynamic_pager.plist</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /System/Library/LaunchDaemons</div><div class="line"><span class="built_in">sudo</span> cp com.apple.dynamic_pager.plist{,_bak}</div></pre></td></tr></table></figure>
+
+<ol>
+<li>将plist转换为xml格式 </li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> plutil -convert xml1 com.apple.dynamic_pager.plist</div></pre></td></tr></table></figure>
+
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-12-30-macos-x-swap-dan-du-fen-qu.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
 			<a href="/2011-12-15-archlinux-etc-rc-d-functions-error.html" >archlinux functions脚本错误</a>
 			<span class="date"> 12月 15 2011 </span>
 		</h3>
@@ -137,11 +174,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>今天升级了archlinux，启动过程中出现了错误：</p>
-<figure class="highlight"><pre><div class="line">/etc/rc.d/functions: line 497: syntax error near unexpected token <span class="smartquote">`&lt;'</span></div><div class="line">/etc/rc.d/functions: line 497: <span class="smartquote">`        done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)'</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/etc/rc.d/functions: line 497: syntax error near unexpected token <span class="smartquote">`&lt;'</span></div><div class="line">/etc/rc.d/functions: line 497: <span class="smartquote">`        done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)'</span></div></pre></td></tr></table></figure>
 
 <p>archlinux.org上给出了一个<a href="https://bugs.archlinux.org/task/27098" target="_blank" rel="external">patch</a></p>
 <p>patch的内容如下：</p>
-<figure class="highlight diff"><pre><div class="line"><span class="header">--- functions_old       2011-11-19 13:05:47.921522255 +0400</span></div><div class="line"><span class="header">+++ functions   2011-11-19 12:55:17.411565127 +0400</span></div><div class="line"><span class="chunk">@@ -494,7 +494,7 @@</span></div><div class="line">                fi</div><div class="line"></div><div class="line">                mounts+=("$target")</div><div class="line"><span class="deletion">-       done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></div><div class="line"><span class="addition">+       done &lt; $(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></div><div class="line"></div><div class="line">        umount -r "${mounts[@]}"</div></pre></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="header">--- functions_old       2011-11-19 13:05:47.921522255 +0400</span></div><div class="line"><span class="header">+++ functions   2011-11-19 12:55:17.411565127 +0400</span></div><div class="line"><span class="chunk">@@ -494,7 +494,7 @@</span></div><div class="line">                fi</div><div class="line"></div><div class="line">                mounts+=("$target")</div><div class="line"><span class="deletion">-       done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></div><div class="line"><span class="addition">+       done &lt; $(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></div><div class="line"></div><div class="line">        umount -r "${mounts[@]}"</div></pre></td></tr></table></figure>
 
 <p>下载<a href="/media/wpid-rc-functions-typo.patch_.zip">patch</a></p>
 
@@ -182,29 +219,29 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </li>
 </ol>
 <p>安装GNUStep：</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> pacman -S gnustep-base gnustep-make gnustep-gui gnustep-back</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pacman -S gnustep-base gnustep-make gnustep-gui gnustep-back</div></pre></td></tr></table></figure>
 
 <p>当然也需要安装gcc objc支持:</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> pacman -S gcc-objc</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pacman -S gcc-objc</div></pre></td></tr></table></figure>
 
 <p>编译obj-c所需命令:</p>
-<figure class="highlight sh"><pre><div class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc xxx.m -o xxx</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc xxx.m -o xxx</div></pre></td></tr></table></figure>
 
 <p>Hello World测试:</p>
-<figure class="highlight objc"><pre><div class="line"><span class="comment">//helloworld.m</span></div><div class="line"><span class="preprocessor">#import <span class="title">"Foundation/Foundation.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</div><div class="line">{</div><div class="line">    <span class="built_in">NSAutoreleasePool</span> *pool = [[<span class="built_in">NSAutoreleasePool</span> alloc] init];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Hello World\n"</span>);</div><div class="line">    [pool drain];</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//helloworld.m</span></div><div class="line"><span class="preprocessor">#import <span class="title">"Foundation/Foundation.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</div><div class="line">{</div><div class="line">    <span class="built_in">NSAutoreleasePool</span> *pool = [[<span class="built_in">NSAutoreleasePool</span> alloc] init];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Hello World\n"</span>);</div><div class="line">    [pool drain];</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>编译运行：</p>
-<figure class="highlight sh"><pre><div class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc helloworld.m -o helloworld</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc helloworld.m -o helloworld</div></pre></td></tr></table></figure>
 
 <p>如果没有添加-lobjc的话，新版的gcc编辑器会出现链接错误：</p>
 <blockquote>
 <p>/usr/bin/ld: /usr/lib/gcc/i686-pc-linux-gnu/4.6.2/../../../libgnustep-base.so: undefined reference to symbol ‘objc_get_class’<br>/usr/bin/ld: note: ‘objc_get_class’ is defined in DSO /usr/lib/libobjc.so.3 so try adding it to the linker command line<br>/usr/lib/libobjc.so.3: could not read symbols: Invalid operation<br>collect2: ld returned 1 exit status</p>
 </blockquote>
 <p>运行结果：</p>
-<figure class="highlight"><pre><div class="line">$ ./helloworld</div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.391</span> helloworld[<span class="number">6928</span>] No <span class="built_in">local</span> <span class="built_in">time</span> zone specified.</div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.392</span> helloworld[<span class="number">6928</span>] Using <span class="built_in">time</span> zone <span class="operator">with</span> absolute <span class="built_in">offset</span> <span class="number">0.</span></div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.338</span> helloworld[<span class="number">6928</span>] Hello World</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ./helloworld</div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.391</span> helloworld[<span class="number">6928</span>] No <span class="built_in">local</span> <span class="built_in">time</span> zone specified.</div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.392</span> helloworld[<span class="number">6928</span>] Using <span class="built_in">time</span> zone <span class="operator">with</span> absolute <span class="built_in">offset</span> <span class="number">0.</span></div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.338</span> helloworld[<span class="number">6928</span>] Hello World</div></pre></td></tr></table></figure>
 
 <p>这里有2个warning, 设置一下: </p>
-<figure class="highlight sh"><pre><div class="line">defaults write NSGlobalDomain <span class="string">"Local Time Zone"</span> <span class="string">'Asia/Chongqing'</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults write NSGlobalDomain <span class="string">"Local Time Zone"</span> <span class="string">'Asia/Chongqing'</span></div></pre></td></tr></table></figure>
 
 
 
@@ -235,7 +272,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p><a href="http://gnustep.made-it.com/GSPT/xml/Tutorial_en.html#AEN365" target="_blank" rel="external">参考链接</a></p>
 <p>main.m</p>
-<figure class="highlight objc"><pre><div class="line"><span class="preprocessor">#include <span class="title">"AppController.h"</span></span></div><div class="line"><span class="preprocessor">#include <span class="title">&lt;AppKit/AppKit.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</div><div class="line">{</div><div class="line">   <span class="built_in">NSAutoreleasePool</span> *pool;</div><div class="line">   AppController *delegate;</div><div class="line"></div><div class="line">   pool = [[<span class="built_in">NSAutoreleasePool</span> alloc] init];</div><div class="line">   delegate = [[AppController alloc] init];</div><div class="line"></div><div class="line">   [NSApplication sharedApplication];</div><div class="line">   [NSApp setDelegate: delegate];</div><div class="line"></div><div class="line">   RELEASE(pool);</div><div class="line">   <span class="keyword">return</span> NSApplicationMain (argc, argv);</div><div class="line">}</div></pre></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#include <span class="title">"AppController.h"</span></span></div><div class="line"><span class="preprocessor">#include <span class="title">&lt;AppKit/AppKit.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</div><div class="line">{</div><div class="line">   <span class="built_in">NSAutoreleasePool</span> *pool;</div><div class="line">   AppController *delegate;</div><div class="line"></div><div class="line">   pool = [[<span class="built_in">NSAutoreleasePool</span> alloc] init];</div><div class="line">   delegate = [[AppController alloc] init];</div><div class="line"></div><div class="line">   [NSApplication sharedApplication];</div><div class="line">   [NSApp setDelegate: delegate];</div><div class="line"></div><div class="line">   RELEASE(pool);</div><div class="line">   <span class="keyword">return</span> NSApplicationMain (argc, argv);</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>AppController.h</p>
 
@@ -266,7 +303,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p><a href="http://it.megocollector.com/?p=1094" target="_blank" rel="external">传送门</a></p>
 <p>经检验，只要设置以下注册表就行了:</p>
-<figure class="highlight conf"><pre><div class="line">[<span class="params">HKEY_LOCAL_MACHINE</span>\SOFTWARE\McAfee\DesktopProtection]</div><div class="line"><span class="string">"UIPMode"</span>=dword:<span class="number">00000000</span></div><div class="line"><span class="string">"UIP"</span>=<span class="string">""</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="params">HKEY_LOCAL_MACHINE</span>\SOFTWARE\McAfee\DesktopProtection]</div><div class="line"><span class="string">"UIPMode"</span>=dword:<span class="number">00000000</span></div><div class="line"><span class="string">"UIP"</span>=<span class="string">""</span></div></pre></td></tr></table></figure>
 
 
 
@@ -327,10 +364,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>在Linux上，用环境变量的方式可以直接让emacs使用代理，如设置http_proxy</p>
-<figure class="highlight sh"><pre><div class="line"><span class="keyword">export</span> http_proxy=xxx.xx.xx.xx:port</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> http_proxy=xxx.xx.xx.xx:port</div></pre></td></tr></table></figure>
 
 <p>但是在mac上这样做就不行了。由于elisp中一般http都是使用的<code>url package</code>，所以可以通过<code>url package</code>的接口来设置代理:</p>
-<figure class="highlight lisp"><pre><div class="line"><span class="list">(<span class="title">setq</span> url-using-proxy <span class="literal">t</span>)</span></div><div class="line"><span class="list">(<span class="title">setq</span> url-proxy-services <span class="quoted">'((<span class="string">"http"</span> . <span class="string">"proxyserver:port"</span>))</span>)</span></div></pre></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="list">(<span class="title">setq</span> url-using-proxy <span class="literal">t</span>)</span></div><div class="line"><span class="list">(<span class="title">setq</span> url-proxy-services <span class="quoted">'((<span class="string">"http"</span> . <span class="string">"proxyserver:port"</span>))</span>)</span></div></pre></td></tr></table></figure>
 
 
 	
@@ -359,15 +396,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>今天在使用getenv获取环境变量的时候遇到这个问题，代码类似于这样</p>
-<figure class="highlight c"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt; </span></div><div class="line"></div><div class="line"><span class="keyword">extern</span> <span class="string">"C"</span> {</div><div class="line">   <span class="keyword">char</span>* getenv(<span class="keyword">const</span> <span class="keyword">char</span>*);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">void</span>) {</div><div class="line">  <span class="keyword">char</span> *value;</div><div class="line">  value = getenv(<span class="string">"HOME"</span>);</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, value);</div><div class="line">}</div></pre></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt; </span></div><div class="line"></div><div class="line"><span class="keyword">extern</span> <span class="string">"C"</span> {</div><div class="line">   <span class="keyword">char</span>* getenv(<span class="keyword">const</span> <span class="keyword">char</span>*);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">void</span>) {</div><div class="line">  <span class="keyword">char</span> *value;</div><div class="line">  value = getenv(<span class="string">"HOME"</span>);</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, value);</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>编译的时候会出现一个warning</p>
-<figure class="highlight"><pre><div class="line">test.c: In function <span class="smartquote">`main'</span>: </div><div class="line">test.c:9: warning: assignment makes pointer from integer without a cast</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">test.c: In function <span class="smartquote">`main'</span>: </div><div class="line">test.c:9: warning: assignment makes pointer from integer without a cast</div></pre></td></tr></table></figure>
 
 <p>运行的时候会出现segment fault</p>
 <p>原来是缺少stdlib.h的问题（可是我已经申明了原型呀……）</p>
 <p>加入stdlib.h解决问题:</p>
-<figure class="highlight c"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdlib.h&gt;</span></div></pre></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdlib.h&gt;</span></div></pre></td></tr></table></figure>
 
 
 	
@@ -397,7 +434,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>当linux下的程序运行异常时，会在运行程序的目录下生成core dump文件。通过<code>ulimit -c</code>查看，结果为0则为关闭（默认值）.</p>
 <p>临时开启只要在shell中执行</p>
-<figure class="highlight sh"><pre><div class="line">ulimit -c unlimited</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ulimit -c unlimited</div></pre></td></tr></table></figure>
 
 <p>也可以在<code>~/.profile</code>文件中添加来默认开启core dump。 </p>
 
@@ -427,7 +464,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>hg1.5之后内置了progress扩展，可以直接启用：</p>
-<figure class="highlight conf"><pre><div class="line"><span class="title">[extensions]</span></div><div class="line"><span class="setting">progress =<span class="value"></span></span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">[extensions]</span></div><div class="line"><span class="setting">progress =<span class="value"></span></span></div></pre></td></tr></table></figure>
 
 
 	
@@ -436,56 +473,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2011-11-30-mercurial-hg-add-progress.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2011-11-18-chrome-vim-key-binding.html" >chrome vim按键绑定</a>
-			<span class="date"> 11月 18 2011 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p><a href="https://github.com/philc/vimium" target="_blank" rel="external">传送门</a></p>
-<p>插件安装<a href="https://chrome.google.com/webstore/detail/dbepggeogbaibhgnhhndojpepiihcmeb" target="_blank" rel="external">地址</a></p>
-<p>Navigating the current page:</p>
-<figure class="highlight"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></figure>
-
-<p>Using find:    </p>
-<figure class="highlight"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></figure>
-
-
-<p>Navigating your history:    </p>
-<figure class="highlight"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></figure>
-
-
-<p>Manipulating tabs:     </p>
-<figure class="highlight"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></figure>
-
-
-
-<p>Additional advanced browsing commands:     </p>
-<figure class="highlight"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></figure>
-
-
-<p>Vimium supports command repetition so, for example, hitting ‘5t’ will open 5 tabs in rapid succession. ESC (or <c-[>) will clear any partial commands in the queue and will also exit insert and find modes.</c-[></p>
-<p>自定义快捷键详情请自行阅读<a href="https://github.com/philc/vimium#readme" target="_blank" rel="external">readme</a></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-11-18-chrome-vim-key-binding.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -525,7 +512,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<div class="form-group has-success has-feedback">
   <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
-    <input type="hidden" name="q" value="site:chenzaichun.github.io">	
+    <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
 
@@ -553,7 +540,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/categories/programming/">programming<span>138</span></a></li>
+			<li><a href="/categories/programming/">programming<span>139</span></a></li>
 		
 			<li><a href="/categories/tools/">tools<span>142</span></a></li>
 		
@@ -568,45 +555,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
 		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
 		
-			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+			<li><a href="/tags/english/">english<span>1</span></a></li>
 		
-			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
-			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
 		
-			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
 		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
-		
-			<li><a href="/tags/soap/">soap<span>1</span></a></li>
+			<li><a href="/tags/programming/">programming<span>4</span></a></li>
 		
 			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
 		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
 		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
-		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
 		
 			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
 		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
+			<li><a href="/tags/VC/">VC<span>8</span></a></li>
 		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
 		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
 		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
 		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
+			<li><a href="/tags/database/">database<span>2</span></a></li>
 		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
+			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
 		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
+		
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+		
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -622,7 +609,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
       </li>
     
       <li>
@@ -634,11 +621,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
       </li>
     
       <li>
-        <a href="/2013-01-03-archlinux-enable-vbox-service.html" ><i class="fa fa-file-o"></i>archlinux下启用virtualbox service</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
       </li>
     
   </ul>

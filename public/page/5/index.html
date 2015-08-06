@@ -6,7 +6,7 @@
   <title>第 5 页 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,6 +124,35 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="title">
+			<a href="/2012-05-12-add-robots-dot-txt-to-octopress.html" >Octopress添加robots.txt</a>
+			<span class="date"> 5月 12 2012 </span>
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>添加<code>source/robots.txt</code>:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">---</span></div><div class="line"><span class="header">layout: nil</span></div><div class="line">---</div><div class="line">User-agent: *</div><div class="line">Disallow: </div><div class="line">Sitemap: /sitemap.xml</div></pre></td></tr></table></figure>
+
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-05-12-add-robots-dot-txt-to-octopress.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
 			<a href="/2012-05-12-octopress-useful-links.html" >octopress常用链接整理</a>
 			<span class="date"> 5月 12 2012 </span>
 		</h3>
@@ -172,7 +201,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>今天准备用SOAPpy来写一个最简单的soap client，代码如下：</p>
-<figure class="highlight python"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> SOAPpy <span class="keyword">import</span> WSDL</div><div class="line">WSDLfile = <span class="string">"/path/to/webservice"</span></div><div class="line"></div><div class="line">wsdlObject = WSDL.Proxy(WSDLfile)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">'Available methods:'</span></div><div class="line"><span class="keyword">for</span> method <span class="keyword">in</span> wsdlObject.methods.keys() :</div><div class="line">    <span class="keyword">print</span> method</div><div class="line">    ci = wsdlObject.methods[method]</div><div class="line">    <span class="comment"># you can also use ci.inparams</span></div><div class="line">    <span class="keyword">for</span> param <span class="keyword">in</span> ci.outparams :</div><div class="line">        <span class="comment"># list of the function and type </span></div><div class="line">        <span class="comment"># depending of the wsdl...</span></div><div class="line">        <span class="keyword">print</span> param.name.ljust(<span class="number">20</span>) , param.type</div><div class="line">    <span class="keyword">print</span></div></pre></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> SOAPpy <span class="keyword">import</span> WSDL</div><div class="line">WSDLfile = <span class="string">"/path/to/webservice"</span></div><div class="line"></div><div class="line">wsdlObject = WSDL.Proxy(WSDLfile)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">'Available methods:'</span></div><div class="line"><span class="keyword">for</span> method <span class="keyword">in</span> wsdlObject.methods.keys() :</div><div class="line">    <span class="keyword">print</span> method</div><div class="line">    ci = wsdlObject.methods[method]</div><div class="line">    <span class="comment"># you can also use ci.inparams</span></div><div class="line">    <span class="keyword">for</span> param <span class="keyword">in</span> ci.outparams :</div><div class="line">        <span class="comment"># list of the function and type </span></div><div class="line">        <span class="comment"># depending of the wsdl...</span></div><div class="line">        <span class="keyword">print</span> param.name.ljust(<span class="number">20</span>) , param.type</div><div class="line">    <span class="keyword">print</span></div></pre></td></tr></table></figure>
 
 <p>运行的时候出现了这个问题：</p>
 
@@ -207,10 +236,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </blockquote>
 <p>通过tcpdump分析得到，gsoap强制加入了一个SOAP-ENV:mustUnderstand=”1”属性，而web service方不能解析该属性。</p>
 <p>解决办法, </p>
-<figure class="highlight c"><pre><div class="line"><span class="comment">// set mustUnderstand to 0</span></div><div class="line">soap.mustUnderstand=<span class="number">0</span>;</div></pre></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// set mustUnderstand to 0</span></div><div class="line">soap.mustUnderstand=<span class="number">0</span>;</div></pre></td></tr></table></figure>
 
 <p>修改soapC.cpp, 注释掉<code>soap-&gt;mustUnderstand=1</code>这一行：</p>
-<figure class="highlight c"><pre><div class="line">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 soap_out_SOAP_ENV__Header(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</div><div class="line">{</div><div class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</div><div class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></div><div class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</div><div class="line">}</div></pre></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 soap_out_SOAP_ENV__Header(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</div><div class="line">{</div><div class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</div><div class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></div><div class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</div><div class="line">}</div></pre></td></tr></table></figure>
 
 
 	
@@ -239,7 +268,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20090308/159740.html" target="_blank" rel="external">参考链接</a></p>
-<figure class="highlight sh"><pre><div class="line">tcpdump -A <span class="operator">-s</span>0 host endpoint-host-name</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tcpdump -A <span class="operator">-s</span>0 host endpoint-host-name</div></pre></td></tr></table></figure>
 
 
 	
@@ -301,7 +330,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>emacs在mac os x中拖拽文件到buffer会在buffer中嵌入显示拖拽文件的内容，解决办法：</p>
 <p>在<code>.emacs</code>中加入</p>
-<figure class="highlight lisp"><pre><div class="line"><span class="list">(<span class="title">define-key</span> global-map [ns-drag-file] <span class="quoted">'my-ns-open-files</span>)</span></div><div class="line"><span class="list">(<span class="title">defun</span> my-ns-open-files <span class="list">()</span></span></div><div class="line">  <span class="string">"Open files in the list `ns-input-file'."</span></div><div class="line">  <span class="list">(<span class="title">interactive</span>)</span></div><div class="line">  <span class="list">(<span class="title">mapc</span> <span class="quoted">'find-file</span> ns-input-file)</span></div><div class="line">  <span class="list">(<span class="title">setq</span> ns-input-file <span class="literal">nil</span>)</span>)</div></pre></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="list">(<span class="title">define-key</span> global-map [ns-drag-file] <span class="quoted">'my-ns-open-files</span>)</span></div><div class="line"><span class="list">(<span class="title">defun</span> my-ns-open-files <span class="list">()</span></span></div><div class="line">  <span class="string">"Open files in the list `ns-input-file'."</span></div><div class="line">  <span class="list">(<span class="title">interactive</span>)</span></div><div class="line">  <span class="list">(<span class="title">mapc</span> <span class="quoted">'find-file</span> ns-input-file)</span></div><div class="line">  <span class="list">(<span class="title">setq</span> ns-input-file <span class="literal">nil</span>)</span>)</div></pre></td></tr></table></figure>
 
 
 
@@ -330,10 +359,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight sh"><pre><div class="line">automake --ignore-deps && ./configure && make</div></pre></figure>
+	  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">automake --ignore-deps && ./configure && make</div></pre></td></tr></table></figure>
 
 <p>如果要编译universal版本，则使用</p>
-<figure class="highlight sh"><pre><div class="line">automake --ignore-deps && ./configure CFLAGS=<span class="string">"-arch ppc -arch i386"</span> LDFLAGS=<span class="string">"-arch ppc -arch i386"</span> && make</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">automake --ignore-deps && ./configure CFLAGS=<span class="string">"-arch ppc -arch i386"</span> LDFLAGS=<span class="string">"-arch ppc -arch i386"</span> && make</div></pre></td></tr></table></figure>
 
 
 
@@ -362,10 +391,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight sh"><pre><div class="line">perl -MCPAN <span class="operator">-e</span> shell</div><div class="line"></div><div class="line"><span class="comment"># install Term::ReadKey</span></div><div class="line"><span class="comment"># exit</span></div><div class="line">perl -MCPAN <span class="operator">-e</span> shellinstall Term::ReadKeyexit</div></pre></figure>
+	  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">perl -MCPAN <span class="operator">-e</span> shell</div><div class="line"></div><div class="line"><span class="comment"># install Term::ReadKey</span></div><div class="line"><span class="comment"># exit</span></div><div class="line">perl -MCPAN <span class="operator">-e</span> shellinstall Term::ReadKeyexit</div></pre></td></tr></table></figure>
 
 <p>archlinux上可以安装<code>extra/perl-term-readkey</code></p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> pacman -S perl-term-readkey</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pacman -S perl-term-readkey</div></pre></td></tr></table></figure>
 
 
 	
@@ -394,7 +423,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>git svn的代理设置需要通过修改<code>~/.subversion/servers</code>文件来实现：</p>
-<figure class="highlight conf"><pre><div class="line">[groups]</div><div class="line"><span class="variable">assembla =</span> *.assembla.com</div><div class="line"><span class="comment"># group1 = *.collab.net</span></div><div class="line"><span class="comment"># othergroup = repository.blarggitywhoomph.com</span></div><div class="line"><span class="comment"># thirdgroup = *.example.com</span></div><div class="line"></div><div class="line">[assembla]</div><div class="line"><span class="variable">http-proxy-host =</span> proxy-server</div><div class="line"><span class="variable">http-proxy-port =</span> <span class="number">8080</span></div><div class="line"><span class="variable">http-compression =</span> yes</div><div class="line"><span class="variable">username =</span> yesokay</div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[groups]</div><div class="line"><span class="variable">assembla =</span> *.assembla.com</div><div class="line"><span class="comment"># group1 = *.collab.net</span></div><div class="line"><span class="comment"># othergroup = repository.blarggitywhoomph.com</span></div><div class="line"><span class="comment"># thirdgroup = *.example.com</span></div><div class="line"></div><div class="line">[assembla]</div><div class="line"><span class="variable">http-proxy-host =</span> proxy-server</div><div class="line"><span class="variable">http-proxy-port =</span> <span class="number">8080</span></div><div class="line"><span class="variable">http-compression =</span> yes</div><div class="line"><span class="variable">username =</span> yesokay</div></pre></td></tr></table></figure>
 
 
 	
@@ -403,36 +432,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2012-01-30-git-svn-proxy-setting.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2012-01-19-run-app-directly-on-ios-simulator.html" >直接用模拟器运行ios app</a>
-			<span class="date"> 1月 19 2012 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>有的时候我们想把编译好的ios发给别人测试，但是又没有真机，同时也不想提供源代码，这个时候就需要直接用ios simulator运行app：</p>
-<figure class="highlight sh"><pre><div class="line">/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/Contents/MacOS/iPhone\ Simulator -SimulateApplication path_to_your_app/YourFavouriteApp.app/YourFavouriteApp</div></pre></figure>
-
-
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2012-01-19-run-app-directly-on-ios-simulator.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -472,7 +471,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<div class="form-group has-success has-feedback">
   <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
-    <input type="hidden" name="q" value="site:chenzaichun.github.io">	
+    <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
 
@@ -500,7 +499,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/categories/programming/">programming<span>138</span></a></li>
+			<li><a href="/categories/programming/">programming<span>139</span></a></li>
 		
 			<li><a href="/categories/tools/">tools<span>142</span></a></li>
 		
@@ -515,45 +514,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
-		
-			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
-		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
-		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
-		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
-		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
-		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
-		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
-		
-			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
-		
-			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
-		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
-		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
-		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
-		
-			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
-		
-			<li><a href="/tags/python/">python<span>30</span></a></li>
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
 		
 			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
 		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+			<li><a href="/tags/soap/">soap<span>1</span></a></li>
 		
-			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+		
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
+		
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+		
+			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
+		
+			<li><a href="/tags/network/">network<span>1</span></a></li>
+		
+			<li><a href="/tags/redis/">redis<span>1</span></a></li>
+		
+			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+		
+			<li><a href="/tags/git/">git<span>12</span></a></li>
+		
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+		
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+		
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+		
+			<li><a href="/tags/programming/">programming<span>4</span></a></li>
+		
+			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+		
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+		
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+		
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
+		
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -569,7 +568,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
       </li>
     
       <li>
@@ -581,11 +580,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
       </li>
     
       <li>
-        <a href="/2013-01-03-archlinux-enable-vbox-service.html" ><i class="fa fa-file-o"></i>archlinux下启用virtualbox service</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
       </li>
     
   </ul>

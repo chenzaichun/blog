@@ -6,7 +6,7 @@
   <title>windows下编译subversion的Python绑定（附下载） | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -131,7 +131,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <li>在下面的链接中下载对应版本的deps<span style="color: #ff0000;">（windows下要下载zip格式的文件，不然vc的dsp文件会用错误的line ending而无法打开）</span>，并解压到目录A</li>
 <li>cd到目录A，执行命令生成vc的solution文件<span style="color: #ff0000;">（注意自己对应相应的目录，并使用绝对路径）</span></li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">gen-make.py -t vcproj --vsnet-version=<span class="number">2008</span> --with-swig=c:homesrcsubversionswig --with-zlib=c:homesrcsubversionsubversionzlib --with-apr=c:homesrcsubversionsubversionapr --with-apr-util=c:homesrcsubversionsubversionapr-util --with-apr-iconv=c:homesrcsubversionsubversionapr-iconv</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gen-make.py -t vcproj --vsnet-version=<span class="number">2008</span> --with-swig=c:homesrcsubversionswig --with-zlib=c:homesrcsubversionsubversionzlib --with-apr=c:homesrcsubversionsubversionapr --with-apr-util=c:homesrcsubversionsubversionapr-util --with-apr-iconv=c:homesrcsubversionsubversionapr-iconv</div></pre></td></tr></table></figure>
 
 <ol>
 <li>cd到apr目录，用vc打开apr.dsw，并编译工程</li>
@@ -144,7 +144,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <li>拷贝B目录下的svn和libsvn目录到<python>Libsite-packages目录下</python></li>
 <li>测试是否正常工作：在python的cmd下输入</li>
 </ol>
-<figure class="highlight python"><pre><div class="line"><span class="keyword">from</span> svn <span class="keyword">import</span> core</div></pre></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> svn <span class="keyword">import</span> core</div></pre></td></tr></table></figure>
 
 <ol>
 <li>如果有错误发生，一般是缺少dll的问题，再次确认所有dll都拷贝到libsvn目录下。<br>这里附上我的编译结果（解压到<python>Libsite-packages目录下即可使用）：<br><a href="http://commondatastorage.googleapis.com/czc_public/appspotmedia/svn-python-1.6.13.win32-py2.7.7z" target="_blank">svn-python-1.6.13.win32-py2.7.7z</a><br><a href="http://commondatastorage.googleapis.com/czc_public/appspotmedia/svn-python-1.6.13.win32-py2.7.zip" target="_blank">svn-python-1.6.13.win32-py2.7.zip</a> </python></li>
@@ -179,7 +179,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-01-16-compile_subversion_python2-7_binding_on_windows.html" data-title="windows下编译subversion的Python绑定（附下载）" data-url="http://chenzaichun.github.io/2011-01-16-compile_subversion_python2-7_binding_on_windows.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-01-16-compile_subversion_python2-7_binding_on_windows.html" data-title="windows下编译subversion的Python绑定（附下载）" data-url="http://yesokay.herokuapp.com/2011-01-16-compile_subversion_python2-7_binding_on_windows.html"></div>  
   
 </section>
 
@@ -204,7 +204,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
   </li>
 
     </ul>

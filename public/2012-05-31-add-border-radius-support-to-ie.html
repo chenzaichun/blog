@@ -6,7 +6,7 @@
   <title>让IE浏览器支持CSS3圆角属性 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -129,7 +129,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p><code>Webkit</code>内核的浏览器支持<code>-webkit-border-radius: 10px;</code>属性（10px是圆角半径），可以直接解析出圆角；<code>Firefox</code>浏览器支持<code>-moz-border-radius: 10px;</code>属性，也是可以直接解析出圆角；<code>IE 系浏览器则需要加上</code>border-radius: 15px;`的属性。</p>
 <p>所有在需要圆角的地方加入： </p>
 <a id="more"></a>
-<figure class="highlight css"><pre><div class="line">.xxx {</div><div class="line">    ...</div><div class="line">    -moz-border-radius: 10px;</div><div class="line">    -webkit-border-radius: 10px;</div><div class="line">    border-radius: 10px;</div><div class="line">    position:relative;</div><div class="line">    z-index:2;</div><div class="line">    behavior: url(此处为ie-css3.htc文件的绝对路径);</div><div class="line">    ...</div><div class="line">}</div></pre></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.xxx {</div><div class="line">    ...</div><div class="line">    -moz-border-radius: 10px;</div><div class="line">    -webkit-border-radius: 10px;</div><div class="line">    border-radius: 10px;</div><div class="line">    position:relative;</div><div class="line">    z-index:2;</div><div class="line">    behavior: url(此处为ie-css3.htc文件的绝对路径);</div><div class="line">    ...</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <ol>
 <li><p><code>behavior</code>的<code>url</code>里一定要填写<code>ie-css3.htc</code>的绝对路径，因为IE浏览器找该文件是相对当前html文件路径来找的，所以对于Wordpress等动态程序生成的页面一定要填写绝对路径。</p>
@@ -175,7 +175,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2012-05-31-add-border-radius-support-to-ie.html" data-title="让IE浏览器支持CSS3圆角属性" data-url="http://chenzaichun.github.io/2012-05-31-add-border-radius-support-to-ie.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-05-31-add-border-radius-support-to-ie.html" data-title="让IE浏览器支持CSS3圆角属性" data-url="http://yesokay.herokuapp.com/2012-05-31-add-border-radius-support-to-ie.html"></div>  
   
 </section>
 
@@ -200,7 +200,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li>
   </li>
 
     </ul>

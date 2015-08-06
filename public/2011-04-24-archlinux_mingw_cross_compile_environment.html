@@ -6,7 +6,7 @@
   <title>archlinux搭建MinGW跨平台编译环境 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -128,13 +128,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ol>
 <li>通过安装community中的mingw32-gcc实现</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="comment"># 安装mingw32-gcc就行，其他的如mingw32-base, mingw32-runtime...等会作为依赖安装</span></div><div class="line"><span class="built_in">sudo</span> pacman -S mingw32-gcc</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装mingw32-gcc就行，其他的如mingw32-base, mingw32-runtime...等会作为依赖安装</span></div><div class="line"><span class="built_in">sudo</span> pacman -S mingw32-gcc</div></pre></td></tr></table></figure>
 
 <p>这种方法安装了最基本的编译环境，如果需要其他的库，则需要自行编译或者通过aur安装。</p>
 <ol>
 <li>通过MinGW cross compiling environment来实现。<a href="http://mingw-cross-env.nongnu.org/" target="_blank" rel="external">http://mingw-cross-env.nongnu.org</a></li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="comment">#1. 下载</span></div><div class="line">wget https://bitbucket.org/vog/mingw-cross-env/downloads/mingw-cross-env-<span class="number">2.20</span>.tar.gz</div><div class="line"></div><div class="line"><span class="comment">#2. 解压</span></div><div class="line">tar -xzvf mingw-cross-env-<span class="number">2.20</span>.tar.gz</div><div class="line"></div><div class="line"><span class="comment">#3. 移动到/opt目录（可选）</span></div><div class="line">mv mingw-cross-env-<span class="number">2.20</span> /opt/mingw</div><div class="line"></div><div class="line"><span class="comment">#4. 安装</span></div><div class="line">su -</div><div class="line"><span class="built_in">cd</span> /opt/mingw</div><div class="line">make</div><div class="line"></div><div class="line"><span class="comment">#5. 其他的包可以参见mingw-cross-env的文档</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#1. 下载</span></div><div class="line">wget https://bitbucket.org/vog/mingw-cross-env/downloads/mingw-cross-env-<span class="number">2.20</span>.tar.gz</div><div class="line"></div><div class="line"><span class="comment">#2. 解压</span></div><div class="line">tar -xzvf mingw-cross-env-<span class="number">2.20</span>.tar.gz</div><div class="line"></div><div class="line"><span class="comment">#3. 移动到/opt目录（可选）</span></div><div class="line">mv mingw-cross-env-<span class="number">2.20</span> /opt/mingw</div><div class="line"></div><div class="line"><span class="comment">#4. 安装</span></div><div class="line">su -</div><div class="line"><span class="built_in">cd</span> /opt/mingw</div><div class="line">make</div><div class="line"></div><div class="line"><span class="comment">#5. 其他的包可以参见mingw-cross-env的文档</span></div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -166,7 +166,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-04-24-archlinux_mingw_cross_compile_environment.html" data-title="archlinux搭建MinGW跨平台编译环境" data-url="http://chenzaichun.github.io/2011-04-24-archlinux_mingw_cross_compile_environment.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-04-24-archlinux_mingw_cross_compile_environment.html" data-title="archlinux搭建MinGW跨平台编译环境" data-url="http://yesokay.herokuapp.com/2011-04-24-archlinux_mingw_cross_compile_environment.html"></div>  
   
 </section>
 
@@ -191,7 +191,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
   </li>
 
     </ul>

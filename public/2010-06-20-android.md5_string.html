@@ -6,7 +6,7 @@
   <title>android md5 string | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,7 +125,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>android下用md5加密一个字符串：</p>
-<figure class="highlight java"><pre><div class="line"><span class="keyword">public</span> String <span class="title">md5</span>(String s) {</div><div class="line">       <span class="keyword">try</span> {</div><div class="line">           <span class="comment">// Create MD5 Hash</span></div><div class="line">           MessageDigest digest = java.security.MessageDigest.getInstance(<span class="string">"MD5"</span>);</div><div class="line">           digest.update(s.getBytes());</div><div class="line">           <span class="keyword">byte</span> messageDigest[] = digest.digest();</div><div class="line"></div><div class="line">           <span class="comment">// Create HEX String</span></div><div class="line">           StringBuffer hexString = <span class="keyword">new</span> StringBuffer();</div><div class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; messageDigest.length; i++) {</div><div class="line">               hexString.append(Integer.toHexString(<span class="number">0xFF</span> & messageDigest[i]));</div><div class="line">           }</div><div class="line"></div><div class="line">           <span class="keyword">return</span> hexString.toString();</div><div class="line">       } <span class="keyword">catch</span> (NoSuchAlgorithmException e) {</div><div class="line">           e.printStackTrace();</div><div class="line">       }</div><div class="line"></div><div class="line">       <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">   }</div></pre></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> String <span class="title">md5</span>(String s) {</div><div class="line">       <span class="keyword">try</span> {</div><div class="line">           <span class="comment">// Create MD5 Hash</span></div><div class="line">           MessageDigest digest = java.security.MessageDigest.getInstance(<span class="string">"MD5"</span>);</div><div class="line">           digest.update(s.getBytes());</div><div class="line">           <span class="keyword">byte</span> messageDigest[] = digest.digest();</div><div class="line"></div><div class="line">           <span class="comment">// Create HEX String</span></div><div class="line">           StringBuffer hexString = <span class="keyword">new</span> StringBuffer();</div><div class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; messageDigest.length; i++) {</div><div class="line">               hexString.append(Integer.toHexString(<span class="number">0xFF</span> & messageDigest[i]));</div><div class="line">           }</div><div class="line"></div><div class="line">           <span class="keyword">return</span> hexString.toString();</div><div class="line">       } <span class="keyword">catch</span> (NoSuchAlgorithmException e) {</div><div class="line">           e.printStackTrace();</div><div class="line">       }</div><div class="line"></div><div class="line">       <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">   }</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -157,7 +157,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-06-20-android.md5_string.html" data-title="android md5 string" data-url="http://chenzaichun.github.io/2010-06-20-android.md5_string.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-06-20-android.md5_string.html" data-title="android md5 string" data-url="http://yesokay.herokuapp.com/2010-06-20-android.md5_string.html"></div>  
   
 </section>
 
@@ -182,7 +182,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li>
   </li>
 
     </ul>

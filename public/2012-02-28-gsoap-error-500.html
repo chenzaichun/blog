@@ -6,7 +6,7 @@
   <title>gsoap Error 500 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -130,10 +130,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </blockquote>
 <p>通过tcpdump分析得到，gsoap强制加入了一个SOAP-ENV:mustUnderstand=”1”属性，而web service方不能解析该属性。</p>
 <p>解决办法, </p>
-<figure class="highlight c"><pre><div class="line"><span class="comment">// set mustUnderstand to 0</span></div><div class="line">soap.mustUnderstand=<span class="number">0</span>;</div></pre></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// set mustUnderstand to 0</span></div><div class="line">soap.mustUnderstand=<span class="number">0</span>;</div></pre></td></tr></table></figure>
 
 <p>修改soapC.cpp, 注释掉<code>soap-&gt;mustUnderstand=1</code>这一行：</p>
-<figure class="highlight c"><pre><div class="line">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 soap_out_SOAP_ENV__Header(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</div><div class="line">{</div><div class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</div><div class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></div><div class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</div><div class="line">}</div></pre></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 soap_out_SOAP_ENV__Header(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</div><div class="line">{</div><div class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</div><div class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></div><div class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</div><div class="line">}</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -165,7 +165,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2012-02-28-gsoap-error-500.html" data-title="gsoap Error 500" data-url="http://chenzaichun.github.io/2012-02-28-gsoap-error-500.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-02-28-gsoap-error-500.html" data-title="gsoap Error 500" data-url="http://yesokay.herokuapp.com/2012-02-28-gsoap-error-500.html"></div>  
   
 </section>
 
@@ -190,7 +190,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>57</span></a></li> <li><a href="/categories/programming/">programming<span>138</span></a></li>
+    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>57</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li>
   </li>
 
     </ul>

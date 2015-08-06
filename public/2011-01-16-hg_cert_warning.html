@@ -6,7 +6,7 @@
   <title>hg certificate warnings | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,14 +125,14 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>升级到mercurial 1.7.3之后，频繁会遇到像这样的错误：</p>
-<figure class="highlight"><pre><div class="line"><span class="attribute">warning</span>: <span class="string">bitbucket.org certificate not verified (check web.cacerts config setting)</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">warning</span>: <span class="string">bitbucket.org certificate not verified (check web.cacerts config setting)</span></div></pre></td></tr></table></figure>
 
 <p>解决办法，参考链接：<a href="http://mercurial.selenic.com/wiki/CACertificates" target="_blank" rel="external">http://mercurial.selenic.com/wiki/CACertificates</a></p>
 <p>下载<a href="http://curl.haxx.se/ca/cacert.pem" target="_blank">http://curl.haxx.se/ca/cacert.pem</a>到本地，然后在～/.hgrc里面添加这样一句：</p>
-<figure class="highlight conf"><pre><div class="line"><span class="title">[web]</span></div><div class="line"><span class="setting">cacerts=<span class="value">/path/to/cacert.pem</span></span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">[web]</span></div><div class="line"><span class="setting">cacerts=<span class="value">/path/to/cacert.pem</span></span></div></pre></td></tr></table></figure>
 
 <p>或者直接禁用：</p>
-<figure class="highlight conf"><pre><div class="line"><span class="title">[web]</span></div><div class="line"><span class="setting">cacerts =<span class="value"></span></span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">[web]</span></div><div class="line"><span class="setting">cacerts =<span class="value"></span></span></div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -164,7 +164,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-01-16-hg_cert_warning.html" data-title="hg certificate warnings" data-url="http://chenzaichun.github.io/2011-01-16-hg_cert_warning.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html" data-title="hg certificate warnings" data-url="http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html"></div>  
   
 </section>
 
@@ -189,7 +189,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
   </li>
 
     </ul>

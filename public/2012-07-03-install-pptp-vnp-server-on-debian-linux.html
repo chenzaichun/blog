@@ -6,7 +6,7 @@
   <title>Debian Linux下安装pptp vpn服务器 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,32 +125,32 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>首先更新:</p>
-<figure class="highlight sh"><pre><div class="line">apt-get update</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get update</div></pre></td></tr></table></figure>
 
 <p>接着我们就安装pptp服务器:</p>
-<figure class="highlight sh"><pre><div class="line">apt-get install pptpd</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install pptpd</div></pre></td></tr></table></figure>
 
 <p>编辑<code>/etc/pptpd.conf</code>, 反注释掉以下内容：</p>
-<figure class="highlight conf"><pre><div class="line"><span class="title">localip</span> <span class="number">192.168.0.1</span></div><div class="line">remoteip <span class="number">192.168.0.234</span>-<span class="number">238</span>,<span class="number">192.168.0.245</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">localip</span> <span class="number">192.168.0.1</span></div><div class="line">remoteip <span class="number">192.168.0.234</span>-<span class="number">238</span>,<span class="number">192.168.0.245</span></div></pre></td></tr></table></figure>
 
 <a id="more"></a>
 <p>编辑<code>/etc/ppp/chap-secrets</code>, 添加用户，格式为：</p>
-<figure class="highlight"><pre><div class="line"><span class="comment"># client        server  secret                  IP addresses</span></div><div class="line">yesokay          <span class="keyword">*</span>      password                <span class="keyword">*</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># client        server  secret                  IP addresses</span></div><div class="line">yesokay          <span class="keyword">*</span>      password                <span class="keyword">*</span></div></pre></td></tr></table></figure>
 
 <p>修改dns配置, <code>/etc/ppp/options</code>:</p>
-<figure class="highlight conf"><pre><div class="line">ms-dns 8.8.8.8</div><div class="line">ms-dns 8.8.4.4</div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ms-dns 8.8.8.8</div><div class="line">ms-dns 8.8.4.4</div></pre></td></tr></table></figure>
 
 <p>启用ip_forward, <code>/etc/sysctl.conf</code>:</p>
-<figure class="highlight conf"><pre><div class="line"><span class="attribute">net.ipv4.ip_forward</span>=<span class="string">1</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">net.ipv4.ip_forward</span>=<span class="string">1</span></div></pre></td></tr></table></figure>
 
 <p>启用新的配置：</p>
-<figure class="highlight sh"><pre><div class="line">sysctl -p</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sysctl -p</div></pre></td></tr></table></figure>
 
 <p>重启pptp服务器：</p>
-<figure class="highlight sh"><pre><div class="line">/etc/init.d/pptpd restart</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/pptpd restart</div></pre></td></tr></table></figure>
 
 <p>最后开启iptables转发</p>
-<figure class="highlight sh"><pre><div class="line">/sbin/iptables -t nat -A POSTROUTING <span class="operator">-s</span> <span class="number">192.168</span>.<span class="number">0.0</span>/<span class="number">24</span> -o eth0 -j MASQUERADE</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/sbin/iptables -t nat -A POSTROUTING <span class="operator">-s</span> <span class="number">192.168</span>.<span class="number">0.0</span>/<span class="number">24</span> -o eth0 -j MASQUERADE</div></pre></td></tr></table></figure>
 
 <p>当然还有更加方便的，有人做了一个一键安装脚本</p>
 <ol>
@@ -187,7 +187,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2012-07-03-install-pptp-vnp-server-on-debian-linux.html" data-title="Debian Linux下安装pptp vpn服务器" data-url="http://chenzaichun.github.io/2012-07-03-install-pptp-vnp-server-on-debian-linux.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-07-03-install-pptp-vnp-server-on-debian-linux.html" data-title="Debian Linux下安装pptp vpn服务器" data-url="http://yesokay.herokuapp.com/2012-07-03-install-pptp-vnp-server-on-debian-linux.html"></div>  
   
 </section>
 
@@ -225,7 +225,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/linux/">linux<span>13</span></a></li> <li><a href="/tags/programming/">programming<span>3</span></a></li>
+  <li><a href="/tags/linux/">linux<span>13</span></a></li> <li><a href="/tags/programming/">programming<span>4</span></a></li>
     </ul>
 	</div>
 		

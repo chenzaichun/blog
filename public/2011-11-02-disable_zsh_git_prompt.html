@@ -6,7 +6,7 @@
   <title>禁用zsh中的git prompt | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -126,13 +126,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="mypage">		
 	    <p>git prompt很多时候其实挺方面的，但是的我cd到一个nfs目录的时候，会出现卡很久的情况。果断disable掉。</p>
 <p>首先根据你的theme找到$PROMPT </p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$PROMPT</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$PROMPT</span></div></pre></td></tr></table></figure>
 
 <p>比如我的是: </p>
-<figure class="highlight"><pre><div class="line">%{<span class="variable">$fg_bold</span>[red]<span class="variable">%}</span>➜ %{<span class="variable">$fg_bold</span>[green]<span class="variable">%}</span><span class="variable">%p</span> %{<span class="variable">$fg</span>[cyan]<span class="variable">%}</span><span class="variable">%c</span> %{<span class="variable">$fg_bold</span>[blue]<span class="variable">%}</span><span class="variable">$(</span>git_prompt_info)%{<span class="variable">$fg_bold</span>[blue]<span class="variable">%}</span> % %{<span class="variable">$reset_color</span><span class="variable">%}</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%{<span class="variable">$fg_bold</span>[red]<span class="variable">%}</span>➜ %{<span class="variable">$fg_bold</span>[green]<span class="variable">%}</span><span class="variable">%p</span> %{<span class="variable">$fg</span>[cyan]<span class="variable">%}</span><span class="variable">%c</span> %{<span class="variable">$fg_bold</span>[blue]<span class="variable">%}</span><span class="variable">$(</span>git_prompt_info)%{<span class="variable">$fg_bold</span>[blue]<span class="variable">%}</span> % %{<span class="variable">$reset_color</span><span class="variable">%}</span></div></pre></td></tr></table></figure>
 
 <p>去掉<code>git_prompt_info</code>即可: </p>
-<figure class="highlight sh"><pre><div class="line"><span class="keyword">export</span> PROMPT=<span class="string">"%{<span class="variable">$fg_bold</span>[red]%}➜ %{<span class="variable">$fg_bold</span>[green]%}%p %{<span class="variable">$fg</span>[cyan]%}%c %{<span class="variable">$fg_bold</span>[blue]%}%{<span class="variable">$fg_bold</span>[blue]%} % %{<span class="variable">$reset_color</span>%}"</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> PROMPT=<span class="string">"%{<span class="variable">$fg_bold</span>[red]%}➜ %{<span class="variable">$fg_bold</span>[green]%}%p %{<span class="variable">$fg</span>[cyan]%}%c %{<span class="variable">$fg_bold</span>[blue]%}%{<span class="variable">$fg_bold</span>[blue]%} % %{<span class="variable">$reset_color</span>%}"</span></div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -164,7 +164,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-11-02-disable_zsh_git_prompt.html" data-title="禁用zsh中的git prompt" data-url="http://chenzaichun.github.io/2011-11-02-disable_zsh_git_prompt.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-11-02-disable_zsh_git_prompt.html" data-title="禁用zsh中的git prompt" data-url="http://yesokay.herokuapp.com/2011-11-02-disable_zsh_git_prompt.html"></div>  
   
 </section>
 

@@ -6,7 +6,7 @@
   <title>archlinux全局代理 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -126,10 +126,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="mypage">		
 	    <p>参考: <a href="http://wiki.archlinux.org/index.php/Proxy_settings" target="_blank" rel="external">http://wiki.archlinux.org/index.php/Proxy_settings</a></p>
 <p>在教育网中使用aur或者abs,网速非常的慢,同时很多东西都不能正常的下载下来,如何给下载添加代理呢? 像wget等程序使用”protocal_proxy”环境变量,所以可以通过设置环境变量的方式来使用代理:</p>
-<figure class="highlight sh"><pre><div class="line"><span class="keyword">export</span> http_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</div><div class="line"><span class="keyword">export</span> ftp_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> http_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</div><div class="line"><span class="keyword">export</span> ftp_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</div></pre></td></tr></table></figure>
 
 <p>我们可以增加两个函数用来打开关闭代理,在.bashrc里面添加:</p>
-<figure class="highlight sh"><pre><div class="line">function <span class="function"><span class="title">proxy</span></span>(){</div><div class="line">    <span class="built_in">echo</span> -n “username:”</div><div class="line">    <span class="built_in">read</span> <span class="operator">-e</span> username</div><div class="line">    <span class="built_in">echo</span> -n “password:”</div><div class="line">    <span class="built_in">read</span> -es password</div><div class="line">    <span class="keyword">export</span> http_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</div><div class="line">    <span class="keyword">export</span> ftp_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</div><div class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable set.”</div><div class="line">}</div><div class="line">function <span class="function"><span class="title">proxyoff</span></span>(){</div><div class="line">    <span class="built_in">unset</span> HTTP_PROXY</div><div class="line">    <span class="built_in">unset</span> http_proxy</div><div class="line">    <span class="built_in">unset</span> FTP_PROXY</div><div class="line">    <span class="built_in">unset</span> ftp_proxy</div><div class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable removed.”</div><div class="line">}</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function <span class="function"><span class="title">proxy</span></span>(){</div><div class="line">    <span class="built_in">echo</span> -n “username:”</div><div class="line">    <span class="built_in">read</span> <span class="operator">-e</span> username</div><div class="line">    <span class="built_in">echo</span> -n “password:”</div><div class="line">    <span class="built_in">read</span> -es password</div><div class="line">    <span class="keyword">export</span> http_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</div><div class="line">    <span class="keyword">export</span> ftp_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</div><div class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable set.”</div><div class="line">}</div><div class="line">function <span class="function"><span class="title">proxyoff</span></span>(){</div><div class="line">    <span class="built_in">unset</span> HTTP_PROXY</div><div class="line">    <span class="built_in">unset</span> http_proxy</div><div class="line">    <span class="built_in">unset</span> FTP_PROXY</div><div class="line">    <span class="built_in">unset</span> ftp_proxy</div><div class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable removed.”</div><div class="line">}</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -161,7 +161,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-05-10-archlinux_global_proxy.html" data-title="archlinux全局代理" data-url="http://chenzaichun.github.io/2010-05-10-archlinux_global_proxy.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-05-10-archlinux_global_proxy.html" data-title="archlinux全局代理" data-url="http://yesokay.herokuapp.com/2010-05-10-archlinux_global_proxy.html"></div>  
   
 </section>
 

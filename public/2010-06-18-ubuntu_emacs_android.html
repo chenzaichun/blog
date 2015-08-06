@@ -6,7 +6,7 @@
   <title>ubuntu下配置emacs android开发环境 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -127,7 +127,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	    <ol>
 <li>首先安装jdk</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> apt-get install openjdk-<span class="number">6</span>-jdk</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install openjdk-<span class="number">6</span>-jdk</div></pre></td></tr></table></figure>
 
 <ol>
 <li><p>下载并解压android sdk</p>
@@ -137,37 +137,37 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <li><p>安装android-mode</p>
 </li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">git clone git://github.com/remvee/android-mode.git</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/remvee/android-mode.git</div></pre></td></tr></table></figure>
 
 <ol>
 <li>创建一个android虚拟设备如test1，在.emacs中配置android-mode</li>
 </ol>
-<figure class="highlight lisp"><pre><div class="line"><span class="comment">;; android-mode</span></div><div class="line"><span class="list">(<span class="title">add-to-list</span> <span class="quoted">'load-path</span> <span class="string">"~/android/android-mode"</span>)</span></div><div class="line"><span class="list">(<span class="title">require</span> <span class="quoted">'android-mode</span>)</span></div><div class="line"><span class="list">(<span class="title">custom-set-variables</span></span></div><div class="line"> <span class="quoted">'(android-mode-avd <span class="string">"test1"</span>)</span></div><div class="line"> <span class="quoted">'(android-mode-sdk-dir <span class="string">"~/android/"</span>)</span>)</div></pre></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">;; android-mode</span></div><div class="line"><span class="list">(<span class="title">add-to-list</span> <span class="quoted">'load-path</span> <span class="string">"~/android/android-mode"</span>)</span></div><div class="line"><span class="list">(<span class="title">require</span> <span class="quoted">'android-mode</span>)</span></div><div class="line"><span class="list">(<span class="title">custom-set-variables</span></span></div><div class="line"> <span class="quoted">'(android-mode-avd <span class="string">"test1"</span>)</span></div><div class="line"> <span class="quoted">'(android-mode-sdk-dir <span class="string">"~/android/"</span>)</span>)</div></pre></td></tr></table></figure>
 
 <ol>
 <li>测试模拟器是否正常</li>
 </ol>
-<figure class="highlight"><pre><div class="line">android-<span class="operator"><span class="keyword">start</span>-emulator</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android-<span class="operator"><span class="keyword">start</span>-emulator</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>安装ant</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> apt-get instal ant</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get instal ant</div></pre></td></tr></table></figure>
 
 <ol>
 <li>中创建一个android工程使用命令android create project</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">android create project -n helloworld -t <span class="number">12</span> -p ./ -k org.example.helloworld <span class="operator">-a</span> helloworld</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android create project -n helloworld -t <span class="number">12</span> -p ./ -k org.example.helloworld <span class="operator">-a</span> helloworld</div></pre></td></tr></table></figure>
 
 <ol>
 <li>在emacs安装工程</li>
 </ol>
-<figure class="highlight"><pre><div class="line">M-x android-ant-<span class="operator"><span class="keyword">install</span></span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">M-x android-ant-<span class="operator"><span class="keyword">install</span></span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>重新安装工程使用</li>
 </ol>
-<figure class="highlight"><pre><div class="line">M-x android-<span class="keyword">ant</span>-reinstall</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">M-x android-<span class="keyword">ant</span>-reinstall</div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -199,7 +199,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-06-18-ubuntu_emacs_android.html" data-title="ubuntu下配置emacs android开发环境" data-url="http://chenzaichun.github.io/2010-06-18-ubuntu_emacs_android.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-06-18-ubuntu_emacs_android.html" data-title="ubuntu下配置emacs android开发环境" data-url="http://yesokay.herokuapp.com/2010-06-18-ubuntu_emacs_android.html"></div>  
   
 </section>
 
@@ -224,7 +224,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
   </li>
 
     </ul>

@@ -6,7 +6,7 @@
   <title>ubuntu下安装telnet服务器 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -127,27 +127,27 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	    <ol>
 <li>安装xinetd和telnetd</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> apt-get install xinetd telnetd</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install xinetd telnetd</div></pre></td></tr></table></figure>
 
 <ol>
 <li>/etc/inetd.conf在安装过程中已经配置好，修改/etc/xinetd.conf</li>
 </ol>
-<figure class="highlight conf"><pre><div class="line">defaults{</div><div class="line"></div><div class="line"><span class="preprocessor"># Please note that you need a log_type line to be able to use log_on_success</span></div><div class="line"><span class="preprocessor"># and log_on_failure. The default is the following :</span></div><div class="line"><span class="preprocessor"># log_type = SYSLOG daemon info</span></div><div class="line"><span class="preprocessor">## Please note that you need a log_type line to be able to use log_on_success</span></div><div class="line"><span class="preprocessor">## and log_on_failure. The default is the following :## log_type = SYSLOG daemon info</span></div><div class="line"><span class="preprocessor"># </span></div><div class="line"><span class="preprocessor">## start the insert content</span></div><div class="line"><span class="preprocessor">#</span></div><div class="line"><span class="preprocessor"># if I have time, I will add some comments about this part.</span></div><div class="line"><span class="preprocessor"># instances =60#log_type = SYSLOG authpriv</span></div><div class="line"><span class="preprocessor"># log_on_success = HOST PID</span></div><div class="line"><span class="preprocessor"># log_on_failure = HOST</span></div><div class="line"><span class="preprocessor"># tcps = 25 30</span></div><div class="line"><span class="preprocessor">## end the insert content</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">defaults{</div><div class="line"></div><div class="line"><span class="preprocessor"># Please note that you need a log_type line to be able to use log_on_success</span></div><div class="line"><span class="preprocessor"># and log_on_failure. The default is the following :</span></div><div class="line"><span class="preprocessor"># log_type = SYSLOG daemon info</span></div><div class="line"><span class="preprocessor">## Please note that you need a log_type line to be able to use log_on_success</span></div><div class="line"><span class="preprocessor">## and log_on_failure. The default is the following :## log_type = SYSLOG daemon info</span></div><div class="line"><span class="preprocessor"># </span></div><div class="line"><span class="preprocessor">## start the insert content</span></div><div class="line"><span class="preprocessor">#</span></div><div class="line"><span class="preprocessor"># if I have time, I will add some comments about this part.</span></div><div class="line"><span class="preprocessor"># instances =60#log_type = SYSLOG authpriv</span></div><div class="line"><span class="preprocessor"># log_on_success = HOST PID</span></div><div class="line"><span class="preprocessor"># log_on_failure = HOST</span></div><div class="line"><span class="preprocessor"># tcps = 25 30</span></div><div class="line"><span class="preprocessor">## end the insert content</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>添加/etc/xinet.d/telnet</li>
 </ol>
-<figure class="highlight conf"><pre><div class="line"><span class="preprocessor">#service telnet</span></div><div class="line"><span class="preprocessor">#{</span></div><div class="line"><span class="preprocessor">#disable = no</span></div><div class="line"><span class="preprocessor">#flags = REUSE</span></div><div class="line"><span class="preprocessor">#socket_type = stream</span></div><div class="line"><span class="preprocessor">#wait = no</span></div><div class="line"><span class="preprocessor">#user = root</span></div><div class="line"><span class="preprocessor">#server = /usr/sbin/in.telnetd</span></div><div class="line"><span class="preprocessor">#log_on_failure += USERID</span></div><div class="line"><span class="preprocessor">#}</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#service telnet</span></div><div class="line"><span class="preprocessor">#{</span></div><div class="line"><span class="preprocessor">#disable = no</span></div><div class="line"><span class="preprocessor">#flags = REUSE</span></div><div class="line"><span class="preprocessor">#socket_type = stream</span></div><div class="line"><span class="preprocessor">#wait = no</span></div><div class="line"><span class="preprocessor">#user = root</span></div><div class="line"><span class="preprocessor">#server = /usr/sbin/in.telnetd</span></div><div class="line"><span class="preprocessor">#log_on_failure += USERID</span></div><div class="line"><span class="preprocessor">#}</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>重启xinetd服务</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> /etc/init.d/xinetd restart</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> /etc/init.d/xinetd restart</div></pre></td></tr></table></figure>
 
 <ol>
 <li>测试一下</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">telnet <span class="number">127.0</span>.<span class="number">0.1</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">telnet <span class="number">127.0</span>.<span class="number">0.1</span></div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -179,7 +179,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-06-21-ubuntu_telnet_server.html" data-title="ubuntu下安装telnet服务器" data-url="http://chenzaichun.github.io/2010-06-21-ubuntu_telnet_server.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-06-21-ubuntu_telnet_server.html" data-title="ubuntu下安装telnet服务器" data-url="http://yesokay.herokuapp.com/2010-06-21-ubuntu_telnet_server.html"></div>  
   
 </section>
 

@@ -6,7 +6,7 @@
   <title>archlinux下配置GNUStep环境 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -136,29 +136,29 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </li>
 </ol>
 <p>安装GNUStep：</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> pacman -S gnustep-base gnustep-make gnustep-gui gnustep-back</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pacman -S gnustep-base gnustep-make gnustep-gui gnustep-back</div></pre></td></tr></table></figure>
 
 <p>当然也需要安装gcc objc支持:</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> pacman -S gcc-objc</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pacman -S gcc-objc</div></pre></td></tr></table></figure>
 
 <p>编译obj-c所需命令:</p>
-<figure class="highlight sh"><pre><div class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc xxx.m -o xxx</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc xxx.m -o xxx</div></pre></td></tr></table></figure>
 
 <p>Hello World测试:</p>
-<figure class="highlight objc"><pre><div class="line"><span class="comment">//helloworld.m</span></div><div class="line"><span class="preprocessor">#import <span class="title">"Foundation/Foundation.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</div><div class="line">{</div><div class="line">    <span class="built_in">NSAutoreleasePool</span> *pool = [[<span class="built_in">NSAutoreleasePool</span> alloc] init];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Hello World\n"</span>);</div><div class="line">    [pool drain];</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//helloworld.m</span></div><div class="line"><span class="preprocessor">#import <span class="title">"Foundation/Foundation.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</div><div class="line">{</div><div class="line">    <span class="built_in">NSAutoreleasePool</span> *pool = [[<span class="built_in">NSAutoreleasePool</span> alloc] init];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Hello World\n"</span>);</div><div class="line">    [pool drain];</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>编译运行：</p>
-<figure class="highlight sh"><pre><div class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc helloworld.m -o helloworld</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc helloworld.m -o helloworld</div></pre></td></tr></table></figure>
 
 <p>如果没有添加-lobjc的话，新版的gcc编辑器会出现链接错误：</p>
 <blockquote>
 <p>/usr/bin/ld: /usr/lib/gcc/i686-pc-linux-gnu/4.6.2/../../../libgnustep-base.so: undefined reference to symbol ‘objc_get_class’<br>/usr/bin/ld: note: ‘objc_get_class’ is defined in DSO /usr/lib/libobjc.so.3 so try adding it to the linker command line<br>/usr/lib/libobjc.so.3: could not read symbols: Invalid operation<br>collect2: ld returned 1 exit status</p>
 </blockquote>
 <p>运行结果：</p>
-<figure class="highlight"><pre><div class="line">$ ./helloworld</div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.391</span> helloworld[<span class="number">6928</span>] No <span class="built_in">local</span> <span class="built_in">time</span> zone specified.</div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.392</span> helloworld[<span class="number">6928</span>] Using <span class="built_in">time</span> zone <span class="operator">with</span> absolute <span class="built_in">offset</span> <span class="number">0.</span></div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.338</span> helloworld[<span class="number">6928</span>] Hello World</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ./helloworld</div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.391</span> helloworld[<span class="number">6928</span>] No <span class="built_in">local</span> <span class="built_in">time</span> zone specified.</div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.392</span> helloworld[<span class="number">6928</span>] Using <span class="built_in">time</span> zone <span class="operator">with</span> absolute <span class="built_in">offset</span> <span class="number">0.</span></div><div class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.338</span> helloworld[<span class="number">6928</span>] Hello World</div></pre></td></tr></table></figure>
 
 <p>这里有2个warning, 设置一下: </p>
-<figure class="highlight sh"><pre><div class="line">defaults write NSGlobalDomain <span class="string">"Local Time Zone"</span> <span class="string">'Asia/Chongqing'</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults write NSGlobalDomain <span class="string">"Local Time Zone"</span> <span class="string">'Asia/Chongqing'</span></div></pre></td></tr></table></figure>
 
 
 	  
@@ -191,7 +191,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-12-12-gnustep-env-on-archlinux.html" data-title="archlinux下配置GNUStep环境" data-url="http://chenzaichun.github.io/2011-12-12-gnustep-env-on-archlinux.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-12-12-gnustep-env-on-archlinux.html" data-title="archlinux下配置GNUStep环境" data-url="http://yesokay.herokuapp.com/2011-12-12-gnustep-env-on-archlinux.html"></div>  
   
 </section>
 
@@ -216,7 +216,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>57</span></a></li> <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>57</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
   </li>
 
     </ul>

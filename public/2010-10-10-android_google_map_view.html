@@ -6,7 +6,7 @@
   <title>Android地图MapView | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -128,10 +128,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ol>
 <li>查看debug key的md5 finger，如果在windows下，自己去“打开Eclipse—-&gt;Windows—-&gt;Preferences—-&gt;Android—-&gt;Build，查看默认的debug keystore位置”</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">keytool -list -alias androiddebugkey -keystore ~/.android/debug.keystore<span class="string">" -storepass android -keypass android</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keytool -list -alias androiddebugkey -keystore ~/.android/debug.keystore<span class="string">" -storepass android -keypass android</span></div></pre></td></tr></table></figure>
 
 <p>得到<br><a id="more"></a></p>
-<figure class="highlight"><pre><div class="line"><span class="tag">androiddebugkey</span>, 2010<span class="tag">-9-14</span>, <span class="tag">PrivateKeyEntry</span>,</div><div class="line">认证指纹 (<span class="tag">MD5</span>)： 67<span class="pseudo">:09</span><span class="pseudo">:76</span><span class="pseudo">:74</span><span class="pseudo">:C5</span><span class="pseudo">:45</span><span class="pseudo">:C2</span><span class="pseudo">:F1</span><span class="pseudo">:CC</span><span class="pseudo">:93</span><span class="pseudo">:15</span><span class="pseudo">:AA</span><span class="pseudo">:1A</span><span class="pseudo">:CA</span><span class="pseudo">:66</span><span class="pseudo">:8F</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">androiddebugkey</span>, 2010<span class="tag">-9-14</span>, <span class="tag">PrivateKeyEntry</span>,</div><div class="line">认证指纹 (<span class="tag">MD5</span>)： 67<span class="pseudo">:09</span><span class="pseudo">:76</span><span class="pseudo">:74</span><span class="pseudo">:C5</span><span class="pseudo">:45</span><span class="pseudo">:C2</span><span class="pseudo">:F1</span><span class="pseudo">:CC</span><span class="pseudo">:93</span><span class="pseudo">:15</span><span class="pseudo">:AA</span><span class="pseudo">:1A</span><span class="pseudo">:CA</span><span class="pseudo">:66</span><span class="pseudo">:8F</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li><p>到<a href="http://code.google.com/android/maps-api-signup.html" target="_blank" rel="external">http://code.google.com/android/maps-api-signup.html</a>申请api key，输入上面得到的md5 finger</p>
@@ -139,12 +139,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <li><p>在layout中加入MapView</p>
 </li>
 </ol>
-<figure class="highlight xml"><pre><div class="line"><span class="tag">&lt;<span class="title">com.google.android.maps.MapView</span></span></div><div class="line">   		 <span class="attribute">android:id</span>=<span class="value">"@+id/map"</span></div><div class="line">                 <span class="attribute">android:layout_width</span>=<span class="value">"fill_parent"</span></div><div class="line">                 <span class="attribute">android:layout_height</span>=<span class="value">"fill_parent"</span></div><div class="line">                 <span class="attribute">android:apiKey</span>=<span class="value">"0ChzlZ4HDjbb9arHGkqJ2gzUcmn56yoRKJAlZNA"</span></div><div class="line">                 <span class="attribute">android:clickable</span>=<span class="value">"true"</span> /&gt;</div><div class="line">                 /&gt;</div></pre></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">com.google.android.maps.MapView</span></span></div><div class="line">   		 <span class="attribute">android:id</span>=<span class="value">"@+id/map"</span></div><div class="line">                 <span class="attribute">android:layout_width</span>=<span class="value">"fill_parent"</span></div><div class="line">                 <span class="attribute">android:layout_height</span>=<span class="value">"fill_parent"</span></div><div class="line">                 <span class="attribute">android:apiKey</span>=<span class="value">"0ChzlZ4HDjbb9arHGkqJ2gzUcmn56yoRKJAlZNA"</span></div><div class="line">                 <span class="attribute">android:clickable</span>=<span class="value">"true"</span> /&gt;</div><div class="line">                 /&gt;</div></pre></td></tr></table></figure>
 
 <ol>
 <li>修改AndroidMainifest.xml，在<span style="color: #ff0000;">appliction标签</span>之间加入</li>
 </ol>
-<figure class="highlight xml"><pre><div class="line"><span class="tag">&lt;<span class="title">uses-library</span> <span class="attribute">android:name</span>=<span class="value">"com.google.android.maps"</span> /&gt;</span></div></pre></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">uses-library</span> <span class="attribute">android:name</span>=<span class="value">"com.google.android.maps"</span> /&gt;</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li><p>创建一个activity派生自MapActivity，根据eclipse的提示默认重载两个函数就行了</p>
@@ -183,7 +183,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-10-10-android_google_map_view.html" data-title="Android地图MapView" data-url="http://chenzaichun.github.io/2010-10-10-android_google_map_view.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-10-10-android_google_map_view.html" data-title="Android地图MapView" data-url="http://yesokay.herokuapp.com/2010-10-10-android_google_map_view.html"></div>  
   
 </section>
 
@@ -208,7 +208,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li>
   </li>
 
     </ul>

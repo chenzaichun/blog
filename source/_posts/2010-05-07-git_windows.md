@@ -20,18 +20,18 @@ type: post
 
 要想中文显示正常，在msysgit的安装目录下的/etc/git-completion.bash中增加一行：
 
-```sh
+```
 alias ls='ls --show-control-chars --color=auto'
 ```
 修改`/etc/inputrc`中对应的行：
 
-```sh
+```
 alias ls='ls --show-control-chars --color=auto'
 ```
 
 在`/etc/profile`中增加一行：
 
-```sh
+```
 alias ls='ls --show-control-chars --color=auto'
 ```
 

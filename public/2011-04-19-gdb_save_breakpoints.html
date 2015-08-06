@@ -6,7 +6,7 @@
   <title>gdb保存和加载断点等信息 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,10 +125,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>刚开始使用gdb，在重启gdb的时候断点、环境变量等信息都必须重新设置，感觉很不方便。不过gdb提供了.gdbinit，可以方便的在启动的时候对gdb进行设置。比如下面用于保存和加载breakpoints</p>
-<figure class="highlight"><pre><div class="line">define bsave</div><div class="line">  <span class="built_in">shell</span> rm -f brestore.txt</div><div class="line">  <span class="built_in">set</span> logging <span class="built_in">file</span> brestore.txt</div><div class="line">  <span class="built_in">set</span> logging <span class="command"><span class="keyword">on</span></span></div><div class="line">  info break</div><div class="line">  <span class="built_in">set</span> logging off</div><div class="line">  <span class="comment"># reformat on-the-fly to a valid gdb command file</span></div><div class="line">  <span class="built_in">shell</span> perl -n -e <span class="string">'print "break $1n" if /^d+.+?(S+)$/g'</span> brestore.txt &gt; brestore.gdb</div><div class="line"><span class="function"><span class="keyword">end</span> </span></div><div class="line">document bsave</div><div class="line">store actual breakpoints</div><div class="line"><span class="function"><span class="keyword">end</span></span></div><div class="line"></div><div class="line">define brestore</div><div class="line">  source brestore.gdb</div><div class="line"><span class="function"><span class="keyword">end</span></span></div><div class="line">document brestore</div><div class="line">restore breakpoints saved <span class="keyword">by</span> bsave</div><div class="line"><span class="function"><span class="keyword">end</span></span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">define bsave</div><div class="line">  <span class="built_in">shell</span> rm -f brestore.txt</div><div class="line">  <span class="built_in">set</span> logging <span class="built_in">file</span> brestore.txt</div><div class="line">  <span class="built_in">set</span> logging <span class="command"><span class="keyword">on</span></span></div><div class="line">  info break</div><div class="line">  <span class="built_in">set</span> logging off</div><div class="line">  <span class="comment"># reformat on-the-fly to a valid gdb command file</span></div><div class="line">  <span class="built_in">shell</span> perl -n -e <span class="string">'print "break $1n" if /^d+.+?(S+)$/g'</span> brestore.txt &gt; brestore.gdb</div><div class="line"><span class="function"><span class="keyword">end</span> </span></div><div class="line">document bsave</div><div class="line">store actual breakpoints</div><div class="line"><span class="function"><span class="keyword">end</span></span></div><div class="line"></div><div class="line">define brestore</div><div class="line">  source brestore.gdb</div><div class="line"><span class="function"><span class="keyword">end</span></span></div><div class="line">document brestore</div><div class="line">restore breakpoints saved <span class="keyword">by</span> bsave</div><div class="line"><span class="function"><span class="keyword">end</span></span></div></pre></td></tr></table></figure>
 
 <p>调用bsave保存breakpoints，调用bresotre加载breakpoints。<br>再如对于调试ncurses的设置：</p>
-<figure class="highlight"><pre><div class="line">define settty</div><div class="line">  tty /dev/pts/$arg0</div><div class="line"><span class="operator"><span class="keyword">end</span></span></div><div class="line"></div><div class="line">define setterminfo</div><div class="line">  <span class="keyword">set</span> env TERM=xterm</div><div class="line">  <span class="keyword">set</span> env <span class="keyword">COLUMNS</span>=<span class="number">144</span></div><div class="line">  <span class="keyword">set</span> env <span class="keyword">LINES</span>=<span class="number">29</span></div><div class="line"><span class="keyword">end</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">define settty</div><div class="line">  tty /dev/pts/$arg0</div><div class="line"><span class="operator"><span class="keyword">end</span></span></div><div class="line"></div><div class="line">define setterminfo</div><div class="line">  <span class="keyword">set</span> env TERM=xterm</div><div class="line">  <span class="keyword">set</span> env <span class="keyword">COLUMNS</span>=<span class="number">144</span></div><div class="line">  <span class="keyword">set</span> env <span class="keyword">LINES</span>=<span class="number">29</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -160,7 +160,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-04-19-gdb_save_breakpoints.html" data-title="gdb保存和加载断点等信息" data-url="http://chenzaichun.github.io/2011-04-19-gdb_save_breakpoints.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-04-19-gdb_save_breakpoints.html" data-title="gdb保存和加载断点等信息" data-url="http://yesokay.herokuapp.com/2011-04-19-gdb_save_breakpoints.html"></div>  
   
 </section>
 
@@ -185,7 +185,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
   </li>
 
     </ul>

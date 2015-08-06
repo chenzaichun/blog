@@ -6,7 +6,7 @@
   <title>archlinux下启用virtualbox service | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,13 +125,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>安装好 <code>virtualbox-guest-utils</code> 之后，没有并没有启用 <code>vboxservice</code>, 这个时候如果windows休眠，则archlinux的时间将不会跟host同步，需要启动vboxservice才行。</p>
-<figure class="highlight sh"><pre><div class="line">systemctl enable vboxservice.service</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl enable vboxservice.service</div></pre></td></tr></table></figure>
 
 <p>重启之后生效，当然也可以直接启动</p>
-<figure class="highlight sh"><pre><div class="line">systemctl start vboxservice.service</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl start vboxservice.service</div></pre></td></tr></table></figure>
 
 <p>virtualbox也提供了参数来控制同步，详情见<a href="http://www.virtualbox.org/manual/ch09.html#changetimesync" target="_blank" rel="external">这里</a></p>
-<figure class="highlight sh"><pre><div class="line">VBoxManage guestproperty <span class="keyword">set</span> “the name of your guest VM” “/VirtualBox/GuestAdd/VBoxService/–timesync-set-threshold” <span class="number">15000</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">VBoxManage guestproperty <span class="keyword">set</span> “the name of your guest VM” “/VirtualBox/GuestAdd/VBoxService/–timesync-set-threshold” <span class="number">15000</span></div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -163,7 +163,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2013-01-03-archlinux-enable-vbox-service.html" data-title="archlinux下启用virtualbox service" data-url="http://chenzaichun.github.io/2013-01-03-archlinux-enable-vbox-service.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2013-01-03-archlinux-enable-vbox-service.html" data-title="archlinux下启用virtualbox service" data-url="http://yesokay.herokuapp.com/2013-01-03-archlinux-enable-vbox-service.html"></div>  
   
 </section>
 
@@ -188,7 +188,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
   </li>
 
     </ul>

@@ -6,7 +6,7 @@
   <title>常用软件的代理设置 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,15 +124,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">		
-	    <figure class="highlight sh"><pre><div class="line"><span class="comment"># http_proxy</span></div><div class="line"><span class="keyword">export</span> http_proxy=host:port</div><div class="line"></div><div class="line"><span class="comment"># https_proxy</span></div><div class="line"><span class="keyword">export</span> https_proxy=host:port</div><div class="line"></div><div class="line"><span class="comment"># ftp_proxy</span></div><div class="line"><span class="keyword">export</span> ftp_proxy=host:port</div><div class="line"></div><div class="line"><span class="comment"># rsync proxy</span></div><div class="line"><span class="keyword">export</span> RSYNC_PROXY=host:port</div></pre></figure>
+	    <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># http_proxy</span></div><div class="line"><span class="keyword">export</span> http_proxy=host:port</div><div class="line"></div><div class="line"><span class="comment"># https_proxy</span></div><div class="line"><span class="keyword">export</span> https_proxy=host:port</div><div class="line"></div><div class="line"><span class="comment"># ftp_proxy</span></div><div class="line"><span class="keyword">export</span> ftp_proxy=host:port</div><div class="line"></div><div class="line"><span class="comment"># rsync proxy</span></div><div class="line"><span class="keyword">export</span> RSYNC_PROXY=host:port</div></pre></td></tr></table></figure>
 
 
 
-<figure class="highlight conf"><pre><div class="line"><span class="comment"># ssh over http_proxy depends on your tools used.</span></div><div class="line"><span class="comment"># Modify .ssh/config file for host configuration:</span></div><div class="line"><span class="comment"># Following are connect.c and corkscrew example.</span></div><div class="line"><span class="comment"># For connect.c, -h option means use http_proxy</span></div><div class="line"><span class="comment"># environment. </span></div><div class="line">Host *</div><div class="line">  ProxyCommand corkscrew http-proxy.example.com <span class="number">8080</span> <span class="variable">%h</span> <span class="variable">%p</span></div><div class="line">  ProxyCommand <span class="keyword">connect</span> -h <span class="variable">%h</span> <span class="variable">%p</span></div><div class="line">  ProxyCommand <span class="keyword">connect</span> -H proxy-host:proxy-port <span class="variable">%h</span> <span class="variable">%p</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ssh over http_proxy depends on your tools used.</span></div><div class="line"><span class="comment"># Modify .ssh/config file for host configuration:</span></div><div class="line"><span class="comment"># Following are connect.c and corkscrew example.</span></div><div class="line"><span class="comment"># For connect.c, -h option means use http_proxy</span></div><div class="line"><span class="comment"># environment. </span></div><div class="line">Host *</div><div class="line">  ProxyCommand corkscrew http-proxy.example.com <span class="number">8080</span> <span class="variable">%h</span> <span class="variable">%p</span></div><div class="line">  ProxyCommand <span class="keyword">connect</span> -h <span class="variable">%h</span> <span class="variable">%p</span></div><div class="line">  ProxyCommand <span class="keyword">connect</span> -H proxy-host:proxy-port <span class="variable">%h</span> <span class="variable">%p</span></div></pre></td></tr></table></figure>
 
 
 
-<figure class="highlight"><pre><div class="line"><span class="comment"># git over http_proxy</span></div><div class="line"><span class="keyword">export</span> GIT_PROXY_COMMAND=<span class="string">"connect -h <span class="variable">$@</span>"</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># git over http_proxy</span></div><div class="line"><span class="keyword">export</span> GIT_PROXY_COMMAND=<span class="string">"connect -h <span class="variable">$@</span>"</span></div></pre></td></tr></table></figure>
 
 	  
 	</div>
@@ -164,7 +164,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-11-17-common-proxy-settings.html" data-title="常用软件的代理设置" data-url="http://chenzaichun.github.io/2011-11-17-common-proxy-settings.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-11-17-common-proxy-settings.html" data-title="常用软件的代理设置" data-url="http://yesokay.herokuapp.com/2011-11-17-common-proxy-settings.html"></div>  
   
 </section>
 

@@ -6,7 +6,7 @@
   <title>MacOS X Swap单独分区 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -128,23 +128,23 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ol>
 <li>备份dynamic_pager.plist</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">cd</span> /System/Library/LaunchDaemons</div><div class="line"><span class="built_in">sudo</span> cp com.apple.dynamic_pager.plist{,_bak}</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /System/Library/LaunchDaemons</div><div class="line"><span class="built_in">sudo</span> cp com.apple.dynamic_pager.plist{,_bak}</div></pre></td></tr></table></figure>
 
 <ol>
 <li>将plist转换为xml格式 </li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> plutil -convert xml1 com.apple.dynamic_pager.plist</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> plutil -convert xml1 com.apple.dynamic_pager.plist</div></pre></td></tr></table></figure>
 
 <a id="more"></a>
 <ol>
 <li>编辑plist文件, 比如我的，请根据自身情况修改路径</li>
 </ol>
-<figure class="highlight xml"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></div><div class="line"><span class="doctype">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs$</span></div><div class="line">&lt;plist version="1.0"&gt;</div><div class="line"><span class="tag">&lt;<span class="title">dict</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>EnableTransactions<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">true</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>HopefullyExitsLast<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">true</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>com.apple.dynamic_pager<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>OnDemand<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">false</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">array</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>/bin/bash<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>-c<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>/bin/wait4path /Volumes/Swap/ &amp;&amp; /sbin/dynamic_pager -F /Volumes/Swap/.vm/swapfile<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">plist</span>&gt;</span></div></pre></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></div><div class="line"><span class="doctype">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs$</span></div><div class="line">&lt;plist version="1.0"&gt;</div><div class="line"><span class="tag">&lt;<span class="title">dict</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>EnableTransactions<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">true</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>HopefullyExitsLast<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">true</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>com.apple.dynamic_pager<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>OnDemand<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">false</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">array</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>/bin/bash<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>-c<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>/bin/wait4path /Volumes/Swap/ &amp;&amp; /sbin/dynamic_pager -F /Volumes/Swap/.vm/swapfile<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">plist</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>将plist转换为binary</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> plutil -convert binary1 com.apple.dynamic_pager.plist</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> plutil -convert binary1 com.apple.dynamic_pager.plist</div></pre></td></tr></table></figure>
 
 <p>搞定 </p>
 	  
@@ -177,7 +177,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-12-30-macos-x-swap-dan-du-fen-qu.html" data-title="MacOS X Swap单独分区" data-url="http://chenzaichun.github.io/2011-12-30-macos-x-swap-dan-du-fen-qu.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-12-30-macos-x-swap-dan-du-fen-qu.html" data-title="MacOS X Swap单独分区" data-url="http://yesokay.herokuapp.com/2011-12-30-macos-x-swap-dan-du-fen-qu.html"></div>  
   
 </section>
 

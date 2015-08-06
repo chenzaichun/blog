@@ -6,7 +6,7 @@
   <title>第 3 页 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,6 +124,42 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="title">
+			<a href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html" >通过git将bitbucket当做无限容量的dropbox</a>
+			<span class="date"> 9月 26 2012 </span>
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>网上找一个网盘很麻烦，一般都有容量限制，要不就是有诸多限制。有没有geek一点的方法，使用git和bitbucket来作为网盘呢？</p>
+<p>google了一下找到了<a href="http://bioinfoblog.it/2011/10/bitbucket-sparkleshare-home-made-limitless-dropbox/" target="_blank" rel="external">这个</a></p>
+<p><code>git</code> —&gt; 版本管理</p>
+<p><code>bitbucket</code> —&gt; 无限容量的仓库</p>
+<ol>
+<li>安装<a href="http://sparkleshare.org/" target="_blank" rel="external">Sparkshare</a></li>
+<li>创建一个private的repo</li>
+<li>设置ssh key</li>
+<li>sync</li>
+</ol>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
 			<a href="/2012-09-26-golang-emacs-setting.html" >emacs下golang的配置</a>
 			<span class="date"> 9月 26 2012 </span>
 		</h3>
@@ -140,12 +176,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ol>
 <li>语法高亮</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">cp <span class="variable">$GOROOT</span>/misc/emacs/* ~/.emacs.d/</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp <span class="variable">$GOROOT</span>/misc/emacs/* ~/.emacs.d/</div></pre></td></tr></table></figure>
 
 <ol>
 <li>安装<code>gocode</code></li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">go get -u github.com/nsf/gocode</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go get -u github.com/nsf/gocode</div></pre></td></tr></table></figure>
 
 <ol>
 <li>配置<code>gocode</code></li>
@@ -289,7 +325,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight"><pre><div class="line">adb <span class="keyword">shell</span></div><div class="line"># sqlite3 /data/data/<span class="keyword">com</span>.android.providers.settings/databases/settings.db</div><div class="line">sqlite&gt; <span class="keyword">update</span> secure <span class="keyword">set</span> value=<span class="number">65536</span> where name=<span class="string">'lockscreen.password_type'</span>;</div><div class="line">sqlite&gt; .<span class="keyword">exit</span></div><div class="line"># <span class="keyword">exit</span></div><div class="line">adb reboot</div></pre></figure>
+	  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">adb <span class="keyword">shell</span></div><div class="line"># sqlite3 /data/data/<span class="keyword">com</span>.android.providers.settings/databases/settings.db</div><div class="line">sqlite&gt; <span class="keyword">update</span> secure <span class="keyword">set</span> value=<span class="number">65536</span> where name=<span class="string">'lockscreen.password_type'</span>;</div><div class="line">sqlite&gt; .<span class="keyword">exit</span></div><div class="line"># <span class="keyword">exit</span></div><div class="line">adb reboot</div></pre></td></tr></table></figure>
 
 
 	
@@ -318,13 +354,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>首先更新:</p>
-<figure class="highlight sh"><pre><div class="line">apt-get update</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get update</div></pre></td></tr></table></figure>
 
 <p>接着我们就安装pptp服务器:</p>
-<figure class="highlight sh"><pre><div class="line">apt-get install pptpd</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install pptpd</div></pre></td></tr></table></figure>
 
 <p>编辑<code>/etc/pptpd.conf</code>, 反注释掉以下内容：</p>
-<figure class="highlight conf"><pre><div class="line"><span class="title">localip</span> <span class="number">192.168.0.1</span></div><div class="line">remoteip <span class="number">192.168.0.234</span>-<span class="number">238</span>,<span class="number">192.168.0.245</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">localip</span> <span class="number">192.168.0.1</span></div><div class="line">remoteip <span class="number">192.168.0.234</span>-<span class="number">238</span>,<span class="number">192.168.0.245</span></div></pre></td></tr></table></figure>
 
 
 	
@@ -394,37 +430,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </div>
 
 		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2012-06-26-open-chinese-convert.html" >Open Chinese Convert</a>
-			<span class="date"> 6月 26 2012 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p><a href="http://code.google.com/p/opencc/" target="_blank" rel="external">Open Chinese Convert（OpenCC）</a>「開放中文轉換」，是一個致力於中文簡繁轉換的項目，提供高質量詞庫及轉換工具(libopencc)。</p>
-<p>支持Mac OS和Windows。</p>
-<p>官方截图</p>
-<p><img src="http://opencc.googlecode.com/files/screenshot-gui-mac.png" alt="mac截图"></p>
-<p><img src="http://opencc.googlecode.com/files/screenshot-gui.png" alt="windows截图"></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2012-06-26-open-chinese-convert.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -461,7 +466,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<div class="form-group has-success has-feedback">
   <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
-    <input type="hidden" name="q" value="site:chenzaichun.github.io">	
+    <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
 
@@ -489,7 +494,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/categories/programming/">programming<span>138</span></a></li>
+			<li><a href="/categories/programming/">programming<span>139</span></a></li>
 		
 			<li><a href="/categories/tools/">tools<span>142</span></a></li>
 		
@@ -504,45 +509,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
 		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/soap/">soap<span>1</span></a></li>
-		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
-		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
-		
-			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
-		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
-		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
-		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
-		
-			<li><a href="/tags/redis/">redis<span>1</span></a></li>
+			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
 		
 			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
 		
-			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
-		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
-		
 			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
 		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
 		
-			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
-			<li><a href="/tags/macos/">macos<span>9</span></a></li>
+			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
 		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
 		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
+			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
 		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
+		
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+		
+			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+		
+			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
+		
+			<li><a href="/tags/portable/">portable<span>1</span></a></li>
+		
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+		
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -558,7 +563,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
       </li>
     
       <li>
@@ -570,11 +575,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
       </li>
     
       <li>
-        <a href="/2013-01-03-archlinux-enable-vbox-service.html" ><i class="fa fa-file-o"></i>archlinux下启用virtualbox service</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
       </li>
     
   </ul>

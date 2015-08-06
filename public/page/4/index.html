@@ -6,7 +6,7 @@
   <title>第 4 页 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,6 +124,37 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="title">
+			<a href="/2012-06-26-open-chinese-convert.html" >Open Chinese Convert</a>
+			<span class="date"> 6月 26 2012 </span>
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p><a href="http://code.google.com/p/opencc/" target="_blank" rel="external">Open Chinese Convert（OpenCC）</a>「開放中文轉換」，是一個致力於中文簡繁轉換的項目，提供高質量詞庫及轉換工具(libopencc)。</p>
+<p>支持Mac OS和Windows。</p>
+<p>官方截图</p>
+<p><img src="http://opencc.googlecode.com/files/screenshot-gui-mac.png" alt="mac截图"></p>
+<p><img src="http://opencc.googlecode.com/files/screenshot-gui.png" alt="windows截图"></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-06-26-open-chinese-convert.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
 			<a href="/2012-06-07-modify-svn-log.html" >修改SVN中已提交的日志</a>
 			<span class="date"> 6月 7 2012 </span>
 		</h3>
@@ -138,10 +169,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>默认情况下，subversion server是不允许客户端修改提交后的任何东西的。如果想修改服务器端的配置，请移步<a href="http://blog.csdn.net/karl_max/article/details/7035866" target="_blank" rel="external">这里</a></p>
 <p>在服务器端已经配置好的情况下，可以使用以下命令来修改:</p>
-<figure class="highlight sh"><pre><div class="line"><span class="variable">$svn</span> propedit -r N --revprop svn:log URL </div><div class="line"><span class="variable">$svn</span> propset -r N --revprop svn:log <span class="string">"new log message"</span> URL</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$svn</span> propedit -r N --revprop svn:log URL </div><div class="line"><span class="variable">$svn</span> propset -r N --revprop svn:log <span class="string">"new log message"</span> URL</div></pre></td></tr></table></figure>
 
 <p>如果想修改最后提交版本的log，可以使用:</p>
-<figure class="highlight sh"><pre><div class="line">$ svn propedit -r <span class="string">'HEAD'</span> --revprop svn:log</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ svn propedit -r <span class="string">'HEAD'</span> --revprop svn:log</div></pre></td></tr></table></figure>
 
 <p>这时候svn会读取原来log并打开默认编辑器进行修改。</p>
 
@@ -171,7 +202,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>直接上代码：</p>
-<figure class="highlight python"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> platform</div><div class="line"></div><div class="line"><span class="keyword">print</span> platfrom.version()</div><div class="line"><span class="keyword">print</span> platform.system()</div></pre></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> platform</div><div class="line"></div><div class="line"><span class="keyword">print</span> platfrom.version()</div><div class="line"><span class="keyword">print</span> platform.system()</div></pre></td></tr></table></figure>
 
 <p>对于特定平台，还有相对应的函数，比如 =platform.win32_version()=, =platform.mac_version()=. 详情见 =dir(platform)=</p>
 
@@ -259,7 +290,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>Testing.</p>
 <p>Test source code.</p>
-<figure class="highlight python"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">'Hello World'</span></div></pre></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">'Hello World'</span></div></pre></td></tr></table></figure>
 
 <p>Test file(image)</p>
 <p><img src="/media/chengxuyuan-rengou.jpg" alt="rengou"></p>
@@ -291,7 +322,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>主要的原理是GBK汉字是按拼音顺序编码的。</p>
 <p>源代码如下:</p>
-<figure class="highlight python"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">multi_get_letter</span><span class="params">(str_input)</span>:</span></div><div class="line">    <span class="keyword">if</span> isinstance(str_input, unicode):</div><div class="line">        unicode_str = str_input</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            unicode_str = str_input.decode(<span class="string">'utf8'</span>)</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                unicode_str = str_input.decode(<span class="string">'gbk'</span>)</div><div class="line">            <span class="keyword">except</span>:</div><div class="line">                <span class="keyword">print</span> <span class="string">'unknown coding'</span></div><div class="line">                <span class="keyword">return</span></div><div class="line"></div><div class="line">    return_list = []</div><div class="line">    <span class="keyword">for</span> one_unicode <span class="keyword">in</span> unicode_str:</div><div class="line">        <span class="comment">#print single_get_first(one_unicode)</span></div><div class="line">        return_list.append(single_get_first(one_unicode))</div><div class="line">    <span class="keyword">return</span> <span class="string">""</span>.join(return_list)    </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">single_get_first</span><span class="params">(unicode1)</span>:</span></div><div class="line">    str1 = unicode1.encode(<span class="string">'gbk'</span>)</div><div class="line">    <span class="keyword">try</span>:        </div><div class="line">        ord(str1)</div><div class="line">        <span class="keyword">return</span> str1</div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        asc = ord(str1[<span class="number">0</span>]) * <span class="number">256</span> + ord(str1[<span class="number">1</span>]) - <span class="number">65536</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">20319</span> <span class="keyword">and</span> asc &lt;= -<span class="number">20284</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'a'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">20283</span> <span class="keyword">and</span> asc &lt;= -<span class="number">19776</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'b'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">19775</span> <span class="keyword">and</span> asc &lt;= -<span class="number">19219</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'c'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">19218</span> <span class="keyword">and</span> asc &lt;= -<span class="number">18711</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'d'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">18710</span> <span class="keyword">and</span> asc &lt;= -<span class="number">18527</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'e'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">18526</span> <span class="keyword">and</span> asc &lt;= -<span class="number">18240</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'f'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">18239</span> <span class="keyword">and</span> asc &lt;= -<span class="number">17923</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'g'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">17922</span> <span class="keyword">and</span> asc &lt;= -<span class="number">17418</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'h'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">17417</span> <span class="keyword">and</span> asc &lt;= -<span class="number">16475</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'j'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">16474</span> <span class="keyword">and</span> asc &lt;= -<span class="number">16213</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'k'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">16212</span> <span class="keyword">and</span> asc &lt;= -<span class="number">15641</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'l'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">15640</span> <span class="keyword">and</span> asc &lt;= -<span class="number">15166</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'m'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">15165</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14923</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'n'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14922</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14915</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'o'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14914</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14631</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'p'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14630</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14150</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'q'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14149</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14091</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'r'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14090</span> <span class="keyword">and</span> asc &lt;= -<span class="number">13119</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'s'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">13118</span> <span class="keyword">and</span> asc &lt;= -<span class="number">12839</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'t'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">12838</span> <span class="keyword">and</span> asc &lt;= -<span class="number">12557</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'w'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">12556</span> <span class="keyword">and</span> asc &lt;= -<span class="number">11848</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'x'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">11847</span> <span class="keyword">and</span> asc &lt;= -<span class="number">11056</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'y'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">11055</span> <span class="keyword">and</span> asc &lt;= -<span class="number">10247</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'z'</span></div><div class="line">        <span class="keyword">return</span> <span class="string">''</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">printresult</span><span class="params">(str)</span>:</span></div><div class="line">    print(<span class="string">'中文: "%s" --&gt; 首字母拼音: "%s"'</span> % (str, multi_get_letter(str)))</div><div class="line">    </div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    printresult(<span class="string">'木哈哈'</span>)</div><div class="line">    printresult(<span class="string">'小李'</span>)</div><div class="line">    printresult(<span class="string">'大王'</span>)</div><div class="line">    printresult(<span class="string">'大d王m'</span>)</div></pre></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">multi_get_letter</span><span class="params">(str_input)</span>:</span></div><div class="line">    <span class="keyword">if</span> isinstance(str_input, unicode):</div><div class="line">        unicode_str = str_input</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            unicode_str = str_input.decode(<span class="string">'utf8'</span>)</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                unicode_str = str_input.decode(<span class="string">'gbk'</span>)</div><div class="line">            <span class="keyword">except</span>:</div><div class="line">                <span class="keyword">print</span> <span class="string">'unknown coding'</span></div><div class="line">                <span class="keyword">return</span></div><div class="line"></div><div class="line">    return_list = []</div><div class="line">    <span class="keyword">for</span> one_unicode <span class="keyword">in</span> unicode_str:</div><div class="line">        <span class="comment">#print single_get_first(one_unicode)</span></div><div class="line">        return_list.append(single_get_first(one_unicode))</div><div class="line">    <span class="keyword">return</span> <span class="string">""</span>.join(return_list)    </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">single_get_first</span><span class="params">(unicode1)</span>:</span></div><div class="line">    str1 = unicode1.encode(<span class="string">'gbk'</span>)</div><div class="line">    <span class="keyword">try</span>:        </div><div class="line">        ord(str1)</div><div class="line">        <span class="keyword">return</span> str1</div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        asc = ord(str1[<span class="number">0</span>]) * <span class="number">256</span> + ord(str1[<span class="number">1</span>]) - <span class="number">65536</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">20319</span> <span class="keyword">and</span> asc &lt;= -<span class="number">20284</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'a'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">20283</span> <span class="keyword">and</span> asc &lt;= -<span class="number">19776</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'b'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">19775</span> <span class="keyword">and</span> asc &lt;= -<span class="number">19219</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'c'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">19218</span> <span class="keyword">and</span> asc &lt;= -<span class="number">18711</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'d'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">18710</span> <span class="keyword">and</span> asc &lt;= -<span class="number">18527</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'e'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">18526</span> <span class="keyword">and</span> asc &lt;= -<span class="number">18240</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'f'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">18239</span> <span class="keyword">and</span> asc &lt;= -<span class="number">17923</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'g'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">17922</span> <span class="keyword">and</span> asc &lt;= -<span class="number">17418</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'h'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">17417</span> <span class="keyword">and</span> asc &lt;= -<span class="number">16475</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'j'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">16474</span> <span class="keyword">and</span> asc &lt;= -<span class="number">16213</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'k'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">16212</span> <span class="keyword">and</span> asc &lt;= -<span class="number">15641</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'l'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">15640</span> <span class="keyword">and</span> asc &lt;= -<span class="number">15166</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'m'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">15165</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14923</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'n'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14922</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14915</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'o'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14914</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14631</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'p'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14630</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14150</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'q'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14149</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14091</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'r'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14090</span> <span class="keyword">and</span> asc &lt;= -<span class="number">13119</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'s'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">13118</span> <span class="keyword">and</span> asc &lt;= -<span class="number">12839</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'t'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">12838</span> <span class="keyword">and</span> asc &lt;= -<span class="number">12557</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'w'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">12556</span> <span class="keyword">and</span> asc &lt;= -<span class="number">11848</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'x'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">11847</span> <span class="keyword">and</span> asc &lt;= -<span class="number">11056</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'y'</span></div><div class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">11055</span> <span class="keyword">and</span> asc &lt;= -<span class="number">10247</span>:</div><div class="line">            <span class="keyword">return</span> <span class="string">'z'</span></div><div class="line">        <span class="keyword">return</span> <span class="string">''</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">printresult</span><span class="params">(str)</span>:</span></div><div class="line">    print(<span class="string">'中文: "%s" --&gt; 首字母拼音: "%s"'</span> % (str, multi_get_letter(str)))</div><div class="line">    </div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    printresult(<span class="string">'木哈哈'</span>)</div><div class="line">    printresult(<span class="string">'小李'</span>)</div><div class="line">    printresult(<span class="string">'大王'</span>)</div><div class="line">    printresult(<span class="string">'大d王m'</span>)</div></pre></td></tr></table></figure>
 
 <p>我的修改版本:</p>
 
@@ -321,7 +352,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>如何在<code>heroku</code>中使用<code>pygments.rb</code>呢？在<code>plugin/pygments_code.rb</code>中添加：</p>
-<figure class="highlight ruby"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rubypython'</span></div><div class="line"><span class="constant">RubyPython</span>.start(<span class="symbol">:python_exe</span> =&gt; <span class="string">"python2.6"</span>)</div></pre></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'rubypython'</span></div><div class="line"><span class="constant">RubyPython</span>.start(<span class="symbol">:python_exe</span> =&gt; <span class="string">"python2.6"</span>)</div></pre></td></tr></table></figure>
 
 
 	
@@ -359,7 +390,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ol>
 <li>ssh到dotcloud上：</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">dotcloud ssh</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dotcloud ssh</div></pre></td></tr></table></figure>
 
 
 	
@@ -399,35 +430,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </div>
 
 		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2012-05-12-add-robots-dot-txt-to-octopress.html" >Octopress添加robots.txt</a>
-			<span class="date"> 5月 12 2012 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>添加<code>source/robots.txt</code>:</p>
-<figure class="highlight"><pre><div class="line"><span class="bullet">---</span></div><div class="line"><span class="header">layout: nil</span></div><div class="line">---</div><div class="line">User-agent: *</div><div class="line">Disallow: </div><div class="line">Sitemap: /sitemap.xml</div></pre></figure>
-
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2012-05-12-add-robots-dot-txt-to-octopress.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -464,7 +466,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<div class="form-group has-success has-feedback">
   <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
-    <input type="hidden" name="q" value="site:chenzaichun.github.io">	
+    <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
 
@@ -492,7 +494,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/categories/programming/">programming<span>138</span></a></li>
+			<li><a href="/categories/programming/">programming<span>139</span></a></li>
 		
 			<li><a href="/categories/tools/">tools<span>142</span></a></li>
 		
@@ -507,45 +509,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
-		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
-		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
-		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
 		
 			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
 		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+			<li><a href="/tags/VC/">VC<span>8</span></a></li>
 		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
 		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
+			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
 		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
-		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
 		
 			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
 		
+			<li><a href="/tags/python/">python<span>30</span></a></li>
+		
+			<li><a href="/tags/english/">english<span>1</span></a></li>
+		
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/macos/">macos<span>9</span></a></li>
+		
 			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
 		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
 		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
 		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
 		
-			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
 		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
 		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
+		
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
+		
+			<li><a href="/tags/database/">database<span>2</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -561,7 +563,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
       </li>
     
       <li>
@@ -573,11 +575,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
       </li>
     
       <li>
-        <a href="/2013-01-03-archlinux-enable-vbox-service.html" ><i class="fa fa-file-o"></i>archlinux下启用virtualbox service</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
       </li>
     
   </ul>

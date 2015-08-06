@@ -6,7 +6,7 @@
   <title>第 22 页 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,6 +124,35 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="title">
+			<a href="/2010-06-01-sudo_environment.html" >sudo环境变量</a>
+			<span class="date"> 6月 1 2010 </span>
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>由于sudo运行程序不继承当前用户的环境变量，所以不能使用export var=value； sudo command的方式执行。解决办法：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> var=value command</div></pre></td></tr></table></figure>
+
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-06-01-sudo_environment.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
 			<a href="/2010-05-31-emacs_htmlize_el_mono_font.html" >设置emacs htmlize.el为等宽字体</a>
 			<span class="date"> 5月 31 2010 </span>
 		</h3>
@@ -137,7 +166,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>我用emacs的htmlize.el elisp来给代码上色，默认情况下并没有设置成为等宽字体，所以显示上不太好看，为htmlize默认添加输出为等宽字体：</p>
-<figure class="highlight lisp"><pre><div class="line"><span class="list">(<span class="title">defun</span> htmlize-font-pre-tag <span class="list">(<span class="title">face-map</span>)</span></span></div><div class="line">  <span class="list">(<span class="title">let</span> <span class="list">(<span class="list">(<span class="title">fstruct</span> <span class="list">(<span class="title">gethash</span> <span class="quoted">'default</span> face-map)</span>)</span>)</span></span></div><div class="line">    <span class="list">(<span class="title">format</span> <span class="string">"&lt;pre style="</span>font-family: <span class="quoted">'courier</span> new', courier<span class="comment">;color:%s;background-color:%s"&gt;"</span></span></div><div class="line">            <span class="list">(<span class="title">htmlize-fstruct-foreground</span> fstruct)</span></div><div class="line">            <span class="list">(<span class="title">htmlize-fstruct-background</span> fstruct)</span>)))</div></pre></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="list">(<span class="title">defun</span> htmlize-font-pre-tag <span class="list">(<span class="title">face-map</span>)</span></span></div><div class="line">  <span class="list">(<span class="title">let</span> <span class="list">(<span class="list">(<span class="title">fstruct</span> <span class="list">(<span class="title">gethash</span> <span class="quoted">'default</span> face-map)</span>)</span>)</span></span></div><div class="line">    <span class="list">(<span class="title">format</span> <span class="string">"&lt;pre style="</span>font-family: <span class="quoted">'courier</span> new', courier<span class="comment">;color:%s;background-color:%s"&gt;"</span></span></div><div class="line">            <span class="list">(<span class="title">htmlize-fstruct-foreground</span> fstruct)</span></div><div class="line">            <span class="list">(<span class="title">htmlize-fstruct-background</span> fstruct)</span>)))</div></pre></td></tr></table></figure>
 
 
 	
@@ -166,14 +195,14 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>在linux平台下使用boost::timer,得到的并不是所经过的时间,比如以下代码，因为sleep了1s，所以得到的结果应该大于1s，但是得出来的结果确是0</p>
-<figure class="highlight cpp"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;boost/timer.hpp&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> boost;</div><div class="line"></div><div class="line"><span class="keyword">int</span> main()</div><div class="line">{</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"test boost::timer"</span> &lt;&lt; endl;</div><div class="line">    timer tmer;</div><div class="line">    sleep(<span class="number">1</span>);</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; tmer.elapsed() &lt;&lt; endl;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;boost/timer.hpp&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> boost;</div><div class="line"></div><div class="line"><span class="keyword">int</span> main()</div><div class="line">{</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"test boost::timer"</span> &lt;&lt; endl;</div><div class="line">    timer tmer;</div><div class="line">    sleep(<span class="number">1</span>);</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; tmer.elapsed() &lt;&lt; endl;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
 
 
 
-<figure class="highlight sh"><pre><div class="line">$ ./boosttimer</div><div class="line">test boost::timer</div><div class="line"><span class="number">0</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ./boosttimer</div><div class="line">test boost::timer</div><div class="line"><span class="number">0</span></div></pre></td></tr></table></figure>
 
 <p>究其原因：察看boost::timer的源代码/usr/include/boost/timer.hpp</p>
-<figure class="highlight cpp"><pre><div class="line"><span class="keyword">class</span> timer</div><div class="line">{</div><div class="line"> <span class="keyword">public</span>:</div><div class="line">         timer() { _start_time = std::clock(); } <span class="comment">// postcondition: elapsed()==0</span></div><div class="line"><span class="comment">//         timer( const timer& src );      // post: elapsed()==src.elapsed()</span></div><div class="line"><span class="comment">//        ~timer(){}</span></div><div class="line"><span class="comment">//  timer& operator=( const timer& src );  // post: elapsed()==src.elapsed()</span></div><div class="line">  <span class="keyword">void</span>   restart() { _start_time = std::clock(); } <span class="comment">// post: elapsed()==0</span></div><div class="line">  <span class="keyword">double</span> elapsed() <span class="keyword">const</span>                  <span class="comment">// return elapsed time in seconds</span></div><div class="line">    { <span class="keyword">return</span>  <span class="keyword">double</span>(std::clock() - _start_time) / CLOCKS_PER_SEC; }</div><div class="line"></div><div class="line">  <span class="keyword">double</span> elapsed_max() <span class="keyword">const</span>   <span class="comment">// return estimated maximum value for elapsed()</span></div><div class="line">  <span class="comment">// Portability warning: elapsed_max() may return too high a value on systems</span></div><div class="line">  <span class="comment">// where std::clock_t overflows or resets at surprising values.</span></div><div class="line">  {</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">double</span>((std::numeric_limits&lt;std::clock_t&gt;::max)())</div><div class="line">       - <span class="keyword">double</span>(_start_time)) / <span class="keyword">double</span>(CLOCKS_PER_SEC);</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">double</span> elapsed_min() <span class="keyword">const</span>            <span class="comment">// return minimum value for elapsed()</span></div><div class="line">   { <span class="keyword">return</span> <span class="keyword">double</span>(<span class="number">1</span>)/<span class="keyword">double</span>(CLOCKS_PER_SEC); }</div><div class="line"></div><div class="line"> <span class="keyword">private</span>:</div><div class="line">  std::clock_t _start_time;</div><div class="line">}; <span class="comment">// timer</span></div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> timer</div><div class="line">{</div><div class="line"> <span class="keyword">public</span>:</div><div class="line">         timer() { _start_time = std::clock(); } <span class="comment">// postcondition: elapsed()==0</span></div><div class="line"><span class="comment">//         timer( const timer& src );      // post: elapsed()==src.elapsed()</span></div><div class="line"><span class="comment">//        ~timer(){}</span></div><div class="line"><span class="comment">//  timer& operator=( const timer& src );  // post: elapsed()==src.elapsed()</span></div><div class="line">  <span class="keyword">void</span>   restart() { _start_time = std::clock(); } <span class="comment">// post: elapsed()==0</span></div><div class="line">  <span class="keyword">double</span> elapsed() <span class="keyword">const</span>                  <span class="comment">// return elapsed time in seconds</span></div><div class="line">    { <span class="keyword">return</span>  <span class="keyword">double</span>(std::clock() - _start_time) / CLOCKS_PER_SEC; }</div><div class="line"></div><div class="line">  <span class="keyword">double</span> elapsed_max() <span class="keyword">const</span>   <span class="comment">// return estimated maximum value for elapsed()</span></div><div class="line">  <span class="comment">// Portability warning: elapsed_max() may return too high a value on systems</span></div><div class="line">  <span class="comment">// where std::clock_t overflows or resets at surprising values.</span></div><div class="line">  {</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">double</span>((std::numeric_limits&lt;std::clock_t&gt;::max)())</div><div class="line">       - <span class="keyword">double</span>(_start_time)) / <span class="keyword">double</span>(CLOCKS_PER_SEC);</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">double</span> elapsed_min() <span class="keyword">const</span>            <span class="comment">// return minimum value for elapsed()</span></div><div class="line">   { <span class="keyword">return</span> <span class="keyword">double</span>(<span class="number">1</span>)/<span class="keyword">double</span>(CLOCKS_PER_SEC); }</div><div class="line"></div><div class="line"> <span class="keyword">private</span>:</div><div class="line">  std::clock_t _start_time;</div><div class="line">}; <span class="comment">// timer</span></div></pre></td></tr></table></figure>
 
 <p>可以看到boost::timer的实现在linux下是通过std::clock()实现的.经测试std::clock()每次返回的值都是一样的。原因就是我们在这里使用的是sleep，而man 3 clock得到的是function returns an approximation of processor time used by the program.即得到的是cpu执行的时间，sleep的时候cpu执行时间（cpu  time）为0，所以每次都得到的一样的值，最后结果为0，如果我们将sleep改为一个循环，结果就将是这是的值了！测试的时候不能被sleep所迷惑了，所以我们用来测实际经过的时间的时候不能用boost::timer!可以选择alarm</p>
 
@@ -203,10 +232,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>boost::progress_display是个好玩的东东,用来现实一个进度条。测试代码：</p>
-<figure class="highlight cpp"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;boost/progress.hpp&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> boost;</div><div class="line"></div><div class="line"><span class="keyword">int</span> main()</div><div class="line">{</div><div class="line">    progress_display p(<span class="number">10</span>);     </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) {</div><div class="line">        sleep(<span class="number">1</span>);</div><div class="line">        ++p;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;boost/progress.hpp&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> boost;</div><div class="line"></div><div class="line"><span class="keyword">int</span> main()</div><div class="line">{</div><div class="line">    progress_display p(<span class="number">10</span>);     </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) {</div><div class="line">        sleep(<span class="number">1</span>);</div><div class="line">        ++p;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>运行结果:</p>
-<figure class="highlight sh"><pre><div class="line">$ ./boostprogress</div><div class="line"></div><div class="line"><span class="number">0</span>%   <span class="number">10</span>   <span class="number">20</span>   <span class="number">30</span>   <span class="number">40</span>   <span class="number">50</span>   <span class="number">60</span>   <span class="number">70</span>   <span class="number">80</span>   <span class="number">90</span>   <span class="number">100</span>%</div><div class="line">|----|----|----|----|----|----|----|----|----|----|</div><div class="line">****************************************</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ ./boostprogress</div><div class="line"></div><div class="line"><span class="number">0</span>%   <span class="number">10</span>   <span class="number">20</span>   <span class="number">30</span>   <span class="number">40</span>   <span class="number">50</span>   <span class="number">60</span>   <span class="number">70</span>   <span class="number">80</span>   <span class="number">90</span>   <span class="number">100</span>%</div><div class="line">|----|----|----|----|----|----|----|----|----|----|</div><div class="line">****************************************</div></pre></td></tr></table></figure>
 
 
 	
@@ -235,16 +264,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>参考： <a href="http://swsw4321.blog.163.com/blog/static/3245245201003121842841/" target="_blank" rel="external">http://swsw4321.blog.163.com/blog/static/3245245201003121842841/</a><br>修改启动项, 终端输入：</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">cd</span> /etc/grub.d && ls</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /etc/grub.d && ls</div></pre></td></tr></table></figure>
 
 <p>显示的文件是这样的：</p>
-<figure class="highlight"><pre><div class="line">00_header  05_debian_theme  10_linux  20_memtest86+ 30_os-prober  40_custom  README</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00_header  05_debian_theme  10_linux  20_memtest86+ 30_os-prober  40_custom  README</div></pre></td></tr></table></figure>
 
 <p>其中：10_linux就是当前所使用的操作系统，30_os-prober的作用是自动查找计算机的其他系统，比如是windows xp，要XP默认首启动只要执行命令：</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> mv <span class="number">20</span>_os-prober <span class="number">06</span>_os-prober，把<span class="number">20</span>_os-prober 改成<span class="number">06</span>_os-prober</div><div class="line"><span class="built_in">sudo</span> mv <span class="number">30</span>_os-prober <span class="number">06</span>_os-prober</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> mv <span class="number">20</span>_os-prober <span class="number">06</span>_os-prober，把<span class="number">20</span>_os-prober 改成<span class="number">06</span>_os-prober</div><div class="line"><span class="built_in">sudo</span> mv <span class="number">30</span>_os-prober <span class="number">06</span>_os-prober</div></pre></td></tr></table></figure>
 
 <p>这样，以后grub再次更新时，XP就默认在linux前启动了。</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> update-grub</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> update-grub</div></pre></td></tr></table></figure>
 
 <p>看看效果吧，这样以后每次更新grub,都是默认XP启动。</p>
 
@@ -274,7 +303,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>由于在教育网中,sf上面的代码访问很慢,考虑为mercurial hg增加代理访问. 修改~/.hgrc, 增加</p>
-<figure class="highlight conf"><pre><div class="line"><span class="title">[http_proxy]</span></div><div class="line"><span class="setting">host=<span class="value"><span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">8580</span></span></span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">[http_proxy]</span></div><div class="line"><span class="setting">host=<span class="value"><span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">8580</span></span></span></div></pre></td></tr></table></figure>
 
 <p>详细的hgrc配置见官方文档: <a href="http://www.selenic.com/mercurial/hgrc.5.html" target="_blank">http://www.selenic.com/mercurial/hgrc.5.html</a></p>
 
@@ -304,7 +333,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>默认情况下archlinu是不允许x11 forwarding的,修改/etc/ssh/sshd_config</p>
-<figure class="highlight conf"><pre><div class="line"><span class="title">AllowTcpForwarding</span> <span class="built_in">yes</span></div><div class="line">X11Forwarding <span class="built_in">yes</span></div><div class="line">X11DisplayOffset <span class="number">10</span></div><div class="line">X11UseLocalhost <span class="built_in">yes</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="title">AllowTcpForwarding</span> <span class="built_in">yes</span></div><div class="line">X11Forwarding <span class="built_in">yes</span></div><div class="line">X11DisplayOffset <span class="number">10</span></div><div class="line">X11UseLocalhost <span class="built_in">yes</span></div></pre></td></tr></table></figure>
 
 
 	
@@ -335,13 +364,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  <p>参照arch wiki：<a href="http://wiki.archlinux.org/index.php/Yaourt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="external">http://wiki.archlinux.org/index.php/Yaourt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a></p>
 <p>最简单安装Yaourt的方式是添加Yaourt源至您的 /etc/pacman.conf:</p>
 <p>i686架构：</p>
-<figure class="highlight conf"><pre><div class="line">[archlinuxfr]</div><div class="line"><span class="constant">Server</span> = http:<span class="comment">//repo.archlinux.fr/i686</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[archlinuxfr]</div><div class="line"><span class="constant">Server</span> = http:<span class="comment">//repo.archlinux.fr/i686</span></div></pre></td></tr></table></figure>
 
 <p>x86-64架构：</p>
-<figure class="highlight conf"><pre><div class="line">[archlinuxfr]</div><div class="line"><span class="constant">Server</span> = http:<span class="comment">//repo.archlinux.fr/x86_64</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[archlinuxfr]</div><div class="line"><span class="constant">Server</span> = http:<span class="comment">//repo.archlinux.fr/x86_64</span></div></pre></td></tr></table></figure>
 
 <p>同步并安装：</p>
-<figure class="highlight sh"><pre><div class="line">pacman -Syu</div><div class="line">pacman -S yaourt</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pacman -Syu</div><div class="line">pacman -S yaourt</div></pre></td></tr></table></figure>
 
 
 	
@@ -371,10 +400,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>参考: <a href="http://wiki.archlinux.org/index.php/Proxy_settings" target="_blank" rel="external">http://wiki.archlinux.org/index.php/Proxy_settings</a></p>
 <p>在教育网中使用aur或者abs,网速非常的慢,同时很多东西都不能正常的下载下来,如何给下载添加代理呢? 像wget等程序使用”protocal_proxy”环境变量,所以可以通过设置环境变量的方式来使用代理:</p>
-<figure class="highlight sh"><pre><div class="line"><span class="keyword">export</span> http_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</div><div class="line"><span class="keyword">export</span> ftp_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> http_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</div><div class="line"><span class="keyword">export</span> ftp_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</div></pre></td></tr></table></figure>
 
 <p>我们可以增加两个函数用来打开关闭代理,在.bashrc里面添加:</p>
-<figure class="highlight sh"><pre><div class="line">function <span class="function"><span class="title">proxy</span></span>(){</div><div class="line">    <span class="built_in">echo</span> -n “username:”</div><div class="line">    <span class="built_in">read</span> <span class="operator">-e</span> username</div><div class="line">    <span class="built_in">echo</span> -n “password:”</div><div class="line">    <span class="built_in">read</span> -es password</div><div class="line">    <span class="keyword">export</span> http_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</div><div class="line">    <span class="keyword">export</span> ftp_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</div><div class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable set.”</div><div class="line">}</div><div class="line">function <span class="function"><span class="title">proxyoff</span></span>(){</div><div class="line">    <span class="built_in">unset</span> HTTP_PROXY</div><div class="line">    <span class="built_in">unset</span> http_proxy</div><div class="line">    <span class="built_in">unset</span> FTP_PROXY</div><div class="line">    <span class="built_in">unset</span> ftp_proxy</div><div class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable removed.”</div><div class="line">}</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function <span class="function"><span class="title">proxy</span></span>(){</div><div class="line">    <span class="built_in">echo</span> -n “username:”</div><div class="line">    <span class="built_in">read</span> <span class="operator">-e</span> username</div><div class="line">    <span class="built_in">echo</span> -n “password:”</div><div class="line">    <span class="built_in">read</span> -es password</div><div class="line">    <span class="keyword">export</span> http_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</div><div class="line">    <span class="keyword">export</span> ftp_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</div><div class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable set.”</div><div class="line">}</div><div class="line">function <span class="function"><span class="title">proxyoff</span></span>(){</div><div class="line">    <span class="built_in">unset</span> HTTP_PROXY</div><div class="line">    <span class="built_in">unset</span> http_proxy</div><div class="line">    <span class="built_in">unset</span> FTP_PROXY</div><div class="line">    <span class="built_in">unset</span> ftp_proxy</div><div class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable removed.”</div><div class="line">}</div></pre></td></tr></table></figure>
 
 
 	
@@ -404,10 +433,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>将archlinux安装到优盘上！试了很多方法，在虚拟机上将优盘设置成硬盘安装和在虚拟机上设置usb设备安装，启动时都会出现找不到硬盘的情况。（使用虚拟机启动没有问题）解决办法（<a href="http://blog.sina.com.cn/s/blog_59cf67260100cwqr.html" target="_blank" rel="external">参考地址</a>）：</p>
 <p>设置系统的参数的时候，修改/etc/mkinitcpio.conf ，在HOOKS中加入usb选项，这似乎是让linux内核认usb。</p>
-<figure class="highlight conf"><pre><div class="line"><span class="constant">HOOKS</span>=<span class="string">"base udev autodetect pata scsi sata usb filesystems"</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="constant">HOOKS</span>=<span class="string">"base udev autodetect pata scsi sata usb filesystems"</span></div></pre></td></tr></table></figure>
 
 <p>这样就可以正常启动了！如果出现</p>
-<figure class="highlight"><pre><div class="line">The superblock could <span class="operator">not</span> be <span class="built_in">read</span> <span class="operator">or</span> does <span class="operator">not</span> describe <span class="operator">a</span> correct ext2 filesystem. If <span class="operator">the</span> device is valid <span class="operator">and</span> <span class="keyword">it</span> really <span class="operator">contains</span> <span class="operator">an</span> ext2 filesystem (<span class="operator">and</span> <span class="operator">not</span> swap <span class="operator">or</span> ufs <span class="operator">or</span> something <span class="keyword">else</span>), <span class="keyword">then</span> <span class="operator">the</span> superblock is corrupt, <span class="operator">and</span> you might <span class="keyword">try</span> running e2fsck <span class="operator">with</span> <span class="operator">an</span> alternate superblock:</div><div class="line">e2fsck -b <span class="number">8193</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">The superblock could <span class="operator">not</span> be <span class="built_in">read</span> <span class="operator">or</span> does <span class="operator">not</span> describe <span class="operator">a</span> correct ext2 filesystem. If <span class="operator">the</span> device is valid <span class="operator">and</span> <span class="keyword">it</span> really <span class="operator">contains</span> <span class="operator">an</span> ext2 filesystem (<span class="operator">and</span> <span class="operator">not</span> swap <span class="operator">or</span> ufs <span class="operator">or</span> something <span class="keyword">else</span>), <span class="keyword">then</span> <span class="operator">the</span> superblock is corrupt, <span class="operator">and</span> you might <span class="keyword">try</span> running e2fsck <span class="operator">with</span> <span class="operator">an</span> alternate superblock:</div><div class="line">e2fsck -b <span class="number">8193</span></div></pre></td></tr></table></figure>
 
 <p>请修改fstab，使用uuid的方式，见<a href="http://wiki.archlinux.org/index.php/Fstab" target="_blank" rel="external">http://wiki.archlinux.org/index.php/Fstab</a></p>
 
@@ -417,35 +446,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2010-05-09-archlinux_usb_pen.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2010-05-08-git_svn_clone_revision.html" >git svn clone 特定版本</a>
-			<span class="date"> 5月 8 2010 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>使用git从svn中clone特定版本：</p>
-<figure class="highlight sh"><pre><div class="line">git svn clone --prefix=svn/ <span class="operator">-s</span> -r<span class="variable">$revision</span>:HEAD http://some/svn/repo</div></pre></figure>
-
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-05-08-git_svn_clone_revision.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -485,7 +485,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<div class="form-group has-success has-feedback">
   <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
-    <input type="hidden" name="q" value="site:chenzaichun.github.io">	
+    <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
 
@@ -513,7 +513,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/categories/programming/">programming<span>138</span></a></li>
+			<li><a href="/categories/programming/">programming<span>139</span></a></li>
 		
 			<li><a href="/categories/tools/">tools<span>142</span></a></li>
 		
@@ -528,45 +528,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
 		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+			<li><a href="/tags/VC/">VC<span>8</span></a></li>
 		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
 		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+			<li><a href="/tags/portable/">portable<span>1</span></a></li>
 		
-			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
 		
-			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
 		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
 		
-			<li><a href="/tags/redis/">redis<span>1</span></a></li>
+			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
 		
-			<li><a href="/tags/programming/">programming<span>3</span></a></li>
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+		
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+		
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+		
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+		
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+		
+			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
 		
 			<li><a href="/tags/golang/">golang<span>1</span></a></li>
 		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
 		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
-		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
 		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
-		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
-		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+			<li><a href="/tags/soap/">soap<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -582,7 +582,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
       </li>
     
       <li>
@@ -594,11 +594,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
       </li>
     
       <li>
-        <a href="/2013-01-03-archlinux-enable-vbox-service.html" ><i class="fa fa-file-o"></i>archlinux下启用virtualbox service</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
       </li>
     
   </ul>

@@ -6,7 +6,7 @@
   <title>ubuntu 10.04 lucid安装distcc | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,16 +125,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>在ubuntu下安装distcc（后面两个可选）：</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> apt-get install distcc distccmon-gnome distcc-pump</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install distcc distccmon-gnome distcc-pump</div></pre></td></tr></table></figure>
 
 <p>设置环境变量:</p>
-<figure class="highlight sh"><pre><div class="line"><span class="keyword">export</span> PATH=<span class="string">"/usr/lib/distcc:<span class="variable">$PATH</span>"</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> PATH=<span class="string">"/usr/lib/distcc:<span class="variable">$PATH</span>"</span></div></pre></td></tr></table></figure>
 
 <p>打开<code>/etc/default/distcc</code>进行以下修改</p>
-<figure class="highlight conf"><pre><div class="line"><span class="variable">STARTDISTCC=</span><span class="string">"true"</span>    <span class="comment"># auto start</span></div><div class="line"><span class="variable">ALLOWEDNETS=</span><span class="string">"192.168.39.0/24"</span>    <span class="comment"># ip range allowed</span></div><div class="line"><span class="variable">LISTENER=</span><span class="string">""</span>   <span class="comment"># if use on intranet, must be empty, otherwise distcc: connection refused</span></div><div class="line"><span class="variable">ZEROCONF=</span><span class="string">"true"</span>  <span class="comment"># auto lookup distcc server</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">STARTDISTCC=</span><span class="string">"true"</span>    <span class="comment"># auto start</span></div><div class="line"><span class="variable">ALLOWEDNETS=</span><span class="string">"192.168.39.0/24"</span>    <span class="comment"># ip range allowed</span></div><div class="line"><span class="variable">LISTENER=</span><span class="string">""</span>   <span class="comment"># if use on intranet, must be empty, otherwise distcc: connection refused</span></div><div class="line"><span class="variable">ZEROCONF=</span><span class="string">"true"</span>  <span class="comment"># auto lookup distcc server</span></div></pre></td></tr></table></figure>
 
 <p>然后重启distcc服务</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> /etc/init.d/distcc restart</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> /etc/init.d/distcc restart</div></pre></td></tr></table></figure>
 
 <p>搞定！:-)</p>
 	  
@@ -167,7 +167,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-05-07-ubuntu_lucid_distcc.html" data-title="ubuntu 10.04 lucid安装distcc" data-url="http://chenzaichun.github.io/2010-05-07-ubuntu_lucid_distcc.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-05-07-ubuntu_lucid_distcc.html" data-title="ubuntu 10.04 lucid安装distcc" data-url="http://yesokay.herokuapp.com/2010-05-07-ubuntu_lucid_distcc.html"></div>  
   
 </section>
 

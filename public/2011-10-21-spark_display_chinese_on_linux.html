@@ -6,7 +6,7 @@
   <title>Spark在Linux下的乱码解决 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -128,15 +128,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>解决Spark乱码：   </p>
 <p>Linux下Java图形界面中文显示乱码问题往往是所合适的jre/fonts里面没有合适的字体。   </p>
 <p>比如spark会往~/.install4j里面写入最后一行，说明spark使用的jre是其自带的jre.    </p>
-<figure class="highlight"><pre><div class="line"><span class="title">JRE_VERSION</span>    /home/gaoyibo/work/jdk1.<span class="number">6</span>.0_05    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">05</span></div><div class="line">JRE_VERSION    /usr    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">0</span></div><div class="line">JRE_VERSION    /home/gaoyibo/comodo/openfire/Spark/jre    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">02</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="title">JRE_VERSION</span>    /home/gaoyibo/work/jdk1.<span class="number">6</span>.0_05    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">05</span></div><div class="line">JRE_VERSION    /usr    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">0</span></div><div class="line">JRE_VERSION    /home/gaoyibo/comodo/openfire/Spark/jre    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">02</span></div></pre></td></tr></table></figure>
 
 <p>所以遇到乱码问题解决：   </p>
 <p>1，找到jre路径，创建fallback文件夹    </p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">cd</span> &lt;path_to_spark&gt;/Spark/jre/lib/fonts</div><div class="line"><span class="built_in">sudo</span> mkdir fallback</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> &lt;path_to_spark&gt;/Spark/jre/lib/fonts</div><div class="line"><span class="built_in">sudo</span> mkdir fallback</div></pre></td></tr></table></figure>
 
 
 <p>进入fallback文件夹，链接中文字体（我选的是文泉驿正黑）    </p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">cd</span> fallback</div><div class="line"><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc</div><div class="line"><span class="built_in">sudo</span> mkfontdir</div><div class="line"><span class="built_in">sudo</span> mkfontscale</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> fallback</div><div class="line"><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc</div><div class="line"><span class="built_in">sudo</span> mkfontdir</div><div class="line"><span class="built_in">sudo</span> mkfontscale</div></pre></td></tr></table></figure>
 
 
 	  
@@ -169,7 +169,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-10-21-spark_display_chinese_on_linux.html" data-title="Spark在Linux下的乱码解决" data-url="http://chenzaichun.github.io/2011-10-21-spark_display_chinese_on_linux.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-10-21-spark_display_chinese_on_linux.html" data-title="Spark在Linux下的乱码解决" data-url="http://yesokay.herokuapp.com/2011-10-21-spark_display_chinese_on_linux.html"></div>  
   
 </section>
 

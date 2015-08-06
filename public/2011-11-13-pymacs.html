@@ -6,7 +6,7 @@
   <title>Pymacs | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -130,13 +130,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>Pymacs is a powerful tool which, once started from Emacs, allows both-way communication between Emacs Lisp and Python. Pymacs aims Python as an extension language for Emacs rather than the other way around, and this asymmetry is reflected in some design choices. Within Emacs Lisp code, one may load and use Python modules. Python functions may themselves use Emacs services, and handle Emacs Lisp objects kept in Emacs Lisp space.</p>
 </blockquote>
 <p>archlinux下安装pymacs：</p>
-<figure class="highlight"><pre><div class="line"><span class="built_in">sudo</span> pacman -S pymacs</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pacman -S pymacs</div></pre></td></tr></table></figure>
 
 <p>配置pymacs, 在.emacs中添加：</p>
-<figure class="highlight lisp"><pre><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-apply</span> <span class="string">"pymacs"</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-call</span> <span class="string">"pymacs"</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-eval</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-exec</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-load</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></div><div class="line"><span class="list">(<span class="title">eval-after-load</span> <span class="string">"pymacs"</span></span></div><div class="line">  <span class="quoted">'(add-to-list 'pymacs-load-path <span class="string">"~/.emacs.d/my-lisp"</span>)</span>)</div></pre></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-apply</span> <span class="string">"pymacs"</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-call</span> <span class="string">"pymacs"</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-eval</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-exec</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-load</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></div><div class="line"><span class="list">(<span class="title">eval-after-load</span> <span class="string">"pymacs"</span></span></div><div class="line">  <span class="quoted">'(add-to-list 'pymacs-load-path <span class="string">"~/.emacs.d/my-lisp"</span>)</span>)</div></pre></td></tr></table></figure>
 
 <p>现在我要将elisp的函数</p>
-<figure class="highlight lisp"><pre><div class="line">(defun proxyfunc(server port)</div><div class="line">  (setenv "http_proxy" (concat "http://"server":"port))</div><div class="line">  (setenv "https_proxy" (concat "https://"server":"port))</div><div class="line">  (setenv "ftp_proxy" (concat "http://"server":"port))</div><div class="line">)</div><div class="line"></div><div class="line">(defun proxyoff()</div><div class="line">  (interactive)</div><div class="line">  (setenv "http_proxy" "")</div><div class="line">  (setenv "https_proxy" "")</div><div class="line">  (setenv "ftp_proxy" "")</div><div class="line">)</div><div class="line"></div><div class="line">(defun proxyjpn()</div><div class="line">  (interactive)</div><div class="line">  (proxyfunc "16.146.32.100" "8080")</div><div class="line">)</div><div class="line"></div><div class="line"></div><div class="line">转换为Python, 如setproxy.py(将文件放到PYTHONPATH中）</div></pre></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">(defun proxyfunc(server port)</div><div class="line">  (setenv "http_proxy" (concat "http://"server":"port))</div><div class="line">  (setenv "https_proxy" (concat "https://"server":"port))</div><div class="line">  (setenv "ftp_proxy" (concat "http://"server":"port))</div><div class="line">)</div><div class="line"></div><div class="line">(defun proxyoff()</div><div class="line">  (interactive)</div><div class="line">  (setenv "http_proxy" "")</div><div class="line">  (setenv "https_proxy" "")</div><div class="line">  (setenv "ftp_proxy" "")</div><div class="line">)</div><div class="line"></div><div class="line">(defun proxyjpn()</div><div class="line">  (interactive)</div><div class="line">  (proxyfunc "16.146.32.100" "8080")</div><div class="line">)</div><div class="line"></div><div class="line"></div><div class="line">转换为Python, 如setproxy.py(将文件放到PYTHONPATH中）</div></pre></td></tr></table></figure>
 
 <p>python</p>
 <h1 id="!/usr/bin/env_python">!/usr/bin/env python</h1>
@@ -148,11 +148,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>def proxysgn():<br>    setproxy(‘16.158.235.10’, ‘8080’)</p>
 <h1 id="need_to_set_the_property_interaction">need to set the property interaction</h1>
 <p>proxyjpn.interaction = “”<br>setproxyoff.interaction = “”<br>proxysgn.interaction = “”</p>
-<figure class="highlight"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="vim">通过pymacs-load加载<span class="keyword">python</span>模块</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="vim">通过pymacs-load加载<span class="keyword">python</span>模块</span></div></pre></td></tr></table></figure>
 
 <p>M-x pymacs-load RET MODULE RET PREFIX RET</p>
 <h1 id="e-g-_M-x_pymacs-load_setproxy_RET_setproxy-_RET">e.g. M-x pymacs-load setproxy RET setproxy- RET</h1>
-<figure class="highlight"><pre><div class="line"></div><div class="line">调用<span class="keyword">python</span>函数</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">调用<span class="keyword">python</span>函数</div></pre></td></tr></table></figure>
 
 <p>M-x setproxy-proxyjpn<br>```</p>
 <p>对于pymacs的详细教程，中文版可以参考<a href="http://www.cnblogs.com/rockcode/archive/2011/08/20/2147404.html" target="_blank" rel="external">这里</a></p>
@@ -165,13 +165,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ul class="pagination">
 	 
 				
-    	<li class="prev"><a href="/2011-11-15-convert-hg-to-git.html" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+    	<li class="prev"><a href="/2011-11-13-emacs_sys_process_environment.html" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2011-11-13-emacs_sys_process_environment.html" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2011-11-12-stty_erase_key.html" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -186,7 +186,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2011-11-13-pymacs.html" data-title="Pymacs" data-url="http://chenzaichun.github.io/2011-11-13-pymacs.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-11-13-pymacs.html" data-title="Pymacs" data-url="http://yesokay.herokuapp.com/2011-11-13-pymacs.html"></div>  
   
 </section>
 

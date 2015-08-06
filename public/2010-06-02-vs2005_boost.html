@@ -6,7 +6,7 @@
   <title>vs2005下编译boost | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -131,12 +131,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <li><p>新建一个boostib.xml文件，内容如下</p>
 </li>
 </ol>
-<figure class="highlight xml"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8" standalone="no" ?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">Profile</span> <span class="attribute">FormatVersion</span>=<span class="value">"1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">Tools</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"python"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"bjam"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"cl"</span> <span class="attribute">AllowRemote</span>=<span class="value">"true"</span> <span class="attribute">VCCompiler</span>=<span class="value">"True"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"link"</span> <span class="attribute">AllowRemote</span>=<span class="value">"false"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">Tools</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">Profile</span>&gt;</span></div></pre></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8" standalone="no" ?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">Profile</span> <span class="attribute">FormatVersion</span>=<span class="value">"1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">Tools</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"python"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"bjam"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"cl"</span> <span class="attribute">AllowRemote</span>=<span class="value">"true"</span> <span class="attribute">VCCompiler</span>=<span class="value">"True"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"link"</span> <span class="attribute">AllowRemote</span>=<span class="value">"false"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">Tools</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">Profile</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>新建一个boostib.bat文件，内容如下</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">XGConsole /command=<span class="string">"bjam -j16 --toolset=msvc-8.0 --build-type=complete stage"</span> /openmonitor /profile=<span class="string">"boostib.xml"</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">XGConsole /command=<span class="string">"bjam -j16 --toolset=msvc-8.0 --build-type=complete stage"</span> /openmonitor /profile=<span class="string">"boostib.xml"</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>执行boostlib.bat,库文件就在stage/lib目录下。至此完成编译！可是一看stage目录，这个硬盘占用也忒大了吧（2.58G）!!!</li>
@@ -171,7 +171,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2010-06-02-vs2005_boost.html" data-title="vs2005下编译boost" data-url="http://chenzaichun.github.io/2010-06-02-vs2005_boost.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-06-02-vs2005_boost.html" data-title="vs2005下编译boost" data-url="http://yesokay.herokuapp.com/2010-06-02-vs2005_boost.html"></div>  
   
 </section>
 
@@ -196,7 +196,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li>
   </li>
 
     </ul>

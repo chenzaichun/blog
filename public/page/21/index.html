@@ -6,7 +6,7 @@
   <title>第 21 页 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,6 +124,35 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="title">
+			<a href="/2010-06-20-android.md5_string.html" >android md5 string</a>
+			<span class="date"> 6月 20 2010 </span>
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>android下用md5加密一个字符串：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> String <span class="title">md5</span>(String s) {</div><div class="line">       <span class="keyword">try</span> {</div><div class="line">           <span class="comment">// Create MD5 Hash</span></div><div class="line">           MessageDigest digest = java.security.MessageDigest.getInstance(<span class="string">"MD5"</span>);</div><div class="line">           digest.update(s.getBytes());</div><div class="line">           <span class="keyword">byte</span> messageDigest[] = digest.digest();</div><div class="line"></div><div class="line">           <span class="comment">// Create HEX String</span></div><div class="line">           StringBuffer hexString = <span class="keyword">new</span> StringBuffer();</div><div class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; messageDigest.length; i++) {</div><div class="line">               hexString.append(Integer.toHexString(<span class="number">0xFF</span> & messageDigest[i]));</div><div class="line">           }</div><div class="line"></div><div class="line">           <span class="keyword">return</span> hexString.toString();</div><div class="line">       } <span class="keyword">catch</span> (NoSuchAlgorithmException e) {</div><div class="line">           e.printStackTrace();</div><div class="line">       }</div><div class="line"></div><div class="line">       <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">   }</div></pre></td></tr></table></figure>
+
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-06-20-android.md5_string.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
 			<a href="/2010-06-18-ubuntu_emacs_android.html" >ubuntu下配置emacs android开发环境</a>
 			<span class="date"> 6月 18 2010 </span>
 		</h3>
@@ -139,7 +168,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  <ol>
 <li>首先安装jdk</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> apt-get install openjdk-<span class="number">6</span>-jdk</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install openjdk-<span class="number">6</span>-jdk</div></pre></td></tr></table></figure>
 
 <ol>
 <li><p>下载并解压android sdk</p>
@@ -149,37 +178,37 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <li><p>安装android-mode</p>
 </li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">git clone git://github.com/remvee/android-mode.git</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/remvee/android-mode.git</div></pre></td></tr></table></figure>
 
 <ol>
 <li>创建一个android虚拟设备如test1，在.emacs中配置android-mode</li>
 </ol>
-<figure class="highlight lisp"><pre><div class="line"><span class="comment">;; android-mode</span></div><div class="line"><span class="list">(<span class="title">add-to-list</span> <span class="quoted">'load-path</span> <span class="string">"~/android/android-mode"</span>)</span></div><div class="line"><span class="list">(<span class="title">require</span> <span class="quoted">'android-mode</span>)</span></div><div class="line"><span class="list">(<span class="title">custom-set-variables</span></span></div><div class="line"> <span class="quoted">'(android-mode-avd <span class="string">"test1"</span>)</span></div><div class="line"> <span class="quoted">'(android-mode-sdk-dir <span class="string">"~/android/"</span>)</span>)</div></pre></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">;; android-mode</span></div><div class="line"><span class="list">(<span class="title">add-to-list</span> <span class="quoted">'load-path</span> <span class="string">"~/android/android-mode"</span>)</span></div><div class="line"><span class="list">(<span class="title">require</span> <span class="quoted">'android-mode</span>)</span></div><div class="line"><span class="list">(<span class="title">custom-set-variables</span></span></div><div class="line"> <span class="quoted">'(android-mode-avd <span class="string">"test1"</span>)</span></div><div class="line"> <span class="quoted">'(android-mode-sdk-dir <span class="string">"~/android/"</span>)</span>)</div></pre></td></tr></table></figure>
 
 <ol>
 <li>测试模拟器是否正常</li>
 </ol>
-<figure class="highlight"><pre><div class="line">android-<span class="operator"><span class="keyword">start</span>-emulator</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android-<span class="operator"><span class="keyword">start</span>-emulator</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>安装ant</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> apt-get instal ant</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get instal ant</div></pre></td></tr></table></figure>
 
 <ol>
 <li>中创建一个android工程使用命令android create project</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">android create project -n helloworld -t <span class="number">12</span> -p ./ -k org.example.helloworld <span class="operator">-a</span> helloworld</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android create project -n helloworld -t <span class="number">12</span> -p ./ -k org.example.helloworld <span class="operator">-a</span> helloworld</div></pre></td></tr></table></figure>
 
 <ol>
 <li>在emacs安装工程</li>
 </ol>
-<figure class="highlight"><pre><div class="line">M-x android-ant-<span class="operator"><span class="keyword">install</span></span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">M-x android-ant-<span class="operator"><span class="keyword">install</span></span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>重新安装工程使用</li>
 </ol>
-<figure class="highlight"><pre><div class="line">M-x android-<span class="keyword">ant</span>-reinstall</div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">M-x android-<span class="keyword">ant</span>-reinstall</div></pre></td></tr></table></figure>
 
 
 	
@@ -208,7 +237,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>默认configure的时候qt的编译程序会检测incredibuild的xge支持，所以如果安装了incredibuild的话，会检测到xge选项，而configure的时候得到using incredibuildxge —yes</p>
-<figure class="highlight sh"><pre><div class="line">configure -no-qt3support -no-webkit -release -opensource -platform win32-msvc2008</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">configure -no-qt3support -no-webkit -release -opensource -platform win32-msvc2008</div></pre></td></tr></table></figure>
 
 <p>完成configure之后，会在根目录生成一个projects.sln，这个时候就可以使用incredibuild编译了。</p>
 
@@ -238,7 +267,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>今天将dns服务器换为诺顿的和google的了，诺顿默认情况下给出了一些危险网站的建议，加上google chrome的危险建议，所以相对来说上网就比较安全，我的dns服务器配置 cat /etc/resolve.conf</p>
-<figure class="highlight conf"><pre><div class="line"><span class="title">nameserver</span> <span class="number">198.153.192.1</span></div><div class="line">nameserver <span class="number">8.8.8.8</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">nameserver</span> <span class="number">198.153.192.1</span></div><div class="line">nameserver <span class="number">8.8.8.8</span></div></pre></td></tr></table></figure>
 
 
 	
@@ -266,7 +295,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight cpp"><pre><div class="line"><span class="comment">// 来自C++ GUI Programming with Qt 4</span></div><div class="line"><span class="comment">// 编译：</span></div><div class="line"><span class="comment">//    qmake -project</span></div><div class="line"><span class="comment">//    qmake</span></div><div class="line"><span class="comment">//    make</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;QApplication&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;QLabel&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</div><div class="line">{</div><div class="line">    QApplication app(argc, argv);</div><div class="line">    QLabel* label = <span class="keyword">new</span> QLabel(<span class="string">"Hello qt!"</span>);</div><div class="line">    label-&gt;show();</div><div class="line"></div><div class="line">    <span class="keyword">return</span> app.exec();</div><div class="line">}</div></pre></figure>
+	  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 来自C++ GUI Programming with Qt 4</span></div><div class="line"><span class="comment">// 编译：</span></div><div class="line"><span class="comment">//    qmake -project</span></div><div class="line"><span class="comment">//    qmake</span></div><div class="line"><span class="comment">//    make</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;QApplication&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;QLabel&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</div><div class="line">{</div><div class="line">    QApplication app(argc, argv);</div><div class="line">    QLabel* label = <span class="keyword">new</span> QLabel(<span class="string">"Hello qt!"</span>);</div><div class="line">    label-&gt;show();</div><div class="line"></div><div class="line">    <span class="keyword">return</span> app.exec();</div><div class="line">}</div></pre></td></tr></table></figure>
 
 
 	
@@ -295,7 +324,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>命令行下察看deb包的依赖(如察看google chrome的依赖）：</p>
-<figure class="highlight sh"><pre><div class="line">dpkg --info google-chrome-unstable_current_amd64.deb | grep Depends</div><div class="line"> Pre-Depends: dpkg (&gt;= <span class="number">1.14</span>.<span class="number">0</span>)</div><div class="line"> Depends: ca-certificates, libasound2, libatk1.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">1.13</span>.<span class="number">2</span>), libbz2-<span class="number">1.0</span>, libc6 (&gt;= <span class="number">2.6</span>-<span class="number">1</span>), libcairo2 (&gt;= <span class="number">1.4</span>.<span class="number">0</span>), libfontconfig1 (&gt;= <span class="number">2.4</span>.<span class="number">0</span>), libfreetype6 (&gt;= <span class="number">2.3</span>.<span class="number">5</span>), libgcc1 (&gt;= <span class="number">1</span>:<span class="number">4.2</span>.<span class="number">1</span>), libgconf2-<span class="number">4</span>, libglib2.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">2.14</span>.<span class="number">0</span>), libgtk2.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">2.12</span>.<span class="number">0</span>), libjpeg62, libnspr4-<span class="number">0</span>d (&gt;= <span class="number">4.7</span>.<span class="number">1</span>), libnss3-<span class="number">1</span>d (&gt;= <span class="number">3.12</span>.<span class="number">3</span>), libpango1.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">1.18</span>.<span class="number">3</span>), libpng12-<span class="number">0</span>, libstdc++<span class="number">6</span> (&gt;= <span class="number">4.2</span>.<span class="number">1</span>), libxslt1.<span class="number">1</span>, libxss1, lsb-base (&gt;= <span class="number">3.2</span>), wget, xdg-utils (&gt;= <span class="number">1.0</span>.<span class="number">1</span>), zlib1g (&gt;= <span class="number">1</span>:<span class="number">1.2</span>.<span class="number">3.3</span>.dfsg-<span class="number">1</span>)</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dpkg --info google-chrome-unstable_current_amd64.deb | grep Depends</div><div class="line"> Pre-Depends: dpkg (&gt;= <span class="number">1.14</span>.<span class="number">0</span>)</div><div class="line"> Depends: ca-certificates, libasound2, libatk1.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">1.13</span>.<span class="number">2</span>), libbz2-<span class="number">1.0</span>, libc6 (&gt;= <span class="number">2.6</span>-<span class="number">1</span>), libcairo2 (&gt;= <span class="number">1.4</span>.<span class="number">0</span>), libfontconfig1 (&gt;= <span class="number">2.4</span>.<span class="number">0</span>), libfreetype6 (&gt;= <span class="number">2.3</span>.<span class="number">5</span>), libgcc1 (&gt;= <span class="number">1</span>:<span class="number">4.2</span>.<span class="number">1</span>), libgconf2-<span class="number">4</span>, libglib2.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">2.14</span>.<span class="number">0</span>), libgtk2.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">2.12</span>.<span class="number">0</span>), libjpeg62, libnspr4-<span class="number">0</span>d (&gt;= <span class="number">4.7</span>.<span class="number">1</span>), libnss3-<span class="number">1</span>d (&gt;= <span class="number">3.12</span>.<span class="number">3</span>), libpango1.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">1.18</span>.<span class="number">3</span>), libpng12-<span class="number">0</span>, libstdc++<span class="number">6</span> (&gt;= <span class="number">4.2</span>.<span class="number">1</span>), libxslt1.<span class="number">1</span>, libxss1, lsb-base (&gt;= <span class="number">3.2</span>), wget, xdg-utils (&gt;= <span class="number">1.0</span>.<span class="number">1</span>), zlib1g (&gt;= <span class="number">1</span>:<span class="number">1.2</span>.<span class="number">3.3</span>.dfsg-<span class="number">1</span>)</div></pre></td></tr></table></figure>
 
 
 
@@ -325,10 +354,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>如果在使用boost::program_options的时候传递了未注册的参数，则会throw exception，要想无视我们不需要的参数，可以通过使用<code>basic_command_line_parser</code>类来分析 (而不是<code>parse_command_line</code>) ，并且调用该类的 allow_unregistered 方法：</p>
-<figure class="highlight cpp"><pre><div class="line">parsed_options = </div><div class="line">    command_line_parser(argv, argc).</div><div class="line">    options(desc).allow_unregistered().run();</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">parsed_options = </div><div class="line">    command_line_parser(argv, argc).</div><div class="line">    options(desc).allow_unregistered().run();</div></pre></td></tr></table></figure>
 
 <p>如果使用配置文件，则在调用<code>parse_config_file</code>的时候第三个参数传递true:</p>
-<figure class="highlight cpp"><pre><div class="line">parse_config_file&lt;<span class="keyword">char</span>&gt;(cfgfilename, desc, <span class="keyword">true</span>)</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">parse_config_file&lt;<span class="keyword">char</span>&gt;(cfgfilename, desc, <span class="keyword">true</span>)</div></pre></td></tr></table></figure>
 
 
 	
@@ -363,12 +392,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <li><p>新建一个boostib.xml文件，内容如下</p>
 </li>
 </ol>
-<figure class="highlight xml"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8" standalone="no" ?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">Profile</span> <span class="attribute">FormatVersion</span>=<span class="value">"1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">Tools</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"python"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"bjam"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"cl"</span> <span class="attribute">AllowRemote</span>=<span class="value">"true"</span> <span class="attribute">VCCompiler</span>=<span class="value">"True"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"link"</span> <span class="attribute">AllowRemote</span>=<span class="value">"false"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">Tools</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">Profile</span>&gt;</span></div></pre></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8" standalone="no" ?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">Profile</span> <span class="attribute">FormatVersion</span>=<span class="value">"1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">Tools</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"python"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"bjam"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"cl"</span> <span class="attribute">AllowRemote</span>=<span class="value">"true"</span> <span class="attribute">VCCompiler</span>=<span class="value">"True"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"link"</span> <span class="attribute">AllowRemote</span>=<span class="value">"false"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">Tools</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">Profile</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>新建一个boostib.bat文件，内容如下</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">XGConsole /command=<span class="string">"bjam -j16 --toolset=msvc-8.0 --build-type=complete stage"</span> /openmonitor /profile=<span class="string">"boostib.xml"</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">XGConsole /command=<span class="string">"bjam -j16 --toolset=msvc-8.0 --build-type=complete stage"</span> /openmonitor /profile=<span class="string">"boostib.xml"</span></div></pre></td></tr></table></figure>
 
 <ol>
 <li>执行boostlib.bat,库文件就在stage/lib目录下。至此完成编译！可是一看stage目录，这个硬盘占用也忒大了吧（2.58G）!!!</li>
@@ -402,10 +431,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  <p>由于windows上没有getopt，使用第三方库也比较麻烦，考虑boost提供了program_options可以用来替代getopt，见[Tutorial]</p>
 <p>我在linux下测试了一下，挺方便的。</p>
 <p>贴一下代码，唯一注意的是链接的时候需要<code>libboost_program_options</code>, <code>ubuntu</code>下安装</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> apt-get install libboost-program-options-dev</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install libboost-program-options-dev</div></pre></td></tr></table></figure>
 
 <p>链接的时候加入<code>-lboost_program_options</code>就行了。</p>
-<figure class="highlight cpp"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;boost/program_options.hpp&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> boost::program_options;</div><div class="line"></div><div class="line"><span class="comment">// compile: g++ boostprogramoption.cpp -o boostprogramoption -lboost_program_options</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</div><div class="line">{</div><div class="line">    <span class="comment">// need to pass the buffer size (e.g. 1024) to the constructor, otherwise:</span></div><div class="line">    <span class="comment">// undefined reference to 'boost::program_options::options_description::m_default_line_length'</span></div><div class="line">    options_description desc(<span class="string">"Allowed options"</span>, <span class="number">1024</span>);</div><div class="line">    desc.add_options()</div><div class="line">        (<span class="string">"help,h"</span>, <span class="string">"produce help message"</span>)</div><div class="line">        (<span class="string">"compression,c"</span>, value&lt;<span class="keyword">int</span>&gt;(), <span class="string">"set compression level"</span>)</div><div class="line">        ;</div><div class="line"></div><div class="line">    variables_map vm;</div><div class="line">    store(parse_command_line(argc, argv, desc), vm);</div><div class="line">    notify(vm);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"help"</span>)) {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; desc &lt;&lt; endl;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"compression"</span>)) {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was set to "</span> &lt;&lt; vm[<span class="string">"compression"</span>].as&lt;<span class="keyword">int</span>&gt;() &lt;&lt; endl;</div><div class="line">    } <span class="keyword">else</span> {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was not set."</span> &lt;&lt; endl;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;boost/program_options.hpp&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> boost::program_options;</div><div class="line"></div><div class="line"><span class="comment">// compile: g++ boostprogramoption.cpp -o boostprogramoption -lboost_program_options</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</div><div class="line">{</div><div class="line">    <span class="comment">// need to pass the buffer size (e.g. 1024) to the constructor, otherwise:</span></div><div class="line">    <span class="comment">// undefined reference to 'boost::program_options::options_description::m_default_line_length'</span></div><div class="line">    options_description desc(<span class="string">"Allowed options"</span>, <span class="number">1024</span>);</div><div class="line">    desc.add_options()</div><div class="line">        (<span class="string">"help,h"</span>, <span class="string">"produce help message"</span>)</div><div class="line">        (<span class="string">"compression,c"</span>, value&lt;<span class="keyword">int</span>&gt;(), <span class="string">"set compression level"</span>)</div><div class="line">        ;</div><div class="line"></div><div class="line">    variables_map vm;</div><div class="line">    store(parse_command_line(argc, argv, desc), vm);</div><div class="line">    notify(vm);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"help"</span>)) {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; desc &lt;&lt; endl;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"compression"</span>)) {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was set to "</span> &lt;&lt; vm[<span class="string">"compression"</span>].as&lt;<span class="keyword">int</span>&gt;() &lt;&lt; endl;</div><div class="line">    } <span class="keyword">else</span> {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was not set."</span> &lt;&lt; endl;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p><a href="http://www.boost.org/doc/libs/1_43_0/doc/html/program_options/tutorial.html" target="_blank" rel="external">Tutorial</a></p>
 
@@ -436,7 +465,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p><code>boost::program_options::parse_environment</code>通过环境变量来设置<code>options</code>。</p>
 <p>这里需要注意的是需要注意的是：一定要将所需要的环境变量加入到<code>options</code>中。</p>
-<figure class="highlight cpp"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;string&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;boost/program_options.hpp&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> boost::program_options;</div><div class="line"></div><div class="line"><span class="comment">// compile: g++ boostprogramoption.cpp -o boostprogramoption -lboost_program_options</span></div><div class="line"></div><div class="line"><span class="comment">// envs</span></div><div class="line"><span class="keyword">const</span> <span class="built_in">string</span> ENVS[] = {</div><div class="line">    <span class="string">"HOME"</span>,</div><div class="line">    <span class="string">"PKG_CONFIG_PATH"</span>,</div><div class="line">    <span class="string">"PATH"</span>,</div><div class="line">    <span class="string">"http_proxy"</span>,</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> ENVCOUNT = <span class="number">4</span>;</div><div class="line"></div><div class="line"><span class="keyword">static</span> std::<span class="built_in">string</span> name_mapper(<span class="keyword">const</span> std::<span class="built_in">string</span> &var_name){</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ENVCOUNT; ++i) {</div><div class="line">        <span class="keyword">if</span> (var_name == ENVS[i])</div><div class="line">            <span class="keyword">return</span> var_name;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</div><div class="line">{</div><div class="line">    <span class="comment">// need to pass the buffer size to constructor (e.g. 1024), otherwise:</span></div><div class="line">    <span class="comment">// undefined reference to 'boost::program_options::options_description::m_default_line_length'</span></div><div class="line">    options_description desc(<span class="string">"Allowed options"</span>, <span class="number">1024</span>);</div><div class="line">    desc.add_options()</div><div class="line">        (<span class="string">"help,h"</span>, <span class="string">"produce help message"</span>)</div><div class="line">        (<span class="string">"compression,c"</span>, value&lt;<span class="keyword">int</span>&gt;(), <span class="string">"set compression level"</span>)</div><div class="line"></div><div class="line">	<span class="comment">// need to use the env as option, otherwise exception throwed:</span></div><div class="line">        (<span class="string">"HOME,m"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"home dir"</span>)</div><div class="line">        (<span class="string">"PATH,p"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"path"</span>)</div><div class="line">        (<span class="string">"PKG_CONFIG_PATH,k"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"pkg config"</span>)</div><div class="line">        (<span class="string">"http_proxy"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"http proxy"</span>);</div><div class="line">        ;</div><div class="line"></div><div class="line">    variables_map vm;</div><div class="line">    store(parse_command_line(argc, argv, desc), vm);</div><div class="line">    store(parse_environment(desc, name_mapper), vm);</div><div class="line">    notify(vm);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"help"</span>)) {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; desc &lt;&lt; endl;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"compression"</span>)) {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was set to "</span></div><div class="line">             &lt;&lt; vm[<span class="string">"compression"</span>].as&lt;<span class="keyword">int</span>&gt;() &lt;&lt; endl;</div><div class="line">    } <span class="keyword">else</span> {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was not set."</span> &lt;&lt; endl;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ENVCOUNT; ++i) {</div><div class="line">        <span class="keyword">if</span> (vm.count(ENVS[i])) {</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; ENVS[i] &lt;&lt; <span class="string">" is "</span></div><div class="line">                 &lt;&lt; vm[ENVS[i]].as&lt;<span class="built_in">string</span>&gt;() &lt;&lt; endl;</div><div class="line">        }</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;string&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;boost/program_options.hpp&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> boost::program_options;</div><div class="line"></div><div class="line"><span class="comment">// compile: g++ boostprogramoption.cpp -o boostprogramoption -lboost_program_options</span></div><div class="line"></div><div class="line"><span class="comment">// envs</span></div><div class="line"><span class="keyword">const</span> <span class="built_in">string</span> ENVS[] = {</div><div class="line">    <span class="string">"HOME"</span>,</div><div class="line">    <span class="string">"PKG_CONFIG_PATH"</span>,</div><div class="line">    <span class="string">"PATH"</span>,</div><div class="line">    <span class="string">"http_proxy"</span>,</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> ENVCOUNT = <span class="number">4</span>;</div><div class="line"></div><div class="line"><span class="keyword">static</span> std::<span class="built_in">string</span> name_mapper(<span class="keyword">const</span> std::<span class="built_in">string</span> &var_name){</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ENVCOUNT; ++i) {</div><div class="line">        <span class="keyword">if</span> (var_name == ENVS[i])</div><div class="line">            <span class="keyword">return</span> var_name;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</div><div class="line">{</div><div class="line">    <span class="comment">// need to pass the buffer size to constructor (e.g. 1024), otherwise:</span></div><div class="line">    <span class="comment">// undefined reference to 'boost::program_options::options_description::m_default_line_length'</span></div><div class="line">    options_description desc(<span class="string">"Allowed options"</span>, <span class="number">1024</span>);</div><div class="line">    desc.add_options()</div><div class="line">        (<span class="string">"help,h"</span>, <span class="string">"produce help message"</span>)</div><div class="line">        (<span class="string">"compression,c"</span>, value&lt;<span class="keyword">int</span>&gt;(), <span class="string">"set compression level"</span>)</div><div class="line"></div><div class="line">	<span class="comment">// need to use the env as option, otherwise exception throwed:</span></div><div class="line">        (<span class="string">"HOME,m"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"home dir"</span>)</div><div class="line">        (<span class="string">"PATH,p"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"path"</span>)</div><div class="line">        (<span class="string">"PKG_CONFIG_PATH,k"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"pkg config"</span>)</div><div class="line">        (<span class="string">"http_proxy"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"http proxy"</span>);</div><div class="line">        ;</div><div class="line"></div><div class="line">    variables_map vm;</div><div class="line">    store(parse_command_line(argc, argv, desc), vm);</div><div class="line">    store(parse_environment(desc, name_mapper), vm);</div><div class="line">    notify(vm);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"help"</span>)) {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; desc &lt;&lt; endl;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"compression"</span>)) {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was set to "</span></div><div class="line">             &lt;&lt; vm[<span class="string">"compression"</span>].as&lt;<span class="keyword">int</span>&gt;() &lt;&lt; endl;</div><div class="line">    } <span class="keyword">else</span> {</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was not set."</span> &lt;&lt; endl;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ENVCOUNT; ++i) {</div><div class="line">        <span class="keyword">if</span> (vm.count(ENVS[i])) {</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; ENVS[i] &lt;&lt; <span class="string">" is "</span></div><div class="line">                 &lt;&lt; vm[ENVS[i]].as&lt;<span class="built_in">string</span>&gt;() &lt;&lt; endl;</div><div class="line">        }</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
 
 
 	
@@ -445,35 +474,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2010-06-01-boost_parse_environment.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2010-06-01-sudo_environment.html" >sudo环境变量</a>
-			<span class="date"> 6月 1 2010 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>由于sudo运行程序不继承当前用户的环境变量，所以不能使用export var=value； sudo command的方式执行。解决办法：</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> var=value command</div></pre></figure>
-
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-06-01-sudo_environment.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -513,7 +513,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<div class="form-group has-success has-feedback">
   <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
-    <input type="hidden" name="q" value="site:chenzaichun.github.io">	
+    <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
 
@@ -541,7 +541,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/categories/programming/">programming<span>138</span></a></li>
+			<li><a href="/categories/programming/">programming<span>139</span></a></li>
 		
 			<li><a href="/categories/tools/">tools<span>142</span></a></li>
 		
@@ -556,45 +556,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
 		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
 		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
 		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/tags/english/">english<span>1</span></a></li>
-		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
-		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
-		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
-		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
-		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
-		
-			<li><a href="/tags/portable/">portable<span>1</span></a></li>
-		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
-		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
-		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
-		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+			<li><a href="/tags/database/">database<span>2</span></a></li>
 		
 			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
 		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
 		
-			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
+			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
+		
+			<li><a href="/tags/programming/">programming<span>4</span></a></li>
+		
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+		
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
 		
 			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+		
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+		
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
+		
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
+		
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+		
+			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+		
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+		
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+		
+			<li><a href="/tags/macos/">macos<span>9</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -610,7 +610,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
       </li>
     
       <li>
@@ -622,11 +622,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
       </li>
     
       <li>
-        <a href="/2013-01-03-archlinux-enable-vbox-service.html" ><i class="fa fa-file-o"></i>archlinux下启用virtualbox service</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
       </li>
     
   </ul>

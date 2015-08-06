@@ -6,7 +6,7 @@
   <title>修改SVN中已提交的日志 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -126,10 +126,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="mypage">		
 	    <p>默认情况下，subversion server是不允许客户端修改提交后的任何东西的。如果想修改服务器端的配置，请移步<a href="http://blog.csdn.net/karl_max/article/details/7035866" target="_blank" rel="external">这里</a></p>
 <p>在服务器端已经配置好的情况下，可以使用以下命令来修改:</p>
-<figure class="highlight sh"><pre><div class="line"><span class="variable">$svn</span> propedit -r N --revprop svn:log URL </div><div class="line"><span class="variable">$svn</span> propset -r N --revprop svn:log <span class="string">"new log message"</span> URL</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$svn</span> propedit -r N --revprop svn:log URL </div><div class="line"><span class="variable">$svn</span> propset -r N --revprop svn:log <span class="string">"new log message"</span> URL</div></pre></td></tr></table></figure>
 
 <p>如果想修改最后提交版本的log，可以使用:</p>
-<figure class="highlight sh"><pre><div class="line">$ svn propedit -r <span class="string">'HEAD'</span> --revprop svn:log</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ svn propedit -r <span class="string">'HEAD'</span> --revprop svn:log</div></pre></td></tr></table></figure>
 
 <p>这时候svn会读取原来log并打开默认编辑器进行修改。</p>
 	  
@@ -162,7 +162,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://chenzaichun.github.io/2012-06-07-modify-svn-log.html" data-title="修改SVN中已提交的日志" data-url="http://chenzaichun.github.io/2012-06-07-modify-svn-log.html"></div>  
+  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-06-07-modify-svn-log.html" data-title="修改SVN中已提交的日志" data-url="http://yesokay.herokuapp.com/2012-06-07-modify-svn-log.html"></div>  
   
 </section>
 
@@ -187,7 +187,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>138</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
   </li>
 
     </ul>

@@ -6,7 +6,7 @@
   <title>第 12 页 | 木哈哈</title>
   <meta name="author" content="Chen, Zai-Chun">
   
-  <meta name="description" content="不想写">
+  <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,6 +124,35 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="title">
+			<a href="/2011-06-29-linux_core_dump.html" >linux下生成core dump文件</a>
+			<span class="date"> 6月 29 2011 </span>
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>linux下让crash的程序在程序可执行文件目录自动生成core文件：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ulimit -c unlimited</div></pre></td></tr></table></figure>
+
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-06-29-linux_core_dump.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+		<h3 class="title">
 			<a href="/2011-06-26-mac_os_x_emacs_chinese_font.html" >emacs中文显示方框</a>
 			<span class="date"> 6月 26 2011 </span>
 		</h3>
@@ -137,10 +166,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>emacs从23版本开始，对于unicode支持就很好了，在windows和linux下对于中文字体的设置也比较方便：</p>
-<figure class="highlight lisp"><pre><div class="line"><span class="list">(<span class="title">set-default-font</span> <span class="string">"WenQuanYi Zen Hei Mono-12"</span>)</span></div><div class="line"><span class="list">(<span class="title">set-fontset-font</span> <span class="string">"fontset-default"</span></span></div><div class="line">                  <span class="quoted">'unicode</span> <span class="quoted">'(<span class="string">"WenQuanYi Zen Hei Mono-12"</span> . <span class="string">"unicode-bmp"</span>)</span>)</div><div class="line"><span class="list">(<span class="title">setq</span> default-frame-alist</span></div><div class="line">      <span class="list">(<span class="title">append</span> <span class="quoted">'((font . <span class="string">"WenQuanYi Zen Hei Mono-12"</span>))</span> default-frame-alist)</span>)</div></pre></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="list">(<span class="title">set-default-font</span> <span class="string">"WenQuanYi Zen Hei Mono-12"</span>)</span></div><div class="line"><span class="list">(<span class="title">set-fontset-font</span> <span class="string">"fontset-default"</span></span></div><div class="line">                  <span class="quoted">'unicode</span> <span class="quoted">'(<span class="string">"WenQuanYi Zen Hei Mono-12"</span> . <span class="string">"unicode-bmp"</span>)</span>)</div><div class="line"><span class="list">(<span class="title">setq</span> default-frame-alist</span></div><div class="line">      <span class="list">(<span class="title">append</span> <span class="quoted">'((font . <span class="string">"WenQuanYi Zen Hei Mono-12"</span>))</span> default-frame-alist)</span>)</div></pre></td></tr></table></figure>
 
 <p>可是在mac os X下，这样设置出来的emacs，中文显示为方框。google了一下，没有找到解决办法 :(</p>
-<figure class="highlight lisp"><pre><div class="line">(x-list-fonts "gb") # ctrl+j</div><div class="line">nil</div></pre></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(x-list-fonts "gb") # ctrl+j</div><div class="line">nil</div></pre></td></tr></table></figure>
 
 <p>gb编码的所有字符在字体中找不到。求高手解答.</p>
 
@@ -173,7 +202,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ol>
 <li>通过pull -f的方式</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line">hg clone A Adir</div><div class="line"><span class="built_in">cd</span> Adir</div><div class="line">hg pull <span class="operator">-f</span> B</div><div class="line">hg merge</div><div class="line">hg commit</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hg clone A Adir</div><div class="line"><span class="built_in">cd</span> Adir</div><div class="line">hg pull <span class="operator">-f</span> B</div><div class="line">hg merge</div><div class="line">hg commit</div></pre></td></tr></table></figure>
 
 <ol>
 <li>通过subrepo的方式，传送门<a href="http://mercurial.selenic.com/wiki/Subrepository" target="_blank" rel="external">http://mercurial.selenic.com/wiki/Subrepository</a></li>
@@ -208,10 +237,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  <p>参考链接：<a href="http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx" target="_blank" rel="external">http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx</a></p>
 <p>前面已经做好跨平台的交叉编译的工作，如果需要调试怎么办呢？这个时候就可以GDB的远程调试来实现。</p>
 <p>P.S. 如果没有windows的GDB，可以去<a href="http://www.gnu.org/software/gdb/" target="_blank">下载</a>或者自行编译。<br>在windows端执行 </p>
-<figure class="highlight sh"><pre><div class="line">gdbserver localhost:<span class="number">2345</span> photorec.exe</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gdbserver localhost:<span class="number">2345</span> photorec.exe</div></pre></td></tr></table></figure>
 
 <p>在archlinux下执行</p>
-<figure class="highlight sh"><pre><div class="line"><span class="comment"># 这里我用的virtualbox，所以ip为10.0.2.2，请自行替换成windows的ip</span></div><div class="line"><span class="variable">$gdb</span> photorec.exe</div><div class="line">gdb&gt; target remote <span class="number">10.0</span>.<span class="number">2.2</span>:<span class="number">2345</span></div><div class="line">gdb &gt; ....</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 这里我用的virtualbox，所以ip为10.0.2.2，请自行替换成windows的ip</span></div><div class="line"><span class="variable">$gdb</span> photorec.exe</div><div class="line">gdb&gt; target remote <span class="number">10.0</span>.<span class="number">2.2</span>:<span class="number">2345</span></div><div class="line">gdb &gt; ....</div></pre></td></tr></table></figure>
 
 
 	
@@ -241,10 +270,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>前面已经配置好了MinGW的交叉编译环境，现在就可以在archlinux下编译testdisk了。由于testdisk需要curses的支持，可以使用PDcureses。</p>
 <p>安装PDCurses</p>
-<figure class="highlight sh"><pre><div class="line">yaourt -S mingw32-pdcurses</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yaourt -S mingw32-pdcurses</div></pre></td></tr></table></figure>
 
 <p>编译testdisk</p>
-<figure class="highlight sh"><pre><div class="line">./configure --host=i486-mingw32 --disable-missing-uuid-ok && make</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./configure --host=i486-mingw32 --disable-missing-uuid-ok && make</div></pre></td></tr></table></figure>
 
 <p>这样就编译好了。在windows下运行发现没有问题。:) （终于可以不用忍受windows下mingw的蜗牛速度了）</p>
 
@@ -277,13 +306,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ol>
 <li>通过安装community中的mingw32-gcc实现</li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="comment"># 安装mingw32-gcc就行，其他的如mingw32-base, mingw32-runtime...等会作为依赖安装</span></div><div class="line"><span class="built_in">sudo</span> pacman -S mingw32-gcc</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装mingw32-gcc就行，其他的如mingw32-base, mingw32-runtime...等会作为依赖安装</span></div><div class="line"><span class="built_in">sudo</span> pacman -S mingw32-gcc</div></pre></td></tr></table></figure>
 
 <p>这种方法安装了最基本的编译环境，如果需要其他的库，则需要自行编译或者通过aur安装。</p>
 <ol>
 <li>通过MinGW cross compiling environment来实现。<a href="http://mingw-cross-env.nongnu.org/" target="_blank" rel="external">http://mingw-cross-env.nongnu.org</a></li>
 </ol>
-<figure class="highlight sh"><pre><div class="line"><span class="comment">#1. 下载</span></div><div class="line">wget https://bitbucket.org/vog/mingw-cross-env/downloads/mingw-cross-env-<span class="number">2.20</span>.tar.gz</div><div class="line"></div><div class="line"><span class="comment">#2. 解压</span></div><div class="line">tar -xzvf mingw-cross-env-<span class="number">2.20</span>.tar.gz</div><div class="line"></div><div class="line"><span class="comment">#3. 移动到/opt目录（可选）</span></div><div class="line">mv mingw-cross-env-<span class="number">2.20</span> /opt/mingw</div><div class="line"></div><div class="line"><span class="comment">#4. 安装</span></div><div class="line">su -</div><div class="line"><span class="built_in">cd</span> /opt/mingw</div><div class="line">make</div><div class="line"></div><div class="line"><span class="comment">#5. 其他的包可以参见mingw-cross-env的文档</span></div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#1. 下载</span></div><div class="line">wget https://bitbucket.org/vog/mingw-cross-env/downloads/mingw-cross-env-<span class="number">2.20</span>.tar.gz</div><div class="line"></div><div class="line"><span class="comment">#2. 解压</span></div><div class="line">tar -xzvf mingw-cross-env-<span class="number">2.20</span>.tar.gz</div><div class="line"></div><div class="line"><span class="comment">#3. 移动到/opt目录（可选）</span></div><div class="line">mv mingw-cross-env-<span class="number">2.20</span> /opt/mingw</div><div class="line"></div><div class="line"><span class="comment">#4. 安装</span></div><div class="line">su -</div><div class="line"><span class="built_in">cd</span> /opt/mingw</div><div class="line">make</div><div class="line"></div><div class="line"><span class="comment">#5. 其他的包可以参见mingw-cross-env的文档</span></div></pre></td></tr></table></figure>
 
 
 	
@@ -312,10 +341,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>刚开始使用gdb，在重启gdb的时候断点、环境变量等信息都必须重新设置，感觉很不方便。不过gdb提供了.gdbinit，可以方便的在启动的时候对gdb进行设置。比如下面用于保存和加载breakpoints</p>
-<figure class="highlight"><pre><div class="line">define bsave</div><div class="line">  <span class="built_in">shell</span> rm -f brestore.txt</div><div class="line">  <span class="built_in">set</span> logging <span class="built_in">file</span> brestore.txt</div><div class="line">  <span class="built_in">set</span> logging <span class="command"><span class="keyword">on</span></span></div><div class="line">  info break</div><div class="line">  <span class="built_in">set</span> logging off</div><div class="line">  <span class="comment"># reformat on-the-fly to a valid gdb command file</span></div><div class="line">  <span class="built_in">shell</span> perl -n -e <span class="string">'print "break $1n" if /^d+.+?(S+)$/g'</span> brestore.txt &gt; brestore.gdb</div><div class="line"><span class="function"><span class="keyword">end</span> </span></div><div class="line">document bsave</div><div class="line">store actual breakpoints</div><div class="line"><span class="function"><span class="keyword">end</span></span></div><div class="line"></div><div class="line">define brestore</div><div class="line">  source brestore.gdb</div><div class="line"><span class="function"><span class="keyword">end</span></span></div><div class="line">document brestore</div><div class="line">restore breakpoints saved <span class="keyword">by</span> bsave</div><div class="line"><span class="function"><span class="keyword">end</span></span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">define bsave</div><div class="line">  <span class="built_in">shell</span> rm -f brestore.txt</div><div class="line">  <span class="built_in">set</span> logging <span class="built_in">file</span> brestore.txt</div><div class="line">  <span class="built_in">set</span> logging <span class="command"><span class="keyword">on</span></span></div><div class="line">  info break</div><div class="line">  <span class="built_in">set</span> logging off</div><div class="line">  <span class="comment"># reformat on-the-fly to a valid gdb command file</span></div><div class="line">  <span class="built_in">shell</span> perl -n -e <span class="string">'print "break $1n" if /^d+.+?(S+)$/g'</span> brestore.txt &gt; brestore.gdb</div><div class="line"><span class="function"><span class="keyword">end</span> </span></div><div class="line">document bsave</div><div class="line">store actual breakpoints</div><div class="line"><span class="function"><span class="keyword">end</span></span></div><div class="line"></div><div class="line">define brestore</div><div class="line">  source brestore.gdb</div><div class="line"><span class="function"><span class="keyword">end</span></span></div><div class="line">document brestore</div><div class="line">restore breakpoints saved <span class="keyword">by</span> bsave</div><div class="line"><span class="function"><span class="keyword">end</span></span></div></pre></td></tr></table></figure>
 
 <p>调用bsave保存breakpoints，调用bresotre加载breakpoints。<br>再如对于调试ncurses的设置：</p>
-<figure class="highlight"><pre><div class="line">define settty</div><div class="line">  tty /dev/pts/$arg0</div><div class="line"><span class="operator"><span class="keyword">end</span></span></div><div class="line"></div><div class="line">define setterminfo</div><div class="line">  <span class="keyword">set</span> env TERM=xterm</div><div class="line">  <span class="keyword">set</span> env <span class="keyword">COLUMNS</span>=<span class="number">144</span></div><div class="line">  <span class="keyword">set</span> env <span class="keyword">LINES</span>=<span class="number">29</span></div><div class="line"><span class="keyword">end</span></div></pre></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">define settty</div><div class="line">  tty /dev/pts/$arg0</div><div class="line"><span class="operator"><span class="keyword">end</span></span></div><div class="line"></div><div class="line">define setterminfo</div><div class="line">  <span class="keyword">set</span> env TERM=xterm</div><div class="line">  <span class="keyword">set</span> env <span class="keyword">COLUMNS</span>=<span class="number">144</span></div><div class="line">  <span class="keyword">set</span> env <span class="keyword">LINES</span>=<span class="number">29</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
 
 	
@@ -345,7 +374,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>按照arch wiki做就可以了。参考链接<a href="https://wiki.archlinux.org/index.php/Oracle" target="_blank" rel="external">https://wiki.archlinux.org/index.php/Oracle</a></p>
 <p>这里，安装ksh的步骤可以跳过，直接安装pdksh</p>
-<figure class="highlight sh"><pre><div class="line"><span class="built_in">sudo</span> pacman -S pdksh</div></pre></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pacman -S pdksh</div></pre></td></tr></table></figure>
 
 <p>安装过程中可能在62%左右提示一个错误，点continue不影响使用。</p>
 <p>默认安装完成之后，重新启动archlinux之后，oracle是不会启动的。手动启动的方法：</p>
@@ -378,7 +407,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>在注册表中查找<code>HKEY_LOCAL_MACHINE\SOFTWARE\Oracle&lt;Your Oracle Home&gt;</code></p>
 <p>设置<code>NLS_LANG</code></p>
-<figure class="highlight conf"><pre><div class="line"><span class="attribute">NLS_LANG </span>=<span class="string"> AMERICAN_AMERICA.WE8ISO8859P1</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">NLS_LANG </span>=<span class="string"> AMERICAN_AMERICA.WE8ISO8859P1</span></div></pre></td></tr></table></figure>
 
 
 	
@@ -408,7 +437,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>由于很多时候访问网络需要通过代理，虽然export了http_proxy, https_proxy等等，但是sudo下这些环境变量是不会被保持的。</p>
 <p>解决办法：修改/etc/sudoers文件（visudo），添加你想保留的环境变量</p>
-<figure class="highlight conf"><pre><div class="line"><span class="constant">Defaults env_keep +</span>= <span class="string">"http_proxy https_proxy ftp_proxy"</span></div></pre></figure>
+<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="constant">Defaults env_keep +</span>= <span class="string">"http_proxy https_proxy ftp_proxy"</span></div></pre></td></tr></table></figure>
 
 <p>这样sudo就可以保留变量了</p>
 
@@ -418,36 +447,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2011-03-01-sudo_keep_env.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2011-03-01-yaourt_proxy.html" >yaourt代理设置</a>
-			<span class="date"> 3月 1 2011 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>一直以来不知道原来yaourt是调用makepkg来实现下载、编译、安装的</p>
-<figure class="highlight"><pre><div class="line">cat /etc/makepkg.conf</div><div class="line"></div><div class="line"><span class="label">DLAGENTS=('ftp::</span>/usr/bin/wget -c --passive-ftp -t <span class="number">3</span> --waitretry=<span class="number">3</span> -O <span class="var_expand">%o %</span>u'</div><div class="line"><span class="label">                  'http::</span>/usr/bin/wget -c -t <span class="number">3</span> --waitretry=<span class="number">3</span> -O <span class="var_expand">%o %</span>u'</div><div class="line"><span class="label">                  'https::</span>/usr/bin/wget -c -t <span class="number">3</span> --waitretry=<span class="number">3</span> --no-check-certificate -O <span class="var_expand">%o %</span>u'</div><div class="line"><span class="label">                  'rsync::</span>/usr/bin/rsync -z <span class="var_expand">%u %</span>o'</div><div class="line"><span class="label">                  'scp::</span>/usr/bin/scp -C <span class="var_expand">%u %</span>o')</div></pre></figure>
-
-<p>很多时候可能用到了rsync的协议，所以添加一个RSYNC_PROX的环境变量比较保险。</p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-03-01-yaourt_proxy.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -487,7 +486,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<div class="form-group has-success has-feedback">
   <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
-    <input type="hidden" name="q" value="site:chenzaichun.github.io">	
+    <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
 
@@ -515,7 +514,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/categories/programming/">programming<span>138</span></a></li>
+			<li><a href="/categories/programming/">programming<span>139</span></a></li>
 		
 			<li><a href="/categories/tools/">tools<span>142</span></a></li>
 		
@@ -530,45 +529,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+			<li><a href="/tags/portable/">portable<span>1</span></a></li>
 		
-			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
-		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
-		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
 		
 			<li><a href="/tags/apache/">apache<span>1</span></a></li>
 		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
 		
-			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
 		
-			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
-		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
-		
-			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
-		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
-		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
-		
-			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
 		
 			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
 		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+			<li><a href="/tags/go/">go<span>2</span></a></li>
 		
-			<li><a href="/tags/portable/">portable<span>1</span></a></li>
+			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
+		
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/git/">git<span>12</span></a></li>
+		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+		
+			<li><a href="/tags/python/">python<span>30</span></a></li>
+		
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
 		
 			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
+		
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
+		
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+		
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -584,7 +583,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
       </li>
     
       <li>
@@ -596,11 +595,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
       </li>
     
       <li>
-        <a href="/2013-01-03-archlinux-enable-vbox-service.html" ><i class="fa fa-file-o"></i>archlinux下启用virtualbox service</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
       </li>
     
   </ul>
