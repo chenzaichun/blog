@@ -1,17 +1,14 @@
---- 
 categories: 
   - programming
 comments: true
 layout: post
 published: true
 date: 2010-05-07 11:11:11
-status: publish
 tags: 
   - DVCS
   - hg
   - mercurial
 title: "google code hg 保存密码"
-type: post
 ---
 
 hg不能像svn那样保存密码，每次都要输入密码不太方便，可以通过
