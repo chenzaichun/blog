@@ -1,4 +1,3 @@
---- 
 categories: 
   - Linux
   - programming
@@ -13,7 +12,6 @@ tags:
   - Windows
 title: "git windows"
 date: 2010-05-07 11:11:11
-type: post
 ---
 
 在测试过很多中dvcs之后，最后决定用git。git在linux表现是非常完美的，不管是中文文件名，还是log，同时git svn clone也相当的完美。但是在windows下，乱码问题一直得不到解决。万般无赖之下只有抛弃以前的历史，直接svn co下来之后，生成一个新的git repo。
