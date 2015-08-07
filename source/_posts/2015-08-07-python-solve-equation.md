@@ -36,7 +36,7 @@ print(solve(log(x-1,2)+log(x,2)-1,x))
 
 结果是2，可是貌似还有一个负数解呢( `-1`  哪儿去了?)
 
-<!-- more -->
+<!--more-->
 
 ```python
 #!/usr/bin/env python
