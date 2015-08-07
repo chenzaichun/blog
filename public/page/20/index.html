@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈"/>
+  <meta property="og:site_name" content="木哈哈">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -35,8 +35,7 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  
-<script>
+  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -45,11 +44,7 @@
   ga('send', 'pageview');
 </script>
 
-
-
-
-</head>
-
+</head></html>
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -92,7 +87,6 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
-
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -107,21 +101,15 @@
 
 		
 
-
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jul 5 2010 </div>
-			<div class="article-title"><a href="/2010-07-05-eclipse_crash.html" >eclipse老是自动退出</a></div>						
+			<div class="article-title"><a href="/2010-07-05-eclipse_crash.html">eclipse老是自动退出</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -131,7 +119,6 @@
 	  <p>今天在使用eclipse的时候，一会儿就自动退出，重试很多次无果！前两天都还是好好的，怎么会这样呢？后来一想，昨天升级ubuntu的时候升级了openjdk，难道是这个原因？删除openjdk，然后安装sun-java6-jdk。ubuntu下在/etc/apt/sources.list添加：</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://archive.canonical.com/ lucid partner</span><br></pre></td></tr></table></figure></p>
 <p>测试之后，搞定！如果遇到同样问题，多半是jdk的问题。</p>
-
 	
 	</div>
 	
@@ -139,18 +126,12 @@
 </div>
 	<a type="button" href="/2010-07-05-eclipse_crash.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 29 2010 </div>
-			<div class="article-title"><a href="/2010-06-29-android_screen_rotation.html" >android屏幕旋转问题</a></div>						
+			<div class="article-title"><a href="/2010-06-29-android_screen_rotation.html">android屏幕旋转问题</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -163,7 +144,6 @@
 <p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="title">manifest</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span> </span><br><span class="line">      <span class="attribute">package</span>=<span class="value">"com.ray.linkit"</span> </span><br><span class="line">      <span class="attribute">android:versionCode</span>=<span class="value">"1"</span> </span><br><span class="line">      <span class="attribute">android:versionName</span>=<span class="value">"1.0"</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">application</span> <span class="attribute">android:icon</span>=<span class="value">"@drawable/icon"</span> <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".Main"</span> </span><br><span class="line">                  <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span> </span><br><span class="line">                  <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="title">intent-filter</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">action</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.action.MAIN"</span> /&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.category.LAUNCHER"</span> /&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="title">intent-filter</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".GamePlay"</span> </span><br><span class="line">                <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt;</span><span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".OptionView"</span> </span><br><span class="line">                <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt;</span><span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="title">application</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">uses-sdk</span> <span class="attribute">android:minSdkVersion</span>=<span class="value">"3"</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="title">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>另外，android中每次屏幕的切换都会重启Activity，所以应该在Activity销毁前保存当前活动的状态，在Activity再次 Create的时候载入配置，那样，进行中的游戏就不会自动重启了！也可以给每个activity加上 android:configChanges=&quot;keyboardHidden|orientation&quot;属性，就不会重启activity，而是去调用 onConfigurationChanged(Configuration newConfig)。这样就可以在这个方法里调整显示方式：</p>
 <p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(newConfig.orientation==Configuration.</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -171,18 +151,12 @@
 </div>
 	<a type="button" href="/2010-06-29-android_screen_rotation.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 28 2010 </div>
-			<div class="article-title"><a href="/2010-06-28-android_emulator_appstore.html" >android模拟器中使用应用商店(appstore)</a></div>						
+			<div class="article-title"><a href="/2010-06-28-android_emulator_appstore.html">android模拟器中使用应用商店(appstore)</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -205,7 +179,6 @@
 <ol start="4">
 <li>启动模拟器，现在你就可以使用Google帐户登录appstore了，免费软件尽情下载安装吧！</li>
 </ol>
-
 	
 	</div>
 	
@@ -213,18 +186,12 @@
 </div>
 	<a type="button" href="/2010-06-28-android_emulator_appstore.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 27 2010 </div>
-			<div class="article-title"><a href="/2010-06-27-android_apn_setting.html" >android设置APN</a></div>						
+			<div class="article-title"><a href="/2010-06-27-android_apn_setting.html">android设置APN</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -240,7 +207,6 @@
 <li>在AndroidManifest.xml中添加如下内容：</li>
 </ol>
 <p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">uses-permission</span> <span class="attribute">android:name</span>=<span class="value">"android.permission.WRITE_APN_SETTINGS"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -248,18 +214,12 @@
 </div>
 	<a type="button" href="/2010-06-27-android_apn_setting.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 27 2010 </div>
-			<div class="article-title"><a href="/2010-06-27-android_set_default_apn.html" >android下设置默认APN</a></div>						
+			<div class="article-title"><a href="/2010-06-27-android_set_default_apn.html">android下设置默认APN</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -267,7 +227,6 @@
 	  
 	
 	  <p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * set default apn</span><br><span class="line"> * <span class="doctag">@param</span> id</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setDefaultApn</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">　　ContentResolver cr = getContentResolver();</span><br><span class="line">　　ContentValues cv = <span class="keyword">new</span> ContentValues();</span><br><span class="line">　　cv.put(<span class="string">"apn_id"</span>, id);</span><br><span class="line"></span><br><span class="line">　　<span class="keyword">try</span> &#123;</span><br><span class="line">　　　　cr.update(preferapnUri, cv, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">　  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">　　　　<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">     　 e.printStackTrace();</span><br><span class="line">　 &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -275,18 +234,12 @@
 </div>
 	<a type="button" href="/2010-06-27-android_set_default_apn.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 24 2010 </div>
-			<div class="article-title"><a href="/2010-06-24-pyexpect.html" >pyexpect</a></div>						
+			<div class="article-title"><a href="/2010-06-24-pyexpect.html">pyexpect</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -294,7 +247,6 @@
 	  
 	
 	  <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This connects to the openbsd ftp site and</span></span><br><span class="line"><span class="comment"># downloads the recursive directory listing.</span></span><br><span class="line"><span class="keyword">import</span> pexpect</span><br><span class="line">child = pexpect.spawn (<span class="string">'ftp ftp.openbsd.org'</span>)</span><br><span class="line">child.expect (<span class="string">'Name .*: '</span>)</span><br><span class="line">child.sendline (<span class="string">'anonymous'</span>)</span><br><span class="line">child.expect (<span class="string">'Password:'</span>)</span><br><span class="line">child.sendline (<span class="string">'noah@example.com'</span>)</span><br><span class="line">child.expect (<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'cd pub'</span>)</span><br><span class="line">child.expect(<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'get ls-lR.gz'</span>)</span><br><span class="line">child.expect(<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'bye'</span>)</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -302,18 +254,12 @@
 </div>
 	<a type="button" href="/2010-06-24-pyexpect.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 22 2010 </div>
-			<div class="article-title"><a href="/2010-06-22-emacs_python_ide.html" >emacs下配置python开发环境</a></div>						
+			<div class="article-title"><a href="/2010-06-22-emacs_python_ide.html">emacs下配置python开发环境</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -336,7 +282,6 @@
 <li>在.emacs中加入</li>
 </ol>
 <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-apply</span> <span class="string">"pymacs"</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-call</span> <span class="string">"pymacs"</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-eval</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-exec</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-load</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">pymacs-load</span> <span class="string">"ropemacs"</span> <span class="string">"rope-"</span>)</span><span class="list">(<span class="keyword">setq</span> ropemacs-enable-autoimport <span class="literal">t</span>)</span></span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -344,18 +289,12 @@
 </div>
 	<a type="button" href="/2010-06-22-emacs_python_ide.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 21 2010 </div>
-			<div class="article-title"><a href="/2010-06-21-ubuntu_telnet_server.html" >ubuntu下安装telnet服务器</a></div>						
+			<div class="article-title"><a href="/2010-06-21-ubuntu_telnet_server.html">ubuntu下安装telnet服务器</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -382,7 +321,6 @@
 <li>测试一下</li>
 </ol>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet <span class="number">127.0</span>.<span class="number">0.1</span></span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -390,18 +328,12 @@
 </div>
 	<a type="button" href="/2010-06-21-ubuntu_telnet_server.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 21 2010 </div>
-			<div class="article-title"><a href="/2010-06-21-android_phone_number.html" >android获取手机号码</a></div>						
+			<div class="article-title"><a href="/2010-06-21-android_phone_number.html">android获取手机号码</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -415,7 +347,6 @@
 <p>程序在模拟器上无法获取，必须连接手机</p>
 <p>参考连接：</p>
 <p>&lt;a href=&quot;http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html&quot; target=&quot;_blank&quot;&gt;http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html&lt;/a&gt;</p>
-
 	
 	</div>
 	
@@ -423,18 +354,12 @@
 </div>
 	<a type="button" href="/2010-06-21-android_phone_number.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 21 2010 </div>
-			<div class="article-title"><a href="/2010-06-21-python_telnetlib_sample.html" >python telnetlib第一例</a></div>						
+			<div class="article-title"><a href="/2010-06-21-python_telnetlib_sample.html">python telnetlib第一例</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -443,7 +368,6 @@
 	
 	  <p>参考limodou</p>
 <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> telnetlib</span><br><span class="line"></span><br><span class="line">host = &#123;&#125;</span><br><span class="line">host[<span class="string">'ip'</span>]=<span class="string">'127.0.0.1'</span></span><br><span class="line">host[<span class="string">'user'</span>]=<span class="string">'user'</span></span><br><span class="line">host[<span class="string">'password'</span>]=<span class="string">'password***'</span></span><br><span class="line">host[<span class="string">'commands'</span>]=[<span class="string">'cd /home/xxxxx'</span>, <span class="string">'ls -l --color=no'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">do</span><span class="params">(host)</span>:</span>    </span><br><span class="line">    tn = telnetlib.Telnet(host[<span class="string">'ip'</span>])</span><br><span class="line"><span class="comment">#    tn.set_debuglevel(2)    </span></span><br><span class="line">    tn.read_until(<span class="string">"login: "</span>)    </span><br><span class="line">    tn.write(host[<span class="string">'user'</span>] + <span class="string">"n"</span>)    </span><br><span class="line">    tn.read_until(<span class="string">"Password: "</span>)    </span><br><span class="line">    tn.write(host[<span class="string">'password'</span>] + <span class="string">"n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#    tn.read_all()    </span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> command <span class="keyword">in</span> host[<span class="string">'commands'</span>]:        </span><br><span class="line">    	tn.write(command+<span class="string">'n'</span>)</span><br><span class="line"></span><br><span class="line">    tn.write(<span class="string">"exit"</span>)    </span><br><span class="line">    <span class="keyword">print</span> tn.read_all()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Finish!'</span></span><br><span class="line"></span><br><span class="line">do(host)</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -451,7 +375,6 @@
 </div>
 	<a type="button" href="/2010-06-21-python_telnetlib_sample.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
 
 		</div>
@@ -474,7 +397,6 @@
 	
 </ul>
 </div>
-
   		</center>
 		</div>
 
@@ -487,114 +409,104 @@
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8" >
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
-
 		
-			
-	<div class="widget">
+			<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/english/">english<span>1</span></a></li>
+			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
 		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
 		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
+			<li><a href="/tags/VC/">VC<span>8</span></a></li>
 		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
 		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
 		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
-		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
-		
-			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
-		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
-		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
-		
-			<li><a href="/tags/samba/">samba<span>1</span></a></li>
-		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
-		
-			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
-		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
-		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
-		
-			<li><a href="/tags/programming/">programming<span>4</span></a></li>
-		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
 		
 			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
 		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
+		
+			<li><a href="/tags/soap/">soap<span>1</span></a></li>
+		
+			<li><a href="/tags/network/">network<span>1</span></a></li>
+		
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+		
+			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
+		
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
+		
+			<li><a href="/tags/database/">database<span>2</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+		
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+		
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+		
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
-
-
 		
-			
-<div class="widget">
+			<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧...</a>
+        <a href="/2013-06-13-cheat.html"><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
 </div>
-
 		
-			
-<div class="widget">
+			<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
-
-
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
-
 	
 	
 </div> <!-- row-fluid -->
@@ -607,8 +519,7 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
+  <a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -638,8 +549,5 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
-
 </body>
-   </html>
-
+   

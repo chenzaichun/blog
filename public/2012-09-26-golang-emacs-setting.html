@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
-  <meta property="og:title" content="emacs下golang的配置"/>
-  <meta property="og:site_name" content="木哈哈"/>
+  <meta property="og:title" content="emacs下golang的配置">
+  <meta property="og:site_name" content="木哈哈">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -35,8 +35,7 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  
-<script>
+  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -45,11 +44,7 @@
   ga('send', 'pageview');
 </script>
 
-
-
-
-</head>
-
+</head></html>
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -92,19 +87,11 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
-
   <div class="container">
   	<div class="content">
-    	 
-
-
-	
-		<div class="page-header">		
+    	 <div class="page-header">		
 			<h1> emacs下golang的配置</h1>
-		</div>		
-	
-
-
+		</div>
 
 <div class="row post">
 	<!-- cols -->
@@ -140,8 +127,7 @@
 <ol start="5">
 <li>配置<code>.emacs</code>
 <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;auto-complete</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'auto-complete-config</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">add-to-list</span> <span class="quoted">'ac-dictionary-directories</span> <span class="string">"~/.emacs.d/auto-complete/ac-dict"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">ac-config-default</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">local-set-key</span> <span class="list">(<span class="keyword">kbd</span> <span class="string">"M-/"</span>)</span> <span class="quoted">'semantic-complete-analyze-inline</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">local-set-key</span> <span class="string">"."</span> <span class="quoted">'semantic-complete-self-insert</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">local-set-key</span> <span class="string">"&gt;"</span> <span class="quoted">'semantic-complete-self-insert</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; golang mode</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'go-mode-load</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'go-autocomplete</span>)</span></span><br><span class="line"><span class="comment">;; speedbar</span></span><br><span class="line"><span class="comment">;; (speedbar 1)</span></span><br><span class="line"><span class="list">(<span class="keyword">speedbar-add-supported-extension</span> <span class="string">".go"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">add-hook</span></span><br><span class="line"> <span class="quoted">'go-mode-hook</span></span><br><span class="line"> <span class="quoted">'(lambda ()</span><br><span class="line">   ;; gocode</span><br><span class="line">   (auto-complete-mode <span class="number">1</span>)</span><br><span class="line">   (setq ac-sources '(ac-source-go))</span><br><span class="line">    ;; Imenu &amp; Speedbar</span><br><span class="line">    (setq imenu-generic-expression</span><br><span class="line">          '((<span class="string">"type"</span> <span class="string">"^type *\\([^ \t\n\r\f]*\\)"</span> <span class="number">1</span>)</span><br><span class="line">            (<span class="string">"func"</span> <span class="string">"^func *\\(.*\\) &#123;"</span> <span class="number">1</span>)))</span><br><span class="line">    (imenu-add-to-menubar <span class="string">"Index"</span>)</span><br><span class="line">    ;; Outline mode</span><br><span class="line">    (make-local-variable 'outline-regexp)</span><br><span class="line">    (setq outline-regexp <span class="string">"//\\.\\|//[^\r\n\f][^\r\n\f]\\|pack\\|func\\|impo\\|cons\\|var.\\|type\\|\t\t*...."</span>)</span><br><span class="line">    (outline-minor-mode <span class="number">1</span>)</span><br><span class="line">    (local-set-key <span class="string">"\M-a"</span> 'outline-previous-visible-heading)</span><br><span class="line">    (local-set-key <span class="string">"\M-e"</span> 'outline-next-visible-heading)</span><br><span class="line">    ;; Menu bar</span><br><span class="line">    (require 'easymenu)</span><br><span class="line">    (defconst go-hooked-menu</span><br><span class="line">      '(<span class="string">"Go tools"</span></span><br><span class="line">        [<span class="string">"Go run buffer"</span> go <span class="literal">t</span>]</span><br><span class="line">        [<span class="string">"Go reformat buffer"</span> go-fmt-buffer <span class="literal">t</span>]</span><br><span class="line">        [<span class="string">"Go check buffer"</span> go-fix-buffer <span class="literal">t</span>]))</span><br><span class="line">    (easy-menu-define</span><br><span class="line">      go-added-menu</span><br><span class="line">      (current-local-map)</span><br><span class="line">      <span class="string">"Go tools"</span></span><br><span class="line">      go-hooked-menu)</span><br><span class="line"></span><br><span class="line">    ;; Other</span><br><span class="line">    (setq show-trailing-whitespace <span class="literal">t</span>)</span><br><span class="line">    )</span>)</span></span><br><span class="line"><span class="comment">;; helper function</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> go <span class="list">()</span></span><br><span class="line">  <span class="string">"run current buffer"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">compile</span> <span class="list">(<span class="keyword">concat</span> <span class="string">"go run "</span> <span class="list">(<span class="keyword">buffer-file-name</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; helper function</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> go-fmt-buffer <span class="list">()</span></span><br><span class="line">  <span class="string">"run gofmt on current buffer"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> buffer-read-only</span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">ding</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">message</span> <span class="string">"Buffer is read only"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">p</span> <span class="list">(<span class="keyword">line-number-at-pos</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">filename</span> <span class="list">(<span class="keyword">buffer-file-name</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">old-max-mini-window-height</span> max-mini-window-height)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">show-all</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">if</span> <span class="list">(<span class="keyword">get-buffer</span> <span class="string">"*Go Reformat Errors*"</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">delete-windows-on</span> <span class="string">"*Go Reformat Errors*"</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">kill-buffer</span> <span class="string">"*Go Reformat Errors*"</span>)</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">setq</span> max-mini-window-height <span class="number">1</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">if</span> <span class="list">(<span class="keyword">=</span> <span class="number">0</span> <span class="list">(<span class="keyword">shell-command-on-region</span> <span class="list">(<span class="keyword">point-min</span>)</span> <span class="list">(<span class="keyword">point-max</span>)</span> <span class="string">"gofmt"</span> <span class="string">"*Go Reformat Output*"</span> <span class="literal">nil</span> <span class="string">"*Go Reformat Errors*"</span> <span class="literal">t</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">erase-buffer</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">insert-buffer-substring</span> <span class="string">"*Go Reformat Output*"</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">goto-char</span> <span class="list">(<span class="keyword">point-min</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">forward-line</span> <span class="list">(<span class="number">1</span>- p)</span>)</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">with-current-buffer</span> <span class="string">"*Go Reformat Errors*"</span></span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">goto-char</span> <span class="list">(<span class="keyword">point-min</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">while</span> <span class="list">(<span class="keyword">re-search-forward</span> <span class="string">"&lt;standard input&gt;"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">replace-match</span> filename)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">goto-char</span> <span class="list">(<span class="keyword">point-min</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">compilation-mode</span>)</span>)</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">setq</span> max-mini-window-height old-max-mini-window-height)</span></span><br><span class="line">      <span class="list">(<span class="keyword">delete-windows-on</span> <span class="string">"*Go Reformat Output*"</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">kill-buffer</span> <span class="string">"*Go Reformat Output*"</span>)</span>)</span>)</span>)</span></span><br><span class="line"><span class="comment">;; helper function</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> go-fix-buffer <span class="list">()</span></span><br><span class="line">  <span class="string">"run gofix on current buffer"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">show-all</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">shell-command-on-region</span> <span class="list">(<span class="keyword">point-min</span>)</span> <span class="list">(<span class="keyword">point-max</span>)</span> <span class="string">"go tool fix -diff"</span>)</span>)</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-	  
+</ol>	  
 	</div>
 
 	<div>
@@ -161,20 +147,17 @@
 	
 </ul>
 </div>
-
     </center>
 	</div>
 	
 	<!-- comment -->
-	
-<section id="comment">
+	<section id="comment">
   <h2 class="title">留言</h2>
 
   
   	 <div class="ds-thread" data-thread-key="2012-09-26-golang-emacs-setting.html" data-title="emacs下golang的配置" data-url="http://yesokay.herokuapp.com/2012-09-26-golang-emacs-setting.html"></div>  
   
 </section>
-
 	
 	</div> <!-- col-md-9/col-md-12 -->
 	
@@ -194,11 +177,9 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
     <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
-  <li>
-    <li><a href="/categories/programming/">programming<span>81</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
-  </li>
-
+        <li>
+    </li><li><a href="/categories/programming/">programming<span>81</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
+  
     </ul>
 	</div>
 	
@@ -208,8 +189,7 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/emacs/">emacs<span>71</span></a></li> <li><a href="/tags/go/">go<span>2</span></a></li>
+	  <li><a href="/tags/emacs/">emacs<span>71</span></a></li> <li><a href="/tags/go/">go<span>2</span></a></li>
     </ul>
 	</div>
 		
@@ -222,11 +202,9 @@
     <hr>
 	
 </div><!-- col-md-3 -->
-
 	
 
 </div><!-- row -->
-
 	</div>
   </div>
   <div class="container-narrow">
@@ -236,8 +214,7 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
+  <a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -267,8 +244,5 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
-
 </body>
-   </html>
-
+   

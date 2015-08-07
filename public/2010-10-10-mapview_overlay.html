@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
-  <meta property="og:title" content="MapView中画图"/>
-  <meta property="og:site_name" content="木哈哈"/>
+  <meta property="og:title" content="MapView中画图">
+  <meta property="og:site_name" content="木哈哈">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -35,8 +35,7 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  
-<script>
+  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -45,11 +44,7 @@
   ga('send', 'pageview');
 </script>
 
-
-
-
-</head>
-
+</head></html>
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -92,19 +87,11 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
-
   <div class="container">
   	<div class="content">
-    	 
-
-
-	
-		<div class="page-header">		
+    	 <div class="page-header">		
 			<h1> MapView中画图</h1>
-		</div>		
-	
-
-
+		</div>
 
 <div class="row post">
 	<!-- cols -->
@@ -121,8 +108,7 @@
 <p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.appspot.zaichunchen;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.graphics.Bitmap;</span><br><span class="line"><span class="keyword">import</span> android.graphics.Canvas;</span><br><span class="line"><span class="keyword">import</span> android.graphics.Point;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.android.maps.GeoPoint;</span><br><span class="line"><span class="keyword">import</span> com.google.android.maps.MapView;</span><br><span class="line"><span class="keyword">import</span> com.google.android.maps.Overlay;</span><br><span class="line"><span class="keyword">import</span> com.google.android.maps.Projection;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Map Overlay</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@author</span> ChenZaichun</span><br><span class="line"> * </span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Marker</span> <span class="keyword">extends</span> <span class="title">Overlay</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> GeoPoint point = <span class="keyword">null</span>;</span><br><span class="line">	<span class="keyword">private</span> Bitmap bmp = <span class="keyword">null</span>; </span><br><span class="line">	<span class="keyword">private</span> Point deviation = <span class="keyword">null</span>; </span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * </span><br><span class="line">	 * <span class="doctag">@param</span> point</span><br><span class="line">	 *            GeoPoint of icon</span><br><span class="line">	 * <span class="doctag">@param</span> bmp</span><br><span class="line">	 *            Icon Bitmap</span><br><span class="line">	 * <span class="doctag">@param</span> deviation</span><br><span class="line">	 *            icon offset, use window coordinates (left --&gt; right, up --&gt; down)</span><br><span class="line">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Marker</span><span class="params">(GeoPoint point, Bitmap bmp, Point deviation)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.point = point;</span><br><span class="line">		<span class="keyword">this</span>.bmp = bmp;</span><br><span class="line">		<span class="keyword">this</span>.deviation = deviation;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * Draw the icon</span><br><span class="line">	 */</span></span><br><span class="line">	<span class="annotation">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(Canvas canvas, MapView mapView, <span class="keyword">boolean</span> shadow)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!shadow) &#123;<span class="comment">// not the shadow layer</span></span><br><span class="line">			Projection projection = mapView.getProjection();</span><br><span class="line">			<span class="keyword">if</span> (point != <span class="keyword">null</span> &amp;&amp; bmp != <span class="keyword">null</span>) &#123;</span><br><span class="line">				Point pos = projection.toPixels(point, <span class="keyword">null</span>);</span><br><span class="line">				<span class="comment">//add offset</span></span><br><span class="line">				canvas.drawBitmap(bmp, pos.x + deviation.x, pos.y + deviation.y, <span class="keyword">null</span>);</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>使用的方法：
 &lt;!--more--&gt;</p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Double lat = <span class="number">31.23717</span> * <span class="number">1E6</span>;</span><br><span class="line">Double lng = <span class="number">121.50811</span> * <span class="number">1E6</span>;</span><br><span class="line"></span><br><span class="line">GeoPoint point = <span class="keyword">new</span> GeoPoint(lat.intValue(), lng.intValue());</span><br><span class="line"></span><br><span class="line">Bitmap bmp = BitmapFactory.decodeResource(getResources(),</span><br><span class="line">				R.drawable.marker);</span><br><span class="line">Point deviation = <span class="keyword">new</span> Point(-<span class="number">15</span>, -<span class="number">36</span>);</span><br><span class="line">Marker marker = <span class="keyword">new</span> Marker(point, bmp, deviation);</span><br><span class="line">mapView.getOverlays().add(marker);</span><br></pre></td></tr></table></figure></p>
-	  
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Double lat = <span class="number">31.23717</span> * <span class="number">1E6</span>;</span><br><span class="line">Double lng = <span class="number">121.50811</span> * <span class="number">1E6</span>;</span><br><span class="line"></span><br><span class="line">GeoPoint point = <span class="keyword">new</span> GeoPoint(lat.intValue(), lng.intValue());</span><br><span class="line"></span><br><span class="line">Bitmap bmp = BitmapFactory.decodeResource(getResources(),</span><br><span class="line">				R.drawable.marker);</span><br><span class="line">Point deviation = <span class="keyword">new</span> Point(-<span class="number">15</span>, -<span class="number">36</span>);</span><br><span class="line">Marker marker = <span class="keyword">new</span> Marker(point, bmp, deviation);</span><br><span class="line">mapView.getOverlays().add(marker);</span><br></pre></td></tr></table></figure></p>	  
 	</div>
 
 	<div>
@@ -142,20 +128,17 @@
 	
 </ul>
 </div>
-
     </center>
 	</div>
 	
 	<!-- comment -->
-	
-<section id="comment">
+	<section id="comment">
   <h2 class="title">留言</h2>
 
   
   	 <div class="ds-thread" data-thread-key="2010-10-10-mapview_overlay.html" data-title="MapView中画图" data-url="http://yesokay.herokuapp.com/2010-10-10-mapview_overlay.html"></div>  
   
 </section>
-
 	
 	</div> <!-- col-md-9/col-md-12 -->
 	
@@ -175,11 +158,9 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
     <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
-  <li>
-    <li><a href="/categories/programming/">programming<span>81</span></a></li>
-  </li>
-
+        <li>
+    </li><li><a href="/categories/programming/">programming<span>81</span></a></li>
+  
     </ul>
 	</div>
 	
@@ -189,8 +170,7 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/Google/">Google<span>14</span></a></li> <li><a href="/tags/android/">android<span>18</span></a></li>
+	  <li><a href="/tags/Google/">Google<span>14</span></a></li> <li><a href="/tags/android/">android<span>18</span></a></li>
     </ul>
 	</div>
 		
@@ -203,11 +183,9 @@
     <hr>
 	
 </div><!-- col-md-3 -->
-
 	
 
 </div><!-- row -->
-
 	</div>
   </div>
   <div class="container-narrow">
@@ -217,8 +195,7 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
+  <a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -248,8 +225,5 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
-
 </body>
-   </html>
-
+   

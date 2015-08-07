@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
-  <meta property="og:title" content="第一个GTK+程序"/>
-  <meta property="og:site_name" content="木哈哈"/>
+  <meta property="og:title" content="第一个GTK+程序">
+  <meta property="og:site_name" content="木哈哈">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -35,8 +35,7 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  
-<script>
+  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -45,11 +44,7 @@
   ga('send', 'pageview');
 </script>
 
-
-
-
-</head>
-
+</head></html>
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -92,19 +87,11 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
-
   <div class="container">
   	<div class="content">
-    	 
-
-
-	
-		<div class="page-header">		
+    	 <div class="page-header">		
 			<h1> 第一个GTK+程序</h1>
-		</div>		
-	
-
-
+		</div>
 
 <div class="row post">
 	<!-- cols -->
@@ -118,8 +105,7 @@
 	<div class="mypage">		
 	    <p>直接显示一个空白窗口，代码hello.c如下</p>
 <p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* compile command:</span><br><span class="line">   gcc -o simple simple.c `pkg-config --libs --cflags gtk+-2.0`</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;gtk/gtk.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( <span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	GtkWidget* window;</span><br><span class="line">	GtkWidget* frame;</span><br><span class="line">	GtkWidget* label;</span><br><span class="line"></span><br><span class="line">	gtk_init(&amp;argc, &amp;argv);</span><br><span class="line"></span><br><span class="line">	window = gtk_window_new(GTK_WINDOW_TOPLEVEL);</span><br><span class="line"></span><br><span class="line">	gtk_window_set_title(GTK_WINDOW(window), <span class="string">"Hello World"</span>);</span><br><span class="line">	gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);</span><br><span class="line"></span><br><span class="line">	frame = gtk_fixed_new();</span><br><span class="line">	gtk_container_add(GTK_CONTAINER(window), frame);</span><br><span class="line">	</span><br><span class="line">	label = gtk_label_new(<span class="string">"Hello World"</span>);</span><br><span class="line">	gtk_fixed_put(GTK_FIXED(frame), label, <span class="number">10</span>, <span class="number">10</span>);</span><br><span class="line">	</span><br><span class="line">	g_signal_connect_swapped(G_OBJECT(window), <span class="string">"destroy"</span>,</span><br><span class="line">							 G_CALLBACK(gtk_main_quit), <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">	gtk_widget_show_all(window);</span><br><span class="line">	gtk_main();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>&lt;img src=&quot;http://commondatastorage.googleapis.com/czc_public/appspotimages/2010-09-15-231732_208x108_scrot.png&quot; alt=&quot;&quot; width=&quot;208&quot; height=&quot;108&quot;&gt;</p>
-	  
+<p>&lt;img src=&quot;http://commondatastorage.googleapis.com/czc_public/appspotimages/2010-09-15-231732_208x108_scrot.png&quot; alt=&quot;&quot; width=&quot;208&quot; height=&quot;108&quot;&gt;</p>	  
 	</div>
 
 	<div>
@@ -139,20 +125,17 @@
 	
 </ul>
 </div>
-
     </center>
 	</div>
 	
 	<!-- comment -->
-	
-<section id="comment">
+	<section id="comment">
   <h2 class="title">留言</h2>
 
   
   	 <div class="ds-thread" data-thread-key="2010-09-15-first_gtk_program.html" data-title="第一个GTK+程序" data-url="http://yesokay.herokuapp.com/2010-09-15-first_gtk_program.html"></div>  
   
 </section>
-
 	
 	</div> <!-- col-md-9/col-md-12 -->
 	
@@ -172,11 +155,9 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
     <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
-  <li>
-    <li><a href="/categories/Linux/">Linux<span>52</span></a></li> <li><a href="/categories/programming/">programming<span>16</span></a></li>
-  </li>
-
+        <li>
+    </li><li><a href="/categories/Linux/">Linux<span>52</span></a></li> <li><a href="/categories/programming/">programming<span>16</span></a></li>
+  
     </ul>
 	</div>
 	
@@ -186,8 +167,7 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/GUI/">GUI<span>2</span></a></li> <li><a href="/tags/Linux/">Linux<span>69</span></a></li> <li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+	  <li><a href="/tags/GUI/">GUI<span>2</span></a></li> <li><a href="/tags/Linux/">Linux<span>69</span></a></li> <li><a href="/tags/gtk/">gtk<span>2</span></a></li>
     </ul>
 	</div>
 		
@@ -200,11 +180,9 @@
     <hr>
 	
 </div><!-- col-md-3 -->
-
 	
 
 </div><!-- row -->
-
 	</div>
   </div>
   <div class="container-narrow">
@@ -214,8 +192,7 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
+  <a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -245,8 +222,5 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
-
 </body>
-   </html>
-
+   

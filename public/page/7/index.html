@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈"/>
+  <meta property="og:site_name" content="木哈哈">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -35,8 +35,7 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  
-<script>
+  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -45,11 +44,7 @@
   ga('send', 'pageview');
 </script>
 
-
-
-
-</head>
-
+</head></html>
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -92,7 +87,6 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
-
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -107,21 +101,15 @@
 
 		
 
-
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 30 2011 </div>
-			<div class="article-title"><a href="/2011-12-30-mac-os-x-homebrew.html" >抛弃MacPorts，用Homebrew吧</a></div>						
+			<div class="article-title"><a href="/2011-12-30-mac-os-x-homebrew.html">抛弃MacPorts，用Homebrew吧</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -133,7 +121,6 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)</span>"</span></span><br></pre></td></tr></table></figure></p>
 <p>使用方法见
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew --help</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -141,18 +128,12 @@
 </div>
 	<a type="button" href="/2011-12-30-mac-os-x-homebrew.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 30 2011 </div>
-			<div class="article-title"><a href="/2011-12-30-macos-x-swap-dan-du-fen-qu.html" >MacOS X Swap单独分区</a></div>						
+			<div class="article-title"><a href="/2011-12-30-macos-x-swap-dan-du-fen-qu.html">MacOS X Swap单独分区</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -182,7 +163,6 @@
 </li>
 </ol>
 <p>搞定</p>
-
 	
 	</div>
 	
@@ -190,18 +170,12 @@
 </div>
 	<a type="button" href="/2011-12-30-macos-x-swap-dan-du-fen-qu.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 15 2011 </div>
-			<div class="article-title"><a href="/2011-12-15-archlinux-etc-rc-d-functions-error.html" >archlinux functions脚本错误</a></div>						
+			<div class="article-title"><a href="/2011-12-15-archlinux-etc-rc-d-functions-error.html">archlinux functions脚本错误</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -214,7 +188,6 @@
 <p>patch的内容如下：
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">--- functions_old       2011-11-19 13:05:47.921522255 +0400</span></span><br><span class="line"><span class="header">+++ functions   2011-11-19 12:55:17.411565127 +0400</span></span><br><span class="line"><span class="chunk">@@ -494,7 +494,7 @@</span></span><br><span class="line">                fi</span><br><span class="line"></span><br><span class="line">                mounts+=("$target")</span><br><span class="line"><span class="deletion">-       done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></span><br><span class="line"><span class="addition">+       done &lt; $(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></span><br><span class="line"></span><br><span class="line">        umount -r "$&#123;mounts[@]&#125;"</span><br></pre></td></tr></table></figure></p>
 <p>下载<a href="/media/wpid-rc-functions-typo.patch_.zip">patch</a></p>
-
 	
 	</div>
 	
@@ -222,18 +195,12 @@
 </div>
 	<a type="button" href="/2011-12-15-archlinux-etc-rc-d-functions-error.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 12 2011 </div>
-			<div class="article-title"><a href="/2011-12-12-gnustep-env-on-archlinux.html" >archlinux下配置GNUStep环境</a></div>						
+			<div class="article-title"><a href="/2011-12-12-gnustep-env-on-archlinux.html">archlinux下配置GNUStep环境</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -276,7 +243,6 @@ collect2: ld returned 1 exit status</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./helloworld&#10;2011-12-12 03:27:14.391 helloworld[6928] No local time zone specified.&#10;2011-12-12 03:27:14.392 helloworld[6928] Using time zone with absolute offset 0.&#10;2011-12-12 03:27:14.338 helloworld[6928] Hello World</span><br></pre></td></tr></table></figure></p>
 <p>这里有2个warning, 设置一下:
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write NSGlobalDomain <span class="string">"Local Time Zone"</span> <span class="string">'Asia/Chongqing'</span></span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -284,18 +250,12 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-12-gnustep-env-on-archlinux.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 12 2011 </div>
-			<div class="article-title"><a href="/2011-12-12-first-gnustep-gui.html" >第一个GNUstep窗口程序</a></div>						
+			<div class="article-title"><a href="/2011-12-12-first-gnustep-gui.html">第一个GNUstep窗口程序</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -320,7 +280,6 @@ collect2: ld returned 1 exit status</p>
 <p>截图:</p>
 <p><img src="/media/wpid-gnustep-helloworld.png"></p>
 <p>源代码下载: <a href="/images/uploads/2011/12/helloworld.zip">HelloWorld.zip</a></p>
-
 	
 	</div>
 	
@@ -328,18 +287,12 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-12-first-gnustep-gui.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 9 2011 </div>
-			<div class="article-title"><a href="/2011-12-09-unlock-mcafee-user-interface.html" >Unlock the McAfee VirusScan Enterprise 8.5i User Interface</a></div>						
+			<div class="article-title"><a href="/2011-12-09-unlock-mcafee-user-interface.html">Unlock the McAfee VirusScan Enterprise 8.5i User Interface</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -349,7 +302,6 @@ collect2: ld returned 1 exit status</p>
 	  <p><a href="http://it.megocollector.com/?p=1094" target="_blank" rel="external">传送门</a></p>
 <p>经检验，只要设置以下注册表就行了:
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\McAfee\DesktopProtection]&#10;&#34;UIPMode&#34;=dword:00000000&#10;&#34;UIP&#34;=&#34;&#34;</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -357,18 +309,12 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-09-unlock-mcafee-user-interface.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 9 2011 </div>
-			<div class="article-title"><a href="/2011-12-09-org-save-outline-visibility.html" >void: org-save-outline-visibility</a></div>						
+			<div class="article-title"><a href="/2011-12-09-org-save-outline-visibility.html">void: org-save-outline-visibility</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -380,7 +326,6 @@ collect2: ld returned 1 exit status</p>
 <p>Symbol's function definition is void: org-save-outline-visibility</p>
 </blockquote>
 <p>原来是emacs自动的org-mode为7.4版本，升级到7.5或者以后版本解决问题。</p>
-
 	
 	</div>
 	
@@ -388,18 +333,12 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-09-org-save-outline-visibility.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 9 2011 </div>
-			<div class="article-title"><a href="/2011-12-09-emacs-http-proxy-setting.html" >emacs代理设置</a></div>						
+			<div class="article-title"><a href="/2011-12-09-emacs-http-proxy-setting.html">emacs代理设置</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -410,7 +349,6 @@ collect2: ld returned 1 exit status</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=xxx.xx.xx.xx:port</span><br></pre></td></tr></table></figure></p>
 <p>但是在mac上这样做就不行了。由于elisp中一般http都是使用的<code>url package</code>，所以可以通过<code>url package</code>的接口来设置代理:</p>
 <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> url-using-proxy <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> url-proxy-services <span class="quoted">'((<span class="string">"http"</span> . <span class="string">"proxyserver:port"</span>))</span>)</span></span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -418,18 +356,12 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-09-emacs-http-proxy-setting.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 1 2011 </div>
-			<div class="article-title"><a href="/2011-12-01-genenv-assignment-makes-pointer-from-integer-without-a-cast.html" >getenv assignment makes pointer from integer without a cast</a></div>						
+			<div class="article-title"><a href="/2011-12-01-genenv-assignment-makes-pointer-from-integer-without-a-cast.html">getenv assignment makes pointer from integer without a cast</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -444,7 +376,6 @@ collect2: ld returned 1 exit status</p>
 <p>原来是缺少stdlib.h的问题（可是我已经申明了原型呀……）</p>
 <p>加入stdlib.h解决问题:</p>
 <p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -452,18 +383,12 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-01-genenv-assignment-makes-pointer-from-integer-without-a-cast.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 1 2011 </div>
-			<div class="article-title"><a href="/2011-12-01-turn-on-coredump-on-linux.html" >linux下开启coredump</a></div>						
+			<div class="article-title"><a href="/2011-12-01-turn-on-coredump-on-linux.html">linux下开启coredump</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -474,7 +399,6 @@ collect2: ld returned 1 exit status</p>
 <p>临时开启只要在shell中执行</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ulimit</span> -c unlimited</span><br></pre></td></tr></table></figure></p>
 <p>也可以在<code>~/.profile</code>文件中添加来默认开启core dump。</p>
-
 	
 	</div>
 	
@@ -482,7 +406,6 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-01-turn-on-coredump-on-linux.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
 
 		</div>
@@ -505,7 +428,6 @@ collect2: ld returned 1 exit status</p>
 	
 </ul>
 </div>
-
   		</center>
 		</div>
 
@@ -518,114 +440,104 @@ collect2: ld returned 1 exit status</p>
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8" >
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
-
 		
-			
-	<div class="widget">
+			<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/portable/">portable<span>1</span></a></li>
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
 		
-			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
+			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
+		
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+		
+			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+		
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
+		
+			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+		
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
 		
 			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
 		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
-		
-			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
-		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
-		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
-		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
 			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
 		
-			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
+			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
 		
-			<li><a href="/tags/programming/">programming<span>4</span></a></li>
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
 		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
 		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
 		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
+			<li><a href="/tags/python/">python<span>30</span></a></li>
 		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
 		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
 		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
-		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
-		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+			<li><a href="/tags/english/">english<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
-
-
 		
-			
-<div class="widget">
+			<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧...</a>
+        <a href="/2013-06-13-cheat.html"><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
 </div>
-
 		
-			
-<div class="widget">
+			<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
-
-
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
-
 	
 	
 </div> <!-- row-fluid -->
@@ -638,8 +550,7 @@ collect2: ld returned 1 exit status</p>
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
+  <a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -669,8 +580,5 @@ collect2: ld returned 1 exit status</p>
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
-
 </body>
-   </html>
-
+   

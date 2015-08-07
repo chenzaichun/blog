@@ -101,7 +101,8 @@ markdown:
   smartLists: true
   smartypants: true
 
-
+html_minifier:
+  exclude: 
 
 # Deployment
 ## Docs: http://zespia.tw/hexo/docs/deployment.html

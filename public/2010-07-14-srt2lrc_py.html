@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
-  <meta property="og:title" content="srt2lrc python版本"/>
-  <meta property="og:site_name" content="木哈哈"/>
+  <meta property="og:title" content="srt2lrc python版本">
+  <meta property="og:site_name" content="木哈哈">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -35,8 +35,7 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  
-<script>
+  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -45,11 +44,7 @@
   ga('send', 'pageview');
 </script>
 
-
-
-
-</head>
-
+</head></html>
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -92,19 +87,11 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
-
   <div class="container">
   	<div class="content">
-    	 
-
-
-	
-		<div class="page-header">		
+    	 <div class="page-header">		
 			<h1> srt2lrc python版本</h1>
-		</div>		
-	
-
-
+		</div>
 
 <div class="row post">
 	<!-- cols -->
@@ -117,8 +104,7 @@
 	<!-- content -->
 	<div class="mypage">		
 	    <p>今天想把经典的电影拿来当听力训练，可惜找了很久都没有找到直接下载方式，没有办法，只好下载电影然后提取音频并配上字幕。网上找了一个perl版的srt2lrc.pl，因为完全不懂perl，该脚本无法运行，所以只好自己想办法。没有仔细研究过srt与lrc格式，只是找了两个文件来看，勉强知道是怎么回事，用python写了一个转化的脚本（ps. python不熟，代码很难看，只是勉强实现了功能）</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> len(sys.argv) != <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">"Usage srt2lrc.py file"</span>)</span><br><span class="line">    sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">f = open(sys.argv[<span class="number">1</span>])</span><br><span class="line">lines = f.readlines()</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; len(lines):</span><br><span class="line">    line = lines[i]</span><br><span class="line">    <span class="keyword">if</span> line.find(<span class="string">'--&gt;'</span>) == -<span class="number">1</span>:</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    s = line.split(<span class="string">'--&gt;'</span>)</span><br><span class="line">    time = s[<span class="number">0</span>].split(<span class="string">':'</span>)</span><br><span class="line">    ms = <span class="string">'00'</span></span><br><span class="line">    <span class="keyword">if</span> len(time) &gt;= <span class="number">3</span>:</span><br><span class="line">        hour = time[<span class="number">0</span>]</span><br><span class="line">        minute = time[<span class="number">1</span>]</span><br><span class="line">        seconds = time[<span class="number">2</span>].split(<span class="string">','</span>)</span><br><span class="line">        second = seconds[<span class="number">0</span>]</span><br><span class="line">        ms = seconds[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        hour = <span class="number">0</span></span><br><span class="line">        minute = time[<span class="number">2</span>]</span><br><span class="line">        seconds = time[<span class="number">3</span>].split(<span class="string">','</span>)</span><br><span class="line">        second = seconds[<span class="number">0</span>]</span><br><span class="line">        ms = seconds[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> int(hour) == <span class="number">0</span> <span class="keyword">and</span> int(minute) == <span class="number">0</span> <span class="keyword">and</span> int(second) == <span class="number">0</span> <span class="keyword">and</span> int(ms) == <span class="number">0</span>:</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    s = lines[i].strip()</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(lines) <span class="keyword">and</span> len(lines[i].strip()) &gt; <span class="number">0</span>:</span><br><span class="line">        s = s + lines[i].strip()</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    s = re.sub(<span class="string">"&lt;.*&gt;"</span>, <span class="string">""</span>, s)</span><br><span class="line">    <span class="keyword">if</span> len(s) &gt; <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">"[%.2d:%s.%.2s]%s"</span> % (int(hour)*<span class="number">60</span>+int(minute.strip()), second.strip(), ms.strip(), s))</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></p>
-	  
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> len(sys.argv) != <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">"Usage srt2lrc.py file"</span>)</span><br><span class="line">    sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">f = open(sys.argv[<span class="number">1</span>])</span><br><span class="line">lines = f.readlines()</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; len(lines):</span><br><span class="line">    line = lines[i]</span><br><span class="line">    <span class="keyword">if</span> line.find(<span class="string">'--&gt;'</span>) == -<span class="number">1</span>:</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    s = line.split(<span class="string">'--&gt;'</span>)</span><br><span class="line">    time = s[<span class="number">0</span>].split(<span class="string">':'</span>)</span><br><span class="line">    ms = <span class="string">'00'</span></span><br><span class="line">    <span class="keyword">if</span> len(time) &gt;= <span class="number">3</span>:</span><br><span class="line">        hour = time[<span class="number">0</span>]</span><br><span class="line">        minute = time[<span class="number">1</span>]</span><br><span class="line">        seconds = time[<span class="number">2</span>].split(<span class="string">','</span>)</span><br><span class="line">        second = seconds[<span class="number">0</span>]</span><br><span class="line">        ms = seconds[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        hour = <span class="number">0</span></span><br><span class="line">        minute = time[<span class="number">2</span>]</span><br><span class="line">        seconds = time[<span class="number">3</span>].split(<span class="string">','</span>)</span><br><span class="line">        second = seconds[<span class="number">0</span>]</span><br><span class="line">        ms = seconds[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> int(hour) == <span class="number">0</span> <span class="keyword">and</span> int(minute) == <span class="number">0</span> <span class="keyword">and</span> int(second) == <span class="number">0</span> <span class="keyword">and</span> int(ms) == <span class="number">0</span>:</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    s = lines[i].strip()</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(lines) <span class="keyword">and</span> len(lines[i].strip()) &gt; <span class="number">0</span>:</span><br><span class="line">        s = s + lines[i].strip()</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    s = re.sub(<span class="string">"&lt;.*&gt;"</span>, <span class="string">""</span>, s)</span><br><span class="line">    <span class="keyword">if</span> len(s) &gt; <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">"[%.2d:%s.%.2s]%s"</span> % (int(hour)*<span class="number">60</span>+int(minute.strip()), second.strip(), ms.strip(), s))</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></p>	  
 	</div>
 
 	<div>
@@ -138,20 +124,17 @@
 	
 </ul>
 </div>
-
     </center>
 	</div>
 	
 	<!-- comment -->
-	
-<section id="comment">
+	<section id="comment">
   <h2 class="title">留言</h2>
 
   
   	 <div class="ds-thread" data-thread-key="2010-07-14-srt2lrc_py.html" data-title="srt2lrc python版本" data-url="http://yesokay.herokuapp.com/2010-07-14-srt2lrc_py.html"></div>  
   
 </section>
-
 	
 	</div> <!-- col-md-9/col-md-12 -->
 	
@@ -171,11 +154,9 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
     <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
-  <li>
-    <li><a href="/categories/Linux/">Linux<span>52</span></a></li> <li><a href="/categories/programming/">programming<span>16</span></a></li> <li><a href="/categories/tools/">tools<span>13</span></a></li>
-  </li>
-
+        <li>
+    </li><li><a href="/categories/Linux/">Linux<span>52</span></a></li> <li><a href="/categories/programming/">programming<span>16</span></a></li> <li><a href="/categories/tools/">tools<span>13</span></a></li>
+  
     </ul>
 	</div>
 	
@@ -185,8 +166,7 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/python/">python<span>30</span></a></li>
+	  <li><a href="/tags/python/">python<span>30</span></a></li>
     </ul>
 	</div>
 		
@@ -199,11 +179,9 @@
     <hr>
 	
 </div><!-- col-md-3 -->
-
 	
 
 </div><!-- row -->
-
 	</div>
   </div>
   <div class="container-narrow">
@@ -213,8 +191,7 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
+  <a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -244,8 +221,5 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
-
 </body>
-   </html>
-
+   

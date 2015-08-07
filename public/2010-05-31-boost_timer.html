@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
-  <meta property="og:title" content="boost::timer"/>
-  <meta property="og:site_name" content="木哈哈"/>
+  <meta property="og:title" content="boost::timer">
+  <meta property="og:site_name" content="木哈哈">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -35,8 +35,7 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  
-<script>
+  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -45,11 +44,7 @@
   ga('send', 'pageview');
 </script>
 
-
-
-
-</head>
-
+</head></html>
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -92,19 +87,11 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
-
   <div class="container">
   	<div class="content">
-    	 
-
-
-	
-		<div class="page-header">		
+    	 <div class="page-header">		
 			<h1> boost::timer</h1>
-		</div>		
-	
-
-
+		</div>
 
 <div class="row post">
 	<!-- cols -->
@@ -121,8 +108,7 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ./boosttimer</span><br><span class="line"><span class="built_in">test</span> boost::timer</span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure></p>
 <p>究其原因：察看boost::timer的源代码/usr/include/boost/timer.hpp</p>
 <p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> timer</span><br><span class="line">&#123;</span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">         timer() &#123; _start_time = <span class="built_in">std</span>::clock(); &#125; <span class="comment">// postcondition: elapsed()==0</span></span><br><span class="line"><span class="comment">//         timer( const timer&amp; src );      // post: elapsed()==src.elapsed()</span></span><br><span class="line"><span class="comment">//        ~timer()&#123;&#125;</span></span><br><span class="line"><span class="comment">//  timer&amp; operator=( const timer&amp; src );  // post: elapsed()==src.elapsed()</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span>   <span class="title">restart</span><span class="params">()</span> </span>&#123; _start_time = <span class="built_in">std</span>::clock(); &#125; <span class="comment">// post: elapsed()==0</span></span><br><span class="line">  <span class="function"><span class="keyword">double</span> <span class="title">elapsed</span><span class="params">()</span> <span class="keyword">const</span>                  <span class="comment">// return elapsed time in seconds</span></span><br><span class="line">    </span>&#123; <span class="keyword">return</span>  <span class="keyword">double</span>(<span class="built_in">std</span>::clock() - _start_time) / CLOCKS_PER_SEC; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">double</span> <span class="title">elapsed_max</span><span class="params">()</span> <span class="keyword">const</span>   <span class="comment">// return estimated maximum value for elapsed()</span></span><br><span class="line">  <span class="comment">// Portability warning: elapsed_max() may return too high a value on systems</span></span><br><span class="line">  <span class="comment">// where std::clock_t overflows or resets at surprising values.</span></span><br><span class="line">  </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">double</span>((<span class="built_in">std</span>::numeric_limits&lt;<span class="built_in">std</span>::<span class="keyword">clock_t</span>&gt;::max)())</span><br><span class="line">       - <span class="keyword">double</span>(_start_time)) / <span class="keyword">double</span>(CLOCKS_PER_SEC);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">double</span> <span class="title">elapsed_min</span><span class="params">()</span> <span class="keyword">const</span>            <span class="comment">// return minimum value for elapsed()</span></span><br><span class="line">   </span>&#123; <span class="keyword">return</span> <span class="keyword">double</span>(<span class="number">1</span>)/<span class="keyword">double</span>(CLOCKS_PER_SEC); &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">private</span>:</span><br><span class="line">  <span class="built_in">std</span>::<span class="keyword">clock_t</span> _start_time;</span><br><span class="line">&#125;; <span class="comment">// timer</span></span><br></pre></td></tr></table></figure></p>
-<p>可以看到boost::timer的实现在linux下是通过std::clock()实现的.经测试std::clock()每次返回的值都是一样的。原因就是我们在这里使用的是sleep，而man 3 clock得到的是function returns an approximation of processor time used by the program.即得到的是cpu执行的时间，sleep的时候cpu执行时间（cpu  time）为0，所以每次都得到的一样的值，最后结果为0，如果我们将sleep改为一个循环，结果就将是这是的值了！测试的时候不能被sleep所迷惑了，所以我们用来测实际经过的时间的时候不能用boost::timer!可以选择alarm</p>
-	  
+<p>可以看到boost::timer的实现在linux下是通过std::clock()实现的.经测试std::clock()每次返回的值都是一样的。原因就是我们在这里使用的是sleep，而man 3 clock得到的是function returns an approximation of processor time used by the program.即得到的是cpu执行的时间，sleep的时候cpu执行时间（cpu  time）为0，所以每次都得到的一样的值，最后结果为0，如果我们将sleep改为一个循环，结果就将是这是的值了！测试的时候不能被sleep所迷惑了，所以我们用来测实际经过的时间的时候不能用boost::timer!可以选择alarm</p>	  
 	</div>
 
 	<div>
@@ -142,20 +128,17 @@
 	
 </ul>
 </div>
-
     </center>
 	</div>
 	
 	<!-- comment -->
-	
-<section id="comment">
+	<section id="comment">
   <h2 class="title">留言</h2>
 
   
   	 <div class="ds-thread" data-thread-key="2010-05-31-boost_timer.html" data-title="boost::timer" data-url="http://yesokay.herokuapp.com/2010-05-31-boost_timer.html"></div>  
   
 </section>
-
 	
 	</div> <!-- col-md-9/col-md-12 -->
 	
@@ -175,11 +158,9 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
     <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
-  <li>
-    <li><a href="/categories/programming/">programming<span>81</span></a></li>
-  </li>
-
+        <li>
+    </li><li><a href="/categories/programming/">programming<span>81</span></a></li>
+  
     </ul>
 	</div>
 	
@@ -189,8 +170,7 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/Linux/">Linux<span>69</span></a></li> <li><a href="/tags/boost/">boost<span>6</span></a></li>
+	  <li><a href="/tags/Linux/">Linux<span>69</span></a></li> <li><a href="/tags/boost/">boost<span>6</span></a></li>
     </ul>
 	</div>
 		
@@ -203,11 +183,9 @@
     <hr>
 	
 </div><!-- col-md-3 -->
-
 	
 
 </div><!-- row -->
-
 	</div>
   </div>
   <div class="container-narrow">
@@ -217,8 +195,7 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
+  <a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -248,8 +225,5 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
-
 </body>
-   </html>
-
+   

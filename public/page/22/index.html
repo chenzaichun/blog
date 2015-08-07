@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈"/>
+  <meta property="og:site_name" content="木哈哈">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
@@ -35,8 +35,7 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  
-<script>
+  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -45,11 +44,7 @@
   ga('send', 'pageview');
 </script>
 
-
-
-
-</head>
-
+</head></html>
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -92,7 +87,6 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
-
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -107,21 +101,15 @@
 
 		
 
-
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 1 2010 </div>
-			<div class="article-title"><a href="/2010-06-01-boost_parse_environment.html" >boost::parse_environment</a></div>						
+			<div class="article-title"><a href="/2010-06-01-boost_parse_environment.html">boost::parse_environment</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -131,7 +119,6 @@
 	  <p><code>boost::program_options::parse_environment</code>通过环境变量来设置<code>options</code>。</p>
 <p>这里需要注意的是需要注意的是：一定要将所需要的环境变量加入到<code>options</code>中。</p>
 <p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;boost/program_options.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> boost::program_options;</span><br><span class="line"></span><br><span class="line"><span class="comment">// compile: g++ boostprogramoption.cpp -o boostprogramoption -lboost_program_options</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// envs</span></span><br><span class="line"><span class="keyword">const</span> <span class="built_in">string</span> ENVS[] = &#123;</span><br><span class="line">    <span class="string">"HOME"</span>,</span><br><span class="line">    <span class="string">"PKG_CONFIG_PATH"</span>,</span><br><span class="line">    <span class="string">"PATH"</span>,</span><br><span class="line">    <span class="string">"http_proxy"</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> ENVCOUNT = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">name_mapper</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;var_name)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ENVCOUNT; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (var_name == ENVS[i])</span><br><span class="line">            <span class="keyword">return</span> var_name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">// need to pass the buffer size to constructor (e.g. 1024), otherwise:</span></span><br><span class="line">    <span class="comment">// undefined reference to 'boost::program_options::options_description::m_default_line_length'</span></span><br><span class="line">    <span class="function">options_description <span class="title">desc</span><span class="params">(<span class="string">"Allowed options"</span>, <span class="number">1024</span>)</span></span>;</span><br><span class="line">    desc.add_options()</span><br><span class="line">        (<span class="string">"help,h"</span>, <span class="string">"produce help message"</span>)</span><br><span class="line">        (<span class="string">"compression,c"</span>, value&lt;<span class="keyword">int</span>&gt;(), <span class="string">"set compression level"</span>)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// need to use the env as option, otherwise exception throwed:</span></span><br><span class="line">        (<span class="string">"HOME,m"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"home dir"</span>)</span><br><span class="line">        (<span class="string">"PATH,p"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"path"</span>)</span><br><span class="line">        (<span class="string">"PKG_CONFIG_PATH,k"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"pkg config"</span>)</span><br><span class="line">        (<span class="string">"http_proxy"</span>, value&lt;<span class="built_in">string</span>&gt;()-&gt;default_value(<span class="string">""</span>), <span class="string">"http proxy"</span>);</span><br><span class="line">        ;</span><br><span class="line"></span><br><span class="line">    variables_map vm;</span><br><span class="line">    store(parse_command_line(argc, argv, desc), vm);</span><br><span class="line">    store(parse_environment(desc, name_mapper), vm);</span><br><span class="line">    notify(vm);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"help"</span>)) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; desc &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"compression"</span>)) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was set to "</span></span><br><span class="line">             &lt;&lt; vm[<span class="string">"compression"</span>].as&lt;<span class="keyword">int</span>&gt;() &lt;&lt; endl;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was not set."</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ENVCOUNT; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (vm.count(ENVS[i])) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; ENVS[i] &lt;&lt; <span class="string">" is "</span></span><br><span class="line">                 &lt;&lt; vm[ENVS[i]].as&lt;<span class="built_in">string</span>&gt;() &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -139,18 +126,12 @@
 </div>
 	<a type="button" href="/2010-06-01-boost_parse_environment.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 1 2010 </div>
-			<div class="article-title"><a href="/2010-06-01-sudo_environment.html" >sudo环境变量</a></div>						
+			<div class="article-title"><a href="/2010-06-01-sudo_environment.html">sudo环境变量</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -159,7 +140,6 @@
 	
 	  <p>由于sudo运行程序不继承当前用户的环境变量，所以不能使用export var=value； sudo command的方式执行。解决办法：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo var=value <span class="built_in">command</span></span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -167,18 +147,12 @@
 </div>
 	<a type="button" href="/2010-06-01-sudo_environment.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 31 2010 </div>
-			<div class="article-title"><a href="/2010-05-31-emacs_htmlize_el_mono_font.html" >设置emacs htmlize.el为等宽字体</a></div>						
+			<div class="article-title"><a href="/2010-05-31-emacs_htmlize_el_mono_font.html">设置emacs htmlize.el为等宽字体</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -187,7 +161,6 @@
 	
 	  <p>我用emacs的htmlize.el elisp来给代码上色，默认情况下并没有设置成为等宽字体，所以显示上不太好看，为htmlize默认添加输出为等宽字体：</p>
 <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> htmlize-font-pre-tag <span class="list">(<span class="keyword">face-map</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">fstruct</span> <span class="list">(<span class="keyword">gethash</span> <span class="quoted">'default</span> face-map)</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">format</span> <span class="string">"&lt;pre style="</span>font-family: <span class="quoted">'courier</span> new', courier<span class="comment">;color:%s;background-color:%s"&gt;"</span></span><br><span class="line">            <span class="list">(<span class="keyword">htmlize-fstruct-foreground</span> fstruct)</span></span><br><span class="line">            <span class="list">(<span class="keyword">htmlize-fstruct-background</span> fstruct)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -195,18 +168,12 @@
 </div>
 	<a type="button" href="/2010-05-31-emacs_htmlize_el_mono_font.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 31 2010 </div>
-			<div class="article-title"><a href="/2010-05-31-boost_timer.html" >boost::timer</a></div>						
+			<div class="article-title"><a href="/2010-05-31-boost_timer.html">boost::timer</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -219,7 +186,6 @@
 <p>究其原因：察看boost::timer的源代码/usr/include/boost/timer.hpp</p>
 <p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> timer</span><br><span class="line">&#123;</span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">         timer() &#123; _start_time = <span class="built_in">std</span>::clock(); &#125; <span class="comment">// postcondition: elapsed()==0</span></span><br><span class="line"><span class="comment">//         timer( const timer&amp; src );      // post: elapsed()==src.elapsed()</span></span><br><span class="line"><span class="comment">//        ~timer()&#123;&#125;</span></span><br><span class="line"><span class="comment">//  timer&amp; operator=( const timer&amp; src );  // post: elapsed()==src.elapsed()</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span>   <span class="title">restart</span><span class="params">()</span> </span>&#123; _start_time = <span class="built_in">std</span>::clock(); &#125; <span class="comment">// post: elapsed()==0</span></span><br><span class="line">  <span class="function"><span class="keyword">double</span> <span class="title">elapsed</span><span class="params">()</span> <span class="keyword">const</span>                  <span class="comment">// return elapsed time in seconds</span></span><br><span class="line">    </span>&#123; <span class="keyword">return</span>  <span class="keyword">double</span>(<span class="built_in">std</span>::clock() - _start_time) / CLOCKS_PER_SEC; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">double</span> <span class="title">elapsed_max</span><span class="params">()</span> <span class="keyword">const</span>   <span class="comment">// return estimated maximum value for elapsed()</span></span><br><span class="line">  <span class="comment">// Portability warning: elapsed_max() may return too high a value on systems</span></span><br><span class="line">  <span class="comment">// where std::clock_t overflows or resets at surprising values.</span></span><br><span class="line">  </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">double</span>((<span class="built_in">std</span>::numeric_limits&lt;<span class="built_in">std</span>::<span class="keyword">clock_t</span>&gt;::max)())</span><br><span class="line">       - <span class="keyword">double</span>(_start_time)) / <span class="keyword">double</span>(CLOCKS_PER_SEC);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">double</span> <span class="title">elapsed_min</span><span class="params">()</span> <span class="keyword">const</span>            <span class="comment">// return minimum value for elapsed()</span></span><br><span class="line">   </span>&#123; <span class="keyword">return</span> <span class="keyword">double</span>(<span class="number">1</span>)/<span class="keyword">double</span>(CLOCKS_PER_SEC); &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">private</span>:</span><br><span class="line">  <span class="built_in">std</span>::<span class="keyword">clock_t</span> _start_time;</span><br><span class="line">&#125;; <span class="comment">// timer</span></span><br></pre></td></tr></table></figure></p>
 <p>可以看到boost::timer的实现在linux下是通过std::clock()实现的.经测试std::clock()每次返回的值都是一样的。原因就是我们在这里使用的是sleep，而man 3 clock得到的是function returns an approximation of processor time used by the program.即得到的是cpu执行的时间，sleep的时候cpu执行时间（cpu  time）为0，所以每次都得到的一样的值，最后结果为0，如果我们将sleep改为一个循环，结果就将是这是的值了！测试的时候不能被sleep所迷惑了，所以我们用来测实际经过的时间的时候不能用boost::timer!可以选择alarm</p>
-
 	
 	</div>
 	
@@ -227,18 +193,12 @@
 </div>
 	<a type="button" href="/2010-05-31-boost_timer.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 31 2010 </div>
-			<div class="article-title"><a href="/2010-05-31-boost_progress_display.html" >boost::progress_display</a></div>						
+			<div class="article-title"><a href="/2010-05-31-boost_progress_display.html">boost::progress_display</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -249,7 +209,6 @@
 <p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;boost/progress.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> boost;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">progress_display <span class="title">p</span><span class="params">(<span class="number">10</span>)</span></span>;     </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">        sleep(<span class="number">1</span>);</span><br><span class="line">        ++p;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>运行结果:</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ./boostprogress</span><br><span class="line"></span><br><span class="line"><span class="number">0</span>%   <span class="number">10</span>   <span class="number">20</span>   <span class="number">30</span>   <span class="number">40</span>   <span class="number">50</span>   <span class="number">60</span>   <span class="number">70</span>   <span class="number">80</span>   <span class="number">90</span>   <span class="number">100</span>%</span><br><span class="line">|----|----|----|----|----|----|----|----|----|----|</span><br><span class="line">****************************************</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -257,18 +216,12 @@
 </div>
 	<a type="button" href="/2010-05-31-boost_progress_display.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 18 2010 </div>
-			<div class="article-title"><a href="/2010-05-18-grub2_boot_default.html" >修改Grub2,XP默认首启动</a></div>						
+			<div class="article-title"><a href="/2010-05-18-grub2_boot_default.html">修改Grub2,XP默认首启动</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -285,7 +238,6 @@
 <p>这样，以后grub再次更新时，XP就默认在linux前启动了。</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure></p>
 <p>看看效果吧，这样以后每次更新grub,都是默认XP启动。</p>
-
 	
 	</div>
 	
@@ -293,18 +245,12 @@
 </div>
 	<a type="button" href="/2010-05-18-grub2_boot_default.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 16 2010 </div>
-			<div class="article-title"><a href="/2010-05-16-mercurial_hg_proxy.html" >mercurial hg代理设置</a></div>						
+			<div class="article-title"><a href="/2010-05-16-mercurial_hg_proxy.html">mercurial hg代理设置</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -314,7 +260,6 @@
 	  <p>由于在教育网中,sf上面的代码访问很慢,考虑为mercurial hg增加代理访问. 修改~/.hgrc, 增加</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[http_proxy]&#10;host=127.0.0.1:8580</span><br></pre></td></tr></table></figure></p>
 <p>详细的hgrc配置见官方文档: &lt;a href=&quot;http://www.selenic.com/mercurial/hgrc.5.html&quot; target=&quot;_blank&quot;&gt;http://www.selenic.com/mercurial/hgrc.5.html&lt;/a&gt;</p>
-
 	
 	</div>
 	
@@ -322,18 +267,12 @@
 </div>
 	<a type="button" href="/2010-05-16-mercurial_hg_proxy.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 11 2010 </div>
-			<div class="article-title"><a href="/2010-05-11-archlinux_x11_forwarding.html" >archlinux x11 forwarding</a></div>						
+			<div class="article-title"><a href="/2010-05-11-archlinux_x11_forwarding.html">archlinux x11 forwarding</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -342,7 +281,6 @@
 	
 	  <p>默认情况下archlinu是不允许x11 forwarding的,修改/etc/ssh/sshd_config</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AllowTcpForwarding yes&#10;X11Forwarding yes&#10;X11DisplayOffset 10&#10;X11UseLocalhost yes</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -350,18 +288,12 @@
 </div>
 	<a type="button" href="/2010-05-11-archlinux_x11_forwarding.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 10 2010 </div>
-			<div class="article-title"><a href="/2010-05-10-archlinux_install_yaourt.html" >archlinux安装yaourt</a></div>						
+			<div class="article-title"><a href="/2010-05-10-archlinux_install_yaourt.html">archlinux安装yaourt</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -376,7 +308,6 @@
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxfr]&#10;Server = http://repo.archlinux.fr/x86_64</span><br></pre></td></tr></table></figure></p>
 <p>同步并安装：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br><span class="line">pacman -S yaourt</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -384,18 +315,12 @@
 </div>
 	<a type="button" href="/2010-05-10-archlinux_install_yaourt.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
-			
-	
-	<!-- display as entry -->	
+			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 10 2010 </div>
-			<div class="article-title"><a href="/2010-05-10-archlinux_global_proxy.html" >archlinux全局代理</a></div>						
+			<div class="article-title"><a href="/2010-05-10-archlinux_global_proxy.html">archlinux全局代理</a></div>						
 		</h3>
-	
-
-
 			<div class="entry">
   <div class="row">
   
@@ -407,7 +332,6 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</span><br><span class="line"><span class="built_in">export</span> ftp_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</span><br></pre></td></tr></table></figure></p>
 <p>我们可以增加两个函数用来打开关闭代理,在.bashrc里面添加:</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> -n “username:”</span><br><span class="line">    <span class="built_in">read</span> <span class="operator">-e</span> username</span><br><span class="line">    <span class="built_in">echo</span> -n “password:”</span><br><span class="line">    <span class="built_in">read</span> -es password</span><br><span class="line">    <span class="built_in">export</span> http_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">export</span> ftp_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable set.”</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxyoff</span></span>()&#123;</span><br><span class="line">    <span class="built_in">unset</span> HTTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> http_proxy</span><br><span class="line">    <span class="built_in">unset</span> FTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> ftp_proxy</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable removed.”</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -415,7 +339,6 @@
 </div>
 	<a type="button" href="/2010-05-10-archlinux_global_proxy.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-
 		
 
 		</div>
@@ -438,7 +361,6 @@
 	
 </ul>
 </div>
-
   		</center>
 		</div>
 
@@ -451,114 +373,104 @@
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8" >
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
-
 		
-			
-	<div class="widget">
+			<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
 		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
-		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
-		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
-		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
-		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
-		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
-		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
-		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
-		
-			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
-		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
 		
 			<li><a href="/tags/scm/">scm<span>1</span></a></li>
 		
-			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+			<li><a href="/tags/android/">android<span>18</span></a></li>
 		
-			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
 		
-			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
+			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
 		
-			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
 		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
 		
-			<li><a href="/tags/programming/">programming<span>4</span></a></li>
+			<li><a href="/tags/soap/">soap<span>1</span></a></li>
 		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
+		
+			<li><a href="/tags/portable/">portable<span>1</span></a></li>
+		
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+		
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+		
+			<li><a href="/tags/network/">network<span>1</span></a></li>
+		
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
+		
+			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+		
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+		
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+		
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
+		
+			<li><a href="/tags/python/">python<span>30</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
-
-
 		
-			
-<div class="widget">
+			<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧...</a>
+        <a href="/2013-06-13-cheat.html"><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
 </div>
-
 		
-			
-<div class="widget">
+			<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
-
-
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
-
 	
 	
 </div> <!-- row-fluid -->
@@ -571,8 +483,7 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  
-<a id="gotop" href="#">   
+  <a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -602,8 +513,5 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
-
 </body>
-   </html>
-
+   
