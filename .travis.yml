@@ -29,6 +29,6 @@ after_success:
 deploy:
   provider: heroku
   api_key:
-    secure: $HEROKU_SEC
+    secure: DhXLOOeeIIIS+lw/WZrDmGViIDHCK66WRcWLlkGSpP+JCTxbZEQwO5Zibtxw/YAR8VQ3f5NY0hhGR8VaAmPmufJKbOU7+CD1owDx1BsfZ/x4N5jUWvdslskb27ulo7u5at82khrnK+gHASPUfBJiG8RsuqjXtO+E3sPWKtPKrdM=
   app: yesokay
   strategy: git
