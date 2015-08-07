@@ -6,7 +6,7 @@ branches:
   - master
 before_install:
 #- npm install -g "git+https://github.com/chenzaichun/hexo.git#2.8.3"
-- npm install -g hexo-cli@3.1.1
+- npm install -g hexo-cli@0.1.7
 install:
 - npm install
 before_script:
