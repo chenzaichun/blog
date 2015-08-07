@@ -1,9 +1,11 @@
 var connect = require('connect'),
-  app = connect.createServer(),
+  app = connect(),
   port = process.env.PORT;
 
-app.use(connect.static(__dirname + '/public'));
-app.use(connect.compress());
+var compression = require('compression');
+var serveStatic = require('serve-static')
+app.use(compression());
+app.use(serveStatic(__dirname + '/public'));
 
 app.listen(port, function(){
   console.log('Hexo is running on port %d', port);
