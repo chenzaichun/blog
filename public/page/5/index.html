@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -122,10 +114,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-05-12-add-robots-dot-txt-to-octopress.html" >Octopress添加robots.txt</a>
-			<span class="date"> 5月 12 2012 </span>
+			<div class="date"> May 12 2012 </div>
+			<div class="article-title"><a href="/2012-05-12-add-robots-dot-txt-to-octopress.html" >Octopress添加robots.txt</a></div>						
 		</h3>
 	
 
@@ -137,8 +129,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>添加<code>source/robots.txt</code>:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">---</span></div><div class="line"><span class="header">layout: nil</span></div><div class="line">---</div><div class="line">User-agent: *</div><div class="line">Disallow: </div><div class="line">Sitemap: /sitemap.xml</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---&#10;layout: nil&#10;---&#10;User-agent: *&#10;Disallow: &#10;Sitemap: &#123;&#123; site.url &#125;&#125;/sitemap.xml</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -151,10 +142,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-05-12-octopress-useful-links.html" >octopress常用链接整理</a>
-			<span class="date"> 5月 12 2012 </span>
+			<div class="date"> May 12 2012 </div>
+			<div class="article-title"><a href="/2012-05-12-octopress-useful-links.html" >octopress常用链接整理</a></div>						
 		</h3>
 	
 
@@ -166,15 +157,34 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <ol>
-<li><p><a href="http://jasongarber.com/blog/2012/01/10/deploying-octopress-to-heroku-with-a-custom-buildpack" target="_blank" rel="external">Heroku上搭建octopress自动deploy环境</a> — 这篇文章可以让你绕过生成静态页面的过程，通过heroku的build pack在push的时候自动将markdown编译成静态页面。</p>
+<li>
+<p><a href="http://jasongarber.com/blog/2012/01/10/deploying-octopress-to-heroku-with-a-custom-buildpack" target="_blank" rel="external">Heroku上搭建octopress自动deploy环境</a> -- 这篇文章可以让你绕过生成静态页面的过程，通过heroku的build pack在push的时候自动将markdown编译成静态页面。</p>
 </li>
-<li><p><a href="http://geron.heroku.com/blog/2012/03/octo-cate-cn-spo/" target="_blank" rel="external">Octopress博客分类添加中文支持</a></p>
+<li>
+<p><a href="http://geron.heroku.com/blog/2012/03/octo-cate-cn-spo/" target="_blank" rel="external">Octopress博客分类添加中文支持</a></p>
 </li>
-<li><p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/" target="_blank" rel="external">如何從Wordpress Migrate到Octopress</a></p>
+<li>
+<p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/" target="_blank" rel="external">如何從Wordpress Migrate到Octopress</a></p>
 </li>
-<li><p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/" target="_blank" rel="external">301轉址</a> — 重定向feed到atom.xml</p>
-<p> 比如我的设置:</p>
- 
+<li>
+<p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/" target="_blank" rel="external">301轉址</a> -- 重定向feed到atom.xml</p>
+<p>比如我的设置:</p>
+<p>&lt;!--more--&gt;</p>
+</li>
+</ol>
+<p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">use <span class="constant">Rack::Rewrite</span> <span class="keyword">do</span></span><br><span class="line"> r301 %r&#123;<span class="regexp">/\?feed=(.*)?&#125;, "&#123;&#123; site.url &#125;&#125;/atom</span>.xml<span class="string">"</span><br><span class="line"> r301 %r&#123;/feed&#125;, "</span>&#123;&#123; site.url &#125;&#125;/atom.xml<span class="string">"</span><br><span class="line">end</span></span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li>
+<p><a href="http://imwuyu.me/blog/configuring-octopress.html/" target="_blank" rel="external">添加 related post</a></p>
+</li>
+<li>
+<p><a href="https://github.com/robbyedwards/octopress-tag-pages" target="_blank" rel="external">Plugin for Octopress to generate tag pages</a></p>
+</li>
+<li>
+<p><a href="https://github.com/robbyedwards/octopress-tag-cloud" target="_blank" rel="external">A tag cloud plugin for Octopress</a></p>
+</li>
+</ol>
+
 	
 	</div>
 	
@@ -186,10 +196,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-04-10-soappy-error-xml-parsers-expat-expaterror.html" >SOAPpy Error</a>
-			<span class="date"> 4月 10 2012 </span>
+			<div class="date"> Apr 10 2012 </div>
+			<div class="article-title"><a href="/2012-04-10-soappy-error-xml-parsers-expat-expaterror.html" >SOAPpy Error</a></div>						
 		</h3>
 	
 
@@ -201,9 +211,30 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>今天准备用SOAPpy来写一个最简单的soap client，代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> SOAPpy <span class="keyword">import</span> WSDL</div><div class="line">WSDLfile = <span class="string">"/path/to/webservice"</span></div><div class="line"></div><div class="line">wsdlObject = WSDL.Proxy(WSDLfile)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">'Available methods:'</span></div><div class="line"><span class="keyword">for</span> method <span class="keyword">in</span> wsdlObject.methods.keys() :</div><div class="line">    <span class="keyword">print</span> method</div><div class="line">    ci = wsdlObject.methods[method]</div><div class="line">    <span class="comment"># you can also use ci.inparams</span></div><div class="line">    <span class="keyword">for</span> param <span class="keyword">in</span> ci.outparams :</div><div class="line">        <span class="comment"># list of the function and type </span></div><div class="line">        <span class="comment"># depending of the wsdl...</span></div><div class="line">        <span class="keyword">print</span> param.name.ljust(<span class="number">20</span>) , param.type</div><div class="line">    <span class="keyword">print</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> SOAPpy <span class="keyword">import</span> WSDL</span><br><span class="line">WSDLfile = <span class="string">"/path/to/webservice"</span></span><br><span class="line"></span><br><span class="line">wsdlObject = WSDL.Proxy(WSDLfile)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Available methods:'</span></span><br><span class="line"><span class="keyword">for</span> method <span class="keyword">in</span> wsdlObject.methods.keys() :</span><br><span class="line">    <span class="keyword">print</span> method</span><br><span class="line">    ci = wsdlObject.methods[method]</span><br><span class="line">    <span class="comment"># you can also use ci.inparams</span></span><br><span class="line">    <span class="keyword">for</span> param <span class="keyword">in</span> ci.outparams :</span><br><span class="line">        <span class="comment"># list of the function and type </span></span><br><span class="line">        <span class="comment"># depending of the wsdl...</span></span><br><span class="line">        <span class="keyword">print</span> param.name.ljust(<span class="number">20</span>) , param.type</span><br><span class="line">    <span class="keyword">print</span></span><br></pre></td></tr></table></figure></p>
 <p>运行的时候出现了这个问题：</p>
+<p>&lt;!--more--&gt;</p>
+<blockquote>
+<p>Traceback (most recent call last):
+File &quot;remedy_ws_client.py&quot;, line 9, in &lt;module&gt;
+wsdlObject = WSDL.Proxy(WSDLfile)
+File &quot;build/bdist.macosx-10.6-universal/egg/SOAPpy/WSDL.py&quot;, line 85, in <strong>init</strong>
+File &quot;/Library/Python/2.6/site-packages/wstools-0.3-py2.6.egg/wstools/WSDLTools.py&quot;, line 47, in loadFromString
+return self.loadFromStream(StringIO(data))
+File &quot;/Library/Python/2.6/site-packages/wstools-0.3-py2.6.egg/wstools/WSDLTools.py&quot;, line 28, in loadFromStream
+document = DOM.loadDocument(stream)
+File &quot;/Library/Python/2.6/site-packages/wstools-0.3-py2.6.egg/wstools/Utility.py&quot;, line 635, in loadDocument
+return xml.dom.minidom.parse(data)
+File &quot;/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/xml/dom/minidom.py&quot;, line 1918, in parse
+return expatbuilder.parse(file)
+File &quot;/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/xml/dom/expatbuilder.py&quot;, line 928, in parse
+result = builder.parseFile(file)
+File &quot;/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/xml/dom/expatbuilder.py&quot;, line 207, in parseFile
+parser.Parse(buffer, 0)
+xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5</p>
+</blockquote>
+<p>查了很久，最后发现是因为公司网络需要代理的缘故，造成python不能连接网络。解决办法就是:</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=proxy_server:port</span><br><span class="line"><span class="built_in">export</span> https_proxy=proxy_server:port</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -216,10 +247,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-02-28-gsoap-error-500.html" >gsoap Error 500</a>
-			<span class="date"> 2月 28 2012 </span>
+			<div class="date"> Feb 28 2012 </div>
+			<div class="article-title"><a href="/2012-02-28-gsoap-error-500.html" >gsoap Error 500</a></div>						
 		</h3>
 	
 
@@ -234,13 +265,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <blockquote>
 <p>Error 500 fault: SOAP-ENV:Server[no subcode]</p>
 </blockquote>
-<p>通过tcpdump分析得到，gsoap强制加入了一个SOAP-ENV:mustUnderstand=”1”属性，而web service方不能解析该属性。</p>
-<p>解决办法, </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// set mustUnderstand to 0</span></div><div class="line">soap.mustUnderstand=<span class="number">0</span>;</div></pre></td></tr></table></figure>
-
+<p>通过tcpdump分析得到，gsoap强制加入了一个SOAP-ENV:mustUnderstand=&quot;1&quot;属性，而web service方不能解析该属性。</p>
+<p>解决办法,</p>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// set mustUnderstand to 0</span></span><br><span class="line">soap.mustUnderstand=<span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
 <p>修改soapC.cpp, 注释掉<code>soap-&gt;mustUnderstand=1</code>这一行：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 soap_out_SOAP_ENV__Header(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</div><div class="line">{</div><div class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</div><div class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></div><div class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</div><div class="line">}</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 <span class="title">soap_out_SOAP_ENV__Header</span><span class="params">(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</span><br><span class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></span><br><span class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &amp;a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -253,10 +282,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-02-28-using-tcpdump-analysis-soap-protocol.html" >使用tcpdump分析soap包</a>
-			<span class="date"> 2月 28 2012 </span>
+			<div class="date"> Feb 28 2012 </div>
+			<div class="article-title"><a href="/2012-02-28-using-tcpdump-analysis-soap-protocol.html" >使用tcpdump分析soap包</a></div>						
 		</h3>
 	
 
@@ -268,8 +297,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20090308/159740.html" target="_blank" rel="external">参考链接</a></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tcpdump -A <span class="operator">-s</span>0 host endpoint-host-name</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -A <span class="operator">-s</span>0 host endpoint-host-name</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -282,10 +310,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-02-28-gsoap-error-200.html" >gsoap Error 200</a>
-			<span class="date"> 2月 28 2012 </span>
+			<div class="date"> Feb 28 2012 </div>
+			<div class="article-title"><a href="/2012-02-28-gsoap-error-200.html" >gsoap Error 200</a></div>						
 		</h3>
 	
 
@@ -300,8 +328,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <blockquote>
 <p>Error 200 fault: SOAP-ENV:Client[no subcode]</p>
 </blockquote>
-<p>解决办法： </p>
-<p>修改gsoap init的endpoint为全路径解决问题。 </p>
+<p>解决办法：</p>
+<p>修改gsoap init的endpoint为全路径解决问题。</p>
 
 	
 	</div>
@@ -314,10 +342,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html" >MacOS X emacs拖拽打开文件</a>
-			<span class="date"> 2月 6 2012 </span>
+			<div class="date"> Feb 6 2012 </div>
+			<div class="article-title"><a href="/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html" >MacOS X emacs拖拽打开文件</a></div>						
 		</h3>
 	
 
@@ -330,9 +358,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>emacs在mac os x中拖拽文件到buffer会在buffer中嵌入显示拖拽文件的内容，解决办法：</p>
 <p>在<code>.emacs</code>中加入</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="list">(<span class="title">define-key</span> global-map [ns-drag-file] <span class="quoted">'my-ns-open-files</span>)</span></div><div class="line"><span class="list">(<span class="title">defun</span> my-ns-open-files <span class="list">()</span></span></div><div class="line">  <span class="string">"Open files in the list `ns-input-file'."</span></div><div class="line">  <span class="list">(<span class="title">interactive</span>)</span></div><div class="line">  <span class="list">(<span class="title">mapc</span> <span class="quoted">'find-file</span> ns-input-file)</span></div><div class="line">  <span class="list">(<span class="title">setq</span> ns-input-file <span class="literal">nil</span>)</span>)</div></pre></td></tr></table></figure>
-
-
+<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">define-key</span> global-map [ns-drag-file] <span class="quoted">'my-ns-open-files</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> my-ns-open-files <span class="list">()</span></span><br><span class="line">  <span class="string">"Open files in the list `ns-input-file'."</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">mapc</span> <span class="quoted">'find-file</span> ns-input-file)</span></span><br><span class="line">  <span class="list">(<span class="keyword">setq</span> ns-input-file <span class="literal">nil</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -345,10 +371,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-02-03-compile-gsoap-on-mac-os-x.html" >MacOS X上编译gSOAP</a>
-			<span class="date"> 2月 3 2012 </span>
+			<div class="date"> Feb 3 2012 </div>
+			<div class="article-title"><a href="/2012-02-03-compile-gsoap-on-mac-os-x.html" >MacOS X上编译gSOAP</a></div>						
 		</h3>
 	
 
@@ -359,12 +385,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">automake --ignore-deps && ./configure && make</div></pre></td></tr></table></figure>
-
+	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">automake --ignore-deps &amp;&amp; ./configure &amp;&amp; make</span><br></pre></td></tr></table></figure></p>
 <p>如果要编译universal版本，则使用</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">automake --ignore-deps && ./configure CFLAGS=<span class="string">"-arch ppc -arch i386"</span> LDFLAGS=<span class="string">"-arch ppc -arch i386"</span> && make</div></pre></td></tr></table></figure>
-
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">automake --ignore-deps &amp;&amp; ./configure CFLAGS=<span class="string">"-arch ppc -arch i386"</span> LDFLAGS=<span class="string">"-arch ppc -arch i386"</span> &amp;&amp; make</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -377,10 +400,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc.html" >Git svn – Can’t locate Term/ReadKey.pm in @INC</a>
-			<span class="date"> 2月 2 2012 </span>
+			<div class="date"> Feb 2 2012 </div>
+			<div class="article-title"><a href="/2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc.html" >Git svn – Can’t locate Term/ReadKey.pm in @INC</a></div>						
 		</h3>
 	
 
@@ -391,11 +414,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">perl -MCPAN <span class="operator">-e</span> shell</div><div class="line"></div><div class="line"><span class="comment"># install Term::ReadKey</span></div><div class="line"><span class="comment"># exit</span></div><div class="line">perl -MCPAN <span class="operator">-e</span> shellinstall Term::ReadKeyexit</div></pre></td></tr></table></figure>
-
+	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">perl -MCPAN <span class="operator">-e</span> shell</span><br><span class="line"></span><br><span class="line"><span class="comment"># install Term::ReadKey</span></span><br><span class="line"><span class="comment"># exit</span></span><br><span class="line">perl -MCPAN <span class="operator">-e</span> shellinstall Term::ReadKeyexit</span><br></pre></td></tr></table></figure></p>
 <p>archlinux上可以安装<code>extra/perl-term-readkey</code></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pacman -S perl-term-readkey</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S perl-term-readkey</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -408,10 +429,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-01-30-git-svn-proxy-setting.html" >git svn代理设置</a>
-			<span class="date"> 1月 30 2012 </span>
+			<div class="date"> Jan 30 2012 </div>
+			<div class="article-title"><a href="/2012-01-30-git-svn-proxy-setting.html" >git svn代理设置</a></div>						
 		</h3>
 	
 
@@ -423,8 +444,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>git svn的代理设置需要通过修改<code>~/.subversion/servers</code>文件来实现：</p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[groups]</div><div class="line"><span class="variable">assembla =</span> *.assembla.com</div><div class="line"><span class="comment"># group1 = *.collab.net</span></div><div class="line"><span class="comment"># othergroup = repository.blarggitywhoomph.com</span></div><div class="line"><span class="comment"># thirdgroup = *.example.com</span></div><div class="line"></div><div class="line">[assembla]</div><div class="line"><span class="variable">http-proxy-host =</span> proxy-server</div><div class="line"><span class="variable">http-proxy-port =</span> <span class="number">8080</span></div><div class="line"><span class="variable">http-compression =</span> yes</div><div class="line"><span class="variable">username =</span> yesokay</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[groups]&#10;assembla = *.assembla.com&#10;# group1 = *.collab.net&#10;# othergroup = repository.blarggitywhoomph.com&#10;# thirdgroup = *.example.com&#10;&#10;[assembla]&#10;http-proxy-host = proxy-server&#10;http-proxy-port = 8080&#10;http-compression = yes&#10;username = yesokay</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -478,81 +498,48 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	<div class="widget">
-		<h4>分类</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/categories/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/categories/Tools/">Tools<span>1</span></a></li>
-		
-			<li><a href="/categories/emacs/">emacs<span>61</span></a></li>
-		
-			<li><a href="/categories/gamedev/">gamedev<span>5</span></a></li>
-		
-			<li><a href="/categories/ios/">ios<span>3</span></a></li>
-		
-			<li><a href="/categories/opengl/">opengl<span>1</span></a></li>
-		
-			<li><a href="/categories/oracle/">oracle<span>1</span></a></li>
-		
-			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/categories/programming/">programming<span>139</span></a></li>
-		
-			<li><a href="/categories/tools/">tools<span>142</span></a></li>
-		
-			<li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
-		
-		</ul>
-	</div>
-
-		
-			
-	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
 		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
 		
-			<li><a href="/tags/soap/">soap<span>1</span></a></li>
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
 		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
 		
-			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
 		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
 		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
 		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
 		
-			<li><a href="/tags/redis/">redis<span>1</span></a></li>
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
 		
 			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
 		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
-		
 			<li><a href="/tags/hg/">hg<span>9</span></a></li>
 		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+			<li><a href="/tags/redis/">redis<span>1</span></a></li>
 		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
+		
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+		
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+		
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
 		
 			<li><a href="/tags/programming/">programming<span>4</span></a></li>
 		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
 		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
 		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
-		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
-		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -568,23 +555,23 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
@@ -619,7 +606,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

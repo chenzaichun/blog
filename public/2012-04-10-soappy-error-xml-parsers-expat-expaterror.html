@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -125,16 +117,30 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>今天准备用SOAPpy来写一个最简单的soap client，代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> SOAPpy <span class="keyword">import</span> WSDL</div><div class="line">WSDLfile = <span class="string">"/path/to/webservice"</span></div><div class="line"></div><div class="line">wsdlObject = WSDL.Proxy(WSDLfile)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">'Available methods:'</span></div><div class="line"><span class="keyword">for</span> method <span class="keyword">in</span> wsdlObject.methods.keys() :</div><div class="line">    <span class="keyword">print</span> method</div><div class="line">    ci = wsdlObject.methods[method]</div><div class="line">    <span class="comment"># you can also use ci.inparams</span></div><div class="line">    <span class="keyword">for</span> param <span class="keyword">in</span> ci.outparams :</div><div class="line">        <span class="comment"># list of the function and type </span></div><div class="line">        <span class="comment"># depending of the wsdl...</span></div><div class="line">        <span class="keyword">print</span> param.name.ljust(<span class="number">20</span>) , param.type</div><div class="line">    <span class="keyword">print</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> SOAPpy <span class="keyword">import</span> WSDL</span><br><span class="line">WSDLfile = <span class="string">"/path/to/webservice"</span></span><br><span class="line"></span><br><span class="line">wsdlObject = WSDL.Proxy(WSDLfile)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Available methods:'</span></span><br><span class="line"><span class="keyword">for</span> method <span class="keyword">in</span> wsdlObject.methods.keys() :</span><br><span class="line">    <span class="keyword">print</span> method</span><br><span class="line">    ci = wsdlObject.methods[method]</span><br><span class="line">    <span class="comment"># you can also use ci.inparams</span></span><br><span class="line">    <span class="keyword">for</span> param <span class="keyword">in</span> ci.outparams :</span><br><span class="line">        <span class="comment"># list of the function and type </span></span><br><span class="line">        <span class="comment"># depending of the wsdl...</span></span><br><span class="line">        <span class="keyword">print</span> param.name.ljust(<span class="number">20</span>) , param.type</span><br><span class="line">    <span class="keyword">print</span></span><br></pre></td></tr></table></figure></p>
 <p>运行的时候出现了这个问题：</p>
-<a id="more"></a>
+<p>&lt;!--more--&gt;</p>
 <blockquote>
-<p>Traceback (most recent call last):<br>  File “remedy<em>ws<em>client.py”, line 9, in <module><br>    wsdlObject = WSDL.Proxy(WSDLfile)<br>  File “build/bdist.macosx-10.6-universal/egg/SOAPpy/WSDL.py”, line 85, in __init</module></em></em><br>  File “/Library/Python/2.6/site-packages/wstools-0.3-py2.6.egg/wstools/WSDLTools.py”, line 47, in loadFromString<br>    return self.loadFromStream(StringIO(data))<br>  File “/Library/Python/2.6/site-packages/wstools-0.3-py2.6.egg/wstools/WSDLTools.py”, line 28, in loadFromStream<br>    document = DOM.loadDocument(stream)<br>  File “/Library/Python/2.6/site-packages/wstools-0.3-py2.6.egg/wstools/Utility.py”, line 635, in loadDocument<br>    return xml.dom.minidom.parse(data)<br>  File “/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/xml/dom/minidom.py”, line 1918, in parse<br>    return expatbuilder.parse(file)<br>  File “/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/xml/dom/expatbuilder.py”, line 928, in parse<br>    result = builder.parseFile(file)<br>  File “/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/xml/dom/expatbuilder.py”, line 207, in parseFile<br>    parser.Parse(buffer, 0)<br>xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5</p>
+<p>Traceback (most recent call last):
+File &quot;remedy_ws_client.py&quot;, line 9, in &lt;module&gt;
+wsdlObject = WSDL.Proxy(WSDLfile)
+File &quot;build/bdist.macosx-10.6-universal/egg/SOAPpy/WSDL.py&quot;, line 85, in <strong>init</strong>
+File &quot;/Library/Python/2.6/site-packages/wstools-0.3-py2.6.egg/wstools/WSDLTools.py&quot;, line 47, in loadFromString
+return self.loadFromStream(StringIO(data))
+File &quot;/Library/Python/2.6/site-packages/wstools-0.3-py2.6.egg/wstools/WSDLTools.py&quot;, line 28, in loadFromStream
+document = DOM.loadDocument(stream)
+File &quot;/Library/Python/2.6/site-packages/wstools-0.3-py2.6.egg/wstools/Utility.py&quot;, line 635, in loadDocument
+return xml.dom.minidom.parse(data)
+File &quot;/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/xml/dom/minidom.py&quot;, line 1918, in parse
+return expatbuilder.parse(file)
+File &quot;/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/xml/dom/expatbuilder.py&quot;, line 928, in parse
+result = builder.parseFile(file)
+File &quot;/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/xml/dom/expatbuilder.py&quot;, line 207, in parseFile
+parser.Parse(buffer, 0)
+xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5</p>
 </blockquote>
-<p>查了很久，最后发现是因为公司网络需要代理的缘故，造成python不能连接网络。解决办法就是: </p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> http_proxy=proxy_server:port</div><div class="line"><span class="keyword">export</span> https_proxy=proxy_server:port</div></pre></td></tr></table></figure>
-
+<p>查了很久，最后发现是因为公司网络需要代理的缘故，造成python不能连接网络。解决办法就是:</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=proxy_server:port</span><br><span class="line"><span class="built_in">export</span> https_proxy=proxy_server:port</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -165,7 +171,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-04-10-soappy-error-xml-parsers-expat-expaterror.html" data-title="SOAPpy Error" data-url="http://yesokay.herokuapp.com/2012-04-10-soappy-error-xml-parsers-expat-expaterror.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2012-04-10-soappy-error-xml-parsers-expat-expaterror.html" data-title="SOAPpy Error" data-url="http://yesokay.herokuapp.com/2012-04-10-soappy-error-xml-parsers-expat-expaterror.html"></div>  
   
 </section>
 
@@ -179,7 +185,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	4月 10 2012 
+	Apr 10 2012 
 	</div>
 	
 
@@ -190,7 +196,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>57</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li>
+    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>42</span></a></li> <li><a href="/categories/programming/">programming<span>21</span></a></li>
   </li>
 
     </ul>
@@ -227,7 +233,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

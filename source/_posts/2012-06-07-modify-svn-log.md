@@ -1,4 +1,3 @@
----
 layout: post
 title: "修改SVN中已提交的日志"
 date: 2012-06-07 13:30

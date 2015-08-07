@@ -1,4 +1,3 @@
----
 layout: post
 title: "remove android lock-screen pin with sqlite3"
 date: 2012-07-27 16:16

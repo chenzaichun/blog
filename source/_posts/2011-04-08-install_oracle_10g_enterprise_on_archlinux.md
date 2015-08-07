@@ -1,4 +1,3 @@
---- 
 categories: 
   - Linux
   - oracle

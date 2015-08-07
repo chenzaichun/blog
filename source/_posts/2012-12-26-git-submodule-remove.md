@@ -1,4 +1,3 @@
----
 layout: post
 title: "删除git submodule"
 date: 2012-12-26 14:02

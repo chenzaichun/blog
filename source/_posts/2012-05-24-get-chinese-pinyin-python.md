@@ -1,4 +1,3 @@
----
 layout: post
 title: "python获取中文拼音首字母以进行检索"
 date: 2012-05-24 14:11

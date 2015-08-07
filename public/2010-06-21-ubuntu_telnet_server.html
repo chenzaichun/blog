@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -127,28 +119,23 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	    <ol>
 <li>安装xinetd和telnetd</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install xinetd telnetd</div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xinetd telnetd</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
 <li>/etc/inetd.conf在安装过程中已经配置好，修改/etc/xinetd.conf</li>
 </ol>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">defaults{</div><div class="line"></div><div class="line"><span class="preprocessor"># Please note that you need a log_type line to be able to use log_on_success</span></div><div class="line"><span class="preprocessor"># and log_on_failure. The default is the following :</span></div><div class="line"><span class="preprocessor"># log_type = SYSLOG daemon info</span></div><div class="line"><span class="preprocessor">## Please note that you need a log_type line to be able to use log_on_success</span></div><div class="line"><span class="preprocessor">## and log_on_failure. The default is the following :## log_type = SYSLOG daemon info</span></div><div class="line"><span class="preprocessor"># </span></div><div class="line"><span class="preprocessor">## start the insert content</span></div><div class="line"><span class="preprocessor">#</span></div><div class="line"><span class="preprocessor"># if I have time, I will add some comments about this part.</span></div><div class="line"><span class="preprocessor"># instances =60#log_type = SYSLOG authpriv</span></div><div class="line"><span class="preprocessor"># log_on_success = HOST PID</span></div><div class="line"><span class="preprocessor"># log_on_failure = HOST</span></div><div class="line"><span class="preprocessor"># tcps = 25 30</span></div><div class="line"><span class="preprocessor">## end the insert content</span></div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults&#123;&#10;&#10;# Please note that you need a log_type line to be able to use log_on_success&#10;# and log_on_failure. The default is the following :&#10;# log_type = SYSLOG daemon info&#10;## Please note that you need a log_type line to be able to use log_on_success&#10;## and log_on_failure. The default is the following :## log_type = SYSLOG daemon info&#10;# &#10;## start the insert content&#10;#&#10;# if I have time, I will add some comments about this part.&#10;# instances =60#log_type = SYSLOG authpriv&#10;# log_on_success = HOST PID&#10;# log_on_failure = HOST&#10;# tcps = 25 30&#10;## end the insert content</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
 <li>添加/etc/xinet.d/telnet</li>
 </ol>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#service telnet</span></div><div class="line"><span class="preprocessor">#{</span></div><div class="line"><span class="preprocessor">#disable = no</span></div><div class="line"><span class="preprocessor">#flags = REUSE</span></div><div class="line"><span class="preprocessor">#socket_type = stream</span></div><div class="line"><span class="preprocessor">#wait = no</span></div><div class="line"><span class="preprocessor">#user = root</span></div><div class="line"><span class="preprocessor">#server = /usr/sbin/in.telnetd</span></div><div class="line"><span class="preprocessor">#log_on_failure += USERID</span></div><div class="line"><span class="preprocessor">#}</span></div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#service telnet&#10;#&#123;&#10;#disable = no&#10;#flags = REUSE&#10;#socket_type = stream&#10;#wait = no&#10;#user = root&#10;#server = /usr/sbin/in.telnetd&#10;#log_on_failure += USERID&#10;#&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
 <li>重启xinetd服务</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> /etc/init.d/xinetd restart</div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/xinetd restart</span><br></pre></td></tr></table></figure></p>
+<ol start="5">
 <li>测试一下</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">telnet <span class="number">127.0</span>.<span class="number">0.1</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet <span class="number">127.0</span>.<span class="number">0.1</span></span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -179,7 +166,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-06-21-ubuntu_telnet_server.html" data-title="ubuntu下安装telnet服务器" data-url="http://yesokay.herokuapp.com/2010-06-21-ubuntu_telnet_server.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2010-06-21-ubuntu_telnet_server.html" data-title="ubuntu下安装telnet服务器" data-url="http://yesokay.herokuapp.com/2010-06-21-ubuntu_telnet_server.html"></div>  
   
 </section>
 
@@ -193,7 +180,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	6月 21 2010 
+	Jun 21 2010 
 	</div>
 	
 
@@ -204,7 +191,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/Linux/">Linux<span>52</span></a></li> <li><a href="/categories/tools/">tools<span>31</span></a></li>
   </li>
 
     </ul>
@@ -241,7 +228,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

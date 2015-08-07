@@ -1,4 +1,3 @@
----
 layout: post
 title: "虾米自动签到go语言版本"
 date: 2012-10-22 14:12

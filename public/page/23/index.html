@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -122,10 +114,42 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-05-08-git_svn_clone_revision.html" >git svn clone 特定版本</a>
-			<span class="date"> 5月 8 2010 </span>
+			<div class="date"> May 9 2010 </div>
+			<div class="article-title"><a href="/2010-05-09-archlinux_usb_pen.html" >将archlinux安装到u盘</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>将archlinux安装到优盘上！试了很多方法，在虚拟机上将优盘设置成硬盘安装和在虚拟机上设置usb设备安装，启动时都会出现找不到硬盘的情况。（使用虚拟机启动没有问题）解决办法（&lt;a href=&quot;http://blog.sina.com.cn/s/blog_59cf67260100cwqr.html&quot;&gt;参考地址&lt;/a&gt;）：</p>
+<p>设置系统的参数的时候，修改/etc/mkinitcpio.conf ，在HOOKS中加入usb选项，这似乎是让linux内核认usb。</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOOKS=&#34;base udev autodetect pata scsi sata usb filesystems&#34;</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以正常启动了！如果出现</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The superblock could not be read or does not describe a correct ext2 filesystem. If the device is valid and it really contains an ext2 filesystem (and not swap or ufs or something else), then the superblock is corrupt, and you might try running e2fsck with an alternate superblock:&#10;e2fsck -b 8193</span><br></pre></td></tr></table></figure></p>
+<p>请修改fstab，使用uuid的方式，见&lt;a href=&quot;http://wiki.archlinux.org/index.php/Fstab&quot;&gt;http://wiki.archlinux.org/index.php/Fstab&lt;/a&gt;</p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-05-09-archlinux_usb_pen.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> May 8 2010 </div>
+			<div class="article-title"><a href="/2010-05-08-git_svn_clone_revision.html" >git svn clone 特定版本</a></div>						
 		</h3>
 	
 
@@ -137,8 +161,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>使用git从svn中clone特定版本：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git svn clone --prefix=svn/ <span class="operator">-s</span> -r<span class="variable">$revision</span>:HEAD http://some/svn/repo</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git svn <span class="built_in">clone</span> --prefix=svn/ <span class="operator">-s</span> -r<span class="variable">$revision</span>:HEAD http://some/svn/repo</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -151,10 +174,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-05-08-archlinux_chrome_autoproxy.html" >archlinux 下chrome autoproxy</a>
-			<span class="date"> 5月 8 2010 </span>
+			<div class="date"> May 8 2010 </div>
+			<div class="article-title"><a href="/2010-05-08-archlinux_chrome_autoproxy.html" >archlinux 下chrome autoproxy</a></div>						
 		</h3>
 	
 
@@ -178,10 +201,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-05-08-ubuntu_kernel_clean.html" >ubuntu删除无用旧内核</a>
-			<span class="date"> 5月 8 2010 </span>
+			<div class="date"> May 8 2010 </div>
+			<div class="article-title"><a href="/2010-05-08-ubuntu_kernel_clean.html" >ubuntu删除无用旧内核</a></div>						
 		</h3>
 	
 
@@ -193,9 +216,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>用这个可以删除旧内核</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> aptitude purge ~ilinux-image-.*(!`uname -r`)</div></pre></td></tr></table></figure>
-
-<p><a class="postlink" href="http://forum.ubuntu.org.cn/viewtopic.php?t=129876" target="_blank" rel="external">http://forum.ubuntu.org.cn/viewtopic.php?t=129876</a></p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo aptitude purge ~ilinux-image-.*(!`uname -r`)</span><br></pre></td></tr></table></figure></p>
+<p>&lt;a class=&quot;postlink&quot; href=&quot;http://forum.ubuntu.org.cn/viewtopic.php?t=129876&quot;&gt;http://forum.ubuntu.org.cn/viewtopic.php?t=129876&lt;/a&gt;</p>
 
 	
 	</div>
@@ -208,10 +230,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-05-08-mount_cifs_umask.html" >Mount.cifs 中设置文件权限</a>
-			<span class="date"> 5月 8 2010 </span>
+			<div class="date"> May 8 2010 </div>
+			<div class="article-title"><a href="/2010-05-08-mount_cifs_umask.html" >Mount.cifs 中设置文件权限</a></div>						
 		</h3>
 	
 
@@ -223,8 +245,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>在以往常用的Mount命令里，使用<code>umask=xxxx</code>设置挂载目录文件的权限，然后在使用Smbfs的Mount工具时，便不是使用umask了，而是用</p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-o <span class="variable">file_mode=</span><span class="number">0666</span> <span class="variable">dir_mode=</span><span class="number">0755</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-o file_mode=0666 dir_mode=0755</span><br></pre></td></tr></table></figure></p>
 <p>这个问题纠结了我半天，终于在Google上找到答案</p>
 
 	
@@ -238,10 +259,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-05-08-ogre_chinese_path_filename.html" >ogre中文路径和文件名</a>
-			<span class="date"> 5月 8 2010 </span>
+			<div class="date"> May 8 2010 </div>
+			<div class="article-title"><a href="/2010-05-08-ogre_chinese_path_filename.html" >ogre中文路径和文件名</a></div>						
 		</h3>
 	
 
@@ -254,8 +275,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>VS2005之后版本的std::fstream对中文路径处理不正确的原因，所以加载中文路径或文件名不成功，解决办法：</p>
 <p>在主函数开始加入</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setlocale(LC_ALL,<span class="string">"Chinese-simplified"</span>);</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setlocale(LC_ALL,<span class="string">"Chinese-simplified"</span>);</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -268,10 +288,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-05-08-ssh_sock_5.html" >ssh sock 5代理</a>
-			<span class="date"> 5月 8 2010 </span>
+			<div class="date"> May 8 2010 </div>
+			<div class="article-title"><a href="/2010-05-08-ssh_sock_5.html" >ssh sock 5代理</a></div>						
 		</h3>
 	
 
@@ -283,8 +303,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>由于学校使用drcom，在Windows下任何代理都无解。在linux下可以通过iptable  forward实现，在Windows下使用andlinux的时候如何挂代理呢，通过plink开sock5代理的方法：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plink -C -D myip:port -N -pw pasword username@<span class="number">127.0</span>.<span class="number">0.1</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink -C -D myip:port -N -pw pasword username@<span class="number">127.0</span>.<span class="number">0.1</span></span><br></pre></td></tr></table></figure></p>
 <p>则外面就能使用sock5代理上 网了（使用sockscap尤其方便）。</p>
 
 	
@@ -298,10 +317,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-05-08-apache2_start_error.html" >Apache 2 启动错误的解决</a>
-			<span class="date"> 5月 8 2010 </span>
+			<div class="date"> May 8 2010 </div>
+			<div class="article-title"><a href="/2010-05-08-apache2_start_error.html" >Apache 2 启动错误的解决</a></div>						
 		</h3>
 	
 
@@ -313,16 +332,18 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p><a href="http://www.ourcampus.cn/blog/?action=show&amp;id=27" target="_blank" rel="external">参考地址</a></p>
-<p>启动Apache服务，测试一下环境是否正确，在浏览器中输入 <a href="http://127.0.0.1/" target="_blank" rel="external">http://127.0.0.1</a> 或是 <a href="http://localhost/" target="_blank" rel="external">http://localhost</a> 均半天不出页面，查看Apache状态为启动，估计Apache有问题，于是转到Apache安装目录的logs目录下，发现果然有一个error.log, 打开看到里面的内容如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr_selector">[Thu Nov 22 15:19:53 2007]</span> <span class="attr_selector">[notice]</span> <span class="tag">Parent</span>: <span class="tag">Created</span> <span class="tag">child</span> <span class="tag">process</span> 2816</div><div class="line"><span class="attr_selector">[Thu Nov 22 15:19:53 2007]</span> <span class="attr_selector">[notice]</span> <span class="tag">Child</span> 2816: <span class="tag">Child</span> <span class="tag">process</span> <span class="tag">is</span> <span class="tag">running</span></div><div class="line"><span class="attr_selector">[Thu Nov 22 15:19:53 2007]</span> <span class="attr_selector">[crit]</span> (<span class="tag">OS</span> 10022)提供了一个无效的参数。<span class="tag">Child</span> 2816:</div><div class="line"><span class="tag">setup_inherited_listeners</span>(), <span class="tag">WSASocket</span> <span class="tag">failed</span> <span class="tag">to</span> <span class="tag">open</span> <span class="tag">the</span> <span class="tag">inherited</span></div><div class="line"><span class="tag">socket</span>.</div></pre></td></tr></table></figure>
-
+<p>启动Apache服务，测试一下环境是否正确，在浏览器中输入 &lt;a href=&quot;http://127.0.0.1/&quot;&gt;http://127.0.0.1&lt;/a&gt; 或是 &lt;a href=&quot;http://localhost/&quot;&gt;http://localhost&lt;/a&gt; 均半天不出页面，查看Apache状态为启动，估计Apache有问题，于是转到Apache安装目录的logs目录下，发现果然有一个error.log, 打开看到里面的内容如下：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Thu Nov 22 15:19:53 2007] [notice] Parent: Created child process 2816&#10;[Thu Nov 22 15:19:53 2007] [notice] Child 2816: Child process is running&#10;[Thu Nov 22 15:19:53 2007] [crit] (OS 10022)&#25552;&#20379;&#20102;&#19968;&#20010;&#26080;&#25928;&#30340;&#21442;&#25968;&#12290;Child 2816:&#10;setup_inherited_listeners(), WSASocket failed to open the inherited&#10;socket.</span><br></pre></td></tr></table></figure></p>
 <p>解决方案如下：</p>
 <ol>
-<li><p>网上邻居-&gt;本地连接-&gt;属性-&gt;Internet协议(TCP/IP)-&gt;属性-&gt;高级-&gt;WINS标签 -&gt;去掉启用LMhosts查询前的勾。</p>
+<li>
+<p>网上邻居-&gt;本地连接-&gt;属性-&gt;Internet协议(TCP/IP)-&gt;属性-&gt;高级-&gt;WINS标签 -&gt;去掉启用LMhosts查询前的勾。</p>
 </li>
-<li><p>网上邻居-&gt;本地连接-&gt;属性-&gt;Internet协议 (TCP/IP)-&gt;属性-&gt;高级-&gt;WINS标签-&gt;NetBOIS设置-&gt;禁用 TCP/IP 上的  NetBOIS。</p>
+<li>
+<p>网上邻居-&gt;本地连接-&gt;属性-&gt;Internet协议 (TCP/IP)-&gt;属性-&gt;高级-&gt;WINS标签-&gt;NetBOIS设置-&gt;禁用 TCP/IP 上的  NetBOIS。</p>
 </li>
-<li><p>控制面版-&gt;Windows防火墙-&gt;高级标签-&gt;本地连接设置-&gt;服务标签-&gt;勾 选安全Web服务器(HTTPS)。</p>
+<li>
+<p>控制面版-&gt;Windows防火墙-&gt;高级标签-&gt;本地连接设置-&gt;服务标签-&gt;勾 选安全Web服务器(HTTPS)。</p>
 </li>
 </ol>
 <p>按照上面的步骤做完，问题解决。</p>
@@ -338,10 +359,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-05-07-googlechrome_firefox_feeling.html" >Google chrome与firefox</a>
-			<span class="date"> 5月 7 2010 </span>
+			<div class="date"> May 7 2010 </div>
+			<div class="article-title"><a href="/2010-05-07-googlechrome_firefox_feeling.html" >Google chrome与firefox</a></div>						
 		</h3>
 	
 
@@ -354,11 +375,14 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>Google chrome与firefox的感受：</p>
 <ol>
-<li><p>chrome速度比较快，但是内存消耗来看，在开n个页面（n &gt; 3)的时候，chrome消耗的内存比较大。如果页面一直在加载（但是此时已经断开了连接—超时，chrome一直在等待）这个时候chrome的 cpu消耗是相当大的；</p>
+<li>
+<p>chrome速度比较快，但是内存消耗来看，在开n个页面（n &gt; 3)的时候，chrome消耗的内存比较大。如果页面一直在加载（但是此时已经断开了连接--超时，chrome一直在等待）这个时候chrome的 cpu消耗是相当大的；</p>
 </li>
-<li><p>chrome的插件系统还不够强大。比如现在chrome上面没有autoproxy这个用来翻墙的工具，虽然 有proxy  switchy，但是从易用性方面来说没有autoproxy强大。adblock的功能还太弱，scribefire目前还没有上传图片的功能；（这三 个功能是我的基本要求）</p>
+<li>
+<p>chrome的插件系统还不够强大。比如现在chrome上面没有autoproxy这个用来翻墙的工具，虽然 有proxy  switchy，但是从易用性方面来说没有autoproxy强大。adblock的功能还太弱，scribefire目前还没有上传图片的功能；（这三 个功能是我的基本要求）</p>
 </li>
-<li><p>chrome的安装默认在系统盘（windows下），虽然方便了用户，但是我不喜欢；</p>
+<li>
+<p>chrome的安装默认在系统盘（windows下），虽然方便了用户，但是我不喜欢；</p>
 </li>
 </ol>
 
@@ -373,10 +397,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-05-07-vs2010_ultimate_sn.html" >visual studio 2010 ultimate正式版注册码</a>
-			<span class="date"> 5月 7 2010 </span>
+			<div class="date"> May 7 2010 </div>
+			<div class="article-title"><a href="/2010-05-07-vs2010_ultimate_sn.html" >visual studio 2010 ultimate正式版注册码</a></div>						
 		</h3>
 	
 
@@ -396,33 +420,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2010-05-07-vs2010_ultimate_sn.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2010-05-07-p2pnat.html" >p2pnat通过nat实现p2p</a>
-			<span class="date"> 5月 7 2010 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p><a href="http://www.bford.info/pub/net/p2pnat/" target="_blank" rel="external">p2pnat</a></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-05-07-p2pnat.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -469,81 +466,48 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	<div class="widget">
-		<h4>分类</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/categories/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/categories/Tools/">Tools<span>1</span></a></li>
-		
-			<li><a href="/categories/emacs/">emacs<span>61</span></a></li>
-		
-			<li><a href="/categories/gamedev/">gamedev<span>5</span></a></li>
-		
-			<li><a href="/categories/ios/">ios<span>3</span></a></li>
-		
-			<li><a href="/categories/opengl/">opengl<span>1</span></a></li>
-		
-			<li><a href="/categories/oracle/">oracle<span>1</span></a></li>
-		
-			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/categories/programming/">programming<span>139</span></a></li>
-		
-			<li><a href="/categories/tools/">tools<span>142</span></a></li>
-		
-			<li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
-		
-		</ul>
-	</div>
-
-		
-			
-	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
 		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
 		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
 		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
 		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
 		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
 		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+			<li><a href="/tags/soap/">soap<span>1</span></a></li>
+		
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
+		
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+		
+			<li><a href="/tags/go/">go<span>2</span></a></li>
+		
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+		
+			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
+		
+			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
 		
 			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
-			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
 		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
 		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
 		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
 		
 			<li><a href="/tags/css3/">css3<span>1</span></a></li>
-		
-			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
-		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
-		
-			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
-		
-			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -559,23 +523,23 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
@@ -610,7 +574,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

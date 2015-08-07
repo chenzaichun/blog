@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -122,10 +114,39 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-12-01-android_emulator_proxy.html" >android模拟器使用代理</a>
-			<span class="date"> 12月 1 2010 </span>
+			<div class="date"> Dec 3 2010 </div>
+			<div class="article-title"><a href="/2010-12-03-how_hackerr_playing_game.html" >看看黑客是怎么玩游戏的</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>几个黑客看了后十指不由大动，于是就有了下面这个视频。</p>
+<p>&lt;object style=&quot;width: 600px; height: 480px;&quot; width=&quot;600&quot; height=&quot;480&quot; data=&quot;http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XOTk0MjIxNTY=&amp;embedid=-&amp;showAd=0&quot; type=&quot;application/x-shockwave-flash&quot;&gt;
+&lt;param name=&quot;src&quot; value=&quot;http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XOTk0MjIxNTY=&amp;embedid=-&amp;showAd=0&quot;&gt;&lt;/object&gt;</p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-12-03-how_hackerr_playing_game.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Dec 1 2010 </div>
+			<div class="article-title"><a href="/2010-12-01-android_emulator_proxy.html" >android模拟器使用代理</a></div>						
 		</h3>
 	
 
@@ -137,8 +158,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>网上找了很多，最后总结一下最简单的方法:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">emulator -avd devicename -http-proxy <span class="string">"http://proxyname:port"</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">emulator -avd devicename -http-proxy <span class="string">"http://proxyname:port"</span></span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -151,10 +171,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-11-30-resize_portable_ubuntu_image.html" >Resize a Portable Ubuntu Image</a>
-			<span class="date"> 11月 30 2010 </span>
+			<div class="date"> Nov 30 2010 </div>
+			<div class="article-title"><a href="/2010-11-30-resize_portable_ubuntu_image.html" >Resize a Portable Ubuntu Image</a></div>						
 		</h3>
 	
 
@@ -165,14 +185,37 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <p><a href="http://blog.ruski.co.za/page/Resize-a-Portable-Ubuntu-Image.aspx" target="_blank" rel="external">http://blog.ruski.co.za/page/Resize-a-Portable-Ubuntu-Image.aspx</a><br> When you first download and install <a style="text-decoration: none; color: #336699; border: 0px initial initial;" href="http://portableubuntu.sourceforge.net/" target="_blank">Portable Ubuntu</a>, you’re going to be left with only about 500 MB of space on your Linux file system. This isn’t enough to do much of anything with, so the first order of business is going to be increasing the size of the image.<br>There are instructions for doing so at the <a style="text-decoration: none; color: #336699; border: 0px initial initial;" href="http://portableubuntu.sourceforge.net/index.php?section=documentation" target="_blank">Portable Ubuntu website</a>, but for convenience sake I am repeating them here.<br>The process is fairly straight forward and basically consists of creating a new larger image file and then copying the existing image over to it. Once that is done we make the new image our primary partition.<br>To start, make sure that you’re not currently running Portable Ubuntu. Exit it if you are.<br>Open a Windows Command Prompt window by clicking Start -&gt; Run and entering “cmd”.<br>Change to the directory in which you’ve installed Portable Ubuntu. For the purposes of this article we’ll assume that is C<strong>:Portable_Ubuntu</strong>.<br>Change to the images folder:</p>
-<p><div class="code" style="font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;">C:Portable_Ubuntu<span class="kwrd" style="color: #0000ff;">&gt;</span> cd images</div><br>Then we create a new image using the <strong>fsutil</strong> utility. The number at the end is the size of the new image you want to create in bytes. I’ve opted to create a 4 GB image in the example below.</p>
-<p><div class="code" style="font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;">C:Portable<em>Ubuntuimages<span class="kwrd" style="color: #0000ff;">&gt;</span> fsutil file createnew rootfs</em>.img 4294967296</div><br>Next we must mount the new image in our Ubuntu instance. Edit the <strong>portable_ubuntu.conf</strong>file in the C<strong>:Portable_Ubuntuconfig</strong> directory using Notepad. You can use explorer for this or the commands below.</p>
-<p><div class="code" style="font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;">C:Portable<em>Ubuntuimages<span class="kwrd" style="color: #0000ff;">&gt;</span> cd .. C:Portable_Ubuntu<span class="kwrd" style="color: #0000ff;">&gt;</span> cd config C:Portable_Ubuntuconfig<span class="kwrd" style="color: #0000ff;">&gt;</span> notepad portable_ubuntu.conf</em></div><br>Replace the line in the config file that starts with “<strong>cobd3=</strong>“ with the following in notepad:<strong>cobd3=imagesrootfs.img</strong><br>Save the file and close Notepad.<br>Now we need to run Portable Ubuntu again so that we can copy the contents of the original image over to the new image.<br>Run Portable Ubuntu and open a Terminal window when it is ready.<br>Type the following to make sure you have root access:</p>
-<p><div class="code" style="font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;">$ sudo su</div><br>You will be asked for a password. The default password for Portable Ubuntu is <strong>123456</strong><br>Next we’ll run the Data Definition (<strong>dd</strong>) tool on linux to create a raw copy of the original image. Don’t screw this up as the dd tool has earned the nickname “Data Destroyer” for a good reason.</p>
-<p><div class="code" style="font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;">$ dd if=/dev/cobd0 of=/dev/cobd3</div><br>Once that is completed we’ll have an exact copy of our data from the original image to the new larger image.<br>Next we’ll do a file system check on the new image to make sure it’s good.</p>
-<p><div class="code" style="font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;">fsck.ext3 -f /dev/cobd3</div><br>Then we resize the partition on the new image to take up all the space.</p>
-<p><div class="code" style="font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;">resize2fs -f /dev/cobd3</div><br>Now that that is done, we can make the new image our main image. To do this, exit the running Portable Ubuntu image.<br>Go back to the images folder and rename <strong>rootfs.img</strong> to <strong>rootfs.img.old</strong> and <strong>rootfs<em>img</em></strong> to<strong>rootfs.img</strong>.<br>Remove the line that you had modified in the <strong>portable_ubuntu.conf</strong> file (<strong>cobd3=imagesrootfs.img</strong>) using Notepad.<br>Now you can run Portable Ubuntu again and you’ll have a useful amount of free space left. You can delete the <strong>rootfs.img.old</strong> file if everything is working properly.</p>
+	  <p>&lt;a href=&quot;http://blog.ruski.co.za/page/Resize-a-Portable-Ubuntu-Image.aspx&quot;&gt;http://blog.ruski.co.za/page/Resize-a-Portable-Ubuntu-Image.aspx&lt;/a&gt;
+ When you first download and install &lt;a style=&quot;text-decoration: none; color: #336699; border: 0px initial initial;&quot; href=&quot;http://portableubuntu.sourceforge.net/&quot; target=&quot;<em>blank&quot;&gt;Portable Ubuntu&lt;/a&gt;, you're going to be left with only about 500 MB of space on your Linux file system. This isn't enough to do much of anything with, so the first order of business is going to be increasing the size of the image.
+There are instructions for doing so at the &lt;a style=&quot;text-decoration: none; color: #336699; border: 0px initial initial;&quot; href=&quot;http://portableubuntu.sourceforge.net/index.php?section=documentation&quot; target=&quot;<em>blank&quot;&gt;Portable Ubuntu website&lt;/a&gt;, but for convenience sake I am repeating them here.
+The process is fairly straight forward and basically consists of creating a new larger image file and then copying the existing image over to it. Once that is done we make the new image our primary partition.
+To start, make sure that you're not currently running Portable Ubuntu. Exit it if you are.
+Open a Windows Command Prompt window by clicking Start -&gt; Run and entering &quot;cmd&quot;.
+Change to the directory in which you've installed Portable Ubuntu. For the purposes of this article we'll assume that is C&lt;strong&gt;:Portable_Ubuntu&lt;/strong&gt;.
+Change to the images folder:
+&lt;div class=&quot;code&quot; style=&quot;font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;&quot;&gt;C:Portable_Ubuntu&lt;span class=&quot;kwrd&quot; style=&quot;color: #0000ff;&quot;&gt;&gt;&lt;/span&gt; cd images&lt;/div&gt;
+Then we create a new image using the &lt;strong&gt;fsutil&lt;/strong&gt; utility. The number at the end is the size of the new image you want to create in bytes. I've opted to create a 4 GB image in the example below.
+&lt;div class=&quot;code&quot; style=&quot;font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;&quot;&gt;C:Portable_Ubuntuimages&lt;span class=&quot;kwrd&quot; style=&quot;color: #0000ff;&quot;&gt;&gt;&lt;/span&gt; fsutil file createnew rootfs</em>.img 4294967296&lt;/div&gt;
+Next we must mount the new image in our Ubuntu instance. Edit the &lt;strong&gt;portable_ubuntu.conf&lt;/strong&gt;file in the C&lt;strong&gt;:Portable_Ubuntuconfig&lt;/strong&gt; directory using Notepad. You can use explorer for this or the commands below.
+&lt;div class=&quot;code&quot; style=&quot;font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;&quot;&gt;C:Portable_Ubuntuimages&lt;span class=&quot;kwrd&quot; style=&quot;color: #0000ff;&quot;&gt;&gt;&lt;/span&gt; cd .. C:Portable_Ubuntu&lt;span class=&quot;kwrd&quot; style=&quot;color: #0000ff;&quot;&gt;&gt;&lt;/span&gt; cd config C:Portable_Ubuntuconfig&lt;span class=&quot;kwrd&quot; style=&quot;color: #0000ff;&quot;&gt;&gt;&lt;/span&gt; notepad portable_ubuntu.conf&lt;/div&gt;
+Replace the line in the config file that starts with &quot;&lt;strong&gt;cobd3=&lt;/strong&gt;&quot; with the following in notepad:&lt;strong&gt;cobd3=imagesrootfs</em>.img&lt;/strong&gt;
+Save the file and close Notepad.
+Now we need to run Portable Ubuntu again so that we can copy the contents of the original image over to the new image.
+Run Portable Ubuntu and open a Terminal window when it is ready.
+Type the following to make sure you have root access:
+&lt;div class=&quot;code&quot; style=&quot;font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;&quot;&gt;$ sudo su&lt;/div&gt;
+You will be asked for a password. The default password for Portable Ubuntu is &lt;strong&gt;123456&lt;/strong&gt;
+Next we'll run the Data Definition (&lt;strong&gt;dd&lt;/strong&gt;) tool on linux to create a raw copy of the original image. Don't screw this up as the dd tool has earned the nickname &quot;Data Destroyer&quot; for a good reason.
+&lt;div class=&quot;code&quot; style=&quot;font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;&quot;&gt;$ dd if=/dev/cobd0 of=/dev/cobd3&lt;/div&gt;
+Once that is completed we'll have an exact copy of our data from the original image to the new larger image.
+Next we'll do a file system check on the new image to make sure it's good.
+&lt;div class=&quot;code&quot; style=&quot;font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;&quot;&gt;fsck.ext3 -f /dev/cobd3&lt;/div&gt;
+Then we resize the partition on the new image to take up all the space.
+&lt;div class=&quot;code&quot; style=&quot;font-size: 12px; color: black; font-family: Consolas, 'Courier New', Courier, monospace; background-color: #f1f1f1; line-height: normal; padding: 5px;&quot;&gt;resize2fs -f /dev/cobd3&lt;/div&gt;
+Now that that is done, we can make the new image our main image. To do this, exit the running Portable Ubuntu image.
+Go back to the images folder and rename &lt;strong&gt;rootfs.img&lt;/strong&gt; to &lt;strong&gt;rootfs.img.old&lt;/strong&gt; and &lt;strong&gt;rootfs_img&lt;/strong&gt; to&lt;strong&gt;rootfs.img&lt;/strong&gt;.
+Remove the line that you had modified in the &lt;strong&gt;portable_ubuntu.conf&lt;/strong&gt; file (&lt;strong&gt;cobd3=imagesrootfs_.img&lt;/strong&gt;) using Notepad.
+Now you can run Portable Ubuntu again and you'll have a useful amount of free space left. You can delete the &lt;strong&gt;rootfs.img.old&lt;/strong&gt; file if everything is working properly.</p>
 
 	
 	</div>
@@ -185,10 +228,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-11-30-android_invoke_maps_to_direction.html" >android调用Google Maps导航</a>
-			<span class="date"> 11月 30 2010 </span>
+			<div class="date"> Nov 30 2010 </div>
+			<div class="article-title"><a href="/2010-11-30-android_invoke_maps_to_direction.html" >android调用Google Maps导航</a></div>						
 		</h3>
 	
 
@@ -200,8 +243,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>直接代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">String s = String.format(<span class="string">"http://maps.google.com/maps?f=d&saddr=jiangbei,chongqing&daddr=shapingba,chongqing&hl=en"</span>);</div><div class="line">Uri uri = Uri.parse(s);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s = String.format(<span class="string">"http://maps.google.com/maps?f=d&amp;saddr=jiangbei,chongqing&amp;daddr=shapingba,chongqing&amp;hl=en"</span>);</span><br><span class="line">Uri uri = Uri.parse(s);</span><br><span class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -214,10 +256,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-11-30-android_call_google_maps_apk.html" >android下程序直接调用Google自己的地图程序</a>
-			<span class="date"> 11月 30 2010 </span>
+			<div class="date"> Nov 30 2010 </div>
+			<div class="article-title"><a href="/2010-11-30-android_call_google_maps_apk.html" >android下程序直接调用Google自己的地图程序</a></div>						
 		</h3>
 	
 
@@ -229,8 +271,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>直接贴代码吧</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_MAIN);</div><div class="line">ComponentName com = <span class="keyword">new</span> ComponentName(</div><div class="line">        		<span class="string">"com.google.android.apps.maps"</span>, <span class="comment">//要打开的程序的包名</span></div><div class="line">        		<span class="string">"com.google.android.maps.MapsActivity"</span> <span class="comment">//程序中入口MainActivity，在Mainifent.xml查看</span></div><div class="line">        		);</div><div class="line">intent.setComponent(com);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_MAIN);</span><br><span class="line">ComponentName com = <span class="keyword">new</span> ComponentName(</span><br><span class="line">        		<span class="string">"com.google.android.apps.maps"</span>, <span class="comment">//要打开的程序的包名</span></span><br><span class="line">        		<span class="string">"com.google.android.maps.MapsActivity"</span> <span class="comment">//程序中入口MainActivity，在Mainifent.xml查看</span></span><br><span class="line">        		);</span><br><span class="line">intent.setComponent(com);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -243,10 +284,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-11-30-android_intent_usage.html" >Android Intent的几种用法全面总结</a>
-			<span class="date"> 11月 30 2010 </span>
+			<div class="date"> Nov 30 2010 </div>
+			<div class="article-title"><a href="/2010-11-30-android_intent_usage.html" >Android Intent的几种用法全面总结</a></div>						
 		</h3>
 	
 
@@ -257,9 +298,140 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <p>@<a href="http://hi.baidu.com/devil%B6%C0%B0%AE/blog/item/5f5caf5e3ce43f48faf2c004.html" target="_blank">Devil独爱的空间 </a></p>
-<p><span class="t_tag" style="line-height: normal;">Intent</span>应该算是Android中特有的东西。你可以在Intent中指定<span class="t_tag" style="line-height: normal;">程序</span>要执行的动作（比如：view,edit,dial），以及程序执行到该动作时所需要的<span class="t_tag" style="line-height: normal;">资料</span>。都指定好后，只要调用startActivity()，Android<span class="t_tag" style="line-height: normal;">系统</span>会自动寻找最符合你指定要求的<span class="t_tag" style="line-height: normal;">应用</span>程序，并执行该程序。<br style="line-height: normal;"><br style="line-height: normal;">下面列出几种Intent的用法<br style="line-height: normal;">显示网页:</p>
-<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“<a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a>“);</li><br><li style="line-height: normal;">Intent it   = new Intent(Intent.ACTION_VIEW,uri);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br>显示地图:<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“geo:38.899533,-77.036476”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.Action_VIEW,uri);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br>路径规划:<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“<a href="http://maps.google.com/maps?f=d&amp;saddr=startLat%20startLng&amp;daddr=endLat%20endLng&amp;hl=en" target="_blank" rel="external">http://maps.google.com/maps?f=d&amp;saddr=startLat%20startLng&amp;daddr=endLat%20endLng&amp;hl=en</a>“);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW,URI);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br>拨打电话:<br style="line-height: normal;">调用拨号程序<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“tel:xxxxxx”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_DIAL, uri);  </li><br><li style="line-height: normal;">startActivity(it);  </li><br></ol></div><br></div><br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“tel.xxxxxx”);</li><br><li style="line-height: normal;">Intent it =new Intent(Intent.ACTION_CALL,uri);</li><br><li style="line-height: normal;">要使用这个必须在配置<span class="t_tag" style="line-height: normal;">文件</span>中加入<uses-permission id="<span class=" t_tag"="" style="line-height: normal;">android.permission.CALL_PHONE" /></uses-permission></li><br></ol></div><br></div><br>发送SMS/MMS<br style="line-height: normal;">调用发送<span class="t_tag" style="line-height: normal;">短信</span>的程序<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW);</li><br><li style="line-height: normal;">it.putExtra(“sms_body”, “The SMS text”);</li><br><li style="line-height: normal;">it.setType(“vnd.android-dir/mms-sms”);</li><br><li style="line-height: normal;">startActivity(it);  </li><br></ol></div><br></div><br>发送短信<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“smsto:0800000123”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SENDTO, uri);</li><br><li style="line-height: normal;">it.putExtra(“sms_body”, “The SMS text”);</li><br><li style="line-height: normal;">startActivity(it);  </li><br></ol></div><br></div><br>发送彩信<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“content://media/external/images/media/23”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SEND);</li><br><li style="line-height: normal;">it.putExtra(“sms_body”, “some text”);</li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_STREAM, uri);</li><br><li style="line-height: normal;">it.setType(“image/png”);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br>发送Email<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“mailto:xxx@abc.com”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SENDTO, uri);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SEND);</li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_EMAIL, “me@abc.com”);</li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_TEXT, “The email body text”);</li><br><li style="line-height: normal;">it.setType(“text/plain”);</li><br><li style="line-height: normal;">startActivity(Intent.createChooser(it, “Choose Email Client”));  </li><br></ol></div><br></div><br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Intent it=new Intent(Intent.ACTION_SEND);    </li><br><li style="line-height: normal;">String[] tos={“me@abc.com”};    </li><br><li style="line-height: normal;">String[] ccs={“you@abc.com”};    </li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_EMAIL, tos);    </li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_CC, ccs);    </li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_TEXT, “The email body text”);    </li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_SUBJECT, “The email subject text”);    </li><br><li style="line-height: normal;">it.setType(“message/rfc822”);    </li><br><li style="line-height: normal;">startActivity(Intent.createChooser(it, “Choose Email Client”));</li><br></ol></div><br></div><br>添加附件<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SEND);</li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_SUBJECT, “The email subject text”);</li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_STREAM, “file:///sdcard/mysong.mp3”);</li><br><li style="line-height: normal;">sendIntent.setType(“audio/mp3”);</li><br><li style="line-height: normal;">startActivity(Intent.createChooser(it, “Choose Email Client”));</li><br></ol></div><br></div><br><span class="t_tag" style="line-height: normal;">播放</span>多媒体<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">  </li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW);</li><br><li style="line-height: normal;">Uri uri = Uri.parse(“file:///sdcard/song.mp3”);</li><br><li style="line-height: normal;">it.setDataAndType(uri, “audio/mp3”);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.withAppendedPath(MediaStore.Audio.Media.INTERNAL_CONTENT_URI, “1”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW, uri);</li><br><li style="line-height: normal;">startActivity(it);  </li><br></ol></div><br></div><br>Uninstall 程序<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.fromParts(“package”, strPackageName, null);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_DELETE, uri);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div>
+	  <p>@&lt;a href=&quot;http://hi.baidu.com/devil%B6%C0%B0%AE/blog/item/5f5caf5e3ce43f48faf2c004.html&quot; target=&quot;_blank&quot;&gt;Devil独爱的空间 &lt;/a&gt;</p>
+<p>&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;Intent&lt;/span&gt;应该算是Android中特有的东西。你可以在Intent中指定&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;程序&lt;/span&gt;要执行的动作（比如：view,edit,dial），以及程序执行到该动作时所需要的&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;资料&lt;/span&gt;。都指定好后，只要调用startActivity()，Android&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;系统&lt;/span&gt;会自动寻找最符合你指定要求的&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;应用&lt;/span&gt;程序，并执行该程序。&lt;br style=&quot;line-height: normal;&quot;&gt;&lt;br style=&quot;line-height: normal;&quot;&gt;下面列出几种Intent的用法&lt;br style=&quot;line-height: normal;&quot;&gt;显示网页:
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;http://www.google.com&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it   = new Intent(Intent.ACTION_VIEW,uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+显示地图:
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;geo:38.899533,-77.036476&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.Action_VIEW,uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+路径规划:
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;http://maps.google.com/maps?f=d&amp;saddr=startLat%20startLng&amp;daddr=endLat%20endLng&amp;hl=en&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_VIEW,URI);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+拨打电话:&lt;br style=&quot;line-height: normal;&quot;&gt;调用拨号程序
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;tel:xxxxxx&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_DIAL, uri);  &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);  &lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;tel.xxxxxx&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it =new Intent(Intent.ACTION_CALL,uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;要使用这个必须在配置&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;文件&lt;/span&gt;中加入&lt;uses-permission id=&quot;&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;android&lt;/span&gt;.permission.CALL_PHONE&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+发送SMS/MMS&lt;br style=&quot;line-height: normal;&quot;&gt;调用发送&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;短信&lt;/span&gt;的程序
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_VIEW);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(&quot;sms_body&quot;, &quot;The SMS text&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.setType(&quot;vnd.android-dir/mms-sms&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);  &lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+发送短信
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;smsto:0800000123&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_SENDTO, uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(&quot;sms_body&quot;, &quot;The SMS text&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);  &lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+发送彩信
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;content://media/external/images/media/23&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_SEND);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(&quot;sms_body&quot;, &quot;some text&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_STREAM, uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.setType(&quot;image/png&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+发送Email
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;mailto:xxx@abc.com&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_SENDTO, uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_SEND);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_EMAIL, &quot;me@abc.com&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_TEXT, &quot;The email body text&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.setType(&quot;text/plain&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(Intent.createChooser(it, &quot;Choose Email Client&quot;));  &lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it=new Intent(Intent.ACTION_SEND);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;String[] tos={&quot;me@abc.com&quot;};    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;String[] ccs={&quot;you@abc.com&quot;};    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_EMAIL, tos);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_CC, ccs);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_TEXT, &quot;The email body text&quot;);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_SUBJECT, &quot;The email subject text&quot;);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.setType(&quot;message/rfc822&quot;);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(Intent.createChooser(it, &quot;Choose Email Client&quot;));&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+添加附件
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_SEND);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_SUBJECT, &quot;The email subject text&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_STREAM, &quot;file:///sdcard/mysong.mp3&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;sendIntent.setType(&quot;audio/mp3&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(Intent.createChooser(it, &quot;Choose Email Client&quot;));&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;播放&lt;/span&gt;多媒体
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;  &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_VIEW);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;file:///sdcard/song.mp3&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.setDataAndType(uri, &quot;audio/mp3&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.withAppendedPath(MediaStore.Audio.Media.INTERNAL_CONTENT_URI, &quot;1&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_VIEW, uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);  &lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+Uninstall 程序
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.fromParts(&quot;package&quot;, strPackageName, null);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_DELETE, uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;</p>
 
 	
 	</div>
@@ -272,10 +444,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-11-29-res_protocol.html" >使用res协议打开exe里面资源文件</a>
-			<span class="date"> 11月 29 2010 </span>
+			<div class="date"> Nov 29 2010 </div>
+			<div class="article-title"><a href="/2010-11-29-res_protocol.html" >使用res协议打开exe里面资源文件</a></div>						
 		</h3>
 	
 
@@ -286,9 +458,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <p>参考：<a href="http://www.cnblogs.com/dazhong/archive/2008/06/16/720507.html" target="_blank" rel="external">http://www.cnblogs.com/dazhong/archive/2008/06/16/720507.html</a></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">GetModuleFileName(NULL, szModule, <span class="keyword">sizeof</span>(szModule)/<span class="keyword">sizeof</span>(TCHAR));</div><div class="line">_stprintf(szFileURL, _T(<span class="string">"res://%s/%d"</span>), szModule, IDR_HTML1);</div></pre></td></tr></table></figure>
-
+	  <p>参考：&lt;a href=&quot;http://www.cnblogs.com/dazhong/archive/2008/06/16/720507.html&quot;&gt;http://www.cnblogs.com/dazhong/archive/2008/06/16/720507.html&lt;/a&gt;</p>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GetModuleFileName(<span class="literal">NULL</span>, szModule, <span class="keyword">sizeof</span>(szModule)/<span class="keyword">sizeof</span>(TCHAR));</span><br><span class="line">_stprintf(szFileURL, _T(<span class="string">"res://%s/%d"</span>), szModule, IDR_HTML1);</span><br></pre></td></tr></table></figure></p>
 <p>但是他们都没有说清楚，最主要的一点就是上面一定要用IDR_HTML1（即资源id），如果使用资源名称，则始终都是不能访问的。</p>
 
 	
@@ -302,10 +473,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-11-29-free_private_git_service.html" >免费private git服务</a>
-			<span class="date"> 11月 29 2010 </span>
+			<div class="date"> Nov 29 2010 </div>
+			<div class="article-title"><a href="/2010-11-29-free_private_git_service.html" >免费private git服务</a></div>						
 		</h3>
 	
 
@@ -316,7 +487,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <p>找到一个比较好的免费的private git服务：<a href="http://codaset.com" target="_blank">codaset</a></p>
+	  <p>找到一个比较好的免费的private git服务：&lt;a href=&quot;http://codaset.com&quot; target=&quot;_blank&quot;&gt;codaset&lt;/a&gt;</p>
 <blockquote>
 <p>hosts free, private and semi-private Git based projects, and provides each of your projects with web based Git source control, issue/ticket management, a wiki, blog, and an advanced permissions system, amongst others.</p>
 </blockquote>
@@ -333,10 +504,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-11-28-tell_me_more.html" >Tell Me More</a>
-			<span class="date"> 11月 28 2010 </span>
+			<div class="date"> Nov 28 2010 </div>
+			<div class="article-title"><a href="/2010-11-28-tell_me_more.html" >Tell Me More</a></div>						
 		</h3>
 	
 
@@ -362,10 +533,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-11-28-say_goodbye_to_ads.html" >和广告说再见</a>
-			<span class="date"> 11月 28 2010 </span>
+			<div class="date"> Nov 28 2010 </div>
+			<div class="article-title"><a href="/2010-11-28-say_goodbye_to_ads.html" >和广告说再见</a></div>						
 		</h3>
 	
 
@@ -384,33 +555,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2010-11-28-say_goodbye_to_ads.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2010-11-19-free_private_mercurial_service.html" >免费private mercurial服务</a>
-			<span class="date"> 11月 19 2010 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>上面提到了git，这里考虑一下hg吧，推荐的是<a href="http://bitbucket.org" target="_blank">bitbucket.org</a>，同样5用户，没有磁盘空间限制，适合使用mercurial的小团队使用。</p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-11-19-free_private_mercurial_service.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -457,81 +601,48 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	<div class="widget">
-		<h4>分类</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/categories/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/categories/Tools/">Tools<span>1</span></a></li>
-		
-			<li><a href="/categories/emacs/">emacs<span>61</span></a></li>
-		
-			<li><a href="/categories/gamedev/">gamedev<span>5</span></a></li>
-		
-			<li><a href="/categories/ios/">ios<span>3</span></a></li>
-		
-			<li><a href="/categories/opengl/">opengl<span>1</span></a></li>
-		
-			<li><a href="/categories/oracle/">oracle<span>1</span></a></li>
-		
-			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/categories/programming/">programming<span>139</span></a></li>
-		
-			<li><a href="/categories/tools/">tools<span>142</span></a></li>
-		
-			<li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
-		
-		</ul>
-	</div>
-
-		
-			
-	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
 		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
 		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
 		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
-		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
-		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
-		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
-		
-			<li><a href="/tags/english/">english<span>1</span></a></li>
-		
-			<li><a href="/tags/macos/">macos<span>9</span></a></li>
-		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
-		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
-		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
-		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
-		
-			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
 		
 			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
 		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
 		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+		
+			<li><a href="/tags/network/">network<span>1</span></a></li>
+		
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+		
+			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+		
+			<li><a href="/tags/soap/">soap<span>1</span></a></li>
+		
+			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+		
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+		
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+		
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+		
+			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+		
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
+		
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+		
+			<li><a href="/tags/portable/">portable<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -547,23 +658,23 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
@@ -598,7 +709,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

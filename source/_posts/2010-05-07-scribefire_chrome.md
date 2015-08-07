@@ -1,6 +1,6 @@
 layout: post
 title: 'scribefire 推出chrome插件了'
-date: 2010-05-07 11-21:31
+date: 2010-05-07 11:21:31
 wordpress_id: 11002
 comments: true
 categories:

@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -125,8 +117,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>在linux下让进程强制生成core dump文件：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcore &lt;-o filename&gt; pid</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcore &lt;-o filename&gt; pid</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -157,7 +148,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-11-26-generate-core-dump-on-linux.html" data-title="Linux下让进程生成core文件" data-url="http://yesokay.herokuapp.com/2012-11-26-generate-core-dump-on-linux.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2012-11-26-generate-core-dump-on-linux.html" data-title="Linux下让进程生成core文件" data-url="http://yesokay.herokuapp.com/2012-11-26-generate-core-dump-on-linux.html"></div>  
   
 </section>
 
@@ -171,7 +162,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	11月 26 2012 
+	Nov 26 2012 
 	</div>
 	
 
@@ -182,7 +173,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>81</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
 
     </ul>
@@ -219,7 +210,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

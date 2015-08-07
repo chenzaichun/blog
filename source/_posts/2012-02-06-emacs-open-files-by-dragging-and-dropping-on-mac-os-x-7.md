@@ -1,4 +1,3 @@
---- 
 categories: 
   - emacs
   - org2blog

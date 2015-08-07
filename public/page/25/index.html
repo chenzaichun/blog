@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -122,10 +114,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-05-07-ubuntu_lucid_failed_query_glx_vendor.html" >ubuntu 10.04 beta Fail to query the GLX server vendor</a>
-			<span class="date"> 5月 7 2010 </span>
+			<div class="date"> May 7 2010 </div>
+			<div class="article-title"><a href="/2010-05-07-git_windows.html" >git windows</a></div>						
 		</h3>
 	
 
@@ -136,8 +128,41 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">unlink /usr/lib/libGL.so</div><div class="line">unlink /usr/lib/libGL.so.<span class="number">1</span></div><div class="line">unlink</div><div class="line">/usr/lib64/libGL.so</div><div class="line">unlink /usr/lib64/libGL.so.<span class="number">1</span></div><div class="line"></div><div class="line">ln <span class="operator">-s</span> /usr/lib/nvidia-current/libGL.so /usr/lib/libGL.so.<span class="number">1</span></div><div class="line">ln <span class="operator">-s</span> /usr/lib64/nvidia-current/libGL.so /usr/lib64/libGL.so.<span class="number">1</span></div></pre></td></tr></table></figure>
+	  <p>在测试过很多中dvcs之后，最后决定用git。git在linux表现是非常完美的，不管是中文文件名，还是log，同时git svn clone也相当的完美。但是在windows下，乱码问题一直得不到解决。万般无赖之下只有抛弃以前的历史，直接svn co下来之后，生成一个新的git repo。</p>
+<p>要想中文显示正常，在msysgit的安装目录下的/etc/git-completion.bash中增加一行：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ls=&#39;ls --show-control-chars --color=auto&#39;</span><br></pre></td></tr></table></figure></p>
+<p>修改<code>/etc/inputrc</code>中对应的行：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ls=&#39;ls --show-control-chars --color=auto&#39;</span><br></pre></td></tr></table></figure></p>
+<p>在<code>/etc/profile</code>中增加一行：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ls=&#39;ls --show-control-chars --color=auto&#39;</span><br></pre></td></tr></table></figure></p>
+<p>windows下完美解决问题。可惜windows下的repo在linux下是不能够正常使用的！等待解决git官方utf-8支持吧</p>
 
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-05-07-git_windows.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> May 7 2010 </div>
+			<div class="article-title"><a href="/2010-05-07-ubuntu_lucid_failed_query_glx_vendor.html" >ubuntu 10.04 beta Fail to query the GLX server vendor</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">unlink /usr/lib/libGL.so</span><br><span class="line">unlink /usr/lib/libGL.so.<span class="number">1</span></span><br><span class="line">unlink</span><br><span class="line">/usr/lib64/libGL.so</span><br><span class="line">unlink /usr/lib64/libGL.so.<span class="number">1</span></span><br><span class="line"></span><br><span class="line">ln <span class="operator">-s</span> /usr/lib/nvidia-current/libGL.so /usr/lib/libGL.so.<span class="number">1</span></span><br><span class="line">ln <span class="operator">-s</span> /usr/lib64/nvidia-current/libGL.so /usr/lib64/libGL.so.<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -150,10 +175,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-05-07-libcurl_http_download_error.html" >libcurl http下载时文件不存在的问题</a>
-			<span class="date"> 5月 7 2010 </span>
+			<div class="date"> May 7 2010 </div>
+			<div class="article-title"><a href="/2010-05-07-libcurl_http_download_error.html" >libcurl http下载时文件不存在的问题</a></div>						
 		</h3>
 	
 
@@ -166,8 +191,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>当用<code>libcurl</code>下载http文件不存在的时候，如果使用<code>curl_easy_perform</code>得到的结果也是<code>CURLE_OK</code> ，此时不能通过直接通过返回值来判断结果。</p>
 <p>可以使用</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> code = <span class="number">0</span>;</div><div class="line">curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &code);</div><div class="line"><span class="keyword">if</span> (code != <span class="number">200</span>) {</div><div class="line">     <span class="comment">// download error</span></div><div class="line">}</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> code = <span class="number">0</span>;</span><br><span class="line">curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &amp;code);</span><br><span class="line"><span class="keyword">if</span> (code != <span class="number">200</span>) &#123;</span><br><span class="line">     <span class="comment">// download error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -175,37 +199,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2010-05-07-libcurl_http_download_error.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/1011-12-31-rsync-ignore-svn-direcotry.html" >rsync忽略svn目录</a>
-			<span class="date"> 12月 31 1011 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>很多时候在使用rsync同步svn管理的代码的时候会出现问题，比如我在本地check了一份代码，使用的是1.6.x的svn client，如果同步到编译服务器上，但是上面只有1.5.x版本的svn client就会出现问题。</p>
-<p>解决办法就是让rsync忽略svn目录，只同步代码文件：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync --cvs-exclude ...</div></pre></td></tr></table></figure>
-
-
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/1011-12-31-rsync-ignore-svn-direcotry.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -252,81 +245,48 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	<div class="widget">
-		<h4>分类</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/categories/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/categories/Tools/">Tools<span>1</span></a></li>
-		
-			<li><a href="/categories/emacs/">emacs<span>61</span></a></li>
-		
-			<li><a href="/categories/gamedev/">gamedev<span>5</span></a></li>
-		
-			<li><a href="/categories/ios/">ios<span>3</span></a></li>
-		
-			<li><a href="/categories/opengl/">opengl<span>1</span></a></li>
-		
-			<li><a href="/categories/oracle/">oracle<span>1</span></a></li>
-		
-			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/categories/programming/">programming<span>139</span></a></li>
-		
-			<li><a href="/categories/tools/">tools<span>142</span></a></li>
-		
-			<li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
-		
-		</ul>
-	</div>
-
-		
-			
-	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
 		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+			<li><a href="/tags/VC/">VC<span>8</span></a></li>
 		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
-			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
 		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
 		
-			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
 		
-			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
 		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
-		
-			<li><a href="/tags/python/">python<span>30</span></a></li>
-		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
-		
-			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
-		
-			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
 		
 			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
 		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
 		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
 		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
 		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
+			<li><a href="/tags/network/">network<span>1</span></a></li>
+		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+		
+			<li><a href="/tags/programming/">programming<span>4</span></a></li>
 		
 			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
+		
+			<li><a href="/tags/macos/">macos<span>9</span></a></li>
+		
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+		
+			<li><a href="/tags/database/">database<span>2</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -342,23 +302,23 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
@@ -393,7 +353,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

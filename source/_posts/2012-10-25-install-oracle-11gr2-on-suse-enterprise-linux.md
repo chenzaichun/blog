@@ -1,4 +1,3 @@
----
 layout: post
 title: "SUSE Enterprise Linux 10下安装Oracle 11gr2"
 date: 2012-10-25 10:09

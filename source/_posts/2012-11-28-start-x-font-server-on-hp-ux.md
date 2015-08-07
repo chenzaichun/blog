@@ -1,4 +1,3 @@
----
 layout: post
 title: "在hp-ux上启动x font server"
 date: 2012-11-28 11:08

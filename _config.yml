@@ -51,7 +51,7 @@ tag_map:
 ## 1: Disable pagination
 ## 0: Fully Disable
 archive: 2
-category: 2
+category: 0
 tag: 2
 
 # Server
@@ -87,6 +87,7 @@ exclude_generator:
 
 plugins:
   - hexo-generator-feed
+  - hexo-renderer-ejs
 
 
 # Markdown

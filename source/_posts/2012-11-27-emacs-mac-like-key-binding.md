@@ -1,4 +1,3 @@
----
 layout: post
 title: "让emacs具有mac下的按键绑定"
 date: 2012-11-27 13:28

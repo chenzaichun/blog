@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -122,10 +114,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-12-12-get_user_desktop_path_from_python.html" >windows下通过python获取用户桌面路径</a>
-			<span class="date"> 12月 12 2010 </span>
+			<div class="date"> Dec 12 2010 </div>
+			<div class="article-title"><a href="/2010-12-12-pefile.html" >pefile</a></div>						
 		</h3>
 	
 
@@ -136,8 +128,46 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> win32com.shell <span class="keyword">import</span> shell</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetDesktoppath</span><span class="params">()</span>:</span></div><div class="line">    ilist = shell.SHGetSpecialFolderLocation(<span class="number">0</span>,shellcon.CSIDL_DESKTOP)</div><div class="line">    dtpath = shell.SHGetPathFromIDList(ilist)</div><div class="line">    <span class="keyword">return</span> dtpath</div></pre></td></tr></table></figure>
+	  <p>马克一下：&lt;a href=&quot;http://code.google.com/p/pefile/&quot;&gt;http://code.google.com/p/pefile/&lt;/a&gt;</p>
+<p>&lt;em&gt;pefile&lt;/em&gt; is a multi-platform &lt;a style=&quot;color: #0000cc;&quot; rel=&quot;nofollow&quot; href=&quot;http://python.org/&quot;&gt;Python&lt;/a&gt; module to read and work with &lt;a style=&quot;color: #0000cc;&quot; rel=&quot;nofollow&quot; href=&quot;http://en.wikipedia.org/wiki/Portable_Executable&quot;&gt;Portable Executable (aka PE) files&lt;/a&gt;. Most of the information in the PE Header is accessible, as well as all the sections, section's information and data.
+pefile requires some basic understanding of the layout of a PE file. Armed with it it's possible to explore nearly every single feature of the file.
+Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
+&lt;ul style=&quot;max-width: 65em; padding-left: 40px; font-family: arial, sans-serif; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px; line-height: normal;&quot;&gt;
+&lt;li&gt;Modifying and writing back to the PE image&lt;/li&gt;
+&lt;li&gt;Header Inspection&lt;/li&gt;
+&lt;li&gt;Sections analysis&lt;/li&gt;
+&lt;li&gt;Retrieving data&lt;/li&gt;
+&lt;li&gt;Warnings for suspicious and malformed values&lt;/li&gt;
+&lt;li&gt;Packer detection with PEiD’s signatures&lt;/li&gt;
+&lt;li&gt;PEiD signature generation&lt;/li&gt;
+&lt;/ul&gt;Please, refer to &lt;a style=&quot;color: #0000cc;&quot; href=&quot;http://code.google.com/p/pefile/wiki/UsageExamples&quot;&gt;UsageExamples&lt;/a&gt; for starting points on how to use &lt;em&gt;pefile&lt;/em&gt;</p>
 
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-12-12-pefile.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Dec 12 2010 </div>
+			<div class="article-title"><a href="/2010-12-12-get_user_desktop_path_from_python.html" >windows下通过python获取用户桌面路径</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> win32com.shell <span class="keyword">import</span> shell</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetDesktoppath</span><span class="params">()</span>:</span></span><br><span class="line">    ilist = shell.SHGetSpecialFolderLocation(<span class="number">0</span>,shellcon.CSIDL_DESKTOP)</span><br><span class="line">    dtpath = shell.SHGetPathFromIDList(ilist)</span><br><span class="line">    <span class="keyword">return</span> dtpath</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -150,10 +180,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-12-12-modify_windows_environment_variables_from_python.html" >python修改windows环境变量</a>
-			<span class="date"> 12月 12 2010 </span>
+			<div class="date"> Dec 12 2010 </div>
+			<div class="article-title"><a href="/2010-12-12-modify_windows_environment_variables_from_python.html" >python修改windows环境变量</a></div>						
 		</h3>
 	
 
@@ -166,8 +196,14 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>总结一下有2种方法：</p>
 <ol>
-<li>通过注册表操作HKLMSYSTEMCurrentControlSetControlSession ManagerEnvironment以达到目的，参考<a href="/python_access_windows_registry.html" target="_blank">_winreg修改注册表</a>，如果要通知其他程序环境变量已改变，则可以使用pywin32中的win32gui模块来实现：</li>
+<li>通过注册表操作HKLMSYSTEMCurrentControlSetControlSession ManagerEnvironment以达到目的，参考&lt;a href=&quot;/python_access_windows_registry.html&quot; target=&quot;_blank&quot;&gt;_winreg修改注册表&lt;/a&gt;，如果要通知其他程序环境变量已改变，则可以使用pywin32中的win32gui模块来实现：</li>
 </ol>
+<p>&lt;!--more--&gt;</p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> _winreg <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> os, sys, win32gui, win32con</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">queryValue</span><span class="params">(key, name)</span>:</span>       </span><br><span class="line">    value, type_id = QueryValueEx(key, name)</span><br><span class="line">    <span class="keyword">return</span> value</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(key)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1024</span>):                                           </span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            n,v,t = EnumValue(key, i)</span><br><span class="line">            <span class="keyword">print</span> <span class="string">'%s=%s'</span> % (n, v)</span><br><span class="line">        <span class="keyword">except</span> EnvironmentError:</span><br><span class="line">            <span class="keyword">break</span>          </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        path = <span class="string">r'SYSTEMCurrentControlSetControlSession ManagerEnvironment'</span></span><br><span class="line">        reg = ConnectRegistry(<span class="keyword">None</span>, HKEY_LOCAL_MACHINE)</span><br><span class="line">        key = OpenKey(reg, path, <span class="number">0</span>, KEY_ALL_ACCESS)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> len(sys.argv) == <span class="number">1</span>:</span><br><span class="line">            show(key)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            name, value = sys.argv[<span class="number">1</span>].split(<span class="string">'='</span>)</span><br><span class="line">            <span class="keyword">if</span> name.upper() == <span class="string">'PATH'</span>:</span><br><span class="line">                value = queryValue(key, name) + <span class="string">';'</span> + value</span><br><span class="line">            <span class="keyword">if</span> value:</span><br><span class="line">                SetValueEx(key, name, <span class="number">0</span>, REG_EXPAND_SZ, value)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                DeleteValue(key, name)</span><br><span class="line">            </span><br><span class="line">        win32gui.SendMessage(win32con.HWND_BROADCAST, win32con.WM_SETTINGCHANGE, <span class="number">0</span>, <span class="string">'Environment'</span>)</span><br><span class="line">                            </span><br><span class="line">    <span class="keyword">except</span> Exception, e:</span><br><span class="line">        <span class="keyword">print</span> e</span><br><span class="line"></span><br><span class="line">    CloseKey(key)    </span><br><span class="line">    CloseKey(reg)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:    </span><br><span class="line">    usage = </span><br><span class="line"><span class="string">"""</span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">Show all environment vsarisbles - enver</span><br><span class="line">Add/Modify/Delete environment variable - enver &lt;name&gt;=[value]</span><br><span class="line"></span><br><span class="line">If &lt;name&gt; is PATH enver will append the value prefixed with ;</span><br><span class="line"></span><br><span class="line">If there is no value enver will delete the &lt;name&gt; environment variable</span><br><span class="line"></span><br><span class="line">Note that the current command window will not be affected, </span><br><span class="line">only new command windows.</span><br><span class="line">"""</span></span><br><span class="line">    argc = len(sys.argv)</span><br><span class="line">    <span class="keyword">if</span> argc &gt; <span class="number">2</span> <span class="keyword">or</span> (argc == <span class="number">2</span> <span class="keyword">and</span> sys.argv[<span class="number">1</span>].find(<span class="string">'='</span>) == -<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">print</span> usage</span><br><span class="line">        sys.exit()</span><br><span class="line">        </span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>如果系统有setx，可以用os.system(&quot;setx xxxxx xxxxxx&quot;)这种方式</li>
+</ol>
+<p>P.S. 用os.putenv和pywin32中的win32api.SetEnvironmentVariable是没有办法持久化修改环境变量的。修改影响的就是该进程和子进程（相当于shell的export）</p>
 
 	
 	</div>
@@ -180,10 +216,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-12-12-pywin32-excel.html" >pywin32访问excel</a>
-			<span class="date"> 12月 12 2010 </span>
+			<div class="date"> Dec 12 2010 </div>
+			<div class="article-title"><a href="/2010-12-12-pywin32-excel.html" >pywin32访问excel</a></div>						
 		</h3>
 	
 
@@ -196,8 +232,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p><a href="http://www.blog.pythonlibrary.org/2010/07/16/python-and-microsoft-office-using-pywin32/" target="_blank" rel="external">参考链接</a></p>
 <p>直接用上面的代码吧</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</div><div class="line"></div><div class="line"><span class="comment">#----------------------------------------------------------------------</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">excel</span><span class="params">()</span>:</span></div><div class="line">    <span class="string">"""这只是测试"""</span></div><div class="line">    xl = win32.gencache.EnsureDispatch(<span class="string">'Excel.Application'</span>)</div><div class="line">    ss = xl.Workbooks.Add()</div><div class="line">    sh = ss.ActiveSheet</div><div class="line"></div><div class="line">    xl.Visible = <span class="keyword">True</span></div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line"></div><div class="line">    sh.Cells(<span class="number">1</span>,<span class="number">1</span>).Value = <span class="string">'Hacking Excel with Python Demo'</span></div><div class="line"></div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">8</span>):</div><div class="line">        sh.Cells(i,<span class="number">1</span>).Value = <span class="string">'Line %i'</span> % i</div><div class="line">        time.sleep(<span class="number">1</span>)</div><div class="line"></div><div class="line">    ss.Close(<span class="keyword">False</span>)</div><div class="line">    xl.Application.Quit()</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    excel()</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</span><br><span class="line"></span><br><span class="line"><span class="comment">#----------------------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">excel</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""这只是测试"""</span></span><br><span class="line">    xl = win32.gencache.EnsureDispatch(<span class="string">'Excel.Application'</span>)</span><br><span class="line">    ss = xl.Workbooks.Add()</span><br><span class="line">    sh = ss.ActiveSheet</span><br><span class="line"></span><br><span class="line">    xl.Visible = <span class="keyword">True</span></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    sh.Cells(<span class="number">1</span>,<span class="number">1</span>).Value = <span class="string">'Hacking Excel with Python Demo'</span></span><br><span class="line"></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">8</span>):</span><br><span class="line">        sh.Cells(i,<span class="number">1</span>).Value = <span class="string">'Line %i'</span> % i</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    ss.Close(<span class="keyword">False</span>)</span><br><span class="line">    xl.Application.Quit()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    excel()</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -210,10 +245,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-12-11-dota.html" >【元首】DOTA输掉之后……</a>
-			<span class="date"> 12月 11 2010 </span>
+			<div class="date"> Dec 11 2010 </div>
+			<div class="article-title"><a href="/2010-12-11-dota.html" >【元首】DOTA输掉之后……</a></div>						
 		</h3>
 	
 
@@ -224,7 +259,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <object width="600" height="480" data="http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf" type="application/x-shockwave-flash"><br><param name="src" value="http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf"></object>
+	  <p>&lt;object width=&quot;600&quot; height=&quot;480&quot; data=&quot;http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf&quot; type=&quot;application/x-shockwave-flash&quot;&gt;
+&lt;param name=&quot;src&quot; value=&quot;http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf&quot;&gt;&lt;/object&gt;</p>
 
 	
 	</div>
@@ -237,10 +273,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-12-09-ps.html" >ps应该这样玩</a>
-			<span class="date"> 12月 9 2010 </span>
+			<div class="date"> Dec 9 2010 </div>
+			<div class="article-title"><a href="/2010-12-09-ps.html" >ps应该这样玩</a></div>						
 		</h3>
 	
 
@@ -251,8 +287,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <p><object width="600" height="480" data="http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&embedid=-&showAd=0" type="application/x-shockwave-flash"></object></p>
-<p><param name="src" value="http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&embedid=-&showAd=0"><br><a href="http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&embedid=-&showAd=0" target="_blank">弹出</a></p>
+	  <p>&lt;object width=&quot;600&quot; height=&quot;480&quot; data=&quot;http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&amp;embedid=-&amp;showAd=0&quot; type=&quot;application/x-shockwave-flash&quot;&gt;
+&lt;param name=&quot;src&quot; value=&quot;http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&amp;embedid=-&amp;showAd=0&quot;&gt;&lt;/object&gt;
+&lt;a href=&quot;http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&amp;embedid=-&amp;showAd=0&quot; target=&quot;_blank&quot;&gt;弹出&lt;/a&gt;</p>
 
 	
 	</div>
@@ -265,10 +302,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-12-08-wuti.html" >无题</a>
-			<span class="date"> 12月 8 2010 </span>
+			<div class="date"> Dec 8 2010 </div>
+			<div class="article-title"><a href="/2010-12-08-wuti.html" >无题</a></div>						
 		</h3>
 	
 
@@ -279,8 +316,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <p>一群人出去旅游，遇到打劫，匪徒只有一个人，他对那群人说：“自觉的把钱交出来，第一个交的我只收他100元，第二个交的150元，第三个交的200元，以此类推，越早交钱越划算，越晚交越亏，还不快来交钱？”于是那帮人争先恐后的去向那个匪徒交钱，还打起架来了。匪徒一边收钱一边维持秩序，“不许打架，都排好队，谁插队谁排到最后面去。”众人顿时秩序井然。有些人没带那么多钱，怎么办？匪徒说：“没关系，把带的先交了，剩下的我借给你，然后你写下欠条，回头我去你家取，我借给你的那部分得算利息。”        </p>
-<p>那群人中有几个小伙子是具有反抗精神的，他们想反正那个匪徒只是一个人，跟他拼了。谁知道那个匪徒根本不屑与那几个小伙子动手，他只是对已经交了钱的人说：“你们瞧，那儿有几个人不想交钱，他们想破坏游戏规则，如果他们不交钱那么你们先交钱的人不就成傻子了吗？他们在损害你们的利益。”于是先交了钱的人开始威逼不肯交钱的人向歹徒交钱，最后大家不管是情愿还是不情愿都向歹徒交了钱。 　　</p>
+	  <p>一群人出去旅游，遇到打劫，匪徒只有一个人，他对那群人说：“自觉的把钱交出来，第一个交的我只收他100元，第二个交的150元，第三个交的200元，以此类推，越早交钱越划算，越晚交越亏，还不快来交钱？”于是那帮人争先恐后的去向那个匪徒交钱，还打起架来了。匪徒一边收钱一边维持秩序，“不许打架，都排好队，谁插队谁排到最后面去。”众人顿时秩序井然。有些人没带那么多钱，怎么办？匪徒说：“没关系，把带的先交了，剩下的我借给你，然后你写下欠条，回头我去你家取，我借给你的那部分得算利息。”</p>
+<p>那群人中有几个小伙子是具有反抗精神的，他们想反正那个匪徒只是一个人，跟他拼了。谁知道那个匪徒根本不屑与那几个小伙子动手，他只是对已经交了钱的人说：“你们瞧，那儿有几个人不想交钱，他们想破坏游戏规则，如果他们不交钱那么你们先交钱的人不就成傻子了吗？他们在损害你们的利益。”于是先交了钱的人开始威逼不肯交钱的人向歹徒交钱，最后大家不管是情愿还是不情愿都向歹徒交了钱。</p>
 <p>歹徒得钱后扬长而去，留下那群人还在那儿攀比，第一名说：“瞧我多聪明，第一个交钱，我只交了100元。”第二名说：“我也不赖，只交了150元。”。。。。。。。。。。。</p>
 <p>网上看到的。原始链接找不到了。</p>
 
@@ -295,10 +332,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-12-05-redis_links.html" >redis</a>
-			<span class="date"> 12月 5 2010 </span>
+			<div class="date"> Dec 5 2010 </div>
+			<div class="article-title"><a href="/2010-12-05-redis_links.html" >redis</a></div>						
 		</h3>
 	
 
@@ -310,9 +347,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>记录下redis的常用链接：</p>
-<p><a href="http://try.redis-db.com/" target="_blank" rel="external">http://try.redis-db.com/</a></p>
-<p><a href="http://code.google.com/p/redis/" target="_blank" rel="external">http://code.google.com/p/redis/</a></p>
-<p><a href="http://timyang.net/data/redis-misunderstanding/" target="_blank" rel="external">http://timyang.net/data/redis-misunderstanding/</a></p>
+<p>&lt;a href=&quot;http://try.redis-db.com/&quot;&gt;http://try.redis-db.com/&lt;/a&gt;</p>
+<p>&lt;a href=&quot;http://code.google.com/p/redis/&quot;&gt;http://code.google.com/p/redis/&lt;/a&gt;</p>
+<p>&lt;a href=&quot;http://timyang.net/data/redis-misunderstanding/&quot;&gt;http://timyang.net/data/redis-misunderstanding/&lt;/a&gt;</p>
 
 	
 	</div>
@@ -325,10 +362,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-12-05-never_marry_you.html" >“我绝不嫁给你”的英语表达</a>
-			<span class="date"> 12月 5 2010 </span>
+			<div class="date"> Dec 5 2010 </div>
+			<div class="article-title"><a href="/2010-12-05-never_marry_you.html" >“我绝不嫁给你”的英语表达</a></div>						
 		</h3>
 	
 
@@ -339,13 +376,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <p>@<span style="color: #666666;"><a href="http://group.mtime.com/queen/discussion/1285210/" target="_blank">巫界之战</a>，我发现我只有高中水平<img title="Cry" src="/tinymce/plugins/emotions/img/smiley-cry.gif" border="0" alt="Cry"></span></p>
+	  <p>@&lt;span style=&quot;color: #666666;&quot;&gt;&lt;a href=&quot;http://group.mtime.com/queen/discussion/1285210/&quot; target=&quot;_blank&quot;&gt;巫界之战&lt;/a&gt;，我发现我只有高中水平&lt;img title=&quot;Cry&quot; src=&quot;/tinymce/plugins/emotions/img/smiley-cry.gif&quot; border=&quot;0&quot; alt=&quot;Cry&quot;&gt;&lt;/span&gt;</p>
 <p>高中水平：I will never marry you.</p>
 <p>高考水平：Never will I marry you.</p>
 <p>四级水平：You are the last man I am willing to marry.</p>
 <p>六级水平：Under no circumstances will I marry you.</p>
 <p>GRE水平：If you were the last man in the world, I would definitely remain single.</p>
-<p>大神水平：If you were to marry me, I would go to the temple.<br>              If the sun rose in the west, I would marry you.<br>              I will marry anybody but you.<br>              I can suffer anything but marrying you.</p>
+<p>大神水平：If you were to marry me, I would go to the temple.
+              If the sun rose in the west, I would marry you.
+              I will marry anybody but you.
+              I can suffer anything but marrying you.</p>
 <p>烈女水平：If you were to marry me, I would jump to the water/river/lake/sea/well.</p>
 <p>五毛水平：If Li Gang were your father, I would marry you.</p>
 
@@ -360,10 +400,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2010-12-05-sun.html" >千万别惹姓孙的</a>
-			<span class="date"> 12月 5 2010 </span>
+			<div class="date"> Dec 5 2010 </div>
+			<div class="article-title"><a href="/2010-12-05-sun.html" >千万别惹姓孙的</a></div>						
 		</h3>
 	
 
@@ -382,34 +422,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2010-12-05-sun.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2010-12-03-how_hackerr_playing_game.html" >看看黑客是怎么玩游戏的</a>
-			<span class="date"> 12月 3 2010 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>几个黑客看了后十指不由大动，于是就有了下面这个视频。</p>
-<object style="width: 600px; height: 480px;" width="600" height="480" data="http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XOTk0MjIxNTY=&embedid=-&showAd=0" type="application/x-shockwave-flash"><br><param name="src" value="http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XOTk0MjIxNTY=&embedid=-&showAd=0"></object>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-12-03-how_hackerr_playing_game.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -456,81 +468,48 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	<div class="widget">
-		<h4>分类</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/categories/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/categories/Tools/">Tools<span>1</span></a></li>
-		
-			<li><a href="/categories/emacs/">emacs<span>61</span></a></li>
-		
-			<li><a href="/categories/gamedev/">gamedev<span>5</span></a></li>
-		
-			<li><a href="/categories/ios/">ios<span>3</span></a></li>
-		
-			<li><a href="/categories/opengl/">opengl<span>1</span></a></li>
-		
-			<li><a href="/categories/oracle/">oracle<span>1</span></a></li>
-		
-			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/categories/programming/">programming<span>139</span></a></li>
-		
-			<li><a href="/categories/tools/">tools<span>142</span></a></li>
-		
-			<li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
-		
-		</ul>
-	</div>
-
-		
-			
-	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
+			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
 		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+			<li><a href="/tags/soap/">soap<span>1</span></a></li>
 		
-			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+			<li><a href="/tags/tools/">tools<span>4</span></a></li>
 		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
 		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
 		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
-		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
-		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
-		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
 		
 			<li><a href="/tags/VC/">VC<span>8</span></a></li>
 		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
-		
 			<li><a href="/tags/vs/">vs<span>2</span></a></li>
 		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
 		
 			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
 		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
 		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
 		
-			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
 		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
 		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+		
+			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
+		
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+		
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -546,23 +525,23 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
@@ -597,7 +576,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

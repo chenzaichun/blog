@@ -1,4 +1,3 @@
----
 layout: post
 title: "通过git将bitbucket当做无限容量的dropbox"
 date: 2012-09-26 15:47

@@ -1,4 +1,3 @@
----
 layout: post
 title: "修改ibus-googlepinyin候选词的个数"
 date: 2012-11-21 16:17

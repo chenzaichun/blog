@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -124,16 +116,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">		
-	    <p>由于svn的python绑定一直没有推出python2.7的版本，所以只好自己编译了。参考链接：<a href="http://www.lejordet.com/2009/03/compiling-subversion-python-bindings-on-windows/" target="_blank" rel="external">http://www.lejordet.com/2009/03/compiling-subversion-python-bindings-on-windows/</a></p>
+	    <p>由于svn的python绑定一直没有推出python2.7的版本，所以只好自己编译了。参考链接：&lt;a href=&quot;http://www.lejordet.com/2009/03/compiling-subversion-python-bindings-on-windows/&quot;&gt;http://www.lejordet.com/2009/03/compiling-subversion-python-bindings-on-windows/&lt;/a&gt;</p>
 <ol>
-<li>首先下载swig的windows bin，下载地址：<a href="http://www.swig.org/download.html" target="_blank" rel="external">http://www.swig.org/download.html</a>，并解压到目录A</li>
-<li>下载subversion源代码：<a href="http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=10339&expandFolder=10339&folderID=260" target="_blank" rel="external">http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=10339&amp;expandFolder=10339&amp;folderID=260</a>，并解压到目录A</li>
-<li>在下面的链接中下载对应版本的deps<span style="color: #ff0000;">（windows下要下载zip格式的文件，不然vc的dsp文件会用错误的line ending而无法打开）</span>，并解压到目录A</li>
-<li>cd到目录A，执行命令生成vc的solution文件<span style="color: #ff0000;">（注意自己对应相应的目录，并使用绝对路径）</span></li>
+<li>首先下载swig的windows bin，下载地址：&lt;a href=&quot;http://www.swig.org/download.html&quot;&gt;http://www.swig.org/download.html&lt;/a&gt;，并解压到目录A</li>
+<li>下载subversion源代码：&lt;a href=&quot;http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=10339&amp;expandFolder=10339&amp;folderID=260&quot;&gt;http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=10339&amp;expandFolder=10339&amp;folderID=260&lt;/a&gt;，并解压到目录A</li>
+<li>在下面的链接中下载对应版本的deps&lt;span style=&quot;color: #ff0000;&quot;&gt;（windows下要下载zip格式的文件，不然vc的dsp文件会用错误的line ending而无法打开）&lt;/span&gt;，并解压到目录A</li>
+<li>cd到目录A，执行命令生成vc的solution文件&lt;span style=&quot;color: #ff0000;&quot;&gt;（注意自己对应相应的目录，并使用绝对路径）&lt;/span&gt;</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gen-make.py -t vcproj --vsnet-version=<span class="number">2008</span> --with-swig=c:homesrcsubversionswig --with-zlib=c:homesrcsubversionsubversionzlib --with-apr=c:homesrcsubversionsubversionapr --with-apr-util=c:homesrcsubversionsubversionapr-util --with-apr-iconv=c:homesrcsubversionsubversionapr-iconv</div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gen-make.py -t vcproj --vsnet-version=<span class="number">2008</span> --with-swig=c:homesrcsubversionswig --with-zlib=c:homesrcsubversionsubversionzlib --with-apr=c:homesrcsubversionsubversionapr --with-apr-util=c:homesrcsubversionsubversionapr-util --with-apr-iconv=c:homesrcsubversionsubversionapr-iconv</span><br></pre></td></tr></table></figure></p>
+<ol start="5">
 <li>cd到apr目录，用vc打开apr.dsw，并编译工程</li>
 <li>cd到apr-util目录，编译apr-util.dsw，当询问xxx project已经存在，是否加载的时候，选择yes。有些工程可能编译不过，不用管它</li>
 <li>编译根目录下subversion_vcnet.sln，有些工程编译不过，不用管它</li>
@@ -141,13 +132,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <li>在B目录下创建一个目录libsvn，拷贝bindingsswigpython下的*.py到libsvn</li>
 <li>在根目录下搜索*.dll，并拷贝到libsvn目录下</li>
 <li>重命名所有已_开头的dll为pyd。</li>
-<li>拷贝B目录下的svn和libsvn目录到<python>Libsite-packages目录下</python></li>
+<li>拷贝B目录下的svn和libsvn目录到&lt;PYTHON&gt;Libsite-packages目录下</li>
 <li>测试是否正常工作：在python的cmd下输入</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> svn <span class="keyword">import</span> core</div></pre></td></tr></table></figure>
-
-<ol>
-<li>如果有错误发生，一般是缺少dll的问题，再次确认所有dll都拷贝到libsvn目录下。<br>这里附上我的编译结果（解压到<python>Libsite-packages目录下即可使用）：<br><a href="http://commondatastorage.googleapis.com/czc_public/appspotmedia/svn-python-1.6.13.win32-py2.7.7z" target="_blank">svn-python-1.6.13.win32-py2.7.7z</a><br><a href="http://commondatastorage.googleapis.com/czc_public/appspotmedia/svn-python-1.6.13.win32-py2.7.zip" target="_blank">svn-python-1.6.13.win32-py2.7.zip</a> </python></li>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> svn <span class="keyword">import</span> core</span><br></pre></td></tr></table></figure></p>
+<ol start="14">
+<li>如果有错误发生，一般是缺少dll的问题，再次确认所有dll都拷贝到libsvn目录下。
+这里附上我的编译结果（解压到&lt;Python&gt;Libsite-packages目录下即可使用）：
+&lt;a href=&quot;http://commondatastorage.googleapis.com/czc_public/appspotmedia/svn-python-1.6.13.win32-py2.7.7z&quot; target=&quot;_blank&quot;&gt;svn-python-1.6.13.win32-py2.7.7z&lt;/a&gt; 
+&lt;a href=&quot;http://commondatastorage.googleapis.com/czc_public/appspotmedia/svn-python-1.6.13.win32-py2.7.zip&quot; target=&quot;_blank&quot;&gt;svn-python-1.6.13.win32-py2.7.zip&lt;/a&gt;</li>
 </ol>
 	  
 	</div>
@@ -179,7 +172,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-01-16-compile_subversion_python2-7_binding_on_windows.html" data-title="windows下编译subversion的Python绑定（附下载）" data-url="http://yesokay.herokuapp.com/2011-01-16-compile_subversion_python2-7_binding_on_windows.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2011-01-16-compile_subversion_python2-7_binding_on_windows.html" data-title="windows下编译subversion的Python绑定（附下载）" data-url="http://yesokay.herokuapp.com/2011-01-16-compile_subversion_python2-7_binding_on_windows.html"></div>  
   
 </section>
 
@@ -193,7 +186,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	1月 16 2011 
+	Jan 16 2011 
 	</div>
 	
 
@@ -204,7 +197,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>81</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
 
     </ul>
@@ -241,7 +234,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

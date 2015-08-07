@@ -1,4 +1,3 @@
----
 layout: post
 title: "Certificate not Installed on the Node"
 date: 2012-06-28 13:21

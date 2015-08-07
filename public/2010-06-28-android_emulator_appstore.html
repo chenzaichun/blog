@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -126,16 +118,18 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="mypage">		
 	    <p>如何在android模拟器中使用应用商店呢？</p>
 <ol>
-<li><p>去<a href="http://developer.htc.com/adp.html" target="_blank" rel="external">http://developer.htc.com/adp.html</a>下载对应sdk的system.img，比如你装有1.6的android sdk，那么下载<a href="http://member.america.htc.com/download/RomCode/ADP/signed-dream_devphone_userdebug-img-14721.zip" target="_blank">http://member.america.htc.com/download/RomCode/ADP/signed-dream_devphone_userdebug-img-14721.zip?</a></p>
+<li>
+<p>去&lt;a href=&quot;http://developer.htc.com/adp.html&quot;&gt;http://developer.htc.com/adp.html&lt;/a&gt;下载对应sdk的system.img，比如你装有1.6的android sdk，那么下载&lt;a href=&quot;http://member.america.htc.com/download/RomCode/ADP/signed-dream_devphone_userdebug-img-14721.zip&quot; target=&quot;_blank&quot;&gt;http://member.america.htc.com/download/RomCode/ADP/signed-dream_devphone_userdebug-img-14721.zip?&lt;/a&gt;</p>
 </li>
-<li><p>将包里面的system.img解压缩到所建立的虚拟设备目录下，比如你的虚拟设备叫做htc，那么虚拟设备目录windows下在%APPLICATIONDATA%.androidavdhtc.avd下，linux在$HOME/.android/avd/htc.avd/下</p>
+<li>
+<p>将包里面的system.img解压缩到所建立的虚拟设备目录下，比如你的虚拟设备叫做htc，那么虚拟设备目录windows下在%APPLICATIONDATA%.androidavdhtc.avd下，linux在$HOME/.android/avd/htc.avd/下</p>
 </li>
-<li><p>如果在创建虚拟设备的时候没有添加sdcard，不然会出现connection error错误！那么请添加sdcard，在虚拟设备目录下执行（前提当然是将android sdk中tools加入$PATH中）</p>
+<li>
+<p>如果在创建虚拟设备的时候没有添加sdcard，不然会出现connection error错误！那么请添加sdcard，在虚拟设备目录下执行（前提当然是将android sdk中tools加入$PATH中）</p>
 </li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mksdcard <span class="number">512</span>M sdcard.img</div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mksdcard <span class="number">512</span>M sdcard.img</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
 <li>启动模拟器，现在你就可以使用Google帐户登录appstore了，免费软件尽情下载安装吧！</li>
 </ol>
 	  
@@ -168,7 +162,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-06-28-android_emulator_appstore.html" data-title="android模拟器中使用应用商店(appstore)" data-url="http://yesokay.herokuapp.com/2010-06-28-android_emulator_appstore.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2010-06-28-android_emulator_appstore.html" data-title="android模拟器中使用应用商店(appstore)" data-url="http://yesokay.herokuapp.com/2010-06-28-android_emulator_appstore.html"></div>  
   
 </section>
 
@@ -182,7 +176,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	6月 28 2010 
+	Jun 28 2010 
 	</div>
 	
 
@@ -193,7 +187,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>81</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
 
     </ul>
@@ -230,7 +224,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -126,27 +118,27 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="mypage">		
 	    <p><a href="http://superuser.com/questions/28414/moving-the-swapfiles-to-a-dedicated-partition-in-snow-leopard" target="_blank" rel="external">参考链接</a></p>
 <ol>
-<li>备份dynamic_pager.plist</li>
+<li>
+<p>备份dynamic_pager.plist
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /System/Library/LaunchDaemons</span><br><span class="line">sudo cp com.apple.dynamic_pager.plist&#123;,_bak&#125;</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>将plist转换为xml格式
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo plutil -convert xml1 com.apple.dynamic_pager.plist</span><br></pre></td></tr></table></figure></p>
+</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /System/Library/LaunchDaemons</div><div class="line"><span class="built_in">sudo</span> cp com.apple.dynamic_pager.plist{,_bak}</div></pre></td></tr></table></figure>
-
-<ol>
-<li>将plist转换为xml格式 </li>
+<p>&lt;!--more--&gt;</p>
+<ol start="3">
+<li>
+<p>编辑plist文件, 比如我的，请根据自身情况修改路径
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs$</span><br><span class="line">&lt;plist version="1.0"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">dict</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>EnableTransactions<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">true</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>HopefullyExitsLast<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">true</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>com.apple.dynamic_pager<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>OnDemand<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">false</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">array</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>/bin/bash<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>-c<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>/bin/wait4path /Volumes/Swap/ &amp;amp;&amp;amp; /sbin/dynamic_pager -F /Volumes/Swap/.vm/swapfile<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">array</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dict</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">plist</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>将plist转换为binary
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo plutil -convert binary1 com.apple.dynamic_pager.plist</span><br></pre></td></tr></table></figure></p>
+</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> plutil -convert xml1 com.apple.dynamic_pager.plist</div></pre></td></tr></table></figure>
-
-<a id="more"></a>
-<ol>
-<li>编辑plist文件, 比如我的，请根据自身情况修改路径</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></div><div class="line"><span class="doctype">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs$</span></div><div class="line">&lt;plist version="1.0"&gt;</div><div class="line"><span class="tag">&lt;<span class="title">dict</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>EnableTransactions<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">true</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>HopefullyExitsLast<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">true</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>com.apple.dynamic_pager<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>OnDemand<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">false</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">array</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>/bin/bash<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>-c<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>/bin/wait4path /Volumes/Swap/ &amp;&amp; /sbin/dynamic_pager -F /Volumes/Swap/.vm/swapfile<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">plist</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<ol>
-<li>将plist转换为binary</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> plutil -convert binary1 com.apple.dynamic_pager.plist</div></pre></td></tr></table></figure>
-
-<p>搞定 </p>
+<p>搞定</p>
 	  
 	</div>
 
@@ -177,7 +169,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-12-30-macos-x-swap-dan-du-fen-qu.html" data-title="MacOS X Swap单独分区" data-url="http://yesokay.herokuapp.com/2011-12-30-macos-x-swap-dan-du-fen-qu.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2011-12-30-macos-x-swap-dan-du-fen-qu.html" data-title="MacOS X Swap单独分区" data-url="http://yesokay.herokuapp.com/2011-12-30-macos-x-swap-dan-du-fen-qu.html"></div>  
   
 </section>
 
@@ -191,7 +183,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	12月 30 2011 
+	Dec 30 2011 
 	</div>
 	
 
@@ -202,7 +194,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>57</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>42</span></a></li> <li><a href="/categories/tools/">tools<span>5</span></a></li>
   </li>
 
     </ul>
@@ -239,7 +231,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

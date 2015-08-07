@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -128,13 +120,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <blockquote>
 <p>Error 500 fault: SOAP-ENV:Server[no subcode]</p>
 </blockquote>
-<p>通过tcpdump分析得到，gsoap强制加入了一个SOAP-ENV:mustUnderstand=”1”属性，而web service方不能解析该属性。</p>
-<p>解决办法, </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// set mustUnderstand to 0</span></div><div class="line">soap.mustUnderstand=<span class="number">0</span>;</div></pre></td></tr></table></figure>
-
+<p>通过tcpdump分析得到，gsoap强制加入了一个SOAP-ENV:mustUnderstand=&quot;1&quot;属性，而web service方不能解析该属性。</p>
+<p>解决办法,</p>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// set mustUnderstand to 0</span></span><br><span class="line">soap.mustUnderstand=<span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
 <p>修改soapC.cpp, 注释掉<code>soap-&gt;mustUnderstand=1</code>这一行：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 soap_out_SOAP_ENV__Header(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</div><div class="line">{</div><div class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</div><div class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></div><div class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</div><div class="line">    <span class="keyword">return</span> soap-&gt;error;</div><div class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</div><div class="line">}</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 <span class="title">soap_out_SOAP_ENV__Header</span><span class="params">(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</span><br><span class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></span><br><span class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &amp;a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -165,7 +155,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-02-28-gsoap-error-500.html" data-title="gsoap Error 500" data-url="http://yesokay.herokuapp.com/2012-02-28-gsoap-error-500.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2012-02-28-gsoap-error-500.html" data-title="gsoap Error 500" data-url="http://yesokay.herokuapp.com/2012-02-28-gsoap-error-500.html"></div>  
   
 </section>
 
@@ -179,7 +169,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2月 28 2012 
+	Feb 28 2012 
 	</div>
 	
 
@@ -190,7 +180,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>57</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li>
+    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>42</span></a></li> <li><a href="/categories/programming/">programming<span>21</span></a></li>
   </li>
 
     </ul>
@@ -227,7 +217,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

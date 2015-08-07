@@ -1,4 +1,3 @@
---- 
 categories: 
   - tools
 comments: true
@@ -16,6 +15,7 @@ tags:
 title: "Google chrome与firefox"
 type: post
 ---
+
 Google chrome与firefox的感受：
 
 1. chrome速度比较快，但是内存消耗来看，在开n个页面（n > 3)的时候，chrome消耗的内存比较大。如果页面一直在加载（但是此时已经断开了连接--超时，chrome一直在等待）这个时候chrome的 cpu消耗是相当大的；

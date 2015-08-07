@@ -1,4 +1,3 @@
----
 layout: post
 title: "Floating point exception on SUSE"
 date: 2012-10-26 16:40

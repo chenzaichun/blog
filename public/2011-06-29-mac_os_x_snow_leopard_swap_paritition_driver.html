@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -124,10 +116,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">		
-	    <p>参考链接：<a href="http://superuser.com/questions/28414/moving-the-swapfiles-to-a-dedicated-partition-in-snow-leopard" target="_blank" rel="external">http://superuser.com/questions/28414/moving-the-swapfiles-to-a-dedicated-partition-in-snow-leopard</a></p>
+	    <p>参考链接：&lt;a href=&quot;http://superuser.com/questions/28414/moving-the-swapfiles-to-a-dedicated-partition-in-snow-leopard&quot;&gt;http://superuser.com/questions/28414/moving-the-swapfiles-to-a-dedicated-partition-in-snow-leopard&lt;/a&gt;</p>
 <p>这里注意的是，新的swap文件的路径必须存在。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># backup the file</span></div><div class="line">$ <span class="built_in">cd</span> /System/Library/LaunchDaemons</div><div class="line">$ <span class="built_in">sudo</span> cp com.apple.dynamic_pager.plist{,_bak}</div><div class="line"></div><div class="line"><span class="comment"># convert the file to xml</span></div><div class="line">$ <span class="built_in">sudo</span> plutil -convert xml1 com.apple.dynamic_pager.plist</div><div class="line"></div><div class="line"><span class="comment"># modify the file</span></div><div class="line">$ <span class="built_in">sudo</span> vim com.apple.dynamic_pager.plist</div><div class="line"></div><div class="line">&lt;key&gt;ProgramArguments&lt;/key&gt;</div><div class="line">&lt;array&gt;</div><div class="line">    &lt;string&gt;/bin/bash&lt;/string&gt;</div><div class="line">    &lt;string&gt;-c&lt;/string&gt;</div><div class="line">    &lt;string&gt;/bin/wait4path /Volumes/Swap/ &amp;&amp;</div><div class="line">/sbin/dynamic_pager -F /Volumes/Swap/.vm/swapfile&lt;/string&gt;</div><div class="line">&lt;/array&gt; <span class="comment"># replace /Volumes/Swap/.vm/swapfile as your path</span></div><div class="line"></div><div class="line"><span class="comment"># convert the file to binary</span></div><div class="line">$ <span class="built_in">sudo</span> plutil -convert binary1 com.apple.dynamic_pager.plist</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># backup the file</span></span><br><span class="line">$ <span class="built_in">cd</span> /System/Library/LaunchDaemons</span><br><span class="line">$ sudo cp com.apple.dynamic_pager.plist&#123;,_bak&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># convert the file to xml</span></span><br><span class="line">$ sudo plutil -convert xml1 com.apple.dynamic_pager.plist</span><br><span class="line"></span><br><span class="line"><span class="comment"># modify the file</span></span><br><span class="line">$ sudo vim com.apple.dynamic_pager.plist</span><br><span class="line"></span><br><span class="line">&lt;key&gt;ProgramArguments&lt;/key&gt;</span><br><span class="line">&lt;array&gt;</span><br><span class="line">    &lt;string&gt;/bin/bash&lt;/string&gt;</span><br><span class="line">    &lt;string&gt;-c&lt;/string&gt;</span><br><span class="line">    &lt;string&gt;/bin/<span class="built_in">wait</span>4path /Volumes/Swap/ &amp;amp;&amp;amp;</span><br><span class="line">/sbin/dynamic_pager -F /Volumes/Swap/.vm/swapfile&lt;/string&gt;</span><br><span class="line">&lt;/array&gt; <span class="comment"># replace /Volumes/Swap/.vm/swapfile as your path</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># convert the file to binary</span></span><br><span class="line">$ sudo plutil -convert binary1 com.apple.dynamic_pager.plist</span><br></pre></td></tr></table></figure></p>
 <p>重启就可以了。</p>
 	  
 	</div>
@@ -159,7 +150,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html" data-title="Mac OS X Snow Leopard下移动swap到另外的分区" data-url="http://yesokay.herokuapp.com/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html" data-title="Mac OS X Snow Leopard下移动swap到另外的分区" data-url="http://yesokay.herokuapp.com/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html"></div>  
   
 </section>
 
@@ -173,7 +164,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	6月 29 2011 
+	Jun 29 2011 
 	</div>
 	
 
@@ -184,7 +175,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/tools/">tools<span>142</span></a></li> <li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
+    <li><a href="/categories/tools/">tools<span>18</span></a></li> <li><a href="/categories/无所事事/">无所事事<span>6</span></a></li>
   </li>
 
     </ul>
@@ -221,7 +212,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

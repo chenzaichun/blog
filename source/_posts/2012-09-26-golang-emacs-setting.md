@@ -1,4 +1,3 @@
----
 layout: post
 title: "emacs下golang的配置"
 date: 2012-09-26 14:12

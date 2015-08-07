@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -124,9 +116,140 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">		
-	    <p>@<a href="http://hi.baidu.com/devil%B6%C0%B0%AE/blog/item/5f5caf5e3ce43f48faf2c004.html" target="_blank">Devil独爱的空间 </a></p>
-<p><span class="t_tag" style="line-height: normal;">Intent</span>应该算是Android中特有的东西。你可以在Intent中指定<span class="t_tag" style="line-height: normal;">程序</span>要执行的动作（比如：view,edit,dial），以及程序执行到该动作时所需要的<span class="t_tag" style="line-height: normal;">资料</span>。都指定好后，只要调用startActivity()，Android<span class="t_tag" style="line-height: normal;">系统</span>会自动寻找最符合你指定要求的<span class="t_tag" style="line-height: normal;">应用</span>程序，并执行该程序。<br style="line-height: normal;"><br style="line-height: normal;">下面列出几种Intent的用法<br style="line-height: normal;">显示网页:</p>
-<div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“<a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a>“);</li><br><li style="line-height: normal;">Intent it   = new Intent(Intent.ACTION_VIEW,uri);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br>显示地图:<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“geo:38.899533,-77.036476”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.Action_VIEW,uri);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br>路径规划:<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“<a href="http://maps.google.com/maps?f=d&amp;saddr=startLat%20startLng&amp;daddr=endLat%20endLng&amp;hl=en" target="_blank" rel="external">http://maps.google.com/maps?f=d&amp;saddr=startLat%20startLng&amp;daddr=endLat%20endLng&amp;hl=en</a>“);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW,URI);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br>拨打电话:<br style="line-height: normal;">调用拨号程序<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“tel:xxxxxx”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_DIAL, uri);  </li><br><li style="line-height: normal;">startActivity(it);  </li><br></ol></div><br></div><br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“tel.xxxxxx”);</li><br><li style="line-height: normal;">Intent it =new Intent(Intent.ACTION_CALL,uri);</li><br><li style="line-height: normal;">要使用这个必须在配置<span class="t_tag" style="line-height: normal;">文件</span>中加入<uses-permission id="<span class=" t_tag"="" style="line-height: normal;">android.permission.CALL_PHONE" /></uses-permission></li><br></ol></div><br></div><br>发送SMS/MMS<br style="line-height: normal;">调用发送<span class="t_tag" style="line-height: normal;">短信</span>的程序<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW);</li><br><li style="line-height: normal;">it.putExtra(“sms_body”, “The SMS text”);</li><br><li style="line-height: normal;">it.setType(“vnd.android-dir/mms-sms”);</li><br><li style="line-height: normal;">startActivity(it);  </li><br></ol></div><br></div><br>发送短信<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“smsto:0800000123”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SENDTO, uri);</li><br><li style="line-height: normal;">it.putExtra(“sms_body”, “The SMS text”);</li><br><li style="line-height: normal;">startActivity(it);  </li><br></ol></div><br></div><br>发送彩信<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“content://media/external/images/media/23”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SEND);</li><br><li style="line-height: normal;">it.putExtra(“sms_body”, “some text”);</li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_STREAM, uri);</li><br><li style="line-height: normal;">it.setType(“image/png”);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br>发送Email<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.parse(“mailto:xxx@abc.com”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SENDTO, uri);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SEND);</li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_EMAIL, “me@abc.com”);</li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_TEXT, “The email body text”);</li><br><li style="line-height: normal;">it.setType(“text/plain”);</li><br><li style="line-height: normal;">startActivity(Intent.createChooser(it, “Choose Email Client”));  </li><br></ol></div><br></div><br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Intent it=new Intent(Intent.ACTION_SEND);    </li><br><li style="line-height: normal;">String[] tos={“me@abc.com”};    </li><br><li style="line-height: normal;">String[] ccs={“you@abc.com”};    </li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_EMAIL, tos);    </li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_CC, ccs);    </li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_TEXT, “The email body text”);    </li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_SUBJECT, “The email subject text”);    </li><br><li style="line-height: normal;">it.setType(“message/rfc822”);    </li><br><li style="line-height: normal;">startActivity(Intent.createChooser(it, “Choose Email Client”));</li><br></ol></div><br></div><br>添加附件<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_SEND);</li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_SUBJECT, “The email subject text”);</li><br><li style="line-height: normal;">it.putExtra(Intent.EXTRA_STREAM, “file:///sdcard/mysong.mp3”);</li><br><li style="line-height: normal;">sendIntent.setType(“audio/mp3”);</li><br><li style="line-height: normal;">startActivity(Intent.createChooser(it, “Choose Email Client”));</li><br></ol></div><br></div><br><span class="t_tag" style="line-height: normal;">播放</span>多媒体<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">  </li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW);</li><br><li style="line-height: normal;">Uri uri = Uri.parse(“file:///sdcard/song.mp3”);</li><br><li style="line-height: normal;">it.setDataAndType(uri, “audio/mp3”);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div><br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.withAppendedPath(MediaStore.Audio.Media.INTERNAL_CONTENT_URI, “1”);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_VIEW, uri);</li><br><li style="line-height: normal;">startActivity(it);  </li><br></ol></div><br></div><br>Uninstall 程序<br><div class="blockcode" style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><br><div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;"><ol style="line-height: normal;"><br><li style="line-height: normal;">Uri uri = Uri.fromParts(“package”, strPackageName, null);</li><br><li style="line-height: normal;">Intent it = new Intent(Intent.ACTION_DELETE, uri);</li><br><li style="line-height: normal;">startActivity(it);</li><br></ol></div><br></div>
+	    <p>@&lt;a href=&quot;http://hi.baidu.com/devil%B6%C0%B0%AE/blog/item/5f5caf5e3ce43f48faf2c004.html&quot; target=&quot;_blank&quot;&gt;Devil独爱的空间 &lt;/a&gt;</p>
+<p>&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;Intent&lt;/span&gt;应该算是Android中特有的东西。你可以在Intent中指定&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;程序&lt;/span&gt;要执行的动作（比如：view,edit,dial），以及程序执行到该动作时所需要的&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;资料&lt;/span&gt;。都指定好后，只要调用startActivity()，Android&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;系统&lt;/span&gt;会自动寻找最符合你指定要求的&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;应用&lt;/span&gt;程序，并执行该程序。&lt;br style=&quot;line-height: normal;&quot;&gt;&lt;br style=&quot;line-height: normal;&quot;&gt;下面列出几种Intent的用法&lt;br style=&quot;line-height: normal;&quot;&gt;显示网页:
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;http://www.google.com&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it   = new Intent(Intent.ACTION_VIEW,uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+显示地图:
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;geo:38.899533,-77.036476&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.Action_VIEW,uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+路径规划:
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;http://maps.google.com/maps?f=d&amp;saddr=startLat%20startLng&amp;daddr=endLat%20endLng&amp;hl=en&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_VIEW,URI);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+拨打电话:&lt;br style=&quot;line-height: normal;&quot;&gt;调用拨号程序
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;tel:xxxxxx&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_DIAL, uri);  &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);  &lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;tel.xxxxxx&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it =new Intent(Intent.ACTION_CALL,uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;要使用这个必须在配置&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;文件&lt;/span&gt;中加入&lt;uses-permission id=&quot;&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;android&lt;/span&gt;.permission.CALL_PHONE&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+发送SMS/MMS&lt;br style=&quot;line-height: normal;&quot;&gt;调用发送&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;短信&lt;/span&gt;的程序
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_VIEW);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(&quot;sms_body&quot;, &quot;The SMS text&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.setType(&quot;vnd.android-dir/mms-sms&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);  &lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+发送短信
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;smsto:0800000123&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_SENDTO, uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(&quot;sms_body&quot;, &quot;The SMS text&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);  &lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+发送彩信
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;content://media/external/images/media/23&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_SEND);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(&quot;sms_body&quot;, &quot;some text&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_STREAM, uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.setType(&quot;image/png&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+发送Email
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;mailto:xxx@abc.com&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_SENDTO, uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_SEND);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_EMAIL, &quot;me@abc.com&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_TEXT, &quot;The email body text&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.setType(&quot;text/plain&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(Intent.createChooser(it, &quot;Choose Email Client&quot;));  &lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it=new Intent(Intent.ACTION_SEND);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;String[] tos={&quot;me@abc.com&quot;};    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;String[] ccs={&quot;you@abc.com&quot;};    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_EMAIL, tos);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_CC, ccs);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_TEXT, &quot;The email body text&quot;);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_SUBJECT, &quot;The email subject text&quot;);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.setType(&quot;message/rfc822&quot;);    &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(Intent.createChooser(it, &quot;Choose Email Client&quot;));&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+添加附件
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_SEND);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_SUBJECT, &quot;The email subject text&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.putExtra(Intent.EXTRA_STREAM, &quot;file:///sdcard/mysong.mp3&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;sendIntent.setType(&quot;audio/mp3&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(Intent.createChooser(it, &quot;Choose Email Client&quot;));&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;span class=&quot;t_tag&quot; style=&quot;line-height: normal;&quot;&gt;播放&lt;/span&gt;多媒体
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;  &lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_VIEW);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.parse(&quot;file:///sdcard/song.mp3&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;it.setDataAndType(uri, &quot;audio/mp3&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.withAppendedPath(MediaStore.Audio.Media.INTERNAL_CONTENT_URI, &quot;1&quot;);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_VIEW, uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);  &lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;
+Uninstall 程序
+&lt;div class=&quot;blockcode&quot; style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;
+&lt;div style=&quot;font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; font-size: 12px; line-height: normal;&quot;&gt;&lt;ol style=&quot;line-height: normal;&quot;&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Uri uri = Uri.fromParts(&quot;package&quot;, strPackageName, null);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;Intent it = new Intent(Intent.ACTION_DELETE, uri);&lt;/li&gt;
+&lt;li style=&quot;line-height: normal;&quot;&gt;startActivity(it);&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;
+&lt;/div&gt;</p>
 	  
 	</div>
 
@@ -157,7 +280,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-11-30-android_intent_usage.html" data-title="Android Intent的几种用法全面总结" data-url="http://yesokay.herokuapp.com/2010-11-30-android_intent_usage.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2010-11-30-android_intent_usage.html" data-title="Android Intent的几种用法全面总结" data-url="http://yesokay.herokuapp.com/2010-11-30-android_intent_usage.html"></div>  
   
 </section>
 
@@ -171,7 +294,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	11月 30 2010 
+	Nov 30 2010 
 	</div>
 	
 
@@ -182,7 +305,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>139</span></a></li>
+    <li><a href="/categories/programming/">programming<span>81</span></a></li>
   </li>
 
     </ul>
@@ -195,7 +318,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/android/">android<span>18</span></a></li> <li><a href="/tags/Google/">Google<span>14</span></a></li>
+  <li><a href="/tags/Google/">Google<span>14</span></a></li> <li><a href="/tags/android/">android<span>18</span></a></li>
     </ul>
 	</div>
 		
@@ -219,7 +342,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

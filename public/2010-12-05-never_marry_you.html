@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -124,13 +116,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">		
-	    <p>@<span style="color: #666666;"><a href="http://group.mtime.com/queen/discussion/1285210/" target="_blank">巫界之战</a>，我发现我只有高中水平<img title="Cry" src="/tinymce/plugins/emotions/img/smiley-cry.gif" border="0" alt="Cry"></span></p>
+	    <p>@&lt;span style=&quot;color: #666666;&quot;&gt;&lt;a href=&quot;http://group.mtime.com/queen/discussion/1285210/&quot; target=&quot;_blank&quot;&gt;巫界之战&lt;/a&gt;，我发现我只有高中水平&lt;img title=&quot;Cry&quot; src=&quot;/tinymce/plugins/emotions/img/smiley-cry.gif&quot; border=&quot;0&quot; alt=&quot;Cry&quot;&gt;&lt;/span&gt;</p>
 <p>高中水平：I will never marry you.</p>
 <p>高考水平：Never will I marry you.</p>
 <p>四级水平：You are the last man I am willing to marry.</p>
 <p>六级水平：Under no circumstances will I marry you.</p>
 <p>GRE水平：If you were the last man in the world, I would definitely remain single.</p>
-<p>大神水平：If you were to marry me, I would go to the temple.<br>              If the sun rose in the west, I would marry you.<br>              I will marry anybody but you.<br>              I can suffer anything but marrying you.</p>
+<p>大神水平：If you were to marry me, I would go to the temple.
+              If the sun rose in the west, I would marry you.
+              I will marry anybody but you.
+              I can suffer anything but marrying you.</p>
 <p>烈女水平：If you were to marry me, I would jump to the water/river/lake/sea/well.</p>
 <p>五毛水平：If Li Gang were your father, I would marry you.</p>
 	  
@@ -163,7 +158,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-12-05-never_marry_you.html" data-title="“我绝不嫁给你”的英语表达" data-url="http://yesokay.herokuapp.com/2010-12-05-never_marry_you.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2010-12-05-never_marry_you.html" data-title="“我绝不嫁给你”的英语表达" data-url="http://yesokay.herokuapp.com/2010-12-05-never_marry_you.html"></div>  
   
 </section>
 
@@ -177,7 +172,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	12月 5 2010 
+	Dec 5 2010 
 	</div>
 	
 
@@ -188,7 +183,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
+    <li><a href="/categories/无所事事/">无所事事<span>22</span></a></li>
   </li>
 
     </ul>
@@ -225,7 +220,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

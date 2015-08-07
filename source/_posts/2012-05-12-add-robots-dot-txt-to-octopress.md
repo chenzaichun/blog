@@ -1,4 +1,3 @@
----
 layout: post
 title: "Octopress添加robots.txt"
 date: 2012-05-12 21:05

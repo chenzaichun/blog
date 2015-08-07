@@ -1,4 +1,3 @@
----
 layout: post
 title: "emacs中插入当前时间"
 date: 2012-11-26 08:49

@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -122,10 +114,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html" >通过git将bitbucket当做无限容量的dropbox</a>
-			<span class="date"> 9月 26 2012 </span>
+			<div class="date"> Sep 26 2012 </div>
+			<div class="article-title"><a href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html" >通过git将bitbucket当做无限容量的dropbox</a></div>						
 		</h3>
 	
 
@@ -138,8 +130,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>网上找一个网盘很麻烦，一般都有容量限制，要不就是有诸多限制。有没有geek一点的方法，使用git和bitbucket来作为网盘呢？</p>
 <p>google了一下找到了<a href="http://bioinfoblog.it/2011/10/bitbucket-sparkleshare-home-made-limitless-dropbox/" target="_blank" rel="external">这个</a></p>
-<p><code>git</code> —&gt; 版本管理</p>
-<p><code>bitbucket</code> —&gt; 无限容量的仓库</p>
+<p><code>git</code> --&gt; 版本管理</p>
+<p><code>bitbucket</code> --&gt; 无限容量的仓库</p>
 <ol>
 <li>安装<a href="http://sparkleshare.org/" target="_blank" rel="external">Sparkshare</a></li>
 <li>创建一个private的repo</li>
@@ -158,10 +150,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-09-26-golang-emacs-setting.html" >emacs下golang的配置</a>
-			<span class="date"> 9月 26 2012 </span>
+			<div class="date"> Sep 26 2012 </div>
+			<div class="article-title"><a href="/2012-09-26-golang-emacs-setting.html" >emacs下golang的配置</a></div>						
 		</h3>
 	
 
@@ -174,17 +166,28 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p><a href="https://github.com/astaxie/build-web-application-with-golang/blob/master/1.4.md#emacs" target="_blank" rel="external">参考链接</a></p>
 <ol>
-<li>语法高亮</li>
+<li>
+<p>语法高亮
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp <span class="variable">$GOROOT</span>/misc/emacs/* ~/.emacs.d/</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>安装<code>gocode</code>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/nsf/gocode</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>配置<code>gocode</code></p>
+</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp <span class="variable">$GOROOT</span>/misc/emacs/* ~/.emacs.d/</div></pre></td></tr></table></figure>
-
-<ol>
-<li>安装<code>gocode</code></li>
+<p>&lt;!--more--&gt;</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src/github.com/nsf/gocode/emacs</span><br><span class="line">$ cp go-autocomplete.el ~/.emacs.d/</span><br><span class="line">$ gocode <span class="built_in">set</span> propose-builtins <span class="literal">true</span></span><br><span class="line">propose-builtins <span class="literal">true</span></span><br><span class="line">$ gocode <span class="built_in">set</span> lib-path <span class="string">"/Volumes/home/chenza/gopath/pkg/darwin_amd64"</span> <span class="comment"># 换为你自己的路径</span></span><br><span class="line">lib-path <span class="string">"/Volumes/home/chenza/gopath/pkg/darwin_amd64"</span></span><br><span class="line">$ gocode <span class="built_in">set</span></span><br><span class="line">propose-builtins <span class="literal">true</span></span><br><span class="line">lib-path <span class="string">"/Volumes/home/chenza/gopath/pkg/darwin_amd64"</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>配置<code>autocompletion</code></li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go get -u github.com/nsf/gocode</div></pre></td></tr></table></figure>
-
-<ol>
-<li>配置<code>gocode</code></li>
+<p>安装:</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make install DIR=<span class="variable">$HOME</span>/.emacs.d/auto-complete</span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li>配置<code>.emacs</code>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;auto-complete</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'auto-complete-config</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">add-to-list</span> <span class="quoted">'ac-dictionary-directories</span> <span class="string">"~/.emacs.d/auto-complete/ac-dict"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">ac-config-default</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">local-set-key</span> <span class="list">(<span class="keyword">kbd</span> <span class="string">"M-/"</span>)</span> <span class="quoted">'semantic-complete-analyze-inline</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">local-set-key</span> <span class="string">"."</span> <span class="quoted">'semantic-complete-self-insert</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">local-set-key</span> <span class="string">"&gt;"</span> <span class="quoted">'semantic-complete-self-insert</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; golang mode</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'go-mode-load</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'go-autocomplete</span>)</span></span><br><span class="line"><span class="comment">;; speedbar</span></span><br><span class="line"><span class="comment">;; (speedbar 1)</span></span><br><span class="line"><span class="list">(<span class="keyword">speedbar-add-supported-extension</span> <span class="string">".go"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">add-hook</span></span><br><span class="line"> <span class="quoted">'go-mode-hook</span></span><br><span class="line"> <span class="quoted">'(lambda ()</span><br><span class="line">   ;; gocode</span><br><span class="line">   (auto-complete-mode <span class="number">1</span>)</span><br><span class="line">   (setq ac-sources '(ac-source-go))</span><br><span class="line">    ;; Imenu &amp; Speedbar</span><br><span class="line">    (setq imenu-generic-expression</span><br><span class="line">          '((<span class="string">"type"</span> <span class="string">"^type *\\([^ \t\n\r\f]*\\)"</span> <span class="number">1</span>)</span><br><span class="line">            (<span class="string">"func"</span> <span class="string">"^func *\\(.*\\) &#123;"</span> <span class="number">1</span>)))</span><br><span class="line">    (imenu-add-to-menubar <span class="string">"Index"</span>)</span><br><span class="line">    ;; Outline mode</span><br><span class="line">    (make-local-variable 'outline-regexp)</span><br><span class="line">    (setq outline-regexp <span class="string">"//\\.\\|//[^\r\n\f][^\r\n\f]\\|pack\\|func\\|impo\\|cons\\|var.\\|type\\|\t\t*...."</span>)</span><br><span class="line">    (outline-minor-mode <span class="number">1</span>)</span><br><span class="line">    (local-set-key <span class="string">"\M-a"</span> 'outline-previous-visible-heading)</span><br><span class="line">    (local-set-key <span class="string">"\M-e"</span> 'outline-next-visible-heading)</span><br><span class="line">    ;; Menu bar</span><br><span class="line">    (require 'easymenu)</span><br><span class="line">    (defconst go-hooked-menu</span><br><span class="line">      '(<span class="string">"Go tools"</span></span><br><span class="line">        [<span class="string">"Go run buffer"</span> go <span class="literal">t</span>]</span><br><span class="line">        [<span class="string">"Go reformat buffer"</span> go-fmt-buffer <span class="literal">t</span>]</span><br><span class="line">        [<span class="string">"Go check buffer"</span> go-fix-buffer <span class="literal">t</span>]))</span><br><span class="line">    (easy-menu-define</span><br><span class="line">      go-added-menu</span><br><span class="line">      (current-local-map)</span><br><span class="line">      <span class="string">"Go tools"</span></span><br><span class="line">      go-hooked-menu)</span><br><span class="line"></span><br><span class="line">    ;; Other</span><br><span class="line">    (setq show-trailing-whitespace <span class="literal">t</span>)</span><br><span class="line">    )</span>)</span></span><br><span class="line"><span class="comment">;; helper function</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> go <span class="list">()</span></span><br><span class="line">  <span class="string">"run current buffer"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">compile</span> <span class="list">(<span class="keyword">concat</span> <span class="string">"go run "</span> <span class="list">(<span class="keyword">buffer-file-name</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; helper function</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> go-fmt-buffer <span class="list">()</span></span><br><span class="line">  <span class="string">"run gofmt on current buffer"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> buffer-read-only</span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">ding</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">message</span> <span class="string">"Buffer is read only"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">p</span> <span class="list">(<span class="keyword">line-number-at-pos</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">filename</span> <span class="list">(<span class="keyword">buffer-file-name</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">old-max-mini-window-height</span> max-mini-window-height)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">show-all</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">if</span> <span class="list">(<span class="keyword">get-buffer</span> <span class="string">"*Go Reformat Errors*"</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">delete-windows-on</span> <span class="string">"*Go Reformat Errors*"</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">kill-buffer</span> <span class="string">"*Go Reformat Errors*"</span>)</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">setq</span> max-mini-window-height <span class="number">1</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">if</span> <span class="list">(<span class="keyword">=</span> <span class="number">0</span> <span class="list">(<span class="keyword">shell-command-on-region</span> <span class="list">(<span class="keyword">point-min</span>)</span> <span class="list">(<span class="keyword">point-max</span>)</span> <span class="string">"gofmt"</span> <span class="string">"*Go Reformat Output*"</span> <span class="literal">nil</span> <span class="string">"*Go Reformat Errors*"</span> <span class="literal">t</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">erase-buffer</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">insert-buffer-substring</span> <span class="string">"*Go Reformat Output*"</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">goto-char</span> <span class="list">(<span class="keyword">point-min</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">forward-line</span> <span class="list">(<span class="number">1</span>- p)</span>)</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">with-current-buffer</span> <span class="string">"*Go Reformat Errors*"</span></span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">goto-char</span> <span class="list">(<span class="keyword">point-min</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">while</span> <span class="list">(<span class="keyword">re-search-forward</span> <span class="string">"&lt;standard input&gt;"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">replace-match</span> filename)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">goto-char</span> <span class="list">(<span class="keyword">point-min</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">compilation-mode</span>)</span>)</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">setq</span> max-mini-window-height old-max-mini-window-height)</span></span><br><span class="line">      <span class="list">(<span class="keyword">delete-windows-on</span> <span class="string">"*Go Reformat Output*"</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">kill-buffer</span> <span class="string">"*Go Reformat Output*"</span>)</span>)</span>)</span>)</span></span><br><span class="line"><span class="comment">;; helper function</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> go-fix-buffer <span class="list">()</span></span><br><span class="line">  <span class="string">"run gofix on current buffer"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">show-all</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">shell-command-on-region</span> <span class="list">(<span class="keyword">point-min</span>)</span> <span class="list">(<span class="keyword">point-max</span>)</span> <span class="string">"go tool fix -diff"</span>)</span>)</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 
 	
@@ -198,10 +201,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-09-21-the-right-way-of-eating-fruit.html" >各种水果的正确吃法</a>
-			<span class="date"> 9月 21 2012 </span>
+			<div class="date"> Sep 21 2012 </div>
+			<div class="article-title"><a href="/2012-09-21-the-right-way-of-eating-fruit.html" >各种水果的正确吃法</a></div>						
 		</h3>
 	
 
@@ -225,10 +228,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-09-21-anshanshuji.html" >鞍山书记</a>
-			<span class="date"> 9月 21 2012 </span>
+			<div class="date"> Sep 21 2012 </div>
+			<div class="article-title"><a href="/2012-09-21-anshanshuji.html" >鞍山书记</a></div>						
 		</h3>
 	
 
@@ -253,10 +256,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-09-21-show-depends-on-mac-os-x.html" >MacOS X下查看可执行程序依赖</a>
-			<span class="date"> 9月 21 2012 </span>
+			<div class="date"> Sep 21 2012 </div>
+			<div class="article-title"><a href="/2012-09-21-show-depends-on-mac-os-x.html" >MacOS X下查看可执行程序依赖</a></div>						
 		</h3>
 	
 
@@ -280,10 +283,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-07-31-adbputty.html" >adb putty</a>
-			<span class="date"> 7月 31 2012 </span>
+			<div class="date"> Jul 31 2012 </div>
+			<div class="article-title"><a href="/2012-07-31-adbputty.html" >adb putty</a></div>						
 		</h3>
 	
 
@@ -311,10 +314,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-07-27-remove-android-lock-screen-pin-with-sqlite3.html" >remove android lock-screen pin with sqlite3</a>
-			<span class="date"> 7月 27 2012 </span>
+			<div class="date"> Jul 27 2012 </div>
+			<div class="article-title"><a href="/2012-07-27-remove-android-lock-screen-pin-with-sqlite3.html" >remove android lock-screen pin with sqlite3</a></div>						
 		</h3>
 	
 
@@ -325,8 +328,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">adb <span class="keyword">shell</span></div><div class="line"># sqlite3 /data/data/<span class="keyword">com</span>.android.providers.settings/databases/settings.db</div><div class="line">sqlite&gt; <span class="keyword">update</span> secure <span class="keyword">set</span> value=<span class="number">65536</span> where name=<span class="string">'lockscreen.password_type'</span>;</div><div class="line">sqlite&gt; .<span class="keyword">exit</span></div><div class="line"># <span class="keyword">exit</span></div><div class="line">adb reboot</div></pre></td></tr></table></figure>
-
+	  <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell&#10;# sqlite3 /data/data/com.android.providers.settings/databases/settings.db&#10;sqlite&#62; update secure set value=65536 where name=&#39;lockscreen.password_type&#39;;&#10;sqlite&#62; .exit&#10;# exit&#10;adb reboot</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -339,10 +341,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-07-03-install-pptp-vnp-server-on-debian-linux.html" >Debian Linux下安装pptp vpn服务器</a>
-			<span class="date"> 7月 3 2012 </span>
+			<div class="date"> Jul 3 2012 </div>
+			<div class="article-title"><a href="/2012-07-03-install-pptp-vnp-server-on-debian-linux.html" >Debian Linux下安装pptp vpn服务器</a></div>						
 		</h3>
 	
 
@@ -354,14 +356,29 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>首先更新:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get update</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure></p>
 <p>接着我们就安装pptp服务器:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install pptpd</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install pptpd</span><br></pre></td></tr></table></figure></p>
 <p>编辑<code>/etc/pptpd.conf</code>, 反注释掉以下内容：</p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">localip</span> <span class="number">192.168.0.1</span></div><div class="line">remoteip <span class="number">192.168.0.234</span>-<span class="number">238</span>,<span class="number">192.168.0.245</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localip 192.168.0.1&#10;remoteip 192.168.0.234-238,192.168.0.245</span><br></pre></td></tr></table></figure></p>
+<p>&lt;!--more--&gt;</p>
+<p>编辑<code>/etc/ppp/chap-secrets</code>, 添加用户，格式为：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># client        server  secret                  IP addresses&#10;yesokay          *      password                *</span><br></pre></td></tr></table></figure></p>
+<p>修改dns配置, <code>/etc/ppp/options</code>:</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ms-dns 8.8.8.8&#10;ms-dns 8.8.4.4</span><br></pre></td></tr></table></figure></p>
+<p>启用ip_forward, <code>/etc/sysctl.conf</code>:</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net.ipv4.ip_forward=1</span><br></pre></td></tr></table></figure></p>
+<p>启用新的配置：</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure></p>
+<p>重启pptp服务器：</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/pptpd restart</span><br></pre></td></tr></table></figure></p>
+<p>最后开启iptables转发</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/iptables -t nat -A POSTROUTING <span class="operator">-s</span> <span class="number">192.168</span>.<span class="number">0.0</span>/<span class="number">24</span> -o eth0 -j MASQUERADE</span><br></pre></td></tr></table></figure></p>
+<p>当然还有更加方便的，有人做了一个一键安装脚本</p>
+<ol>
+<li>Debian系见<a href="http://www.8ke.in/soft/pptpandl2tpondebian.sh" target="_blank" rel="external">这里</a></li>
+<li>RPM系见<a href="http://www.diahosting.com/dload/pptpd.sh" target="_blank" rel="external">这里</a></li>
+</ol>
 
 	
 	</div>
@@ -374,10 +391,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-06-28-certificate-not-installed-on-the-node.html" >Certificate not Installed on the Node</a>
-			<span class="date"> 6月 28 2012 </span>
+			<div class="date"> Jun 28 2012 </div>
+			<div class="article-title"><a href="/2012-06-28-certificate-not-installed-on-the-node.html" >Certificate not Installed on the Node</a></div>						
 		</h3>
 	
 
@@ -390,8 +407,26 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>今天在启动ovo的时候遇到了这个问题：</p>
 <blockquote>
-<p>0: WRN: Thu Jun 28 13:08:42 2012: ovbbccb (1821/4): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:<br>1: WRN: Thu Jun 28 13:08:42 2012: ovbbccb (1821/4): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er<br>ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator’s cer<br>tificate.<br>0: WRN: Thu Jun 28 13:08:43 2012: ovbbccb (1821/9): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:<br>1: WRN: Thu Jun 28 13:08:43 2012: ovbbccb (1821/9): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er<br>ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator’s cer<br>tificate.<br>0: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/5): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:<br>1: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/5): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er<br>ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator’s cer<br>tificate.<br>0: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/6): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:<br>1: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/6): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er<br>ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator’s cer<br>tificate.</p>
+<p>0: WRN: Thu Jun 28 13:08:42 2012: ovbbccb (1821/4): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:
+1: WRN: Thu Jun 28 13:08:42 2012: ovbbccb (1821/4): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er
+ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator's cer
+tificate.
+0: WRN: Thu Jun 28 13:08:43 2012: ovbbccb (1821/9): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:
+1: WRN: Thu Jun 28 13:08:43 2012: ovbbccb (1821/9): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er
+ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator's cer
+tificate.
+0: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/5): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:
+1: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/5): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er
+ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator's cer
+tificate.
+0: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/6): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:
+1: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/6): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er
+ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator's cer
+tificate.</p>
 </blockquote>
+<p>&lt;!--more--&gt;</p>
+<p>解决办法：</p>
+<p>修改<code>/var/opt/OV/conf/xpl/config/local_settings.ini</code>, 将<code>CERT_INSTALLED=TRUE</code>删除掉，并重启<code>ovbbccb</code></p>
 
 	
 	</div>
@@ -404,10 +439,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2012-06-27-pet.html" >塑料瓶底数字的意思</a>
-			<span class="date"> 6月 27 2012 </span>
+			<div class="date"> Jun 27 2012 </div>
+			<div class="article-title"><a href="/2012-06-27-pet.html" >塑料瓶底数字的意思</a></div>						
 		</h3>
 	
 
@@ -473,81 +508,48 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	<div class="widget">
-		<h4>分类</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/categories/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/categories/Tools/">Tools<span>1</span></a></li>
-		
-			<li><a href="/categories/emacs/">emacs<span>61</span></a></li>
-		
-			<li><a href="/categories/gamedev/">gamedev<span>5</span></a></li>
-		
-			<li><a href="/categories/ios/">ios<span>3</span></a></li>
-		
-			<li><a href="/categories/opengl/">opengl<span>1</span></a></li>
-		
-			<li><a href="/categories/oracle/">oracle<span>1</span></a></li>
-		
-			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/categories/programming/">programming<span>139</span></a></li>
-		
-			<li><a href="/categories/tools/">tools<span>142</span></a></li>
-		
-			<li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
-		
-		</ul>
-	</div>
-
-		
-			
-	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
 		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
 		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
 		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
 		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+			<li><a href="/tags/VC/">VC<span>8</span></a></li>
 		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+			<li><a href="/tags/database/">database<span>2</span></a></li>
 		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
-		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
-		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
-		
-			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/tags/转载/">转载<span>7</span></a></li>
-		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
-		
-			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
 		
 			<li><a href="/tags/portable/">portable<span>1</span></a></li>
 		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
 		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
 		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+		
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+		
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+		
+			<li><a href="/tags/android/">android<span>18</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+		
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+		
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
+		
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -563,23 +565,23 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
@@ -614,7 +616,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

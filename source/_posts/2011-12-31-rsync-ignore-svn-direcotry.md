@@ -1,4 +1,3 @@
---- 
 categories: 
   - emacs
   - org2blog
@@ -8,7 +7,7 @@ comments: true
 layout: post
 published: true
 status: publish
-date: 1011-12-31 11:23:58
+date: 2011-12-31 11:23:58
 tags: 
   - emacs
   - org2blog

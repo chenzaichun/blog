@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -127,8 +119,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	    <p>经常使用<code>emacs</code>来查看日志文件，当日至文件特别大的时候，<code>emacs</code>的反应速度实在是不敢恭维。</p>
 <p>网上查了一下，有两个有趣的elisp，分享一下：</p>
 <ol>
-<li><a href="http://www.cnblogs.com/yangyingchao/archive/2011/09/20/2182176.html" target="_blank" rel="external">http://www.cnblogs.com/yangyingchao/archive/2011/09/20/2182176.html</a></li>
-<li><a href="http://www.emacswiki.org/emacs/vlf.el" target="_blank" rel="external">http://www.emacswiki.org/emacs/vlf.el</a></li>
+<li>http://www.cnblogs.com/yangyingchao/archive/2011/09/20/2182176.html</li>
+<li>http://www.emacswiki.org/emacs/vlf.el</li>
 </ol>
 <p><code>logviewer-mode</code> 是针对log4j格式优化的，带有高亮显示，带有文件分块读取</p>
 <p><code>vlf</code> 则是将文件分块读取。</p>
@@ -148,7 +140,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2012-11-21-change-ibus-googlepinyin-default-candidates-number.html" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2012-11-21-avoids-ssh-timeouts.html" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -163,7 +155,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-11-26-open-large-file-with-emacs.html" data-title="使用emacs打开大文件" data-url="http://yesokay.herokuapp.com/2012-11-26-open-large-file-with-emacs.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2012-11-26-open-large-file-with-emacs.html" data-title="使用emacs打开大文件" data-url="http://yesokay.herokuapp.com/2012-11-26-open-large-file-with-emacs.html"></div>  
   
 </section>
 
@@ -177,7 +169,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	11月 26 2012 
+	Nov 26 2012 
 	</div>
 	
 
@@ -188,7 +180,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>81</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
 
     </ul>
@@ -225,7 +217,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

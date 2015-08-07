@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -122,10 +114,40 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-08-15-vmware_io_performance.html" >增加vmware虚拟机的性能</a>
-			<span class="date"> 8月 15 2011 </span>
+			<div class="date"> Aug 27 2011 </div>
+			<div class="article-title"><a href="/2011-08-27-respondstoselector_not_found_in_protocol.html" >&#39;-respondsToSelector:&#39; not found in protocol(s)</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>The respondsToSelector: method is declared in the NSObject protocol. You have to make sure that your custom protocols also conform to the NSObject protocol. Change the declarations of your custom protocols from:</p>
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">MyCustomProtocol</span>...@<span class="title">end</span></span></span><br></pre></td></tr></table></figure></p>
+<p>To:</p>
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">MyCustomProtocol</span> &lt;<span class="title">NSObject</span>&gt;...@<span class="title">end</span></span></span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-08-27-respondstoselector_not_found_in_protocol.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Aug 15 2011 </div>
+			<div class="article-title"><a href="/2011-08-15-vmware_io_performance.html" >增加vmware虚拟机的性能</a></div>						
 		</h3>
 	
 
@@ -137,8 +159,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>vmware跑mac确实卡呀。网上抄了一段，目前还在体验中，效果具体怎么样，还有待观察。</p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="variable">MemTrimRate=</span><span class="number">0</span></div><div class="line">sched.mem.pshare.<span class="variable">enable =</span> <span class="string">"FALSE"</span></div><div class="line">prefvmx.<span class="variable">useRecommendedLockedMemSize =</span> <span class="string">"TRUE"</span></div><div class="line">prefvmx.<span class="variable">minVmMemPct =</span> <span class="string">"100"</span></div><div class="line">mainMem.<span class="variable">useNamedFile =</span> <span class="string">"FALSE"</span></div><div class="line"><span class="variable">MemAllowAutoScaleDown =</span> <span class="string">"FALSE"</span></div><div class="line">mks.<span class="variable">enable3d =</span> <span class="string">"FALSE"</span></div><div class="line">mks.<span class="variable">noBeep =</span> <span class="string">"true"</span></div><div class="line"><span class="variable">logging =</span> <span class="string">"FALSE"</span></div><div class="line">hv.<span class="variable">enableIfUnlocked =</span> <span class="string">"TRUE"</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MemTrimRate=0&#10;sched.mem.pshare.enable = &#34;FALSE&#34;&#10;prefvmx.useRecommendedLockedMemSize = &#34;TRUE&#34;&#10;prefvmx.minVmMemPct = &#34;100&#34;&#10;mainMem.useNamedFile = &#34;FALSE&#34;&#10;MemAllowAutoScaleDown = &#34;FALSE&#34;&#10;mks.enable3d = &#34;FALSE&#34;&#10;mks.noBeep = &#34;true&#34;&#10;logging = &#34;FALSE&#34;&#10;hv.enableIfUnlocked = &#34;TRUE&#34;</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -151,10 +172,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-07-17-hp_ux_font_error_fix.html" >X Server连接到hp-ux字体问题解决办法</a>
-			<span class="date"> 7月 17 2011 </span>
+			<div class="date"> Jul 17 2011 </div>
+			<div class="article-title"><a href="/2011-07-17-hp_ux_font_error_fix.html" >X Server连接到hp-ux字体问题解决办法</a></div>						
 		</h3>
 	
 
@@ -166,9 +187,25 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>在用x server连接到hp-ux的时候，open view启动失败：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">Warning: Missing charsets in String to FontSet conversion</div><div class="line">Warning: Cannot convert string "-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*" to type FontSet</div><div class="line">Warning: Missing charsets in String to FontSet conversion</div><div class="line">Warning: Unable to <span class="operator"><span class="keyword">load</span> <span class="keyword">any</span> usable fontset</span></div><div class="line">Warning:</div><div class="line">Name: FONTLIST_DEFAULT_TAG_STRING</div><div class="line">Class: XmRendition</div><div class="line">Conversion failed. Cannot <span class="keyword">load</span> font.</div><div class="line"></div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> type FontList</div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> type FontList</div><div class="line">Warning:</div><div class="line">Name: FONTLIST_DEFAULT_TAG_STRING</div><div class="line">Class: XmRendition</div><div class="line">Conversion failed. Cannot <span class="keyword">load</span> font.</div><div class="line"></div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> type FontList</div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> type FontList</div><div class="line">Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> type FontSet</div><div class="line">Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">Warning: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> usable fontset</div><div class="line">Warning:</div><div class="line">Name: FONTLIST_DEFAULT_TAG_STRING</div><div class="line">Class: XmRendition</div><div class="line">Conversion failed. Cannot <span class="keyword">load</span> font.</div><div class="line"></div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> type FontList</div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> type FontList</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-140-*"</span> <span class="keyword">to</span> type FontSet</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> usable fontset</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-120-*"</span> <span class="keyword">to</span> type FontSet</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> usable fontset</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-100-*"</span> <span class="keyword">to</span> type FontSet</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> usable fontset</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-80-*"</span> <span class="keyword">to</span> type FontSet</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> usable fontset</div><div class="line">/opt/OV/<span class="keyword">bin</span></div></pre></td></tr></table></figure>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Missing charsets in String to FontSet conversion&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontSet&#10;Warning: Missing charsets in String to FontSet conversion&#10;Warning: Unable to load any usable fontset&#10;Warning:&#10;Name: FONTLIST_DEFAULT_TAG_STRING&#10;Class: XmRendition&#10;Conversion failed. Cannot load font.&#10;&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontList&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:&#34; to type FontList&#10;Warning:&#10;Name: FONTLIST_DEFAULT_TAG_STRING&#10;Class: XmRendition&#10;Conversion failed. Cannot load font.&#10;&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontList&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:&#34; to type FontList&#10;Warning: Missing charsets in String to FontSet conversion&#10;Warning: Cannot convert string &#34;-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontSet&#10;Warning: Missing charsets in String to FontSet conversion&#10;Warning: Unable to load any usable fontset&#10;Warning:&#10;Name: FONTLIST_DEFAULT_TAG_STRING&#10;Class: XmRendition&#10;Conversion failed. Cannot load font.&#10;&#10;Warning: Cannot convert string &#34;-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontList&#10;Warning: Cannot convert string &#34;-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*:&#34; to type FontList&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-140-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-120-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-100-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-80-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;/opt/OV/bin</span><br></pre></td></tr></table></figure></p>
+<p>解决办法：
+&lt;!--more--&gt;</p>
+<ol>
+<li>首先在hp-ux上检查xfs是否启动</li>
+</ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef |grep xfs</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>如果没有启动，则启动xfs</li>
+</ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /sbin/init.d/xfs start</span></span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>在需要连接的x server上设置：</li>
+</ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ xset +fp tcp/hostname:<span class="number">7000</span></span><br><span class="line">$ xset fp <span class="built_in">rehash</span></span><br><span class="line">$ xset -q</span><br><span class="line">$ xhost +</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>然后ssh连上之后，open view显示正常。</li>
+</ol>
 
-<p>解决办法：<br>
 	
 	</div>
 	
@@ -180,10 +217,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-07-13-cocos2d_iphone_popscenewithtransition.html" >cocos2d-iphone popSceneWithTransition</a>
-			<span class="date"> 7月 13 2011 </span>
+			<div class="date"> Jul 13 2011 </div>
+			<div class="article-title"><a href="/2011-07-13-cocos2d_iphone_popscenewithtransition.html" >cocos2d-iphone popSceneWithTransition</a></div>						
 		</h3>
 	
 
@@ -194,15 +231,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <p>原文链接：<a href="http://www.cocos2d-iphone.org/forum/topic/1076" target="_blank">http://www.cocos2d-iphone.org/forum/topic/1076</a><br>在CCDirector.h添加</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>) popSceneWithTransition: (Class)c duration:(ccTime)t;</div></pre></td></tr></table></figure>
-
+	  <p>原文链接：&lt;a href=&quot;http://www.cocos2d-iphone.org/forum/topic/1076&quot; target=&quot;_blank&quot;&gt;http://www.cocos2d-iphone.org/forum/topic/1076&lt;/a&gt;
+在CCDirector.h添加</p>
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>) popSceneWithTransition: (Class)c duration:(ccTime)t;</span><br></pre></td></tr></table></figure></p>
 <p>在CCDirector.m中添加</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>) popSceneWithTransition: (Class)transitionClass duration:(ccTime)t;</div><div class="line">{</div><div class="line">	NSAssert( runningScene_ != <span class="literal">nil</span>, <span class="string">@"A running Scene is needed"</span>);</div><div class="line"></div><div class="line">	[scenesStack_ removeLastObject];</div><div class="line">	NSUInteger c = [scenesStack_ count];</div><div class="line">	<span class="keyword">if</span>( c == <span class="number">0</span> ) {</div><div class="line">		[<span class="keyword">self</span> end];</div><div class="line">	} <span class="keyword">else</span> {</div><div class="line">		CCScene* scene = [transitionClass transitionWithDuration:t scene:[scenesStack_ objectAtIndex:c-<span class="number">1</span>]];</div><div class="line">		[scenesStack_ replaceObjectAtIndex:c-<span class="number">1</span> withObject:scene];</div><div class="line">		nextScene_ = scene;</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>) popSceneWithTransition: (Class)transitionClass duration:(ccTime)t;</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">NSAssert</span>( runningScene_ != <span class="literal">nil</span>, <span class="string">@"A running Scene is needed"</span>);</span><br><span class="line"></span><br><span class="line">	[scenesStack_ removeLastObject];</span><br><span class="line">	<span class="built_in">NSUInteger</span> c = [scenesStack_ count];</span><br><span class="line">	<span class="keyword">if</span>( c == <span class="number">0</span> ) &#123;</span><br><span class="line">		[<span class="keyword">self</span> end];</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		CCScene* scene = [transitionClass transitionWithDuration:t scene:[scenesStack_ objectAtIndex:c-<span class="number">1</span>]];</span><br><span class="line">		[scenesStack_ replaceObjectAtIndex:c-<span class="number">1</span> withObject:scene];</span><br><span class="line">		nextScene_ = scene;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>调用方式</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[CCDirector sharedDirector] popSceneWithTransition:[CCSlideInRTransition class] duration:<span class="number">0.5</span>f];</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[CCDirector sharedDirector] popSceneWithTransition:[CCSlideInRTransition class] duration:<span class="number">0.5</span>f];</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -215,10 +250,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-07-09-ios_exit_program_in_code.html" >iOS退出程序</a>
-			<span class="date"> 7月 9 2011 </span>
+			<div class="date"> Jul 9 2011 </div>
+			<div class="article-title"><a href="/2011-07-09-ios_exit_program_in_code.html" >iOS退出程序</a></div>						
 		</h3>
 	
 
@@ -230,11 +265,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>如果想在程序里面添加一个按钮“退出”，可以调用</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="built_in">UIApplication</span> sharedApplication] terminateWithSuccess];</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] terminateWithSuccess];</span><br></pre></td></tr></table></figure></p>
 <p>在cocos2d-iphone中添加退出按钮后的响应函数：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[[CCDirector sharedDirector] end];</div><div class="line">[[<span class="built_in">UIApplication</span> sharedApplication] terminateWithSuccess];</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[CCDirector sharedDirector] end];</span><br><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] terminateWithSuccess];</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -247,10 +280,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-07-05-uiwebview_current_url.html" >UIWebView获取当前加载的URL</a>
-			<span class="date"> 7月 5 2011 </span>
+			<div class="date"> Jul 5 2011 </div>
+			<div class="article-title"><a href="/2011-07-05-uiwebview_current_url.html" >UIWebView获取当前加载的URL</a></div>						
 		</h3>
 	
 
@@ -262,8 +295,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>实现delegate: shouldStartLoadWithRequest</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)webView:(<span class="built_in">UIWebView</span> *)webView shouldStartLoadWithRequest:(<span class="built_in">NSURLRequest</span> *)request navigationType:(UIWebViewNavigationType)navigationType </div><div class="line">{</div><div class="line">	<span class="built_in">NSURL</span>* url = [request  URL];</div><div class="line">	<span class="keyword">self</span><span class="variable">.urlEdit</span><span class="variable">.text</span> = [url absoluteString];</div><div class="line">	<span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)webView:(<span class="built_in">UIWebView</span> *)webView shouldStartLoadWithRequest:(<span class="built_in">NSURLRequest</span> *)request navigationType:(<span class="built_in">UIWebViewNavigationType</span>)navigationType </span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">NSURL</span>* url = [request  URL];</span><br><span class="line">	<span class="keyword">self</span><span class="variable">.urlEdit</span><span class="variable">.text</span> = [url absoluteString];</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -276,10 +308,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-07-05-ios_input_dialog.html" >iOS弹出输入框</a>
-			<span class="date"> 7月 5 2011 </span>
+			<div class="date"> Jul 5 2011 </div>
+			<div class="article-title"><a href="/2011-07-05-ios_input_dialog.html" >iOS弹出输入框</a></div>						
 		</h3>
 	
 
@@ -291,8 +323,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>最简单的弹出输入框的方法是添加一个UITextField到UIAlertView中：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:<span class="string">@"Your title here"</span> message:<span class="string">@"this gets covered"</span> delegate:<span class="keyword">self</span> cancelButtonTitle:<span class="string">@"Cancel"</span> otherButtonTitles:<span class="string">@"OK"</span>, <span class="literal">nil</span>];</div><div class="line">UITextField *myTextField = [[UITextField alloc] initWithFrame:CGRectMake(<span class="number">12.0</span>, <span class="number">45.0</span>, <span class="number">260.0</span>, <span class="number">25.0</span>)];</div><div class="line"></div><div class="line">CGAffineTransform myTransform = CGAffineTransformMakeTranslation(<span class="number">0.0</span>, <span class="number">130.0</span>);</div><div class="line">[myAlertView setTransform:myTransform];</div><div class="line"></div><div class="line">[myTextField setBackgroundColor:[<span class="built_in">UIColor</span> whiteColor]];</div><div class="line">[myAlertView addSubview:myTextField];</div><div class="line">[myAlertView show];</div><div class="line">[myAlertView release];</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIAlertView</span> *myAlertView = [[<span class="built_in">UIAlertView</span> alloc] initWithTitle:<span class="string">@"Your title here"</span> message:<span class="string">@"this gets covered"</span> delegate:<span class="keyword">self</span> cancelButtonTitle:<span class="string">@"Cancel"</span> otherButtonTitles:<span class="string">@"OK"</span>, <span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">UITextField</span> *myTextField = [[<span class="built_in">UITextField</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">12.0</span>, <span class="number">45.0</span>, <span class="number">260.0</span>, <span class="number">25.0</span>)];</span><br><span class="line"></span><br><span class="line"><span class="built_in">CGAffineTransform</span> myTransform = <span class="built_in">CGAffineTransformMakeTranslation</span>(<span class="number">0.0</span>, <span class="number">130.0</span>);</span><br><span class="line">[myAlertView setTransform:myTransform];</span><br><span class="line"></span><br><span class="line">[myTextField setBackgroundColor:[<span class="built_in">UIColor</span> whiteColor]];</span><br><span class="line">[myAlertView addSubview:myTextField];</span><br><span class="line">[myAlertView show];</span><br><span class="line">[myAlertView release];</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -305,10 +336,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-07-03-build_emacs_on_mac_osx.html" >Build Emacs on Mac OS X</a>
-			<span class="date"> 7月 3 2011 </span>
+			<div class="date"> Jul 3 2011 </div>
+			<div class="article-title"><a href="/2011-07-03-build_emacs_on_mac_osx.html" >Build Emacs on Mac OS X</a></div>						
 		</h3>
 	
 
@@ -319,17 +350,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <p>emacs.app设置中文字体失败的原因已经找到，默认emacs编译的选项为—cocoa，这里cocoa的字体引擎可能有问题。如果以x的方式自己手动编译emacs (—with-x)的时候，字体的渲染和设置都很正常。（如果大家想尝试x的emacs，可以通过以下方式进行安装)</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install emacs --with-x</div></pre></td></tr></table></figure>
-
+	  <p>emacs.app设置中文字体失败的原因已经找到，默认emacs编译的选项为--cocoa，这里cocoa的字体引擎可能有问题。如果以x的方式自己手动编译emacs (--with-x)的时候，字体的渲染和设置都很正常。（如果大家想尝试x的emacs，可以通过以下方式进行安装)</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install emacs --with-x</span><br></pre></td></tr></table></figure></p>
 <p>这种方式默认emacs被安装在/usr/local/Cellar/emacs/23.3/目录下。但是以x的方式编译出来的emacs，在mac下不是一般的丑- -！！</p>
 <p>在Mac OS X下可以通过auto tools编译emacs。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install emacs --with-x</div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./configure -with-jpeg=no --with-png=no --with-gif=no --with-tiff=no --with-ns --with-x=no</div><div class="line">make</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install emacs --with-x</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./configure -with-jpeg=no --with-png=no --with-gif=no --with-tiff=no --with-ns --with-x=no</span><br><span class="line">make</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -342,10 +368,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-07-01-ios_uiwebview_current_url.html" >iOS获取UIWebView当前浏览页面的地址</a>
-			<span class="date"> 7月 1 2011 </span>
+			<div class="date"> Jul 1 2011 </div>
+			<div class="article-title"><a href="/2011-07-01-ios_uiwebview_current_url.html" >iOS获取UIWebView当前浏览页面的地址</a></div>						
 		</h3>
 	
 
@@ -357,8 +383,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>iOS下获取UIWebView当前浏览页面的地址，在 =-(void) webViewDidFinishLoad:(UIWebView *)wv=</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text = wv<span class="variable">.request</span><span class="variable">.URL</span><span class="variable">.absoluteString</span>;</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text = wv<span class="variable">.request</span><span class="variable">.URL</span><span class="variable">.absoluteString</span>;</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -371,10 +396,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-07-01-enable_zoom_in_out_uiwebview.html" >UIWebView启用放大缩小</a>
-			<span class="date"> 7月 1 2011 </span>
+			<div class="date"> Jul 1 2011 </div>
+			<div class="article-title"><a href="/2011-07-01-enable_zoom_in_out_uiwebview.html" >UIWebView启用放大缩小</a></div>						
 		</h3>
 	
 
@@ -386,8 +411,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>how to enable zoom in/out of UIWebView?</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webView<span class="variable">.scalesPageToFit</span> = <span class="literal">YES</span>;</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webView<span class="variable">.scalesPageToFit</span> = <span class="literal">YES</span>;</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -395,37 +419,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2011-07-01-enable_zoom_in_out_uiwebview.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html" >Mac OS X Snow Leopard下移动swap到另外的分区</a>
-			<span class="date"> 6月 29 2011 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>参考链接：<a href="http://superuser.com/questions/28414/moving-the-swapfiles-to-a-dedicated-partition-in-snow-leopard" target="_blank" rel="external">http://superuser.com/questions/28414/moving-the-swapfiles-to-a-dedicated-partition-in-snow-leopard</a></p>
-<p>这里注意的是，新的swap文件的路径必须存在。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># backup the file</span></div><div class="line">$ <span class="built_in">cd</span> /System/Library/LaunchDaemons</div><div class="line">$ <span class="built_in">sudo</span> cp com.apple.dynamic_pager.plist{,_bak}</div><div class="line"></div><div class="line"><span class="comment"># convert the file to xml</span></div><div class="line">$ <span class="built_in">sudo</span> plutil -convert xml1 com.apple.dynamic_pager.plist</div><div class="line"></div><div class="line"><span class="comment"># modify the file</span></div><div class="line">$ <span class="built_in">sudo</span> vim com.apple.dynamic_pager.plist</div><div class="line"></div><div class="line">&lt;key&gt;ProgramArguments&lt;/key&gt;</div><div class="line">&lt;array&gt;</div><div class="line">    &lt;string&gt;/bin/bash&lt;/string&gt;</div><div class="line">    &lt;string&gt;-c&lt;/string&gt;</div><div class="line">    &lt;string&gt;/bin/wait4path /Volumes/Swap/ &amp;&amp;</div><div class="line">/sbin/dynamic_pager -F /Volumes/Swap/.vm/swapfile&lt;/string&gt;</div><div class="line">&lt;/array&gt; <span class="comment"># replace /Volumes/Swap/.vm/swapfile as your path</span></div><div class="line"></div><div class="line"><span class="comment"># convert the file to binary</span></div><div class="line">$ <span class="built_in">sudo</span> plutil -convert binary1 com.apple.dynamic_pager.plist</div></pre></td></tr></table></figure>
-
-<p>重启就可以了。</p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -472,81 +465,48 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	<div class="widget">
-		<h4>分类</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/categories/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/categories/Tools/">Tools<span>1</span></a></li>
-		
-			<li><a href="/categories/emacs/">emacs<span>61</span></a></li>
-		
-			<li><a href="/categories/gamedev/">gamedev<span>5</span></a></li>
-		
-			<li><a href="/categories/ios/">ios<span>3</span></a></li>
-		
-			<li><a href="/categories/opengl/">opengl<span>1</span></a></li>
-		
-			<li><a href="/categories/oracle/">oracle<span>1</span></a></li>
-		
-			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/categories/programming/">programming<span>139</span></a></li>
-		
-			<li><a href="/categories/tools/">tools<span>142</span></a></li>
-		
-			<li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
-		
-		</ul>
-	</div>
-
-		
-			
-	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+		
+			<li><a href="/tags/programming/">programming<span>4</span></a></li>
 		
 			<li><a href="/tags/VC/">VC<span>8</span></a></li>
 		
-			<li><a href="/tags/english/">english<span>1</span></a></li>
-		
-			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
-		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
-		
-			<li><a href="/tags/samba/">samba<span>1</span></a></li>
-		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
-		
 			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+			<li><a href="/tags/tools/">tools<span>4</span></a></li>
 		
-			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+		
+			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+		
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
 		
 			<li><a href="/tags/database/">database<span>2</span></a></li>
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
 		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
 		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
 		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+		
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
 		
-			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
+			<li><a href="/tags/macos/">macos<span>9</span></a></li>
 		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
 		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
 		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -562,23 +522,23 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
@@ -613,7 +573,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

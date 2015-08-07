@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -124,11 +116,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">		
-	    <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ERROR: Unable <span class="built_in">to</span> <span class="built_in">load</span> <span class="operator">the</span> kernel module <span class="string">'nvidia.ko'</span>. This happens most   frequently when this kernel module was built against <span class="operator">the</span> wrong <span class="operator">or</span>   improperly configured kernel sources, <span class="operator">with</span> <span class="operator">a</span> <span class="built_in">version</span> <span class="operator">of</span> gcc that differs  <span class="built_in">from</span> <span class="operator">the</span> <span class="constant">one</span> used <span class="built_in">to</span> build <span class="operator">the</span> target kernel, <span class="operator">or</span> <span class="keyword">if</span> <span class="operator">a</span> driver such <span class="keyword">as</span>   rivafb/nvidiafb is present <span class="operator">and</span> prevents <span class="operator">the</span> NVIDIA kernel module <span class="built_in">from</span>   obtaining ownership <span class="operator">of</span> <span class="operator">the</span> NVIDIA graphics device(s), <span class="operator">or</span> NVIDIA GPU   installed <span class="operator">in</span> this <span class="keyword">system</span> is <span class="operator">not</span> supported <span class="keyword">by</span> this NVIDIA Linux graphics   driver release.</div><div class="line"></div><div class="line">Please see <span class="operator">the</span> <span class="built_in">log</span> entries <span class="string">'Kernel module load  error'</span> <span class="operator">and</span> <span class="string">'Kernel  messages'</span> <span class="keyword">at</span> <span class="operator">the</span> <span class="function"><span class="keyword">end</span> <span class="title">of</span> <span class="title">the</span> <span class="title">file</span>  '/<span class="title">var</span>/<span class="title">log</span>/<span class="title">nvidia-installer</span>.<span class="title">log</span>' <span class="title">for</span>  <span class="title">more</span> <span class="title">information</span>.</span></div></pre></td></tr></table></figure>
-
+	    <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR: Unable to load the kernel module &#39;nvidia.ko&#39;. This happens most   frequently when this kernel module was built against the wrong or   improperly configured kernel sources, with a version of gcc that differs  from the one used to build the target kernel, or if a driver such as   rivafb/nvidiafb is present and prevents the NVIDIA kernel module from   obtaining ownership of the NVIDIA graphics device(s), or NVIDIA GPU   installed in this system is not supported by this NVIDIA Linux graphics   driver release.&#10;&#10;Please see the log entries &#39;Kernel module load  error&#39; and &#39;Kernel  messages&#39; at the end of the file  &#39;/var/log/nvidia-installer.log&#39; for  more information.</span><br></pre></td></tr></table></figure></p>
 <p>解决办法：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> sh NVIDA-Linux-x86_64-<span class="number">190.53</span>-pkg.run -k $(uname -r)</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh NVIDA-Linux-x86_64-<span class="number">190.53</span>-pkg.run -k $(uname -r)</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -159,7 +149,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-05-07-ubuntu_nvidia_ko.html" data-title="ubuntu 10.04 unable to load the kernel module &#39;nvidia.ko&#39;" data-url="http://yesokay.herokuapp.com/2010-05-07-ubuntu_nvidia_ko.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2010-05-07-ubuntu_nvidia_ko.html" data-title="ubuntu 10.04 unable to load the kernel module 'nvidia.ko'" data-url="http://yesokay.herokuapp.com/2010-05-07-ubuntu_nvidia_ko.html"></div>  
   
 </section>
 
@@ -173,7 +163,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	5月 7 2010 
+	May 7 2010 
 	</div>
 	
 
@@ -184,7 +174,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/Linux/">Linux<span>69</span></a></li>
+    <li><a href="/categories/Linux/">Linux<span>52</span></a></li>
   </li>
 
     </ul>
@@ -221,7 +211,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

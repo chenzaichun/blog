@@ -1,4 +1,3 @@
----
 layout: post
 title: "test blog with org-mode"
 date: 2012-05-31 13:33

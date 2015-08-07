@@ -1,4 +1,3 @@
---- 
 categories: 
   - gamedev
   - opengl
@@ -14,6 +13,8 @@ tags:
 title: "获取glsl version"
 type: post
 ---
+
+直接上代码:
 
 ```c
 void getGlslVersion(int* major, int* minor)

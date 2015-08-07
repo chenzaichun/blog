@@ -1,4 +1,3 @@
----
 layout: post
 title: "Linux下让进程生成core文件"
 date: 2012-11-26 11:22

@@ -1,4 +1,3 @@
----
 layout: post
 title: "MacOS X下查看可执行程序依赖"
 date: 2012-09-21 10:22

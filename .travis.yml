@@ -5,7 +5,8 @@ branches:
   only:
   - master
 before_install:
-- npm install -g "git+https://github.com/chenzaichun/hexo.git#2.8.3"
+#- npm install -g "git+https://github.com/chenzaichun/hexo.git#2.8.3"
+- npm install -g hexo-cli@3.1.1
 install:
 - npm install
 before_script:
@@ -28,6 +29,6 @@ after_success:
 deploy:
   provider: heroku
   api_key:
-    secure: DhXLOOeeIIIS+lw/WZrDmGViIDHCK66WRcWLlkGSpP+JCTxbZEQwO5Zibtxw/YAR8VQ3f5NY0hhGR8VaAmPmufJKbOU7+CD1owDx1BsfZ/x4N5jUWvdslskb27ulo7u5at82khrnK+gHASPUfBJiG8RsuqjXtO+E3sPWKtPKrdM=
+    secure: $HEROKU_SEC
   app: yesokay
   strategy: git

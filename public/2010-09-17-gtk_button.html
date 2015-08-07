@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -124,8 +116,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">		
-	    <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* compile command:</span></div><div class="line">   gcc -o button button.c `pkg-config --libs --cflags gtk+-2.0`</div><div class="line">*/</div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;gtk/gtk.h&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keyword">void</span> destroy(GtkWidget*, gpointer);</div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc,</div><div class="line">		 <span class="keyword">char</span> *argv[])</div><div class="line">{</div><div class="line">	GtkWidget *window, *button;</div><div class="line"></div><div class="line">	gtk_init(&argc, &argv);</div><div class="line"></div><div class="line">	window = gtk_window_new(GTK_WINDOW_TOPLEVEL);</div><div class="line">	gtk_window_set_title(GTK_WINDOW(window), <span class="string">"Buttons"</span>);</div><div class="line">	gtk_container_set_border_width(GTK_CONTAINER(window), <span class="number">25</span>);</div><div class="line">	gtk_widget_set_size_request(window, <span class="number">200</span>, <span class="number">100</span>);</div><div class="line"></div><div class="line">	g_signal_connect(G_OBJECT(window), <span class="string">"destroy"</span>,</div><div class="line">					 G_CALLBACK(destroy), NULL);</div><div class="line"></div><div class="line">	<span class="comment">/* Create a new button that has a mnemonic key of Alt+c. */</span></div><div class="line">	button = gtk_button_new_with_mnemonic(<span class="string">"_Close"</span>);</div><div class="line">	gtk_button_set_relief(GTK_BUTTON(button), GTK_RELIEF_NONE);</div><div class="line"></div><div class="line">	<span class="comment">/* Connect the button to the clicked signal. The callback function</span></div><div class="line">	 * recieves the window followed by the button because the arguments</div><div class="line">	 * are swapped</div><div class="line">	 */</div><div class="line">	g_signal_connect_swapped(G_OBJECT(button), <span class="string">"clicked"</span>,</div><div class="line">							 G_CALLBACK(gtk_widget_destroy),</div><div class="line">							 (gpointer)window);</div><div class="line"></div><div class="line">	gtk_container_add(GTK_CONTAINER(window), button);</div><div class="line">	gtk_widget_show_all(window);</div><div class="line"></div><div class="line">	gtk_main();</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">/* Stop the GTK+ main loop function */</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">void</span></div><div class="line">destroy(GtkWidget *window,</div><div class="line">		gpointer data)</div><div class="line">{</div><div class="line">	gtk_main_quit();</div><div class="line">}</div></pre></td></tr></table></figure>
-
+	    <p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* compile command:</span><br><span class="line">   gcc -o button button.c `pkg-config --libs --cflags gtk+-2.0`</span><br><span class="line">*/</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;gtk/gtk.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">(GtkWidget*, gpointer)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,</span><br><span class="line">		 <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	GtkWidget *window, *button;</span><br><span class="line"></span><br><span class="line">	gtk_init(&amp;argc, &amp;argv);</span><br><span class="line"></span><br><span class="line">	window = gtk_window_new(GTK_WINDOW_TOPLEVEL);</span><br><span class="line">	gtk_window_set_title(GTK_WINDOW(window), <span class="string">"Buttons"</span>);</span><br><span class="line">	gtk_container_set_border_width(GTK_CONTAINER(window), <span class="number">25</span>);</span><br><span class="line">	gtk_widget_set_size_request(window, <span class="number">200</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">	g_signal_connect(G_OBJECT(window), <span class="string">"destroy"</span>,</span><br><span class="line">					 G_CALLBACK(destroy), <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Create a new button that has a mnemonic key of Alt+c. */</span></span><br><span class="line">	button = gtk_button_new_with_mnemonic(<span class="string">"_Close"</span>);</span><br><span class="line">	gtk_button_set_relief(GTK_BUTTON(button), GTK_RELIEF_NONE);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Connect the button to the clicked signal. The callback function</span><br><span class="line">	 * recieves the window followed by the button because the arguments</span><br><span class="line">	 * are swapped</span><br><span class="line">	 */</span></span><br><span class="line">	g_signal_connect_swapped(G_OBJECT(button), <span class="string">"clicked"</span>,</span><br><span class="line">							 G_CALLBACK(gtk_widget_destroy),</span><br><span class="line">							 (gpointer)window);</span><br><span class="line"></span><br><span class="line">	gtk_container_add(GTK_CONTAINER(window), button);</span><br><span class="line">	gtk_widget_show_all(window);</span><br><span class="line"></span><br><span class="line">	gtk_main();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Stop the GTK+ main loop function */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span></span><br><span class="line"><span class="title">destroy</span><span class="params">(GtkWidget *window,</span><br><span class="line">		gpointer data)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	gtk_main_quit();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -156,7 +147,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-09-17-gtk_button.html" data-title="GTK+按钮" data-url="http://yesokay.herokuapp.com/2010-09-17-gtk_button.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2010-09-17-gtk_button.html" data-title="GTK+按钮" data-url="http://yesokay.herokuapp.com/2010-09-17-gtk_button.html"></div>  
   
 </section>
 
@@ -170,7 +161,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	9月 17 2010 
+	Sep 17 2010 
 	</div>
 	
 
@@ -181,7 +172,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li>
+    <li><a href="/categories/Linux/">Linux<span>52</span></a></li> <li><a href="/categories/programming/">programming<span>16</span></a></li>
   </li>
 
     </ul>
@@ -194,7 +185,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/gtk/">gtk<span>2</span></a></li> <li><a href="/tags/GUI/">GUI<span>2</span></a></li> <li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+  <li><a href="/tags/GUI/">GUI<span>2</span></a></li> <li><a href="/tags/Linux/">Linux<span>69</span></a></li> <li><a href="/tags/gtk/">gtk<span>2</span></a></li>
     </ul>
 	</div>
 		
@@ -218,7 +209,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

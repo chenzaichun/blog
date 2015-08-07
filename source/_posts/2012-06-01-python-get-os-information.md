@@ -1,4 +1,3 @@
----
 layout: post
 title: "Python获取操作系统版本信息"
 date: 2012-06-01 09:28

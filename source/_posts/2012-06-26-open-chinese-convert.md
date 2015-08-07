@@ -1,4 +1,3 @@
----
 layout: post
 title: "Open Chinese Convert"
 date: 2012-06-26 14:38

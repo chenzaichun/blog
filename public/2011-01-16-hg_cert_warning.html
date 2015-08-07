@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -125,15 +117,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>升级到mercurial 1.7.3之后，频繁会遇到像这样的错误：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">warning</span>: <span class="string">bitbucket.org certificate not verified (check web.cacerts config setting)</span></div></pre></td></tr></table></figure>
-
-<p>解决办法，参考链接：<a href="http://mercurial.selenic.com/wiki/CACertificates" target="_blank" rel="external">http://mercurial.selenic.com/wiki/CACertificates</a></p>
-<p>下载<a href="http://curl.haxx.se/ca/cacert.pem" target="_blank">http://curl.haxx.se/ca/cacert.pem</a>到本地，然后在～/.hgrc里面添加这样一句：</p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">[web]</span></div><div class="line"><span class="setting">cacerts=<span class="value">/path/to/cacert.pem</span></span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warning: bitbucket.org certificate not verified (check web.cacerts config setting)</span><br></pre></td></tr></table></figure></p>
+<p>解决办法，参考链接：&lt;a href=&quot;http://mercurial.selenic.com/wiki/CACertificates&quot;&gt;http://mercurial.selenic.com/wiki/CACertificates&lt;/a&gt;</p>
+<p>下载&lt;a href=&quot;http://curl.haxx.se/ca/cacert.pem&quot; target=&quot;_blank&quot;&gt;http://curl.haxx.se/ca/cacert.pem&lt;/a&gt;到本地，然后在～/.hgrc里面添加这样一句：</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[web]&#10;cacerts=/path/to/cacert.pem</span><br></pre></td></tr></table></figure></p>
 <p>或者直接禁用：</p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">[web]</span></div><div class="line"><span class="setting">cacerts =<span class="value"></span></span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[web]&#10;cacerts =</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -164,7 +153,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html" data-title="hg certificate warnings" data-url="http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2011-01-16-hg_cert_warning.html" data-title="hg certificate warnings" data-url="http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html"></div>  
   
 </section>
 
@@ -178,7 +167,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	1月 16 2011 
+	Jan 16 2011 
 	</div>
 	
 
@@ -189,7 +178,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>81</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
 
     </ul>
@@ -226,7 +215,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -127,57 +119,46 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	    <ol>
 <li>首先准备好oracle的安装文件，11gr2默认有两个zip包：<code>linux.x64_11gR2_database_1of2.zip</code>和<code>linux.x64_11gR2_database_2of2.zip</code>, 将这两个包解压</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">unzip linux.x64_11gR2_database_1of2.zip</div><div class="line">unzip linux.x64_11gR2_database_2of2.zip</div></pre></td></tr></table></figure>
-
-<ol>
-<li><p>系统硬件需求这里忽略，详情查看oracle的文档</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip linux.x64_11gR2_database_1of2.zip</span><br><span class="line">unzip linux.x64_11gR2_database_2of2.zip</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>
+<p>系统硬件需求这里忽略，详情查看oracle的文档</p>
 </li>
-<li><p>所依赖的软件包</p>
+<li>
+<p>所依赖的软件包</p>
 </li>
 </ol>
-<a id="more"></a>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">binutils</span><span class="literal">-</span><span class="comment">2</span><span class="string">.</span><span class="comment">16</span><span class="string">.</span><span class="comment">91</span><span class="string">.</span><span class="comment">0</span><span class="string">.</span><span class="comment">5</span></div><div class="line"><span class="comment">compat</span><span class="literal">-</span><span class="comment">libstdc</span><span class="literal">+</span><span class="literal">+</span><span class="literal">-</span><span class="comment">5</span><span class="string">.</span><span class="comment">0</span><span class="string">.</span><span class="comment">7</span></div><div class="line"><span class="comment">gcc</span><span class="literal">-</span><span class="comment">4</span><span class="string">.</span><span class="comment">1</span><span class="string">.</span><span class="comment">2</span></div><div class="line"><span class="comment">gcc</span><span class="literal">-</span><span class="comment">c</span><span class="literal">+</span><span class="literal">+</span><span class="literal">-</span><span class="comment">4</span><span class="string">.</span><span class="comment">1</span><span class="string">.</span><span class="comment">2</span></div><div class="line"><span class="comment">glibc</span><span class="literal">-</span><span class="comment">2</span><span class="string">.</span><span class="comment">4</span><span class="literal">-</span><span class="comment">31</span></div><div class="line"><span class="comment">glibc</span><span class="literal">-</span><span class="comment">devel</span><span class="literal">-</span><span class="comment">2</span><span class="string">.</span><span class="comment">4</span><span class="literal">-</span><span class="comment">31</span></div><div class="line"><span class="comment">ksh</span><span class="literal">-</span><span class="comment">93r</span><span class="literal">-</span><span class="comment">12</span><span class="string">.</span><span class="comment">9</span></div><div class="line"><span class="comment">libaio</span><span class="literal">-</span><span class="comment">0</span><span class="string">.</span><span class="comment">3</span><span class="string">.</span><span class="comment">104</span></div><div class="line"><span class="comment">libaio</span><span class="literal">-</span><span class="comment">devel</span><span class="literal">-</span><span class="comment">0</span><span class="string">.</span><span class="comment">3</span><span class="string">.</span><span class="comment">104</span></div><div class="line"><span class="comment">libelf</span><span class="literal">-</span><span class="comment">0</span><span class="string">.</span><span class="comment">8</span><span class="string">.</span><span class="comment">5</span></div><div class="line"><span class="comment">libgcc</span><span class="literal">-</span><span class="comment">4</span><span class="string">.</span><span class="comment">1</span><span class="string">.</span><span class="comment">2</span></div><div class="line"><span class="comment">libstdc</span><span class="literal">+</span><span class="literal">+</span><span class="literal">-</span><span class="comment">4</span><span class="string">.</span><span class="comment">1</span><span class="string">.</span><span class="comment">2</span></div><div class="line"><span class="comment">libstdc</span><span class="literal">+</span><span class="literal">+</span><span class="literal">-</span><span class="comment">devel</span><span class="literal">-</span><span class="comment">4</span><span class="string">.</span><span class="comment">1</span><span class="string">.</span><span class="comment">2</span></div><div class="line"><span class="comment">make</span><span class="literal">-</span><span class="comment">3</span><span class="string">.</span><span class="comment">80</span></div><div class="line"><span class="comment">sysstat</span><span class="literal">-</span><span class="comment">8</span><span class="string">.</span><span class="comment">0</span><span class="string">.</span><span class="comment">4</span></div></pre></td></tr></table></figure>
-
+<p>&lt;!--more--&gt;</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">binutils-2.16.91.0.5&#10;compat-libstdc++-5.0.7&#10;gcc-4.1.2&#10;gcc-c++-4.1.2&#10;glibc-2.4-31&#10;glibc-devel-2.4-31&#10;ksh-93r-12.9&#10;libaio-0.3.104&#10;libaio-devel-0.3.104&#10;libelf-0.8.5&#10;libgcc-4.1.2&#10;libstdc++-4.1.2&#10;libstdc++-devel-4.1.2&#10;make-3.80&#10;sysstat-8.0.4</span><br></pre></td></tr></table></figure></p>
 <p>安装可以通过<code>yast2</code></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yast2 -i &lt;package list&gt;</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yast2 -i &lt;package list&gt;</span><br></pre></td></tr></table></figure></p>
 <p>这里要注意，在suse enterprise linux中，<code>compat-libstdc++</code>由<code>libstdc++33</code>替代, 然后在check的时候忽略掉就行</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yast2 -i libstdc++<span class="number">33</span></div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yast2 -i libstdc++<span class="number">33</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4">
 <li>修改内核参数<code>/etc/sysctl.conf</code></li>
 </ol>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">kernel.<span class="variable">sem =</span> <span class="number">1250</span> <span class="number">32000</span> <span class="number">100</span> <span class="number">256</span></div><div class="line">net.ipv4.<span class="variable">ip_local_port_range =</span> <span class="number">9000</span> <span class="number">65500</span></div><div class="line">net.core.<span class="variable">rmem_default =</span> <span class="number">4194304</span></div><div class="line">net.core.<span class="variable">rmem_max =</span> <span class="number">4194304</span></div><div class="line">net.core.<span class="variable">wmem_default =</span> <span class="number">1048576</span></div><div class="line">net.core.<span class="variable">wmem_max =</span> <span class="number">1048576</span></div><div class="line">fs.<span class="variable">file-max =</span> <span class="number">6815744</span></div><div class="line">kernel.<span class="variable">shmmax =</span> <span class="number">536870912</span></div><div class="line">fs.<span class="variable">aio-max-nr =</span> <span class="number">1048576</span></div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sysctl -p</div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kernel.sem = 1250 32000 100 256&#10;net.ipv4.ip_local_port_range = 9000 65500&#10;net.core.rmem_default = 4194304&#10;net.core.rmem_max = 4194304&#10;net.core.wmem_default = 1048576&#10;net.core.wmem_max = 1048576&#10;fs.file-max = 6815744&#10;kernel.shmmax = 536870912&#10;fs.aio-max-nr = 1048576</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure></p>
+<ol start="5">
 <li>创建用户和组</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">groupadd oinstall</div><div class="line">groupadd dba</div><div class="line">useradd -g oinstall -G dba oracle</div><div class="line">passwd oracle</div><div class="line">...</div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">groupadd oinstall</span><br><span class="line">groupadd dba</span><br><span class="line">useradd -g oinstall -G dba oracle</span><br><span class="line">passwd oracle</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<ol start="6">
 <li>创建oracle安装目录</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mkdir -p /opt/oracle</div><div class="line">mkdir -p /home/oracle</div><div class="line">mkdir -p /opt/oraInventory</div><div class="line">chown -R oracle:oinstall /opt/oracle</div><div class="line">chown -R oracle:oinstall /home/oracle</div><div class="line">chown -R oracle:oinstall /opt/oraInventory</div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/oracle</span><br><span class="line">mkdir -p /home/oracle</span><br><span class="line">mkdir -p /opt/oraInventory</span><br><span class="line">chown -R oracle:oinstall /opt/oracle</span><br><span class="line">chown -R oracle:oinstall /home/oracle</span><br><span class="line">chown -R oracle:oinstall /opt/oraInventory</span><br></pre></td></tr></table></figure></p>
+<ol start="7">
 <li>修改oracle的环境变量, 添加一下变量到<code>~oracle/.profile</code></li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ORACLE_BASE=/opt/oracle</div><div class="line">ORACLE_HOME=<span class="variable">$ORACLE_BASE</span>/product/<span class="number">11.2</span>.<span class="number">0</span> </div><div class="line"><span class="keyword">export</span> ORACLE_BASE ORACLE_HOME</div><div class="line">PATH=<span class="variable">$PATH</span>:/<span class="variable">$ORACLE_HOME</span>/bin</div><div class="line"><span class="keyword">export</span> PATH</div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ORACLE_BASE=/opt/oracle</span><br><span class="line">ORACLE_HOME=<span class="variable">$ORACLE_BASE</span>/product/<span class="number">11.2</span>.<span class="number">0</span> </span><br><span class="line"><span class="built_in">export</span> ORACLE_BASE ORACLE_HOME</span><br><span class="line">PATH=<span class="variable">$PATH</span>:/<span class="variable">$ORACLE_HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> PATH</span><br></pre></td></tr></table></figure></p>
+<ol start="8">
 <li>修改<code>/etc/security/limits.conf</code></li>
 </ol>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">oracle <span class="keyword">soft</span> nproc <span class="number">16384</span></div><div class="line">oracle hard nproc <span class="number">16384</span></div><div class="line">oracle <span class="keyword">soft</span> nofile <span class="number">1024</span></div><div class="line">oracle hard nofile <span class="number">65536</span></div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oracle soft nproc 16384&#10;oracle hard nproc 16384&#10;oracle soft nofile 1024&#10;oracle hard nofile 65536</span><br></pre></td></tr></table></figure></p>
+<ol start="9">
 <li>开始安装</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">su - oracle</div><div class="line"><span class="built_in">cd</span> &lt;ORACLE_INSTALL_MEDIA_DIR&gt;</div><div class="line">./runInstaller</div><div class="line">...</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su - oracle</span><br><span class="line"><span class="built_in">cd</span> &lt;ORACLE_INSTALL_MEDIA_DIR&gt;</span><br><span class="line">./runInstaller</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
 <p>剩下的就是根据图形界面一步一步的做就行了 :)</p>
 	  
 	</div>
@@ -209,7 +190,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html" data-title="SUSE Enterprise Linux 10下安装Oracle 11gr2" data-url="http://yesokay.herokuapp.com/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html" data-title="SUSE Enterprise Linux 10下安装Oracle 11gr2" data-url="http://yesokay.herokuapp.com/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html"></div>  
   
 </section>
 
@@ -223,7 +204,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	10月 25 2012 
+	Oct 25 2012 
 	</div>
 	
 
@@ -234,7 +215,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/tools/">tools<span>142</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li>
+    <li><a href="/categories/tools/">tools<span>18</span></a></li> <li><a href="/categories/programming/">programming<span>4</span></a></li>
   </li>
 
     </ul>
@@ -271,7 +252,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

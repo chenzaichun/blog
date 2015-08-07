@@ -1,4 +1,3 @@
----
 layout: post
 title: "SUSE Enterprise Linux 10.x下安装JDK/JRE"
 date: 2012-10-25 15:06

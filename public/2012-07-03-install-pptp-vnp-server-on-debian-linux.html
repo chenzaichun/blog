@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -125,33 +117,24 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>首先更新:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get update</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure></p>
 <p>接着我们就安装pptp服务器:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install pptpd</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install pptpd</span><br></pre></td></tr></table></figure></p>
 <p>编辑<code>/etc/pptpd.conf</code>, 反注释掉以下内容：</p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">localip</span> <span class="number">192.168.0.1</span></div><div class="line">remoteip <span class="number">192.168.0.234</span>-<span class="number">238</span>,<span class="number">192.168.0.245</span></div></pre></td></tr></table></figure>
-
-<a id="more"></a>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localip 192.168.0.1&#10;remoteip 192.168.0.234-238,192.168.0.245</span><br></pre></td></tr></table></figure></p>
+<p>&lt;!--more--&gt;</p>
 <p>编辑<code>/etc/ppp/chap-secrets</code>, 添加用户，格式为：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># client        server  secret                  IP addresses</span></div><div class="line">yesokay          <span class="keyword">*</span>      password                <span class="keyword">*</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># client        server  secret                  IP addresses&#10;yesokay          *      password                *</span><br></pre></td></tr></table></figure></p>
 <p>修改dns配置, <code>/etc/ppp/options</code>:</p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ms-dns 8.8.8.8</div><div class="line">ms-dns 8.8.4.4</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ms-dns 8.8.8.8&#10;ms-dns 8.8.4.4</span><br></pre></td></tr></table></figure></p>
 <p>启用ip_forward, <code>/etc/sysctl.conf</code>:</p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">net.ipv4.ip_forward</span>=<span class="string">1</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net.ipv4.ip_forward=1</span><br></pre></td></tr></table></figure></p>
 <p>启用新的配置：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sysctl -p</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure></p>
 <p>重启pptp服务器：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/pptpd restart</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/pptpd restart</span><br></pre></td></tr></table></figure></p>
 <p>最后开启iptables转发</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/sbin/iptables -t nat -A POSTROUTING <span class="operator">-s</span> <span class="number">192.168</span>.<span class="number">0.0</span>/<span class="number">24</span> -o eth0 -j MASQUERADE</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/iptables -t nat -A POSTROUTING <span class="operator">-s</span> <span class="number">192.168</span>.<span class="number">0.0</span>/<span class="number">24</span> -o eth0 -j MASQUERADE</span><br></pre></td></tr></table></figure></p>
 <p>当然还有更加方便的，有人做了一个一键安装脚本</p>
 <ol>
 <li>Debian系见<a href="http://www.8ke.in/soft/pptpandl2tpondebian.sh" target="_blank" rel="external">这里</a></li>
@@ -187,7 +170,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-07-03-install-pptp-vnp-server-on-debian-linux.html" data-title="Debian Linux下安装pptp vpn服务器" data-url="http://yesokay.herokuapp.com/2012-07-03-install-pptp-vnp-server-on-debian-linux.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2012-07-03-install-pptp-vnp-server-on-debian-linux.html" data-title="Debian Linux下安装pptp vpn服务器" data-url="http://yesokay.herokuapp.com/2012-07-03-install-pptp-vnp-server-on-debian-linux.html"></div>  
   
 </section>
 
@@ -201,7 +184,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	7月 3 2012 
+	Jul 3 2012 
 	</div>
 	
 
@@ -212,7 +195,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/tools/">tools<span>18</span></a></li>
   </li>
 
     </ul>
@@ -249,7 +232,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

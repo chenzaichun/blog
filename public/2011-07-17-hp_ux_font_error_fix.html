@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -125,25 +117,22 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>在用x server连接到hp-ux的时候，open view启动失败：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">Warning: Missing charsets in String to FontSet conversion</div><div class="line">Warning: Cannot convert string "-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*" to type FontSet</div><div class="line">Warning: Missing charsets in String to FontSet conversion</div><div class="line">Warning: Unable to <span class="operator"><span class="keyword">load</span> <span class="keyword">any</span> usable fontset</span></div><div class="line">Warning:</div><div class="line">Name: FONTLIST_DEFAULT_TAG_STRING</div><div class="line">Class: XmRendition</div><div class="line">Conversion failed. Cannot <span class="keyword">load</span> font.</div><div class="line"></div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> type FontList</div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> type FontList</div><div class="line">Warning:</div><div class="line">Name: FONTLIST_DEFAULT_TAG_STRING</div><div class="line">Class: XmRendition</div><div class="line">Conversion failed. Cannot <span class="keyword">load</span> font.</div><div class="line"></div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> type FontList</div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> type FontList</div><div class="line">Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> type FontSet</div><div class="line">Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">Warning: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> usable fontset</div><div class="line">Warning:</div><div class="line">Name: FONTLIST_DEFAULT_TAG_STRING</div><div class="line">Class: XmRendition</div><div class="line">Conversion failed. Cannot <span class="keyword">load</span> font.</div><div class="line"></div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> type FontList</div><div class="line">Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> type FontList</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-140-*"</span> <span class="keyword">to</span> type FontSet</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> usable fontset</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-120-*"</span> <span class="keyword">to</span> type FontSet</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> usable fontset</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-100-*"</span> <span class="keyword">to</span> type FontSet</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> usable fontset</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-80-*"</span> <span class="keyword">to</span> type FontSet</div><div class="line">ovw: Xt Warning: Missing charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</div><div class="line">ovw: Xt Warning: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> usable fontset</div><div class="line">/opt/OV/<span class="keyword">bin</span></div></pre></td></tr></table></figure>
-
-<p>解决办法：<br><a id="more"></a></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Missing charsets in String to FontSet conversion&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontSet&#10;Warning: Missing charsets in String to FontSet conversion&#10;Warning: Unable to load any usable fontset&#10;Warning:&#10;Name: FONTLIST_DEFAULT_TAG_STRING&#10;Class: XmRendition&#10;Conversion failed. Cannot load font.&#10;&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontList&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:&#34; to type FontList&#10;Warning:&#10;Name: FONTLIST_DEFAULT_TAG_STRING&#10;Class: XmRendition&#10;Conversion failed. Cannot load font.&#10;&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontList&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:&#34; to type FontList&#10;Warning: Missing charsets in String to FontSet conversion&#10;Warning: Cannot convert string &#34;-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontSet&#10;Warning: Missing charsets in String to FontSet conversion&#10;Warning: Unable to load any usable fontset&#10;Warning:&#10;Name: FONTLIST_DEFAULT_TAG_STRING&#10;Class: XmRendition&#10;Conversion failed. Cannot load font.&#10;&#10;Warning: Cannot convert string &#34;-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontList&#10;Warning: Cannot convert string &#34;-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*:&#34; to type FontList&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-140-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-120-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-100-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-80-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;/opt/OV/bin</span><br></pre></td></tr></table></figure></p>
+<p>解决办法：
+&lt;!--more--&gt;</p>
 <ol>
 <li>首先在hp-ux上检查xfs是否启动</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps -ef |grep xfs</div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef |grep xfs</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
 <li>如果没有启动，则启动xfs</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># /sbin/init.d/xfs start</span></div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /sbin/init.d/xfs start</span></span><br></pre></td></tr></table></figure></p>
+<ol start="3">
 <li>在需要连接的x server上设置：</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ xset +fp tcp/hostname:<span class="number">7000</span></div><div class="line">$ xset fp rehash</div><div class="line">$ xset -q</div><div class="line">$ xhost +</div></pre></td></tr></table></figure>
-
-<ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ xset +fp tcp/hostname:<span class="number">7000</span></span><br><span class="line">$ xset fp <span class="built_in">rehash</span></span><br><span class="line">$ xset -q</span><br><span class="line">$ xhost +</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
 <li>然后ssh连上之后，open view显示正常。</li>
 </ol>
 	  
@@ -176,7 +165,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-07-17-hp_ux_font_error_fix.html" data-title="X Server连接到hp-ux字体问题解决办法" data-url="http://yesokay.herokuapp.com/2011-07-17-hp_ux_font_error_fix.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2011-07-17-hp_ux_font_error_fix.html" data-title="X Server连接到hp-ux字体问题解决办法" data-url="http://yesokay.herokuapp.com/2011-07-17-hp_ux_font_error_fix.html"></div>  
   
 </section>
 
@@ -190,7 +179,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	7月 17 2011 
+	Jul 17 2011 
 	</div>
 	
 
@@ -201,7 +190,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/Linux/">Linux<span>52</span></a></li> <li><a href="/categories/programming/">programming<span>16</span></a></li> <li><a href="/categories/tools/">tools<span>13</span></a></li>
   </li>
 
     </ul>
@@ -238,7 +227,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

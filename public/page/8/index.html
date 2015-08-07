@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -122,10 +114,38 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-11-18-chrome-vim-key-binding.html" >chrome vim按键绑定</a>
-			<span class="date"> 11月 18 2011 </span>
+			<div class="date"> Nov 30 2011 </div>
+			<div class="article-title"><a href="/2011-11-30-mercurial-hg-add-progress.html" >为Mercurial（hg）添加进度条</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>hg1.5之后内置了progress扩展，可以直接启用：</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[extensions]&#10;progress =</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-11-30-mercurial-hg-add-progress.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Nov 18 2011 </div>
+			<div class="article-title"><a href="/2011-11-18-chrome-vim-key-binding.html" >chrome vim按键绑定</a></div>						
 		</h3>
 	
 
@@ -139,26 +159,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  <p><a href="https://github.com/philc/vimium" target="_blank" rel="external">传送门</a></p>
 <p>插件安装<a href="https://chrome.google.com/webstore/detail/dbepggeogbaibhgnhhndojpepiihcmeb" target="_blank" rel="external">地址</a></p>
 <p>Navigating the current page:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></td></tr></table></figure>
-
-<p>Using find:    </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></td></tr></table></figure>
-
-
-<p>Navigating your history:    </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></td></tr></table></figure>
-
-
-<p>Manipulating tabs:     </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></td></tr></table></figure>
-
-
-
-<p>Additional advanced browsing commands:     </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></td></tr></table></figure>
-
-
-<p>Vimium supports command repetition so, for example, hitting ‘5t’ will open 5 tabs in rapid succession. ESC (or <c-[>) will clear any partial commands in the queue and will also exit insert and find modes.</c-[></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?       show the help dialog for a list of all available keys&#10;h       scroll left&#10;j       scroll down&#10;k       scroll up&#10;l       scroll right&#10;gg      scroll to top of the page&#10;G       scroll to bottom of the page&#10;d       scroll down half a page&#10;u       scroll up half a page&#10;f       open a link in the current tab&#10;F       open a link in a new tab&#10;r       reload&#10;gs      view source&#10;i       enter insert mode -- all commands will be ignored until&#10;        you hit esc to exit&#10;yy      copy the current url to the clipboard&#10;yf      copy a link url to the clipboard&#10;gf      cycle forward to the next frame</span><br></pre></td></tr></table></figure></p>
+<p>Using find:<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?       show the help dialog for a list of all available keys&#10;h       scroll left&#10;j       scroll down&#10;k       scroll up&#10;l       scroll right&#10;gg      scroll to top of the page&#10;G       scroll to bottom of the page&#10;d       scroll down half a page&#10;u       scroll up half a page&#10;f       open a link in the current tab&#10;F       open a link in a new tab&#10;r       reload&#10;gs      view source&#10;i       enter insert mode -- all commands will be ignored until&#10;        you hit esc to exit&#10;yy      copy the current url to the clipboard&#10;yf      copy a link url to the clipboard&#10;gf      cycle forward to the next frame</span><br></pre></td></tr></table></figure></p>
+<p>Navigating your history:<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?       show the help dialog for a list of all available keys&#10;h       scroll left&#10;j       scroll down&#10;k       scroll up&#10;l       scroll right&#10;gg      scroll to top of the page&#10;G       scroll to bottom of the page&#10;d       scroll down half a page&#10;u       scroll up half a page&#10;f       open a link in the current tab&#10;F       open a link in a new tab&#10;r       reload&#10;gs      view source&#10;i       enter insert mode -- all commands will be ignored until&#10;        you hit esc to exit&#10;yy      copy the current url to the clipboard&#10;yf      copy a link url to the clipboard&#10;gf      cycle forward to the next frame</span><br></pre></td></tr></table></figure></p>
+<p>Manipulating tabs:<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?       show the help dialog for a list of all available keys&#10;h       scroll left&#10;j       scroll down&#10;k       scroll up&#10;l       scroll right&#10;gg      scroll to top of the page&#10;G       scroll to bottom of the page&#10;d       scroll down half a page&#10;u       scroll up half a page&#10;f       open a link in the current tab&#10;F       open a link in a new tab&#10;r       reload&#10;gs      view source&#10;i       enter insert mode -- all commands will be ignored until&#10;        you hit esc to exit&#10;yy      copy the current url to the clipboard&#10;yf      copy a link url to the clipboard&#10;gf      cycle forward to the next frame</span><br></pre></td></tr></table></figure></p>
+<p>Additional advanced browsing commands:</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?       show the help dialog for a list of all available keys&#10;h       scroll left&#10;j       scroll down&#10;k       scroll up&#10;l       scroll right&#10;gg      scroll to top of the page&#10;G       scroll to bottom of the page&#10;d       scroll down half a page&#10;u       scroll up half a page&#10;f       open a link in the current tab&#10;F       open a link in a new tab&#10;r       reload&#10;gs      view source&#10;i       enter insert mode -- all commands will be ignored until&#10;        you hit esc to exit&#10;yy      copy the current url to the clipboard&#10;yf      copy a link url to the clipboard&#10;gf      cycle forward to the next frame</span><br></pre></td></tr></table></figure></p>
+<p>Vimium supports command repetition so, for example, hitting '5t' will open 5 tabs in rapid succession. ESC (or &lt;c-[&gt;) will clear any partial commands in the queue and will also exit insert and find modes.</p>
 <p>自定义快捷键详情请自行阅读<a href="https://github.com/philc/vimium#readme" target="_blank" rel="external">readme</a></p>
 
 	
@@ -172,10 +182,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-11-18-mount-bind.html" >mount –bind</a>
-			<span class="date"> 11月 18 2011 </span>
+			<div class="date"> Nov 18 2011 </div>
+			<div class="article-title"><a href="/2011-11-18-mount-bind.html" >mount –bind</a></div>						
 		</h3>
 	
 
@@ -186,19 +196,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <p>我想应该大家都会用版本管理来处理配置文件吧。本人一般用git来管理自己的配置（emacs, vim, ssh, zshrc, svn, git, hg…），我将这写配置文件放到了一个git repo中。但是很多时候需要对这些文件进行修改，我想大家也不会把文件在repo中修改好之后然后手动copy到相应的目录中。这里一般有两种方法来避免手动拷贝，一种是通过Makefile的方式，另外一种就是建立文件的软链接。我原来一直采用的是后者，因为我不想没一次修改都make一下。对于建立软链接的方式，一般的软件都能很好的处理。   我的git repo放在windows分区（这样windows和linux都能使用），用virtualbox安装了archlinux，通过mount vboxsf的方式mount windows分区到linux下。这里mount vboxsf的时候需要注意权限问题，然后像.ssh/config文件会出现访问权限问题。我的 =/etc/fstab= 文件如下: </p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># /etc/fstab</span></div><div class="line">sharename mountpoint vboxsf \</div><div class="line">rw,<span class="variable">fmode=</span><span class="number">0644</span>,<span class="variable">dmode=</span><span class="number">0755</span>,<span class="variable">uid=</span><span class="number">1000</span>,<span class="variable">gid=</span><span class="number">1000</span>,exec <span class="number">0</span> <span class="number">0</span></div></pre></td></tr></table></figure>
-
-<p>对于symlink模式，绝大部分软件都能满足了，但是这里有个意外, <code>Oracle</code>的<code>gethostbyname</code>对于<code>/etc/hosts</code> symlinks是不认的，比如我创建一个软链接到<code>/etc/hosts</code>，启动oracle会出现</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">ORA-00600</span> <span class="tag">arguments</span>: <span class="attr_selector">[keltnfy-ldmInit]</span>, <span class="attr_selector">[46]</span>, <span class="attr_selector">[1]</span></div></pre></td></tr></table></figure>
-
+	  <p>我想应该大家都会用版本管理来处理配置文件吧。本人一般用git来管理自己的配置（emacs, vim, ssh, zshrc, svn, git, hg…），我将这写配置文件放到了一个git repo中。但是很多时候需要对这些文件进行修改，我想大家也不会把文件在repo中修改好之后然后手动copy到相应的目录中。这里一般有两种方法来避免手动拷贝，一种是通过Makefile的方式，另外一种就是建立文件的软链接。我原来一直采用的是后者，因为我不想没一次修改都make一下。对于建立软链接的方式，一般的软件都能很好的处理。   我的git repo放在windows分区（这样windows和linux都能使用），用virtualbox安装了archlinux，通过mount vboxsf的方式mount windows分区到linux下。这里mount vboxsf的时候需要注意权限问题，然后像.ssh/config文件会出现访问权限问题。我的 =/etc/fstab= 文件如下:</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /etc/fstab&#10;sharename mountpoint vboxsf \&#10;rw,fmode=0644,dmode=0755,uid=1000,gid=1000,exec 0 0</span><br></pre></td></tr></table></figure></p>
+<p>对于symlink模式，绝大部分软件都能满足了，但是这里有个意外, <code>Oracle</code>的<code>gethostbyname</code>对于<code>/etc/hosts</code> symlinks是不认的，比如我创建一个软链接到<code>/etc/hosts</code>，启动oracle会出现
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ORA-00600 arguments: [keltnfy-ldmInit], [46], [1]</span><br></pre></td></tr></table></figure></p>
 <p>既然软链接不行，这个时候就需要<code>mount –bind</code>的帮助了。   <code>mount –bind</code>是将一个目录中的内容挂载到另一个目录上，用法是:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mount --bind olddir newdir</div><div class="line">mount --bind olddir/file newdir/file</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount --bind olddir newdir</span><br><span class="line">mount --bind olddir/file newdir/file</span><br></pre></td></tr></table></figure></p>
 <p>如果想将<code>mount –bind</code>写入<code>/etc/fstab</code>，则用法是：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">olddir newdir none <span class="built_in">bind</span> <span class="number">0</span> <span class="number">0</span></div></pre></td></tr></table></figure>
-
-<p>这里又有一个问题了，我如果想把/etc/fstab也放到git repo中进行管理怎么办呢？由于不可能为/etc/fstab创建symlink，也不能为其使用mount –bind的方式到/etc/fstab。那就只能在git repo中想办法了。可是git是不会follow symlink的，如果我将/etc/fstab软链接到git repo中，git并不会将该文件加入到repo，加入的只是一个symlink而已。   解决办法就是反过来bind, 将/etc/fstab bind到git repo中的目录:) </p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">olddir newdir none <span class="built_in">bind</span> <span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p>这里又有一个问题了，我如果想把/etc/fstab也放到git repo中进行管理怎么办呢？由于不可能为/etc/fstab创建symlink，也不能为其使用mount –bind的方式到/etc/fstab。那就只能在git repo中想办法了。可是git是不会follow symlink的，如果我将/etc/fstab软链接到git repo中，git并不会将该文件加入到repo，加入的只是一个symlink而已。   解决办法就是反过来bind, 将/etc/fstab bind到git repo中的目录:)</p>
 
 	
 	</div>
@@ -211,10 +217,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-11-17-common-proxy-settings.html" >常用软件的代理设置</a>
-			<span class="date"> 11月 17 2011 </span>
+			<div class="date"> Nov 17 2011 </div>
+			<div class="article-title"><a href="/2011-11-17-common-proxy-settings.html" >常用软件的代理设置</a></div>						
 		</h3>
 	
 
@@ -225,16 +231,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># http_proxy</span></div><div class="line"><span class="keyword">export</span> http_proxy=host:port</div><div class="line"></div><div class="line"><span class="comment"># https_proxy</span></div><div class="line"><span class="keyword">export</span> https_proxy=host:port</div><div class="line"></div><div class="line"><span class="comment"># ftp_proxy</span></div><div class="line"><span class="keyword">export</span> ftp_proxy=host:port</div><div class="line"></div><div class="line"><span class="comment"># rsync proxy</span></div><div class="line"><span class="keyword">export</span> RSYNC_PROXY=host:port</div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ssh over http_proxy depends on your tools used.</span></div><div class="line"><span class="comment"># Modify .ssh/config file for host configuration:</span></div><div class="line"><span class="comment"># Following are connect.c and corkscrew example.</span></div><div class="line"><span class="comment"># For connect.c, -h option means use http_proxy</span></div><div class="line"><span class="comment"># environment. </span></div><div class="line">Host *</div><div class="line">  ProxyCommand corkscrew http-proxy.example.com <span class="number">8080</span> <span class="variable">%h</span> <span class="variable">%p</span></div><div class="line">  ProxyCommand <span class="keyword">connect</span> -h <span class="variable">%h</span> <span class="variable">%p</span></div><div class="line">  ProxyCommand <span class="keyword">connect</span> -H proxy-host:proxy-port <span class="variable">%h</span> <span class="variable">%p</span></div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># git over http_proxy</span></div><div class="line"><span class="keyword">export</span> GIT_PROXY_COMMAND=<span class="string">"connect -h <span class="variable">$@</span>"</span></div></pre></td></tr></table></figure>
-
+	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># http_proxy</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=host:port</span><br><span class="line"></span><br><span class="line"><span class="comment"># https_proxy</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=host:port</span><br><span class="line"></span><br><span class="line"><span class="comment"># ftp_proxy</span></span><br><span class="line"><span class="built_in">export</span> ftp_proxy=host:port</span><br><span class="line"></span><br><span class="line"><span class="comment"># rsync proxy</span></span><br><span class="line"><span class="built_in">export</span> RSYNC_PROXY=host:port</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># ssh over http_proxy depends on your tools used.&#10;# Modify .ssh/config file for host configuration:&#10;# Following are connect.c and corkscrew example.&#10;# For connect.c, -h option means use http_proxy&#10;# environment. &#10;Host *&#10;  ProxyCommand corkscrew http-proxy.example.com 8080 %h %p&#10;  ProxyCommand connect -h %h %p&#10;  ProxyCommand connect -H proxy-host:proxy-port %h %p</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># git over http_proxy&#10;export GIT_PROXY_COMMAND=&#34;connect -h $@&#34;</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -247,10 +246,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-11-16-merge-git-repositories-to-subdirectory.html" >git合并多个repositories到子目录</a>
-			<span class="date"> 11月 16 2011 </span>
+			<div class="date"> Nov 16 2011 </div>
+			<div class="article-title"><a href="/2011-11-16-merge-git-repositories-to-subdirectory.html" >git合并多个repositories到子目录</a></div>						
 		</h3>
 	
 
@@ -261,17 +260,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="col-md-12">
 	  
 	
-	  <p>在每个repo都很小的情况下，维护多个repo是很麻烦的事情。如何在保留原来版本信息的情况下将repo合并到另外一个repo的子目录下呢？有很多的方法，比如在不删除原来的repo，使用submodule。或者使用subtree的方式。但是我不想用submodule保留原来的repo，而且感觉subtree也是一个比较麻烦的东东。这里要介绍git的read-tree（可以参考<a href="http://blog.ossxp.com/2010/10/2041/" target="_blank" rel="external">这里</a>)。   网上讲了很多，我总结一下并写了一个脚本repomerge.sh。先把脚本贴出来 </p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line"></div><div class="line">git remote add <span class="operator">-f</span> <span class="variable">$1</span> <span class="variable">$2</span></div><div class="line">git merge <span class="operator">-s</span> ours --no-commit <span class="variable">$1</span>/master</div><div class="line">git <span class="built_in">read</span>-tree --prefix=<span class="variable">$1</span>/ -u <span class="variable">$1</span>/master</div><div class="line">git commit -m <span class="string">"merging <span class="variable">$1</span> into subdirectory"</span></div></pre></td></tr></table></figure>
-
-
+	  <p>在每个repo都很小的情况下，维护多个repo是很麻烦的事情。如何在保留原来版本信息的情况下将repo合并到另外一个repo的子目录下呢？有很多的方法，比如在不删除原来的repo，使用submodule。或者使用subtree的方式。但是我不想用submodule保留原来的repo，而且感觉subtree也是一个比较麻烦的东东。这里要介绍git的read-tree（可以参考<a href="http://blog.ossxp.com/2010/10/2041/" target="_blank" rel="external">这里</a>)。   网上讲了很多，我总结一下并写了一个脚本repomerge.sh。先把脚本贴出来</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line">git remote add <span class="operator">-f</span> <span class="variable">$1</span> <span class="variable">$2</span></span><br><span class="line">git merge <span class="operator">-s</span> ours --no-commit <span class="variable">$1</span>/master</span><br><span class="line">git <span class="built_in">read</span>-tree --prefix=<span class="variable">$1</span>/ -u <span class="variable">$1</span>/master</span><br><span class="line">git commit -m <span class="string">"merging <span class="variable">$1</span> into subdirectory"</span></span><br></pre></td></tr></table></figure></p>
 <p>使用的方法是$1为子目录名字，$2为repo的路径。</p>
 <p>这里有一个问题需要注意，合并到的repo（即目标repo）不能为空（至少要有一个commit)。</p>
-<p>比如要合并一个repo A 到A目录，repo B到B目录 </p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> dest-repo-dir</div><div class="line">git init .</div><div class="line"></div><div class="line"><span class="comment"># add one file and commit</span></div><div class="line">touch just-test-file</div><div class="line">git add just-test-file</div><div class="line">git commit -am <span class="string">"init"</span></div><div class="line"></div><div class="line">/path/to/repomerge.sh A /path/to/repo/A</div><div class="line">/path/to/repomerge.sh B /path/to/repo/B</div></pre></td></tr></table></figure>
-
-
-<p>这样repo A和repo B就分别被合并到了A、B目录了。 </p>
+<p>比如要合并一个repo A 到A目录，repo B到B目录</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> dest-repo-dir</span><br><span class="line">git init .</span><br><span class="line"></span><br><span class="line"><span class="comment"># add one file and commit</span></span><br><span class="line">touch just-test-file</span><br><span class="line">git add just-test-file</span><br><span class="line">git commit -am <span class="string">"init"</span></span><br><span class="line"></span><br><span class="line">/path/to/repomerge.sh A /path/to/repo/A</span><br><span class="line">/path/to/repomerge.sh B /path/to/repo/B</span><br></pre></td></tr></table></figure></p>
+<p>这样repo A和repo B就分别被合并到了A、B目录了。</p>
 
 	
 	</div>
@@ -284,10 +279,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-11-15-install-oracle-10gr2-on-archlinux.html" >Archlinux下安装oracle 10gr2 Enterprise</a>
-			<span class="date"> 11月 15 2011 </span>
+			<div class="date"> Nov 15 2011 </div>
+			<div class="article-title"><a href="/2011-11-15-install-oracle-10gr2-on-archlinux.html" >Archlinux下安装oracle 10gr2 Enterprise</a></div>						
 		</h3>
 	
 
@@ -301,9 +296,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  <p>由于Oracle XE精简了很多，跟教科书上很多不一样，所以还是装一个企业版吧。</p>
 <p><a href="http://meansonw-work.blogspot.com/2008/10/archlinux-oracle-10g.html" target="_blank" rel="external">参考链接</a></p>
 <p>安装跟archlinux的wiki上差不多，注意两个链接必须创建：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/lib/libgcc_s.so.<span class="number">1</span> /lib/libgcc_s.so.<span class="number">1</span></div><div class="line"><span class="built_in">sudo</span> ln <span class="operator">-s</span> /bin/tr /usr/bin/tr</div></pre></td></tr></table></figure>
-
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="operator">-s</span> /usr/lib/libgcc_s.so.<span class="number">1</span> /lib/libgcc_s.so.<span class="number">1</span></span><br><span class="line">sudo ln <span class="operator">-s</span> /bin/tr /usr/bin/tr</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -316,10 +309,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-11-15-convert-hg-to-git.html" >将hg转换为git</a>
-			<span class="date"> 11月 15 2011 </span>
+			<div class="date"> Nov 15 2011 </div>
+			<div class="article-title"><a href="/2011-11-15-convert-hg-to-git.html" >将hg转换为git</a></div>						
 		</h3>
 	
 
@@ -331,11 +324,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>首先安装<a href="http://repo.or.cz/w/fast-export.git" target="_blank" rel="external">fast-export</a></p>
-<p>基本命令: </p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> somedir</div><div class="line">git init .</div><div class="line">/path/to/fast-export -r /path/to/hg/repo</div><div class="line">git reset HEAD</div><div class="line">git checkout .</div><div class="line">git remote add origin user@server/repo.git</div><div class="line">git push origin master</div></pre></td></tr></table></figure>
-
-
-<p>That’s all! </p>
+<p>基本命令:</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> somedir</span><br><span class="line">git init .</span><br><span class="line">/path/to/fast-export -r /path/to/hg/repo</span><br><span class="line">git reset HEAD</span><br><span class="line">git checkout .</span><br><span class="line">git remote add origin user@server/repo.git</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<p>That's all!</p>
 
 	
 	</div>
@@ -348,40 +339,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-11-13-emacs_sys_process_environment.html" >Emacs进程/系统环境变量</a>
-			<span class="date"> 11月 13 2011 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Emacs中获取进程（系统）环境变量并进行修改，比如<code>http_proxy</code>:</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="list">(<span class="title">getenv</span> <span class="string">"http_proxy"</span>)</span></div><div class="line"><span class="list">(<span class="title">setenv</span> <span class="string">"http_proxy"</span> <span class="string">"http://proxy-server:port"</span>)</span></div></pre></td></tr></table></figure>
-
-
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-11-13-emacs_sys_process_environment.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2011-11-13-pymacs.html" >Pymacs</a>
-			<span class="date"> 11月 13 2011 </span>
+			<div class="date"> Nov 13 2011 </div>
+			<div class="article-title"><a href="/2011-11-13-pymacs.html" >Pymacs</a></div>						
 		</h3>
 	
 
@@ -398,31 +359,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>Pymacs is a powerful tool which, once started from Emacs, allows both-way communication between Emacs Lisp and Python. Pymacs aims Python as an extension language for Emacs rather than the other way around, and this asymmetry is reflected in some design choices. Within Emacs Lisp code, one may load and use Python modules. Python functions may themselves use Emacs services, and handle Emacs Lisp objects kept in Emacs Lisp space.</p>
 </blockquote>
 <p>archlinux下安装pymacs：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pacman -S pymacs</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S pymacs</span><br></pre></td></tr></table></figure></p>
 <p>配置pymacs, 在.emacs中添加：</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-apply</span> <span class="string">"pymacs"</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-call</span> <span class="string">"pymacs"</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-eval</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-exec</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></div><div class="line"><span class="list">(<span class="title">autoload</span> <span class="quoted">'pymacs-load</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></div><div class="line"><span class="list">(<span class="title">eval-after-load</span> <span class="string">"pymacs"</span></span></div><div class="line">  <span class="quoted">'(add-to-list 'pymacs-load-path <span class="string">"~/.emacs.d/my-lisp"</span>)</span>)</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-apply</span> <span class="string">"pymacs"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-call</span> <span class="string">"pymacs"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-eval</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-exec</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-load</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">eval-after-load</span> <span class="string">"pymacs"</span></span><br><span class="line">  <span class="quoted">'(add-to-list 'pymacs-load-path <span class="string">"~/.emacs.d/my-lisp"</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
 <p>现在我要将elisp的函数</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">(defun proxyfunc(server port)</div><div class="line">  (setenv "http_proxy" (concat "http://"server":"port))</div><div class="line">  (setenv "https_proxy" (concat "https://"server":"port))</div><div class="line">  (setenv "ftp_proxy" (concat "http://"server":"port))</div><div class="line">)</div><div class="line"></div><div class="line">(defun proxyoff()</div><div class="line">  (interactive)</div><div class="line">  (setenv "http_proxy" "")</div><div class="line">  (setenv "https_proxy" "")</div><div class="line">  (setenv "ftp_proxy" "")</div><div class="line">)</div><div class="line"></div><div class="line">(defun proxyjpn()</div><div class="line">  (interactive)</div><div class="line">  (proxyfunc "16.146.32.100" "8080")</div><div class="line">)</div><div class="line"></div><div class="line"></div><div class="line">转换为Python, 如setproxy.py(将文件放到PYTHONPATH中）</div></pre></td></tr></table></figure>
-
-<p>python</p>
-<h1 id="!/usr/bin/env_python">!/usr/bin/env python</h1>
-<h1 id="-_coding:_utf-8_-">-<em>- coding: utf-8 -</em>-</h1>
-<p>import os</p>
-<p>def setproxy(server, port):<br>    os.environ[‘http_proxy’] = ‘<a href="http://&#39;+server+&#39;:&#39;+port" target="_blank" rel="external">http://&#39;+server+&#39;:&#39;+port</a><br>    os.environ[‘https_proxy’] = ‘<a href="https://&#39;+server+&#39;:&#39;+port" target="_blank" rel="external">https://&#39;+server+&#39;:&#39;+port</a><br>    os.environ[‘ftp_proxy’] = ‘<a href="http://&#39;+server+&#39;:&#39;+port" target="_blank" rel="external">http://&#39;+server+&#39;:&#39;+port</a></p>
-<p>def setproxyoff():<br>    os.environ[‘http_proxy’] = “”<br>    os.environ[‘https_proxy’] = “”<br>    os.environ[‘ftp_proxy’] = “”</p>
-<p>def proxyjpn():<br>    setproxy(‘16.146.32.100’, ‘8080’)</p>
-<p>def proxysgn():<br>    setproxy(‘16.158.235.10’, ‘8080’)</p>
-<h1 id="need_to_set_the_property_interaction">need to set the property interaction</h1>
-<p>proxyjpn.interaction = “”<br>setproxyoff.interaction = “”<br>proxysgn.interaction = “”</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="vim">通过pymacs-load加载<span class="keyword">python</span>模块</span></div></pre></td></tr></table></figure>
-
-<p>M-x pymacs-load RET MODULE RET PREFIX RET</p>
-<h1 id="e-g-_M-x_pymacs-load_setproxy_RET_setproxy-_RET">e.g. M-x pymacs-load setproxy RET setproxy- RET</h1>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">调用<span class="keyword">python</span>函数</div></pre></td></tr></table></figure>
-
-<p>M-x setproxy-proxyjpn<br>```</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">(defun proxyfunc(server port)</span><br><span class="line">  (setenv "http_proxy" (concat "http://"server":"port))</span><br><span class="line">  (setenv "https_proxy" (concat "https://"server":"port))</span><br><span class="line">  (setenv "ftp_proxy" (concat "http://"server":"port))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">(defun proxyoff()</span><br><span class="line">  (interactive)</span><br><span class="line">  (setenv "http_proxy" "")</span><br><span class="line">  (setenv "https_proxy" "")</span><br><span class="line">  (setenv "ftp_proxy" "")</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">(defun proxyjpn()</span><br><span class="line">  (interactive)</span><br><span class="line">  (proxyfunc "16.146.32.100" "8080")</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">转换为Python, 如setproxy.py(将文件放到PYTHONPATH中）</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">    </span><br><span class="line">import os</span><br><span class="line">    </span><br><span class="line">def setproxy(server, port):</span><br><span class="line">    os.environ['http_proxy'] = 'http://'+server+':'+port</span><br><span class="line">    os.environ['https_proxy'] = 'https://'+server+':'+port</span><br><span class="line">	os.environ['ftp_proxy'] = 'http://'+server+':'+port</span><br><span class="line">    </span><br><span class="line">def setproxyoff():</span><br><span class="line">    os.environ['http_proxy'] = ""</span><br><span class="line">	os.environ['https_proxy'] = ""</span><br><span class="line">	os.environ['ftp_proxy'] = ""</span><br><span class="line">    </span><br><span class="line">def proxyjpn():</span><br><span class="line">    setproxy('16.146.32.100', '8080')</span><br><span class="line">    </span><br><span class="line">def proxysgn():</span><br><span class="line">    setproxy('16.158.235.10', '8080')</span><br><span class="line">    </span><br><span class="line"># need to set the property interaction</span><br><span class="line">proxyjpn.interaction = ""</span><br><span class="line">setproxyoff.interaction = ""</span><br><span class="line">proxysgn.interaction = ""</span><br></pre></td></tr></table></figure></p>
+<p>通过pymacs-load加载python模块</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x pymacs-load RET MODULE RET PREFIX RET&#10;# e.g. M-x pymacs-load setproxy RET setproxy- RET</span><br></pre></td></tr></table></figure></p>
+<p>调用python函数</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x setproxy-proxyjpn</span><br></pre></td></tr></table></figure></p>
 <p>对于pymacs的详细教程，中文版可以参考<a href="http://www.cnblogs.com/rockcode/archive/2011/08/20/2147404.html" target="_blank" rel="external">这里</a></p>
 
 	
@@ -436,10 +381,38 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	
-	<!-- display as entry -->
+	<!-- display as entry -->	
 		<h3 class="title">
-			<a href="/2011-11-12-stty_erase_key.html" >Linux默认Erase Key(Backspace Key)</a>
-			<span class="date"> 11月 12 2011 </span>
+			<div class="date"> Nov 13 2011 </div>
+			<div class="article-title"><a href="/2011-11-13-emacs_sys_process_environment.html" >Emacs进程/系统环境变量</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Emacs中获取进程（系统）环境变量并进行修改，比如<code>http_proxy</code>:</p>
+<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">getenv</span> <span class="string">"http_proxy"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setenv</span> <span class="string">"http_proxy"</span> <span class="string">"http://proxy-server:port"</span>)</span></span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-11-13-emacs_sys_process_environment.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Nov 12 2011 </div>
+			<div class="article-title"><a href="/2011-11-12-stty_erase_key.html" >Linux默认Erase Key(Backspace Key)</a></div>						
 		</h3>
 	
 
@@ -452,8 +425,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>由于经常登陆solaris和hp-ux，所以将默认的backspace key设置成了^H（Terminal中设置），可是当使用在本地使用sqlplus的时候，会出现backspace无法使用的情况（Linux默认stty erase可以为^?），解决办法：</p>
 <p>在<code>~/.profile</code>文件中加入：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stty <span class="keyword">erase</span> ^H</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty erase ^H</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -461,47 +433,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   
 </div>
 	<a type="button" href="/2011-11-12-stty_erase_key.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-		<h3 class="title">
-			<a href="/2011-11-07-rpm_command.html" >rpm常用命令</a>
-			<span class="date"> 11月 7 2011 </span>
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <ol>
-<li>安装rpm文件</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -ivh *.rpm</div></pre></td></tr></table></figure>
-
-<ol>
-<li>查找已经安装的包</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -ivh *.rpm</div></pre></td></tr></table></figure>
-
-<ol>
-<li>删除已经安装的包</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -ivh *.rpm</div></pre></td></tr></table></figure>
-
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-11-07-rpm_command.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -548,81 +479,48 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			
 	<div class="widget">
-		<h4>分类</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/categories/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/categories/Tools/">Tools<span>1</span></a></li>
-		
-			<li><a href="/categories/emacs/">emacs<span>61</span></a></li>
-		
-			<li><a href="/categories/gamedev/">gamedev<span>5</span></a></li>
-		
-			<li><a href="/categories/ios/">ios<span>3</span></a></li>
-		
-			<li><a href="/categories/opengl/">opengl<span>1</span></a></li>
-		
-			<li><a href="/categories/oracle/">oracle<span>1</span></a></li>
-		
-			<li><a href="/categories/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/categories/programming/">programming<span>139</span></a></li>
-		
-			<li><a href="/categories/tools/">tools<span>142</span></a></li>
-		
-			<li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
-		
-		</ul>
-	</div>
-
-		
-			
-	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+			<li><a href="/tags/python/">python<span>30</span></a></li>
 		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/macos/">macos<span>9</span></a></li>
-		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
 		
 			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
 		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
 		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
 		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
 		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
+			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
 		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
+			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
 		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
 		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
 		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
+		
+			<li><a href="/tags/database/">database<span>2</span></a></li>
+		
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
 		
 			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
 		
-			<li><a href="/tags/english/">english<span>1</span></a></li>
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
 		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
 		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
 		
-			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
-		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -638,23 +536,23 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent</a>
+        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html" ><i class="fa fa-file-o"></i>用travis-ci自动生成hexo</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
       <li>
-        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧</a>
+        <a href="/2013-06-13-cheat.html" ><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
@@ -689,7 +587,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

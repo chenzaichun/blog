@@ -11,7 +11,6 @@ tags:
   - ubuntu
 title: "ubuntu 10.04 lucid安装distcc"
 type: post
-
 ---
 
 在ubuntu下安装distcc（后面两个可选）：

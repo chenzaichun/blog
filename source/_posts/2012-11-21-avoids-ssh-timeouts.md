@@ -1,4 +1,3 @@
----
 layout: post
 title: "Avoids ssh timeouts"	
 date: 2012-11-21 16:17

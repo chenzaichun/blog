@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -126,32 +118,24 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="mypage">		
 	    <p>Since someone is asking me to provide an English version about git proxy configuration in my former blog. Here it is. 1). Basically, I know two ways to use git behind a proxy.</p>
 <ol>
-<li>Set the http_proxy environment if git repository supports http connections. </li>
+<li>Set the http_proxy environment if git repository supports http connections.</li>
 </ol>
-<p>find a proxy command to bypass the connection: <a href="https://bitbucket.org/chenzaichun/org2blog/src/e82a0244f078/media/connect.c" target="_blank" rel="external">connect.c</a> </p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gcc -o connect connect.c</div><div class="line">mv connect ~/bin</div></pre></td></tr></table></figure>
-
-
-<ol>
-<li>Set up a wrapper </li>
+<p>find a proxy command to bypass the connection: &lt;a href=&quot;https://bitbucket.org/chenzaichun/org2blog/src/e82a0244f078/media/connect.c&quot;&gt;connect.c&lt;/a&gt;</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -o connect connect.c</span><br><span class="line">mv connect ~/bin</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>Set up a wrapper</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"/home/gigi/bin/connect -H proxy.bupt.edu.cn:8080 <span class="variable">$@</span>"</span> &gt;&gt; ~/bin/proxy</div><div class="line">chmod +x ~/bin/proxy</div></pre></td></tr></table></figure>
-
-
-<p>Here I’m using a http proxy offered by my school, which uses port 8080     The connect command also support socket proxy. Use -S host:port to indicate that. </p>
-<ol>
-<li>Update bashrc </li>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"/home/gigi/bin/connect -H proxy.bupt.edu.cn:8080 <span class="variable">$@</span>"</span> &gt;&gt; ~/bin/proxy</span><br><span class="line">chmod +x ~/bin/proxy</span><br></pre></td></tr></table></figure></p>
+<p>Here I'm using a http proxy offered by my school, which uses port 8080     The connect command also support socket proxy. Use -S host:port to indicate that.</p>
+<ol start="3">
+<li>Update bashrc</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"export CONNECT_USER=bergwolf"</span> &gt;&gt; .bashrc</div><div class="line"><span class="built_in">echo</span> <span class="string">"export GIT_PROXY_COMMAND=proxexport GIT_PROXY_COMMAND=proxy"</span> &gt;&gt; .bashrc</div></pre></td></tr></table></figure>
-
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"export CONNECT_USER=bergwolf"</span> &gt;&gt; .bashrc</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"export GIT_PROXY_COMMAND=proxexport GIT_PROXY_COMMAND=proxy"</span> &gt;&gt; .bashrc</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>The connect command reads proxy username and password from <code>CONNECT_USER</code> and <code>CONNECT_PASSWORD</code> evironment. The default username is current login user if no CONNECT_USER is set. Password will be requested interactively if CONNECT_PASSWORD is empty.   GIT_PROXY_COMMAND indicates that git should use the command “proxy”(the wrapper we setup at step 2) as its proxy_command. This can also be set in .git/config. </p>
+<p>The connect command reads proxy username and password from <code>CONNECT_USER</code> and <code>CONNECT_PASSWORD</code> evironment. The default username is current login user if no CONNECT_USER is set. Password will be requested interactively if CONNECT_PASSWORD is empty.   GIT_PROXY_COMMAND indicates that git should use the command &quot;proxy&quot;(the wrapper we setup at step 2) as its proxy_command. This can also be set in .git/config.</p>
 </blockquote>
-<p>Now, everything we need is done. Have a try: </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[gigi-<span class="constant">Ubuntu</span><span class="symbol">:bin</span>]<span class="variable">$git</span> clone <span class="symbol">git:</span>/<span class="regexp">/git.kernel.org/pub</span><span class="regexp">/scm/fs</span><span class="regexp">/ext2/e</span>2fsprogs.git</div><div class="line"><span class="constant">Initialized</span> empty <span class="constant">Git</span> repository <span class="keyword">in</span> /home/gigi/bin/e2fsprogs/.git/</div><div class="line"><span class="constant">Enter</span> proxy authentication password <span class="keyword">for</span> bergwolf<span class="variable">@proxy</span>.bupt.edu.<span class="symbol">cn:</span></div><div class="line"><span class="symbol">remote:</span> <span class="constant">Counting</span> <span class="symbol">objects:</span> <span class="number">24006</span>, done.</div><div class="line"><span class="symbol">remote:</span> <span class="constant">Compressing</span> <span class="symbol">objects:</span> <span class="number">100</span>% (<span class="number">4701</span>/<span class="number">4701</span>), done.</div><div class="line">ceiving <span class="symbol">objects:</span> <span class="number">1</span>% (<span class="number">241</span>/<span class="number">24006</span>), <span class="number">43.99</span> <span class="constant">KiB</span> | <span class="number">56</span> <span class="constant">KiB</span>/s</div></pre></td></tr></table></figure>
-
-
+<p>Now, everything we need is done. Have a try:</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[gigi-Ubuntu:bin]$git clone git://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git&#10;Initialized empty Git repository in /home/gigi/bin/e2fsprogs/.git/&#10;Enter proxy authentication password for bergwolf@proxy.bupt.edu.cn:&#10;remote: Counting objects: 24006, done.&#10;remote: Compressing objects: 100% (4701/4701), done.&#10;ceiving objects: 1% (241/24006), 43.99 KiB | 56 KiB/s</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -182,7 +166,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-10-21-usegitbehindproxy.html" data-title="git代理设置" data-url="http://yesokay.herokuapp.com/2011-10-21-usegitbehindproxy.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2011-10-21-usegitbehindproxy.html" data-title="git代理设置" data-url="http://yesokay.herokuapp.com/2011-10-21-usegitbehindproxy.html"></div>  
   
 </section>
 
@@ -196,7 +180,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	10月 21 2011 
+	Oct 21 2011 
 	</div>
 	
 
@@ -207,7 +191,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
+    <li><a href="/categories/无所事事/">无所事事<span>22</span></a></li>
   </li>
 
     </ul>
@@ -244,7 +228,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -124,8 +116,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">		
-	    <figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="list">(<span class="title">setq</span> <span class="variable">*true-mac-cut-buffer*</span> <span class="string">""</span>)</span></div><div class="line"><span class="list">(<span class="title">setq</span> <span class="variable">*true-mac-cut-buffer2*</span> <span class="literal">t</span>)</span></div><div class="line"></div><div class="line"><span class="list">(<span class="title">setq</span> interprogram-cut-function</span></div><div class="line">      <span class="quoted">'(lambda (str push)</span></div><div class="line">         (setq *true-mac-cut-buffer* str)</div><div class="line">         (setq *true-mac-cut-buffer<span class="number">2</span>* push)))</div><div class="line"></div><div class="line"><span class="list">(<span class="title">setq</span> interprogram-paste-function</span></div><div class="line">      <span class="quoted">'(lambda () nil)</span>)</div><div class="line"></div><div class="line"><span class="list">(<span class="title">defun</span> true-mac-cut-function <span class="list">()</span> <span class="list">(<span class="title">interactive</span>)</span></span></div><div class="line">  <span class="list">(<span class="title">if</span> mark-active</span></div><div class="line">      <span class="list">(<span class="title">progn</span> </span></div><div class="line">        <span class="list">(<span class="title">true-mac-copy-function</span>)</span></div><div class="line">        <span class="list">(<span class="title">kill-region</span> <span class="list">(<span class="title">point</span>)</span> <span class="list">(<span class="title">mark</span>)</span>)</span>)</div><div class="line">    <span class="list">(<span class="title">beep</span>)</span>))</div><div class="line">        </div><div class="line"><span class="list">(<span class="title">defun</span> true-mac-copy-function <span class="list">()</span> <span class="list">(<span class="title">interactive</span>)</span></span></div><div class="line">  <span class="list">(<span class="title">if</span> mark-active</span></div><div class="line">      <span class="list">(<span class="title">mac-cut-function</span> </span></div><div class="line">       <span class="variable">*true-mac-cut-buffer*</span></div><div class="line">       <span class="variable">*true-mac-cut-buffer2*</span>)</div><div class="line">    <span class="list">(<span class="title">beep</span>)</span>))</div><div class="line"></div><div class="line"><span class="list">(<span class="title">defun</span> true-mac-paste-function <span class="list">()</span> <span class="list">(<span class="title">interactive</span>)</span></span></div><div class="line">  <span class="list">(<span class="title">if</span> mark-active</span></div><div class="line">      <span class="list">(<span class="title">kill-region</span> <span class="list">(<span class="title">point</span>)</span> <span class="list">(<span class="title">mark</span>)</span>)</span>)</div><div class="line">  <span class="list">(<span class="title">insert</span> <span class="list">(<span class="title">mac-paste-function</span>)</span>)</span>)</div><div class="line"></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-x] <span class="quoted">'true-mac-cut-function</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> <span class="string">"\S-c"</span> <span class="quoted">'true-mac-copy-function</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-v] <span class="quoted">'true-mac-paste-function</span>)</span></div><div class="line"></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-a] <span class="quoted">'mark-whole-buffer</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-s] <span class="quoted">'save-buffer</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-S] <span class="quoted">'write-file</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-p] <span class="quoted">'ps-print-buffer</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-o] <span class="quoted">'find-file</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-q] <span class="quoted">'save-buffers-kill-emacs</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-w] <span class="quoted">'kill-buffer-and-window</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-z] <span class="quoted">'undo</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-f] <span class="quoted">'isearch-forward</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-g] <span class="quoted">'query-replace</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-l] <span class="quoted">'goto-line</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-m] <span class="quoted">'iconify-frame</span>)</span></div><div class="line"><span class="list">(<span class="title">global-set-key</span> [?\A-n] <span class="quoted">'new-frame</span>)</span></div></pre></td></tr></table></figure>
-
+	    <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> <span class="variable">*true-mac-cut-buffer*</span> <span class="string">""</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> <span class="variable">*true-mac-cut-buffer2*</span> <span class="literal">t</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> interprogram-cut-function</span><br><span class="line">      <span class="quoted">'(lambda (str push)</span><br><span class="line">         (setq *true-mac-cut-buffer* str)</span><br><span class="line">         (setq *true-mac-cut-buffer2* push))</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> interprogram-paste-function</span><br><span class="line">      <span class="quoted">'(lambda () nil)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-cut-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">progn</span> </span><br><span class="line">        <span class="list">(<span class="keyword">true-mac-copy-function</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">kill-region</span> <span class="list">(<span class="keyword">point</span>)</span> <span class="list">(<span class="keyword">mark</span>)</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">beep</span>)</span>)</span>)</span></span><br><span class="line">        </span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-copy-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">mac-cut-function</span> </span><br><span class="line">       <span class="variable">*true-mac-cut-buffer*</span></span><br><span class="line">       <span class="variable">*true-mac-cut-buffer2*</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">beep</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-paste-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">kill-region</span> <span class="list">(<span class="keyword">point</span>)</span> <span class="list">(<span class="keyword">mark</span>)</span>)</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> <span class="list">(<span class="keyword">mac-paste-function</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-x] <span class="quoted">'true-mac-cut-function</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> <span class="string">"\S-c"</span> <span class="quoted">'true-mac-copy-function</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-v] <span class="quoted">'true-mac-paste-function</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-a] <span class="quoted">'mark-whole-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-s] <span class="quoted">'save-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-S] <span class="quoted">'write-file</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-p] <span class="quoted">'ps-print-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-o] <span class="quoted">'find-file</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-q] <span class="quoted">'save-buffers-kill-emacs</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-w] <span class="quoted">'kill-buffer-and-window</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-z] <span class="quoted">'undo</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-f] <span class="quoted">'isearch-forward</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-g] <span class="quoted">'query-replace</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-l] <span class="quoted">'goto-line</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-m] <span class="quoted">'iconify-frame</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-n] <span class="quoted">'new-frame</span>)</span></span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -156,7 +147,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-11-27-emacs-mac-like-key-binding.html" data-title="让emacs具有mac下的按键绑定" data-url="http://yesokay.herokuapp.com/2012-11-27-emacs-mac-like-key-binding.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2012-11-27-emacs-mac-like-key-binding.html" data-title="让emacs具有mac下的按键绑定" data-url="http://yesokay.herokuapp.com/2012-11-27-emacs-mac-like-key-binding.html"></div>  
   
 </section>
 
@@ -170,7 +161,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	11月 27 2012 
+	Nov 27 2012 
 	</div>
 	
 
@@ -181,7 +172,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>81</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
 
     </ul>
@@ -194,7 +185,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/linux/">linux<span>13</span></a></li> <li><a href="/tags/emacs/">emacs<span>71</span></a></li>
+  <li><a href="/tags/emacs/">emacs<span>71</span></a></li> <li><a href="/tags/linux/">linux<span>13</span></a></li>
     </ul>
 	</div>
 		
@@ -218,7 +209,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

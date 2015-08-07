@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -124,24 +116,22 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">		
-	    <p>SUSE Enterprise Linux安装盘中是不包含non-public的安装文件的，<br>如果是要安装默认的JDK，只能选择ibm的版本</p>
+	    <p>SUSE Enterprise Linux安装盘中是不包含non-public的安装文件的，
+如果是要安装默认的JDK，只能选择ibm的版本</p>
 <p>以下是安装1.5版本的jdk的方法</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 64bits</span></div><div class="line">yast2 -i java-<span class="number">1</span>_5_0-ibm-devel </div><div class="line"></div><div class="line"><span class="comment"># 32bits</span></div><div class="line">yast2 -i java-<span class="number">1</span>_5_0-ibm-devel-<span class="number">32</span>bit</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 64bits</span></span><br><span class="line">yast2 -i java-<span class="number">1</span>_5_0-ibm-devel </span><br><span class="line"></span><br><span class="line"><span class="comment"># 32bits</span></span><br><span class="line">yast2 -i java-<span class="number">1</span>_5_0-ibm-devel-<span class="number">32</span>bit</span><br></pre></td></tr></table></figure></p>
 <p>如果要安装sun版本的java，则需要通过手动安装的方式：</p>
-<a id="more"></a>
+<p>&lt;!--more--&gt;</p>
 <ol>
 <li>下载安装包,<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">Java download</a></li>
 </ol>
-<p>如下载1.6版本的64位版本: <a href="http://download.oracle.com/otn-pub/java/jdk/6u37-b06/jdk-6u37-linux-x64-rpm.bin" target="_blank" rel="external">http://download.oracle.com/otn-pub/java/jdk/6u37-b06/jdk-6u37-linux-x64-rpm.bin</a></p>
-<ol>
+<p>如下载1.6版本的64位版本: http://download.oracle.com/otn-pub/java/jdk/6u37-b06/jdk-6u37-linux-x64-rpm.bin</p>
+<ol start="2">
 <li>安装</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># This creates a file named jdk-6unn-linux-version.rpm, </span></div><div class="line"><span class="comment"># and a directory named /usr/java/jdk.1.6.0_nn with </span></div><div class="line"><span class="comment"># the Sun JDK software in it.</span></div><div class="line">sh ./jdk-<span class="number">6</span>u37-linux-x64-rpm.bin</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This creates a file named jdk-6unn-linux-version.rpm, </span></span><br><span class="line"><span class="comment"># and a directory named /usr/java/jdk.1.6.0_nn with </span></span><br><span class="line"><span class="comment"># the Sun JDK software in it.</span></span><br><span class="line">sh ./jdk-<span class="number">6</span>u37-linux-x64-rpm.bin</span><br></pre></td></tr></table></figure></p>
 <p>安装日志</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># sh jdk-6u37-linux-x64-rpm.bin </span></div><div class="line">Unpacking...</div><div class="line">Checksumming...</div><div class="line">Extracting...</div><div class="line">UnZipSFX <span class="number">5.50</span> <span class="keyword">of</span> <span class="number">17</span> February <span class="number">2002</span>, <span class="keyword">by</span> Info-ZIP (Zip-Bugs<span class="property">@lists</span>.wku.edu).</div><div class="line">  <span class="attribute">inflating</span>: jdk-<span class="number">6</span>u37-linux-amd64.rpm  </div><div class="line">  <span class="attribute">inflating</span>: sun-javadb-common-<span class="number">10.6</span><span class="number">.2</span>-<span class="number">1.1</span>.i386.rpm  </div><div class="line">  <span class="attribute">inflating</span>: sun-javadb-core-<span class="number">10.6</span><span class="number">.2</span>-<span class="number">1.1</span>.i386.rpm  </div><div class="line">  <span class="attribute">inflating</span>: sun-javadb-client-<span class="number">10.6</span><span class="number">.2</span>-<span class="number">1.1</span>.i386.rpm  </div><div class="line">  <span class="attribute">inflating</span>: sun-javadb-demo-<span class="number">10.6</span><span class="number">.2</span>-<span class="number">1.1</span>.i386.rpm  </div><div class="line">  <span class="attribute">inflating</span>: sun-javadb-docs-<span class="number">10.6</span><span class="number">.2</span>-<span class="number">1.1</span>.i386.rpm  </div><div class="line">  <span class="attribute">inflating</span>: sun-javadb-javadoc-<span class="number">10.6</span><span class="number">.2</span>-<span class="number">1.1</span>.i386.rpm  </div><div class="line">Preparing...                <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment"># [100%]</span></div><div class="line">   <span class="number">1</span>:jdk                    <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment"># [100%]</span></div><div class="line">Unpacking JAR files...</div><div class="line">	rt.jar...</div><div class="line">	jsse.jar...</div><div class="line">	charsets.jar...</div><div class="line">	tools.jar...</div><div class="line">	localedata.jar...</div><div class="line">	plugin.jar...</div><div class="line">	javaws.jar...</div><div class="line">	deploy.jar...</div><div class="line"><span class="attribute">warning</span>: waiting to reestablish exclusive database lock</div><div class="line"><span class="attribute">error</span>: %post(jdk-<span class="number">1.6</span><span class="number">.0</span>_37-fcs.x86_64) scriptlet failed, exit status <span class="number">5</span></div><div class="line">Installing JavaDB</div><div class="line">Preparing...                <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment"># [100%]</span></div><div class="line">   <span class="number">1</span>:sun-javadb-common      <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment"># [ 17%]</span></div><div class="line">   <span class="number">2</span>:sun-javadb-core        <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment"># [ 33%]</span></div><div class="line">   <span class="number">3</span>:sun-javadb-client      <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment"># [ 50%]</span></div><div class="line">   <span class="number">4</span>:sun-javadb-demo        <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment"># [ 67%]</span></div><div class="line">   <span class="number">5</span>:sun-javadb-docs        <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment"># [ 83%]</span></div><div class="line">   <span class="number">6</span>:sun-javadb-javadoc     <span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment"># [100%]</span></div><div class="line"></div><div class="line">Java(TM) SE Development Kit <span class="number">6</span> successfully installed.</div><div class="line"></div><div class="line">Product Registration <span class="keyword">is</span> FREE <span class="keyword">and</span> includes many <span class="attribute">benefits</span>:</div><div class="line">* Notification <span class="keyword">of</span> <span class="keyword">new</span> versions, patches, <span class="keyword">and</span> updates</div><div class="line">* Special offers <span class="literal">on</span> Oracle products, services <span class="keyword">and</span> training</div><div class="line">* Access to early releases <span class="keyword">and</span> documentation</div><div class="line"></div><div class="line">Product <span class="keyword">and</span> system data will be collected. If your configuration</div><div class="line">supports a browser, the JDK Product Registration form will</div><div class="line">be presented. If you <span class="keyword">do</span> <span class="keyword">not</span> register, none <span class="keyword">of</span> <span class="keyword">this</span> information</div><div class="line">will be saved. You may also register your JDK later <span class="keyword">by</span></div><div class="line">opening the register.html file (located <span class="keyword">in</span> the JDK installation</div><div class="line">directory) <span class="keyword">in</span> a browser.</div><div class="line"></div><div class="line">For more information <span class="literal">on</span> what data Registration collects <span class="keyword">and</span> </div><div class="line">how it <span class="keyword">is</span> managed <span class="keyword">and</span> used, <span class="attribute">see</span>:</div><div class="line"><span class="attribute">http</span>:<span class="regexp">//</span>java.sun.com/javase/registration/JDKRegistrationPrivacy.html</div><div class="line"></div><div class="line">Press Enter to <span class="keyword">continue</span>.....</div><div class="line"></div><div class="line"> </div><div class="line">Done.</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sh jdk-6u37-linux-x64-rpm.bin &#10;Unpacking...&#10;Checksumming...&#10;Extracting...&#10;UnZipSFX 5.50 of 17 February 2002, by Info-ZIP (Zip-Bugs@lists.wku.edu).&#10;  inflating: jdk-6u37-linux-amd64.rpm  &#10;  inflating: sun-javadb-common-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-core-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-client-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-demo-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-docs-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-javadoc-10.6.2-1.1.i386.rpm  &#10;Preparing...                ########################################### [100%]&#10;   1:jdk                    ########################################### [100%]&#10;Unpacking JAR files...&#10;&#9;rt.jar...&#10;&#9;jsse.jar...&#10;&#9;charsets.jar...&#10;&#9;tools.jar...&#10;&#9;localedata.jar...&#10;&#9;plugin.jar...&#10;&#9;javaws.jar...&#10;&#9;deploy.jar...&#10;warning: waiting to reestablish exclusive database lock&#10;error: %post(jdk-1.6.0_37-fcs.x86_64) scriptlet failed, exit status 5&#10;Installing JavaDB&#10;Preparing...                ########################################### [100%]&#10;   1:sun-javadb-common      ########################################### [ 17%]&#10;   2:sun-javadb-core        ########################################### [ 33%]&#10;   3:sun-javadb-client      ########################################### [ 50%]&#10;   4:sun-javadb-demo        ########################################### [ 67%]&#10;   5:sun-javadb-docs        ########################################### [ 83%]&#10;   6:sun-javadb-javadoc     ########################################### [100%]&#10;&#10;Java(TM) SE Development Kit 6 successfully installed.&#10;&#10;Product Registration is FREE and includes many benefits:&#10;* Notification of new versions, patches, and updates&#10;* Special offers on Oracle products, services and training&#10;* Access to early releases and documentation&#10;&#10;Product and system data will be collected. If your configuration&#10;supports a browser, the JDK Product Registration form will&#10;be presented. If you do not register, none of this information&#10;will be saved. You may also register your JDK later by&#10;opening the register.html file (located in the JDK installation&#10;directory) in a browser.&#10;&#10;For more information on what data Registration collects and &#10;how it is managed and used, see:&#10;http://java.sun.com/javase/registration/JDKRegistrationPrivacy.html&#10;&#10;Press Enter to continue.....&#10;&#10; &#10;Done.</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -172,7 +162,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2012-10-25-install-jdk-slash-jre-on-suse-10-dot-x.html" data-title="SUSE Enterprise Linux 10.x下安装JDK/JRE" data-url="http://yesokay.herokuapp.com/2012-10-25-install-jdk-slash-jre-on-suse-10-dot-x.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2012-10-25-install-jdk-slash-jre-on-suse-10-dot-x.html" data-title="SUSE Enterprise Linux 10.x下安装JDK/JRE" data-url="http://yesokay.herokuapp.com/2012-10-25-install-jdk-slash-jre-on-suse-10-dot-x.html"></div>  
   
 </section>
 
@@ -186,7 +176,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	10月 25 2012 
+	Oct 25 2012 
 	</div>
 	
 
@@ -197,7 +187,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/tools/">tools<span>142</span></a></li> <li><a href="/categories/programming/">programming<span>139</span></a></li>
+    <li><a href="/categories/tools/">tools<span>18</span></a></li> <li><a href="/categories/programming/">programming<span>4</span></a></li>
   </li>
 
     </ul>
@@ -234,7 +224,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

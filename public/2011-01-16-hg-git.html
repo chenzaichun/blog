@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -125,18 +117,14 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>hg和git各有各的优势，git一直以来对windows的支持都不太好（尤其是有中文文件名的情况下），所以我一直都用hg。但是很多时候需要clone git的代码仓库，这个时候就安装一个msys-git吧（这个家伙的块头也不小，带了一个基本上完整的MinGW）。</p>
-<p>今天无意中发了<a href="http://hg-git.github.com/" target="_blank">hg-git</a>，可以直接使用hg的命令操作git仓库，而且不需要安装git。最简单的安装方法：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">easy_install hg-git</div></pre></td></tr></table></figure>
-
+<p>今天无意中发了&lt;a href=&quot;http://hg-git.github.com/&quot; target=&quot;_blank&quot;&gt;hg-git&lt;/a&gt;，可以直接使用hg的命令操作git仓库，而且不需要安装git。最简单的安装方法：</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">easy_install hg-git</span><br></pre></td></tr></table></figure></p>
 <p>然后修改 =～/.hgrc=</p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[extensions]</div><div class="line">hgext.<span class="variable">bookmarks =</span></div><div class="line"><span class="variable">hggit =</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[extensions]&#10;hgext.bookmarks =&#10;hggit =</span><br></pre></td></tr></table></figure></p>
 <p>接下里就是repo操作了：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hg clone git://github.com/schacon/munger.git</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg <span class="built_in">clone</span> git://github.com/schacon/munger.git</span><br></pre></td></tr></table></figure></p>
 <p>接着这里看起来是不是很爽：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> hg-git <span class="comment"># (a Mercurial repository)</span></div><div class="line">$ hg bookmark -r default master <span class="comment"># make a bookmark of master for default, so a ref gets created</span></div><div class="line">$ hg push git+ssh://git@github.com/schacon/hg-git.git</div><div class="line">$ hg push</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hg-git <span class="comment"># (a Mercurial repository)</span></span><br><span class="line">$ hg bookmark -r default master <span class="comment"># make a bookmark of master for default, so a ref gets created</span></span><br><span class="line">$ hg push git+ssh://git@github.com/schacon/hg-git.git</span><br><span class="line">$ hg push</span><br></pre></td></tr></table></figure></p>
 <p>大功告成</p>
 	  
 	</div>
@@ -168,7 +156,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-01-16-hg-git.html" data-title="hg-git--hg下直接操作git" data-url="http://yesokay.herokuapp.com/2011-01-16-hg-git.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2011-01-16-hg-git.html" data-title="hg-git--hg下直接操作git" data-url="http://yesokay.herokuapp.com/2011-01-16-hg-git.html"></div>  
   
 </section>
 
@@ -182,7 +170,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	1月 16 2011 
+	Jan 16 2011 
 	</div>
 	
 
@@ -193,7 +181,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/programming/">programming<span>139</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/programming/">programming<span>81</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
 
     </ul>
@@ -230,7 +218,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

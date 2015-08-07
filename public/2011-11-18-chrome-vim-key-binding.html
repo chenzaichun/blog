@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -127,26 +119,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	    <p><a href="https://github.com/philc/vimium" target="_blank" rel="external">传送门</a></p>
 <p>插件安装<a href="https://chrome.google.com/webstore/detail/dbepggeogbaibhgnhhndojpepiihcmeb" target="_blank" rel="external">地址</a></p>
 <p>Navigating the current page:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></td></tr></table></figure>
-
-<p>Using find:    </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></td></tr></table></figure>
-
-
-<p>Navigating your history:    </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></td></tr></table></figure>
-
-
-<p>Manipulating tabs:     </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></td></tr></table></figure>
-
-
-
-<p>Additional advanced browsing commands:     </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">?       show <span class="operator">the</span> help dialog <span class="keyword">for</span> <span class="operator">a</span> list <span class="operator">of</span> all available <span class="built_in">keys</span></div><div class="line">h       scroll left</div><div class="line">j       scroll down</div><div class="line">k       scroll up</div><div class="line">l       scroll <span class="constant">right</span></div><div class="line">gg      scroll <span class="built_in">to</span> top <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">G       scroll <span class="built_in">to</span> bottom <span class="operator">of</span> <span class="operator">the</span> page</div><div class="line">d       scroll down half <span class="operator">a</span> page</div><div class="line">u       scroll up half <span class="operator">a</span> page</div><div class="line">f       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">the</span> current <span class="constant">tab</span></div><div class="line">F       <span class="built_in">open</span> <span class="operator">a</span> link <span class="operator">in</span> <span class="operator">a</span> <span class="built_in">new</span> <span class="constant">tab</span></div><div class="line">r       reload</div><div class="line">gs      view source</div><div class="line">i       enter insert mode <span class="comment">-- all commands will be ignored until</span></div><div class="line">        you hit esc <span class="built_in">to</span> exit</div><div class="line">yy      copy <span class="operator">the</span> current url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">yf      copy <span class="operator">a</span> link url <span class="built_in">to</span> <span class="operator">the</span> clipboard</div><div class="line">gf      cycle forward <span class="built_in">to</span> <span class="operator">the</span> next frame</div></pre></td></tr></table></figure>
-
-
-<p>Vimium supports command repetition so, for example, hitting ‘5t’ will open 5 tabs in rapid succession. ESC (or <c-[>) will clear any partial commands in the queue and will also exit insert and find modes.</c-[></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?       show the help dialog for a list of all available keys&#10;h       scroll left&#10;j       scroll down&#10;k       scroll up&#10;l       scroll right&#10;gg      scroll to top of the page&#10;G       scroll to bottom of the page&#10;d       scroll down half a page&#10;u       scroll up half a page&#10;f       open a link in the current tab&#10;F       open a link in a new tab&#10;r       reload&#10;gs      view source&#10;i       enter insert mode -- all commands will be ignored until&#10;        you hit esc to exit&#10;yy      copy the current url to the clipboard&#10;yf      copy a link url to the clipboard&#10;gf      cycle forward to the next frame</span><br></pre></td></tr></table></figure></p>
+<p>Using find:<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?       show the help dialog for a list of all available keys&#10;h       scroll left&#10;j       scroll down&#10;k       scroll up&#10;l       scroll right&#10;gg      scroll to top of the page&#10;G       scroll to bottom of the page&#10;d       scroll down half a page&#10;u       scroll up half a page&#10;f       open a link in the current tab&#10;F       open a link in a new tab&#10;r       reload&#10;gs      view source&#10;i       enter insert mode -- all commands will be ignored until&#10;        you hit esc to exit&#10;yy      copy the current url to the clipboard&#10;yf      copy a link url to the clipboard&#10;gf      cycle forward to the next frame</span><br></pre></td></tr></table></figure></p>
+<p>Navigating your history:<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?       show the help dialog for a list of all available keys&#10;h       scroll left&#10;j       scroll down&#10;k       scroll up&#10;l       scroll right&#10;gg      scroll to top of the page&#10;G       scroll to bottom of the page&#10;d       scroll down half a page&#10;u       scroll up half a page&#10;f       open a link in the current tab&#10;F       open a link in a new tab&#10;r       reload&#10;gs      view source&#10;i       enter insert mode -- all commands will be ignored until&#10;        you hit esc to exit&#10;yy      copy the current url to the clipboard&#10;yf      copy a link url to the clipboard&#10;gf      cycle forward to the next frame</span><br></pre></td></tr></table></figure></p>
+<p>Manipulating tabs:<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?       show the help dialog for a list of all available keys&#10;h       scroll left&#10;j       scroll down&#10;k       scroll up&#10;l       scroll right&#10;gg      scroll to top of the page&#10;G       scroll to bottom of the page&#10;d       scroll down half a page&#10;u       scroll up half a page&#10;f       open a link in the current tab&#10;F       open a link in a new tab&#10;r       reload&#10;gs      view source&#10;i       enter insert mode -- all commands will be ignored until&#10;        you hit esc to exit&#10;yy      copy the current url to the clipboard&#10;yf      copy a link url to the clipboard&#10;gf      cycle forward to the next frame</span><br></pre></td></tr></table></figure></p>
+<p>Additional advanced browsing commands:</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?       show the help dialog for a list of all available keys&#10;h       scroll left&#10;j       scroll down&#10;k       scroll up&#10;l       scroll right&#10;gg      scroll to top of the page&#10;G       scroll to bottom of the page&#10;d       scroll down half a page&#10;u       scroll up half a page&#10;f       open a link in the current tab&#10;F       open a link in a new tab&#10;r       reload&#10;gs      view source&#10;i       enter insert mode -- all commands will be ignored until&#10;        you hit esc to exit&#10;yy      copy the current url to the clipboard&#10;yf      copy a link url to the clipboard&#10;gf      cycle forward to the next frame</span><br></pre></td></tr></table></figure></p>
+<p>Vimium supports command repetition so, for example, hitting '5t' will open 5 tabs in rapid succession. ESC (or &lt;c-[&gt;) will clear any partial commands in the queue and will also exit insert and find modes.</p>
 <p>自定义快捷键详情请自行阅读<a href="https://github.com/philc/vimium#readme" target="_blank" rel="external">readme</a></p>
 	  
 	</div>
@@ -178,7 +160,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-11-18-chrome-vim-key-binding.html" data-title="chrome vim按键绑定" data-url="http://yesokay.herokuapp.com/2011-11-18-chrome-vim-key-binding.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2011-11-18-chrome-vim-key-binding.html" data-title="chrome vim按键绑定" data-url="http://yesokay.herokuapp.com/2011-11-18-chrome-vim-key-binding.html"></div>  
   
 </section>
 
@@ -192,7 +174,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	11月 18 2011 
+	Nov 18 2011 
 	</div>
 	
 
@@ -203,7 +185,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>57</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>42</span></a></li> <li><a href="/categories/tools/">tools<span>5</span></a></li>
   </li>
 
     </ul>
@@ -240,7 +222,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

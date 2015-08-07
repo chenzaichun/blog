@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -125,26 +117,20 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p>要想在gmail里面使用视频，音频或者打电话，需要安装google-talkplugin，官方网站提供了deb和rpm包，archlinux下安装可以通过aur安装</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yaourt -S google-talkplugin</div></pre></td></tr></table></figure>
-
-<p>这个时候直接不能安装，因为安装过程会提示lib32-openssl-compatible找不到，修改PKGBUILD，改为lib32-openssl<br>然后安装之后，会发现启动不了</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[226:202] Waiting for GoogleTalkPlugin to <span class="operator"><span class="keyword">start</span>...</span></div><div class="line">[<span class="number">227</span>:<span class="number">297</span>] Warning(clientchannel.cc:<span class="number">583</span>): Unreadable <span class="keyword">or</span> <span class="keyword">no</span> port file.  Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span></div><div class="line">[<span class="number">227</span>:<span class="number">298</span>] Warning(clientchannel.cc:<span class="number">439</span>): Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaourt -S google-talkplugin</span><br></pre></td></tr></table></figure></p>
+<p>这个时候直接不能安装，因为安装过程会提示lib32-openssl-compatible找不到，修改PKGBUILD，改为lib32-openssl
+然后安装之后，会发现启动不了</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[226:202] Waiting for GoogleTalkPlugin to start...&#10;[227:297] Warning(clientchannel.cc:583): Unreadable or no port file.  Could not initiate GoogleTalkPlugin connection&#10;[227:298] Warning(clientchannel.cc:439): Could not initiate GoogleTalkPlugin connection</span><br></pre></td></tr></table></figure></p>
 <p>执行/opt/google/talkplugin/GoogleTalkPlugin会提示找不到libssl.so.0.9.8</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./GoogleTalkPlugin: error <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libssl.so<span class="number">.0</span><span class="number">.9</span><span class="number">.8</span>: cannot <span class="keyword">open</span> <span class="keyword">shared</span> object <span class="keyword">file</span>: No such <span class="keyword">file</span> <span class="keyword">or</span> directory</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./GoogleTalkPlugin: error while loading shared libraries: libssl.so.0.9.8: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure></p>
 <p>创建一个软链接</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/lib32/libssl.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libssl.so.<span class="number">0.9</span>.<span class="number">8</span></div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="operator">-s</span> /usr/lib32/libssl.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libssl.so.<span class="number">0.9</span>.<span class="number">8</span></span><br></pre></td></tr></table></figure></p>
 <p>还缺少一个东东</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./GoogleTalkPlugin: error <span class="keyword">while</span> loading <span class="keyword">shared</span> libraries: libcrypto.so<span class="number">.0</span><span class="number">.9</span><span class="number">.8</span>: cannot <span class="keyword">open</span> <span class="keyword">shared</span> object <span class="keyword">file</span>: No such <span class="keyword">file</span> <span class="keyword">or</span> directory</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./GoogleTalkPlugin: error while loading shared libraries: libcrypto.so.0.9.8: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure></p>
 <p>再创建一个软链接</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> ln <span class="operator">-s</span> /usr/lib32/libcrypto.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libcrypto.so.<span class="number">0.9</span>.<span class="number">8</span></div></pre></td></tr></table></figure>
-
-<p>（注意，file GoogleTalkPlugin竟然是一个32位的elf）</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[chenzaichun@czc-laptop talkplugin]$ file GoogleTalkPlugin</div><div class="line">GoogleTalkPlugin: ELF <span class="number">32</span>-bit LSB executable, Intel <span class="number">80386</span>, version <span class="number">1</span> (SYSV), dynamically linked (uses shared libs), stripped</div></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="operator">-s</span> /usr/lib32/libcrypto.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libcrypto.so.<span class="number">0.9</span>.<span class="number">8</span></span><br></pre></td></tr></table></figure></p>
+<p>（注意，file GoogleTalkPlugin竟然是一个32位的elf）</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[chenzaichun@czc-laptop talkplugin]$ file GoogleTalkPlugin</span><br><span class="line">GoogleTalkPlugin: ELF <span class="number">32</span>-bit LSB executable, Intel <span class="number">80386</span>, version <span class="number">1</span> (SYSV), dynamically linked (uses shared libs), stripped</span><br></pre></td></tr></table></figure></p>
 <p>所以链接目录应该在/usr/lib32，而不是/usr/lib</p>
 <p>完毕，可以正常使用了。</p>
 	  
@@ -177,7 +163,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2010-09-21-archlinux_google_talkplugin_x86_64.html" data-title="archlinux x86_64安装google-talkplugin" data-url="http://yesokay.herokuapp.com/2010-09-21-archlinux_google_talkplugin_x86_64.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2010-09-21-archlinux_google_talkplugin_x86_64.html" data-title="archlinux x86_64安装google-talkplugin" data-url="http://yesokay.herokuapp.com/2010-09-21-archlinux_google_talkplugin_x86_64.html"></div>  
   
 </section>
 
@@ -191,7 +177,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	9月 21 2010 
+	Sep 21 2010 
 	</div>
 	
 
@@ -202,7 +188,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/Linux/">Linux<span>69</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li>
+    <li><a href="/categories/Linux/">Linux<span>52</span></a></li> <li><a href="/categories/tools/">tools<span>31</span></a></li>
   </li>
 
     </ul>
@@ -215,7 +201,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/archlinux/">archlinux<span>24</span></a></li> <li><a href="/tags/Google/">Google<span>14</span></a></li> <li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+  <li><a href="/tags/Google/">Google<span>14</span></a></li> <li><a href="/tags/Linux/">Linux<span>69</span></a></li> <li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
     </ul>
 	</div>
 		
@@ -239,7 +225,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   

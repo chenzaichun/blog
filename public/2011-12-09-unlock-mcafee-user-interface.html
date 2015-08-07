@@ -36,18 +36,16 @@
 
   <!-- analytics -->
   
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-31585781-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31585781-1', 'auto');
+  ga('send', 'pageview');
 </script>
+
+
 
 
 </head>
@@ -68,12 +66,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li>
 			<a href="/archives" title="All the articles.">
 			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
 			</a>
 		  </li>
 		  
@@ -125,10 +117,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">		
 	    <p><a href="http://it.megocollector.com/?p=1094" target="_blank" rel="external">传送门</a></p>
-<p>经检验，只要设置以下注册表就行了:</p>
-<figure class="highlight conf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="params">HKEY_LOCAL_MACHINE</span>\SOFTWARE\McAfee\DesktopProtection]</div><div class="line"><span class="string">"UIPMode"</span>=dword:<span class="number">00000000</span></div><div class="line"><span class="string">"UIP"</span>=<span class="string">""</span></div></pre></td></tr></table></figure>
-
-
+<p>经检验，只要设置以下注册表就行了:
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\McAfee\DesktopProtection]&#10;&#34;UIPMode&#34;=dword:00000000&#10;&#34;UIP&#34;=&#34;&#34;</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -159,7 +149,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="http://yesokay.herokuapp.com/2011-12-09-unlock-mcafee-user-interface.html" data-title="Unlock the McAfee VirusScan Enterprise 8.5i User Interface" data-url="http://yesokay.herokuapp.com/2011-12-09-unlock-mcafee-user-interface.html"></div>  
+  	 <div class="ds-thread" data-thread-key="2011-12-09-unlock-mcafee-user-interface.html" data-title="Unlock the McAfee VirusScan Enterprise 8.5i User Interface" data-url="http://yesokay.herokuapp.com/2011-12-09-unlock-mcafee-user-interface.html"></div>  
   
 </section>
 
@@ -173,7 +163,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	12月 9 2011 
+	Dec 9 2011 
 	</div>
 	
 
@@ -184,7 +174,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>57</span></a></li> <li><a href="/categories/tools/">tools<span>142</span></a></li> <li><a href="/categories/无所事事/">无所事事<span>35</span></a></li>
+    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>42</span></a></li> <li><a href="/categories/tools/">tools<span>5</span></a></li> <li><a href="/categories/无所事事/">无所事事<span>1</span></a></li>
   </li>
 
     </ul>
@@ -221,7 +211,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <footer> <p>
   &copy; 2015 Chen, Zai-Chun
   
-      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   
