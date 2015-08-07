@@ -40,12 +40,7 @@ npm install hexo-math --save
 
 最后来个牛逼的吧，薛定谔方程，大学物理考试貌似还复习过这个公式，虽然现在已经记不清是什么意思来着了：
 
-$$ i\hbar\frac{\partial \psi}{\partial t}
-= \frac{-\hbar^2}{2m} \left(
-\frac{\partial^2}{\partial x^2}
-+ \frac{\partial^2}{\partial y^2}
-+ \frac{\partial^2}{\partial z^2}
-\right) \psi + V \psi.$$
+$$ i\hbar\frac{\partial \psi}{\partial t} = \frac{-\hbar^2}{2m} \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) \psi + V \psi.$$
 
 
 

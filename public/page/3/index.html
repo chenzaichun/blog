@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,6 +92,7 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -101,15 +107,91 @@
 
 		
 
+
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Oct 25 2012 </div>
+			<div class="article-title"><a href="/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html" >SUSE Enterprise Linux 10下安装Oracle 11gr2</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <ol>
+<li>首先准备好oracle的安装文件，11gr2默认有两个zip包：<code>linux.x64_11gR2_database_1of2.zip</code>和<code>linux.x64_11gR2_database_2of2.zip</code>, 将这两个包解压</li>
+</ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip linux.x64_11gR2_database_1of2.zip</span><br><span class="line">unzip linux.x64_11gR2_database_2of2.zip</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>
+<p>系统硬件需求这里忽略，详情查看oracle的文档</p>
+</li>
+<li>
+<p>所依赖的软件包</p>
+</li>
+</ol>
+<p>&lt;!--more--&gt;</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">binutils-2.16.91.0.5&#10;compat-libstdc++-5.0.7&#10;gcc-4.1.2&#10;gcc-c++-4.1.2&#10;glibc-2.4-31&#10;glibc-devel-2.4-31&#10;ksh-93r-12.9&#10;libaio-0.3.104&#10;libaio-devel-0.3.104&#10;libelf-0.8.5&#10;libgcc-4.1.2&#10;libstdc++-4.1.2&#10;libstdc++-devel-4.1.2&#10;make-3.80&#10;sysstat-8.0.4</span><br></pre></td></tr></table></figure></p>
+<p>安装可以通过<code>yast2</code></p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yast2 -i &lt;package list&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这里要注意，在suse enterprise linux中，<code>compat-libstdc++</code>由<code>libstdc++33</code>替代, 然后在check的时候忽略掉就行</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yast2 -i libstdc++<span class="number">33</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>修改内核参数<code>/etc/sysctl.conf</code></li>
+</ol>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kernel.sem = 1250 32000 100 256&#10;net.ipv4.ip_local_port_range = 9000 65500&#10;net.core.rmem_default = 4194304&#10;net.core.rmem_max = 4194304&#10;net.core.wmem_default = 1048576&#10;net.core.wmem_max = 1048576&#10;fs.file-max = 6815744&#10;kernel.shmmax = 536870912&#10;fs.aio-max-nr = 1048576</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li>创建用户和组</li>
+</ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">groupadd oinstall</span><br><span class="line">groupadd dba</span><br><span class="line">useradd -g oinstall -G dba oracle</span><br><span class="line">passwd oracle</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<ol start="6">
+<li>创建oracle安装目录</li>
+</ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/oracle</span><br><span class="line">mkdir -p /home/oracle</span><br><span class="line">mkdir -p /opt/oraInventory</span><br><span class="line">chown -R oracle:oinstall /opt/oracle</span><br><span class="line">chown -R oracle:oinstall /home/oracle</span><br><span class="line">chown -R oracle:oinstall /opt/oraInventory</span><br></pre></td></tr></table></figure></p>
+<ol start="7">
+<li>修改oracle的环境变量, 添加一下变量到<code>~oracle/.profile</code></li>
+</ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ORACLE_BASE=/opt/oracle</span><br><span class="line">ORACLE_HOME=<span class="variable">$ORACLE_BASE</span>/product/<span class="number">11.2</span>.<span class="number">0</span> </span><br><span class="line"><span class="built_in">export</span> ORACLE_BASE ORACLE_HOME</span><br><span class="line">PATH=<span class="variable">$PATH</span>:/<span class="variable">$ORACLE_HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> PATH</span><br></pre></td></tr></table></figure></p>
+<ol start="8">
+<li>修改<code>/etc/security/limits.conf</code></li>
+</ol>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oracle soft nproc 16384&#10;oracle hard nproc 16384&#10;oracle soft nofile 1024&#10;oracle hard nofile 65536</span><br></pre></td></tr></table></figure></p>
+<ol start="9">
+<li>开始安装</li>
+</ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su - oracle</span><br><span class="line"><span class="built_in">cd</span> &lt;ORACLE_INSTALL_MEDIA_DIR&gt;</span><br><span class="line">./runInstaller</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>剩下的就是根据图形界面一步一步的做就行了 :)</p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Oct 22 2012 </div>
-			<div class="article-title"><a href="/2012-10-22-xiami-auto-checkin-with-golang.html">虾米自动签到go语言版本</a></div>						
+			<div class="article-title"><a href="/2012-10-22-xiami-auto-checkin-with-golang.html" >虾米自动签到go语言版本</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -122,6 +204,7 @@
 <p>直接贴代码吧：</p>
 <p>&lt;!--more--&gt;</p>
 <p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"os"</span></span><br><span class="line">	<span class="string">"net/http"</span></span><br><span class="line">	<span class="string">"net/url"</span></span><br><span class="line">	<span class="string">"io/ioutil"</span></span><br><span class="line">	<span class="string">"regexp"</span></span><br><span class="line">	<span class="string">"strings"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> InMemoryCookieJar <span class="keyword">struct</span>&#123;</span><br><span class="line">	storage <span class="keyword">map</span>[<span class="typename">string</span>][]http.Cookie</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// buggy... but works</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> (jar InMemoryCookieJar) SetCookies(u *url.URL, cookies []*http.Cookie) &#123;</span><br><span class="line">	<span class="keyword">for</span> _, ck := <span class="keyword">range</span> cookies &#123;</span><br><span class="line">		path := ck.Domain</span><br><span class="line">		<span class="keyword">if</span> ck.Path != <span class="string">"/"</span> &#123;</span><br><span class="line">			path = ck.Domain + ck.Path</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> ck.Domain[<span class="number">0</span>] == <span class="string">'.'</span> &#123;</span><br><span class="line">			path = path[<span class="number">1</span>:]		<span class="comment">// <span class="doctag">FIXME:</span> .hi.baidu.com won't match hi.baidu.com</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> _, found := jar.storage[path]; found &#123;</span><br><span class="line">			setted := <span class="constant">false</span></span><br><span class="line">			<span class="keyword">for</span> i, v := <span class="keyword">range</span> jar.storage[path] &#123;</span><br><span class="line">				<span class="keyword">if</span> v.Name == ck.Name &#123;</span><br><span class="line">					jar.storage[path][i] = *ck</span><br><span class="line">					setted = <span class="constant">true</span></span><br><span class="line">					<span class="keyword">break</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> ! setted &#123;</span><br><span class="line">				jar.storage[path] = <span class="built_in">append</span>(jar.storage[path], *ck)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			jar.storage[path] = []http.Cookie&#123;*ck&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> (jar InMemoryCookieJar) Cookies(u *url.URL) []*http.Cookie &#123;</span><br><span class="line">	cks := []*http.Cookie&#123;&#125;</span><br><span class="line">	<span class="comment">//fmt.Println("get cookies", u)</span></span><br><span class="line">	<span class="keyword">for</span> pattern, cookies := <span class="keyword">range</span> jar.storage &#123;</span><br><span class="line">		<span class="keyword">if</span> strings.Contains(u.String(), pattern) &#123;</span><br><span class="line">			<span class="keyword">for</span> i := <span class="keyword">range</span> cookies &#123;</span><br><span class="line">				cks = <span class="built_in">append</span>(cks, &amp;cookies[i])</span><br><span class="line">				<span class="comment">//fmt.Println("add cookie", cookies[i].Name, cookies[i].Value)</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> cks</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> newCookieJar() InMemoryCookieJar &#123;</span><br><span class="line">	storage := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="typename">string</span>][]http.Cookie)</span><br><span class="line">	<span class="keyword">return</span> InMemoryCookieJar&#123;storage&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> checkError(err error) &#123;</span><br><span class="line">	<span class="keyword">if</span> err != <span class="constant">nil</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"Fatal error "</span>, err.Error())</span><br><span class="line">		os.Exit(<span class="number">1</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> check(b <span class="typename">string</span>)  &#123;</span><br><span class="line">	pattern := regexp.MustCompile(<span class="string">`&lt;div class="idh"&gt;(已连续签到\d+天)&lt;/div&gt;`</span>)</span><br><span class="line">	s := pattern.FindStringSubmatch(<span class="typename">string</span>(b))</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(s) &gt; <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"[Succeed] Checkin Already!"</span>, s[<span class="number">1</span>])</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"[Error] Login Failed!"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> main() &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(os.Args) != <span class="number">3</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"Usage: "</span>, os.Args[<span class="number">0</span>], <span class="string">"email password"</span>)</span><br><span class="line">		os.Exit(<span class="number">1</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	email := os.Args[<span class="number">1</span>]</span><br><span class="line">	passwd := os.Args[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">	client := http.Client&#123;Jar: newCookieJar()&#125;</span><br><span class="line"></span><br><span class="line">	resp, err := client.PostForm(<span class="string">"http://www.xiami.com/web/login"</span>, url.Values&#123;</span><br><span class="line">		<span class="string">"email"</span>: &#123;email&#125;,</span><br><span class="line">		<span class="string">"password"</span>: &#123;passwd&#125;,</span><br><span class="line">		<span class="string">"LoginButton"</span>: &#123;<span class="string">"登陆"</span>&#125;,</span><br><span class="line">	&#125;)</span><br><span class="line">	checkError(err)</span><br><span class="line">	resp.Body.Close()</span><br><span class="line">	</span><br><span class="line">	resp, err = client.Get(<span class="string">"http://www.xiami.com/web/login"</span>)</span><br><span class="line">	checkError(err)</span><br><span class="line">	b, _ := ioutil.ReadAll(resp.Body)</span><br><span class="line">	<span class="keyword">defer</span> resp.Body.Close()</span><br><span class="line"></span><br><span class="line">	<span class="comment">// check if login already</span></span><br><span class="line">	pattern := regexp.MustCompile(<span class="string">`&lt;a class="check_in" href="(.*?)"&gt;`</span>)</span><br><span class="line">	<span class="keyword">if</span> m := pattern.FindStringSubmatch(<span class="typename">string</span>(b)); <span class="built_in">len</span>(m) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="comment">// already checkin | login failed</span></span><br><span class="line">	        check(<span class="typename">string</span>(b))</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">// start checking in</span></span><br><span class="line">		url := <span class="string">"http://www.xiami.com"</span> + m[<span class="number">1</span>]</span><br><span class="line">		request, err := http.NewRequest(<span class="string">"GET"</span>, url, <span class="constant">nil</span>)</span><br><span class="line">		checkError(err)</span><br><span class="line">		request.Header.Add(<span class="string">"Referer"</span>, <span class="string">"http://www.xiami.com/web/login"</span>)</span><br><span class="line">		request.Header.Add(<span class="string">"User-Agent"</span>, <span class="string">"Opera/9.60"</span>)</span><br><span class="line">		resp, err = client.Do(request)</span><br><span class="line">		checkError(err)</span><br><span class="line">		b, _ := ioutil.ReadAll(resp.Body)</span><br><span class="line">		<span class="keyword">defer</span> resp.Body.Close()</span><br><span class="line">		check(<span class="typename">string</span>(b))</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -129,12 +212,18 @@
 </div>
 	<a type="button" href="/2012-10-22-xiami-auto-checkin-with-golang.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Sep 26 2012 </div>
-			<div class="article-title"><a href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html">通过git将bitbucket当做无限容量的dropbox</a></div>						
+			<div class="article-title"><a href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html" >通过git将bitbucket当做无限容量的dropbox</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -151,6 +240,7 @@
 <li>设置ssh key</li>
 <li>sync</li>
 </ol>
+
 	
 	</div>
 	
@@ -158,12 +248,18 @@
 </div>
 	<a type="button" href="/2012-09-26-use-bitbucket-as-dropbox-by-git.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Sep 26 2012 </div>
-			<div class="article-title"><a href="/2012-09-26-golang-emacs-setting.html">emacs下golang的配置</a></div>						
+			<div class="article-title"><a href="/2012-09-26-golang-emacs-setting.html" >emacs下golang的配置</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -195,6 +291,7 @@
 <li>配置<code>.emacs</code>
 <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;auto-complete</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'auto-complete-config</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">add-to-list</span> <span class="quoted">'ac-dictionary-directories</span> <span class="string">"~/.emacs.d/auto-complete/ac-dict"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">ac-config-default</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">local-set-key</span> <span class="list">(<span class="keyword">kbd</span> <span class="string">"M-/"</span>)</span> <span class="quoted">'semantic-complete-analyze-inline</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">local-set-key</span> <span class="string">"."</span> <span class="quoted">'semantic-complete-self-insert</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">local-set-key</span> <span class="string">"&gt;"</span> <span class="quoted">'semantic-complete-self-insert</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; golang mode</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'go-mode-load</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'go-autocomplete</span>)</span></span><br><span class="line"><span class="comment">;; speedbar</span></span><br><span class="line"><span class="comment">;; (speedbar 1)</span></span><br><span class="line"><span class="list">(<span class="keyword">speedbar-add-supported-extension</span> <span class="string">".go"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">add-hook</span></span><br><span class="line"> <span class="quoted">'go-mode-hook</span></span><br><span class="line"> <span class="quoted">'(lambda ()</span><br><span class="line">   ;; gocode</span><br><span class="line">   (auto-complete-mode <span class="number">1</span>)</span><br><span class="line">   (setq ac-sources '(ac-source-go))</span><br><span class="line">    ;; Imenu &amp; Speedbar</span><br><span class="line">    (setq imenu-generic-expression</span><br><span class="line">          '((<span class="string">"type"</span> <span class="string">"^type *\\([^ \t\n\r\f]*\\)"</span> <span class="number">1</span>)</span><br><span class="line">            (<span class="string">"func"</span> <span class="string">"^func *\\(.*\\) &#123;"</span> <span class="number">1</span>)))</span><br><span class="line">    (imenu-add-to-menubar <span class="string">"Index"</span>)</span><br><span class="line">    ;; Outline mode</span><br><span class="line">    (make-local-variable 'outline-regexp)</span><br><span class="line">    (setq outline-regexp <span class="string">"//\\.\\|//[^\r\n\f][^\r\n\f]\\|pack\\|func\\|impo\\|cons\\|var.\\|type\\|\t\t*...."</span>)</span><br><span class="line">    (outline-minor-mode <span class="number">1</span>)</span><br><span class="line">    (local-set-key <span class="string">"\M-a"</span> 'outline-previous-visible-heading)</span><br><span class="line">    (local-set-key <span class="string">"\M-e"</span> 'outline-next-visible-heading)</span><br><span class="line">    ;; Menu bar</span><br><span class="line">    (require 'easymenu)</span><br><span class="line">    (defconst go-hooked-menu</span><br><span class="line">      '(<span class="string">"Go tools"</span></span><br><span class="line">        [<span class="string">"Go run buffer"</span> go <span class="literal">t</span>]</span><br><span class="line">        [<span class="string">"Go reformat buffer"</span> go-fmt-buffer <span class="literal">t</span>]</span><br><span class="line">        [<span class="string">"Go check buffer"</span> go-fix-buffer <span class="literal">t</span>]))</span><br><span class="line">    (easy-menu-define</span><br><span class="line">      go-added-menu</span><br><span class="line">      (current-local-map)</span><br><span class="line">      <span class="string">"Go tools"</span></span><br><span class="line">      go-hooked-menu)</span><br><span class="line"></span><br><span class="line">    ;; Other</span><br><span class="line">    (setq show-trailing-whitespace <span class="literal">t</span>)</span><br><span class="line">    )</span>)</span></span><br><span class="line"><span class="comment">;; helper function</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> go <span class="list">()</span></span><br><span class="line">  <span class="string">"run current buffer"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">compile</span> <span class="list">(<span class="keyword">concat</span> <span class="string">"go run "</span> <span class="list">(<span class="keyword">buffer-file-name</span>)</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; helper function</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> go-fmt-buffer <span class="list">()</span></span><br><span class="line">  <span class="string">"run gofmt on current buffer"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> buffer-read-only</span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">ding</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">message</span> <span class="string">"Buffer is read only"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">p</span> <span class="list">(<span class="keyword">line-number-at-pos</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">filename</span> <span class="list">(<span class="keyword">buffer-file-name</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">old-max-mini-window-height</span> max-mini-window-height)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">show-all</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">if</span> <span class="list">(<span class="keyword">get-buffer</span> <span class="string">"*Go Reformat Errors*"</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">delete-windows-on</span> <span class="string">"*Go Reformat Errors*"</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">kill-buffer</span> <span class="string">"*Go Reformat Errors*"</span>)</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">setq</span> max-mini-window-height <span class="number">1</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">if</span> <span class="list">(<span class="keyword">=</span> <span class="number">0</span> <span class="list">(<span class="keyword">shell-command-on-region</span> <span class="list">(<span class="keyword">point-min</span>)</span> <span class="list">(<span class="keyword">point-max</span>)</span> <span class="string">"gofmt"</span> <span class="string">"*Go Reformat Output*"</span> <span class="literal">nil</span> <span class="string">"*Go Reformat Errors*"</span> <span class="literal">t</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">erase-buffer</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">insert-buffer-substring</span> <span class="string">"*Go Reformat Output*"</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">goto-char</span> <span class="list">(<span class="keyword">point-min</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">forward-line</span> <span class="list">(<span class="number">1</span>- p)</span>)</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">with-current-buffer</span> <span class="string">"*Go Reformat Errors*"</span></span><br><span class="line">    <span class="list">(<span class="keyword">progn</span></span><br><span class="line">      <span class="list">(<span class="keyword">goto-char</span> <span class="list">(<span class="keyword">point-min</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">while</span> <span class="list">(<span class="keyword">re-search-forward</span> <span class="string">"&lt;standard input&gt;"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">replace-match</span> filename)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">goto-char</span> <span class="list">(<span class="keyword">point-min</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">compilation-mode</span>)</span>)</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">setq</span> max-mini-window-height old-max-mini-window-height)</span></span><br><span class="line">      <span class="list">(<span class="keyword">delete-windows-on</span> <span class="string">"*Go Reformat Output*"</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">kill-buffer</span> <span class="string">"*Go Reformat Output*"</span>)</span>)</span>)</span>)</span></span><br><span class="line"><span class="comment">;; helper function</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> go-fix-buffer <span class="list">()</span></span><br><span class="line">  <span class="string">"run gofix on current buffer"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">show-all</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">shell-command-on-region</span> <span class="list">(<span class="keyword">point-min</span>)</span> <span class="list">(<span class="keyword">point-max</span>)</span> <span class="string">"go tool fix -diff"</span>)</span>)</span></span><br></pre></td></tr></table></figure></li>
 </ol>
+
 	
 	</div>
 	
@@ -202,12 +299,18 @@
 </div>
 	<a type="button" href="/2012-09-26-golang-emacs-setting.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Sep 21 2012 </div>
-			<div class="article-title"><a href="/2012-09-21-the-right-way-of-eating-fruit.html">各种水果的正确吃法</a></div>						
+			<div class="article-title"><a href="/2012-09-21-the-right-way-of-eating-fruit.html" >各种水果的正确吃法</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -215,6 +318,7 @@
 	  
 	
 	  <p><img src="/media/the-right-way-of-eating-fruit.jpg" alt="各种水果的正常吃法"></p>
+
 	
 	</div>
 	
@@ -222,12 +326,18 @@
 </div>
 	<a type="button" href="/2012-09-21-the-right-way-of-eating-fruit.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Sep 21 2012 </div>
-			<div class="article-title"><a href="/2012-09-21-anshanshuji.html">鞍山书记</a></div>						
+			<div class="article-title"><a href="/2012-09-21-anshanshuji.html" >鞍山书记</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -236,6 +346,7 @@
 	
 	  <p>看那旧时光从你的面庞溜走，你老了，国家却因你变好了！</p>
 <p><img src="/media/assj.jpg" alt="assj.jpg"></p>
+
 	
 	</div>
 	
@@ -243,12 +354,18 @@
 </div>
 	<a type="button" href="/2012-09-21-anshanshuji.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Sep 21 2012 </div>
-			<div class="article-title"><a href="/2012-09-21-show-depends-on-mac-os-x.html">MacOS X下查看可执行程序依赖</a></div>						
+			<div class="article-title"><a href="/2012-09-21-show-depends-on-mac-os-x.html" >MacOS X下查看可执行程序依赖</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -256,6 +373,7 @@
 	  
 	
 	  <p><code>Windows</code>下查看依赖有<code>depends</code>, <code>Unix/Linux</code>下可以用<code>ldd</code>. <code>MacOSX</code>下则可以用<code>otool</code>. :)</p>
+
 	
 	</div>
 	
@@ -263,12 +381,18 @@
 </div>
 	<a type="button" href="/2012-09-21-show-depends-on-mac-os-x.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jul 31 2012 </div>
-			<div class="article-title"><a href="/2012-07-31-adbputty.html">adb putty</a></div>						
+			<div class="article-title"><a href="/2012-07-31-adbputty.html" >adb putty</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -280,6 +404,7 @@
 <p>主机填写<code>transport-usb</code> ，连接类型选择<code>Adb</code>（对应<code>5037</code>端口）即可</p>
 <p>如果要显示颜色，直接启用bash吧</p>
 <p>详情见<a href="http://forum.xda-developers.com/showthread.php?t=803223" target="_blank" rel="external">这里</a></p>
+
 	
 	</div>
 	
@@ -287,12 +412,18 @@
 </div>
 	<a type="button" href="/2012-07-31-adbputty.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jul 27 2012 </div>
-			<div class="article-title"><a href="/2012-07-27-remove-android-lock-screen-pin-with-sqlite3.html">remove android lock-screen pin with sqlite3</a></div>						
+			<div class="article-title"><a href="/2012-07-27-remove-android-lock-screen-pin-with-sqlite3.html" >remove android lock-screen pin with sqlite3</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -300,6 +431,7 @@
 	  
 	
 	  <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell&#10;# sqlite3 /data/data/com.android.providers.settings/databases/settings.db&#10;sqlite&#62; update secure set value=65536 where name=&#39;lockscreen.password_type&#39;;&#10;sqlite&#62; .exit&#10;# exit&#10;adb reboot</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -307,12 +439,18 @@
 </div>
 	<a type="button" href="/2012-07-27-remove-android-lock-screen-pin-with-sqlite3.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jul 3 2012 </div>
-			<div class="article-title"><a href="/2012-07-03-install-pptp-vnp-server-on-debian-linux.html">Debian Linux下安装pptp vpn服务器</a></div>						
+			<div class="article-title"><a href="/2012-07-03-install-pptp-vnp-server-on-debian-linux.html" >Debian Linux下安装pptp vpn服务器</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -343,6 +481,7 @@
 <li>Debian系见<a href="http://www.8ke.in/soft/pptpandl2tpondebian.sh" target="_blank" rel="external">这里</a></li>
 <li>RPM系见<a href="http://www.diahosting.com/dload/pptpd.sh" target="_blank" rel="external">这里</a></li>
 </ol>
+
 	
 	</div>
 	
@@ -350,47 +489,7 @@
 </div>
 	<a type="button" href="/2012-07-03-install-pptp-vnp-server-on-debian-linux.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Jun 28 2012 </div>
-			<div class="article-title"><a href="/2012-06-28-certificate-not-installed-on-the-node.html">Certificate not Installed on the Node</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>今天在启动ovo的时候遇到了这个问题：</p>
-<blockquote>
-<p>0: WRN: Thu Jun 28 13:08:42 2012: ovbbccb (1821/4): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:
-1: WRN: Thu Jun 28 13:08:42 2012: ovbbccb (1821/4): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er
-ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator's cer
-tificate.
-0: WRN: Thu Jun 28 13:08:43 2012: ovbbccb (1821/9): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:
-1: WRN: Thu Jun 28 13:08:43 2012: ovbbccb (1821/9): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er
-ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator's cer
-tificate.
-0: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/5): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:
-1: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/5): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er
-ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator's cer
-tificate.
-0: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/6): (bbc-90) The incoming HTTPS client connection from host 127.0.0.1 failed due to the SSL error:
-1: WRN: Thu Jun 28 13:08:44 2012: ovbbccb (1821/6): (sec.core-116) An SSL connection IO error has occurred. This may be due to a network problem or an SSL handshake er
-ror. Possible causes for SSL handshake errors are that no certificate is installed, an invalid certificate is installed, or the peer does not trust the initiator's cer
-tificate.</p>
-</blockquote>
-<p>&lt;!--more--&gt;</p>
-<p>解决办法：</p>
-<p>修改<code>/var/opt/OV/conf/xpl/config/local_settings.ini</code>, 将<code>CERT_INSTALLED=TRUE</code>删除掉，并重启<code>ovbbccb</code></p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2012-06-28-certificate-not-installed-on-the-node.html#more" class="btn btn-default more">阅读此文</a>
-</div>
+
 		
 
 		</div>
@@ -413,6 +512,7 @@ tificate.</p>
 	
 </ul>
 </div>
+
   		</center>
 		</div>
 
@@ -425,104 +525,114 @@ tificate.</p>
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
+
 		
-			<div class="widget">
+			
+	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
 		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+			<li><a href="/tags/python/">python<span>31</span></a></li>
 		
-			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
 		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
-		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
-		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
-		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
-		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+			<li><a href="/tags/macos/">macos<span>9</span></a></li>
 		
 			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
 		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
 		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
+			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+		
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
 		
 			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
 		
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+		
+			<li><a href="/tags/portable/">portable<span>1</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+		
+			<li><a href="/tags/go/">go<span>2</span></a></li>
+		
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+		
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+		
+			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
+		
 			<li><a href="/tags/soap/">soap<span>1</span></a></li>
 		
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+		
+			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+		
 			<li><a href="/tags/android/">android<span>18</span></a></li>
-		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
-		
-			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
-		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
-		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
+
+
 		
-			<div class="widget">
+			
+<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+        <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>
 </div>
+
 		
-			<div class="widget">
+			
+<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
+
+
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
+
 	
 	
 </div> <!-- row-fluid -->
@@ -535,7 +645,8 @@ tificate.</p>
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -565,5 +676,8 @@ tificate.</p>
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+

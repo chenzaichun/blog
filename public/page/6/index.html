@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,6 +92,7 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -101,15 +107,50 @@
 
 		
 
+
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Feb 2 2012 </div>
+			<div class="article-title"><a href="/2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc.html" >Git svn – Can’t locate Term/ReadKey.pm in @INC</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">perl -MCPAN <span class="operator">-e</span> shell</span><br><span class="line"></span><br><span class="line"><span class="comment"># install Term::ReadKey</span></span><br><span class="line"><span class="comment"># exit</span></span><br><span class="line">perl -MCPAN <span class="operator">-e</span> shellinstall Term::ReadKeyexit</span><br></pre></td></tr></table></figure></p>
+<p>archlinux上可以安装<code>extra/perl-term-readkey</code></p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S perl-term-readkey</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jan 30 2012 </div>
-			<div class="article-title"><a href="/2012-01-30-git-svn-proxy-setting.html">git svn代理设置</a></div>						
+			<div class="article-title"><a href="/2012-01-30-git-svn-proxy-setting.html" >git svn代理设置</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -118,6 +159,7 @@
 	
 	  <p>git svn的代理设置需要通过修改<code>~/.subversion/servers</code>文件来实现：</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[groups]&#10;assembla = *.assembla.com&#10;# group1 = *.collab.net&#10;# othergroup = repository.blarggitywhoomph.com&#10;# thirdgroup = *.example.com&#10;&#10;[assembla]&#10;http-proxy-host = proxy-server&#10;http-proxy-port = 8080&#10;http-compression = yes&#10;username = yesokay</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -125,12 +167,18 @@
 </div>
 	<a type="button" href="/2012-01-30-git-svn-proxy-setting.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jan 19 2012 </div>
-			<div class="article-title"><a href="/2012-01-19-run-app-directly-on-ios-simulator.html">直接用模拟器运行ios app</a></div>						
+			<div class="article-title"><a href="/2012-01-19-run-app-directly-on-ios-simulator.html" >直接用模拟器运行ios app</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -139,6 +187,7 @@
 	
 	  <p>有的时候我们想把编译好的ios发给别人测试，但是又没有真机，同时也不想提供源代码，这个时候就需要直接用ios simulator运行app：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/Contents/MacOS/iPhone\ Simulator -SimulateApplication path_to_your_app/YourFavouriteApp.app/YourFavouriteApp</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -146,12 +195,18 @@
 </div>
 	<a type="button" href="/2012-01-19-run-app-directly-on-ios-simulator.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jan 18 2012 </div>
-			<div class="article-title"><a href="/2012-01-18-git-line-ending.html">git换行符问题</a></div>						
+			<div class="article-title"><a href="/2012-01-18-git-line-ending.html" >git换行符问题</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -161,6 +216,7 @@
 	  <p>Linux或Mac系统使用LF作为行结束符，因此你不想Git在签出文件时进行自动的转换；当一个以CRLF为行结束符的文件不小心被引入时你肯定想进行修正，把core.autocrlf设置成input来告诉 Git 在提交时把CRLF转换成LF，签出时不转换：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf input</span><br></pre></td></tr></table></figure></p>
 <p>这样会在Windows系统上的签出文件中保留CRLF，会在Mac和Linux系统上，包括仓库中保留LF。</p>
+
 	
 	</div>
 	
@@ -168,12 +224,18 @@
 </div>
 	<a type="button" href="/2012-01-18-git-line-ending.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jan 18 2012 </div>
-			<div class="article-title"><a href="/2012-01-18-ssh-local-tunnel.html">ssh本地tunnel代理</a></div>						
+			<div class="article-title"><a href="/2012-01-18-ssh-local-tunnel.html" >ssh本地tunnel代理</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -191,6 +253,7 @@
 </blockquote>
 <p>plink用法</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink -C -D <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">7070</span> -N -pw 密码 用户名@服务器地址</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -198,12 +261,18 @@
 </div>
 	<a type="button" href="/2012-01-18-ssh-local-tunnel.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jan 13 2012 </div>
-			<div class="article-title"><a href="/2012-01-13-speed-up-ssh-x11-forwarding.html">X11 Forwarding提速</a></div>						
+			<div class="article-title"><a href="/2012-01-13-speed-up-ssh-x11-forwarding.html" >X11 Forwarding提速</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -214,6 +283,7 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -c arcfour,blowfish-cbc -XC host.com</span><br></pre></td></tr></table></figure></p>
 <p>通过alias设置:</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> ssh-x=<span class="string">'ssh -c arcfour,blowfish-cbc -XC'</span></span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -221,12 +291,18 @@
 </div>
 	<a type="button" href="/2012-01-13-speed-up-ssh-x11-forwarding.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jan 5 2012 </div>
-			<div class="article-title"><a href="/2012-01-05-gcc-mudflap.html">gcc mudflap用来检测内存越界的问题</a></div>						
+			<div class="article-title"><a href="/2012-01-05-gcc-mudflap.html" >gcc mudflap用来检测内存越界的问题</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -240,6 +316,7 @@
 Aborted</p>
 </blockquote>
 <p>网上找了很久，未果。还是用<code>valgrind</code>吧。</p>
+
 	
 	</div>
 	
@@ -247,12 +324,18 @@ Aborted</p>
 </div>
 	<a type="button" href="/2012-01-05-gcc-mudflap.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 31 2011 </div>
-			<div class="article-title"><a href="/2011-12-31-git-rpc-error-56.html">git rpc error 56</a></div>						
+			<div class="article-title"><a href="/2011-12-31-git-rpc-error-56.html" >git rpc error 56</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -274,6 +357,7 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 <p>解决办法参考<a href="http://codaset.com/codaset/codaset/tickets/723" target="_blank" rel="external">这里</a></p>
 <p>失败的原因就是git <code>HTTP buffer</code>太小，设置大一点就没有问题，比如：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config http.postBuffer <span class="number">524288000</span></span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -281,12 +365,18 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 </div>
 	<a type="button" href="/2011-12-31-git-rpc-error-56.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 31 2011 </div>
-			<div class="article-title"><a href="/2011-12-31-git-remove-untracked-files-and-directories.html">git remove untracked files and directories</a></div>						
+			<div class="article-title"><a href="/2011-12-31-git-remove-untracked-files-and-directories.html" >git remove untracked files and directories</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -294,6 +384,7 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 	  
 	
 	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clean <span class="operator">-f</span> <span class="comment"># remove untracked files</span></span><br><span class="line">git clean <span class="operator">-f</span> <span class="operator">-d</span> <span class="comment"># remove untracked directories</span></span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -301,12 +392,18 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 </div>
 	<a type="button" href="/2011-12-31-git-remove-untracked-files-and-directories.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 31 2011 </div>
-			<div class="article-title"><a href="/2011-12-31-show-all-files-in-finder-on-mac.html">让Finder显示所有文件</a></div>						
+			<div class="article-title"><a href="/2011-12-31-show-all-files-in-finder-on-mac.html" >让Finder显示所有文件</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -319,6 +416,7 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 <p>重新开启Finder就能看到所有文件了。</p>
 <p>关闭显示隐藏文件：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles -bool <span class="literal">false</span></span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -326,28 +424,7 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 </div>
 	<a type="button" href="/2011-12-31-show-all-files-in-finder-on-mac.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Dec 31 2011 </div>
-			<div class="article-title"><a href="/2011-12-31-rsync-ignore-svn-direcotry.html">rsync忽略svn目录</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>很多时候在使用rsync同步svn管理的代码的时候会出现问题，比如我在本地check了一份代码，使用的是1.6.x的svn client，如果同步到编译服务器上，但是上面只有1.5.x版本的svn client就会出现问题。</p>
-<p>解决办法就是让rsync忽略svn目录，只同步代码文件：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync --cvs-exclude ...</span><br></pre></td></tr></table></figure></p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-12-31-rsync-ignore-svn-direcotry.html#more" class="btn btn-default more">阅读此文</a>
-</div>
+
 		
 
 		</div>
@@ -370,6 +447,7 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 	
 </ul>
 </div>
+
   		</center>
 		</div>
 
@@ -382,104 +460,114 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
+
 		
-			<div class="widget">
+			
+	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
 		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
 		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
-		
-			<li><a href="/tags/suse/">suse<span>3</span></a></li>
-		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
-		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
-		
-			<li><a href="/tags/dns/">dns<span>1</span></a></li>
-		
-			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
-		
-			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
-		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
-		
-			<li><a href="/tags/转载/">转载<span>7</span></a></li>
-		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
-		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
-		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
 		
 			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
 		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
 		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
+			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
+		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+		
+			<li><a href="/tags/python/">python<span>31</span></a></li>
+		
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+		
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+		
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+		
+			<li><a href="/tags/network/">network<span>1</span></a></li>
+		
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+		
+			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
+		
+			<li><a href="/tags/soap/">soap<span>1</span></a></li>
+		
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+		
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+		
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
+
+
 		
-			<div class="widget">
+			
+<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+        <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>
 </div>
+
 		
-			<div class="widget">
+			
+<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
+
+
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
+
 	
 	
 </div> <!-- row-fluid -->
@@ -492,7 +580,8 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -522,5 +611,8 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+

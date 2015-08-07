@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,6 +92,7 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -101,15 +107,50 @@
 
 		
 
+
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Dec 31 2011 </div>
+			<div class="article-title"><a href="/2011-12-31-rsync-ignore-svn-direcotry.html" >rsync忽略svn目录</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>很多时候在使用rsync同步svn管理的代码的时候会出现问题，比如我在本地check了一份代码，使用的是1.6.x的svn client，如果同步到编译服务器上，但是上面只有1.5.x版本的svn client就会出现问题。</p>
+<p>解决办法就是让rsync忽略svn目录，只同步代码文件：</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync --cvs-exclude ...</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-12-31-rsync-ignore-svn-direcotry.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 30 2011 </div>
-			<div class="article-title"><a href="/2011-12-30-mac-os-x-emacs-chinese-font-setting.html">终于搞定Mac OS X上emacs中文的显示</a></div>						
+			<div class="article-title"><a href="/2011-12-30-mac-os-x-emacs-chinese-font-setting.html" >终于搞定Mac OS X上emacs中文的显示</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -118,6 +159,7 @@
 	
 	  <p>原来一直没有找到怎么设置，昨天从一个日本网站上抄了一段，貌似工作比较良好：</p>
 <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">when</span> <span class="list">(<span class="keyword">eq</span> window-system <span class="quoted">'ns</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">my-font-height</span> <span class="number">140</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">my-font</span> <span class="list">(<span class="keyword">cond</span></span><br><span class="line">                  <span class="list">(<span class="keyword">t</span>   <span class="string">"Monaco"</span>)</span>  <span class="comment">;; XCode 3.1 </span></span><br><span class="line">                  <span class="list">(<span class="keyword">nil</span> <span class="string">"Menlo"</span>)</span>   <span class="comment">;; XCode 3.2</span></span><br><span class="line">                  )</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">my-font-ja</span> <span class="string">"STHeiti"</span>)</span>)</span></span><br><span class="line"></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> mac-allow-anti-aliasing <span class="literal">t</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> face-font-rescale-alist</span><br><span class="line">          <span class="quoted">'((<span class="string">"^-apple-hiragino.*"</span> . <span class="number">1.2</span>)</span><br><span class="line">            (<span class="string">".*osaka-bold.*"</span> . <span class="number">1.2</span>)</span><br><span class="line">            (<span class="string">".*osaka-medium.*"</span> . <span class="number">1.2</span>)</span><br><span class="line">            (<span class="string">".*courier-bold-.*-mac-roman"</span> . <span class="number">1.0</span>)</span><br><span class="line">            (<span class="string">".*monaco cy-bold-.*-mac-cyrillic"</span> . <span class="number">0.9</span>)</span><br><span class="line">            (<span class="string">".*monaco-bold-.*-mac-roman"</span> . <span class="number">0.9</span>)</span><br><span class="line">            (<span class="string">"-cdac$"</span> . <span class="number">1.3</span>))</span>)</span></span><br><span class="line"></span><br><span class="line">    <span class="list">(<span class="keyword">when</span> my-font</span><br><span class="line">      <span class="list">(<span class="keyword">set-face-attribute</span> <span class="quoted">'default</span> <span class="literal">nil</span> <span class="keyword">:family</span> my-font <span class="keyword">:height</span> my-font-height)</span></span><br><span class="line">      <span class="comment">;;(set-frame-font (format "%s-%d" my-font (/ my-font-height 10)))</span></span><br><span class="line">      )</span></span><br><span class="line"></span><br><span class="line">    <span class="list">(<span class="keyword">when</span> my-font-ja</span><br><span class="line">      <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">fn</span> <span class="list">(<span class="keyword">frame-parameter</span> <span class="literal">nil</span> <span class="quoted">'font</span>)</span>)</span></span><br><span class="line">            <span class="list">(<span class="keyword">rg</span> <span class="string">"iso10646-1"</span>)</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">set-fontset-font</span> fn <span class="quoted">'chinese-gb2312</span> <span class="quoted">`(,my-font-ja . ,rg)</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">set-fontset-font</span> fn <span class="quoted">'chinese-gbk</span> <span class="quoted">`(,my-font-ja . ,rg)</span>)</span>)</span>)</span>)</span>)</span></span><br><span class="line"><span class="comment">;;        (set-fontset-font fn 'unicode `(,my-font-ja . ,rg))))))</span></span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -125,12 +167,18 @@
 </div>
 	<a type="button" href="/2011-12-30-mac-os-x-emacs-chinese-font-setting.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 30 2011 </div>
-			<div class="article-title"><a href="/2011-12-30-mac-os-x-homebrew.html">抛弃MacPorts，用Homebrew吧</a></div>						
+			<div class="article-title"><a href="/2011-12-30-mac-os-x-homebrew.html" >抛弃MacPorts，用Homebrew吧</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -142,6 +190,7 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)</span>"</span></span><br></pre></td></tr></table></figure></p>
 <p>使用方法见
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew --help</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -149,12 +198,18 @@
 </div>
 	<a type="button" href="/2011-12-30-mac-os-x-homebrew.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 30 2011 </div>
-			<div class="article-title"><a href="/2011-12-30-macos-x-swap-dan-du-fen-qu.html">MacOS X Swap单独分区</a></div>						
+			<div class="article-title"><a href="/2011-12-30-macos-x-swap-dan-du-fen-qu.html" >MacOS X Swap单独分区</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -184,6 +239,7 @@
 </li>
 </ol>
 <p>搞定</p>
+
 	
 	</div>
 	
@@ -191,12 +247,18 @@
 </div>
 	<a type="button" href="/2011-12-30-macos-x-swap-dan-du-fen-qu.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 15 2011 </div>
-			<div class="article-title"><a href="/2011-12-15-archlinux-etc-rc-d-functions-error.html">archlinux functions脚本错误</a></div>						
+			<div class="article-title"><a href="/2011-12-15-archlinux-etc-rc-d-functions-error.html" >archlinux functions脚本错误</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -209,6 +271,7 @@
 <p>patch的内容如下：
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">--- functions_old       2011-11-19 13:05:47.921522255 +0400</span></span><br><span class="line"><span class="header">+++ functions   2011-11-19 12:55:17.411565127 +0400</span></span><br><span class="line"><span class="chunk">@@ -494,7 +494,7 @@</span></span><br><span class="line">                fi</span><br><span class="line"></span><br><span class="line">                mounts+=("$target")</span><br><span class="line"><span class="deletion">-       done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></span><br><span class="line"><span class="addition">+       done &lt; $(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></span><br><span class="line"></span><br><span class="line">        umount -r "$&#123;mounts[@]&#125;"</span><br></pre></td></tr></table></figure></p>
 <p>下载<a href="/media/wpid-rc-functions-typo.patch_.zip">patch</a></p>
+
 	
 	</div>
 	
@@ -216,12 +279,18 @@
 </div>
 	<a type="button" href="/2011-12-15-archlinux-etc-rc-d-functions-error.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 12 2011 </div>
-			<div class="article-title"><a href="/2011-12-12-gnustep-env-on-archlinux.html">archlinux下配置GNUStep环境</a></div>						
+			<div class="article-title"><a href="/2011-12-12-gnustep-env-on-archlinux.html" >archlinux下配置GNUStep环境</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -264,6 +333,7 @@ collect2: ld returned 1 exit status</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./helloworld&#10;2011-12-12 03:27:14.391 helloworld[6928] No local time zone specified.&#10;2011-12-12 03:27:14.392 helloworld[6928] Using time zone with absolute offset 0.&#10;2011-12-12 03:27:14.338 helloworld[6928] Hello World</span><br></pre></td></tr></table></figure></p>
 <p>这里有2个warning, 设置一下:
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write NSGlobalDomain <span class="string">"Local Time Zone"</span> <span class="string">'Asia/Chongqing'</span></span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -271,12 +341,18 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-12-gnustep-env-on-archlinux.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 12 2011 </div>
-			<div class="article-title"><a href="/2011-12-12-first-gnustep-gui.html">第一个GNUstep窗口程序</a></div>						
+			<div class="article-title"><a href="/2011-12-12-first-gnustep-gui.html" >第一个GNUstep窗口程序</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -301,6 +377,7 @@ collect2: ld returned 1 exit status</p>
 <p>截图:</p>
 <p><img src="/media/wpid-gnustep-helloworld.png"></p>
 <p>源代码下载: <a href="/images/uploads/2011/12/helloworld.zip">HelloWorld.zip</a></p>
+
 	
 	</div>
 	
@@ -308,12 +385,18 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-12-first-gnustep-gui.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 9 2011 </div>
-			<div class="article-title"><a href="/2011-12-09-unlock-mcafee-user-interface.html">Unlock the McAfee VirusScan Enterprise 8.5i User Interface</a></div>						
+			<div class="article-title"><a href="/2011-12-09-unlock-mcafee-user-interface.html" >Unlock the McAfee VirusScan Enterprise 8.5i User Interface</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -323,6 +406,7 @@ collect2: ld returned 1 exit status</p>
 	  <p><a href="http://it.megocollector.com/?p=1094" target="_blank" rel="external">传送门</a></p>
 <p>经检验，只要设置以下注册表就行了:
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\McAfee\DesktopProtection]&#10;&#34;UIPMode&#34;=dword:00000000&#10;&#34;UIP&#34;=&#34;&#34;</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -330,12 +414,18 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-09-unlock-mcafee-user-interface.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 9 2011 </div>
-			<div class="article-title"><a href="/2011-12-09-org-save-outline-visibility.html">void: org-save-outline-visibility</a></div>						
+			<div class="article-title"><a href="/2011-12-09-org-save-outline-visibility.html" >void: org-save-outline-visibility</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -347,6 +437,7 @@ collect2: ld returned 1 exit status</p>
 <p>Symbol's function definition is void: org-save-outline-visibility</p>
 </blockquote>
 <p>原来是emacs自动的org-mode为7.4版本，升级到7.5或者以后版本解决问题。</p>
+
 	
 	</div>
 	
@@ -354,12 +445,18 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-09-org-save-outline-visibility.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 9 2011 </div>
-			<div class="article-title"><a href="/2011-12-09-emacs-http-proxy-setting.html">emacs代理设置</a></div>						
+			<div class="article-title"><a href="/2011-12-09-emacs-http-proxy-setting.html" >emacs代理设置</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -370,6 +467,7 @@ collect2: ld returned 1 exit status</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=xxx.xx.xx.xx:port</span><br></pre></td></tr></table></figure></p>
 <p>但是在mac上这样做就不行了。由于elisp中一般http都是使用的<code>url package</code>，所以可以通过<code>url package</code>的接口来设置代理:</p>
 <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> url-using-proxy <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> url-proxy-services <span class="quoted">'((<span class="string">"http"</span> . <span class="string">"proxyserver:port"</span>))</span>)</span></span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -377,33 +475,7 @@ collect2: ld returned 1 exit status</p>
 </div>
 	<a type="button" href="/2011-12-09-emacs-http-proxy-setting.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Dec 1 2011 </div>
-			<div class="article-title"><a href="/2011-12-01-genenv-assignment-makes-pointer-from-integer-without-a-cast.html">getenv assignment makes pointer from integer without a cast</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>今天在使用getenv获取环境变量的时候遇到这个问题，代码类似于这样</p>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span><br><span class="line">   <span class="function"><span class="keyword">char</span>* <span class="title">getenv</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>*)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">char</span> *value;</span><br><span class="line">  value = getenv(<span class="string">"HOME"</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>编译的时候会出现一个warning</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test.c: In function `main&#39;: &#10;test.c:9: warning: assignment makes pointer from integer without a cast</span><br></pre></td></tr></table></figure></p>
-<p>运行的时候会出现segment fault</p>
-<p>原来是缺少stdlib.h的问题（可是我已经申明了原型呀……）</p>
-<p>加入stdlib.h解决问题:</p>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-12-01-genenv-assignment-makes-pointer-from-integer-without-a-cast.html#more" class="btn btn-default more">阅读此文</a>
-</div>
+
 		
 
 		</div>
@@ -426,6 +498,7 @@ collect2: ld returned 1 exit status</p>
 	
 </ul>
 </div>
+
   		</center>
 		</div>
 
@@ -438,104 +511,114 @@ collect2: ld returned 1 exit status</p>
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
+
 		
-			<div class="widget">
+			
+	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+			<li><a href="/tags/tools/">tools<span>4</span></a></li>
+		
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+		
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
 		
 			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
 		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
 		
 			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
 		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
 		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
+		
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
+		
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
 		
 			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
 		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
+			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
 		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
 		
 			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
 		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
 		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
 		
-			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
+			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
 		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
-		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
-		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
 		
 			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
-		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
-		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
+
+
 		
-			<div class="widget">
+			
+<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+        <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>
 </div>
+
 		
-			<div class="widget">
+			
+<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
+
+
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
+
 	
 	
 </div> <!-- row-fluid -->
@@ -548,7 +631,8 @@ collect2: ld returned 1 exit status</p>
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -578,5 +662,8 @@ collect2: ld returned 1 exit status</p>
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+

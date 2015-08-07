@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="在Windows下用Python查看进程信息">
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:title" content="在Windows下用Python查看进程信息"/>
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,11 +92,19 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
-    	 <div class="page-header">		
+    	 
+
+
+	
+		<div class="page-header">		
 			<h1> 在Windows下用Python查看进程信息</h1>
-		</div>
+		</div>		
+	
+
+
 
 <div class="row post">
 	<!-- cols -->
@@ -104,7 +117,8 @@
 	<!-- content -->
 	<div class="mypage">		
 	    <p>得益于PyWin32的强大，在Windows下可以通过Python调用Performon COM接口来查看进程的信息。下面的代码就是查看svhost进程的相关信息的示例代码，如果需要其他信息，请自行添加counter</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> win32api, win32pdh, win32pdhutil</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ShowAllProcesses</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    procs = []</span><br><span class="line">    object = win32pdhutil.find_pdh_counter_localized_name(<span class="string">"Process"</span>)</span><br><span class="line"></span><br><span class="line">    items, instances = win32pdh.EnumObjectItems(<span class="keyword">None</span>,<span class="keyword">None</span>,object,win32pdh.PERF_DETAIL_WIZARD)</span><br><span class="line">    instance_dict = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> instance <span class="keyword">in</span> instances:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">if</span> instance == <span class="string">'svchost'</span>:</span><br><span class="line">                instance_dict[instance] = instance_dict[instance] + <span class="number">1</span></span><br><span class="line">        <span class="keyword">except</span> KeyError:</span><br><span class="line">            instance_dict[instance] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    items = [win32pdhutil.find_pdh_counter_localized_name(<span class="string">"ID Process"</span>)] + items[<span class="number">0</span>:]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> instance, max_instances <span class="keyword">in</span> instance_dict.items():</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> inum <span class="keyword">in</span> xrange(max_instances+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">            hq = win32pdh.OpenQuery()</span><br><span class="line"></span><br><span class="line">            hcs = []</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">                path = win32pdh.MakeCounterPath((<span class="keyword">None</span>,object, instance,<span class="keyword">None</span>, inum, item))</span><br><span class="line">                hcs.append(win32pdh.AddCounter(hq, path))</span><br><span class="line"></span><br><span class="line">            win32pdh.CollectQueryData(hq)</span><br><span class="line"></span><br><span class="line">            time.sleep(<span class="number">0.01</span>)</span><br><span class="line">            win32pdh.CollectQueryData(hq)</span><br><span class="line">            proc = instance[:<span class="number">15</span>]</span><br><span class="line">            hc = hcs[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">            vals = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(hcs)):</span><br><span class="line">                hc = hcs[i]</span><br><span class="line">                type, val = win32pdh.GetFormattedCounterValue(hc, win32pdh.PDH_FMT_LONG)</span><br><span class="line">                vals.append(val)</span><br><span class="line"></span><br><span class="line">            win32pdh.RemoveCounter(hc)</span><br><span class="line"></span><br><span class="line">            procs.append([proc, [vals] ])</span><br><span class="line">            win32pdh.CloseQuery(hq)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">print</span> procs</span><br><span class="line">    <span class="keyword">return</span> procs</span><br><span class="line">ShowAllProcesses()</span><br></pre></td></tr></table></figure></p>	  
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> win32api, win32pdh, win32pdhutil</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ShowAllProcesses</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    procs = []</span><br><span class="line">    object = win32pdhutil.find_pdh_counter_localized_name(<span class="string">"Process"</span>)</span><br><span class="line"></span><br><span class="line">    items, instances = win32pdh.EnumObjectItems(<span class="keyword">None</span>,<span class="keyword">None</span>,object,win32pdh.PERF_DETAIL_WIZARD)</span><br><span class="line">    instance_dict = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> instance <span class="keyword">in</span> instances:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">if</span> instance == <span class="string">'svchost'</span>:</span><br><span class="line">                instance_dict[instance] = instance_dict[instance] + <span class="number">1</span></span><br><span class="line">        <span class="keyword">except</span> KeyError:</span><br><span class="line">            instance_dict[instance] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    items = [win32pdhutil.find_pdh_counter_localized_name(<span class="string">"ID Process"</span>)] + items[<span class="number">0</span>:]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> instance, max_instances <span class="keyword">in</span> instance_dict.items():</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> inum <span class="keyword">in</span> xrange(max_instances+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">            hq = win32pdh.OpenQuery()</span><br><span class="line"></span><br><span class="line">            hcs = []</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">                path = win32pdh.MakeCounterPath((<span class="keyword">None</span>,object, instance,<span class="keyword">None</span>, inum, item))</span><br><span class="line">                hcs.append(win32pdh.AddCounter(hq, path))</span><br><span class="line"></span><br><span class="line">            win32pdh.CollectQueryData(hq)</span><br><span class="line"></span><br><span class="line">            time.sleep(<span class="number">0.01</span>)</span><br><span class="line">            win32pdh.CollectQueryData(hq)</span><br><span class="line">            proc = instance[:<span class="number">15</span>]</span><br><span class="line">            hc = hcs[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">            vals = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(hcs)):</span><br><span class="line">                hc = hcs[i]</span><br><span class="line">                type, val = win32pdh.GetFormattedCounterValue(hc, win32pdh.PDH_FMT_LONG)</span><br><span class="line">                vals.append(val)</span><br><span class="line"></span><br><span class="line">            win32pdh.RemoveCounter(hc)</span><br><span class="line"></span><br><span class="line">            procs.append([proc, [vals] ])</span><br><span class="line">            win32pdh.CloseQuery(hq)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">print</span> procs</span><br><span class="line">    <span class="keyword">return</span> procs</span><br><span class="line">ShowAllProcesses()</span><br></pre></td></tr></table></figure></p>
+	  
 	</div>
 
 	<div>
@@ -124,17 +138,20 @@
 	
 </ul>
 </div>
+
     </center>
 	</div>
 	
 	<!-- comment -->
-	<section id="comment">
+	
+<section id="comment">
   <h2 class="title">留言</h2>
 
   
   	 <div class="ds-thread" data-thread-key="2011-01-26-view_process_with_python_and_pywin32.html" data-title="在Windows下用Python查看进程信息" data-url="http://yesokay.herokuapp.com/2011-01-26-view_process_with_python_and_pywin32.html"></div>  
   
 </section>
+
 	
 	</div> <!-- col-md-9/col-md-12 -->
 	
@@ -154,9 +171,11 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
     <ul id="categorys" class="tag_box list-unstyled collapse in">
-        <li>
-    </li><li><a href="/categories/programming/">programming<span>82</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
-  
+          
+  <li>
+    <li><a href="/categories/programming/">programming<span>83</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
+  </li>
+
     </ul>
 	</div>
 	
@@ -166,7 +185,8 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	  <li><a href="/tags/Windows/">Windows<span>18</span></a></li> <li><a href="/tags/python/">python<span>30</span></a></li>
+	    
+  <li><a href="/tags/Windows/">Windows<span>18</span></a></li> <li><a href="/tags/python/">python<span>31</span></a></li>
     </ul>
 	</div>
 		
@@ -179,9 +199,11 @@
     <hr>
 	
 </div><!-- col-md-3 -->
+
 	
 
 </div><!-- row -->
+
 	</div>
   </div>
   <div class="container-narrow">
@@ -191,7 +213,8 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -221,5 +244,8 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+

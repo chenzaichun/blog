@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,6 +92,7 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -101,15 +107,79 @@
 
 		
 
+
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> May 23 2012 </div>
+			<div class="article-title"><a href="/2012-05-23-xiami-checkin.html" >xiami自动签到</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>有的时候需要在虾米上面下点音乐，但是积分经常不够- -||。虾米提供了签到的方式来获取<code>红包</code></p>
+<p>对于虾米自动签到，目前有两种方式：</p>
+<ol>
+<li><a href="http://checkin.isombyt.me/" target="_blank" rel="external">虾米自动签到(喂食)系统</a>， 该网站建立在<code>GAE</code>上，不用设置直接提交就可以帮你自动签到，但是每天只能满足1400个人（不知道现在有多少人使用该系统），对于该系统的介绍和限制，参见其<a href="http://isombyt.me/2012/05/xiami-checkin/" target="_blank" rel="external">blog</a></li>
+<li>另外一种是通过<code>python</code>脚本加<code>cron</code>的方式来达到，但是需要python的Linux/Unix服务器，参见<a href="http://huxuan.org/projects/xiami_auto_checkin/" target="_blank" rel="external">HuXuan</a></li>
+</ol>
+<p>我将自动该自动签到脚本放到了dotcloud上面，以下是我的配置：</p>
+<ol>
+<li>ssh到dotcloud上：</li>
+</ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotcloud ssh</span><br></pre></td></tr></table></figure></p>
+<p>&lt;!--more--&gt;</p>
+<ol start="2">
+<li>
+<p>将以下代码放到<code>home</code>目录下, <code>~/xiami_auto_checkin.py</code>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment"># encoding:utf-8</span></span><br><span class="line"><span class="comment"># +-----------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># | File: xiami_auto_checkin.py</span></span><br><span class="line"><span class="comment"># | Author: huxuan</span></span><br><span class="line"><span class="comment"># | E-mail: i(at)huxuan.org</span></span><br><span class="line"><span class="comment"># | Created: 2012-12-11</span></span><br><span class="line"><span class="comment"># | Last modified: 2012-02-06</span></span><br><span class="line"><span class="comment"># | Description:</span></span><br><span class="line"><span class="comment"># |     Description for xiami_auto_checkin.py</span></span><br><span class="line"><span class="comment"># |</span></span><br><span class="line"><span class="comment"># | Copyrgiht (c) 2012 by huxuan. All rights reserved.</span></span><br><span class="line"><span class="comment"># | License GPLv3</span></span><br><span class="line"><span class="comment"># +-----------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> cookielib</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(response)</span>:</span></span><br><span class="line">    <span class="string">"""Check whether checkin is successful</span><br><span class="line"></span><br><span class="line">    Args:</span><br><span class="line">        response: the urlopen result of checkin</span><br><span class="line"></span><br><span class="line">    Returns:</span><br><span class="line">        If succeed, return a string like '已经连续签到**天'</span><br><span class="line">            ** is the amount of continous checkin days</span><br><span class="line">        If not, return False</span><br><span class="line">    """</span></span><br><span class="line">    pattern = re.compile(<span class="string">r'&lt;div class="idh"&gt;(已连续签到\d+天)&lt;/div&gt;'</span>)</span><br><span class="line">    result = pattern.search(response)</span><br><span class="line">    <span class="keyword">if</span> result: <span class="keyword">return</span> result.group(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""Main process of auto checkin</span><br><span class="line">    """</span></span><br><span class="line">    <span class="comment"># Get log file</span></span><br><span class="line">    LOG_DIR = os.path.join(os.path.expanduser(<span class="string">"~"</span>), <span class="string">'.log'</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(LOG_DIR):</span><br><span class="line">        os.makedirs(LOG_DIR)</span><br><span class="line">    LOG_PATH = os.path.join(LOG_DIR, <span class="string">'xiami_auto_checkin.log'</span>)</span><br><span class="line">    f = LOG_FILE = file(LOG_PATH, <span class="string">'a'</span>)</span><br><span class="line">    <span class="keyword">print</span> &gt;&gt;f <span class="comment"># add a blank space to seperate log</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Get email and password</span></span><br><span class="line">    <span class="keyword">if</span> len(sys.argv) != <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">print</span> &gt;&gt;f, <span class="string">'[Error] Please input email &amp; password as sys.argv!'</span></span><br><span class="line">        <span class="keyword">print</span> &gt;&gt;f, datetime.datetime.now()</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    email = sys.argv[<span class="number">1</span>]</span><br><span class="line">    password = sys.argv[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Init</span></span><br><span class="line">    opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookielib.CookieJar()))</span><br><span class="line">    urllib2.install_opener(opener)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Login</span></span><br><span class="line">    login_url = <span class="string">'http://www.xiami.com/web/login'</span></span><br><span class="line">    login_data = urllib.urlencode(&#123;<span class="string">'email'</span>:email, <span class="string">'password'</span>:password, <span class="string">'LoginButton'</span>:<span class="string">'登陆'</span>,&#125;)</span><br><span class="line">    login_headers = &#123;<span class="string">'Referer'</span>:<span class="string">'http://www.xiami.com/web/login'</span>, <span class="string">'User-Agent'</span>:<span class="string">'Opera/9.60'</span>,&#125;</span><br><span class="line">    login_request = urllib2.Request(login_url, login_data, login_headers)</span><br><span class="line">    login_response = urllib2.urlopen(login_request).read()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Checkin</span></span><br><span class="line">    checkin_pattern = re.compile(<span class="string">r'&lt;a class="check_in" href="(.*?)"&gt;'</span>)</span><br><span class="line">    checkin_result = checkin_pattern.search(login_response)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> checkin_result:</span><br><span class="line">        <span class="comment"># Checkin Already | Login Failed</span></span><br><span class="line">        result = check(login_response)</span><br><span class="line">        <span class="keyword">if</span> result:</span><br><span class="line">            <span class="keyword">print</span> &gt;&gt;f, <span class="string">'[Succeed] Checkin Already!'</span>, email, result</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">print</span> &gt;&gt;f, <span class="string">'[Error] Login Failed!'</span>, email</span><br><span class="line">        <span class="keyword">print</span> &gt;&gt;f, datetime.datetime.now()</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    checkin_url = <span class="string">'http://www.xiami.com'</span> + checkin_result.group(<span class="number">1</span>)</span><br><span class="line">    checkin_headers = &#123;<span class="string">'Referer'</span>:<span class="string">'http://www.xiami.com/web'</span>, <span class="string">'User-Agent'</span>:<span class="string">'Opera/9.60'</span>,&#125;</span><br><span class="line">    checkin_request = urllib2.Request(checkin_url, <span class="keyword">None</span>, checkin_headers)</span><br><span class="line">    checkin_response = urllib2.urlopen(checkin_request).read()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Result</span></span><br><span class="line">    result = check(checkin_response)</span><br><span class="line">    <span class="keyword">if</span> result:</span><br><span class="line">        <span class="keyword">print</span> &gt;&gt;f, <span class="string">'[Succeed] Checkin Succeed!'</span>, email, result</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">print</span> &gt;&gt;f, <span class="string">'[Error] Checkin Failed!'</span></span><br><span class="line">    <span class="keyword">print</span> &gt;&gt;f, datetime.datetime.now()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>执行<code>crontab -e</code></p>
+</li>
+</ol>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab <span class="operator">-e</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>
+<p>根据自身情况添加
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># replace USERNAME and PASSWORD with email account and corresponding password&#10;5 */8 * * * python /home/dotcloud/xiami_auto_checkin.py USERNAME PASSWORD</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>保存退出
+搞定</p>
+</li>
+</ol>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-05-23-xiami-checkin.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 14 2012 </div>
-			<div class="article-title"><a href="/2012-05-14-calculate-elapsed-time-in-milliseconds-unix-slash-linux.html">Unix/Linux计算程序消耗的时间（毫秒)</a></div>						
+			<div class="article-title"><a href="/2012-05-14-calculate-elapsed-time-in-milliseconds-unix-slash-linux.html" >Unix/Linux计算程序消耗的时间（毫秒)</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -120,6 +190,7 @@
 <p>直接上代码:</p>
 <p>&lt;!--more--&gt;</p>
 <p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;sys/time.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Return 1 if the difference is negative, otherwise 0.  </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">timeval_subtract</span><span class="params">(<span class="keyword">struct</span> timeval *result, <span class="keyword">struct</span> timeval *t2, <span class="keyword">struct</span> timeval *t1)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">int</span> diff = (t2-&gt;tv_usec + <span class="number">1000000</span> * t2-&gt;tv_sec) - (t1-&gt;tv_usec + <span class="number">1000000</span> * t1-&gt;tv_sec);</span><br><span class="line">    result-&gt;tv_sec = diff / <span class="number">1000000</span>;</span><br><span class="line">    result-&gt;tv_usec = diff % <span class="number">1000000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (diff&lt;<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">timeval_print</span><span class="params">(<span class="keyword">struct</span> timeval *tv)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buffer[<span class="number">30</span>];</span><br><span class="line">    <span class="keyword">time_t</span> curtime;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%ld.%06ld"</span>, tv-&gt;tv_sec, tv-&gt;tv_usec);</span><br><span class="line">    curtime = tv-&gt;tv_sec;</span><br><span class="line">    strftime(buffer, <span class="number">30</span>, <span class="string">"%m-%d-%Y  %T"</span>, localtime(&amp;curtime));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">" = %s.%06ld\n"</span>, buffer, tv-&gt;tv_usec);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> timeval tvBegin, tvEnd, tvDiff;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// begin</span></span><br><span class="line">    gettimeofday(&amp;tvBegin, <span class="literal">NULL</span>);</span><br><span class="line">    timeval_print(&amp;tvBegin);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// lengthy operation</span></span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">999999L</span>;++i) &#123;</span><br><span class="line">        j=<span class="built_in">sqrt</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//end</span></span><br><span class="line">    gettimeofday(&amp;tvEnd, <span class="literal">NULL</span>);</span><br><span class="line">    timeval_print(&amp;tvEnd);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// diff</span></span><br><span class="line">    timeval_subtract(&amp;tvDiff, &amp;tvEnd, &amp;tvBegin);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%ld.%06ld\n"</span>, tvDiff.tv_sec, tvDiff.tv_usec);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -127,12 +198,18 @@
 </div>
 	<a type="button" href="/2012-05-14-calculate-elapsed-time-in-milliseconds-unix-slash-linux.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 12 2012 </div>
-			<div class="article-title"><a href="/2012-05-12-add-robots-dot-txt-to-octopress.html">Octopress添加robots.txt</a></div>						
+			<div class="article-title"><a href="/2012-05-12-add-robots-dot-txt-to-octopress.html" >Octopress添加robots.txt</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -141,6 +218,7 @@
 	
 	  <p>添加<code>source/robots.txt</code>:</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---&#10;layout: nil&#10;---&#10;User-agent: *&#10;Disallow: &#10;Sitemap: &#123;&#123; site.url &#125;&#125;/sitemap.xml</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -148,12 +226,18 @@
 </div>
 	<a type="button" href="/2012-05-12-add-robots-dot-txt-to-octopress.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 12 2012 </div>
-			<div class="article-title"><a href="/2012-05-12-octopress-useful-links.html">octopress常用链接整理</a></div>						
+			<div class="article-title"><a href="/2012-05-12-octopress-useful-links.html" >octopress常用链接整理</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -188,6 +272,7 @@
 <p><a href="https://github.com/robbyedwards/octopress-tag-cloud" target="_blank" rel="external">A tag cloud plugin for Octopress</a></p>
 </li>
 </ol>
+
 	
 	</div>
 	
@@ -195,12 +280,18 @@
 </div>
 	<a type="button" href="/2012-05-12-octopress-useful-links.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Apr 10 2012 </div>
-			<div class="article-title"><a href="/2012-04-10-soappy-error-xml-parsers-expat-expaterror.html">SOAPpy Error</a></div>						
+			<div class="article-title"><a href="/2012-04-10-soappy-error-xml-parsers-expat-expaterror.html" >SOAPpy Error</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -232,6 +323,7 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 </blockquote>
 <p>查了很久，最后发现是因为公司网络需要代理的缘故，造成python不能连接网络。解决办法就是:</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=proxy_server:port</span><br><span class="line"><span class="built_in">export</span> https_proxy=proxy_server:port</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -239,12 +331,18 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 </div>
 	<a type="button" href="/2012-04-10-soappy-error-xml-parsers-expat-expaterror.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Feb 28 2012 </div>
-			<div class="article-title"><a href="/2012-02-28-gsoap-error-500.html">gsoap Error 500</a></div>						
+			<div class="article-title"><a href="/2012-02-28-gsoap-error-500.html" >gsoap Error 500</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -260,6 +358,7 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 <p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// set mustUnderstand to 0</span></span><br><span class="line">soap.mustUnderstand=<span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
 <p>修改soapC.cpp, 注释掉<code>soap-&gt;mustUnderstand=1</code>这一行：</p>
 <p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 <span class="title">soap_out_SOAP_ENV__Header</span><span class="params">(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</span><br><span class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></span><br><span class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &amp;a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -267,12 +366,18 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 </div>
 	<a type="button" href="/2012-02-28-gsoap-error-500.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Feb 28 2012 </div>
-			<div class="article-title"><a href="/2012-02-28-using-tcpdump-analysis-soap-protocol.html">使用tcpdump分析soap包</a></div>						
+			<div class="article-title"><a href="/2012-02-28-using-tcpdump-analysis-soap-protocol.html" >使用tcpdump分析soap包</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -281,6 +386,7 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 	
 	  <p><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20090308/159740.html" target="_blank" rel="external">参考链接</a></p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -A <span class="operator">-s</span>0 host endpoint-host-name</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -288,12 +394,18 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 </div>
 	<a type="button" href="/2012-02-28-using-tcpdump-analysis-soap-protocol.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Feb 28 2012 </div>
-			<div class="article-title"><a href="/2012-02-28-gsoap-error-200.html">gsoap Error 200</a></div>						
+			<div class="article-title"><a href="/2012-02-28-gsoap-error-200.html" >gsoap Error 200</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -306,6 +418,7 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 </blockquote>
 <p>解决办法：</p>
 <p>修改gsoap init的endpoint为全路径解决问题。</p>
+
 	
 	</div>
 	
@@ -313,12 +426,18 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 </div>
 	<a type="button" href="/2012-02-28-gsoap-error-200.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Feb 6 2012 </div>
-			<div class="article-title"><a href="/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html">MacOS X emacs拖拽打开文件</a></div>						
+			<div class="article-title"><a href="/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html" >MacOS X emacs拖拽打开文件</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -328,6 +447,7 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 	  <p>emacs在mac os x中拖拽文件到buffer会在buffer中嵌入显示拖拽文件的内容，解决办法：</p>
 <p>在<code>.emacs</code>中加入</p>
 <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">define-key</span> global-map [ns-drag-file] <span class="quoted">'my-ns-open-files</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> my-ns-open-files <span class="list">()</span></span><br><span class="line">  <span class="string">"Open files in the list `ns-input-file'."</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">mapc</span> <span class="quoted">'find-file</span> ns-input-file)</span></span><br><span class="line">  <span class="list">(<span class="keyword">setq</span> ns-input-file <span class="literal">nil</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -335,12 +455,18 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 </div>
 	<a type="button" href="/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Feb 3 2012 </div>
-			<div class="article-title"><a href="/2012-02-03-compile-gsoap-on-mac-os-x.html">MacOS X上编译gSOAP</a></div>						
+			<div class="article-title"><a href="/2012-02-03-compile-gsoap-on-mac-os-x.html" >MacOS X上编译gSOAP</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -350,6 +476,7 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">automake --ignore-deps &amp;&amp; ./configure &amp;&amp; make</span><br></pre></td></tr></table></figure></p>
 <p>如果要编译universal版本，则使用</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">automake --ignore-deps &amp;&amp; ./configure CFLAGS=<span class="string">"-arch ppc -arch i386"</span> LDFLAGS=<span class="string">"-arch ppc -arch i386"</span> &amp;&amp; make</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -357,28 +484,7 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 </div>
 	<a type="button" href="/2012-02-03-compile-gsoap-on-mac-os-x.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Feb 2 2012 </div>
-			<div class="article-title"><a href="/2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc.html">Git svn – Can’t locate Term/ReadKey.pm in @INC</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">perl -MCPAN <span class="operator">-e</span> shell</span><br><span class="line"></span><br><span class="line"><span class="comment"># install Term::ReadKey</span></span><br><span class="line"><span class="comment"># exit</span></span><br><span class="line">perl -MCPAN <span class="operator">-e</span> shellinstall Term::ReadKeyexit</span><br></pre></td></tr></table></figure></p>
-<p>archlinux上可以安装<code>extra/perl-term-readkey</code></p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S perl-term-readkey</span><br></pre></td></tr></table></figure></p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc.html#more" class="btn btn-default more">阅读此文</a>
-</div>
+
 		
 
 		</div>
@@ -401,6 +507,7 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 	
 </ul>
 </div>
+
   		</center>
 		</div>
 
@@ -413,104 +520,114 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
+
 		
-			<div class="widget">
+			
+	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/dns/">dns<span>1</span></a></li>
-		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
-		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
-		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
-		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
-		
-			<li><a href="/tags/python/">python<span>30</span></a></li>
-		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
-		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
-		
-			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
-		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
-		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
 		
 			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
 		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+		
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
+		
+			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+		
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+		
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+		
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+		
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
+		
+			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
+		
+			<li><a href="/tags/python/">python<span>31</span></a></li>
+		
+			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
+		
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
+		
+			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
 			<li><a href="/tags/boost/">boost<span>6</span></a></li>
 		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
 		
-			<li><a href="/tags/VC/">VC<span>8</span></a></li>
-		
-			<li><a href="/tags/samba/">samba<span>1</span></a></li>
-		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
-		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
+
+
 		
-			<div class="widget">
+			
+<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+        <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>
 </div>
+
 		
-			<div class="widget">
+			
+<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
+
+
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
+
 	
 	
 </div> <!-- row-fluid -->
@@ -523,7 +640,8 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -553,5 +671,8 @@ xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 5<
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+

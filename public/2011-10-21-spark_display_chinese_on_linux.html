@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Spark在Linux下的乱码解决">
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:title" content="Spark在Linux下的乱码解决"/>
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,11 +92,19 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
-    	 <div class="page-header">		
+    	 
+
+
+	
+		<div class="page-header">		
 			<h1> Spark在Linux下的乱码解决</h1>
-		</div>
+		</div>		
+	
+
+
 
 <div class="row post">
 	<!-- cols -->
@@ -112,7 +125,8 @@
 <p>1，找到jre路径，创建fallback文件夹</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;path_to_spark&gt;/Spark/jre/lib/fonts</span><br><span class="line">sudo mkdir fallback</span><br></pre></td></tr></table></figure></p>
 <p>进入fallback文件夹，链接中文字体（我选的是文泉驿正黑）</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fallback</span><br><span class="line">sudo ln <span class="operator">-s</span> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo mkfontscale</span><br></pre></td></tr></table></figure></p>	  
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fallback</span><br><span class="line">sudo ln <span class="operator">-s</span> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo mkfontscale</span><br></pre></td></tr></table></figure></p>
+	  
 	</div>
 
 	<div>
@@ -132,17 +146,20 @@
 	
 </ul>
 </div>
+
     </center>
 	</div>
 	
 	<!-- comment -->
-	<section id="comment">
+	
+<section id="comment">
   <h2 class="title">留言</h2>
 
   
   	 <div class="ds-thread" data-thread-key="2011-10-21-spark_display_chinese_on_linux.html" data-title="Spark在Linux下的乱码解决" data-url="http://yesokay.herokuapp.com/2011-10-21-spark_display_chinese_on_linux.html"></div>  
   
 </section>
+
 	
 	</div> <!-- col-md-9/col-md-12 -->
 	
@@ -162,9 +179,11 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
     <ul id="categorys" class="tag_box list-unstyled collapse in">
-        <li>
-    </li><li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/Linux/">Linux<span>16</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>15</span></a></li>
-  
+          
+  <li>
+    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/Linux/">Linux<span>16</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>15</span></a></li>
+  </li>
+
     </ul>
 	</div>
 	
@@ -174,7 +193,8 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	  <li><a href="/tags/Linux/">Linux<span>69</span></a></li> <li><a href="/tags/emacs/">emacs<span>71</span></a></li> <li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li> <li><a href="/tags/org2blog/">org2blog<span>57</span></a></li> <li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+	    
+  <li><a href="/tags/Linux/">Linux<span>69</span></a></li> <li><a href="/tags/emacs/">emacs<span>71</span></a></li> <li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li> <li><a href="/tags/org2blog/">org2blog<span>57</span></a></li> <li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
     </ul>
 	</div>
 		
@@ -187,9 +207,11 @@
     <hr>
 	
 </div><!-- col-md-3 -->
+
 	
 
 </div><!-- row -->
+
 	</div>
   </div>
   <div class="container-narrow">
@@ -199,7 +221,8 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -229,5 +252,8 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+

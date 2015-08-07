@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,6 +92,7 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -101,15 +107,49 @@
 
 		
 
+
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jul 1 2011 </div>
-			<div class="article-title"><a href="/2011-07-01-enable_zoom_in_out_uiwebview.html">UIWebView启用放大缩小</a></div>						
+			<div class="article-title"><a href="/2011-07-01-ios_uiwebview_current_url.html" >iOS获取UIWebView当前浏览页面的地址</a></div>						
 		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>iOS下获取UIWebView当前浏览页面的地址，在 =-(void) webViewDidFinishLoad:(UIWebView *)wv=</p>
+<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text = wv<span class="variable">.request</span><span class="variable">.URL</span><span class="variable">.absoluteString</span>;</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-07-01-ios_uiwebview_current_url.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Jul 1 2011 </div>
+			<div class="article-title"><a href="/2011-07-01-enable_zoom_in_out_uiwebview.html" >UIWebView启用放大缩小</a></div>						
+		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -118,6 +158,7 @@
 	
 	  <p>how to enable zoom in/out of UIWebView?</p>
 <p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webView<span class="variable">.scalesPageToFit</span> = <span class="literal">YES</span>;</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -125,12 +166,18 @@
 </div>
 	<a type="button" href="/2011-07-01-enable_zoom_in_out_uiwebview.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 29 2011 </div>
-			<div class="article-title"><a href="/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html">Mac OS X Snow Leopard下移动swap到另外的分区</a></div>						
+			<div class="article-title"><a href="/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html" >Mac OS X Snow Leopard下移动swap到另外的分区</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -141,6 +188,7 @@
 <p>这里注意的是，新的swap文件的路径必须存在。</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># backup the file</span></span><br><span class="line">$ <span class="built_in">cd</span> /System/Library/LaunchDaemons</span><br><span class="line">$ sudo cp com.apple.dynamic_pager.plist&#123;,_bak&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># convert the file to xml</span></span><br><span class="line">$ sudo plutil -convert xml1 com.apple.dynamic_pager.plist</span><br><span class="line"></span><br><span class="line"><span class="comment"># modify the file</span></span><br><span class="line">$ sudo vim com.apple.dynamic_pager.plist</span><br><span class="line"></span><br><span class="line">&lt;key&gt;ProgramArguments&lt;/key&gt;</span><br><span class="line">&lt;array&gt;</span><br><span class="line">    &lt;string&gt;/bin/bash&lt;/string&gt;</span><br><span class="line">    &lt;string&gt;-c&lt;/string&gt;</span><br><span class="line">    &lt;string&gt;/bin/<span class="built_in">wait</span>4path /Volumes/Swap/ &amp;amp;&amp;amp;</span><br><span class="line">/sbin/dynamic_pager -F /Volumes/Swap/.vm/swapfile&lt;/string&gt;</span><br><span class="line">&lt;/array&gt; <span class="comment"># replace /Volumes/Swap/.vm/swapfile as your path</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># convert the file to binary</span></span><br><span class="line">$ sudo plutil -convert binary1 com.apple.dynamic_pager.plist</span><br></pre></td></tr></table></figure></p>
 <p>重启就可以了。</p>
+
 	
 	</div>
 	
@@ -148,12 +196,18 @@
 </div>
 	<a type="button" href="/2011-06-29-mac_os_x_snow_leopard_swap_paritition_driver.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 29 2011 </div>
-			<div class="article-title"><a href="/2011-06-29-linux_core_dump.html">linux下生成core dump文件</a></div>						
+			<div class="article-title"><a href="/2011-06-29-linux_core_dump.html" >linux下生成core dump文件</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -162,6 +216,7 @@
 	
 	  <p>linux下让crash的程序在程序可执行文件目录自动生成core文件：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ulimit</span> -c unlimited</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -169,12 +224,18 @@
 </div>
 	<a type="button" href="/2011-06-29-linux_core_dump.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 26 2011 </div>
-			<div class="article-title"><a href="/2011-06-26-mac_os_x_emacs_chinese_font.html">emacs中文显示方框</a></div>						
+			<div class="article-title"><a href="/2011-06-26-mac_os_x_emacs_chinese_font.html" >emacs中文显示方框</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -186,6 +247,7 @@
 <p>可是在mac os X下，这样设置出来的emacs，中文显示为方框。google了一下，没有找到解决办法 :(</p>
 <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">x-list-fonts</span> <span class="string">"gb"</span>)</span> # ctrl+j</span><br><span class="line"><span class="literal">nil</span></span><br></pre></td></tr></table></figure></p>
 <p>gb编码的所有字符在字体中找不到。求高手解答.</p>
+
 	
 	</div>
 	
@@ -193,12 +255,18 @@
 </div>
 	<a type="button" href="/2011-06-26-mac_os_x_emacs_chinese_font.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 25 2011 </div>
-			<div class="article-title"><a href="/2011-06-25-hg_merge_repositories.html">hg合并多个repository</a></div>						
+			<div class="article-title"><a href="/2011-06-25-hg_merge_repositories.html" >hg合并多个repository</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -214,6 +282,7 @@
 <li>通过subrepo的方式，传送门&lt;a href=&quot;http://mercurial.selenic.com/wiki/Subrepository&quot;&gt;http://mercurial.selenic.com/wiki/Subrepository&lt;/a&gt;</li>
 </ol>
 <p>这里第一种方法适用，第二种方法适用与子项目或者库的情况.</p>
+
 	
 	</div>
 	
@@ -221,12 +290,18 @@
 </div>
 	<a type="button" href="/2011-06-25-hg_merge_repositories.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Apr 24 2011 </div>
-			<div class="article-title"><a href="/2011-04-24-gdb_remote_debuging.html">GDB远程调试</a></div>						
+			<div class="article-title"><a href="/2011-04-24-gdb_remote_debuging.html" >GDB远程调试</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -240,6 +315,7 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdbserver localhost:<span class="number">2345</span> photorec.exe</span><br></pre></td></tr></table></figure></p>
 <p>在archlinux下执行</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里我用的virtualbox，所以ip为10.0.2.2，请自行替换成windows的ip</span></span><br><span class="line"><span class="variable">$gdb</span> photorec.exe</span><br><span class="line">gdb&gt; target remote <span class="number">10.0</span>.<span class="number">2.2</span>:<span class="number">2345</span></span><br><span class="line">gdb &gt; ....</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -247,12 +323,18 @@
 </div>
 	<a type="button" href="/2011-04-24-gdb_remote_debuging.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Apr 24 2011 </div>
-			<div class="article-title"><a href="/2011-04-24-archlinux_mingw_cross_compile_testdisk.html">archlinux下使用MinGW交叉编译testdisk</a></div>						
+			<div class="article-title"><a href="/2011-04-24-archlinux_mingw_cross_compile_testdisk.html" >archlinux下使用MinGW交叉编译testdisk</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -265,6 +347,7 @@
 <p>编译testdisk</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --host=i486-mingw32 --disable-missing-uuid-ok &amp;&amp; make</span><br></pre></td></tr></table></figure></p>
 <p>这样就编译好了。在windows下运行发现没有问题。:) （终于可以不用忍受windows下mingw的蜗牛速度了）</p>
+
 	
 	</div>
 	
@@ -272,12 +355,18 @@
 </div>
 	<a type="button" href="/2011-04-24-archlinux_mingw_cross_compile_testdisk.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Apr 24 2011 </div>
-			<div class="article-title"><a href="/2011-04-24-archlinux_mingw_cross_compile_environment.html">archlinux搭建MinGW跨平台编译环境</a></div>						
+			<div class="article-title"><a href="/2011-04-24-archlinux_mingw_cross_compile_environment.html" >archlinux搭建MinGW跨平台编译环境</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -294,6 +383,7 @@
 <li>通过MinGW cross compiling environment来实现。&lt;a href=&quot;http://mingw-cross-env.nongnu.org/&quot;&gt;http://mingw-cross-env.nongnu.org&lt;/a&gt;</li>
 </ol>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1. 下载</span></span><br><span class="line">wget https://bitbucket.org/vog/mingw-cross-env/downloads/mingw-cross-env-<span class="number">2.20</span>.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment">#2. 解压</span></span><br><span class="line">tar -xzvf mingw-cross-env-<span class="number">2.20</span>.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment">#3. 移动到/opt目录（可选）</span></span><br><span class="line">mv mingw-cross-env-<span class="number">2.20</span> /opt/mingw</span><br><span class="line"></span><br><span class="line"><span class="comment">#4. 安装</span></span><br><span class="line">su -</span><br><span class="line"><span class="built_in">cd</span> /opt/mingw</span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="comment">#5. 其他的包可以参见mingw-cross-env的文档</span></span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -301,12 +391,18 @@
 </div>
 	<a type="button" href="/2011-04-24-archlinux_mingw_cross_compile_environment.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Apr 19 2011 </div>
-			<div class="article-title"><a href="/2011-04-19-gdb_save_breakpoints.html">gdb保存和加载断点等信息</a></div>						
+			<div class="article-title"><a href="/2011-04-19-gdb_save_breakpoints.html" >gdb保存和加载断点等信息</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -318,6 +414,7 @@
 <p>调用bsave保存breakpoints，调用bresotre加载breakpoints。
 再如对于调试ncurses的设置：</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define settty&#10;  tty /dev/pts/$arg0&#10;end&#10;&#10;define setterminfo&#10;  set env TERM=xterm&#10;  set env COLUMNS=144&#10;  set env LINES=29&#10;end</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -325,38 +422,7 @@
 </div>
 	<a type="button" href="/2011-04-19-gdb_save_breakpoints.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Apr 8 2011 </div>
-			<div class="article-title"><a href="/2011-04-08-install_oracle_10g_enterprise_on_archlinux.html">archlinux下安装oracle 10g enterprise</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>按照arch wiki做就可以了。参考链接&lt;a href=&quot;https://wiki.archlinux.org/index.php/Oracle&quot;&gt;https://wiki.archlinux.org/index.php/Oracle&lt;/a&gt;</p>
-<p>这里，安装ksh的步骤可以跳过，直接安装pdksh</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S pdksh</span><br></pre></td></tr></table></figure></p>
-<p>安装过程中可能在62%左右提示一个错误，点continue不影响使用。</p>
-<p>默认安装完成之后，重新启动archlinux之后，oracle是不会启动的。手动启动的方法：</p>
-<p>&lt;ol&gt;
-&lt;li&gt;su - oracle # 这里得以oracle启动&lt;/li&gt;
-&lt;li&gt;sqlplus /nologo&lt;/li&gt;
-&lt;li&gt;sql&gt; conn / as sysdba&lt;/li&gt;
-&lt;li&gt;sql&gt; startup&lt;/li&gt;
-&lt;li&gt;sql&gt; exit&lt;/li&gt;
-&lt;li&gt;lsnrctl start&lt;/li&gt;
-&lt;/ol&gt;</p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-04-08-install_oracle_10g_enterprise_on_archlinux.html#more" class="btn btn-default more">阅读此文</a>
-</div>
+
 		
 
 		</div>
@@ -379,6 +445,7 @@
 	
 </ul>
 </div>
+
   		</center>
 		</div>
 
@@ -391,104 +458,114 @@
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
+
 		
-			<div class="widget">
+			
+	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
-		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
-		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
-		
-			<li><a href="/tags/portable/">portable<span>1</span></a></li>
-		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
-		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/programming/">programming<span>5</span></a></li>
-		
-			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
-		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/english/">english<span>1</span></a></li>
-		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
-		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
-		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
-		
-			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
-		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
 		
 			<li><a href="/tags/suse/">suse<span>3</span></a></li>
 		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+		
+			<li><a href="/tags/soap/">soap<span>1</span></a></li>
+		
+			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+		
+			<li><a href="/tags/portable/">portable<span>1</span></a></li>
+		
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+		
+			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+		
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
+		
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+		
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+		
+			<li><a href="/tags/android/">android<span>18</span></a></li>
+		
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
+		
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+		
+			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+		
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+		
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
+		
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
+
+
 		
-			<div class="widget">
+			
+<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+        <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>
 </div>
+
 		
-			<div class="widget">
+			
+<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
+
+
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
+
 	
 	
 </div> <!-- row-fluid -->
@@ -501,7 +578,8 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -531,5 +609,8 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+

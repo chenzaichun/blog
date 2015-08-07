@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,6 +92,7 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -101,15 +107,50 @@
 
 		
 
+
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Aug 29 2010 </div>
+			<div class="article-title"><a href="/2010-08-29-archlinux_xelatex.html" >xelatex</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>今天准备用latex改一下简历，但是原来坚哥配置的texlive已经无法使用（因为squashfs升级，不支持旧版的格式），想了一下，还是装个新版的texlive吧！archlinux下安装：</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S texlive-core textlive-langcjk texlive-latexextra</span><br></pre></td></tr></table></figure></p>
+<p>新版的xelatex对中文支持比较好了，所以直接修改原来用moderncv写的简历，然后xelatex xxx.tex生成pdf，相当的简单！</p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-08-29-archlinux_xelatex.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Aug 25 2010 </div>
-			<div class="article-title"><a href="/2010-08-25-emacs23_xim.html">emacs23不能切换输入法的问题</a></div>						
+			<div class="article-title"><a href="/2010-08-25-emacs23_xim.html" >emacs23不能切换输入法的问题</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -118,6 +159,7 @@
 	
 	  <p>emacs23安装后不能切换输入法（在archlinux，ubuntu上测试过，无论什么输入法ibus，scim，fcitx等等），但是其他的程序是没有任何问题的。解决办法，将<code>export LC_CTYPE=zh_CN.UTF-8</code>加入你的profile（.bashrc, environment等都可以）</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LC_CTYPE=zh_CN.UTF-<span class="number">8</span></span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -125,12 +167,18 @@
 </div>
 	<a type="button" href="/2010-08-25-emacs23_xim.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Aug 24 2010 </div>
-			<div class="article-title"><a href="/2010-08-24-grub_framebuffer.html">archlinux console分辨率</a></div>						
+			<div class="article-title"><a href="/2010-08-24-grub_framebuffer.html" >archlinux console分辨率</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -139,6 +187,7 @@
 	
 	  <p>archlinux在启动的时候grub使用的是800x600，修改为1280x800时没有这个选项，google得知加上启动vga参数865就可以了</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vga=865</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -146,12 +195,18 @@
 </div>
 	<a type="button" href="/2010-08-24-grub_framebuffer.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Aug 24 2010 </div>
-			<div class="article-title"><a href="/2010-08-24-archlinux_aur_update.html">archlinux自动升级aur</a></div>						
+			<div class="article-title"><a href="/2010-08-24-archlinux_aur_update.html" >archlinux自动升级aur</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -160,6 +215,7 @@
 	
 	  <p>在用aur安装完软件之后，默认使用pacman -Syu或者yaourt -Syu是不会更新aur安装的软件的，但是yaourt有个--aur参数可以升级aur，所以可以用下面的方法升级aur</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从AUR升级本地软件数据库并安装更新</span></span><br><span class="line">yaourt -Syu --aur</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -167,12 +223,18 @@
 </div>
 	<a type="button" href="/2010-08-24-archlinux_aur_update.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Aug 24 2010 </div>
-			<div class="article-title"><a href="/2010-08-24-archlinux_sound_alsamixer.html">lxde音量调节</a></div>						
+			<div class="article-title"><a href="/2010-08-24-archlinux_sound_alsamixer.html" >lxde音量调节</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -182,6 +244,7 @@
 	  <p>lxde是没有音量调节的，如果需要调整，只能在term中使用aslamixer进行调节，这样很不方便，幸好可以绑定快捷键，修改~/.config/openbox/lxde-rc.xml，添加</p>
 <p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- volume --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">keybind</span> <span class="attribute">key</span>=<span class="value">"W-Right"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">action</span> <span class="attribute">name</span>=<span class="value">"Execute"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">command</span>&gt;</span>amixer -q set Master 3%-<span class="tag">&lt;/<span class="title">command</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">keybind</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">keybind</span> <span class="attribute">key</span>=<span class="value">"W-Left"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">action</span> <span class="attribute">name</span>=<span class="value">"Execute"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">command</span>&gt;</span>amixer -q set Master unmute 3%+<span class="tag">&lt;/<span class="title">command</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">keybind</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>我绑定的是window＋left，right，其他按键类似</p>
+
 	
 	</div>
 	
@@ -189,12 +252,18 @@
 </div>
 	<a type="button" href="/2010-08-24-archlinux_sound_alsamixer.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Aug 23 2010 </div>
-			<div class="article-title"><a href="/2010-08-23-yaourt_install.html">安装yaourt遇到failed retrieving yaourt</a></div>						
+			<div class="article-title"><a href="/2010-08-23-yaourt_install.html" >安装yaourt遇到failed retrieving yaourt</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -205,6 +274,7 @@
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxfr]&#10;Server = http://repo.archlinux.fr/x86_64</span><br></pre></td></tr></table></figure></p>
 <p>安装x86_64版本的yaourt的时候，出现failed retrieving yaourt，解决办法：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syy yaourt</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -212,12 +282,18 @@
 </div>
 	<a type="button" href="/2010-08-23-yaourt_install.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Aug 23 2010 </div>
-			<div class="article-title"><a href="/2010-08-23-archlinux_lxde_bluetooth.html">archlinux+LXDE蓝牙传输文件</a></div>						
+			<div class="article-title"><a href="/2010-08-23-archlinux_lxde_bluetooth.html" >archlinux+LXDE蓝牙传输文件</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -234,6 +310,7 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluez-simple-agent hci0 <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F</span><br></pre></td></tr></table></figure></p>
 <p>在其他term中可以进行文件传输了：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obexftp -b <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F -p xxx.txt</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -241,12 +318,18 @@
 </div>
 	<a type="button" href="/2010-08-23-archlinux_lxde_bluetooth.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Aug 23 2010 </div>
-			<div class="article-title"><a href="/2010-08-23-archlinux_sound.html">archlinux声卡配置</a></div>						
+			<div class="article-title"><a href="/2010-08-23-archlinux_sound.html" >archlinux声卡配置</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -265,6 +348,7 @@
 <p>使用alsamixer调整音量</p>
 </li>
 </ol>
+
 	
 	</div>
 	
@@ -272,12 +356,18 @@
 </div>
 	<a type="button" href="/2010-08-23-archlinux_sound.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Aug 8 2010 </div>
-			<div class="article-title"><a href="/2010-08-08-fuse-python.html">安装fuse-python出现错误</a></div>						
+			<div class="article-title"><a href="/2010-08-08-fuse-python.html" >安装fuse-python出现错误</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -288,6 +378,7 @@
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NameError: name &#39;cflags&#39; is not defined</span><br></pre></td></tr></table></figure></p>
 <p>解决办法:</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libfuse-dev libfuse2 fuse-utils python-dev</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -295,12 +386,18 @@
 </div>
 	<a type="button" href="/2010-08-08-fuse-python.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Aug 3 2010 </div>
-			<div class="article-title"><a href="/2010-08-03-archlinux_auto_mount_windows.html">archlinux中自动挂载windows分区</a></div>						
+			<div class="article-title"><a href="/2010-08-03-archlinux_auto_mount_windows.html" >archlinux中自动挂载windows分区</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -311,6 +408,7 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S ntfs-<span class="number">3</span>g</span><br></pre></td></tr></table></figure></p>
 <p>然后修改/etc/fstab，比如我的修改为</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/dev/sda1 /media/c vfat user,defaults,codepage=936,iocharset=utf8,umask=000 0 0&#10;/dev/sda5 /media/d ntfs user,defaults,codepage=936,iocharset=utf8,umask=000 0 0&#10;/dev/sda6 /media/e ntfs user,defaults,codepage=936,iocharset=utf8,umask=000 0 0&#10;/dev/sda7 /media/f ntfs user,defaults,codepage=936,iocharset=utf8,umask=000 0 0</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -318,31 +416,7 @@
 </div>
 	<a type="button" href="/2010-08-03-archlinux_auto_mount_windows.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Aug 2 2010 </div>
-			<div class="article-title"><a href="/2010-08-02-ubuntu_linux_flashget.html">ubuntu下使用flashget</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>按照官方说明安装:</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ubunt 10.04&#19979;&#38754;&#26080;&#27861;&#21551;&#21160;,&#25552;&#31034;&#25214;&#19981;&#21040;libexpat.so.0&#10;  error while loading shared libraries: libexpat.so.0: cannot open shared object file: No such file or directory&#10;  &#21407;&#22240;,&#32534;&#35793;flashget&#20351;&#29992;&#30340;&#26159;libexpat.so.0&#29256;&#26412;,&#31995;&#32479;&#40664;&#35748;&#20026;libexpat.so.1.5.2,&#20570;&#36719;&#36830;&#25509;&#21363;&#21487;.&#10;  $cd /usr/lib&#10;  $sudo ln -s libexpat.so.1.5.2 libexpat.so.0&#10;  $sudo ldconfig</span><br></pre></td></tr></table></figure></p>
-<p>但是会出现:</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flashget: error while loading shared libraries: libexpat.so.0: wrong ELF class: ELFCLASS64</span><br></pre></td></tr></table></figure></p>
-<p>原因是因为我使用的64为系统,而flashget是用32位程序.怎么办呢?因为装有lib32,所以可以直接创建lib32中libexpat.so的软链接</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /lib32/libexpat.so.1.5.2 /usr/lib/libexpat.so.0</span><br></pre></td></tr></table></figure></p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-08-02-ubuntu_linux_flashget.html#more" class="btn btn-default more">阅读此文</a>
-</div>
+
 		
 
 		</div>
@@ -365,6 +439,7 @@
 	
 </ul>
 </div>
+
   		</center>
 		</div>
 
@@ -377,104 +452,114 @@
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
+
 		
-			<div class="widget">
+			
+	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
-		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
-		
-			<li><a href="/tags/VC/">VC<span>8</span></a></li>
-		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
-		
-			<li><a href="/tags/samba/">samba<span>1</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/macos/">macos<span>9</span></a></li>
-		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
+			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
 		
 			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
 		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
 		
-			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
+			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
-			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
 		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
 		
-			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
 		
 			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
-			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
 		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
+			<li><a href="/tags/database/">database<span>2</span></a></li>
+		
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+		
+			<li><a href="/tags/tools/">tools<span>4</span></a></li>
+		
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/git/">git<span>12</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
+
+
 		
-			<div class="widget">
+			
+<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+        <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>
 </div>
+
 		
-			<div class="widget">
+			
+<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
+
+
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
+
 	
 	
 </div> <!-- row-fluid -->
@@ -487,7 +572,8 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -517,5 +603,8 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+

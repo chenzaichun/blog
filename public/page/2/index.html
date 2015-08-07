@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,6 +92,7 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -101,15 +107,53 @@
 
 		
 
+
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Nov 28 2012 </div>
+			<div class="article-title"><a href="/2012-11-28-start-x-font-server-on-hp-ux.html" >在hp-ux上启动x font server</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>编辑<code>/etc/rc.config.d/xfs</code></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RUN_X_FONT_SERVER=1</span><br></pre></td></tr></table></figure></p>
+<p>然后启动</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/init.d/xfs start</span><br></pre></td></tr></table></figure></p>
+<p>检查是否启动:</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep xfs</span><br><span class="line">netstat -an|grep <span class="number">7000</span></span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-11-28-start-x-font-server-on-hp-ux.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Nov 27 2012 </div>
-			<div class="article-title"><a href="/2012-11-27-emacs-mac-like-key-binding.html">让emacs具有mac下的按键绑定</a></div>						
+			<div class="article-title"><a href="/2012-11-27-emacs-mac-like-key-binding.html" >让emacs具有mac下的按键绑定</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -117,6 +161,7 @@
 	  
 	
 	  <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> <span class="variable">*true-mac-cut-buffer*</span> <span class="string">""</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> <span class="variable">*true-mac-cut-buffer2*</span> <span class="literal">t</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> interprogram-cut-function</span><br><span class="line">      <span class="quoted">'(lambda (str push)</span><br><span class="line">         (setq *true-mac-cut-buffer* str)</span><br><span class="line">         (setq *true-mac-cut-buffer2* push))</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> interprogram-paste-function</span><br><span class="line">      <span class="quoted">'(lambda () nil)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-cut-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">progn</span> </span><br><span class="line">        <span class="list">(<span class="keyword">true-mac-copy-function</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">kill-region</span> <span class="list">(<span class="keyword">point</span>)</span> <span class="list">(<span class="keyword">mark</span>)</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">beep</span>)</span>)</span>)</span></span><br><span class="line">        </span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-copy-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">mac-cut-function</span> </span><br><span class="line">       <span class="variable">*true-mac-cut-buffer*</span></span><br><span class="line">       <span class="variable">*true-mac-cut-buffer2*</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">beep</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-paste-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">kill-region</span> <span class="list">(<span class="keyword">point</span>)</span> <span class="list">(<span class="keyword">mark</span>)</span>)</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> <span class="list">(<span class="keyword">mac-paste-function</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-x] <span class="quoted">'true-mac-cut-function</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> <span class="string">"\S-c"</span> <span class="quoted">'true-mac-copy-function</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-v] <span class="quoted">'true-mac-paste-function</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-a] <span class="quoted">'mark-whole-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-s] <span class="quoted">'save-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-S] <span class="quoted">'write-file</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-p] <span class="quoted">'ps-print-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-o] <span class="quoted">'find-file</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-q] <span class="quoted">'save-buffers-kill-emacs</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-w] <span class="quoted">'kill-buffer-and-window</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-z] <span class="quoted">'undo</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-f] <span class="quoted">'isearch-forward</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-g] <span class="quoted">'query-replace</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-l] <span class="quoted">'goto-line</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-m] <span class="quoted">'iconify-frame</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-n] <span class="quoted">'new-frame</span>)</span></span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -124,12 +169,18 @@
 </div>
 	<a type="button" href="/2012-11-27-emacs-mac-like-key-binding.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Nov 27 2012 </div>
-			<div class="article-title"><a href="/2012-11-27-iphone.html">你以为</a></div>						
+			<div class="article-title"><a href="/2012-11-27-iphone.html" >你以为</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -137,6 +188,7 @@
 	  
 	
 	  <p><img src="../media/iphone.png" alt="iphone"></p>
+
 	
 	</div>
 	
@@ -144,12 +196,18 @@
 </div>
 	<a type="button" href="/2012-11-27-iphone.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Nov 26 2012 </div>
-			<div class="article-title"><a href="/2012-11-26-generate-core-dump-on-linux.html">Linux下让进程生成core文件</a></div>						
+			<div class="article-title"><a href="/2012-11-26-generate-core-dump-on-linux.html" >Linux下让进程生成core文件</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -158,6 +216,7 @@
 	
 	  <p>在linux下让进程强制生成core dump文件：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcore &lt;-o filename&gt; pid</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -165,12 +224,18 @@
 </div>
 	<a type="button" href="/2012-11-26-generate-core-dump-on-linux.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Nov 26 2012 </div>
-			<div class="article-title"><a href="/2012-11-26-insert-current-time-in-emacs.html">emacs中插入当前时间</a></div>						
+			<div class="article-title"><a href="/2012-11-26-insert-current-time-in-emacs.html" >emacs中插入当前时间</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -179,6 +244,7 @@
 	
 	  <p>emacs中插入当前时间是可以自定义格式的，方法如下：</p>
 <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> insert-current-time <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> <span class="list">(<span class="keyword">format-time-string</span> <span class="string">"%Y-%m-%d %H:%M:%S"</span> <span class="list">(<span class="keyword">current-time</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -186,12 +252,18 @@
 </div>
 	<a type="button" href="/2012-11-26-insert-current-time-in-emacs.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Nov 26 2012 </div>
-			<div class="article-title"><a href="/2012-11-26-open-large-file-with-emacs.html">使用emacs打开大文件</a></div>						
+			<div class="article-title"><a href="/2012-11-26-open-large-file-with-emacs.html" >使用emacs打开大文件</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -207,6 +279,7 @@
 <p><code>logviewer-mode</code> 是针对log4j格式优化的，带有高亮显示，带有文件分块读取</p>
 <p><code>vlf</code> 则是将文件分块读取。</p>
 <p>于是乎我尝试了一下 <code>logviewer-mode</code>, 感觉很不错的。</p>
+
 	
 	</div>
 	
@@ -214,12 +287,45 @@
 </div>
 	<a type="button" href="/2012-11-26-open-large-file-with-emacs.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Nov 21 2012 </div>
-			<div class="article-title"><a href="/2012-11-21-change-ibus-googlepinyin-default-candidates-number.html">修改ibus-googlepinyin候选词的个数</a></div>						
+			<div class="article-title"><a href="/2012-11-21-avoids-ssh-timeouts.html" >Avoids ssh timeouts</a></div>						
 		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># to set it globally</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; /etc/ssh/ssh_config</span><br><span class="line"></span><br><span class="line"><span class="comment"># For per-user configuration</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; ~/.ssh/config</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-11-21-avoids-ssh-timeouts.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Nov 21 2012 </div>
+			<div class="article-title"><a href="/2012-11-21-change-ibus-googlepinyin-default-candidates-number.html" >修改ibus-googlepinyin候选词的个数</a></div>						
+		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -231,6 +337,7 @@
 <p>将下面一行中的<code>set_page_size</code>参数替换为自己想要的，比如10个</p>
 <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Engine</span><span class="params">(ibus.EngineBase)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, bus, object_path)</span>:</span></span><br><span class="line">        super(Engine, self).__init__(bus, object_path)</span><br><span class="line">        im_open_decoder()</span><br><span class="line">        self.__is_invalidate = <span class="keyword">False</span></span><br><span class="line">        self.__prepinyin_string = <span class="string">u""</span></span><br><span class="line">        self.__lookup_table = ibus.LookupTable()</span><br><span class="line">        self.__lookup_table.set_page_size(<span class="number">10</span>)</span><br></pre></td></tr></table></figure></p>
 <p>重启ibus就行了。</p>
+
 	
 	</div>
 	
@@ -238,32 +345,18 @@
 </div>
 	<a type="button" href="/2012-11-21-change-ibus-googlepinyin-default-candidates-number.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Nov 21 2012 </div>
-			<div class="article-title"><a href="/2012-11-21-avoids-ssh-timeouts.html">Avoids ssh timeouts</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
+			
 	
-	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># to set it globally</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; /etc/ssh/ssh_config</span><br><span class="line"></span><br><span class="line"><span class="comment"># For per-user configuration</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; ~/.ssh/config</span><br></pre></td></tr></table></figure></p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2012-11-21-avoids-ssh-timeouts.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-		
-			<!-- display as entry -->	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Oct 26 2012 </div>
-			<div class="article-title"><a href="/2012-10-26-floating-point-exception-on-suse.html">Floating point exception on SUSE</a></div>						
+			<div class="article-title"><a href="/2012-10-26-floating-point-exception-on-suse.html" >Floating point exception on SUSE</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -307,6 +400,7 @@ ld --hash-style=gnu ..</p>
 style, like SuSE 10.</p>
 </blockquote>
 <p>OMG</p>
+
 	
 	</div>
 	
@@ -314,12 +408,18 @@ style, like SuSE 10.</p>
 </div>
 	<a type="button" href="/2012-10-26-floating-point-exception-on-suse.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Oct 25 2012 </div>
-			<div class="article-title"><a href="/2012-10-25-install-jdk-slash-jre-on-suse-10-dot-x.html">SUSE Enterprise Linux 10.x下安装JDK/JRE</a></div>						
+			<div class="article-title"><a href="/2012-10-25-install-jdk-slash-jre-on-suse-10-dot-x.html" >SUSE Enterprise Linux 10.x下安装JDK/JRE</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -342,6 +442,7 @@ style, like SuSE 10.</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This creates a file named jdk-6unn-linux-version.rpm, </span></span><br><span class="line"><span class="comment"># and a directory named /usr/java/jdk.1.6.0_nn with </span></span><br><span class="line"><span class="comment"># the Sun JDK software in it.</span></span><br><span class="line">sh ./jdk-<span class="number">6</span>u37-linux-x64-rpm.bin</span><br></pre></td></tr></table></figure></p>
 <p>安装日志</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sh jdk-6u37-linux-x64-rpm.bin &#10;Unpacking...&#10;Checksumming...&#10;Extracting...&#10;UnZipSFX 5.50 of 17 February 2002, by Info-ZIP (Zip-Bugs@lists.wku.edu).&#10;  inflating: jdk-6u37-linux-amd64.rpm  &#10;  inflating: sun-javadb-common-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-core-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-client-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-demo-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-docs-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-javadoc-10.6.2-1.1.i386.rpm  &#10;Preparing...                ########################################### [100%]&#10;   1:jdk                    ########################################### [100%]&#10;Unpacking JAR files...&#10;&#9;rt.jar...&#10;&#9;jsse.jar...&#10;&#9;charsets.jar...&#10;&#9;tools.jar...&#10;&#9;localedata.jar...&#10;&#9;plugin.jar...&#10;&#9;javaws.jar...&#10;&#9;deploy.jar...&#10;warning: waiting to reestablish exclusive database lock&#10;error: %post(jdk-1.6.0_37-fcs.x86_64) scriptlet failed, exit status 5&#10;Installing JavaDB&#10;Preparing...                ########################################### [100%]&#10;   1:sun-javadb-common      ########################################### [ 17%]&#10;   2:sun-javadb-core        ########################################### [ 33%]&#10;   3:sun-javadb-client      ########################################### [ 50%]&#10;   4:sun-javadb-demo        ########################################### [ 67%]&#10;   5:sun-javadb-docs        ########################################### [ 83%]&#10;   6:sun-javadb-javadoc     ########################################### [100%]&#10;&#10;Java(TM) SE Development Kit 6 successfully installed.&#10;&#10;Product Registration is FREE and includes many benefits:&#10;* Notification of new versions, patches, and updates&#10;* Special offers on Oracle products, services and training&#10;* Access to early releases and documentation&#10;&#10;Product and system data will be collected. If your configuration&#10;supports a browser, the JDK Product Registration form will&#10;be presented. If you do not register, none of this information&#10;will be saved. You may also register your JDK later by&#10;opening the register.html file (located in the JDK installation&#10;directory) in a browser.&#10;&#10;For more information on what data Registration collects and &#10;how it is managed and used, see:&#10;http://java.sun.com/javase/registration/JDKRegistrationPrivacy.html&#10;&#10;Press Enter to continue.....&#10;&#10; &#10;Done.</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -349,69 +450,7 @@ style, like SuSE 10.</p>
 </div>
 	<a type="button" href="/2012-10-25-install-jdk-slash-jre-on-suse-10-dot-x.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Oct 25 2012 </div>
-			<div class="article-title"><a href="/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html">SUSE Enterprise Linux 10下安装Oracle 11gr2</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <ol>
-<li>首先准备好oracle的安装文件，11gr2默认有两个zip包：<code>linux.x64_11gR2_database_1of2.zip</code>和<code>linux.x64_11gR2_database_2of2.zip</code>, 将这两个包解压</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip linux.x64_11gR2_database_1of2.zip</span><br><span class="line">unzip linux.x64_11gR2_database_2of2.zip</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li>
-<p>系统硬件需求这里忽略，详情查看oracle的文档</p>
-</li>
-<li>
-<p>所依赖的软件包</p>
-</li>
-</ol>
-<p>&lt;!--more--&gt;</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">binutils-2.16.91.0.5&#10;compat-libstdc++-5.0.7&#10;gcc-4.1.2&#10;gcc-c++-4.1.2&#10;glibc-2.4-31&#10;glibc-devel-2.4-31&#10;ksh-93r-12.9&#10;libaio-0.3.104&#10;libaio-devel-0.3.104&#10;libelf-0.8.5&#10;libgcc-4.1.2&#10;libstdc++-4.1.2&#10;libstdc++-devel-4.1.2&#10;make-3.80&#10;sysstat-8.0.4</span><br></pre></td></tr></table></figure></p>
-<p>安装可以通过<code>yast2</code></p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yast2 -i &lt;package list&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这里要注意，在suse enterprise linux中，<code>compat-libstdc++</code>由<code>libstdc++33</code>替代, 然后在check的时候忽略掉就行</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yast2 -i libstdc++<span class="number">33</span></span><br></pre></td></tr></table></figure></p>
-<ol start="4">
-<li>修改内核参数<code>/etc/sysctl.conf</code></li>
-</ol>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kernel.sem = 1250 32000 100 256&#10;net.ipv4.ip_local_port_range = 9000 65500&#10;net.core.rmem_default = 4194304&#10;net.core.rmem_max = 4194304&#10;net.core.wmem_default = 1048576&#10;net.core.wmem_max = 1048576&#10;fs.file-max = 6815744&#10;kernel.shmmax = 536870912&#10;fs.aio-max-nr = 1048576</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure></p>
-<ol start="5">
-<li>创建用户和组</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">groupadd oinstall</span><br><span class="line">groupadd dba</span><br><span class="line">useradd -g oinstall -G dba oracle</span><br><span class="line">passwd oracle</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<ol start="6">
-<li>创建oracle安装目录</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/oracle</span><br><span class="line">mkdir -p /home/oracle</span><br><span class="line">mkdir -p /opt/oraInventory</span><br><span class="line">chown -R oracle:oinstall /opt/oracle</span><br><span class="line">chown -R oracle:oinstall /home/oracle</span><br><span class="line">chown -R oracle:oinstall /opt/oraInventory</span><br></pre></td></tr></table></figure></p>
-<ol start="7">
-<li>修改oracle的环境变量, 添加一下变量到<code>~oracle/.profile</code></li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ORACLE_BASE=/opt/oracle</span><br><span class="line">ORACLE_HOME=<span class="variable">$ORACLE_BASE</span>/product/<span class="number">11.2</span>.<span class="number">0</span> </span><br><span class="line"><span class="built_in">export</span> ORACLE_BASE ORACLE_HOME</span><br><span class="line">PATH=<span class="variable">$PATH</span>:/<span class="variable">$ORACLE_HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> PATH</span><br></pre></td></tr></table></figure></p>
-<ol start="8">
-<li>修改<code>/etc/security/limits.conf</code></li>
-</ol>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oracle soft nproc 16384&#10;oracle hard nproc 16384&#10;oracle soft nofile 1024&#10;oracle hard nofile 65536</span><br></pre></td></tr></table></figure></p>
-<ol start="9">
-<li>开始安装</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su - oracle</span><br><span class="line"><span class="built_in">cd</span> &lt;ORACLE_INSTALL_MEDIA_DIR&gt;</span><br><span class="line">./runInstaller</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>剩下的就是根据图形界面一步一步的做就行了 :)</p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2012-10-25-install-oracle-11gr2-on-suse-enterprise-linux.html#more" class="btn btn-default more">阅读此文</a>
-</div>
+
 		
 
 		</div>
@@ -434,6 +473,7 @@ style, like SuSE 10.</p>
 	
 </ul>
 </div>
+
   		</center>
 		</div>
 
@@ -446,104 +486,114 @@ style, like SuSE 10.</p>
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
+
 		
-			<div class="widget">
+			
+	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
-		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
-		
-			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
-		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
-		
-			<li><a href="/tags/redis/">redis<span>1</span></a></li>
-		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
-		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
-		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
-		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
-		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
-		
-			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
-		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
-		
-			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
-		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
-		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
 		
 			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
 		
-			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
 		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+		
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+		
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+		
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+		
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+		
+			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+		
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+		
+			<li><a href="/tags/python/">python<span>31</span></a></li>
+		
+			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+		
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+		
+			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
+		
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
+
+
 		
-			<div class="widget">
+			
+<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+        <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>
 </div>
+
 		
-			<div class="widget">
+			
+<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
+
+
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
+
 	
 	
 </div> <!-- row-fluid -->
@@ -556,7 +606,8 @@ style, like SuSE 10.</p>
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -586,5 +637,8 @@ style, like SuSE 10.</p>
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+

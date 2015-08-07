@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="mount –bind">
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:title" content="mount –bind"/>
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,11 +92,19 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
-    	 <div class="page-header">		
+    	 
+
+
+	
+		<div class="page-header">		
 			<h1> mount –bind</h1>
-		</div>
+		</div>		
+	
+
+
 
 <div class="row post">
 	<!-- cols -->
@@ -111,7 +124,8 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount --bind olddir newdir</span><br><span class="line">mount --bind olddir/file newdir/file</span><br></pre></td></tr></table></figure></p>
 <p>如果想将<code>mount –bind</code>写入<code>/etc/fstab</code>，则用法是：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">olddir newdir none <span class="built_in">bind</span> <span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
-<p>这里又有一个问题了，我如果想把/etc/fstab也放到git repo中进行管理怎么办呢？由于不可能为/etc/fstab创建symlink，也不能为其使用mount –bind的方式到/etc/fstab。那就只能在git repo中想办法了。可是git是不会follow symlink的，如果我将/etc/fstab软链接到git repo中，git并不会将该文件加入到repo，加入的只是一个symlink而已。   解决办法就是反过来bind, 将/etc/fstab bind到git repo中的目录:)</p>	  
+<p>这里又有一个问题了，我如果想把/etc/fstab也放到git repo中进行管理怎么办呢？由于不可能为/etc/fstab创建symlink，也不能为其使用mount –bind的方式到/etc/fstab。那就只能在git repo中想办法了。可是git是不会follow symlink的，如果我将/etc/fstab软链接到git repo中，git并不会将该文件加入到repo，加入的只是一个symlink而已。   解决办法就是反过来bind, 将/etc/fstab bind到git repo中的目录:)</p>
+	  
 	</div>
 
 	<div>
@@ -131,17 +145,20 @@
 	
 </ul>
 </div>
+
     </center>
 	</div>
 	
 	<!-- comment -->
-	<section id="comment">
+	
+<section id="comment">
   <h2 class="title">留言</h2>
 
   
   	 <div class="ds-thread" data-thread-key="2011-11-18-mount-bind.html" data-title="mount –bind" data-url="http://yesokay.herokuapp.com/2011-11-18-mount-bind.html"></div>  
   
 </section>
+
 	
 	</div> <!-- col-md-9/col-md-12 -->
 	
@@ -161,9 +178,11 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
     <ul id="categorys" class="tag_box list-unstyled collapse in">
-        <li>
-    </li><li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/Linux/">Linux<span>16</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>15</span></a></li> <li><a href="/categories/programming/">programming<span>7</span></a></li> <li><a href="/categories/tools/">tools<span>5</span></a></li>
-  
+          
+  <li>
+    <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/Linux/">Linux<span>16</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>15</span></a></li> <li><a href="/categories/programming/">programming<span>7</span></a></li> <li><a href="/categories/tools/">tools<span>5</span></a></li>
+  </li>
+
     </ul>
 	</div>
 	
@@ -173,7 +192,8 @@
 	<div class="meta-widget">
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	  <li><a href="/tags/DVCS/">DVCS<span>19</span></a></li> <li><a href="/tags/Linux/">Linux<span>69</span></a></li> <li><a href="/tags/VCS/">VCS<span>11</span></a></li> <li><a href="/tags/emacs/">emacs<span>71</span></a></li> <li><a href="/tags/git/">git<span>12</span></a></li> <li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
+	    
+  <li><a href="/tags/DVCS/">DVCS<span>19</span></a></li> <li><a href="/tags/Linux/">Linux<span>69</span></a></li> <li><a href="/tags/VCS/">VCS<span>11</span></a></li> <li><a href="/tags/emacs/">emacs<span>71</span></a></li> <li><a href="/tags/git/">git<span>12</span></a></li> <li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
     </ul>
 	</div>
 		
@@ -186,9 +206,11 @@
     <hr>
 	
 </div><!-- col-md-3 -->
+
 	
 
 </div><!-- row -->
+
 	</div>
   </div>
   <div class="container-narrow">
@@ -198,7 +220,8 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -228,5 +251,8 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+

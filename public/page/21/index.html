@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,6 +92,7 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -101,15 +107,54 @@
 
 		
 
+
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 21 2010 </div>
-			<div class="article-title"><a href="/2010-06-21-python_telnetlib_sample.html">python telnetlib第一例</a></div>						
+			<div class="article-title"><a href="/2010-06-21-android_phone_number.html" >android获取手机号码</a></div>						
 		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>android下获取手机的号码</p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建电话管理</span></span><br><span class="line">TelephonyManager tm = (TelephonyManager);</span><br><span class="line"><span class="comment">//与手机建立连接</span></span><br><span class="line">activity.getSystemService(Context.TELEPHONY_SERVICE);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取手机号码</span></span><br><span class="line">String phoneId = tm.getLine1Number();</span><br></pre></td></tr></table></figure></p>
+<p>在manifest file中添加</p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--  记得在manifest file中添加 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">uses-permission</span>   <span class="attribute">android:name</span>=<span class="value">"android.permission.READ_PHONE_STATE"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>程序在模拟器上无法获取，必须连接手机</p>
+<p>参考连接：</p>
+<p>&lt;a href=&quot;http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html&quot; target=&quot;_blank&quot;&gt;http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html&lt;/a&gt;</p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-06-21-android_phone_number.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Jun 21 2010 </div>
+			<div class="article-title"><a href="/2010-06-21-python_telnetlib_sample.html" >python telnetlib第一例</a></div>						
+		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -118,6 +163,7 @@
 	
 	  <p>参考limodou</p>
 <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> telnetlib</span><br><span class="line"></span><br><span class="line">host = &#123;&#125;</span><br><span class="line">host[<span class="string">'ip'</span>]=<span class="string">'127.0.0.1'</span></span><br><span class="line">host[<span class="string">'user'</span>]=<span class="string">'user'</span></span><br><span class="line">host[<span class="string">'password'</span>]=<span class="string">'password***'</span></span><br><span class="line">host[<span class="string">'commands'</span>]=[<span class="string">'cd /home/xxxxx'</span>, <span class="string">'ls -l --color=no'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">do</span><span class="params">(host)</span>:</span>    </span><br><span class="line">    tn = telnetlib.Telnet(host[<span class="string">'ip'</span>])</span><br><span class="line"><span class="comment">#    tn.set_debuglevel(2)    </span></span><br><span class="line">    tn.read_until(<span class="string">"login: "</span>)    </span><br><span class="line">    tn.write(host[<span class="string">'user'</span>] + <span class="string">"n"</span>)    </span><br><span class="line">    tn.read_until(<span class="string">"Password: "</span>)    </span><br><span class="line">    tn.write(host[<span class="string">'password'</span>] + <span class="string">"n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#    tn.read_all()    </span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> command <span class="keyword">in</span> host[<span class="string">'commands'</span>]:        </span><br><span class="line">    	tn.write(command+<span class="string">'n'</span>)</span><br><span class="line"></span><br><span class="line">    tn.write(<span class="string">"exit"</span>)    </span><br><span class="line">    <span class="keyword">print</span> tn.read_all()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Finish!'</span></span><br><span class="line"></span><br><span class="line">do(host)</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -125,12 +171,18 @@
 </div>
 	<a type="button" href="/2010-06-21-python_telnetlib_sample.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 20 2010 </div>
-			<div class="article-title"><a href="/2010-06-20-chrome_dev_channel_source.html">chrome dev channel的更新源</a></div>						
+			<div class="article-title"><a href="/2010-06-20-chrome_dev_channel_source.html" >chrome dev channel的更新源</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -140,6 +192,7 @@
 	  <p>原来chrome dev channel的更新源在</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://dl.google.com/linux/deb/ stable main #Google</span><br></pre></td></tr></table></figure></p>
 <p>原来一直以为在unstable 目录下，一直不能更新，木哈哈！</p>
+
 	
 	</div>
 	
@@ -147,12 +200,18 @@
 </div>
 	<a type="button" href="/2010-06-20-chrome_dev_channel_source.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 20 2010 </div>
-			<div class="article-title"><a href="/2010-06-20-android.md5_string.html">android md5 string</a></div>						
+			<div class="article-title"><a href="/2010-06-20-android.md5_string.html" >android md5 string</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -161,6 +220,7 @@
 	
 	  <p>android下用md5加密一个字符串：</p>
 <p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">md5</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           <span class="comment">// Create MD5 Hash</span></span><br><span class="line">           MessageDigest digest = java.security.MessageDigest.getInstance(<span class="string">"MD5"</span>);</span><br><span class="line">           digest.update(s.getBytes());</span><br><span class="line">           <span class="keyword">byte</span> messageDigest[] = digest.digest();</span><br><span class="line"></span><br><span class="line">           <span class="comment">// Create HEX String</span></span><br><span class="line">           StringBuffer hexString = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; messageDigest.length; i++) &#123;</span><br><span class="line">               hexString.append(Integer.toHexString(<span class="number">0xFF</span> &amp; messageDigest[i]));</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">return</span> hexString.toString();</span><br><span class="line">       &#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e) &#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -168,12 +228,18 @@
 </div>
 	<a type="button" href="/2010-06-20-android.md5_string.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 18 2010 </div>
-			<div class="article-title"><a href="/2010-06-18-ubuntu_emacs_android.html">ubuntu下配置emacs android开发环境</a></div>						
+			<div class="article-title"><a href="/2010-06-18-ubuntu_emacs_android.html" >ubuntu下配置emacs android开发环境</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -218,6 +284,7 @@
 <li>重新安装工程使用</li>
 </ol>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x android-ant-reinstall</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -225,12 +292,18 @@
 </div>
 	<a type="button" href="/2010-06-18-ubuntu_emacs_android.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 7 2010 </div>
-			<div class="article-title"><a href="/2010-06-07-qt_incredibuild_compile.html">windows下使用incredibuild编译Qt</a></div>						
+			<div class="article-title"><a href="/2010-06-07-qt_incredibuild_compile.html" >windows下使用incredibuild编译Qt</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -240,6 +313,7 @@
 	  <p>默认configure的时候qt的编译程序会检测incredibuild的xge支持，所以如果安装了incredibuild的话，会检测到xge选项，而configure的时候得到using incredibuildxge --yes</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">configure -no-qt3support -no-webkit -release -opensource -platform win32-msvc2008</span><br></pre></td></tr></table></figure></p>
 <p>完成configure之后，会在根目录生成一个projects.sln，这个时候就可以使用incredibuild编译了。</p>
+
 	
 	</div>
 	
@@ -247,12 +321,18 @@
 </div>
 	<a type="button" href="/2010-06-07-qt_incredibuild_compile.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 6 2010 </div>
-			<div class="article-title"><a href="/2010-06-06-norton_google_dns.html">使用诺顿dns服务器</a></div>						
+			<div class="article-title"><a href="/2010-06-06-norton_google_dns.html" >使用诺顿dns服务器</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -261,6 +341,7 @@
 	
 	  <p>今天将dns服务器换为诺顿的和google的了，诺顿默认情况下给出了一些危险网站的建议，加上google chrome的危险建议，所以相对来说上网就比较安全，我的dns服务器配置 cat /etc/resolve.conf</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nameserver 198.153.192.1&#10;nameserver 8.8.8.8</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -268,12 +349,18 @@
 </div>
 	<a type="button" href="/2010-06-06-norton_google_dns.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 6 2010 </div>
-			<div class="article-title"><a href="/2010-06-06-first_qt.html">第一个Qt程序</a></div>						
+			<div class="article-title"><a href="/2010-06-06-first_qt.html" >第一个Qt程序</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -281,6 +368,7 @@
 	  
 	
 	  <p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 来自C++ GUI Programming with Qt 4</span></span><br><span class="line"><span class="comment">// 编译：</span></span><br><span class="line"><span class="comment">//    qmake -project</span></span><br><span class="line"><span class="comment">//    qmake</span></span><br><span class="line"><span class="comment">//    make</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;QApplication&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;QLabel&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">QApplication <span class="title">app</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    QLabel* label = <span class="keyword">new</span> QLabel(<span class="string">"Hello qt!"</span>);</span><br><span class="line">    label-&gt;show();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> app.exec();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -288,12 +376,18 @@
 </div>
 	<a type="button" href="/2010-06-06-first_qt.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 6 2010 </div>
-			<div class="article-title"><a href="/2010-06-06-debian_depends.html">命令行下查看deb包的依赖</a></div>						
+			<div class="article-title"><a href="/2010-06-06-debian_depends.html" >命令行下查看deb包的依赖</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -303,6 +397,7 @@
 	  <p>命令行下察看deb包的依赖(如察看google chrome的依赖）：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dpkg --info google-chrome-unstable_current_amd64.deb | grep Depends</span><br><span class="line"> Pre-Depends: dpkg (&gt;= <span class="number">1.14</span>.<span class="number">0</span>)</span><br><span class="line"> Depends: ca-certificates, libasound2, libatk1.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">1.13</span>.<span class="number">2</span>), libbz2-<span class="number">1.0</span>, libc6 (&gt;= <span class="number">2.6</span>-<span class="number">1</span>), libcairo2 (&gt;= <span class="number">1.4</span>.<span class="number">0</span>), libfontconfig1 (&gt;= <span class="number">2.4</span>.<span class="number">0</span>), libfreetype6 (&gt;= <span class="number">2.3</span>.<span class="number">5</span>), libgcc1 (&gt;= <span class="number">1</span>:<span class="number">4.2</span>.<span class="number">1</span>), libgconf2-<span class="number">4</span>, libglib2.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">2.14</span>.<span class="number">0</span>), libgtk2.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">2.12</span>.<span class="number">0</span>), libjpeg62, libnspr4-<span class="number">0</span>d (&gt;= <span class="number">4.7</span>.<span class="number">1</span>), libnss3-<span class="number">1</span>d (&gt;= <span class="number">3.12</span>.<span class="number">3</span>), libpango1.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">1.18</span>.<span class="number">3</span>), libpng12-<span class="number">0</span>, libstdc++<span class="number">6</span> (&gt;= <span class="number">4.2</span>.<span class="number">1</span>), libxslt1.<span class="number">1</span>, libxss1, lsb-base (&gt;= <span class="number">3.2</span>), wget, xdg-utils (&gt;= <span class="number">1.0</span>.<span class="number">1</span>), zlib1g (&gt;= <span class="number">1</span>:<span class="number">1.2</span>.<span class="number">3.3</span>.dfsg-<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
 <p></p>
+
 	
 	</div>
 	
@@ -310,12 +405,18 @@
 </div>
 	<a type="button" href="/2010-06-06-debian_depends.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 3 2010 </div>
-			<div class="article-title"><a href="/2010-06-03-boost_program_options_unregistered_param.html">让boost::program_options支持未注册的参数</a></div>						
+			<div class="article-title"><a href="/2010-06-03-boost_program_options_unregistered_param.html" >让boost::program_options支持未注册的参数</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -326,6 +427,7 @@
 <p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parsed_options = </span><br><span class="line">    command_line_parser(argv, argc).</span><br><span class="line">    options(desc).allow_unregistered().run();</span><br></pre></td></tr></table></figure></p>
 <p>如果使用配置文件，则在调用<code>parse_config_file</code>的时候第三个参数传递true:</p>
 <p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parse_config_file&lt;<span class="keyword">char</span>&gt;(cfgfilename, desc, <span class="literal">true</span>)</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -333,42 +435,7 @@
 </div>
 	<a type="button" href="/2010-06-03-boost_program_options_unregistered_param.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Jun 2 2010 </div>
-			<div class="article-title"><a href="/2010-06-02-vs2005_boost.html">vs2005下编译boost</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>vs2005下编译boost速度比较慢，由于默认使用的是bjam，不能通过incredibuild直接联编，所以只能通过incredibuild的xge接口来编译。我的编译过程:</p>
-<ol>
-<li>
-<p>首先编译bjam，cd到tools/jam/src目录,执行build.bat vc8,拷贝bin.ntx86下bjam.exe到boost根目录</p>
-</li>
-<li>
-<p>新建一个boostib.xml文件，内容如下</p>
-</li>
-</ol>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8" standalone="no" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">Profile</span> <span class="attribute">FormatVersion</span>=<span class="value">"1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">Tools</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"python"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"bjam"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"cl"</span> <span class="attribute">AllowRemote</span>=<span class="value">"true"</span> <span class="attribute">VCCompiler</span>=<span class="value">"True"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"link"</span> <span class="attribute">AllowRemote</span>=<span class="value">"false"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">Tools</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">Profile</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<ol start="3">
-<li>新建一个boostib.bat文件，内容如下</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XGConsole /<span class="built_in">command</span>=<span class="string">"bjam -j16 --toolset=msvc-8.0 --build-type=complete stage"</span> /openmonitor /profile=<span class="string">"boostib.xml"</span></span><br></pre></td></tr></table></figure></p>
-<ol start="4">
-<li>执行boostlib.bat,库文件就在stage/lib目录下。至此完成编译！可是一看stage目录，这个硬盘占用也忒大了吧（2.58G）!!!</li>
-</ol>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-06-02-vs2005_boost.html#more" class="btn btn-default more">阅读此文</a>
-</div>
+
 		
 
 		</div>
@@ -391,6 +458,7 @@
 	
 </ul>
 </div>
+
   		</center>
 		</div>
 
@@ -403,104 +471,114 @@
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
+
 		
-			<div class="widget">
+			
+	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
-		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
-		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
-		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
-		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
-		
-			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
-		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
-		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
-		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
-		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
-		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
-		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
-		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
-		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
 		
 			<li><a href="/tags/english/">english<span>1</span></a></li>
 		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+		
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
+		
+			<li><a href="/tags/norton/">norton<span>1</span></a></li>
+		
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+		
+			<li><a href="/tags/python/">python<span>31</span></a></li>
+		
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+		
+			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
+		
+			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+		
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+		
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
+		
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
 		
 			<li><a href="/tags/curl/">curl<span>1</span></a></li>
 		
-			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+		
+			<li><a href="/tags/database/">database<span>2</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
+
+
 		
-			<div class="widget">
+			
+<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+        <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>
 </div>
+
 		
-			<div class="widget">
+			
+<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
+
+
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
+
 	
 	
 </div> <!-- row-fluid -->
@@ -513,7 +591,8 @@
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -543,5 +622,8 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+

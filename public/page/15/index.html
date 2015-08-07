@@ -9,13 +9,13 @@
   <meta name="description" content="天亮了，天黑了，天又亮了，天又黑了...">
   
   
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="木哈哈">
+  <meta property="og:site_name" content="木哈哈"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content="undefined"/>
   
 
   
@@ -35,7 +35,8 @@
   <script src="/js/jquery-2.0.3.min.js"></script>
 
   <!-- analytics -->
-  <script>
+  
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,7 +45,11 @@
   ga('send', 'pageview');
 </script>
 
-</head></html>
+
+
+
+</head>
+
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,6 +92,7 @@
     </div> <!-- container -->
 </nav>
 <div class="clearfix"></div>
+
   <div class="container">
   	<div class="content">
     	 <div class="page-header">
@@ -101,15 +107,49 @@
 
 		
 
+
 		<div class="mypage">
 		
 		<!-- title and entry -->
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 12 2010 </div>
-			<div class="article-title"><a href="/2010-12-12-python_get_pe_version_info.html">python获取PE文件版本信息</a></div>						
+			<div class="article-title"><a href="/2010-12-12-pythoncom_lnk_file_path.html" >在windows下通过pythoncom获取快捷方式所指定的路径</a></div>						
 		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>直接代码：</p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pythoncom</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetURLFromShortcut</span><span class="params">(url)</span>:</span></span><br><span class="line">    shortcut = pythoncom.CoCreateInstance(</span><br><span class="line">                                shell.CLSID_ShellLink, <span class="keyword">None</span>,</span><br><span class="line">        			pythoncom.CLSCTX_INPROC_SERVER, shell.IID_IShellLink)</span><br><span class="line">    shortcut.QueryInterface( pythoncom.IID_IPersistFile ).Load(url)</span><br><span class="line">    url = shortcut.GetPath(shell.SLGP_SHORTPATH)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> url</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-12-12-pythoncom_lnk_file_path.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Dec 12 2010 </div>
+			<div class="article-title"><a href="/2010-12-12-python_get_pe_version_info.html" >python获取PE文件版本信息</a></div>						
+		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -118,6 +158,7 @@
 	
 	  <p>通过pywin32中的win32api.GetFileVersionInfo来获取</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># Get the version information from Windows PE</span><br><span class="line"></span><br><span class="line">from win32api import GetFileVersionInfo, LOWORD, HIWORD</span><br><span class="line"></span><br><span class="line">def get_version_number (filename):</span><br><span class="line">    try:</span><br><span class="line">        info = GetFileVersionInfo (filename, "\")</span><br><span class="line">        ms = info['FileVersionMS']</span><br><span class="line">        ls = info['FileVersionLS']</span><br><span class="line">        return HIWORD (ms), LOWORD (ms), HIWORD (ls), LOWORD (ls)</span><br><span class="line">    except:</span><br><span class="line">        return 0,0,0,0</span><br><span class="line"></span><br><span class="line">def printOtherInfo(filename):</span><br><span class="line">    try:</span><br><span class="line">        info = GetFileVersionInfo(filename, "\")</span><br><span class="line">        print(info)</span><br><span class="line"></span><br><span class="line">	# In order to get the company information, we need to get the lang </span><br><span class="line">	# and code page first, then get the related strings</span><br><span class="line">        trans = GetFileVersionInfo(filename, "\VarFileInfo\Translation")</span><br><span class="line">        if not trans:</span><br><span class="line">            return </span><br><span class="line">        print(info)</span><br><span class="line"></span><br><span class="line">        # Common string lists:</span><br><span class="line">        # "CompanyName","FileDescription", "FileVersion", "InternalName",</span><br><span class="line">        # "LegalCopyright", "OriginalFilename", "ProductName", "ProductVersion"</span><br><span class="line">        # You can use this way to get custom defined strings.</span><br><span class="line"></span><br><span class="line">        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "CompanyName"))</span><br><span class="line">        print(info)</span><br><span class="line">        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "FileVersion"))</span><br><span class="line">        print(info)</span><br><span class="line">    except:</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    import os</span><br><span class="line">    filename = os.environ["COMSPEC"]</span><br><span class="line">    print ".".join ([str (i) for i in get_version_number (filename)])</span><br><span class="line">    printOtherInfo(filename)</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -125,12 +166,18 @@
 </div>
 	<a type="button" href="/2010-12-12-python_get_pe_version_info.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 12 2010 </div>
-			<div class="article-title"><a href="/2010-12-12-pefile.html">pefile</a></div>						
+			<div class="article-title"><a href="/2010-12-12-pefile.html" >pefile</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -150,6 +197,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 &lt;li&gt;Packer detection with PEiD’s signatures&lt;/li&gt;
 &lt;li&gt;PEiD signature generation&lt;/li&gt;
 &lt;/ul&gt;Please, refer to &lt;a style=&quot;color: #0000cc;&quot; href=&quot;http://code.google.com/p/pefile/wiki/UsageExamples&quot;&gt;UsageExamples&lt;/a&gt; for starting points on how to use &lt;em&gt;pefile&lt;/em&gt;</p>
+
 	
 	</div>
 	
@@ -157,12 +205,18 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 </div>
 	<a type="button" href="/2010-12-12-pefile.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 12 2010 </div>
-			<div class="article-title"><a href="/2010-12-12-get_user_desktop_path_from_python.html">windows下通过python获取用户桌面路径</a></div>						
+			<div class="article-title"><a href="/2010-12-12-get_user_desktop_path_from_python.html" >windows下通过python获取用户桌面路径</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -170,6 +224,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 	  
 	
 	  <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> win32com.shell <span class="keyword">import</span> shell</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetDesktoppath</span><span class="params">()</span>:</span></span><br><span class="line">    ilist = shell.SHGetSpecialFolderLocation(<span class="number">0</span>,shellcon.CSIDL_DESKTOP)</span><br><span class="line">    dtpath = shell.SHGetPathFromIDList(ilist)</span><br><span class="line">    <span class="keyword">return</span> dtpath</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -177,12 +232,18 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 </div>
 	<a type="button" href="/2010-12-12-get_user_desktop_path_from_python.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 12 2010 </div>
-			<div class="article-title"><a href="/2010-12-12-modify_windows_environment_variables_from_python.html">python修改windows环境变量</a></div>						
+			<div class="article-title"><a href="/2010-12-12-modify_windows_environment_variables_from_python.html" >python修改windows环境变量</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -199,6 +260,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 <li>如果系统有setx，可以用os.system(&quot;setx xxxxx xxxxxx&quot;)这种方式</li>
 </ol>
 <p>P.S. 用os.putenv和pywin32中的win32api.SetEnvironmentVariable是没有办法持久化修改环境变量的。修改影响的就是该进程和子进程（相当于shell的export）</p>
+
 	
 	</div>
 	
@@ -206,12 +268,18 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 </div>
 	<a type="button" href="/2010-12-12-modify_windows_environment_variables_from_python.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 12 2010 </div>
-			<div class="article-title"><a href="/2010-12-12-pywin32-excel.html">pywin32访问excel</a></div>						
+			<div class="article-title"><a href="/2010-12-12-pywin32-excel.html" >pywin32访问excel</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -221,6 +289,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 	  <p><a href="http://www.blog.pythonlibrary.org/2010/07/16/python-and-microsoft-office-using-pywin32/" target="_blank" rel="external">参考链接</a></p>
 <p>直接用上面的代码吧</p>
 <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</span><br><span class="line"></span><br><span class="line"><span class="comment">#----------------------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">excel</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""这只是测试"""</span></span><br><span class="line">    xl = win32.gencache.EnsureDispatch(<span class="string">'Excel.Application'</span>)</span><br><span class="line">    ss = xl.Workbooks.Add()</span><br><span class="line">    sh = ss.ActiveSheet</span><br><span class="line"></span><br><span class="line">    xl.Visible = <span class="keyword">True</span></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    sh.Cells(<span class="number">1</span>,<span class="number">1</span>).Value = <span class="string">'Hacking Excel with Python Demo'</span></span><br><span class="line"></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">8</span>):</span><br><span class="line">        sh.Cells(i,<span class="number">1</span>).Value = <span class="string">'Line %i'</span> % i</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    ss.Close(<span class="keyword">False</span>)</span><br><span class="line">    xl.Application.Quit()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    excel()</span><br></pre></td></tr></table></figure></p>
+
 	
 	</div>
 	
@@ -228,12 +297,18 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 </div>
 	<a type="button" href="/2010-12-12-pywin32-excel.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 11 2010 </div>
-			<div class="article-title"><a href="/2010-12-11-dota.html">【元首】DOTA输掉之后……</a></div>						
+			<div class="article-title"><a href="/2010-12-11-dota.html" >【元首】DOTA输掉之后……</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -242,6 +317,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 	
 	  <p>&lt;object width=&quot;600&quot; height=&quot;480&quot; data=&quot;http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf&quot; type=&quot;application/x-shockwave-flash&quot;&gt;
 &lt;param name=&quot;src&quot; value=&quot;http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf&quot;&gt;&lt;/object&gt;</p>
+
 	
 	</div>
 	
@@ -249,12 +325,18 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 </div>
 	<a type="button" href="/2010-12-11-dota.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 9 2010 </div>
-			<div class="article-title"><a href="/2010-12-09-ps.html">ps应该这样玩</a></div>						
+			<div class="article-title"><a href="/2010-12-09-ps.html" >ps应该这样玩</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -264,6 +346,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 	  <p>&lt;object width=&quot;600&quot; height=&quot;480&quot; data=&quot;http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&amp;embedid=-&amp;showAd=0&quot; type=&quot;application/x-shockwave-flash&quot;&gt;
 &lt;param name=&quot;src&quot; value=&quot;http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&amp;embedid=-&amp;showAd=0&quot;&gt;&lt;/object&gt;
 &lt;a href=&quot;http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&amp;embedid=-&amp;showAd=0&quot; target=&quot;_blank&quot;&gt;弹出&lt;/a&gt;</p>
+
 	
 	</div>
 	
@@ -271,12 +354,18 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 </div>
 	<a type="button" href="/2010-12-09-ps.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 8 2010 </div>
-			<div class="article-title"><a href="/2010-12-08-wuti.html">无题</a></div>						
+			<div class="article-title"><a href="/2010-12-08-wuti.html" >无题</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -287,6 +376,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 <p>那群人中有几个小伙子是具有反抗精神的，他们想反正那个匪徒只是一个人，跟他拼了。谁知道那个匪徒根本不屑与那几个小伙子动手，他只是对已经交了钱的人说：“你们瞧，那儿有几个人不想交钱，他们想破坏游戏规则，如果他们不交钱那么你们先交钱的人不就成傻子了吗？他们在损害你们的利益。”于是先交了钱的人开始威逼不肯交钱的人向歹徒交钱，最后大家不管是情愿还是不情愿都向歹徒交了钱。</p>
 <p>歹徒得钱后扬长而去，留下那群人还在那儿攀比，第一名说：“瞧我多聪明，第一个交钱，我只交了100元。”第二名说：“我也不赖，只交了150元。”。。。。。。。。。。。</p>
 <p>网上看到的。原始链接找不到了。</p>
+
 	
 	</div>
 	
@@ -294,12 +384,18 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 </div>
 	<a type="button" href="/2010-12-08-wuti.html#more" class="btn btn-default more">阅读此文</a>
 </div>
+
 		
-			<!-- display as entry -->	
+			
+	
+	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 5 2010 </div>
-			<div class="article-title"><a href="/2010-12-05-redis_links.html">redis</a></div>						
+			<div class="article-title"><a href="/2010-12-05-redis_links.html" >redis</a></div>						
 		</h3>
+	
+
+
 			<div class="entry">
   <div class="row">
   
@@ -310,6 +406,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 <p>&lt;a href=&quot;http://try.redis-db.com/&quot;&gt;http://try.redis-db.com/&lt;/a&gt;</p>
 <p>&lt;a href=&quot;http://code.google.com/p/redis/&quot;&gt;http://code.google.com/p/redis/&lt;/a&gt;</p>
 <p>&lt;a href=&quot;http://timyang.net/data/redis-misunderstanding/&quot;&gt;http://timyang.net/data/redis-misunderstanding/&lt;/a&gt;</p>
+
 	
 	</div>
 	
@@ -317,37 +414,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 </div>
 	<a type="button" href="/2010-12-05-redis_links.html#more" class="btn btn-default more">阅读此文</a>
 </div>
-		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Dec 5 2010 </div>
-			<div class="article-title"><a href="/2010-12-05-never_marry_you.html">“我绝不嫁给你”的英语表达</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>@&lt;span style=&quot;color: #666666;&quot;&gt;&lt;a href=&quot;http://group.mtime.com/queen/discussion/1285210/&quot; target=&quot;_blank&quot;&gt;巫界之战&lt;/a&gt;，我发现我只有高中水平&lt;img title=&quot;Cry&quot; src=&quot;/tinymce/plugins/emotions/img/smiley-cry.gif&quot; border=&quot;0&quot; alt=&quot;Cry&quot;&gt;&lt;/span&gt;</p>
-<p>高中水平：I will never marry you.</p>
-<p>高考水平：Never will I marry you.</p>
-<p>四级水平：You are the last man I am willing to marry.</p>
-<p>六级水平：Under no circumstances will I marry you.</p>
-<p>GRE水平：If you were the last man in the world, I would definitely remain single.</p>
-<p>大神水平：If you were to marry me, I would go to the temple.
-              If the sun rose in the west, I would marry you.
-              I will marry anybody but you.
-              I can suffer anything but marrying you.</p>
-<p>烈女水平：If you were to marry me, I would jump to the water/river/lake/sea/well.</p>
-<p>五毛水平：If Li Gang were your father, I would marry you.</p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-12-05-never_marry_you.html#more" class="btn btn-default more">阅读此文</a>
-</div>
+
 		
 
 		</div>
@@ -370,6 +437,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 	
 </ul>
 </div>
+
   		</center>
 		</div>
 
@@ -382,104 +450,114 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 	<div id="sidebar">
 	
 			<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
+  <form action="//google.com/search" method="get" accept-charset="utf-8" >
     <input type="search" name="q" results="0" placeholder="搜索" class="form-control">
     <input type="hidden" name="q" value="site:yesokay.herokuapp.com">	
   </form>
 </div>
+
 		
-			<div class="widget">
+			
+	<div class="widget">
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
-		
-			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
-		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
-		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
-		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
-		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
-		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
-		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
-		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
-		
-			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
 		
 			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
 		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
+			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
 		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
 		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
 		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+		
+			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
+		
+			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
+		
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+		
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+		
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+		
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+		
+			<li><a href="/tags/portable/">portable<span>1</span></a></li>
+		
+			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+		
+			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+		
+			<li><a href="/tags/network/">network<span>1</span></a></li>
+		
+			<li><a href="/tags/go/">go<span>2</span></a></li>
+		
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+		
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
 		 
 		</ul>
 	</div>
+
+
 		
-			<div class="widget">
+			
+<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+        <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
       <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
+        <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-long-time-no-update.html"><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
+        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-test-auto-build.html"><i class="fa fa-file-o"></i>用travis-ci自动生成hexo...</a>
+        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
+        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>
 </div>
+
 		
-			<div class="widget">
+			
+<div class="widget">
 	<h4>链接</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank">Freemind</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
 	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank">My Github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenzaichun" title="My Github account." target="_blank"]);">My Github</a></li>
 	
-		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank">GSGUNDAM砍柴工</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://http://gsgundam.com/" title="GSGUNDAM砍柴工的博客" target="_blank"]);">GSGUNDAM砍柴工</a></li>
 	
 	</ul>
 </div>
+
+
 		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
+
 	
 	
 </div> <!-- row-fluid -->
@@ -492,7 +570,8 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
-  <a id="gotop" href="#">   
+  
+<a id="gotop" href="#">   
   <span>▲</span> 
 </a>
 
@@ -522,5 +601,8 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+
 </body>
-   
+   </html>
+
