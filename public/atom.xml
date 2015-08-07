@@ -5,7 +5,7 @@
   <subtitle><![CDATA[阿尔萨斯，没有霜之哀伤你就是一坨屎！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yesokay.herokuapp.com//"/>
-  <updated>2015-08-07T03:26:16.000Z</updated>
+  <updated>2015-08-07T06:37:45.000Z</updated>
   <id>http://yesokay.herokuapp.com//</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[将 hexo 从2.8.3升级到了3.1.1]]></title>
+    <link href="http://yesokay.herokuapp.com/2015-08-07-update-hexo-to-version3.html"/>
+    <id>http://yesokay.herokuapp.com/2015-08-07-update-hexo-to-version3.html</id>
+    <published>2015-08-07T06:23:00.000Z</published>
+    <updated>2015-08-07T06:37:45.000Z</updated>
+    <content type="html"><![CDATA[<p>今天发现 blog 的 travis 编译貌似出问题了，很多东西都编译失败，所以尝试将 hexo 从2.8.3升级到了3.1.1，过程很顺利，通过官方文档就可以办到。</p>
+<p>完成之后加入了<a href="https://github.com/JamesPan/hexo-ruby-character" target="_blank" rel="external">hexo-ruby-character</a>这个东东，安装</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-ruby-character --save</span><br></pre></td></tr></table></figure></p>
+<p>测试一下:</p>
+<blockquote>
+<p><ruby>Base<rp> (</rp><rt>top</rt><rp>) </rp></ruby>
+<ruby>佐天泪子<rp> (</rp><rt>xiān qún kuáng mó</rt><rp>) </rp></ruby>
+<ruby>超電磁砲<rp> (</rp><rt>レールガン</rt><rp>) </rp></ruby></p>
+</blockquote>
+<p>是不是很酷:)</p>
+<p>添加一下数学公式的支持吧，安装<a href="https://github.com/akfish/hexo-math" target="_blank" rel="external">=hexo-math=</a></p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-math --save</span><br></pre></td></tr></table></figure></p>
+<p>测试一下</p>
+<blockquote>
+<p>$$\frac{\partial u}{\partial t}
+= h^2 \left( \frac{\partial^2 u}{\partial x^2} +
+\frac{\partial^2 u}{\partial y^2} +
+\frac{\partial^2 u}{\partial z^2}\right)$$</p>
+</blockquote>
+<blockquote>
+<p><span>$$\begin{aligned} \dot{x} & = \sigma(y-x) \\ \dot{y} & = \rho x - y - xz \\ \dot{z} & = -\beta z + xy \end{aligned}$$</span><!-- Has MathJax --></p>
+</blockquote>]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天发现 blog 的 travis 编译貌似出问题了，很多东西都编译失败，所以尝试将 hexo 从2.8.3升级到了3.1.1，过程很顺利，通过官方文档就可以办到。</p>
+<p>完成之后加入了<a href="https://github.com/JamesPan/he]]>
+    </summary>
+    
+      <category term="programming" scheme="http://yesokay.herokuapp.com/tags/programming/"/>
+    
+      <category term="programming" scheme="http://yesokay.herokuapp.com/categories/programming/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[bat 中启动进程并隐藏窗口]]></title>
@@ -362,25 +401,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Avoids ssh timeouts]]></title>
-    <link href="http://yesokay.herokuapp.com/2012-11-21-avoids-ssh-timeouts.html"/>
-    <id>http://yesokay.herokuapp.com/2012-11-21-avoids-ssh-timeouts.html</id>
-    <published>2012-11-21T08:17:00.000Z</published>
-    <updated>2015-08-07T05:26:41.000Z</updated>
-    <content type="html"><![CDATA[<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># to set it globally</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; /etc/ssh/ssh_config</span><br><span class="line"></span><br><span class="line"><span class="comment"># For per-user configuration</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; ~/.ssh/config</span><br></pre></td></tr></table></figure></p>]]></content>
-    <summary type="html">
-    <![CDATA[<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class]]>
-    </summary>
-    
-      <category term="linux" scheme="http://yesokay.herokuapp.com/tags/linux/"/>
-    
-      <category term="programming" scheme="http://yesokay.herokuapp.com/categories/programming/"/>
-    
-      <category term="tools" scheme="http://yesokay.herokuapp.com/categories/tools/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[修改ibus-googlepinyin候选词的个数]]></title>
     <link href="http://yesokay.herokuapp.com/2012-11-21-change-ibus-googlepinyin-default-candidates-number.html"/>
     <id>http://yesokay.herokuapp.com/2012-11-21-change-ibus-googlepinyin-default-candidates-number.html</id>
@@ -394,6 +414,25 @@
     <summary type="html">
     <![CDATA[<p>默认情况下ibus-googlepinyin的默认候选词个数是5个，但是ibus-googlepinyin并没有提供设置选项的功能，同时也没有配置文件。研究ibus的代码发现原来是写死了的 :(</p>
 <p>解决办法，修改<code>/usr/share/ibus-goo]]>
+    </summary>
+    
+      <category term="linux" scheme="http://yesokay.herokuapp.com/tags/linux/"/>
+    
+      <category term="programming" scheme="http://yesokay.herokuapp.com/categories/programming/"/>
+    
+      <category term="tools" scheme="http://yesokay.herokuapp.com/categories/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Avoids ssh timeouts]]></title>
+    <link href="http://yesokay.herokuapp.com/2012-11-21-avoids-ssh-timeouts.html"/>
+    <id>http://yesokay.herokuapp.com/2012-11-21-avoids-ssh-timeouts.html</id>
+    <published>2012-11-21T08:17:00.000Z</published>
+    <updated>2015-08-07T05:26:41.000Z</updated>
+    <content type="html"><![CDATA[<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># to set it globally</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; /etc/ssh/ssh_config</span><br><span class="line"></span><br><span class="line"><span class="comment"># For per-user configuration</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; ~/.ssh/config</span><br></pre></td></tr></table></figure></p>]]></content>
+    <summary type="html">
+    <![CDATA[<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class]]>
     </summary>
     
       <category term="linux" scheme="http://yesokay.herokuapp.com/tags/linux/"/>
@@ -569,31 +608,6 @@ style, like SuSE 10.</p>
       <category term="suse" scheme="http://yesokay.herokuapp.com/tags/suse/"/>
     
       <category term="tools" scheme="http://yesokay.herokuapp.com/categories/tools/"/>
-    
-      <category term="programming" scheme="http://yesokay.herokuapp.com/categories/programming/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[虾米自动签到go语言版本]]></title>
-    <link href="http://yesokay.herokuapp.com/2012-10-22-xiami-auto-checkin-with-golang.html"/>
-    <id>http://yesokay.herokuapp.com/2012-10-22-xiami-auto-checkin-with-golang.html</id>
-    <published>2012-10-22T06:12:00.000Z</published>
-    <updated>2015-08-07T05:26:41.000Z</updated>
-    <content type="html"><![CDATA[<p>原来在网上找了一份python版实现, 见<a href="http://yesokay.herokuapp.com/xiami-checkin.html">这里</a> ，仿照着这个用go语言实现了一编。</p>
-<p>只是在实现的过程中，go的http cookie比较麻烦，也是从网上找了一段<code>InMemoryCookieJar</code></p>
-<p>总的来说go语言还是挺方便的。</p>
-<p>直接贴代码吧：</p>
-<p>&lt;!--more--&gt;</p>
-<p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"os"</span></span><br><span class="line">	<span class="string">"net/http"</span></span><br><span class="line">	<span class="string">"net/url"</span></span><br><span class="line">	<span class="string">"io/ioutil"</span></span><br><span class="line">	<span class="string">"regexp"</span></span><br><span class="line">	<span class="string">"strings"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> InMemoryCookieJar <span class="keyword">struct</span>&#123;</span><br><span class="line">	storage <span class="keyword">map</span>[<span class="typename">string</span>][]http.Cookie</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// buggy... but works</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> (jar InMemoryCookieJar) SetCookies(u *url.URL, cookies []*http.Cookie) &#123;</span><br><span class="line">	<span class="keyword">for</span> _, ck := <span class="keyword">range</span> cookies &#123;</span><br><span class="line">		path := ck.Domain</span><br><span class="line">		<span class="keyword">if</span> ck.Path != <span class="string">"/"</span> &#123;</span><br><span class="line">			path = ck.Domain + ck.Path</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> ck.Domain[<span class="number">0</span>] == <span class="string">'.'</span> &#123;</span><br><span class="line">			path = path[<span class="number">1</span>:]		<span class="comment">// <span class="doctag">FIXME:</span> .hi.baidu.com won't match hi.baidu.com</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> _, found := jar.storage[path]; found &#123;</span><br><span class="line">			setted := <span class="constant">false</span></span><br><span class="line">			<span class="keyword">for</span> i, v := <span class="keyword">range</span> jar.storage[path] &#123;</span><br><span class="line">				<span class="keyword">if</span> v.Name == ck.Name &#123;</span><br><span class="line">					jar.storage[path][i] = *ck</span><br><span class="line">					setted = <span class="constant">true</span></span><br><span class="line">					<span class="keyword">break</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> ! setted &#123;</span><br><span class="line">				jar.storage[path] = <span class="built_in">append</span>(jar.storage[path], *ck)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			jar.storage[path] = []http.Cookie&#123;*ck&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> (jar InMemoryCookieJar) Cookies(u *url.URL) []*http.Cookie &#123;</span><br><span class="line">	cks := []*http.Cookie&#123;&#125;</span><br><span class="line">	<span class="comment">//fmt.Println("get cookies", u)</span></span><br><span class="line">	<span class="keyword">for</span> pattern, cookies := <span class="keyword">range</span> jar.storage &#123;</span><br><span class="line">		<span class="keyword">if</span> strings.Contains(u.String(), pattern) &#123;</span><br><span class="line">			<span class="keyword">for</span> i := <span class="keyword">range</span> cookies &#123;</span><br><span class="line">				cks = <span class="built_in">append</span>(cks, &amp;cookies[i])</span><br><span class="line">				<span class="comment">//fmt.Println("add cookie", cookies[i].Name, cookies[i].Value)</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> cks</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> newCookieJar() InMemoryCookieJar &#123;</span><br><span class="line">	storage := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="typename">string</span>][]http.Cookie)</span><br><span class="line">	<span class="keyword">return</span> InMemoryCookieJar&#123;storage&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> checkError(err error) &#123;</span><br><span class="line">	<span class="keyword">if</span> err != <span class="constant">nil</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"Fatal error "</span>, err.Error())</span><br><span class="line">		os.Exit(<span class="number">1</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> check(b <span class="typename">string</span>)  &#123;</span><br><span class="line">	pattern := regexp.MustCompile(<span class="string">`&lt;div class="idh"&gt;(已连续签到\d+天)&lt;/div&gt;`</span>)</span><br><span class="line">	s := pattern.FindStringSubmatch(<span class="typename">string</span>(b))</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(s) &gt; <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"[Succeed] Checkin Already!"</span>, s[<span class="number">1</span>])</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"[Error] Login Failed!"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> main() &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(os.Args) != <span class="number">3</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"Usage: "</span>, os.Args[<span class="number">0</span>], <span class="string">"email password"</span>)</span><br><span class="line">		os.Exit(<span class="number">1</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	email := os.Args[<span class="number">1</span>]</span><br><span class="line">	passwd := os.Args[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">	client := http.Client&#123;Jar: newCookieJar()&#125;</span><br><span class="line"></span><br><span class="line">	resp, err := client.PostForm(<span class="string">"http://www.xiami.com/web/login"</span>, url.Values&#123;</span><br><span class="line">		<span class="string">"email"</span>: &#123;email&#125;,</span><br><span class="line">		<span class="string">"password"</span>: &#123;passwd&#125;,</span><br><span class="line">		<span class="string">"LoginButton"</span>: &#123;<span class="string">"登陆"</span>&#125;,</span><br><span class="line">	&#125;)</span><br><span class="line">	checkError(err)</span><br><span class="line">	resp.Body.Close()</span><br><span class="line">	</span><br><span class="line">	resp, err = client.Get(<span class="string">"http://www.xiami.com/web/login"</span>)</span><br><span class="line">	checkError(err)</span><br><span class="line">	b, _ := ioutil.ReadAll(resp.Body)</span><br><span class="line">	<span class="keyword">defer</span> resp.Body.Close()</span><br><span class="line"></span><br><span class="line">	<span class="comment">// check if login already</span></span><br><span class="line">	pattern := regexp.MustCompile(<span class="string">`&lt;a class="check_in" href="(.*?)"&gt;`</span>)</span><br><span class="line">	<span class="keyword">if</span> m := pattern.FindStringSubmatch(<span class="typename">string</span>(b)); <span class="built_in">len</span>(m) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="comment">// already checkin | login failed</span></span><br><span class="line">	        check(<span class="typename">string</span>(b))</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">// start checking in</span></span><br><span class="line">		url := <span class="string">"http://www.xiami.com"</span> + m[<span class="number">1</span>]</span><br><span class="line">		request, err := http.NewRequest(<span class="string">"GET"</span>, url, <span class="constant">nil</span>)</span><br><span class="line">		checkError(err)</span><br><span class="line">		request.Header.Add(<span class="string">"Referer"</span>, <span class="string">"http://www.xiami.com/web/login"</span>)</span><br><span class="line">		request.Header.Add(<span class="string">"User-Agent"</span>, <span class="string">"Opera/9.60"</span>)</span><br><span class="line">		resp, err = client.Do(request)</span><br><span class="line">		checkError(err)</span><br><span class="line">		b, _ := ioutil.ReadAll(resp.Body)</span><br><span class="line">		<span class="keyword">defer</span> resp.Body.Close()</span><br><span class="line">		check(<span class="typename">string</span>(b))</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    <summary type="html">
-    <![CDATA[<p>原来在网上找了一份python版实现, 见<a href="http://yesokay.herokuapp.com/xiami-checkin.html">这里</a> ，仿照着这个用go语言实现了一编。</p>
-<p>只是在实现的过程中，go的http cookie比较]]>
-    </summary>
-    
-      <category term="go" scheme="http://yesokay.herokuapp.com/tags/go/"/>
-    
-      <category term="golang" scheme="http://yesokay.herokuapp.com/tags/golang/"/>
     
       <category term="programming" scheme="http://yesokay.herokuapp.com/categories/programming/"/>
     

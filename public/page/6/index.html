@@ -107,6 +107,27 @@
 		
 			<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Jan 30 2012 </div>
+			<div class="article-title"><a href="/2012-01-30-git-svn-proxy-setting.html">git svn代理设置</a></div>						
+		</h3>
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>git svn的代理设置需要通过修改<code>~/.subversion/servers</code>文件来实现：</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[groups]&#10;assembla = *.assembla.com&#10;# group1 = *.collab.net&#10;# othergroup = repository.blarggitywhoomph.com&#10;# thirdgroup = *.example.com&#10;&#10;[assembla]&#10;http-proxy-host = proxy-server&#10;http-proxy-port = 8080&#10;http-compression = yes&#10;username = yesokay</span><br></pre></td></tr></table></figure></p>
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-01-30-git-svn-proxy-setting.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+		
+			<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Jan 19 2012 </div>
 			<div class="article-title"><a href="/2012-01-19-run-app-directly-on-ios-simulator.html">直接用模拟器运行ios app</a></div>						
 		</h3>
@@ -328,27 +349,6 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 	<a type="button" href="/2011-12-31-rsync-ignore-svn-direcotry.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Dec 30 2011 </div>
-			<div class="article-title"><a href="/2011-12-30-mac-os-x-emacs-chinese-font-setting.html">终于搞定Mac OS X上emacs中文的显示</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>原来一直没有找到怎么设置，昨天从一个日本网站上抄了一段，貌似工作比较良好：</p>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">when</span> <span class="list">(<span class="keyword">eq</span> window-system <span class="quoted">'ns</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">my-font-height</span> <span class="number">140</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">my-font</span> <span class="list">(<span class="keyword">cond</span></span><br><span class="line">                  <span class="list">(<span class="keyword">t</span>   <span class="string">"Monaco"</span>)</span>  <span class="comment">;; XCode 3.1 </span></span><br><span class="line">                  <span class="list">(<span class="keyword">nil</span> <span class="string">"Menlo"</span>)</span>   <span class="comment">;; XCode 3.2</span></span><br><span class="line">                  )</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">my-font-ja</span> <span class="string">"STHeiti"</span>)</span>)</span></span><br><span class="line"></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> mac-allow-anti-aliasing <span class="literal">t</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> face-font-rescale-alist</span><br><span class="line">          <span class="quoted">'((<span class="string">"^-apple-hiragino.*"</span> . <span class="number">1.2</span>)</span><br><span class="line">            (<span class="string">".*osaka-bold.*"</span> . <span class="number">1.2</span>)</span><br><span class="line">            (<span class="string">".*osaka-medium.*"</span> . <span class="number">1.2</span>)</span><br><span class="line">            (<span class="string">".*courier-bold-.*-mac-roman"</span> . <span class="number">1.0</span>)</span><br><span class="line">            (<span class="string">".*monaco cy-bold-.*-mac-cyrillic"</span> . <span class="number">0.9</span>)</span><br><span class="line">            (<span class="string">".*monaco-bold-.*-mac-roman"</span> . <span class="number">0.9</span>)</span><br><span class="line">            (<span class="string">"-cdac$"</span> . <span class="number">1.3</span>))</span>)</span></span><br><span class="line"></span><br><span class="line">    <span class="list">(<span class="keyword">when</span> my-font</span><br><span class="line">      <span class="list">(<span class="keyword">set-face-attribute</span> <span class="quoted">'default</span> <span class="literal">nil</span> <span class="keyword">:family</span> my-font <span class="keyword">:height</span> my-font-height)</span></span><br><span class="line">      <span class="comment">;;(set-frame-font (format "%s-%d" my-font (/ my-font-height 10)))</span></span><br><span class="line">      )</span></span><br><span class="line"></span><br><span class="line">    <span class="list">(<span class="keyword">when</span> my-font-ja</span><br><span class="line">      <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">fn</span> <span class="list">(<span class="keyword">frame-parameter</span> <span class="literal">nil</span> <span class="quoted">'font</span>)</span>)</span></span><br><span class="line">            <span class="list">(<span class="keyword">rg</span> <span class="string">"iso10646-1"</span>)</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">set-fontset-font</span> fn <span class="quoted">'chinese-gb2312</span> <span class="quoted">`(,my-font-ja . ,rg)</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">set-fontset-font</span> fn <span class="quoted">'chinese-gbk</span> <span class="quoted">`(,my-font-ja . ,rg)</span>)</span>)</span>)</span>)</span>)</span></span><br><span class="line"><span class="comment">;;        (set-fontset-font fn 'unicode `(,my-font-ja . ,rg))))))</span></span><br></pre></td></tr></table></figure></p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-12-30-mac-os-x-emacs-chinese-font-setting.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-		
 
 		</div>
 
@@ -392,45 +392,45 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
 		
-			<li><a href="/tags/macos/">macos<span>9</span></a></li>
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
 		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+		
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+		
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+		
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+		
+			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
+		
+			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
+		
+			<li><a href="/tags/go/">go<span>2</span></a></li>
+		
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+		
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+		
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+		
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
+		
+			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+		
+			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
+		
+			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
 		
 			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
 			<li><a href="/tags/git/">git<span>12</span></a></li>
-		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
-		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
-		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
-		
-			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
-		
-			<li><a href="/tags/suse/">suse<span>3</span></a></li>
-		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
-		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
-		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
-		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
-		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
-		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
-		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
-		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -441,6 +441,10 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 			<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+      </li>
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
@@ -456,10 +460,6 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
     
       <li>
         <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-13-cheat.html"><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>

@@ -17,7 +17,7 @@
     "hexo-generator-minify": "^0.1.0",
     "hexo-generator-sitemap": "^1.0.1",
     "hexo-generator-tag": "^0.1.2",
-    "hexo-html-minifier": "0.0.1",
+    "hexo-math": "^1.0.7",
     "hexo-renderer-ejs": "^0.1.0",
     "hexo-renderer-markdown-it": "^3.3.2",
     "hexo-renderer-stylus": "^0.2.3",

@@ -108,6 +108,32 @@
 			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 1 2010 </div>
+			<div class="article-title"><a href="/2010-06-01-boost_program_options.html">boost::program_options</a></div>						
+		</h3>
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>由于windows上没有getopt，使用第三方库也比较麻烦，考虑boost提供了program_options可以用来替代getopt，见[Tutorial]</p>
+<p>我在linux下测试了一下，挺方便的。</p>
+<p>贴一下代码，唯一注意的是链接的时候需要<code>libboost_program_options</code>, <code>ubuntu</code>下安装</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libboost-program-options-dev</span><br></pre></td></tr></table></figure></p>
+<p>链接的时候加入<code>-lboost_program_options</code>就行了。</p>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;boost/program_options.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> boost::program_options;</span><br><span class="line"></span><br><span class="line"><span class="comment">// compile: g++ boostprogramoption.cpp -o boostprogramoption -lboost_program_options</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">// need to pass the buffer size (e.g. 1024) to the constructor, otherwise:</span></span><br><span class="line">    <span class="comment">// undefined reference to 'boost::program_options::options_description::m_default_line_length'</span></span><br><span class="line">    <span class="function">options_description <span class="title">desc</span><span class="params">(<span class="string">"Allowed options"</span>, <span class="number">1024</span>)</span></span>;</span><br><span class="line">    desc.add_options()</span><br><span class="line">        (<span class="string">"help,h"</span>, <span class="string">"produce help message"</span>)</span><br><span class="line">        (<span class="string">"compression,c"</span>, value&lt;<span class="keyword">int</span>&gt;(), <span class="string">"set compression level"</span>)</span><br><span class="line">        ;</span><br><span class="line"></span><br><span class="line">    variables_map vm;</span><br><span class="line">    store(parse_command_line(argc, argv, desc), vm);</span><br><span class="line">    notify(vm);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"help"</span>)) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; desc &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (vm.count(<span class="string">"compression"</span>)) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was set to "</span> &lt;&lt; vm[<span class="string">"compression"</span>].as&lt;<span class="keyword">int</span>&gt;() &lt;&lt; endl;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Compression level was not set."</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://www.boost.org/doc/libs/1_43_0/doc/html/program_options/tutorial.html" target="_blank" rel="external">Tutorial</a></p>
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-06-01-boost_program_options.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+		
+			<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Jun 1 2010 </div>
 			<div class="article-title"><a href="/2010-06-01-boost_parse_environment.html">boost::parse_environment</a></div>						
 		</h3>
 			<div class="entry">
@@ -316,30 +342,6 @@
 	<a type="button" href="/2010-05-10-archlinux_install_yaourt.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> May 10 2010 </div>
-			<div class="article-title"><a href="/2010-05-10-archlinux_global_proxy.html">archlinux全局代理</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>参考: &lt;a href=&quot;http://wiki.archlinux.org/index.php/Proxy_settings&quot;&gt;http://wiki.archlinux.org/index.php/Proxy_settings&lt;/a&gt;</p>
-<p>在教育网中使用aur或者abs,网速非常的慢,同时很多东西都不能正常的下载下来,如何给下载添加代理呢? 像wget等程序使用&quot;protocal_proxy&quot;环境变量,所以可以通过设置环境变量的方式来使用代理:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</span><br><span class="line"><span class="built_in">export</span> ftp_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</span><br></pre></td></tr></table></figure></p>
-<p>我们可以增加两个函数用来打开关闭代理,在.bashrc里面添加:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> -n “username:”</span><br><span class="line">    <span class="built_in">read</span> <span class="operator">-e</span> username</span><br><span class="line">    <span class="built_in">echo</span> -n “password:”</span><br><span class="line">    <span class="built_in">read</span> -es password</span><br><span class="line">    <span class="built_in">export</span> http_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">export</span> ftp_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable set.”</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxyoff</span></span>()&#123;</span><br><span class="line">    <span class="built_in">unset</span> HTTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> http_proxy</span><br><span class="line">    <span class="built_in">unset</span> FTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> ftp_proxy</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable removed.”</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-05-10-archlinux_global_proxy.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-		
 
 		</div>
 
@@ -383,45 +385,45 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
 		
 			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
 		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
-		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
-		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
-		
-			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/tags/suse/">suse<span>3</span></a></li>
-		
-			<li><a href="/tags/soap/">soap<span>1</span></a></li>
-		
-			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
-		
-			<li><a href="/tags/portable/">portable<span>1</span></a></li>
-		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
-		
-			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
-		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
-		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
-		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
-		
-			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
 		
 			<li><a href="/tags/python/">python<span>30</span></a></li>
+		
+			<li><a href="/tags/norton/">norton<span>1</span></a></li>
+		
+			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
+		
+			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
+		
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+		
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+		
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
+		
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+		
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+		
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+		
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+		
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -432,6 +434,10 @@
 			<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+      </li>
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
@@ -447,10 +453,6 @@
     
       <li>
         <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-13-cheat.html"><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>

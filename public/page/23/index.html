@@ -107,6 +107,30 @@
 		
 			<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> May 10 2010 </div>
+			<div class="article-title"><a href="/2010-05-10-archlinux_global_proxy.html">archlinux全局代理</a></div>						
+		</h3>
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>参考: &lt;a href=&quot;http://wiki.archlinux.org/index.php/Proxy_settings&quot;&gt;http://wiki.archlinux.org/index.php/Proxy_settings&lt;/a&gt;</p>
+<p>在教育网中使用aur或者abs,网速非常的慢,同时很多东西都不能正常的下载下来,如何给下载添加代理呢? 像wget等程序使用&quot;protocal_proxy&quot;环境变量,所以可以通过设置环境变量的方式来使用代理:</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</span><br><span class="line"><span class="built_in">export</span> ftp_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</span><br></pre></td></tr></table></figure></p>
+<p>我们可以增加两个函数用来打开关闭代理,在.bashrc里面添加:</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> -n “username:”</span><br><span class="line">    <span class="built_in">read</span> <span class="operator">-e</span> username</span><br><span class="line">    <span class="built_in">echo</span> -n “password:”</span><br><span class="line">    <span class="built_in">read</span> -es password</span><br><span class="line">    <span class="built_in">export</span> http_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">export</span> ftp_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable set.”</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxyoff</span></span>()&#123;</span><br><span class="line">    <span class="built_in">unset</span> HTTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> http_proxy</span><br><span class="line">    <span class="built_in">unset</span> FTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> ftp_proxy</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable removed.”</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-05-10-archlinux_global_proxy.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+		
+			<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> May 9 2010 </div>
 			<div class="article-title"><a href="/2010-05-09-archlinux_usb_pen.html">将archlinux安装到u盘</a></div>						
 		</h3>
@@ -325,27 +349,6 @@
 	<a type="button" href="/2010-05-07-googlechrome_firefox_feeling.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> May 7 2010 </div>
-			<div class="article-title"><a href="/2010-05-07-vs2010_ultimate_sn.html">visual studio 2010 ultimate正式版注册码</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>从官方下载试用版,初次安装后版本为试用版。这时进入控制面板的添加删除程序，点卸载VS2010后，有个Update Key的框，输入注册码就OK了。注意，这里主要是输入Key，请不要真的把它卸载掉喔。</p>
-<p>VS2010旗舰版 可用Key：<code>YCFHQ9DWCYDKV88T2TMHG7BHP</code></p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-05-07-vs2010_ultimate_sn.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-		
 
 		</div>
 
@@ -389,45 +392,45 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
-		
-			<li><a href="/tags/vs/">vs<span>2</span></a></li>
-		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
-		
-			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
-		
-			<li><a href="/tags/python/">python<span>30</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
-		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
-		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
-		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
-		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+			<li><a href="/tags/VC/">VC<span>8</span></a></li>
 		
 			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
 		
-			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+			<li><a href="/tags/python/">python<span>30</span></a></li>
+		
+			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
+		
+			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
+		
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+		
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+		
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+		
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+		
+			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+		
+			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+		
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+		
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
 		
 			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
 		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
-		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
 		
 			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
 		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
-		
-			<li><a href="/tags/VC/">VC<span>8</span></a></li>
-		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -438,6 +441,10 @@
 			<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+      </li>
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
@@ -453,10 +460,6 @@
     
       <li>
         <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-13-cheat.html"><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>

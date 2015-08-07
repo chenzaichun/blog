@@ -107,6 +107,29 @@
 		
 			<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Dec 1 2011 </div>
+			<div class="article-title"><a href="/2011-12-01-turn-on-coredump-on-linux.html">linux下开启coredump</a></div>						
+		</h3>
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>当linux下的程序运行异常时，会在运行程序的目录下生成core dump文件。通过<code>ulimit -c</code>查看，结果为0则为关闭（默认值）.</p>
+<p>临时开启只要在shell中执行</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ulimit</span> -c unlimited</span><br></pre></td></tr></table></figure></p>
+<p>也可以在<code>~/.profile</code>文件中添加来默认开启core dump。</p>
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-12-01-turn-on-coredump-on-linux.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+		
+			<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Nov 30 2011 </div>
 			<div class="article-title"><a href="/2011-11-30-mercurial-hg-add-progress.html">为Mercurial（hg）添加进度条</a></div>						
 		</h3>
@@ -284,6 +307,27 @@
 			<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Nov 13 2011 </div>
+			<div class="article-title"><a href="/2011-11-13-emacs_sys_process_environment.html">Emacs进程/系统环境变量</a></div>						
+		</h3>
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Emacs中获取进程（系统）环境变量并进行修改，比如<code>http_proxy</code>:</p>
+<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">getenv</span> <span class="string">"http_proxy"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setenv</span> <span class="string">"http_proxy"</span> <span class="string">"http://proxy-server:port"</span>)</span></span><br></pre></td></tr></table></figure></p>
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-11-13-emacs_sys_process_environment.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+		
+			<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Nov 13 2011 </div>
 			<div class="article-title"><a href="/2011-11-13-pymacs.html">Pymacs</a></div>						
 		</h3>
 			<div class="entry">
@@ -314,49 +358,6 @@
   
 </div>
 	<a type="button" href="/2011-11-13-pymacs.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Nov 13 2011 </div>
-			<div class="article-title"><a href="/2011-11-13-emacs_sys_process_environment.html">Emacs进程/系统环境变量</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Emacs中获取进程（系统）环境变量并进行修改，比如<code>http_proxy</code>:</p>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">getenv</span> <span class="string">"http_proxy"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setenv</span> <span class="string">"http_proxy"</span> <span class="string">"http://proxy-server:port"</span>)</span></span><br></pre></td></tr></table></figure></p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-11-13-emacs_sys_process_environment.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-		
-			<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Nov 12 2011 </div>
-			<div class="article-title"><a href="/2011-11-12-stty_erase_key.html">Linux默认Erase Key(Backspace Key)</a></div>						
-		</h3>
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>由于经常登陆solaris和hp-ux，所以将默认的backspace key设置成了^H（Terminal中设置），可是当使用在本地使用sqlplus的时候，会出现backspace无法使用的情况（Linux默认stty erase可以为^?），解决办法：</p>
-<p>在<code>~/.profile</code>文件中加入：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty erase ^H</span><br></pre></td></tr></table></figure></p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-11-12-stty_erase_key.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 		
 
@@ -402,45 +403,45 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/python/">python<span>30</span></a></li>
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
 		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
 		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
 		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
 		
-			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
 		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
-		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
-		
-			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
-		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
-		
-			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
-		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
-		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
 		
 			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
 		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
+			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
 		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
 		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
+		
+			<li><a href="/tags/git/">git<span>12</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+		
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+		
+			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
 		
 			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
+		
+			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
+		
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+		
+			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -451,6 +452,10 @@
 			<div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-07-update-hexo-to-version3.html"><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
+      </li>
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html"><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
@@ -466,10 +471,6 @@
     
       <li>
         <a href="/2013-06-23-install-gevent-on-mac-os-x.html"><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-13-cheat.html"><i class="fa fa-file-o"></i>这是开挂了吧...</a>
       </li>
     
   </ul>
