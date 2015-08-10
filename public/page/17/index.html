@@ -215,9 +215,6 @@
 <p>参考链接： &lt;a href=&quot;http://westyi.blogbus.com/logs/69324000.html&quot;&gt;http://westyi.blogbus.com/logs/69324000.html&lt;/a&gt;</p>
 <p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.appspot.zaichunchen;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.graphics.Bitmap;</span><br><span class="line"><span class="keyword">import</span> android.graphics.Canvas;</span><br><span class="line"><span class="keyword">import</span> android.graphics.Point;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.android.maps.GeoPoint;</span><br><span class="line"><span class="keyword">import</span> com.google.android.maps.MapView;</span><br><span class="line"><span class="keyword">import</span> com.google.android.maps.Overlay;</span><br><span class="line"><span class="keyword">import</span> com.google.android.maps.Projection;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Map Overlay</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@author</span> ChenZaichun</span><br><span class="line"> * </span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Marker</span> <span class="keyword">extends</span> <span class="title">Overlay</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> GeoPoint point = <span class="keyword">null</span>;</span><br><span class="line">	<span class="keyword">private</span> Bitmap bmp = <span class="keyword">null</span>; </span><br><span class="line">	<span class="keyword">private</span> Point deviation = <span class="keyword">null</span>; </span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * </span><br><span class="line">	 * <span class="doctag">@param</span> point</span><br><span class="line">	 *            GeoPoint of icon</span><br><span class="line">	 * <span class="doctag">@param</span> bmp</span><br><span class="line">	 *            Icon Bitmap</span><br><span class="line">	 * <span class="doctag">@param</span> deviation</span><br><span class="line">	 *            icon offset, use window coordinates (left --&gt; right, up --&gt; down)</span><br><span class="line">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Marker</span><span class="params">(GeoPoint point, Bitmap bmp, Point deviation)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.point = point;</span><br><span class="line">		<span class="keyword">this</span>.bmp = bmp;</span><br><span class="line">		<span class="keyword">this</span>.deviation = deviation;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * Draw the icon</span><br><span class="line">	 */</span></span><br><span class="line">	<span class="annotation">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(Canvas canvas, MapView mapView, <span class="keyword">boolean</span> shadow)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!shadow) &#123;<span class="comment">// not the shadow layer</span></span><br><span class="line">			Projection projection = mapView.getProjection();</span><br><span class="line">			<span class="keyword">if</span> (point != <span class="keyword">null</span> &amp;&amp; bmp != <span class="keyword">null</span>) &#123;</span><br><span class="line">				Point pos = projection.toPixels(point, <span class="keyword">null</span>);</span><br><span class="line">				<span class="comment">//add offset</span></span><br><span class="line">				canvas.drawBitmap(bmp, pos.x + deviation.x, pos.y + deviation.y, <span class="keyword">null</span>);</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>使用的方法：
-&lt;!--more--&gt;</p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Double lat = <span class="number">31.23717</span> * <span class="number">1E6</span>;</span><br><span class="line">Double lng = <span class="number">121.50811</span> * <span class="number">1E6</span>;</span><br><span class="line"></span><br><span class="line">GeoPoint point = <span class="keyword">new</span> GeoPoint(lat.intValue(), lng.intValue());</span><br><span class="line"></span><br><span class="line">Bitmap bmp = BitmapFactory.decodeResource(getResources(),</span><br><span class="line">				R.drawable.marker);</span><br><span class="line">Point deviation = <span class="keyword">new</span> Point(-<span class="number">15</span>, -<span class="number">36</span>);</span><br><span class="line">Marker marker = <span class="keyword">new</span> Marker(point, bmp, deviation);</span><br><span class="line">mapView.getOverlays().add(marker);</span><br></pre></td></tr></table></figure></p>
-
 	
 	</div>
 	
@@ -249,31 +246,6 @@
 </ol>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -list -alias androiddebugkey -keystore ~/.android/debug.keystore<span class="string">" -storepass android -keypass android</span></span><br></pre></td></tr></table></figure></p>
 <p>得到
-&lt;!--more--&gt;</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">androiddebugkey, 2010-9-14, PrivateKeyEntry,&#10;&#35748;&#35777;&#25351;&#32441; (MD5)&#65306; 67:09:76:74:C5:45:C2:F1:CC:93:15:AA:1A:CA:66:8F</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li>
-<p>到&lt;a href=&quot;http://code.google.com/android/maps-api-signup.html&quot;&gt;http://code.google.com/android/maps-api-signup.html&lt;/a&gt;申请api key，输入上面得到的md5 finger</p>
-</li>
-<li>
-<p>在layout中加入MapView</p>
-</li>
-</ol>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">com.google.android.maps.MapView</span></span><br><span class="line">   		 <span class="attribute">android:id</span>=<span class="value">"@+id/map"</span></span><br><span class="line">                 <span class="attribute">android:layout_width</span>=<span class="value">"fill_parent"</span></span><br><span class="line">                 <span class="attribute">android:layout_height</span>=<span class="value">"fill_parent"</span></span><br><span class="line">                 <span class="attribute">android:apiKey</span>=<span class="value">"0ChzlZ4HDjbb9arHGkqJ2gzUcmn56yoRKJAlZNA"</span></span><br><span class="line">                 <span class="attribute">android:clickable</span>=<span class="value">"true"</span> /&gt;</span></span><br><span class="line">                 /&gt;</span><br></pre></td></tr></table></figure></p>
-<ol start="4">
-<li>修改AndroidMainifest.xml，在&lt;span style=&quot;color: #ff0000;&quot;&gt;appliction标签&lt;/span&gt;之间加入</li>
-</ol>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">uses-library</span> <span class="attribute">android:name</span>=<span class="value">"com.google.android.maps"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
-<ol start="5">
-<li>
-<p>创建一个activity派生自MapActivity，根据eclipse的提示默认重载两个函数就行了</p>
-</li>
-<li>
-<p>build，然后运行程序，是不是就可以看见地图了！</p>
-</li>
-</ol>
-<p>代码下载: &lt;a href=&quot;http://commondatastorage.googleapis.com/czc_public/code/android/maptest.tar.gz&quot; target=&quot;_blank&quot;&gt;猛击这里&lt;/a&gt;</p>
-
 	
 	</div>
 	
@@ -303,13 +275,13 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaourt -S google-talkplugin</span><br></pre></td></tr></table></figure></p>
 <p>这个时候直接不能安装，因为安装过程会提示lib32-openssl-compatible找不到，修改PKGBUILD，改为lib32-openssl
 然后安装之后，会发现启动不了</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[226:202] Waiting for GoogleTalkPlugin to start...&#10;[227:297] Warning(clientchannel.cc:583): Unreadable or no port file.  Could not initiate GoogleTalkPlugin connection&#10;[227:298] Warning(clientchannel.cc:439): Could not initiate GoogleTalkPlugin connection</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[226:202] Waiting for GoogleTalkPlugin to <span class="operator"><span class="keyword">start</span>...</span><br><span class="line">[<span class="number">227</span>:<span class="number">297</span>] <span class="keyword">Warning</span>(clientchannel.cc:<span class="number">583</span>): Unreadable <span class="keyword">or</span> <span class="keyword">no</span> port <span class="keyword">file</span>.  Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span></span><br><span class="line">[<span class="number">227</span>:<span class="number">298</span>] <span class="keyword">Warning</span>(clientchannel.cc:<span class="number">439</span>): Could <span class="keyword">not</span> initiate GoogleTalkPlugin <span class="keyword">connection</span></span></span><br></pre></td></tr></table></figure></p>
 <p>执行/opt/google/talkplugin/GoogleTalkPlugin会提示找不到libssl.so.0.9.8</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./GoogleTalkPlugin: error while loading shared libraries: libssl.so.0.9.8: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./GoogleTalkPlugin: <span class="keyword">error</span> <span class="keyword">while</span> loading shared libraries: libssl.<span class="keyword">so</span>.0.9.8: cannot <span class="keyword">open</span> shared object <span class="keyword">file</span>: <span class="keyword">No</span> such <span class="keyword">file</span> or directory</span><br></pre></td></tr></table></figure></p>
 <p>创建一个软链接</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="operator">-s</span> /usr/lib32/libssl.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libssl.so.<span class="number">0.9</span>.<span class="number">8</span></span><br></pre></td></tr></table></figure></p>
 <p>还缺少一个东东</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./GoogleTalkPlugin: error while loading shared libraries: libcrypto.so.0.9.8: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./GoogleTalkPlugin: <span class="keyword">error</span> <span class="keyword">while</span> loading shared libraries: libcrypto.<span class="keyword">so</span>.0.9.8: cannot <span class="keyword">open</span> shared object <span class="keyword">file</span>: <span class="keyword">No</span> such <span class="keyword">file</span> or directory</span><br></pre></td></tr></table></figure></p>
 <p>再创建一个软链接</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="operator">-s</span> /usr/lib32/libcrypto.so.<span class="number">1.0</span>.<span class="number">0</span> /usr/lib32/libcrypto.so.<span class="number">0.9</span>.<span class="number">8</span></span><br></pre></td></tr></table></figure></p>
 <p>（注意，file GoogleTalkPlugin竟然是一个32位的elf）</p>
@@ -370,7 +342,7 @@
 	  
 	
 	  <p>chrome关于代理的命令行参数有：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--proxy-auto-detect --proxy-pac-url=http://xxx.xxx.com  // &#20351;&#29992;&#33258;&#21160;&#22312;&#32447;pac&#20195;&#29702;&#10;--proxy-auto-detect --proxy-pac-url=file:///pac-file-path  // &#20351;&#29992;&#26412;&#22320;pac&#25991;&#20214;&#33258;&#21160;&#20195;&#29702;&#10;--proxy-server=127.0.0.1:8000 // &#20351;&#29992;http&#20195;&#29702;&#10;--proxy-server=socks5://127.0.0.1:8000 // &#20351;&#29992;socks5&#20195;&#29702;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">-proxy-auto-detect --proxy-pac-url=<span class="symbol">http:</span>/<span class="regexp">/xxx.xxx.com  /</span><span class="regexp">/ 使用自动在线pac代理</span><br><span class="line"></span></span>-<span class="ruby"><span class="regexp">-proxy-auto-detect --proxy-pac-url=file:/</span><span class="regexp">//pac</span>-file-path  /<span class="regexp">/ 使用本地pac文件自动代理</span><br><span class="line"></span></span>-<span class="ruby"><span class="regexp">-proxy-server=127.0.0.1:8000 /</span><span class="regexp">/ 使用http代理</span><br><span class="line"></span></span>-<span class="ruby"><span class="regexp">-proxy-server=socks5:/</span><span class="regexp">/127.0.0.1:8000 /</span><span class="regexp">/ 使用socks5代理</span></span></span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -485,45 +457,45 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
 		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+			<li><a href="/tags/tools/">tools<span>4</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
 		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
 		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
 		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
 		
-			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
-		
-			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
-		
-			<li><a href="/tags/english/">english<span>1</span></a></li>
-		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
-		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
-		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
-		
-			<li><a href="/tags/macos/">macos<span>9</span></a></li>
-		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
 		
 			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
-			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
 		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
 		
 			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
 		
-			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
 		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+		
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+		
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+		
+			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
+		
+			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+		
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -584,6 +556,7 @@
 	
 	
 </div> <!-- row-fluid -->
+
 	</div>
   </div>
   <div class="container-narrow">

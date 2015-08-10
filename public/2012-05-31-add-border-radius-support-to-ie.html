@@ -120,7 +120,7 @@
 <p>为了解决这个问题，去<a href="http://fetchak.com/ie-css3/" target="_blank" rel="external">这里</a>下载.htc [^1]文件，并将该文件放到网站根目录下。<a href="http://www.daqianduan.com/ie6yuanjiao/" target="_blank" rel="external">参考链接</a></p>
 <p><code>Webkit</code>内核的浏览器支持<code>-webkit-border-radius: 10px;</code>属性（10px是圆角半径），可以直接解析出圆角；<code>Firefox</code>浏览器支持<code>-moz-border-radius: 10px;</code>属性，也是可以直接解析出圆角；<code>IE 系浏览器则需要加上</code>border-radius: 15px;`的属性。</p>
 <p>所有在需要圆角的地方加入：</p>
-<p>&lt;!--more--&gt;</p>
+<p><a id="more"></a></p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.xxx &#123;</span><br><span class="line">    ...</span><br><span class="line">    -moz-border-radius: 10px;</span><br><span class="line">    -webkit-border-radius: 10px;</span><br><span class="line">    border-radius: 10px;</span><br><span class="line">    position:relative;</span><br><span class="line">    z-index:2;</span><br><span class="line">    behavior: url(此处为ie-css3.htc文件的绝对路径);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ol>
 <li>

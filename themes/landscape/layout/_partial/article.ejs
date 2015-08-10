@@ -11,11 +11,22 @@
       </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
+<% if (post.excerpt) { %>
+<p>post excerpt enabled </p>
+<% } else { %>
+<p> post excerpt disabled </p>
+<% } %>
+
+<% if (index) { %>
+<p> index enabled </p>
+<% } else { %>
+<p> index disabled </p>
+<% } %>
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
         <% if (theme.excerpt_link){ %>
           <p class="article-more-link">
-            <a href="<%- config.root %><%- post.path %>#more"><%= theme.excerpt_link %></a>
+            <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
           </p>
         <% } %>
       <% } else { %>

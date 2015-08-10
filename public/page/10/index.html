@@ -394,7 +394,7 @@
 <p>解决Spark乱码：</p>
 <p>Linux下Java图形界面中文显示乱码问题往往是所合适的jre/fonts里面没有合适的字体。</p>
 <p>比如spark会往~/.install4j里面写入最后一行，说明spark使用的jre是其自带的jre.</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JRE_VERSION    /home/gaoyibo/work/jdk1.6.0_05    1    6    0    05&#10;JRE_VERSION    /usr    1    6    0    0&#10;JRE_VERSION    /home/gaoyibo/comodo/openfire/Spark/jre    1    6    0    02</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JRE_VERSION    /home/gaoyibo/work/jdk1<span class="number">.6</span><span class="number">.0</span>_05    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">05</span></span><br><span class="line">JRE_VERSION    /usr    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">0</span></span><br><span class="line">JRE_VERSION    /home/gaoyibo/comodo/openfire/Spark/jre    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">02</span></span><br></pre></td></tr></table></figure></p>
 <p>所以遇到乱码问题解决：</p>
 <p>1，找到jre路径，创建fallback文件夹</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;path_to_spark&gt;/Spark/jre/lib/fonts</span><br><span class="line">sudo mkdir fallback</span><br></pre></td></tr></table></figure></p>
@@ -456,45 +456,45 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
-		
 			<li><a href="/tags/samba/">samba<span>1</span></a></li>
-		
-			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
-		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
-		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
-		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
-		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
-		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
-		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
 		
 			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
 		
-			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
-		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
-		
-			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
-		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
-		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
 		
-			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
+			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
+		
+			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+		
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+		
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+		
+			<li><a href="/tags/redis/">redis<span>1</span></a></li>
+		
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+		
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+		
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+		
+			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
+		
+			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+		
+			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
+		
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+		
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+		
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -555,6 +555,7 @@
 	
 	
 </div> <!-- row-fluid -->
+
 	</div>
   </div>
   <div class="container-narrow">

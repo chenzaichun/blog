@@ -122,9 +122,9 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install pptpd</span><br></pre></td></tr></table></figure></p>
 <p>编辑<code>/etc/pptpd.conf</code>, 反注释掉以下内容：</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localip 192.168.0.1&#10;remoteip 192.168.0.234-238,192.168.0.245</span><br></pre></td></tr></table></figure></p>
-<p>&lt;!--more--&gt;</p>
+<p><a id="more"></a></p>
 <p>编辑<code>/etc/ppp/chap-secrets</code>, 添加用户，格式为：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># client        server  secret                  IP addresses&#10;yesokay          *      password                *</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># client        server  secret                  IP addresses</span></span><br><span class="line">yesokay          <span class="keyword">*</span>      password                <span class="keyword">*</span></span><br></pre></td></tr></table></figure></p>
 <p>修改dns配置, <code>/etc/ppp/options</code>:</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ms-dns 8.8.8.8&#10;ms-dns 8.8.4.4</span><br></pre></td></tr></table></figure></p>
 <p>启用ip_forward, <code>/etc/sysctl.conf</code>:</p>

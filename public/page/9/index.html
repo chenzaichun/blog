@@ -134,15 +134,15 @@
 <p>Pymacs is a powerful tool which, once started from Emacs, allows both-way communication between Emacs Lisp and Python. Pymacs aims Python as an extension language for Emacs rather than the other way around, and this asymmetry is reflected in some design choices. Within Emacs Lisp code, one may load and use Python modules. Python functions may themselves use Emacs services, and handle Emacs Lisp objects kept in Emacs Lisp space.</p>
 </blockquote>
 <p>archlinux下安装pymacs：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S pymacs</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> pacman -S pymacs</span><br></pre></td></tr></table></figure></p>
 <p>配置pymacs, 在.emacs中添加：</p>
 <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-apply</span> <span class="string">"pymacs"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-call</span> <span class="string">"pymacs"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-eval</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-exec</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-load</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">eval-after-load</span> <span class="string">"pymacs"</span></span><br><span class="line">  <span class="quoted">'(add-to-list 'pymacs-load-path <span class="string">"~/.emacs.d/my-lisp"</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
 <p>现在我要将elisp的函数</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">(defun proxyfunc(server port)</span><br><span class="line">  (setenv "http_proxy" (concat "http://"server":"port))</span><br><span class="line">  (setenv "https_proxy" (concat "https://"server":"port))</span><br><span class="line">  (setenv "ftp_proxy" (concat "http://"server":"port))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">(defun proxyoff()</span><br><span class="line">  (interactive)</span><br><span class="line">  (setenv "http_proxy" "")</span><br><span class="line">  (setenv "https_proxy" "")</span><br><span class="line">  (setenv "ftp_proxy" "")</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">(defun proxyjpn()</span><br><span class="line">  (interactive)</span><br><span class="line">  (proxyfunc "16.146.32.100" "8080")</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">转换为Python, 如setproxy.py(将文件放到PYTHONPATH中）</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">    </span><br><span class="line">import os</span><br><span class="line">    </span><br><span class="line">def setproxy(server, port):</span><br><span class="line">    os.environ['http_proxy'] = 'http://'+server+':'+port</span><br><span class="line">    os.environ['https_proxy'] = 'https://'+server+':'+port</span><br><span class="line">	os.environ['ftp_proxy'] = 'http://'+server+':'+port</span><br><span class="line">    </span><br><span class="line">def setproxyoff():</span><br><span class="line">    os.environ['http_proxy'] = ""</span><br><span class="line">	os.environ['https_proxy'] = ""</span><br><span class="line">	os.environ['ftp_proxy'] = ""</span><br><span class="line">    </span><br><span class="line">def proxyjpn():</span><br><span class="line">    setproxy('16.146.32.100', '8080')</span><br><span class="line">    </span><br><span class="line">def proxysgn():</span><br><span class="line">    setproxy('16.158.235.10', '8080')</span><br><span class="line">    </span><br><span class="line"># need to set the property interaction</span><br><span class="line">proxyjpn.interaction = ""</span><br><span class="line">setproxyoff.interaction = ""</span><br><span class="line">proxysgn.interaction = ""</span><br></pre></td></tr></table></figure></p>
 <p>通过pymacs-load加载python模块</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x pymacs-load RET MODULE RET PREFIX RET&#10;# e.g. M-x pymacs-load setproxy RET setproxy- RET</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">M</span>-x pymacs-load <span class="keyword">RET</span> MODULE <span class="keyword">RET</span> PREFIX <span class="keyword">RET</span></span><br><span class="line"># <span class="keyword">e</span>.<span class="keyword">g</span>. <span class="keyword">M</span>-x pymacs-load setproxy <span class="keyword">RET</span> setproxy- <span class="keyword">RET</span></span><br></pre></td></tr></table></figure></p>
 <p>调用python函数</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x setproxy-proxyjpn</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">M</span>-x setproxy-proxyjpn</span><br></pre></td></tr></table></figure></p>
 <p>对于pymacs的详细教程，中文版可以参考<a href="http://www.cnblogs.com/rockcode/archive/2011/08/20/2147404.html" target="_blank" rel="external">这里</a></p>
 
 	
@@ -172,7 +172,7 @@
 	
 	  <p>由于经常登陆solaris和hp-ux，所以将默认的backspace key设置成了^H（Terminal中设置），可是当使用在本地使用sqlplus的时候，会出现backspace无法使用的情况（Linux默认stty erase可以为^?），解决办法：</p>
 <p>在<code>~/.profile</code>文件中加入：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty erase ^H</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty <span class="keyword">erase</span> ^<span class="literal">H</span></span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -380,7 +380,7 @@
 <p>首先根据你的theme找到$PROMPT</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PROMPT</span></span><br></pre></td></tr></table></figure></p>
 <p>比如我的是:</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%&#123;$fg_bold[red]%&#125;&#10140; %&#123;$fg_bold[green]%&#125;%p %&#123;$fg[cyan]%&#125;%c %&#123;$fg_bold[blue]%&#125;$(git_prompt_info)%&#123;$fg_bold[blue]%&#125; % %&#123;$reset_color%&#125;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%&#123;<span class="variable">$fg</span>_bold[red]%&#125;➜ %&#123;<span class="variable">$fg</span>_bold[green]%&#125;<span class="decorator">%p</span> %&#123;<span class="variable">$fg</span>[cyan]%&#125;<span class="decorator">%c</span> %&#123;<span class="variable">$fg</span>_bold[blue]%&#125;$(git_prompt_info)%&#123;<span class="variable">$fg</span>_bold[blue]%&#125; % %&#123;<span class="variable">$reset</span>_color%&#125;</span><br></pre></td></tr></table></figure></p>
 <p>去掉<code>git_prompt_info</code>即可:</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PROMPT=<span class="string">"%&#123;<span class="variable">$fg_bold</span>[red]%&#125;➜ %&#123;<span class="variable">$fg_bold</span>[green]%&#125;%p %&#123;<span class="variable">$fg</span>[cyan]%&#125;%c %&#123;<span class="variable">$fg_bold</span>[blue]%&#125;%&#123;<span class="variable">$fg_bold</span>[blue]%&#125; % %&#123;<span class="variable">$reset_color</span>%&#125;"</span></span><br></pre></td></tr></table></figure></p>
 
@@ -466,45 +466,45 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
 		
 			<li><a href="/tags/转载/">转载<span>7</span></a></li>
 		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
 		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+			<li><a href="/tags/go/">go<span>2</span></a></li>
 		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
 		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
 		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
 		
-			<li><a href="/tags/redis/">redis<span>1</span></a></li>
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
 		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+			<li><a href="/tags/english/">english<span>1</span></a></li>
 		
-			<li><a href="/tags/VC/">VC<span>8</span></a></li>
+			<li><a href="/tags/tools/">tools<span>4</span></a></li>
 		
-			<li><a href="/tags/portable/">portable<span>1</span></a></li>
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
 		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
-		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
-		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
-		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
-		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
-		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
-		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
 		
 			<li><a href="/tags/css3/">css3<span>1</span></a></li>
 		
-			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
+		
+			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+		
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+		
+			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+		
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+		
+			<li><a href="/tags/portable/">portable<span>1</span></a></li>
+		
+			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -565,6 +565,7 @@
 	
 	
 </div> <!-- row-fluid -->
+
 	</div>
   </div>
   <div class="container-narrow">

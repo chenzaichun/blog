@@ -120,7 +120,7 @@
 修改启动项, 终端输入：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/grub.d &amp;&amp; ls</span><br></pre></td></tr></table></figure></p>
 <p>显示的文件是这样的：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">00_header  05_debian_theme  10_linux  20_memtest86+ 30_os-prober  40_custom  README</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">00</span>_header  <span class="number">05</span>_debian_theme  <span class="number">10</span>_linux  <span class="number">20</span>_memtest86+ <span class="number">30</span>_os-prober  <span class="number">40</span>_custom  README</span><br></pre></td></tr></table></figure></p>
 <p>其中：10_linux就是当前所使用的操作系统，30_os-prober的作用是自动查找计算机的其他系统，比如是windows xp，要XP默认首启动只要执行命令：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv <span class="number">20</span>_os-prober <span class="number">06</span>_os-prober，把<span class="number">20</span>_os-prober 改成<span class="number">06</span>_os-prober</span><br><span class="line">sudo mv <span class="number">30</span>_os-prober <span class="number">06</span>_os-prober</span><br></pre></td></tr></table></figure></p>
 <p>这样，以后grub再次更新时，XP就默认在linux前启动了。</p>

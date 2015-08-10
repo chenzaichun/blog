@@ -118,11 +118,11 @@
 	<div class="mypage">		
 	    <p>在测试过很多中dvcs之后，最后决定用git。git在linux表现是非常完美的，不管是中文文件名，还是log，同时git svn clone也相当的完美。但是在windows下，乱码问题一直得不到解决。万般无赖之下只有抛弃以前的历史，直接svn co下来之后，生成一个新的git repo。</p>
 <p>要想中文显示正常，在msysgit的安装目录下的/etc/git-completion.bash中增加一行：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ls=&#39;ls --show-control-chars --color=auto&#39;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alias</span> <span class="keyword">ls</span>=<span class="string">'ls --show-control-chars --color=auto'</span></span><br></pre></td></tr></table></figure></p>
 <p>修改<code>/etc/inputrc</code>中对应的行：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ls=&#39;ls --show-control-chars --color=auto&#39;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alias</span> <span class="keyword">ls</span>=<span class="string">'ls --show-control-chars --color=auto'</span></span><br></pre></td></tr></table></figure></p>
 <p>在<code>/etc/profile</code>中增加一行：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ls=&#39;ls --show-control-chars --color=auto&#39;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alias</span> <span class="keyword">ls</span>=<span class="string">'ls --show-control-chars --color=auto'</span></span><br></pre></td></tr></table></figure></p>
 <p>windows下完美解决问题。可惜windows下的repo在linux下是不能够正常使用的！等待解决git官方utf-8支持吧</p>
 	  
 	</div>

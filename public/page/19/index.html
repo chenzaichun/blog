@@ -129,11 +129,11 @@
 	  
 	
 	  <p>按照官方说明安装:</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ubunt 10.04&#19979;&#38754;&#26080;&#27861;&#21551;&#21160;,&#25552;&#31034;&#25214;&#19981;&#21040;libexpat.so.0&#10;  error while loading shared libraries: libexpat.so.0: cannot open shared object file: No such file or directory&#10;  &#21407;&#22240;,&#32534;&#35793;flashget&#20351;&#29992;&#30340;&#26159;libexpat.so.0&#29256;&#26412;,&#31995;&#32479;&#40664;&#35748;&#20026;libexpat.so.1.5.2,&#20570;&#36719;&#36830;&#25509;&#21363;&#21487;.&#10;  $cd /usr/lib&#10;  $sudo ln -s libexpat.so.1.5.2 libexpat.so.0&#10;  $sudo ldconfig</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Ubunt <span class="number">10.04</span>下面无法启动,提示找不到libexpat<span class="class">.so</span>.<span class="number">0</span></span><br><span class="line">  error while loading shared libraries: libexpat<span class="class">.so</span>.<span class="number">0</span>: cannot open shared <span class="tag">object</span> file: No such file or directory</span><br><span class="line">  原因,编译flashget使用的是libexpat<span class="class">.so</span>.<span class="number">0</span>版本,系统默认为libexpat<span class="class">.so</span>.<span class="number">1.5</span>.<span class="number">2</span>,做软连接即可.</span><br><span class="line">  <span class="variable">$cd</span> /usr/lib</span><br><span class="line">  <span class="variable">$sudo</span> ln -s libexpat<span class="class">.so</span>.<span class="number">1.5</span>.<span class="number">2</span> libexpat<span class="class">.so</span>.<span class="number">0</span></span><br><span class="line">  <span class="variable">$sudo</span> ldconfig</span><br></pre></td></tr></table></figure></p>
 <p>但是会出现:</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flashget: error while loading shared libraries: libexpat.so.0: wrong ELF class: ELFCLASS64</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flashget: error <span class="keyword">while</span> loading shared libraries: libexpat.so<span class="number">.0</span>: wrong ELF <span class="class"><span class="keyword">class</span>: <span class="typename">ELFCLASS64</span></span></span><br></pre></td></tr></table></figure></p>
 <p>原因是因为我使用的64为系统,而flashget是用32位程序.怎么办呢?因为装有lib32,所以可以直接创建lib32中libexpat.so的软链接</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /lib32/libexpat.so.1.5.2 /usr/lib/libexpat.so.0</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /lib32/libexpat.so<span class="number">.1</span><span class="number">.5</span><span class="number">.2</span> /usr/lib/libexpat.so<span class="number">.0</span></span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -463,45 +463,45 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
-		
-			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
-		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
-		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
 			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
 		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
 		
-			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
 		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
 		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
 		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
-		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
-		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
-		
-			<li><a href="/tags/samba/">samba<span>1</span></a></li>
-		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
-		
-			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
 		
 			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
+		
+			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+		
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
 			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
 		
 			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+		
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+		
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+		
+			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
+		
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
+		
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+		
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -562,6 +562,7 @@
 	
 	
 </div> <!-- row-fluid -->
+
 	</div>
   </div>
   <div class="container-narrow">

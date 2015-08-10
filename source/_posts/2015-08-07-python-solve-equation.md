@@ -15,7 +15,7 @@ date: 2015-08-07 15:23
 
 当时病犯了，不承认自己是学渣（貌似我也不是学霸），学过的数学也完全还给了老师，肿么办。只好用 Python 中的[SymPy](http://www.sympy.org/en/index.html)来计算一下了以下方程
 
-$$ \log_2(x-1) + \log_2x = 1$$
+$$\log_2(x-1) + \log_2x = 1$$
 
 安装`SymPy`
 
@@ -36,7 +36,7 @@ print(solve(log(x-1,2)+log(x,2)-1,x))
 
 结果是2，可是貌似还有一个负数解呢( `-1`  哪儿去了?)
 
-<!--more-->
+<!-- more -->
 
 ```python
 #!/usr/bin/env python

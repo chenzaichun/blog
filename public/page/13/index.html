@@ -227,7 +227,7 @@
 	  
 	
 	  <p>一直以来不知道原来yaourt是调用makepkg来实现下载、编译、安装的</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/makepkg.conf&#10;&#10;DLAGENTS=(&#39;ftp::/usr/bin/wget -c --passive-ftp -t 3 --waitretry=3 -O %o %u&#39;&#10;                  &#39;http::/usr/bin/wget -c -t 3 --waitretry=3 -O %o %u&#39;&#10;                  &#39;https::/usr/bin/wget -c -t 3 --waitretry=3 --no-check-certificate -O %o %u&#39;&#10;                  &#39;rsync::/usr/bin/rsync -z %u %o&#39;&#10;                  &#39;scp::/usr/bin/scp -C %u %o&#39;)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/makepkg.conf</span><br><span class="line"></span><br><span class="line"><span class="label">DLAGENTS=('ftp::</span>/usr/bin/wget -c --passive-ftp -t <span class="number">3</span> --waitretry=<span class="number">3</span> -O <span class="var_expand">%o %</span>u'</span><br><span class="line"><span class="label">                  'http::</span>/usr/bin/wget -c -t <span class="number">3</span> --waitretry=<span class="number">3</span> -O <span class="var_expand">%o %</span>u'</span><br><span class="line"><span class="label">                  'https::</span>/usr/bin/wget -c -t <span class="number">3</span> --waitretry=<span class="number">3</span> --no-check-certificate -O <span class="var_expand">%o %</span>u'</span><br><span class="line"><span class="label">                  'rsync::</span>/usr/bin/rsync -z <span class="var_expand">%u %</span>o'</span><br><span class="line"><span class="label">                  'scp::</span>/usr/bin/scp -C <span class="var_expand">%u %</span>o')</span><br></pre></td></tr></table></figure></p>
 <p>很多时候可能用到了rsync的协议，所以添加一个RSYNC_PROX的环境变量比较保险。</p>
 
 	
@@ -313,7 +313,7 @@
 	  
 	
 	  <p>升级到mercurial 1.7.3之后，频繁会遇到像这样的错误：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warning: bitbucket.org certificate not verified (check web.cacerts config setting)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warning: bitbucket<span class="class">.org</span> certificate not verified (check web<span class="class">.cacerts</span> config setting)</span><br></pre></td></tr></table></figure></p>
 <p>解决办法，参考链接：&lt;a href=&quot;http://mercurial.selenic.com/wiki/CACertificates&quot;&gt;http://mercurial.selenic.com/wiki/CACertificates&lt;/a&gt;</p>
 <p>下载&lt;a href=&quot;http://curl.haxx.se/ca/cacert.pem&quot; target=&quot;_blank&quot;&gt;http://curl.haxx.se/ca/cacert.pem&lt;/a&gt;到本地，然后在～/.hgrc里面添加这样一句：</p>
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[web]&#10;cacerts=/path/to/cacert.pem</span><br></pre></td></tr></table></figure></p>
@@ -493,45 +493,45 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
-		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
-		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
-		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
-		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
-		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
-		
-			<li><a href="/tags/programming/">programming<span>6</span></a></li>
-		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
-		
-			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
-		
-			<li><a href="/tags/soap/">soap<span>1</span></a></li>
-		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
-		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
-		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/redis/">redis<span>1</span></a></li>
-		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
 		
 			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
 		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+			<li><a href="/tags/VC/">VC<span>8</span></a></li>
 		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
+		
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+		
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+		
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+		
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+		
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+		
+			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+		
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+		
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
+		
+			<li><a href="/tags/database/">database<span>2</span></a></li>
+		
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+		
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+		
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+		
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+		
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -592,6 +592,7 @@
 	
 	
 </div> <!-- row-fluid -->
+
 	</div>
   </div>
   <div class="container-narrow">

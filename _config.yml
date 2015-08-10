@@ -36,9 +36,12 @@ multi_thread: true
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
+relative_link: false
+future: true
 highlight:
   enable: true
   line_number: true
+  auto_detect: true
   tab_replace:
 
 # Category & Tag
@@ -82,12 +85,13 @@ disqus_shortname:
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
 #theme: landscape-jr0cket
 theme: freemind
+#theme: yilia
 #theme: wixo
 exclude_generator:
 
-plugins:
-  - hexo-generator-feed
-  - hexo-renderer-ejs
+#plugins:
+#  - hexo-generator-feed
+#  - hexo-renderer-ejs
 
 
 # Markdown
@@ -109,3 +113,5 @@ html_minifier:
 deploy:
   type: heroku
   repository: git@heroku.com:yesokay.git 
+
+excerpt_link: Read More...

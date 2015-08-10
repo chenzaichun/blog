@@ -216,7 +216,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><a href="http://superuser.com/questions/28414/moving-the-swapfiles-to-a-dedicated-partition-in-snow-leopard" target="_blank" rel="external">参考链接</a></p>
+	  <p><a href="http://superuser.com/questions/28414/moving-the-swapfiles-to-a-dedicated-partition-in-snow-leopard">参考链接</a></p>
 <ol>
 <li>
 <p>备份dynamic_pager.plist
@@ -227,19 +227,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo plutil -convert xml1 com.apple.dynamic_pager.plist</span><br></pre></td></tr></table></figure></p>
 </li>
 </ol>
-<p>&lt;!--more--&gt;</p>
-<ol start="3">
-<li>
-<p>编辑plist文件, 比如我的，请根据自身情况修改路径
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs$</span><br><span class="line">&lt;plist version="1.0"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">dict</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>EnableTransactions<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">true</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>HopefullyExitsLast<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">true</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>com.apple.dynamic_pager<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>OnDemand<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">false</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">array</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>/bin/bash<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>-c<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="title">string</span>&gt;</span>/bin/wait4path /Volumes/Swap/ &amp;amp;&amp;amp; /sbin/dynamic_pager -F /Volumes/Swap/.vm/swapfile<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">array</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dict</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">plist</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>将plist转换为binary
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo plutil -convert binary1 com.apple.dynamic_pager.plist</span><br></pre></td></tr></table></figure></p>
-</li>
-</ol>
-<p>搞定</p>
-
+<p>
 	
 	</div>
 	
@@ -266,7 +254,7 @@
 	  
 	
 	  <p>今天升级了archlinux，启动过程中出现了错误：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/rc.d/functions: line 497: syntax error near unexpected token `&#60;&#39;&#10;/etc/rc.d/functions: line 497: `        done &#60; &#60;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)&#39;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/rc.<span class="keyword">d</span>/functions: <span class="keyword">line</span> 497: <span class="keyword">syntax</span> <span class="keyword">error</span> near unexpected <span class="keyword">token</span> `&lt;'</span><br><span class="line">/etc/rc.<span class="keyword">d</span>/functions: <span class="keyword">line</span> 497: `        done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)'</span><br></pre></td></tr></table></figure></p>
 <p>archlinux.org上给出了一个<a href="https://bugs.archlinux.org/task/27098" target="_blank" rel="external">patch</a></p>
 <p>patch的内容如下：
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">--- functions_old       2011-11-19 13:05:47.921522255 +0400</span></span><br><span class="line"><span class="header">+++ functions   2011-11-19 12:55:17.411565127 +0400</span></span><br><span class="line"><span class="chunk">@@ -494,7 +494,7 @@</span></span><br><span class="line">                fi</span><br><span class="line"></span><br><span class="line">                mounts+=("$target")</span><br><span class="line"><span class="deletion">-       done &lt; &lt;(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></span><br><span class="line"><span class="addition">+       done &lt; $(findmnt -runRo TARGET,FSTYPE,OPTIONS / | tac)</span></span><br><span class="line"></span><br><span class="line">        umount -r "$&#123;mounts[@]&#125;"</span><br></pre></td></tr></table></figure></p>
@@ -330,7 +318,7 @@
 collect2: ld returned 1 exit status</p>
 </blockquote>
 <p>运行结果：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./helloworld&#10;2011-12-12 03:27:14.391 helloworld[6928] No local time zone specified.&#10;2011-12-12 03:27:14.392 helloworld[6928] Using time zone with absolute offset 0.&#10;2011-12-12 03:27:14.338 helloworld[6928] Hello World</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ./helloworld</span><br><span class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.391</span> helloworld[<span class="number">6928</span>] No local time zone specified.</span><br><span class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.392</span> helloworld[<span class="number">6928</span>] Using time zone with absolute offset <span class="number">0.</span></span><br><span class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.338</span> helloworld[<span class="number">6928</span>] Hello World</span><br></pre></td></tr></table></figure></p>
 <p>这里有2个warning, 设置一下:
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write NSGlobalDomain <span class="string">"Local Time Zone"</span> <span class="string">'Asia/Chongqing'</span></span><br></pre></td></tr></table></figure></p>
 
@@ -359,25 +347,11 @@ collect2: ld returned 1 exit status</p>
 	<div class="col-md-12">
 	  
 	
-	  <p><a href="http://gnustep.made-it.com/GSPT/xml/Tutorial_en.html#AEN365" target="_blank" rel="external">参考链接</a></p>
+	  <p><a href="http://gnustep.made-it.com/GSPT/xml/Tutorial_en.html#AEN365">参考链接</a></p>
 <p>main.m</p>
 <p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#include <span class="title">"AppController.h"</span></span></span><br><span class="line"><span class="preprocessor">#include <span class="title">&lt;AppKit/AppKit.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span><br><span class="line">&#123;</span><br><span class="line">   <span class="built_in">NSAutoreleasePool</span> *pool;</span><br><span class="line">   AppController *delegate;</span><br><span class="line"></span><br><span class="line">   pool = [[<span class="built_in">NSAutoreleasePool</span> alloc] init];</span><br><span class="line">   delegate = [[AppController alloc] init];</span><br><span class="line"></span><br><span class="line">   [<span class="built_in">NSApplication</span> sharedApplication];</span><br><span class="line">   [<span class="built_in">NSApp</span> setDelegate: delegate];</span><br><span class="line"></span><br><span class="line">   RELEASE(pool);</span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">NSApplicationMain</span> (argc, argv);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>AppController.h</p>
-<p>&lt;!--more--&gt;</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#ifndef _AppController_H_</span></span><br><span class="line"><span class="preprocessor">#define _AppController_H_</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#include <span class="title">&lt;Foundation/NSObject.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@class</span> <span class="title">NSWindow</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">@class</span> <span class="title">NSTextField</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">@class</span> <span class="title">NSNotification</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">AppController</span> : <span class="title">NSObject</span></span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="built_in">NSWindow</span> *window;</span><br><span class="line">   <span class="built_in">NSTextField</span> *label;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)applicationWillFinishLaunching: (<span class="built_in">NSNotification</span> *) not;</span><br><span class="line">- (<span class="keyword">void</span>)applicationDidFinishLaunching: (<span class="built_in">NSNotification</span> *) not;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#endif /* _AppController_H_ */</span></span><br></pre></td></tr></table></figure></p>
-<p>AppController.m</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#include <span class="title">"AppController.h"</span></span></span><br><span class="line"><span class="preprocessor">#include <span class="title">&lt;AppKit/AppKit.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">AppController</span></span></span><br><span class="line">- (<span class="keyword">void</span>) applicationWillFinishLaunching: (<span class="built_in">NSNotification</span> *) not</span><br><span class="line">&#123;</span><br><span class="line">   <span class="comment">/* Create Menu */</span></span><br><span class="line">   <span class="built_in">NSMenu</span> *menu;</span><br><span class="line">   <span class="built_in">NSMenu</span> *info;</span><br><span class="line"></span><br><span class="line">   menu = [<span class="built_in">NSMenu</span> new];</span><br><span class="line">   [menu addItemWithTitle: <span class="string">@"Info"</span></span><br><span class="line">                   action: <span class="literal">NULL</span></span><br><span class="line">            keyEquivalent: <span class="string">@""</span>];</span><br><span class="line">   [menu addItemWithTitle: <span class="string">@"Hide"</span></span><br><span class="line">                   action: <span class="keyword">@selector</span>(hide:)</span><br><span class="line">            keyEquivalent: <span class="string">@"h"</span>];</span><br><span class="line">   [menu addItemWithTitle: <span class="string">@"Quit"</span></span><br><span class="line">                   action: <span class="keyword">@selector</span>(terminate:)</span><br><span class="line">            keyEquivalent: <span class="string">@"q"</span>];</span><br><span class="line"></span><br><span class="line">   info = [<span class="built_in">NSMenu</span> new];</span><br><span class="line">   [info addItemWithTitle: <span class="string">@"Info Panel..."</span></span><br><span class="line">                   action: <span class="keyword">@selector</span>(orderFrontStandardInfoPanel:)</span><br><span class="line">            keyEquivalent: <span class="string">@""</span>];</span><br><span class="line">   [info addItemWithTitle: <span class="string">@"Preferences"</span></span><br><span class="line">                   action: <span class="literal">NULL</span></span><br><span class="line">            keyEquivalent: <span class="string">@""</span>];</span><br><span class="line">   [info addItemWithTitle: <span class="string">@"Help"</span></span><br><span class="line">                   action: <span class="keyword">@selector</span> (orderFrontHelpPanel:)</span><br><span class="line">            keyEquivalent: <span class="string">@"?"</span>];</span><br><span class="line"></span><br><span class="line">   [menu setSubmenu: info</span><br><span class="line">            forItem: [menu itemWithTitle:<span class="string">@"Info"</span>]];</span><br><span class="line">   RELEASE(info);</span><br><span class="line"></span><br><span class="line">   [<span class="built_in">NSApp</span> setMainMenu:menu];</span><br><span class="line">   RELEASE(menu);</span><br><span class="line"></span><br><span class="line">   <span class="comment">/* Create Window */</span></span><br><span class="line">   window = [[<span class="built_in">NSWindow</span> alloc] initWithContentRect: <span class="built_in">NSMakeRect</span>(<span class="number">300</span>, <span class="number">300</span>, <span class="number">200</span>, <span class="number">100</span>)</span><br><span class="line">                                        styleMask: (<span class="built_in">NSTitledWindowMask</span> |</span><br><span class="line">                                                    <span class="built_in">NSMiniaturizableWindowMask</span> |</span><br><span class="line">                                                    <span class="built_in">NSResizableWindowMask</span>)</span><br><span class="line">                                          backing: <span class="built_in">NSBackingStoreBuffered</span></span><br><span class="line">                                            defer: <span class="literal">YES</span>];</span><br><span class="line">   [window setTitle: <span class="string">@"Hello World"</span>];</span><br><span class="line"></span><br><span class="line">   <span class="comment">/* Create Label */</span></span><br><span class="line">   label = [[<span class="built_in">NSTextField</span> alloc] initWithFrame: <span class="built_in">NSMakeRect</span>(<span class="number">30</span>, <span class="number">30</span>, <span class="number">80</span>, <span class="number">30</span>)];</span><br><span class="line">   [label setSelectable: <span class="literal">NO</span>];</span><br><span class="line">   [label setBezeled: <span class="literal">NO</span>];</span><br><span class="line">   [label setDrawsBackground: <span class="literal">NO</span>];</span><br><span class="line">   [label setStringValue: <span class="string">@"Hello World"</span>];</span><br><span class="line"></span><br><span class="line">   [[window contentView] addSubview: label];</span><br><span class="line">   RELEASE(label);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>) applicationDidFinishLaunching: (<span class="built_in">NSNotification</span> *) not</span><br><span class="line">&#123;</span><br><span class="line">   [window makeKeyAndOrderFront: <span class="keyword">self</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>) dealloc</span><br><span class="line">&#123;</span><br><span class="line">  RELEASE(window);</span><br><span class="line">  [<span class="keyword">super</span> dealloc];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure></p>
-<p>HelloWorldInfo.plist</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#10;   ApplicationDescription = &#34;Hello World Tutorial&#34;;&#10;   ApplicationIcon = &#34;&#34;;&#10;   ApplicationName = HelloWorld;&#10;   ApplicationRelease = 0.1;&#10;   Authors = &#34;&#34;;&#10;   Copyright = &#34;Copyright (C) 200x by ...&#34;;&#10;   CopyrightDescription = &#34;Released under...&#34;;&#10;   FullVersionID = 0.1;&#10;   URL = &#34;&#34;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>GNUmakefile</p>
-<p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#GNUSTEP_MAKEFILES=/usr/share/GNUstep/Makefiles</span></span><br><span class="line"><span class="constant">GNUSTEP_MAKEFILES</span>=<span class="variable">$(shell gnustep-config --variable=GNUSTEP_MAKEFILES)</span></span><br><span class="line">include $(GNUSTEP_MAKEFILES)/common.make</span><br><span class="line"></span><br><span class="line"><span class="constant">APP_NAME</span> = HelloWorld</span><br><span class="line"><span class="constant">HelloWorld_HEADERS</span> = AppController.h</span><br><span class="line"><span class="constant">HelloWorld_OBJC_FILES</span> = main.m AppController.m</span><br><span class="line"><span class="constant">HelloWorld_RESOURCE_FILES</span> = HelloWorldInfo.plist</span><br><span class="line"></span><br><span class="line">include $(GNUSTEP_MAKEFILES)/application.make</span><br></pre></td></tr></table></figure></p>
-<p>这里，需要使用gnustep-config –variable=GNUSTEP_MAKEFILES获取makefiles的路径</p>
-<p>编译运行：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">openapp ./HelloWorld.app</span><br></pre></td></tr></table></figure></p>
-<p>截图:</p>
-<p><img src="/media/wpid-gnustep-helloworld.png"></p>
-<p>源代码下载: <a href="/images/uploads/2011/12/helloworld.zip">HelloWorld.zip</a></p>
-
+<p>
 	
 	</div>
 	
@@ -523,45 +497,45 @@ collect2: ld returned 1 exit status</p>
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
 		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
-		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+			<li><a href="/tags/soap/">soap<span>1</span></a></li>
 		
 			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
 		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
 		
-			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
-		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
-		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
-		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
-		
-			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
-		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
-		
-			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+			<li><a href="/tags/python/">python<span>31</span></a></li>
 		
 			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
 		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+		
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+		
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+		
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+		
+			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
+		
+			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+		
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+		
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
+		
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+		
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
 		
 			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
 		
-			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
 		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
-		
-			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
+			<li><a href="/tags/go/">go<span>2</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -622,6 +596,7 @@ collect2: ld returned 1 exit status</p>
 	
 	
 </div> <!-- row-fluid -->
+
 	</div>
   </div>
   <div class="container-narrow">

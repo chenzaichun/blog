@@ -355,7 +355,7 @@
 修改启动项, 终端输入：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/grub.d &amp;&amp; ls</span><br></pre></td></tr></table></figure></p>
 <p>显示的文件是这样的：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">00_header  05_debian_theme  10_linux  20_memtest86+ 30_os-prober  40_custom  README</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">00</span>_header  <span class="number">05</span>_debian_theme  <span class="number">10</span>_linux  <span class="number">20</span>_memtest86+ <span class="number">30</span>_os-prober  <span class="number">40</span>_custom  README</span><br></pre></td></tr></table></figure></p>
 <p>其中：10_linux就是当前所使用的操作系统，30_os-prober的作用是自动查找计算机的其他系统，比如是windows xp，要XP默认首启动只要执行命令：</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv <span class="number">20</span>_os-prober <span class="number">06</span>_os-prober，把<span class="number">20</span>_os-prober 改成<span class="number">06</span>_os-prober</span><br><span class="line">sudo mv <span class="number">30</span>_os-prober <span class="number">06</span>_os-prober</span><br></pre></td></tr></table></figure></p>
 <p>这样，以后grub再次更新时，XP就默认在linux前启动了。</p>
@@ -474,45 +474,45 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
-		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
-		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
-		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
-		
 			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
 		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
 		
 			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
 		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
 		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
-		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
+			<li><a href="/tags/network/">network<span>1</span></a></li>
 		
 			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
 		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
 		
-			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
+			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
 		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+		
+			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+		
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+		
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+		
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
 		
 			<li><a href="/tags/portable/">portable<span>1</span></a></li>
 		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
 		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
 		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -573,6 +573,7 @@
 	
 	
 </div> <!-- row-fluid -->
+
 	</div>
   </div>
   <div class="container-narrow">

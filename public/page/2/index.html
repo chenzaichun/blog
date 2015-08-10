@@ -129,7 +129,7 @@
 	  
 	
 	  <p>编辑<code>/etc/rc.config.d/xfs</code></p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RUN_X_FONT_SERVER=1</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RUN_X_FONT_SERVER=<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
 <p>然后启动</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/init.d/xfs start</span><br></pre></td></tr></table></figure></p>
 <p>检查是否启动:</p>
@@ -372,35 +372,7 @@
 <p>系统版本:</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># on suse</span></span><br><span class="line">uname <span class="operator">-a</span></span><br><span class="line">Linux vmsuse <span class="number">2.6</span>.<span class="number">16.60</span>-<span class="number">0.54</span>.<span class="number">5</span>-default <span class="comment">#1 Fri Sep 4 01:28:03 UTC 2009 x86_64 x86_64 x86_64 GNU/Linux</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># on redhat</span></span><br><span class="line">uname <span class="operator">-a</span></span><br><span class="line">Linux temipll1 <span class="number">2.6</span>.<span class="number">18</span>-<span class="number">92</span>.el5 <span class="comment">#1 SMP Tue Apr 29 13:16:15 EDT 2008 x86_64 x86_64 x86_64 GNU/Linux</span></span><br></pre></td></tr></table></figure></p>
 <p>gcc版本：</p>
-<p>&lt;!--more--&gt;</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># on suse </span></span><br><span class="line">gcc -v</span><br><span class="line">Using built-in specs.</span><br><span class="line">Target: x86_64-suse-linux</span><br><span class="line">Configured with: ../configure --enable-threads=posix --prefix=/usr --with-local-prefix=/usr/<span class="built_in">local</span> --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c,c++,objc,fortran,obj-c++,java,ada --enable-checking=release --with-gxx-include-dir=/usr/include/c++/<span class="number">4.1</span>.<span class="number">2</span> --enable-ssp --disable-libssp --disable-libgcj --with-slibdir=/lib64 --with-system-zlib --enable-shared --enable-__cxa_atexit --enable-libstdcxx-allocator=new --program-suffix= --enable-version-specific-runtime-libs --without-system-libunwind --with-cpu=generic --host=x86_64-suse-linux</span><br><span class="line">Thread model: posix</span><br><span class="line">gcc version <span class="number">4.1</span>.<span class="number">2</span> <span class="number">20070115</span> (SUSE Linux)</span><br><span class="line"></span><br><span class="line"><span class="comment"># on redhat </span></span><br><span class="line">gcc -v</span><br><span class="line">Using built-in specs.</span><br><span class="line">Target: x86_64-redhat-linux</span><br><span class="line">Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-libgcj-multifile --enable-languages=c,c++,objc,obj-c++,java,fortran,ada --enable-java-awt=gtk --disable-dssi --enable-plugin --with-java-home=/usr/lib/jvm/java-<span class="number">1.4</span>.<span class="number">2</span>-gcj-<span class="number">1.4</span>.<span class="number">2.0</span>/jre --with-cpu=generic --host=x86_64-redhat-linux</span><br><span class="line">Thread model: posix</span><br><span class="line">gcc version <span class="number">4.1</span>.<span class="number">2</span> <span class="number">20080704</span> (Red Hat <span class="number">4.1</span>.<span class="number">2</span>-<span class="number">48</span>)</span><br></pre></td></tr></table></figure></p>
-<p>glibc 版本:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># on suse</span></span><br><span class="line">rpm -qa|grep glibc</span><br><span class="line">glibc-i18ndata-<span class="number">2.4</span>-<span class="number">31.74</span>.<span class="number">1</span></span><br><span class="line">glibc-<span class="number">32</span>bit-<span class="number">2.4</span>-<span class="number">31.74</span>.<span class="number">1</span></span><br><span class="line">glibc-<span class="number">2.4</span>-<span class="number">31.74</span>.<span class="number">1</span></span><br><span class="line">glibc-locale-<span class="number">32</span>bit-<span class="number">2.4</span>-<span class="number">31.74</span>.<span class="number">1</span></span><br><span class="line">glibc-locale-<span class="number">2.4</span>-<span class="number">31.74</span>.<span class="number">1</span></span><br><span class="line">glibc-devel-<span class="number">32</span>bit-<span class="number">2.4</span>-<span class="number">31.74</span>.<span class="number">1</span></span><br><span class="line">glibc-devel-<span class="number">2.4</span>-<span class="number">31.74</span>.<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># on redhat</span></span><br><span class="line">rpm -qa|grep glibc</span><br><span class="line">glibc-<span class="number">2.5</span>-<span class="number">49</span></span><br><span class="line">glibc-devel-<span class="number">2.5</span>-<span class="number">49</span></span><br><span class="line">glibc-headers-<span class="number">2.5</span>-<span class="number">49</span></span><br><span class="line">glibc-common-<span class="number">2.5</span>-<span class="number">49</span></span><br><span class="line">glibc-<span class="number">2.5</span>-<span class="number">49</span></span><br><span class="line">glibc-devel-<span class="number">2.5</span>-<span class="number">49</span></span><br></pre></td></tr></table></figure></p>
-<p>貌似suse和redhat的binay是不兼容的呢 - -||</p>
-<p>用hello world程序测试一下:</p>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在redhat上面编译</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc helloworld.c -o helloworld</span><br></pre></td></tr></table></figure></p>
-<p>拷贝到suse上面运行，结果还是出现<code>Floating point exception</code></p>
-<p>Google了一下，发现可以在编译的时候加入<code>-Wl,--hash-style=sysv</code></p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc helloworld.c -Wl,--hash-style=sysv -o helloworld</span><br></pre></td></tr></table></figure></p>
-<p>拷贝到suse上面运行竟然正常了。</p>
-<p>Google发现了这样一段话</p>
-<blockquote>
-<p>Fedora (RedHat?) seems to have a different default dynamic linker hash style,
-I think basically it is:
-ld --hash-style=gnu ..</p>
-</blockquote>
-<blockquote>
-<p>So without using one of:
---hash-style=both or --hash-style=sysv</p>
-</blockquote>
-<blockquote>
-<p>The bits created won't run on systems that don't support this new hash
-style, like SuSE 10.</p>
-</blockquote>
-<p>OMG</p>
-
+<p>
 	
 	</div>
 	
@@ -431,18 +403,7 @@ style, like SuSE 10.</p>
 <p>以下是安装1.5版本的jdk的方法</p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 64bits</span></span><br><span class="line">yast2 -i java-<span class="number">1</span>_5_0-ibm-devel </span><br><span class="line"></span><br><span class="line"><span class="comment"># 32bits</span></span><br><span class="line">yast2 -i java-<span class="number">1</span>_5_0-ibm-devel-<span class="number">32</span>bit</span><br></pre></td></tr></table></figure></p>
 <p>如果要安装sun版本的java，则需要通过手动安装的方式：</p>
-<p>&lt;!--more--&gt;</p>
-<ol>
-<li>下载安装包,<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">Java download</a></li>
-</ol>
-<p>如下载1.6版本的64位版本: http://download.oracle.com/otn-pub/java/jdk/6u37-b06/jdk-6u37-linux-x64-rpm.bin</p>
-<ol start="2">
-<li>安装</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This creates a file named jdk-6unn-linux-version.rpm, </span></span><br><span class="line"><span class="comment"># and a directory named /usr/java/jdk.1.6.0_nn with </span></span><br><span class="line"><span class="comment"># the Sun JDK software in it.</span></span><br><span class="line">sh ./jdk-<span class="number">6</span>u37-linux-x64-rpm.bin</span><br></pre></td></tr></table></figure></p>
-<p>安装日志</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sh jdk-6u37-linux-x64-rpm.bin &#10;Unpacking...&#10;Checksumming...&#10;Extracting...&#10;UnZipSFX 5.50 of 17 February 2002, by Info-ZIP (Zip-Bugs@lists.wku.edu).&#10;  inflating: jdk-6u37-linux-amd64.rpm  &#10;  inflating: sun-javadb-common-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-core-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-client-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-demo-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-docs-10.6.2-1.1.i386.rpm  &#10;  inflating: sun-javadb-javadoc-10.6.2-1.1.i386.rpm  &#10;Preparing...                ########################################### [100%]&#10;   1:jdk                    ########################################### [100%]&#10;Unpacking JAR files...&#10;&#9;rt.jar...&#10;&#9;jsse.jar...&#10;&#9;charsets.jar...&#10;&#9;tools.jar...&#10;&#9;localedata.jar...&#10;&#9;plugin.jar...&#10;&#9;javaws.jar...&#10;&#9;deploy.jar...&#10;warning: waiting to reestablish exclusive database lock&#10;error: %post(jdk-1.6.0_37-fcs.x86_64) scriptlet failed, exit status 5&#10;Installing JavaDB&#10;Preparing...                ########################################### [100%]&#10;   1:sun-javadb-common      ########################################### [ 17%]&#10;   2:sun-javadb-core        ########################################### [ 33%]&#10;   3:sun-javadb-client      ########################################### [ 50%]&#10;   4:sun-javadb-demo        ########################################### [ 67%]&#10;   5:sun-javadb-docs        ########################################### [ 83%]&#10;   6:sun-javadb-javadoc     ########################################### [100%]&#10;&#10;Java(TM) SE Development Kit 6 successfully installed.&#10;&#10;Product Registration is FREE and includes many benefits:&#10;* Notification of new versions, patches, and updates&#10;* Special offers on Oracle products, services and training&#10;* Access to early releases and documentation&#10;&#10;Product and system data will be collected. If your configuration&#10;supports a browser, the JDK Product Registration form will&#10;be presented. If you do not register, none of this information&#10;will be saved. You may also register your JDK later by&#10;opening the register.html file (located in the JDK installation&#10;directory) in a browser.&#10;&#10;For more information on what data Registration collects and &#10;how it is managed and used, see:&#10;http://java.sun.com/javase/registration/JDKRegistrationPrivacy.html&#10;&#10;Press Enter to continue.....&#10;&#10; &#10;Done.</span><br></pre></td></tr></table></figure></p>
-
+<p>
 	
 	</div>
 	
@@ -498,45 +459,45 @@ style, like SuSE 10.</p>
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
 		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
 		
-			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
 		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+			<li><a href="/tags/python/">python<span>31</span></a></li>
 		
-			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
 		
-			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+		
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+		
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+		
+			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
+		
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
 			<li><a href="/tags/suse/">suse<span>3</span></a></li>
 		
 			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
 		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
 		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
 		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
 		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
-		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/python/">python<span>31</span></a></li>
+			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
 		
 			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
 		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
-			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
 		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -597,6 +558,7 @@ style, like SuSE 10.</p>
 	
 	
 </div> <!-- row-fluid -->
+
 	</div>
   </div>
   <div class="container-narrow">

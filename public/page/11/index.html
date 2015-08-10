@@ -176,7 +176,7 @@
 <p>The connect command reads proxy username and password from <code>CONNECT_USER</code> and <code>CONNECT_PASSWORD</code> evironment. The default username is current login user if no CONNECT_USER is set. Password will be requested interactively if CONNECT_PASSWORD is empty.   GIT_PROXY_COMMAND indicates that git should use the command &quot;proxy&quot;(the wrapper we setup at step 2) as its proxy_command. This can also be set in .git/config.</p>
 </blockquote>
 <p>Now, everything we need is done. Have a try:</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[gigi-Ubuntu:bin]$git clone git://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git&#10;Initialized empty Git repository in /home/gigi/bin/e2fsprogs/.git/&#10;Enter proxy authentication password for bergwolf@proxy.bupt.edu.cn:&#10;remote: Counting objects: 24006, done.&#10;remote: Compressing objects: 100% (4701/4701), done.&#10;ceiving objects: 1% (241/24006), 43.99 KiB | 56 KiB/s</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[gigi-<span class="string">Ubuntu:</span>bin]$git clone <span class="string">git:</span><span class="comment">//git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git</span></span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> <span class="regexp">/home/</span>gigi<span class="regexp">/bin/</span>e2fsprogs<span class="regexp">/.git/</span></span><br><span class="line">Enter proxy authentication password <span class="keyword">for</span> bergwolf<span class="annotation">@proxy</span>.bupt.edu.<span class="string">cn:</span></span><br><span class="line"><span class="string">remote:</span> Counting <span class="string">objects:</span> <span class="number">24006</span>, done.</span><br><span class="line"><span class="string">remote:</span> Compressing <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">4701</span>/<span class="number">4701</span>), done.</span><br><span class="line">ceiving <span class="string">objects:</span> <span class="number">1</span>% (<span class="number">241</span><span class="regexp">/24006), 43.99 KiB | 56 KiB/</span>s</span><br></pre></td></tr></table></figure></p>
 
 	
 	</div>
@@ -262,25 +262,8 @@
 	  
 	
 	  <p>在用x server连接到hp-ux的时候，open view启动失败：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Missing charsets in String to FontSet conversion&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontSet&#10;Warning: Missing charsets in String to FontSet conversion&#10;Warning: Unable to load any usable fontset&#10;Warning:&#10;Name: FONTLIST_DEFAULT_TAG_STRING&#10;Class: XmRendition&#10;Conversion failed. Cannot load font.&#10;&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontList&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:&#34; to type FontList&#10;Warning:&#10;Name: FONTLIST_DEFAULT_TAG_STRING&#10;Class: XmRendition&#10;Conversion failed. Cannot load font.&#10;&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontList&#10;Warning: Cannot convert string &#34;-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:&#34; to type FontList&#10;Warning: Missing charsets in String to FontSet conversion&#10;Warning: Cannot convert string &#34;-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontSet&#10;Warning: Missing charsets in String to FontSet conversion&#10;Warning: Unable to load any usable fontset&#10;Warning:&#10;Name: FONTLIST_DEFAULT_TAG_STRING&#10;Class: XmRendition&#10;Conversion failed. Cannot load font.&#10;&#10;Warning: Cannot convert string &#34;-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*&#34; to type FontList&#10;Warning: Cannot convert string &#34;-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*:&#34; to type FontList&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-140-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-120-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-100-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Cannot convert string &#34;-*-helvetica-medium-r-*-80-*&#34; to type FontSet&#10;ovw: Xt Warning: Missing charsets in String to FontSet conversion&#10;ovw: Xt Warning: Unable to load any usable fontset&#10;/opt/OV/bin</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">Warning: Missing charsets in String to FontSet conversion</span><br><span class="line">Warning: Cannot convert string "-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*" to type FontSet</span><br><span class="line">Warning: Missing charsets in String to FontSet conversion</span><br><span class="line">Warning: Unable to <span class="operator"><span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line"><span class="keyword">Warning</span>:</span><br><span class="line"><span class="keyword">Name</span>: FONTLIST_DEFAULT_TAG_STRING</span><br><span class="line"><span class="keyword">Class</span>: XmRendition</span><br><span class="line">Conversion <span class="keyword">failed</span>. Cannot <span class="keyword">load</span> font.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>:</span><br><span class="line"><span class="keyword">Name</span>: FONTLIST_DEFAULT_TAG_STRING</span><br><span class="line"><span class="keyword">Class</span>: XmRendition</span><br><span class="line">Conversion <span class="keyword">failed</span>. Cannot <span class="keyword">load</span> font.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line"><span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line"><span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line"><span class="keyword">Warning</span>:</span><br><span class="line"><span class="keyword">Name</span>: FONTLIST_DEFAULT_TAG_STRING</span><br><span class="line"><span class="keyword">Class</span>: XmRendition</span><br><span class="line">Conversion <span class="keyword">failed</span>. Cannot <span class="keyword">load</span> font.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-140-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-120-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-100-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-80-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">/opt/OV/<span class="keyword">bin</span></span></span><br></pre></td></tr></table></figure></p>
 <p>解决办法：
-&lt;!--more--&gt;</p>
-<ol>
-<li>首先在hp-ux上检查xfs是否启动</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef |grep xfs</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li>如果没有启动，则启动xfs</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /sbin/init.d/xfs start</span></span><br></pre></td></tr></table></figure></p>
-<ol start="3">
-<li>在需要连接的x server上设置：</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ xset +fp tcp/hostname:<span class="number">7000</span></span><br><span class="line">$ xset fp <span class="built_in">rehash</span></span><br><span class="line">$ xset -q</span><br><span class="line">$ xhost +</span><br></pre></td></tr></table></figure></p>
-<ol start="4">
-<li>然后ssh连上之后，open view显示正常。</li>
-</ol>
-
 	
 	</div>
 	
@@ -487,45 +470,45 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
-		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
-		
-			<li><a href="/tags/python/">python<span>31</span></a></li>
-		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
-		
-			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
-		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
-		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
-		
 			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
 		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
 		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
 		
-			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
-		
-			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
+			<li><a href="/tags/database/">database<span>2</span></a></li>
 		
 			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
 		
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+		
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+		
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
+		
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+		
 			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
 		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
 		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
 		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
+		
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+		
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+		
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
+		
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
 		
 			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
-			<li><a href="/tags/programming/">programming<span>6</span></a></li>
+			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>87</span></a></li>
@@ -586,6 +569,7 @@
 	
 	
 </div> <!-- row-fluid -->
+
 	</div>
   </div>
   <div class="container-narrow">
