@@ -15,7 +15,7 @@ before_script:
 - git config --global user.email 'chenzaichun@gmail.com'
 - git clone https://github.com/chenzaichun/hexo-theme-freemind.git themes/freemind
 script:
-- hexo gm
+- hexo g
 after_success:
 # - mkdir .deploy
 # - cd .deploy
