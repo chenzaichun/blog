@@ -123,7 +123,8 @@
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> -n “username:”</span><br><span class="line">    <span class="built_in">read</span> <span class="operator">-e</span> username</span><br><span class="line">    <span class="built_in">echo</span> -n “password:”</span><br><span class="line">    <span class="built_in">read</span> -es password</span><br><span class="line">    <span class="built_in">export</span> http_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">export</span> ftp_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable set.”</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxyoff</span></span>()&#123;</span><br><span class="line">    <span class="built_in">unset</span> HTTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> http_proxy</span><br><span class="line">    <span class="built_in">unset</span> FTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> ftp_proxy</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable removed.”</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
-
+	
+	<div align="center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享授权条款" style="border-width:0" src="/media/cc.png"></a><br><a href="2010-05-10-archlinux_global_proxy.html">本著作</a>由<a xmlns:cc="http://creativecommons.org/ns#" href="/about/" property="cc:attributionName" rel="cc:attributionURL">Chen, Zai-Chun</a>制作，以<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享 姓名标示-相同方式分享 4.0 国际 授权条款</a>释出</div>
 	<div>
   	<center>
 	<div class="pagination">
@@ -170,18 +171,18 @@
 	
 
 	<!-- categories -->
-    
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
+    <!--  -->
+    <!-- 	<div class="meta-widget"> -->
+    <!-- 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	 -->
+    <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
+    <!--       
   <li>
     <li><a href="/categories/Linux/">Linux<span>52</span></a></li> <li><a href="/categories/tools/">tools<span>31</span></a></li>
   </li>
-
-    </ul>
-	</div>
-	
+ -->
+    <!-- </ul> -->
+    <!-- 	</div> -->
+    <!-- 	 -->
 
 	<!-- tags -->
 	

@@ -124,7 +124,8 @@
 <p>可以看到boost::timer的实现在linux下是通过std::clock()实现的.经测试std::clock()每次返回的值都是一样的。原因就是我们在这里使用的是sleep，而man 3 clock得到的是function returns an approximation of processor time used by the program.即得到的是cpu执行的时间，sleep的时候cpu执行时间（cpu  time）为0，所以每次都得到的一样的值，最后结果为0，如果我们将sleep改为一个循环，结果就将是这是的值了！测试的时候不能被sleep所迷惑了，所以我们用来测实际经过的时间的时候不能用boost::timer!可以选择alarm</p>
 	  
 	</div>
-
+	
+	<div align="center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享授权条款" style="border-width:0" src="/media/cc.png"></a><br><a href="2010-05-31-boost_timer.html">本著作</a>由<a xmlns:cc="http://creativecommons.org/ns#" href="/about/" property="cc:attributionName" rel="cc:attributionURL">Chen, Zai-Chun</a>制作，以<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享 姓名标示-相同方式分享 4.0 国际 授权条款</a>释出</div>
 	<div>
   	<center>
 	<div class="pagination">
@@ -171,18 +172,18 @@
 	
 
 	<!-- categories -->
-    
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
+    <!--  -->
+    <!-- 	<div class="meta-widget"> -->
+    <!-- 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	 -->
+    <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
+    <!--       
   <li>
     <li><a href="/categories/programming/">programming<span>83</span></a></li>
   </li>
-
-    </ul>
-	</div>
-	
+ -->
+    <!-- </ul> -->
+    <!-- 	</div> -->
+    <!-- 	 -->
 
 	<!-- tags -->
 	

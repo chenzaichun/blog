@@ -127,7 +127,8 @@
 <p>这里又有一个问题了，我如果想把/etc/fstab也放到git repo中进行管理怎么办呢？由于不可能为/etc/fstab创建symlink，也不能为其使用mount –bind的方式到/etc/fstab。那就只能在git repo中想办法了。可是git是不会follow symlink的，如果我将/etc/fstab软链接到git repo中，git并不会将该文件加入到repo，加入的只是一个symlink而已。   解决办法就是反过来bind, 将/etc/fstab bind到git repo中的目录:)</p>
 	  
 	</div>
-
+	
+	<div align="center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享授权条款" style="border-width:0" src="/media/cc.png"></a><br><a href="2011-11-18-mount-bind.html">本著作</a>由<a xmlns:cc="http://creativecommons.org/ns#" href="/about/" property="cc:attributionName" rel="cc:attributionURL">Chen, Zai-Chun</a>制作，以<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享 姓名标示-相同方式分享 4.0 国际 授权条款</a>释出</div>
 	<div>
   	<center>
 	<div class="pagination">
@@ -174,18 +175,18 @@
 	
 
 	<!-- categories -->
-    
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
+    <!--  -->
+    <!-- 	<div class="meta-widget"> -->
+    <!-- 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	 -->
+    <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
+    <!--       
   <li>
     <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/Linux/">Linux<span>16</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>15</span></a></li> <li><a href="/categories/programming/">programming<span>7</span></a></li> <li><a href="/categories/tools/">tools<span>5</span></a></li>
   </li>
-
-    </ul>
-	</div>
-	
+ -->
+    <!-- </ul> -->
+    <!-- 	</div> -->
+    <!-- 	 -->
 
 	<!-- tags -->
 	

@@ -120,7 +120,8 @@
 <p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># Get the version information from Windows PE</span><br><span class="line"></span><br><span class="line">from win32api import GetFileVersionInfo, LOWORD, HIWORD</span><br><span class="line"></span><br><span class="line">def get_version_number (filename):</span><br><span class="line">    try:</span><br><span class="line">        info = GetFileVersionInfo (filename, "\")</span><br><span class="line">        ms = info['FileVersionMS']</span><br><span class="line">        ls = info['FileVersionLS']</span><br><span class="line">        return HIWORD (ms), LOWORD (ms), HIWORD (ls), LOWORD (ls)</span><br><span class="line">    except:</span><br><span class="line">        return 0,0,0,0</span><br><span class="line"></span><br><span class="line">def printOtherInfo(filename):</span><br><span class="line">    try:</span><br><span class="line">        info = GetFileVersionInfo(filename, "\")</span><br><span class="line">        print(info)</span><br><span class="line"></span><br><span class="line">	# In order to get the company information, we need to get the lang </span><br><span class="line">	# and code page first, then get the related strings</span><br><span class="line">        trans = GetFileVersionInfo(filename, "\VarFileInfo\Translation")</span><br><span class="line">        if not trans:</span><br><span class="line">            return </span><br><span class="line">        print(info)</span><br><span class="line"></span><br><span class="line">        # Common string lists:</span><br><span class="line">        # "CompanyName","FileDescription", "FileVersion", "InternalName",</span><br><span class="line">        # "LegalCopyright", "OriginalFilename", "ProductName", "ProductVersion"</span><br><span class="line">        # You can use this way to get custom defined strings.</span><br><span class="line"></span><br><span class="line">        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "CompanyName"))</span><br><span class="line">        print(info)</span><br><span class="line">        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "FileVersion"))</span><br><span class="line">        print(info)</span><br><span class="line">    except:</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    import os</span><br><span class="line">    filename = os.environ["COMSPEC"]</span><br><span class="line">    print ".".join ([str (i) for i in get_version_number (filename)])</span><br><span class="line">    printOtherInfo(filename)</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
-
+	
+	<div align="center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享授权条款" style="border-width:0" src="/media/cc.png"></a><br><a href="2010-12-12-python_get_pe_version_info.html">本著作</a>由<a xmlns:cc="http://creativecommons.org/ns#" href="/about/" property="cc:attributionName" rel="cc:attributionURL">Chen, Zai-Chun</a>制作，以<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享 姓名标示-相同方式分享 4.0 国际 授权条款</a>释出</div>
 	<div>
   	<center>
 	<div class="pagination">
@@ -167,18 +168,18 @@
 	
 
 	<!-- categories -->
-    
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
+    <!--  -->
+    <!-- 	<div class="meta-widget"> -->
+    <!-- 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	 -->
+    <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
+    <!--       
   <li>
     <li><a href="/categories/programming/">programming<span>83</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
-
-    </ul>
-	</div>
-	
+ -->
+    <!-- </ul> -->
+    <!-- 	</div> -->
+    <!-- 	 -->
 
 	<!-- tags -->
 	

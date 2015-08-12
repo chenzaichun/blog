@@ -127,7 +127,8 @@
 <p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 <span class="title">soap_out_SOAP_ENV__Header</span><span class="params">(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</span><br><span class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></span><br><span class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &amp;a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
-
+	
+	<div align="center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享授权条款" style="border-width:0" src="/media/cc.png"></a><br><a href="2012-02-28-gsoap-error-500.html">本著作</a>由<a xmlns:cc="http://creativecommons.org/ns#" href="/about/" property="cc:attributionName" rel="cc:attributionURL">Chen, Zai-Chun</a>制作，以<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享 姓名标示-相同方式分享 4.0 国际 授权条款</a>释出</div>
 	<div>
   	<center>
 	<div class="pagination">
@@ -174,18 +175,18 @@
 	
 
 	<!-- categories -->
-    
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
+    <!--  -->
+    <!-- 	<div class="meta-widget"> -->
+    <!-- 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	 -->
+    <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
+    <!--       
   <li>
     <li><a href="/categories/emacs/">emacs<span>61</span></a></li> <li><a href="/categories/org2blog/">org2blog<span>42</span></a></li> <li><a href="/categories/programming/">programming<span>21</span></a></li>
   </li>
-
-    </ul>
-	</div>
-	
+ -->
+    <!-- </ul> -->
+    <!-- 	</div> -->
+    <!-- 	 -->
 
 	<!-- tags -->
 	

@@ -120,7 +120,8 @@
 <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> len(sys.argv) != <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">"Usage srt2lrc.py file"</span>)</span><br><span class="line">    sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">f = open(sys.argv[<span class="number">1</span>])</span><br><span class="line">lines = f.readlines()</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; len(lines):</span><br><span class="line">    line = lines[i]</span><br><span class="line">    <span class="keyword">if</span> line.find(<span class="string">'--&gt;'</span>) == -<span class="number">1</span>:</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    s = line.split(<span class="string">'--&gt;'</span>)</span><br><span class="line">    time = s[<span class="number">0</span>].split(<span class="string">':'</span>)</span><br><span class="line">    ms = <span class="string">'00'</span></span><br><span class="line">    <span class="keyword">if</span> len(time) &gt;= <span class="number">3</span>:</span><br><span class="line">        hour = time[<span class="number">0</span>]</span><br><span class="line">        minute = time[<span class="number">1</span>]</span><br><span class="line">        seconds = time[<span class="number">2</span>].split(<span class="string">','</span>)</span><br><span class="line">        second = seconds[<span class="number">0</span>]</span><br><span class="line">        ms = seconds[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        hour = <span class="number">0</span></span><br><span class="line">        minute = time[<span class="number">2</span>]</span><br><span class="line">        seconds = time[<span class="number">3</span>].split(<span class="string">','</span>)</span><br><span class="line">        second = seconds[<span class="number">0</span>]</span><br><span class="line">        ms = seconds[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> int(hour) == <span class="number">0</span> <span class="keyword">and</span> int(minute) == <span class="number">0</span> <span class="keyword">and</span> int(second) == <span class="number">0</span> <span class="keyword">and</span> int(ms) == <span class="number">0</span>:</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    s = lines[i].strip()</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(lines) <span class="keyword">and</span> len(lines[i].strip()) &gt; <span class="number">0</span>:</span><br><span class="line">        s = s + lines[i].strip()</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    s = re.sub(<span class="string">"&lt;.*&gt;"</span>, <span class="string">""</span>, s)</span><br><span class="line">    <span class="keyword">if</span> len(s) &gt; <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">"[%.2d:%s.%.2s]%s"</span> % (int(hour)*<span class="number">60</span>+int(minute.strip()), second.strip(), ms.strip(), s))</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
-
+	
+	<div align="center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享授权条款" style="border-width:0" src="/media/cc.png"></a><br><a href="2010-07-14-srt2lrc_py.html">本著作</a>由<a xmlns:cc="http://creativecommons.org/ns#" href="/about/" property="cc:attributionName" rel="cc:attributionURL">Chen, Zai-Chun</a>制作，以<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享 姓名标示-相同方式分享 4.0 国际 授权条款</a>释出</div>
 	<div>
   	<center>
 	<div class="pagination">
@@ -167,18 +168,18 @@
 	
 
 	<!-- categories -->
-    
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
+    <!--  -->
+    <!-- 	<div class="meta-widget"> -->
+    <!-- 	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	 -->
+    <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
+    <!--       
   <li>
     <li><a href="/categories/Linux/">Linux<span>52</span></a></li> <li><a href="/categories/programming/">programming<span>16</span></a></li> <li><a href="/categories/tools/">tools<span>13</span></a></li>
   </li>
-
-    </ul>
-	</div>
-	
+ -->
+    <!-- </ul> -->
+    <!-- 	</div> -->
+    <!-- 	 -->
 
 	<!-- tags -->
 	

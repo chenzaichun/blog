@@ -5,7 +5,7 @@
   <subtitle><![CDATA[阿尔萨斯，没有霜之哀伤你就是一坨屎！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yesokay.herokuapp.com//"/>
-  <updated>2015-08-10T04:44:50.000Z</updated>
+  <updated>2015-08-10T06:46:20.000Z</updated>
   <id>http://yesokay.herokuapp.com//</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://yesokay.herokuapp.com/2015-08-07-python-solve-equation.html"/>
     <id>http://yesokay.herokuapp.com/2015-08-07-python-solve-equation.html</id>
     <published>2015-08-07T07:23:00.000Z</published>
-    <updated>2015-08-10T04:44:50.000Z</updated>
+    <updated>2015-08-10T06:46:20.000Z</updated>
     <content type="html"><![CDATA[<p>今天无意中发现一张图片，</p>
 <p><img src="/media/wifi_password.jpg" alt="WIFI密码"></p>
 <p>当如可以通过数学计算网站计算得到结果<a href="https://www.symbolab.com/solver/logarithmic-equation-calculator/log_%7B2%7D%5Cleft(x-1%5Cright)%2Blog_%7B2%7DX%3D1/?origin=enterkey" target="_blank" rel="external">symbolab</a></p>
 <p>当时病犯了，不承认自己是学渣（貌似我也不是学霸），学过的数学也完全还给了老师，肿么办。只好用 Python 中的<a href="http://www.sympy.org/en/index.html" target="_blank" rel="external">SymPy</a>来计算一下了以下方程</p>
-<p>$$ \log_2(x-1) + \log_2x = 1$$</p>
+<p><span>$$\log_2(x-1) + \log_2x = 1$$</span><!-- Has MathJax --></p>
 <p>安装<code>SymPy</code></p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install sympy</span><br></pre></td></tr></table></figure></p>
 <p>求解，直接上代码</p>
@@ -40,7 +40,7 @@
 <p><img src="/media/wifi_password.jpg" alt="WIFI密码"></p>
 <p>当如可以通过数学计算网站计算得到结果<a href="https://www.symbolab.com/solver/logarithmic-equation-calculator/log_%7B2%7D%5Cleft(x-1%5Cright)%2Blog_%7B2%7DX%3D1/?origin=enterkey">symbolab</a></p>
 <p>当时病犯了，不承认自己是学渣（貌似我也不是学霸），学过的数学也完全还给了老师，肿么办。只好用 Python 中的<a href="http://www.sympy.org/en/index.html">SymPy</a>来计算一下了以下方程</p>
-<p>$$ \log_2(x-1) + \log_2x = 1$$</p>
+<p><span>$$\log_2(x-1) + \log_2x = 1$$</span><!-- Has MathJax --></p>
 <p>安装<code>SymPy</code></p>
 <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install sympy</span><br></pre></td></tr></table></figure></p>
 <p>求解，直接上代码</p>
