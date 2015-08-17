@@ -67,7 +67,9 @@ app.use(function(req, res, next){
   switch (req.url) {
   default:
     console.log("redirect 404");
-    res.redirect('/404.html');
+    //res.redirect('/404.html');
+    res.set('Location', '/404.html');
+    res.end();
     break;
   }
 });
