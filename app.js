@@ -57,7 +57,7 @@
 // console.log("Server running on port %d", port);
 
 var connect = require('connect');
-var app = connect(),
+var app = connect();
 var port = process.env.PORT;
 var compression = require('compression');
 var serveStatic = require('serve-static')
