@@ -38,7 +38,7 @@ var app = http.createServer(function(req,res){
   var filename = path.join(process.cwd()+'/public',uri);
   fs.exists(filename, function(exists){
     if(!exists){
-      filename = path.join(process.cwd()+'/public/404/index.html');
+      filename = path.join(process.cwd()+'/public/404.html');
     }
 
     fs.readFile(filename, "binary",function(err,file){
