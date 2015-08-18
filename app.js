@@ -8,11 +8,19 @@ app.use(serveStatic(__dirname + '/public'));
 app.use(function(req, res, next){
   switch (req.url) {
   case '/sitemap':
+  case '/sitemap/':
     res.writeHead(301, {Location: '/sitemap.xml'});
     res.end();
     break;
 
+  case '/baidusitemap':
+  case '/baidusitemap/':
+    res.writeHead(301, {Location: '/baidusitemap.xml'});
+    res.end();
+    break;
+
   case '/feed':
+  case '/feed/':
     res.writeHead(301, {Location: '/atom.xml'});
     res.end();
     break;
