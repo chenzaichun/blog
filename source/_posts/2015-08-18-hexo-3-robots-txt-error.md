@@ -44,8 +44,8 @@ plugins:
 robotstxt:
   useragent: "*"
   sitemap:
-    - http://yesokay.herokuapp.com/sitemap.xml
-    - http://yesokay.herokuapp.com/baidusitemap.xml
+    - /sitemap.xml
+    - /baidusitemap.xml
 ```
 
 
