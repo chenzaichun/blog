@@ -49,7 +49,7 @@ robotstxt:
 ```
 
 
-{ruby 搞定|无聊}
+{%ruby 搞定|无聊 %}
 
 
 
