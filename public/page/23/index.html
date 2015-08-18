@@ -116,6 +116,34 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> May 11 2010 </div>
+			<div class="article-title"><a href="/2010-05-11-archlinux_x11_forwarding.html" >archlinux x11 forwarding</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>默认情况下archlinu是不允许x11 forwarding的,修改/etc/ssh/sshd_config</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AllowTcpForwarding yes&#10;X11Forwarding yes&#10;X11DisplayOffset 10&#10;X11UseLocalhost yes</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-05-11-archlinux_x11_forwarding.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> May 10 2010 </div>
 			<div class="article-title"><a href="/2010-05-10-archlinux_install_yaourt.html" >archlinux安装yaourt</a></div>						
 		</h3>
@@ -380,48 +408,6 @@
 </div>
 
 		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> May 8 2010 </div>
-			<div class="article-title"><a href="/2010-05-08-apache2_start_error.html" >Apache 2 启动错误的解决</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p><a href="http://www.ourcampus.cn/blog/?action=show&amp;id=27" target="_blank" rel="external">参考地址</a></p>
-<p>启动Apache服务，测试一下环境是否正确，在浏览器中输入 &lt;a href=&quot;http://127.0.0.1/&quot;&gt;http://127.0.0.1&lt;/a&gt; 或是 &lt;a href=&quot;http://localhost/&quot;&gt;http://localhost&lt;/a&gt; 均半天不出页面，查看Apache状态为启动，估计Apache有问题，于是转到Apache安装目录的logs目录下，发现果然有一个error.log, 打开看到里面的内容如下：</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[Thu Nov <span class="number">22</span> <span class="number">15</span>:<span class="number">19</span>:<span class="number">53</span> <span class="number">2007</span>] [notice] Parent: Created child process <span class="number">2816</span></span><br><span class="line">[Thu Nov <span class="number">22</span> <span class="number">15</span>:<span class="number">19</span>:<span class="number">53</span> <span class="number">2007</span>] [notice] Child <span class="number">2816</span>: Child process is running</span><br><span class="line">[Thu Nov <span class="number">22</span> <span class="number">15</span>:<span class="number">19</span>:<span class="number">53</span> <span class="number">2007</span>] [crit] (OS <span class="number">10022</span>)提供了一个无效的参数。Child <span class="number">2816</span>:</span><br><span class="line">setup_inherited_listeners(), WSASocket failed to open the inherited</span><br><span class="line">socket.</span><br></pre></td></tr></table></figure></p>
-<p>解决方案如下：</p>
-<ol>
-<li>
-<p>网上邻居-&gt;本地连接-&gt;属性-&gt;Internet协议(TCP/IP)-&gt;属性-&gt;高级-&gt;WINS标签 -&gt;去掉启用LMhosts查询前的勾。</p>
-</li>
-<li>
-<p>网上邻居-&gt;本地连接-&gt;属性-&gt;Internet协议 (TCP/IP)-&gt;属性-&gt;高级-&gt;WINS标签-&gt;NetBOIS设置-&gt;禁用 TCP/IP 上的  NetBOIS。</p>
-</li>
-<li>
-<p>控制面版-&gt;Windows防火墙-&gt;高级标签-&gt;本地连接设置-&gt;服务标签-&gt;勾 选安全Web服务器(HTTPS)。</p>
-</li>
-</ol>
-<p>按照上面的步骤做完，问题解决。</p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-05-08-apache2_start_error.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -468,48 +454,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
+			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
 		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
 		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
-		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
-		
-			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
-		
-			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/tags/programming/">programming<span>6</span></a></li>
-		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
-		
-			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
-		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
 		
 			<li><a href="/tags/python/">python<span>31</span></a></li>
 		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
 		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
 		
-			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
 		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
 		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
 		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
+			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
 		
-			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+		
+			<li><a href="/tags/database/">database<span>2</span></a></li>
+		
+			<li><a href="/tags/git/">git<span>12</span></a></li>
+		
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+		
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+		
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+		
+			<li><a href="/tags/macos/">macos<span>9</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>87</span></a></li>
+		   <li><a href="/tags">...<span>88</span></a></li>
 		 
 		</ul>
 	</div>
@@ -522,6 +508,10 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
+      </li>
+    
+      <li>
         <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
@@ -531,10 +521,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>

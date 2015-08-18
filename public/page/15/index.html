@@ -117,6 +117,34 @@
 	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 12 2010 </div>
+			<div class="article-title"><a href="/2010-12-12-pywin32_access.html" >pywin32访问access数据</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>pywin32真强大，可以通过com接口做你想做的事。比如操作excel, access等等。下面是访问access数据库的例子：</p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> win32com.client</span><br><span class="line"></span><br><span class="line">conn = win32com.client.Dispatch(<span class="string">"ADODB.Connection"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Either way works: one is the Jet OLEDB driver, the other is the</span></span><br><span class="line"><span class="comment"># Access ODBC driver.  OLEDB is probably better.</span></span><br><span class="line"></span><br><span class="line">db = <span class="string">r"c:test.mdb"</span></span><br><span class="line">DSN=<span class="string">"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="</span> + db</span><br><span class="line"><span class="comment">#DSN="Driver=&#123;Microsoft Access Driver (*.mdb)&#125;;DBQ=" + db</span></span><br><span class="line">conn.Open(DSN)</span><br><span class="line"></span><br><span class="line">rs = win32com.client.Dispatch(<span class="string">"ADODB.Recordset"</span>)</span><br><span class="line">rs.Open( <span class="string">"[test]"</span>, conn, <span class="number">1</span>, <span class="number">3</span> )</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> rs.Fields.Count, <span class="string">" fields found:"</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(rs.Fields.Count):</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Name,</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Type,</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).DefinedSize,</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Value</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-12-12-pywin32_access.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Dec 12 2010 </div>
 			<div class="article-title"><a href="/2010-12-12-pythoncom_lnk_file_path.html" >在windows下通过pythoncom获取快捷方式所指定的路径</a></div>						
 		</h3>
 	
@@ -380,36 +408,6 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 </div>
 
 		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Dec 5 2010 </div>
-			<div class="article-title"><a href="/2010-12-05-redis_links.html" >redis</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>记录下redis的常用链接：</p>
-<p>&lt;a href=&quot;http://try.redis-db.com/&quot;&gt;http://try.redis-db.com/&lt;/a&gt;</p>
-<p>&lt;a href=&quot;http://code.google.com/p/redis/&quot;&gt;http://code.google.com/p/redis/&lt;/a&gt;</p>
-<p>&lt;a href=&quot;http://timyang.net/data/redis-misunderstanding/&quot;&gt;http://timyang.net/data/redis-misunderstanding/&lt;/a&gt;</p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-12-05-redis_links.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -456,48 +454,48 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+		
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
 		
 			<li><a href="/tags/portable/">portable<span>1</span></a></li>
 		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
 		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
 		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
 		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
-		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
-		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
-		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
-		
-			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
-		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
-		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
-		
-			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
-		
-			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
-		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
-		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
-		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+			<li><a href="/tags/python/">python<span>31</span></a></li>
 		
 			<li><a href="/tags/ios/">ios<span>8</span></a></li>
 		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
+		
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
+		
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+		
+			<li><a href="/tags/android/">android<span>18</span></a></li>
+		
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+		
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+		
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
+		
+			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
+		
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+		
+			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>87</span></a></li>
+		   <li><a href="/tags">...<span>88</span></a></li>
 		 
 		</ul>
 	</div>
@@ -510,6 +508,10 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
+      </li>
+    
+      <li>
         <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
@@ -519,10 +521,6 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>

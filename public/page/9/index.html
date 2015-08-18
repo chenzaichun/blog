@@ -158,6 +158,34 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Nov 13 2011 </div>
+			<div class="article-title"><a href="/2011-11-13-emacs_sys_process_environment.html" >Emacs进程/系统环境变量</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Emacs中获取进程（系统）环境变量并进行修改，比如<code>http_proxy</code>:</p>
+<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">getenv</span> <span class="string">"http_proxy"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setenv</span> <span class="string">"http_proxy"</span> <span class="string">"http://proxy-server:port"</span>)</span></span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-11-13-emacs_sys_process_environment.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Nov 12 2011 </div>
 			<div class="article-title"><a href="/2011-11-12-stty_erase_key.html" >Linux默认Erase Key(Backspace Key)</a></div>						
 		</h3>
@@ -280,33 +308,6 @@
 	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Nov 3 2011 </div>
-			<div class="article-title"><a href="/2011-11-03-my-org_post_process_hook.html" >OrgMode Post Process Hook</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> my-org-post-process-hook<span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">while</span> <span class="list">(<span class="keyword">re-search-forward</span> <span class="string">"&lt;pre "</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">replace-match</span></span><br><span class="line">     <span class="string">"&lt;pre style="</span>background-color<span class="keyword">:#272821</span><span class="comment">; color: #F8F8F2" "</span></span><br><span class="line">          <span class="literal">t</span> <span class="literal">nil</span>)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">add-hook</span> <span class="quoted">'org-export-html-final-hook</span> <span class="quoted">'my-org-post-process-hook</span>)</span></span><br></pre></td></tr></table></figure></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-11-03-my-org_post_process_hook.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Nov 3 2011 </div>
 			<div class="article-title"><a href="/2011-11-03-add_css_support_for_rss_output.html" >RSS输出添加css支持</a></div>						
 		</h3>
 	
@@ -328,6 +329,33 @@
   
 </div>
 	<a type="button" href="/2011-11-03-add_css_support_for_rss_output.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Nov 3 2011 </div>
+			<div class="article-title"><a href="/2011-11-03-my-org_post_process_hook.html" >OrgMode Post Process Hook</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> my-org-post-process-hook<span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">while</span> <span class="list">(<span class="keyword">re-search-forward</span> <span class="string">"&lt;pre "</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">replace-match</span></span><br><span class="line">     <span class="string">"&lt;pre style="</span>background-color<span class="keyword">:#272821</span><span class="comment">; color: #F8F8F2" "</span></span><br><span class="line">          <span class="literal">t</span> <span class="literal">nil</span>)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">add-hook</span> <span class="quoted">'org-export-html-final-hook</span> <span class="quoted">'my-org-post-process-hook</span>)</span></span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-11-03-my-org_post_process_hook.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -393,33 +421,6 @@
 </div>
 
 		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Oct 29 2011 </div>
-			<div class="article-title"><a href="/2011-10-29-get_user_name_by_python.html" >Python获取当前用户名</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">!/usr/bin/env python</span><br><span class="line">-*- encoding: utf-<span class="number">8</span> -*-</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> getpass</span><br><span class="line"></span><br><span class="line">getpass.getuser()</span><br></pre></td></tr></table></figure></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-10-29-get_user_name_by_python.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -466,48 +467,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
 		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
-		
-			<li><a href="/tags/programming/">programming<span>6</span></a></li>
-		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
-		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
-		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
-		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
-		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
-		
-			<li><a href="/tags/转载/">转载<span>7</span></a></li>
-		
-			<li><a href="/tags/VC/">VC<span>8</span></a></li>
+			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
 		
 			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
 		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
+			<li><a href="/tags/go/">go<span>2</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+		
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+		
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+		
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+		
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+		
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
 		
 			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
 		
-			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
 		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+			<li><a href="/tags/tools/">tools<span>4</span></a></li>
 		
-			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
+			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
+		
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+		
+			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
 		
 			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
 		
+			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
 		
-		   <li><a href="/tags">...<span>87</span></a></li>
+		
+		   <li><a href="/tags">...<span>88</span></a></li>
 		 
 		</ul>
 	</div>
@@ -520,6 +521,10 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
+      </li>
+    
+      <li>
         <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
@@ -529,10 +534,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>

@@ -115,3 +115,16 @@ deploy:
   repository: git@heroku.com:yesokay.git 
 
 excerpt_link: Read More...
+
+
+plugins:
+  - hexo-generator-robotstxt
+
+robotstxt:
+  useragent: "*"
+  sitemap:
+    - /sitemap.xml
+    - /baidusitemap.xml
+
+baidusitemap:
+    path: baidusitemap.xml

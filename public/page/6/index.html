@@ -116,6 +116,35 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Feb 3 2012 </div>
+			<div class="article-title"><a href="/2012-02-03-compile-gsoap-on-mac-os-x.html" >MacOS X上编译gSOAP</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">automake --ignore-deps &amp;&amp; ./configure &amp;&amp; make</span><br></pre></td></tr></table></figure></p>
+<p>如果要编译universal版本，则使用</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">automake --ignore-deps &amp;&amp; ./configure CFLAGS=<span class="string">"-arch ppc -arch i386"</span> LDFLAGS=<span class="string">"-arch ppc -arch i386"</span> &amp;&amp; make</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-02-03-compile-gsoap-on-mac-os-x.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Feb 2 2012 </div>
 			<div class="article-title"><a href="/2012-02-02-git-svn-cant-locate-termreadkey-pm-in-inc.html" >Git svn – Can’t locate Term/ReadKey.pm in @INC</a></div>						
 		</h3>
@@ -394,38 +423,6 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 </div>
 
 		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Dec 31 2011 </div>
-			<div class="article-title"><a href="/2011-12-31-show-all-files-in-finder-on-mac.html" >让Finder显示所有文件</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Finder默认情况是不显示隐藏文件和.开头的文件和目录的，由于很多类unix/Linux的软件的配置文件（目录）是.开头的，有的时候我们想在Finder中使用怎么办呢？</p>
-<p>开启所有文件的显示：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles -bool <span class="literal">true</span></span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure></p>
-<p>重新开启Finder就能看到所有文件了。</p>
-<p>关闭显示隐藏文件：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles -bool <span class="literal">false</span></span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-12-31-show-all-files-in-finder-on-mac.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -472,48 +469,48 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
-		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
-		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
-		
-			<li><a href="/tags/转载/">转载<span>7</span></a></li>
-		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
-		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
-		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
-		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
-		
-			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
-		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
-		
-			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
-		
-			<li><a href="/tags/redis/">redis<span>1</span></a></li>
-		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
-		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+			<li><a href="/tags/programming/">programming<span>7</span></a></li>
 		
 			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
 		
-			<li><a href="/tags/soap/">soap<span>1</span></a></li>
+			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
 		
-			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+		
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
+		
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
+		
+			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
+		
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+		
+			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
+		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+		
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+		
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+		
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+		
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+		
+			<li><a href="/tags/python/">python<span>31</span></a></li>
+		
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+		
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+		
+			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+		
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>87</span></a></li>
+		   <li><a href="/tags">...<span>88</span></a></li>
 		 
 		</ul>
 	</div>
@@ -526,6 +523,10 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
+      </li>
+    
+      <li>
         <a href="/2015-08-07-python-solve-equation.html" ><i class="fa fa-file-o"></i>用 Python 解方程...</a>
       </li>
     
@@ -535,10 +536,6 @@ fatal: expected ok/error, helper said '4004?Va???6?)&amp;?'?~$latex ?pt?-i?BS??�
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-long-time-no-update.html" ><i class="fa fa-file-o"></i>确实很久没有更新了...</a>
       </li>
     
       <li>
