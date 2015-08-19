@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yesokay.herokuapp.com/2015-08-18-VKVideoPlayer-customization.html</loc>
+    <lastmod>2015-08-18T13:28:29.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yesokay.herokuapp.com/2015-08-18-hexo-3-robots-txt-error.html</loc>
-    <lastmod>2015-08-18T05:53:11.000Z</lastmod>
+    <lastmod>2015-08-18T06:20:33.000Z</lastmod>
   </url>
   
   <url>
@@ -637,17 +642,17 @@
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html</loc>
-    <lastmod>2015-08-07T05:26:41.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html</loc>
     <lastmod>2015-08-07T05:26:41.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://yesokay.herokuapp.com/2011-01-16-hg-git.html</loc>
+    <lastmod>2015-08-07T05:26:41.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html</loc>
     <lastmod>2015-08-07T05:26:41.000Z</lastmod>
   </url>
   

@@ -117,6 +117,37 @@
 	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 9 2011 </div>
+			<div class="article-title"><a href="/2011-12-09-org-save-outline-visibility.html" >void: org-save-outline-visibility</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>今天在mac上用org2blog发布博客的时候，遇到了这个问题:</p>
+<blockquote>
+<p>Symbol’s function definition is void: org-save-outline-visibility</p>
+</blockquote>
+<p>原来是emacs自动的org-mode为7.4版本，升级到7.5或者以后版本解决问题。 </p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-12-09-org-save-outline-visibility.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Dec 9 2011 </div>
 			<div class="article-title"><a href="/2011-12-09-emacs-http-proxy-setting.html" >emacs代理设置</a></div>						
 		</h3>
 	
@@ -128,10 +159,9 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>在Linux上，用环境变量的方式可以直接让emacs使用代理，如设置http_proxy
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=xxx.xx.xx.xx:port</span><br></pre></td></tr></table></figure></p>
+	  <p>在Linux上，用环境变量的方式可以直接让emacs使用代理，如设置http_proxy<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=xxx.xx.xx.xx:port</span><br></pre></td></tr></table></figure></p>
 <p>但是在mac上这样做就不行了。由于elisp中一般http都是使用的<code>url package</code>，所以可以通过<code>url package</code>的接口来设置代理:</p>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> url-using-proxy <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> url-proxy-services <span class="quoted">'((<span class="string">"http"</span> . <span class="string">"proxyserver:port"</span>))</span>)</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> url-using-proxy <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> url-proxy-services <span class="quoted">'((<span class="string">"http"</span> . <span class="string">"proxyserver:port"</span>))</span>)</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -159,13 +189,13 @@
 	  
 	
 	  <p>今天在使用getenv获取环境变量的时候遇到这个问题，代码类似于这样</p>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span><br><span class="line">   <span class="function"><span class="keyword">char</span>* <span class="title">getenv</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>*)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">char</span> *value;</span><br><span class="line">  value = getenv(<span class="string">"HOME"</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span><br><span class="line">   <span class="function"><span class="keyword">char</span>* <span class="title">getenv</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>*)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">char</span> *value;</span><br><span class="line">  value = getenv(<span class="string">"HOME"</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>编译的时候会出现一个warning</p>
-<p><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test.c: <span class="keyword">In</span> <span class="keyword">function</span> `main<span class="comment">': </span></span><br><span class="line">test.c:<span class="number">9</span>: warning: assignment makes pointer <span class="keyword">from</span> <span class="built_in">integer</span> without a cast</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test.c: <span class="keyword">In</span> <span class="keyword">function</span> `main<span class="comment">': </span></span><br><span class="line">test.c:<span class="number">9</span>: warning: assignment makes pointer <span class="keyword">from</span> <span class="built_in">integer</span> without a cast</span><br></pre></td></tr></table></figure>
 <p>运行的时候会出现segment fault</p>
 <p>原来是缺少stdlib.h的问题（可是我已经申明了原型呀……）</p>
 <p>加入stdlib.h解决问题:</p>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -194,8 +224,8 @@
 	
 	  <p>当linux下的程序运行异常时，会在运行程序的目录下生成core dump文件。通过<code>ulimit -c</code>查看，结果为0则为关闭（默认值）.</p>
 <p>临时开启只要在shell中执行</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ulimit</span> -c unlimited</span><br></pre></td></tr></table></figure></p>
-<p>也可以在<code>~/.profile</code>文件中添加来默认开启core dump。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ulimit</span> -c unlimited</span><br></pre></td></tr></table></figure>
+<p>也可以在<code>~/.profile</code>文件中添加来默认开启core dump。 </p>
 
 	
 	</div>
@@ -223,7 +253,7 @@
 	  
 	
 	  <p>hg1.5之后内置了progress扩展，可以直接启用：</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[extensions]&#10;progress =</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[extensions]&#10;progress =</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -253,16 +283,13 @@
 	  <p><a href="https://github.com/philc/vimium" target="_blank" rel="external">传送门</a></p>
 <p>插件安装<a href="https://chrome.google.com/webstore/detail/dbepggeogbaibhgnhhndojpepiihcmeb" target="_blank" rel="external">地址</a></p>
 <p>Navigating the current page:</p>
-<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">?       <span class="operator"><span class="keyword">show</span> the <span class="keyword">help</span> dialog <span class="keyword">for</span> a <span class="keyword">list</span> <span class="keyword">of</span> all available <span class="keyword">keys</span></span><br><span class="line">h       <span class="keyword">scroll</span> <span class="keyword">left</span></span><br><span class="line">j       <span class="keyword">scroll</span> down</span><br><span class="line"><span class="keyword">k</span>       <span class="keyword">scroll</span> up</span><br><span class="line"><span class="keyword">l</span>       <span class="keyword">scroll</span> <span class="keyword">right</span></span><br><span class="line">gg      <span class="keyword">scroll</span> <span class="keyword">to</span> top <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">G</span>       <span class="keyword">scroll</span> <span class="keyword">to</span> bottom <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">d</span>       <span class="keyword">scroll</span> down half a page</span><br><span class="line">u       <span class="keyword">scroll</span> up half a page</span><br><span class="line"><span class="keyword">f</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> the <span class="keyword">current</span> tab</span><br><span class="line"><span class="keyword">F</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> a <span class="keyword">new</span> tab</span><br><span class="line">r       reload</span><br><span class="line">gs      <span class="keyword">view</span> <span class="keyword">source</span></span><br><span class="line"><span class="keyword">i</span>       enter <span class="keyword">insert</span> <span class="keyword">mode</span> <span class="comment">-- all commands will be ignored until</span></span><br><span class="line">        you hit esc <span class="keyword">to</span> <span class="keyword">exit</span></span><br><span class="line">yy      copy the <span class="keyword">current</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">yf      copy a <span class="keyword">link</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">gf      <span class="keyword">cycle</span> forward <span class="keyword">to</span> the <span class="keyword">next</span> frame</span></span><br></pre></td></tr></table></figure></p>
-<p>Using find:<br>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">?       <span class="operator"><span class="keyword">show</span> the <span class="keyword">help</span> dialog <span class="keyword">for</span> a <span class="keyword">list</span> <span class="keyword">of</span> all available <span class="keyword">keys</span></span><br><span class="line">h       <span class="keyword">scroll</span> <span class="keyword">left</span></span><br><span class="line">j       <span class="keyword">scroll</span> down</span><br><span class="line"><span class="keyword">k</span>       <span class="keyword">scroll</span> up</span><br><span class="line"><span class="keyword">l</span>       <span class="keyword">scroll</span> <span class="keyword">right</span></span><br><span class="line">gg      <span class="keyword">scroll</span> <span class="keyword">to</span> top <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">G</span>       <span class="keyword">scroll</span> <span class="keyword">to</span> bottom <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">d</span>       <span class="keyword">scroll</span> down half a page</span><br><span class="line">u       <span class="keyword">scroll</span> up half a page</span><br><span class="line"><span class="keyword">f</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> the <span class="keyword">current</span> tab</span><br><span class="line"><span class="keyword">F</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> a <span class="keyword">new</span> tab</span><br><span class="line">r       reload</span><br><span class="line">gs      <span class="keyword">view</span> <span class="keyword">source</span></span><br><span class="line"><span class="keyword">i</span>       enter <span class="keyword">insert</span> <span class="keyword">mode</span> <span class="comment">-- all commands will be ignored until</span></span><br><span class="line">        you hit esc <span class="keyword">to</span> <span class="keyword">exit</span></span><br><span class="line">yy      copy the <span class="keyword">current</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">yf      copy a <span class="keyword">link</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">gf      <span class="keyword">cycle</span> forward <span class="keyword">to</span> the <span class="keyword">next</span> frame</span></span><br></pre></td></tr></table></figure></p>
-<p>Navigating your history:<br>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">?       <span class="operator"><span class="keyword">show</span> the <span class="keyword">help</span> dialog <span class="keyword">for</span> a <span class="keyword">list</span> <span class="keyword">of</span> all available <span class="keyword">keys</span></span><br><span class="line">h       <span class="keyword">scroll</span> <span class="keyword">left</span></span><br><span class="line">j       <span class="keyword">scroll</span> down</span><br><span class="line"><span class="keyword">k</span>       <span class="keyword">scroll</span> up</span><br><span class="line"><span class="keyword">l</span>       <span class="keyword">scroll</span> <span class="keyword">right</span></span><br><span class="line">gg      <span class="keyword">scroll</span> <span class="keyword">to</span> top <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">G</span>       <span class="keyword">scroll</span> <span class="keyword">to</span> bottom <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">d</span>       <span class="keyword">scroll</span> down half a page</span><br><span class="line">u       <span class="keyword">scroll</span> up half a page</span><br><span class="line"><span class="keyword">f</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> the <span class="keyword">current</span> tab</span><br><span class="line"><span class="keyword">F</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> a <span class="keyword">new</span> tab</span><br><span class="line">r       reload</span><br><span class="line">gs      <span class="keyword">view</span> <span class="keyword">source</span></span><br><span class="line"><span class="keyword">i</span>       enter <span class="keyword">insert</span> <span class="keyword">mode</span> <span class="comment">-- all commands will be ignored until</span></span><br><span class="line">        you hit esc <span class="keyword">to</span> <span class="keyword">exit</span></span><br><span class="line">yy      copy the <span class="keyword">current</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">yf      copy a <span class="keyword">link</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">gf      <span class="keyword">cycle</span> forward <span class="keyword">to</span> the <span class="keyword">next</span> frame</span></span><br></pre></td></tr></table></figure></p>
-<p>Manipulating tabs:<br>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">?       <span class="operator"><span class="keyword">show</span> the <span class="keyword">help</span> dialog <span class="keyword">for</span> a <span class="keyword">list</span> <span class="keyword">of</span> all available <span class="keyword">keys</span></span><br><span class="line">h       <span class="keyword">scroll</span> <span class="keyword">left</span></span><br><span class="line">j       <span class="keyword">scroll</span> down</span><br><span class="line"><span class="keyword">k</span>       <span class="keyword">scroll</span> up</span><br><span class="line"><span class="keyword">l</span>       <span class="keyword">scroll</span> <span class="keyword">right</span></span><br><span class="line">gg      <span class="keyword">scroll</span> <span class="keyword">to</span> top <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">G</span>       <span class="keyword">scroll</span> <span class="keyword">to</span> bottom <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">d</span>       <span class="keyword">scroll</span> down half a page</span><br><span class="line">u       <span class="keyword">scroll</span> up half a page</span><br><span class="line"><span class="keyword">f</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> the <span class="keyword">current</span> tab</span><br><span class="line"><span class="keyword">F</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> a <span class="keyword">new</span> tab</span><br><span class="line">r       reload</span><br><span class="line">gs      <span class="keyword">view</span> <span class="keyword">source</span></span><br><span class="line"><span class="keyword">i</span>       enter <span class="keyword">insert</span> <span class="keyword">mode</span> <span class="comment">-- all commands will be ignored until</span></span><br><span class="line">        you hit esc <span class="keyword">to</span> <span class="keyword">exit</span></span><br><span class="line">yy      copy the <span class="keyword">current</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">yf      copy a <span class="keyword">link</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">gf      <span class="keyword">cycle</span> forward <span class="keyword">to</span> the <span class="keyword">next</span> frame</span></span><br></pre></td></tr></table></figure></p>
-<p>Additional advanced browsing commands:</p>
-<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">?       <span class="operator"><span class="keyword">show</span> the <span class="keyword">help</span> dialog <span class="keyword">for</span> a <span class="keyword">list</span> <span class="keyword">of</span> all available <span class="keyword">keys</span></span><br><span class="line">h       <span class="keyword">scroll</span> <span class="keyword">left</span></span><br><span class="line">j       <span class="keyword">scroll</span> down</span><br><span class="line"><span class="keyword">k</span>       <span class="keyword">scroll</span> up</span><br><span class="line"><span class="keyword">l</span>       <span class="keyword">scroll</span> <span class="keyword">right</span></span><br><span class="line">gg      <span class="keyword">scroll</span> <span class="keyword">to</span> top <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">G</span>       <span class="keyword">scroll</span> <span class="keyword">to</span> bottom <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">d</span>       <span class="keyword">scroll</span> down half a page</span><br><span class="line">u       <span class="keyword">scroll</span> up half a page</span><br><span class="line"><span class="keyword">f</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> the <span class="keyword">current</span> tab</span><br><span class="line"><span class="keyword">F</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> a <span class="keyword">new</span> tab</span><br><span class="line">r       reload</span><br><span class="line">gs      <span class="keyword">view</span> <span class="keyword">source</span></span><br><span class="line"><span class="keyword">i</span>       enter <span class="keyword">insert</span> <span class="keyword">mode</span> <span class="comment">-- all commands will be ignored until</span></span><br><span class="line">        you hit esc <span class="keyword">to</span> <span class="keyword">exit</span></span><br><span class="line">yy      copy the <span class="keyword">current</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">yf      copy a <span class="keyword">link</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">gf      <span class="keyword">cycle</span> forward <span class="keyword">to</span> the <span class="keyword">next</span> frame</span></span><br></pre></td></tr></table></figure></p>
-<p>Vimium supports command repetition so, for example, hitting '5t' will open 5 tabs in rapid succession. ESC (or &lt;c-[&gt;) will clear any partial commands in the queue and will also exit insert and find modes.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">?       <span class="operator"><span class="keyword">show</span> the <span class="keyword">help</span> dialog <span class="keyword">for</span> a <span class="keyword">list</span> <span class="keyword">of</span> all available <span class="keyword">keys</span></span><br><span class="line">h       <span class="keyword">scroll</span> <span class="keyword">left</span></span><br><span class="line">j       <span class="keyword">scroll</span> down</span><br><span class="line"><span class="keyword">k</span>       <span class="keyword">scroll</span> up</span><br><span class="line"><span class="keyword">l</span>       <span class="keyword">scroll</span> <span class="keyword">right</span></span><br><span class="line">gg      <span class="keyword">scroll</span> <span class="keyword">to</span> top <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">G</span>       <span class="keyword">scroll</span> <span class="keyword">to</span> bottom <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">d</span>       <span class="keyword">scroll</span> down half a page</span><br><span class="line">u       <span class="keyword">scroll</span> up half a page</span><br><span class="line"><span class="keyword">f</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> the <span class="keyword">current</span> tab</span><br><span class="line"><span class="keyword">F</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> a <span class="keyword">new</span> tab</span><br><span class="line">r       reload</span><br><span class="line">gs      <span class="keyword">view</span> <span class="keyword">source</span></span><br><span class="line"><span class="keyword">i</span>       enter <span class="keyword">insert</span> <span class="keyword">mode</span> <span class="comment">-- all commands will be ignored until</span></span><br><span class="line">        you hit esc <span class="keyword">to</span> <span class="keyword">exit</span></span><br><span class="line">yy      copy the <span class="keyword">current</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">yf      copy a <span class="keyword">link</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">gf      <span class="keyword">cycle</span> forward <span class="keyword">to</span> the <span class="keyword">next</span> frame</span></span><br></pre></td></tr></table></figure>
+<p>Using find:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">?       <span class="operator"><span class="keyword">show</span> the <span class="keyword">help</span> dialog <span class="keyword">for</span> a <span class="keyword">list</span> <span class="keyword">of</span> all available <span class="keyword">keys</span></span><br><span class="line">h       <span class="keyword">scroll</span> <span class="keyword">left</span></span><br><span class="line">j       <span class="keyword">scroll</span> down</span><br><span class="line"><span class="keyword">k</span>       <span class="keyword">scroll</span> up</span><br><span class="line"><span class="keyword">l</span>       <span class="keyword">scroll</span> <span class="keyword">right</span></span><br><span class="line">gg      <span class="keyword">scroll</span> <span class="keyword">to</span> top <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">G</span>       <span class="keyword">scroll</span> <span class="keyword">to</span> bottom <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">d</span>       <span class="keyword">scroll</span> down half a page</span><br><span class="line">u       <span class="keyword">scroll</span> up half a page</span><br><span class="line"><span class="keyword">f</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> the <span class="keyword">current</span> tab</span><br><span class="line"><span class="keyword">F</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> a <span class="keyword">new</span> tab</span><br><span class="line">r       reload</span><br><span class="line">gs      <span class="keyword">view</span> <span class="keyword">source</span></span><br><span class="line"><span class="keyword">i</span>       enter <span class="keyword">insert</span> <span class="keyword">mode</span> <span class="comment">-- all commands will be ignored until</span></span><br><span class="line">        you hit esc <span class="keyword">to</span> <span class="keyword">exit</span></span><br><span class="line">yy      copy the <span class="keyword">current</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">yf      copy a <span class="keyword">link</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">gf      <span class="keyword">cycle</span> forward <span class="keyword">to</span> the <span class="keyword">next</span> frame</span></span><br></pre></td></tr></table></figure></p>
+<p>Navigating your history:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">?       <span class="operator"><span class="keyword">show</span> the <span class="keyword">help</span> dialog <span class="keyword">for</span> a <span class="keyword">list</span> <span class="keyword">of</span> all available <span class="keyword">keys</span></span><br><span class="line">h       <span class="keyword">scroll</span> <span class="keyword">left</span></span><br><span class="line">j       <span class="keyword">scroll</span> down</span><br><span class="line"><span class="keyword">k</span>       <span class="keyword">scroll</span> up</span><br><span class="line"><span class="keyword">l</span>       <span class="keyword">scroll</span> <span class="keyword">right</span></span><br><span class="line">gg      <span class="keyword">scroll</span> <span class="keyword">to</span> top <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">G</span>       <span class="keyword">scroll</span> <span class="keyword">to</span> bottom <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">d</span>       <span class="keyword">scroll</span> down half a page</span><br><span class="line">u       <span class="keyword">scroll</span> up half a page</span><br><span class="line"><span class="keyword">f</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> the <span class="keyword">current</span> tab</span><br><span class="line"><span class="keyword">F</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> a <span class="keyword">new</span> tab</span><br><span class="line">r       reload</span><br><span class="line">gs      <span class="keyword">view</span> <span class="keyword">source</span></span><br><span class="line"><span class="keyword">i</span>       enter <span class="keyword">insert</span> <span class="keyword">mode</span> <span class="comment">-- all commands will be ignored until</span></span><br><span class="line">        you hit esc <span class="keyword">to</span> <span class="keyword">exit</span></span><br><span class="line">yy      copy the <span class="keyword">current</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">yf      copy a <span class="keyword">link</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">gf      <span class="keyword">cycle</span> forward <span class="keyword">to</span> the <span class="keyword">next</span> frame</span></span><br></pre></td></tr></table></figure></p>
+<p>Manipulating tabs:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">?       <span class="operator"><span class="keyword">show</span> the <span class="keyword">help</span> dialog <span class="keyword">for</span> a <span class="keyword">list</span> <span class="keyword">of</span> all available <span class="keyword">keys</span></span><br><span class="line">h       <span class="keyword">scroll</span> <span class="keyword">left</span></span><br><span class="line">j       <span class="keyword">scroll</span> down</span><br><span class="line"><span class="keyword">k</span>       <span class="keyword">scroll</span> up</span><br><span class="line"><span class="keyword">l</span>       <span class="keyword">scroll</span> <span class="keyword">right</span></span><br><span class="line">gg      <span class="keyword">scroll</span> <span class="keyword">to</span> top <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">G</span>       <span class="keyword">scroll</span> <span class="keyword">to</span> bottom <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">d</span>       <span class="keyword">scroll</span> down half a page</span><br><span class="line">u       <span class="keyword">scroll</span> up half a page</span><br><span class="line"><span class="keyword">f</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> the <span class="keyword">current</span> tab</span><br><span class="line"><span class="keyword">F</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> a <span class="keyword">new</span> tab</span><br><span class="line">r       reload</span><br><span class="line">gs      <span class="keyword">view</span> <span class="keyword">source</span></span><br><span class="line"><span class="keyword">i</span>       enter <span class="keyword">insert</span> <span class="keyword">mode</span> <span class="comment">-- all commands will be ignored until</span></span><br><span class="line">        you hit esc <span class="keyword">to</span> <span class="keyword">exit</span></span><br><span class="line">yy      copy the <span class="keyword">current</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">yf      copy a <span class="keyword">link</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">gf      <span class="keyword">cycle</span> forward <span class="keyword">to</span> the <span class="keyword">next</span> frame</span></span><br></pre></td></tr></table></figure></p>
+<p>Additional advanced browsing commands:     </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">?       <span class="operator"><span class="keyword">show</span> the <span class="keyword">help</span> dialog <span class="keyword">for</span> a <span class="keyword">list</span> <span class="keyword">of</span> all available <span class="keyword">keys</span></span><br><span class="line">h       <span class="keyword">scroll</span> <span class="keyword">left</span></span><br><span class="line">j       <span class="keyword">scroll</span> down</span><br><span class="line"><span class="keyword">k</span>       <span class="keyword">scroll</span> up</span><br><span class="line"><span class="keyword">l</span>       <span class="keyword">scroll</span> <span class="keyword">right</span></span><br><span class="line">gg      <span class="keyword">scroll</span> <span class="keyword">to</span> top <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">G</span>       <span class="keyword">scroll</span> <span class="keyword">to</span> bottom <span class="keyword">of</span> the page</span><br><span class="line"><span class="keyword">d</span>       <span class="keyword">scroll</span> down half a page</span><br><span class="line">u       <span class="keyword">scroll</span> up half a page</span><br><span class="line"><span class="keyword">f</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> the <span class="keyword">current</span> tab</span><br><span class="line"><span class="keyword">F</span>       <span class="keyword">open</span> a <span class="keyword">link</span> <span class="keyword">in</span> a <span class="keyword">new</span> tab</span><br><span class="line">r       reload</span><br><span class="line">gs      <span class="keyword">view</span> <span class="keyword">source</span></span><br><span class="line"><span class="keyword">i</span>       enter <span class="keyword">insert</span> <span class="keyword">mode</span> <span class="comment">-- all commands will be ignored until</span></span><br><span class="line">        you hit esc <span class="keyword">to</span> <span class="keyword">exit</span></span><br><span class="line">yy      copy the <span class="keyword">current</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">yf      copy a <span class="keyword">link</span> <span class="keyword">url</span> <span class="keyword">to</span> the clipboard</span><br><span class="line">gf      <span class="keyword">cycle</span> forward <span class="keyword">to</span> the <span class="keyword">next</span> frame</span></span><br></pre></td></tr></table></figure>
+<p>Vimium supports command repetition so, for example, hitting ‘5t’ will open 5 tabs in rapid succession. ESC (or <c-[>) will clear any partial commands in the queue and will also exit insert and find modes.</c-[></p>
 <p>自定义快捷键详情请自行阅读<a href="https://github.com/philc/vimium#readme" target="_blank" rel="external">readme</a></p>
 
 	
@@ -290,15 +317,14 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>我想应该大家都会用版本管理来处理配置文件吧。本人一般用git来管理自己的配置（emacs, vim, ssh, zshrc, svn, git, hg…），我将这写配置文件放到了一个git repo中。但是很多时候需要对这些文件进行修改，我想大家也不会把文件在repo中修改好之后然后手动copy到相应的目录中。这里一般有两种方法来避免手动拷贝，一种是通过Makefile的方式，另外一种就是建立文件的软链接。我原来一直采用的是后者，因为我不想没一次修改都make一下。对于建立软链接的方式，一般的软件都能很好的处理。   我的git repo放在windows分区（这样windows和linux都能使用），用virtualbox安装了archlinux，通过mount vboxsf的方式mount windows分区到linux下。这里mount vboxsf的时候需要注意权限问题，然后像.ssh/config文件会出现访问权限问题。我的 =/etc/fstab= 文件如下:</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /etc/fstab&#10;sharename mountpoint vboxsf \&#10;rw,fmode=0644,dmode=0755,uid=1000,gid=1000,exec 0 0</span><br></pre></td></tr></table></figure></p>
-<p>对于symlink模式，绝大部分软件都能满足了，但是这里有个意外, <code>Oracle</code>的<code>gethostbyname</code>对于<code>/etc/hosts</code> symlinks是不认的，比如我创建一个软链接到<code>/etc/hosts</code>，启动oracle会出现
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ORA-<span class="number">00600</span> arguments: [keltnfy-ldmInit], [<span class="number">46</span>], [<span class="number">1</span>]</span><br></pre></td></tr></table></figure></p>
+	  <p>我想应该大家都会用版本管理来处理配置文件吧。本人一般用git来管理自己的配置（emacs, vim, ssh, zshrc, svn, git, hg…），我将这写配置文件放到了一个git repo中。但是很多时候需要对这些文件进行修改，我想大家也不会把文件在repo中修改好之后然后手动copy到相应的目录中。这里一般有两种方法来避免手动拷贝，一种是通过Makefile的方式，另外一种就是建立文件的软链接。我原来一直采用的是后者，因为我不想没一次修改都make一下。对于建立软链接的方式，一般的软件都能很好的处理。   我的git repo放在windows分区（这样windows和linux都能使用），用virtualbox安装了archlinux，通过mount vboxsf的方式mount windows分区到linux下。这里mount vboxsf的时候需要注意权限问题，然后像.ssh/config文件会出现访问权限问题。我的 =/etc/fstab= 文件如下: </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /etc/fstab&#10;sharename mountpoint vboxsf \&#10;rw,fmode=0644,dmode=0755,uid=1000,gid=1000,exec 0 0</span><br></pre></td></tr></table></figure>
+<p>对于symlink模式，绝大部分软件都能满足了，但是这里有个意外, <code>Oracle</code>的<code>gethostbyname</code>对于<code>/etc/hosts</code> symlinks是不认的，比如我创建一个软链接到<code>/etc/hosts</code>，启动oracle会出现<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ORA-<span class="number">00600</span> arguments: [keltnfy-ldmInit], [<span class="number">46</span>], [<span class="number">1</span>]</span><br></pre></td></tr></table></figure></p>
 <p>既然软链接不行，这个时候就需要<code>mount –bind</code>的帮助了。   <code>mount –bind</code>是将一个目录中的内容挂载到另一个目录上，用法是:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount --bind olddir newdir</span><br><span class="line">mount --bind olddir/file newdir/file</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount --bind olddir newdir</span><br><span class="line">mount --bind olddir/file newdir/file</span><br></pre></td></tr></table></figure>
 <p>如果想将<code>mount –bind</code>写入<code>/etc/fstab</code>，则用法是：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">olddir newdir none <span class="built_in">bind</span> <span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
-<p>这里又有一个问题了，我如果想把/etc/fstab也放到git repo中进行管理怎么办呢？由于不可能为/etc/fstab创建symlink，也不能为其使用mount –bind的方式到/etc/fstab。那就只能在git repo中想办法了。可是git是不会follow symlink的，如果我将/etc/fstab软链接到git repo中，git并不会将该文件加入到repo，加入的只是一个symlink而已。   解决办法就是反过来bind, 将/etc/fstab bind到git repo中的目录:)</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">olddir newdir none <span class="built_in">bind</span> <span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>这里又有一个问题了，我如果想把/etc/fstab也放到git repo中进行管理怎么办呢？由于不可能为/etc/fstab创建symlink，也不能为其使用mount –bind的方式到/etc/fstab。那就只能在git repo中想办法了。可是git是不会follow symlink的，如果我将/etc/fstab软链接到git repo中，git并不会将该文件加入到repo，加入的只是一个symlink而已。   解决办法就是反过来bind, 将/etc/fstab bind到git repo中的目录:) </p>
 
 	
 	</div>
@@ -325,9 +351,9 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># http_proxy</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=host:port</span><br><span class="line"></span><br><span class="line"><span class="comment"># https_proxy</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=host:port</span><br><span class="line"></span><br><span class="line"><span class="comment"># ftp_proxy</span></span><br><span class="line"><span class="built_in">export</span> ftp_proxy=host:port</span><br><span class="line"></span><br><span class="line"><span class="comment"># rsync proxy</span></span><br><span class="line"><span class="built_in">export</span> RSYNC_PROXY=host:port</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># ssh over http_proxy depends on your tools used.&#10;# Modify .ssh/config file for host configuration:&#10;# Following are connect.c and corkscrew example.&#10;# For connect.c, -h option means use http_proxy&#10;# environment. &#10;Host *&#10;  ProxyCommand corkscrew http-proxy.example.com 8080 %h %p&#10;  ProxyCommand connect -h %h %p&#10;  ProxyCommand connect -H proxy-host:proxy-port %h %p</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># git over http_proxy</span></span><br><span class="line"><span class="built_in">export</span> GIT_PROXY_COMMAND=<span class="string">"connect -h <span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># http_proxy</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=host:port</span><br><span class="line"></span><br><span class="line"><span class="comment"># https_proxy</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=host:port</span><br><span class="line"></span><br><span class="line"><span class="comment"># ftp_proxy</span></span><br><span class="line"><span class="built_in">export</span> ftp_proxy=host:port</span><br><span class="line"></span><br><span class="line"><span class="comment"># rsync proxy</span></span><br><span class="line"><span class="built_in">export</span> RSYNC_PROXY=host:port</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># ssh over http_proxy depends on your tools used.&#10;# Modify .ssh/config file for host configuration:&#10;# Following are connect.c and corkscrew example.&#10;# For connect.c, -h option means use http_proxy&#10;# environment. &#10;Host *&#10;  ProxyCommand corkscrew http-proxy.example.com 8080 %h %p&#10;  ProxyCommand connect -h %h %p&#10;  ProxyCommand connect -H proxy-host:proxy-port %h %p</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># git over http_proxy</span></span><br><span class="line"><span class="built_in">export</span> GIT_PROXY_COMMAND=<span class="string">"connect -h <span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -354,13 +380,13 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>在每个repo都很小的情况下，维护多个repo是很麻烦的事情。如何在保留原来版本信息的情况下将repo合并到另外一个repo的子目录下呢？有很多的方法，比如在不删除原来的repo，使用submodule。或者使用subtree的方式。但是我不想用submodule保留原来的repo，而且感觉subtree也是一个比较麻烦的东东。这里要介绍git的read-tree（可以参考<a href="http://blog.ossxp.com/2010/10/2041/" target="_blank" rel="external">这里</a>)。   网上讲了很多，我总结一下并写了一个脚本repomerge.sh。先把脚本贴出来</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line">git remote add <span class="operator">-f</span> <span class="variable">$1</span> <span class="variable">$2</span></span><br><span class="line">git merge <span class="operator">-s</span> ours --no-commit <span class="variable">$1</span>/master</span><br><span class="line">git <span class="built_in">read</span>-tree --prefix=<span class="variable">$1</span>/ -u <span class="variable">$1</span>/master</span><br><span class="line">git commit -m <span class="string">"merging <span class="variable">$1</span> into subdirectory"</span></span><br></pre></td></tr></table></figure></p>
+	  <p>在每个repo都很小的情况下，维护多个repo是很麻烦的事情。如何在保留原来版本信息的情况下将repo合并到另外一个repo的子目录下呢？有很多的方法，比如在不删除原来的repo，使用submodule。或者使用subtree的方式。但是我不想用submodule保留原来的repo，而且感觉subtree也是一个比较麻烦的东东。这里要介绍git的read-tree（可以参考<a href="http://blog.ossxp.com/2010/10/2041/" target="_blank" rel="external">这里</a>)。   网上讲了很多，我总结一下并写了一个脚本repomerge.sh。先把脚本贴出来 </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line">git remote add <span class="operator">-f</span> <span class="variable">$1</span> <span class="variable">$2</span></span><br><span class="line">git merge <span class="operator">-s</span> ours --no-commit <span class="variable">$1</span>/master</span><br><span class="line">git <span class="built_in">read</span>-tree --prefix=<span class="variable">$1</span>/ -u <span class="variable">$1</span>/master</span><br><span class="line">git commit -m <span class="string">"merging <span class="variable">$1</span> into subdirectory"</span></span><br></pre></td></tr></table></figure>
 <p>使用的方法是$1为子目录名字，$2为repo的路径。</p>
 <p>这里有一个问题需要注意，合并到的repo（即目标repo）不能为空（至少要有一个commit)。</p>
-<p>比如要合并一个repo A 到A目录，repo B到B目录</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> dest-repo-dir</span><br><span class="line">git init .</span><br><span class="line"></span><br><span class="line"><span class="comment"># add one file and commit</span></span><br><span class="line">touch just-test-file</span><br><span class="line">git add just-test-file</span><br><span class="line">git commit -am <span class="string">"init"</span></span><br><span class="line"></span><br><span class="line">/path/to/repomerge.sh A /path/to/repo/A</span><br><span class="line">/path/to/repomerge.sh B /path/to/repo/B</span><br></pre></td></tr></table></figure></p>
-<p>这样repo A和repo B就分别被合并到了A、B目录了。</p>
+<p>比如要合并一个repo A 到A目录，repo B到B目录 </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> dest-repo-dir</span><br><span class="line">git init .</span><br><span class="line"></span><br><span class="line"><span class="comment"># add one file and commit</span></span><br><span class="line">touch just-test-file</span><br><span class="line">git add just-test-file</span><br><span class="line">git commit -am <span class="string">"init"</span></span><br><span class="line"></span><br><span class="line">/path/to/repomerge.sh A /path/to/repo/A</span><br><span class="line">/path/to/repomerge.sh B /path/to/repo/B</span><br></pre></td></tr></table></figure>
+<p>这样repo A和repo B就分别被合并到了A、B目录了。 </p>
 
 	
 	</div>
@@ -390,7 +416,7 @@
 	  <p>由于Oracle XE精简了很多，跟教科书上很多不一样，所以还是装一个企业版吧。</p>
 <p><a href="http://meansonw-work.blogspot.com/2008/10/archlinux-oracle-10g.html" target="_blank" rel="external">参考链接</a></p>
 <p>安装跟archlinux的wiki上差不多，注意两个链接必须创建：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="operator">-s</span> /usr/lib/libgcc_s.so.<span class="number">1</span> /lib/libgcc_s.so.<span class="number">1</span></span><br><span class="line">sudo ln <span class="operator">-s</span> /bin/tr /usr/bin/tr</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="operator">-s</span> /usr/lib/libgcc_s.so.<span class="number">1</span> /lib/libgcc_s.so.<span class="number">1</span></span><br><span class="line">sudo ln <span class="operator">-s</span> /bin/tr /usr/bin/tr</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -398,36 +424,6 @@
   
 </div>
 	<a type="button" href="/2011-11-15-install-oracle-10gr2-on-archlinux.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Nov 15 2011 </div>
-			<div class="article-title"><a href="/2011-11-15-convert-hg-to-git.html" >将hg转换为git</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>首先安装<a href="http://repo.or.cz/w/fast-export.git" target="_blank" rel="external">fast-export</a></p>
-<p>基本命令:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> somedir</span><br><span class="line">git init .</span><br><span class="line">/path/to/fast-export -r /path/to/hg/repo</span><br><span class="line">git reset HEAD</span><br><span class="line">git checkout .</span><br><span class="line">git remote add origin user@server/repo.git</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
-<p>That's all!</p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-11-15-convert-hg-to-git.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -477,48 +473,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
-		
-			<li><a href="/tags/redis/">redis<span>1</span></a></li>
-		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
-		
-			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
-		
-			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
-		
-			<li><a href="/tags/soap/">soap<span>1</span></a></li>
-		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
-		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
-		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
-		
-			<li><a href="/tags/VC/">VC<span>8</span></a></li>
-		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
-		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
-		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
-		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
-		
-			<li><a href="/tags/macos/">macos<span>9</span></a></li>
-		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
-		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
-		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
-		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+			<li><a href="/tags/programming/">programming<span>8</span></a></li>
 		
 			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
 		
+			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+		
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
+		
+			<li><a href="/tags/python/">python<span>31</span></a></li>
+		
+			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
+		
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/redis/">redis<span>1</span></a></li>
+		
+			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
+		
+			<li><a href="/tags/suse/">suse<span>3</span></a></li>
+		
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+		
+			<li><a href="/tags/objc/">objc<span>1</span></a></li>
+		
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
+		
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
+		
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+		
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+		
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+		
+			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -529,6 +525,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -544,10 +544,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

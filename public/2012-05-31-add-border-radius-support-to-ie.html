@@ -119,28 +119,23 @@
 	    <p>IE6/7/8这三个IE浏览器版本都不支持CSS3的解析，只有还不太主流的IE9支持CSS3和HTML5的标准。</p>
 <p>为了解决这个问题，去<a href="http://fetchak.com/ie-css3/" target="_blank" rel="external">这里</a>下载.htc [^1]文件，并将该文件放到网站根目录下。<a href="http://www.daqianduan.com/ie6yuanjiao/" target="_blank" rel="external">参考链接</a></p>
 <p><code>Webkit</code>内核的浏览器支持<code>-webkit-border-radius: 10px;</code>属性（10px是圆角半径），可以直接解析出圆角；<code>Firefox</code>浏览器支持<code>-moz-border-radius: 10px;</code>属性，也是可以直接解析出圆角；<code>IE 系浏览器则需要加上</code>border-radius: 15px;`的属性。</p>
-<p>所有在需要圆角的地方加入：</p>
-<p><a id="more"></a></p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.xxx &#123;</span><br><span class="line">    ...</span><br><span class="line">    -moz-border-radius: 10px;</span><br><span class="line">    -webkit-border-radius: 10px;</span><br><span class="line">    border-radius: 10px;</span><br><span class="line">    position:relative;</span><br><span class="line">    z-index:2;</span><br><span class="line">    behavior: url(此处为ie-css3.htc文件的绝对路径);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>所有在需要圆角的地方加入： </p>
+<a id="more"></a>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.xxx &#123;</span><br><span class="line">    ...</span><br><span class="line">    -moz-border-radius: 10px;</span><br><span class="line">    -webkit-border-radius: 10px;</span><br><span class="line">    border-radius: 10px;</span><br><span class="line">    position:relative;</span><br><span class="line">    z-index:2;</span><br><span class="line">    behavior: url(此处为ie-css3.htc文件的绝对路径);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
-<li>
-<p><code>behavior</code>的<code>url</code>里一定要填写<code>ie-css3.htc</code>的绝对路径，因为IE浏览器找该文件是相对当前html文件路径来找的，所以对于Wordpress等动态程序生成的页面一定要填写绝对路径。</p>
+<li><p><code>behavior</code>的<code>url</code>里一定要填写<code>ie-css3.htc</code>的绝对路径，因为IE浏览器找该文件是相对当前html文件路径来找的，所以对于Wordpress等动态程序生成的页面一定要填写绝对路径。</p>
 </li>
-<li>
-<p>一定要有定位属性：<code>position:relative</code>;</p>
+<li><p>一定要有定位属性：<code>position:relative</code>;</p>
 </li>
-<li>
-<p>因为在IE浏览器下这些<code>CSS3</code>效果的实现是要借助于<code>VML</code>，由<code>VML</code>绘制圆角或是投影效果，所以还需要一个<code>z-index</code>属性。<code>z-index</code>属性最好设置得比较大，如2。</p>
+<li><p>因为在IE浏览器下这些<code>CSS3</code>效果的实现是要借助于<code>VML</code>，由<code>VML</code>绘制圆角或是投影效果，所以还需要一个<code>z-index</code>属性。<code>z-index</code>属性最好设置得比较大，如2。</p>
 </li>
-<li>
-<p>如果在IE浏览器下某些模块无法用此渲染，可以试着绝对定位相应的层，即加上<code>width: 400px; height:400px;</code>属性。</p>
+<li><p>如果在IE浏览器下某些模块无法用此渲染，可以试着绝对定位相应的层，即加上<code>width: 400px; height:400px;</code>属性。</p>
 </li>
-<li>
-<p><code>radius</code>属性的<code>10px</code>是圆角半径，还可以给两个值如<code>border-radius: 10px 5px;</code>，这样则左上角与右下角半径为10px，右上角与左下角半径为5px。也可以赋4个值，为“上  右  下  左”。</p>
+<li><p><code>radius</code>属性的<code>10px</code>是圆角半径，还可以给两个值如<code>border-radius: 10px 5px;</code>，这样则左上角与右下角半径为10px，右上角与左下角半径为5px。也可以赋4个值，为“上  右  下  左”。</p>
 </li>
 </ol>
 <p>以上代码就是加入圆角支持的:)</p>
-<p>[^1]: .htc文件是IE内核支持Web行为后用来描述此类行为的脚本文件。它们定义了一套方法和属性，程序员几乎可以把这些方法和属性应用到HTML页面上的任何元素上去。Web 行为是非常伟大的因为它们允许程序员把自定义的功能“连接”到现有的元素和控件，而不是必须让用户下载二进制文件（例如ActiveX 控件）来完成这个功能。</p>
+<p>[^1]: .htc文件是IE内核支持Web行为后用来描述此类行为的脚本文件。它们定义了一套方法和属性，程序员几乎可以把这些方法和属性应用到HTML页面上的任何元素上去。Web 行为是非常伟大的因为它们允许程序员把自定义的功能“连接”到现有的元素和控件，而不是必须让用户下载二进制文件（例如ActiveX 控件）来完成这个功能。 </p>
 	  
 	</div>
 	
@@ -197,7 +192,7 @@
     <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
     <!--       
   <li>
-    <li><a href="/categories/programming/">programming<span>84</span></a></li>
+    <li><a href="/categories/programming/">programming<span>85</span></a></li>
   </li>
  -->
     <!-- </ul> -->

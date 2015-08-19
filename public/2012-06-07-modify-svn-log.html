@@ -118,9 +118,9 @@
 	<div class="mypage">		
 	    <p>默认情况下，subversion server是不允许客户端修改提交后的任何东西的。如果想修改服务器端的配置，请移步<a href="http://blog.csdn.net/karl_max/article/details/7035866" target="_blank" rel="external">这里</a></p>
 <p>在服务器端已经配置好的情况下，可以使用以下命令来修改:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$svn</span> propedit -r N --revprop svn:<span class="built_in">log</span> URL </span><br><span class="line"><span class="variable">$svn</span> propset -r N --revprop svn:<span class="built_in">log</span> <span class="string">"new log message"</span> URL</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$svn</span> propedit -r N --revprop svn:<span class="built_in">log</span> URL </span><br><span class="line"><span class="variable">$svn</span> propset -r N --revprop svn:<span class="built_in">log</span> <span class="string">"new log message"</span> URL</span><br></pre></td></tr></table></figure>
 <p>如果想修改最后提交版本的log，可以使用:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ svn propedit -r <span class="string">'HEAD'</span> --revprop svn:<span class="built_in">log</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ svn propedit -r <span class="string">'HEAD'</span> --revprop svn:<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 <p>这时候svn会读取原来log并打开默认编辑器进行修改。</p>
 	  
 	</div>
@@ -178,7 +178,7 @@
     <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
     <!--       
   <li>
-    <li><a href="/categories/programming/">programming<span>84</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
+    <li><a href="/categories/programming/">programming<span>85</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
  -->
     <!-- </ul> -->

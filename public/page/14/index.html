@@ -116,6 +116,55 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Jan 16 2011 </div>
+			<div class="article-title"><a href="/2011-01-16-compile_subversion_python2-7_binding_on_windows.html" >windows下编译subversion的Python绑定（附下载）</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>由于svn的python绑定一直没有推出python2.7的版本，所以只好自己编译了。参考链接：<a href="http://www.lejordet.com/2009/03/compiling-subversion-python-bindings-on-windows/" target="_blank" rel="external">http://www.lejordet.com/2009/03/compiling-subversion-python-bindings-on-windows/</a></p>
+<ol>
+<li>首先下载swig的windows bin，下载地址：<a href="http://www.swig.org/download.html" target="_blank" rel="external">http://www.swig.org/download.html</a>，并解压到目录A</li>
+<li>下载subversion源代码：<a href="http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=10339&expandFolder=10339&folderID=260" target="_blank" rel="external">http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=10339&amp;expandFolder=10339&amp;folderID=260</a>，并解压到目录A</li>
+<li>在下面的链接中下载对应版本的deps<span style="color: #ff0000;">（windows下要下载zip格式的文件，不然vc的dsp文件会用错误的line ending而无法打开）</span>，并解压到目录A</li>
+<li>cd到目录A，执行命令生成vc的solution文件<span style="color: #ff0000;">（注意自己对应相应的目录，并使用绝对路径）</span></li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gen-make.py -t vcproj --vsnet-version=<span class="number">2008</span> --with-swig=c:homesrcsubversionswig --with-zlib=c:homesrcsubversionsubversionzlib --with-apr=c:homesrcsubversionsubversionapr --with-apr-util=c:homesrcsubversionsubversionapr-util --with-apr-iconv=c:homesrcsubversionsubversionapr-iconv</span><br></pre></td></tr></table></figure>
+<ol>
+<li>cd到apr目录，用vc打开apr.dsw，并编译工程</li>
+<li>cd到apr-util目录，编译apr-util.dsw，当询问xxx project已经存在，是否加载的时候，选择yes。有些工程可能编译不过，不用管它</li>
+<li>编译根目录下subversion_vcnet.sln，有些工程编译不过，不用管它</li>
+<li>创建一个目录B，拷贝subversionbindingsswigpython下svn目录到B</li>
+<li>在B目录下创建一个目录libsvn，拷贝bindingsswigpython下的*.py到libsvn</li>
+<li>在根目录下搜索*.dll，并拷贝到libsvn目录下</li>
+<li>重命名所有已_开头的dll为pyd。</li>
+<li>拷贝B目录下的svn和libsvn目录到<python>Libsite-packages目录下</python></li>
+<li>测试是否正常工作：在python的cmd下输入</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> svn <span class="keyword">import</span> core</span><br></pre></td></tr></table></figure>
+<ol>
+<li>如果有错误发生，一般是缺少dll的问题，再次确认所有dll都拷贝到libsvn目录下。<br>这里附上我的编译结果（解压到<python>Libsite-packages目录下即可使用）：<br><a href="http://commondatastorage.googleapis.com/czc_public/appspotmedia/svn-python-1.6.13.win32-py2.7.7z" target="_blank">svn-python-1.6.13.win32-py2.7.7z</a><br><a href="http://commondatastorage.googleapis.com/czc_public/appspotmedia/svn-python-1.6.13.win32-py2.7.zip" target="_blank">svn-python-1.6.13.win32-py2.7.zip</a> </python></li>
+</ol>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-01-16-compile_subversion_python2-7_binding_on_windows.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Jan 10 2011 </div>
 			<div class="article-title"><a href="/2011-01-10-easy_install_upgrade.html" >easy_install升级</a></div>						
 		</h3>
@@ -129,9 +178,9 @@
 	  
 	
 	  <p>如何让easy_install安装的文件升级呢？</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">easy_install --upgrade xxxxx</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">easy_install --upgrade xxxxx</span><br></pre></td></tr></table></figure>
 <p>如何卸载已经安装的包呢？</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">easy_install -m xxxxxx</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">easy_install -m xxxxxx</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -158,10 +207,8 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>&lt;a href=&quot;http://static.youku.com/v1.0.0134/v/swf/qplayer.swf?VideoIDS=XMjMxMDE5NTgw&amp;embedid=-&amp;showAd=0&quot; target=&quot;_blank&quot;&gt;新窗口中打开&lt;/a&gt;</p>
-<p>&lt;object width=&quot;600&quot; height=&quot;480&quot; data=&quot;http://static.youku.com/v1.0.0134/v/swf/qplayer.swf?VideoIDS=XMjMxMDE5NTgw&amp;embedid=-&amp;showAd=0&quot; type=&quot;application/x-shockwave-flash&quot;&gt;
-&lt;param name=&quot;data&quot; value=&quot;http://static.youku.com/v1.0.0134/v/swf/qplayer.swf?VideoIDS=XMjMxMDE5NTgw&amp;embedid=-&amp;showAd=0&quot;&gt;
-&lt;param name=&quot;src&quot; value=&quot;http://static.youku.com/v1.0.0134/v/swf/qplayer.swf?VideoIDS=XMjMxMDE5NTgw&amp;embedid=-&amp;showAd=0&quot;&gt;&lt;/object&gt;</p>
+	  <p><a href="http://static.youku.com/v1.0.0134/v/swf/qplayer.swf?VideoIDS=XMjMxMDE5NTgw&embedid=-&showAd=0" target="_blank">新窗口中打开</a></p>
+<object width="600" height="480" data="http://static.youku.com/v1.0.0134/v/swf/qplayer.swf?VideoIDS=XMjMxMDE5NTgw&embedid=-&showAd=0" type="application/x-shockwave-flash"><br><param name="data" value="http://static.youku.com/v1.0.0134/v/swf/qplayer.swf?VideoIDS=XMjMxMDE5NTgw&embedid=-&showAd=0"><br><param name="src" value="http://static.youku.com/v1.0.0134/v/swf/qplayer.swf?VideoIDS=XMjMxMDE5NTgw&embedid=-&showAd=0"></object>
 
 	
 	</div>
@@ -189,7 +236,7 @@
 	  
 	
 	  <p>没有想到的是竟然真的有人去弄了个作弊码。由于对js不熟，不知道到底有没有什么副作用。木哈哈</p>
-<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javascript:<span class="keyword">var</span> i=<span class="number">0</span>,loop=setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> newwin=<span class="built_in">window</span>.open(<span class="string">"http://www.google.com"</span>);setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;newwin.close();&#125;,<span class="number">500</span>);<span class="keyword">if</span>(++i&gt;=<span class="number">250</span>) clearInterval(loop);&#125;,<span class="number">500</span>);<span class="keyword">void</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javascript:<span class="keyword">var</span> i=<span class="number">0</span>,loop=setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> newwin=<span class="built_in">window</span>.open(<span class="string">"http://www.google.com"</span>);setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;newwin.close();&#125;,<span class="number">500</span>);<span class="keyword">if</span>(++i&gt;=<span class="number">250</span>) clearInterval(loop);&#125;,<span class="number">500</span>);<span class="keyword">void</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -244,9 +291,9 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>@&lt;a href=&quot;http://goo.gl/OUMAy&quot; target=&quot;_blank&quot;&gt;cnbeta&lt;/a&gt;</p>
-<p>安装Chrome插件，行善事。公益活动推广。&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;活动日期：12月15日-19日&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;给谷歌Chrome浏览器装个插件，然后从15-19日，你每打开一个新标签页，谷歌就会捐赠书籍，清水，树木，疫苗等给慈善机构。</p>
-<p>&lt;strong&gt;活动网址：&lt;/strong&gt;&lt;a style=&quot;color: #003366; text-decoration: none; padding: 0px; margin: 0px;&quot; href=&quot;http://www.google.com/chrome/intl/zh/p/cause/&quot; target=&quot;_blank&quot;&gt;http://www.google.com/chrome/intl/zh/p/cause/&lt;/a&gt;</p>
+	  <p>@<a href="http://goo.gl/OUMAy" target="_blank">cnbeta</a></p>
+<p>安装Chrome插件，行善事。公益活动推广。<br style="padding: 0px; margin: 0px;">活动日期：12月15日-19日<br style="padding: 0px; margin: 0px;">给谷歌Chrome浏览器装个插件，然后从15-19日，你每打开一个新标签页，谷歌就会捐赠书籍，清水，树木，疫苗等给慈善机构。</p>
+<p><strong>活动网址：</strong><a style="color: #003366; text-decoration: none; padding: 0px; margin: 0px;" href="http://www.google.com/chrome/intl/zh/p/cause/" target="_blank">http://www.google.com/chrome/intl/zh/p/cause/</a></p>
 <p>P.S. 貌似有点晚了，不过还有最后两天，大家可以试试看。</p>
 
 	
@@ -274,7 +321,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>@&lt;a href=&quot;http://www.apple4.cn/2010/12/recommended-course-of-foreign-brand-name-university-network-to-download-videos/&quot;&gt;http://www.apple4.cn/2010/12/recommended-course-of-foreign-brand-name-university-network-to-download-videos/&lt;/a&gt;</p>
+	  <p>@<a href="http://www.apple4.cn/2010/12/recommended-course-of-foreign-brand-name-university-network-to-download-videos/" target="_blank" rel="external">http://www.apple4.cn/2010/12/recommended-course-of-foreign-brand-name-university-network-to-download-videos/</a></p>
 
 	
 	</div>
@@ -301,7 +348,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>@&lt;a href=&quot;http://hxyl.net/2010/12/12/xin-liu/&quot; target=&quot;_blank&quot;&gt;河蟹娱乐&lt;/a&gt;</p>
+	  <p>@<a href="http://hxyl.net/2010/12/12/xin-liu/" target="_blank">河蟹娱乐</a></p>
 <p>我最崇拜的人姓刘，他获得过国际大奖，他的所作所为激发了国人的斗志，虽然有一段时间他从我们眼前消失了，但是我相信他的精神永存。他的名字叫刘翔。</p>
 <p>我最崇拜的人姓刘，他对这个国家以及生活在这片土地上的人满怀悲悯；他想做一番轰轰烈烈的大事业；要拯救万民于水火；他有一帮志同道合并同样令人敬仰的朋友与伙伴；他的人格魅力使很多人都愿意追随着他，为理想而奋斗。他名备字玄德，人称皇叔。</p>
 <p>我最崇拜的人姓刘，他领导过学生闹学运，出过书，得过外国的奖，后来被冤枉做了很多年牢。但我相信，这些都是历史给他的考验，因为他说过，好在历史是人民写的。他的名字是刘少奇。</p>
@@ -348,7 +395,7 @@
 	  
 	
 	  <p>python中可以通过pywin32操作Windows Service：</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> win32service</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">PrintServiceStatus</span><span class="params">(status)</span>:</span></span><br><span class="line">    svcType, svcState, svcControls, err, svcErr, svcCP, svcWH = status</span><br><span class="line">    <span class="keyword">if</span> svcType &amp; win32service.SERVICE_WIN32_OWN_PROCESS:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service runs in its own process"</span></span><br><span class="line">    <span class="keyword">if</span> svcType &amp; win32service.SERVICE_WIN32_SHARE_PROCESS:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service shares a process with other services"</span></span><br><span class="line">    <span class="keyword">if</span> svcType &amp; win32service.SERVICE_INTERACTIVE_PROCESS:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service can interact with the desktop"</span></span><br><span class="line">    <span class="comment"># Other svcType flags not shown.</span></span><br><span class="line">    <span class="keyword">if</span> svcState==win32service.SERVICE_STOPPED:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service is stopped"</span></span><br><span class="line">    <span class="keyword">elif</span> svcState==win32service.SERVICE_START_PENDING:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service is starting"</span></span><br><span class="line">    <span class="keyword">elif</span> svcState==win32service.SERVICE_STOP_PENDING:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service is stopping"</span></span><br><span class="line">    <span class="keyword">elif</span> svcState==win32service.SERVICE_RUNNING:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service is running"</span></span><br><span class="line">    <span class="comment"># Other svcState flags not shown.</span></span><br><span class="line">    <span class="keyword">if</span> svcControls &amp; win32service.SERVICE_ACCEPT_STOP:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service can be stopped"</span></span><br><span class="line">    <span class="keyword">if</span> svcControls &amp; win32service.SERVICE_ACCEPT_PAUSE_CONTINUE:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service can be paused"</span></span><br><span class="line">    <span class="comment"># Other svcControls flags not shown</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    scm = win32service.OpenSCManager(<span class="keyword">None</span>, <span class="keyword">None</span>,</span><br><span class="line">                                     win32service.SC_MANAGER_ALL_ACCESS)</span><br><span class="line">    allservice = win32service.EnumServicesStatus(scm, win32service.SERVICE_WIN32, win32service.SERVICE_STATE_ALL)</span><br><span class="line">    svc = win32service.OpenService(scm, <span class="string">'Cash Download'</span>,</span><br><span class="line">                                   win32service.SC_MANAGER_ALL_ACCESS)</span><br><span class="line">    win32service.ChangeServiceConfig(svc, win32service.SERVICE_NO_CHANGE,</span><br><span class="line">                                     win32service.SERVICE_AUTO_START,</span><br><span class="line">                                     win32service.SERVICE_NO_CHANGE,</span><br><span class="line">                                     <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="number">0</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>)</span><br><span class="line">    win32service.StartService(svc, <span class="string">""</span>)</span><br><span class="line">    win32service.ControlService(svc, win32service.SERVICE_CONTROL_STOP)</span><br><span class="line">    win32service.ControlService(svc, win32service.SERVICE_CONTROL_START)</span><br><span class="line">    PrintServiceStatus(win32service.QueryServiceStatus(svc))</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> win32service</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">PrintServiceStatus</span><span class="params">(status)</span>:</span></span><br><span class="line">    svcType, svcState, svcControls, err, svcErr, svcCP, svcWH = status</span><br><span class="line">    <span class="keyword">if</span> svcType &amp; win32service.SERVICE_WIN32_OWN_PROCESS:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service runs in its own process"</span></span><br><span class="line">    <span class="keyword">if</span> svcType &amp; win32service.SERVICE_WIN32_SHARE_PROCESS:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service shares a process with other services"</span></span><br><span class="line">    <span class="keyword">if</span> svcType &amp; win32service.SERVICE_INTERACTIVE_PROCESS:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service can interact with the desktop"</span></span><br><span class="line">    <span class="comment"># Other svcType flags not shown.</span></span><br><span class="line">    <span class="keyword">if</span> svcState==win32service.SERVICE_STOPPED:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service is stopped"</span></span><br><span class="line">    <span class="keyword">elif</span> svcState==win32service.SERVICE_START_PENDING:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service is starting"</span></span><br><span class="line">    <span class="keyword">elif</span> svcState==win32service.SERVICE_STOP_PENDING:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service is stopping"</span></span><br><span class="line">    <span class="keyword">elif</span> svcState==win32service.SERVICE_RUNNING:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service is running"</span></span><br><span class="line">    <span class="comment"># Other svcState flags not shown.</span></span><br><span class="line">    <span class="keyword">if</span> svcControls &amp; win32service.SERVICE_ACCEPT_STOP:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service can be stopped"</span></span><br><span class="line">    <span class="keyword">if</span> svcControls &amp; win32service.SERVICE_ACCEPT_PAUSE_CONTINUE:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"The service can be paused"</span></span><br><span class="line">    <span class="comment"># Other svcControls flags not shown</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    scm = win32service.OpenSCManager(<span class="keyword">None</span>, <span class="keyword">None</span>,</span><br><span class="line">                                     win32service.SC_MANAGER_ALL_ACCESS)</span><br><span class="line">    allservice = win32service.EnumServicesStatus(scm, win32service.SERVICE_WIN32, win32service.SERVICE_STATE_ALL)</span><br><span class="line">    svc = win32service.OpenService(scm, <span class="string">'Cash Download'</span>,</span><br><span class="line">                                   win32service.SC_MANAGER_ALL_ACCESS)</span><br><span class="line">    win32service.ChangeServiceConfig(svc, win32service.SERVICE_NO_CHANGE,</span><br><span class="line">                                     win32service.SERVICE_AUTO_START,</span><br><span class="line">                                     win32service.SERVICE_NO_CHANGE,</span><br><span class="line">                                     <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="number">0</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>)</span><br><span class="line">    win32service.StartService(svc, <span class="string">""</span>)</span><br><span class="line">    win32service.ControlService(svc, win32service.SERVICE_CONTROL_STOP)</span><br><span class="line">    win32service.ControlService(svc, win32service.SERVICE_CONTROL_START)</span><br><span class="line">    PrintServiceStatus(win32service.QueryServiceStatus(svc))</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -375,7 +422,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line">RANGE = range(<span class="number">3</span>, <span class="number">8</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">word</span><span class="params">()</span>:</span></span><br><span class="line">    word = win32.gencache.EnsureDispatch(<span class="string">'Word.Application'</span>)</span><br><span class="line">    doc = word.Documents.Add()</span><br><span class="line">    word.Visible = <span class="keyword">True</span></span><br><span class="line">    sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    rng = doc.Range(<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">    rng.InsertAfter(<span class="string">'Hacking Word with Pythonrnrn'</span>)</span><br><span class="line">    sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> RANGE:</span><br><span class="line">        rng.InsertAfter(<span class="string">'Line %drn'</span> % i)</span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line">    rng.InsertAfter(<span class="string">"rnPython rules!rn"</span>)</span><br><span class="line"></span><br><span class="line">    doc.Close(<span class="keyword">False</span>)</span><br><span class="line">    word.Application.Quit()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    word()</span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line">RANGE = range(<span class="number">3</span>, <span class="number">8</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">word</span><span class="params">()</span>:</span></span><br><span class="line">    word = win32.gencache.EnsureDispatch(<span class="string">'Word.Application'</span>)</span><br><span class="line">    doc = word.Documents.Add()</span><br><span class="line">    word.Visible = <span class="keyword">True</span></span><br><span class="line">    sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    rng = doc.Range(<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">    rng.InsertAfter(<span class="string">'Hacking Word with Pythonrnrn'</span>)</span><br><span class="line">    sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> RANGE:</span><br><span class="line">        rng.InsertAfter(<span class="string">'Line %drn'</span> % i)</span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line">    rng.InsertAfter(<span class="string">"rnPython rules!rn"</span>)</span><br><span class="line"></span><br><span class="line">    doc.Close(<span class="keyword">False</span>)</span><br><span class="line">    word.Application.Quit()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    word()</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -383,35 +430,6 @@
   
 </div>
 	<a type="button" href="/2010-12-12-pywin32_word.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Dec 12 2010 </div>
-			<div class="article-title"><a href="/2010-12-12-pywin32_excel.html" >pywin32访问excel</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>&lt;a href=&quot;http://www.blog.pythonlibrary.org/2010/07/16/python-and-microsoft-office-using-pywin32/&quot; target=&quot;_blank&quot;&gt;参考链接&lt;/a&gt;</p>
-<p>直接用上面的代码吧</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</span><br><span class="line"> </span><br><span class="line"><span class="comment">#----------------------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">excel</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">""""""</span></span><br><span class="line">    xl = win32.gencache.EnsureDispatch(<span class="string">'Excel.Application'</span>)</span><br><span class="line">    ss = xl.Workbooks.Add()</span><br><span class="line">    sh = ss.ActiveSheet</span><br><span class="line"> </span><br><span class="line">    xl.Visible = <span class="keyword">True</span></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"> </span><br><span class="line">    sh.Cells(<span class="number">1</span>,<span class="number">1</span>).Value = <span class="string">'Hacking Excel with Python Demo'</span></span><br><span class="line"> </span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">8</span>):</span><br><span class="line">        sh.Cells(i,<span class="number">1</span>).Value = <span class="string">'Line %i'</span> % i</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line"> </span><br><span class="line">    ss.Close(<span class="keyword">False</span>)</span><br><span class="line">    xl.Application.Quit()</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    excel()</span><br></pre></td></tr></table></figure></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-12-12-pywin32_excel.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -461,48 +479,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
-		
 			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+		
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
 		
 			<li><a href="/tags/vs/">vs<span>2</span></a></li>
 		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+			<li><a href="/tags/objc/">objc<span>1</span></a></li>
 		
-			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
 		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
 		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
-		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
-		
-			<li><a href="/tags/english/">english<span>1</span></a></li>
-		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
-		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
-		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
-		
-			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
-		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
-		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
 		
 			<li><a href="/tags/golang/">golang<span>1</span></a></li>
 		
-			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
+			<li><a href="/tags/video/">video<span>1</span></a></li>
 		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+			<li><a href="/tags/network/">network<span>1</span></a></li>
 		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
 		
-			<li><a href="/tags/python/">python<span>31</span></a></li>
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+		
+			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
+		
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
+		
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+		
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
+		
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -513,6 +531,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -528,10 +550,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

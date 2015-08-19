@@ -116,6 +116,38 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Jul 21 2010 </div>
+			<div class="article-title"><a href="/2010-07-21-android_aapt_error.html" >解决Error executing aapt. Please check aapt is present at %错误</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>原文：<a href="http://blog.csdn.net/ovsynnia/archive/2007/12/06/1920365.aspx" target="_blank">猛击这里</a></p>
+<p>根据指南先配置好JDK，和设置path，并且更新sdk要重新更改path，按照指南来还出现问题！</p>
+<p>Error executing aapt. Please check aapt is present at %</p>
+<p>解决方案：在eclipse–&gt;window–&gt;属性–&gt;android–&gt;设置sdk的路径为解压缩的<code>android_sdk_&lt;platform&gt;_&lt;release&gt;_&lt;build&gt;</code>.确定ＯＫ　小红叉没有了</p>
+<p>但是在linux下还是出现了这个问题（因为更新了sdk），后来发现是因为platform/android-1.x/tools/下的工具没有执行权限</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x *</span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-07-21-android_aapt_error.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Jul 20 2010 </div>
 			<div class="article-title"><a href="/2010-07-20-hg_ssh_access.html" >hg ssh 访问</a></div>						
 		</h3>
@@ -129,7 +161,7 @@
 	  
 	
 	  <p>hg通过ssh访问时，地址的格式是ssh://user:pwd@host//path,注意这里的两个/，如果只是使用一个，则找不到repo，这个与scp等的方式不一样（scp的格式是：scp user:pwd@host:/path）详情见<code>hg help urls</code></p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg <span class="built_in">help</span> urls</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg <span class="built_in">help</span> urls</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -157,7 +189,7 @@
 	  
 	
 	  <p>今天想把经典的电影拿来当听力训练，可惜找了很久都没有找到直接下载方式，没有办法，只好下载电影然后提取音频并配上字幕。网上找了一个perl版的srt2lrc.pl，因为完全不懂perl，该脚本无法运行，所以只好自己想办法。没有仔细研究过srt与lrc格式，只是找了两个文件来看，勉强知道是怎么回事，用python写了一个转化的脚本（ps. python不熟，代码很难看，只是勉强实现了功能）</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> len(sys.argv) != <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">"Usage srt2lrc.py file"</span>)</span><br><span class="line">    sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">f = open(sys.argv[<span class="number">1</span>])</span><br><span class="line">lines = f.readlines()</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; len(lines):</span><br><span class="line">    line = lines[i]</span><br><span class="line">    <span class="keyword">if</span> line.find(<span class="string">'--&gt;'</span>) == -<span class="number">1</span>:</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    s = line.split(<span class="string">'--&gt;'</span>)</span><br><span class="line">    time = s[<span class="number">0</span>].split(<span class="string">':'</span>)</span><br><span class="line">    ms = <span class="string">'00'</span></span><br><span class="line">    <span class="keyword">if</span> len(time) &gt;= <span class="number">3</span>:</span><br><span class="line">        hour = time[<span class="number">0</span>]</span><br><span class="line">        minute = time[<span class="number">1</span>]</span><br><span class="line">        seconds = time[<span class="number">2</span>].split(<span class="string">','</span>)</span><br><span class="line">        second = seconds[<span class="number">0</span>]</span><br><span class="line">        ms = seconds[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        hour = <span class="number">0</span></span><br><span class="line">        minute = time[<span class="number">2</span>]</span><br><span class="line">        seconds = time[<span class="number">3</span>].split(<span class="string">','</span>)</span><br><span class="line">        second = seconds[<span class="number">0</span>]</span><br><span class="line">        ms = seconds[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> int(hour) == <span class="number">0</span> <span class="keyword">and</span> int(minute) == <span class="number">0</span> <span class="keyword">and</span> int(second) == <span class="number">0</span> <span class="keyword">and</span> int(ms) == <span class="number">0</span>:</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    s = lines[i].strip()</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(lines) <span class="keyword">and</span> len(lines[i].strip()) &gt; <span class="number">0</span>:</span><br><span class="line">        s = s + lines[i].strip()</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    s = re.sub(<span class="string">"&lt;.*&gt;"</span>, <span class="string">""</span>, s)</span><br><span class="line">    <span class="keyword">if</span> len(s) &gt; <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">"[%.2d:%s.%.2s]%s"</span> % (int(hour)*<span class="number">60</span>+int(minute.strip()), second.strip(), ms.strip(), s))</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> len(sys.argv) != <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">"Usage srt2lrc.py file"</span>)</span><br><span class="line">    sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">f = open(sys.argv[<span class="number">1</span>])</span><br><span class="line">lines = f.readlines()</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; len(lines):</span><br><span class="line">    line = lines[i]</span><br><span class="line">    <span class="keyword">if</span> line.find(<span class="string">'--&gt;'</span>) == -<span class="number">1</span>:</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    s = line.split(<span class="string">'--&gt;'</span>)</span><br><span class="line">    time = s[<span class="number">0</span>].split(<span class="string">':'</span>)</span><br><span class="line">    ms = <span class="string">'00'</span></span><br><span class="line">    <span class="keyword">if</span> len(time) &gt;= <span class="number">3</span>:</span><br><span class="line">        hour = time[<span class="number">0</span>]</span><br><span class="line">        minute = time[<span class="number">1</span>]</span><br><span class="line">        seconds = time[<span class="number">2</span>].split(<span class="string">','</span>)</span><br><span class="line">        second = seconds[<span class="number">0</span>]</span><br><span class="line">        ms = seconds[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        hour = <span class="number">0</span></span><br><span class="line">        minute = time[<span class="number">2</span>]</span><br><span class="line">        seconds = time[<span class="number">3</span>].split(<span class="string">','</span>)</span><br><span class="line">        second = seconds[<span class="number">0</span>]</span><br><span class="line">        ms = seconds[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> int(hour) == <span class="number">0</span> <span class="keyword">and</span> int(minute) == <span class="number">0</span> <span class="keyword">and</span> int(second) == <span class="number">0</span> <span class="keyword">and</span> int(ms) == <span class="number">0</span>:</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    s = lines[i].strip()</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(lines) <span class="keyword">and</span> len(lines[i].strip()) &gt; <span class="number">0</span>:</span><br><span class="line">        s = s + lines[i].strip()</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    s = re.sub(<span class="string">"&lt;.*&gt;"</span>, <span class="string">""</span>, s)</span><br><span class="line">    <span class="keyword">if</span> len(s) &gt; <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">"[%.2d:%s.%.2s]%s"</span> % (int(hour)*<span class="number">60</span>+int(minute.strip()), second.strip(), ms.strip(), s))</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -184,7 +216,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># $1 -- input file</span></span><br><span class="line"><span class="comment"># $2 -- output file</span></span><br><span class="line">mencoder -oac mp3lame -ovc copy -of rawaudio <span class="variable">$1</span> -o <span class="variable">$2</span></span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># $1 -- input file</span></span><br><span class="line"><span class="comment"># $2 -- output file</span></span><br><span class="line">mencoder -oac mp3lame -ovc copy -of rawaudio <span class="variable">$1</span> -o <span class="variable">$2</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -212,7 +244,7 @@
 	  
 	
 	  <p>今天在使用eclipse的时候，一会儿就自动退出，重试很多次无果！前两天都还是好好的，怎么会这样呢？后来一想，昨天升级ubuntu的时候升级了openjdk，难道是这个原因？删除openjdk，然后安装sun-java6-jdk。ubuntu下在/etc/apt/sources.list添加：</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://archive.canonical.com/ lucid partner</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://archive.canonical.com/ lucid partner</span><br></pre></td></tr></table></figure>
 <p>测试之后，搞定！如果遇到同样问题，多半是jdk的问题。</p>
 
 	
@@ -240,12 +272,12 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>转自：&lt;a href=&quot;http://blog.csdn.net/jump_1990/archive/2009/11/04/4766853.aspx&quot; target=&quot;_blank&quot;&gt;http://blog.csdn.net/jump_1990/archive/2009/11/04/4766853.aspx&lt;/a&gt;</p>
-<p>要让程序界面保持一个方向，不随手机方向转动而变化的处理办法：&lt;br&gt;在AndroidManifest.xml里面配置一下就可以了。加入这一行android:screenOrientation=&quot;landscape&quot;。</p>
+	  <p>转自：<a href="http://blog.csdn.net/jump_1990/archive/2009/11/04/4766853.aspx" target="_blank">http://blog.csdn.net/jump_1990/archive/2009/11/04/4766853.aspx</a></p>
+<p>要让程序界面保持一个方向，不随手机方向转动而变化的处理办法：<br>在AndroidManifest.xml里面配置一下就可以了。加入这一行android:screenOrientation=”landscape”。</p>
 <p>例如（landscape是横向，portrait是纵向）：</p>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="title">manifest</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span> </span><br><span class="line">      <span class="attribute">package</span>=<span class="value">"com.ray.linkit"</span> </span><br><span class="line">      <span class="attribute">android:versionCode</span>=<span class="value">"1"</span> </span><br><span class="line">      <span class="attribute">android:versionName</span>=<span class="value">"1.0"</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">application</span> <span class="attribute">android:icon</span>=<span class="value">"@drawable/icon"</span> <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".Main"</span> </span><br><span class="line">                  <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span> </span><br><span class="line">                  <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="title">intent-filter</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">action</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.action.MAIN"</span> /&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.category.LAUNCHER"</span> /&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="title">intent-filter</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".GamePlay"</span> </span><br><span class="line">                <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt;</span><span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".OptionView"</span> </span><br><span class="line">                <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt;</span><span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="title">application</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">uses-sdk</span> <span class="attribute">android:minSdkVersion</span>=<span class="value">"3"</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="title">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>另外，android中每次屏幕的切换都会重启Activity，所以应该在Activity销毁前保存当前活动的状态，在Activity再次 Create的时候载入配置，那样，进行中的游戏就不会自动重启了！也可以给每个activity加上 android:configChanges=&quot;keyboardHidden|orientation&quot;属性，就不会重启activity，而是去调用 onConfigurationChanged(Configuration newConfig)。这样就可以在这个方法里调整显示方式：</p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(newConfig.orientation==Configuration.</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="title">manifest</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span> </span><br><span class="line">      <span class="attribute">package</span>=<span class="value">"com.ray.linkit"</span> </span><br><span class="line">      <span class="attribute">android:versionCode</span>=<span class="value">"1"</span> </span><br><span class="line">      <span class="attribute">android:versionName</span>=<span class="value">"1.0"</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">application</span> <span class="attribute">android:icon</span>=<span class="value">"@drawable/icon"</span> <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".Main"</span> </span><br><span class="line">                  <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span> </span><br><span class="line">                  <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="title">intent-filter</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">action</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.action.MAIN"</span> /&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.category.LAUNCHER"</span> /&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="title">intent-filter</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".GamePlay"</span> </span><br><span class="line">                <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt;</span><span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">".OptionView"</span> </span><br><span class="line">                <span class="attribute">android:screenOrientation</span>=<span class="value">"portrait"</span>&gt;</span><span class="tag">&lt;/<span class="title">activity</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="title">application</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">uses-sdk</span> <span class="attribute">android:minSdkVersion</span>=<span class="value">"3"</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="title">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>另外，android中每次屏幕的切换都会重启Activity，所以应该在Activity销毁前保存当前活动的状态，在Activity再次 Create的时候载入配置，那样，进行中的游戏就不会自动重启了！也可以给每个activity加上 android:configChanges=”keyboardHidden|orientation”属性，就不会重启activity，而是去调用 onConfigurationChanged(Configuration newConfig)。这样就可以在这个方法里调整显示方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(newConfig.orientation==Configuration.</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -274,18 +306,15 @@
 	
 	  <p>如何在android模拟器中使用应用商店呢？</p>
 <ol>
-<li>
-<p>去&lt;a href=&quot;http://developer.htc.com/adp.html&quot;&gt;http://developer.htc.com/adp.html&lt;/a&gt;下载对应sdk的system.img，比如你装有1.6的android sdk，那么下载&lt;a href=&quot;http://member.america.htc.com/download/RomCode/ADP/signed-dream_devphone_userdebug-img-14721.zip&quot; target=&quot;_blank&quot;&gt;http://member.america.htc.com/download/RomCode/ADP/signed-dream_devphone_userdebug-img-14721.zip?&lt;/a&gt;</p>
+<li><p>去<a href="http://developer.htc.com/adp.html" target="_blank" rel="external">http://developer.htc.com/adp.html</a>下载对应sdk的system.img，比如你装有1.6的android sdk，那么下载<a href="http://member.america.htc.com/download/RomCode/ADP/signed-dream_devphone_userdebug-img-14721.zip" target="_blank">http://member.america.htc.com/download/RomCode/ADP/signed-dream_devphone_userdebug-img-14721.zip?</a></p>
 </li>
-<li>
-<p>将包里面的system.img解压缩到所建立的虚拟设备目录下，比如你的虚拟设备叫做htc，那么虚拟设备目录windows下在%APPLICATIONDATA%.androidavdhtc.avd下，linux在$HOME/.android/avd/htc.avd/下</p>
+<li><p>将包里面的system.img解压缩到所建立的虚拟设备目录下，比如你的虚拟设备叫做htc，那么虚拟设备目录windows下在%APPLICATIONDATA%.androidavdhtc.avd下，linux在$HOME/.android/avd/htc.avd/下</p>
 </li>
-<li>
-<p>如果在创建虚拟设备的时候没有添加sdcard，不然会出现connection error错误！那么请添加sdcard，在虚拟设备目录下执行（前提当然是将android sdk中tools加入$PATH中）</p>
+<li><p>如果在创建虚拟设备的时候没有添加sdcard，不然会出现connection error错误！那么请添加sdcard，在虚拟设备目录下执行（前提当然是将android sdk中tools加入$PATH中）</p>
 </li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mksdcard <span class="number">512</span>M sdcard.img</span><br></pre></td></tr></table></figure></p>
-<ol start="4">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mksdcard <span class="number">512</span>M sdcard.img</span><br></pre></td></tr></table></figure>
+<ol>
 <li>启动模拟器，现在你就可以使用Google帐户登录appstore了，免费软件尽情下载安装吧！</li>
 </ol>
 
@@ -316,13 +345,13 @@
 	
 	  <p>在android下如何通过程序设置APN连接呢，比如我想通过一个私有的APN连接到网络。查询到的结果是：</p>
 <ol>
-<li>第一步，创建activity，使用如下代码设置APN：</li>
+<li>第一步，创建activity，使用如下代码设置APN： </li>
 </ol>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ContentValues values = <span class="keyword">new</span> ContentValues();</span><br><span class="line">values.put(<span class="string">"NAME"</span>, <span class="string">"CMCC"</span>);</span><br><span class="line">values.put(<span class="string">"APN"</span>, <span class="string">"CMCC"</span>);</span><br><span class="line">values.put(<span class="string">"PROXY"</span>, <span class="string">"192.168.0.171"</span>);</span><br><span class="line">values.put(<span class="string">"PORT"</span>, <span class="string">"80"</span>);</span><br><span class="line">values.put(<span class="string">"USER"</span>, <span class="string">""</span>);</span><br><span class="line">values.put(<span class="string">"PASSWORD"</span>, <span class="string">""</span>);</span><br><span class="line"><span class="keyword">this</span>.getContentResolver().insert(Uri.parse(<span class="string">"content://telephony/carriers"</span>), values);</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ContentValues values = <span class="keyword">new</span> ContentValues();</span><br><span class="line">values.put(<span class="string">"NAME"</span>, <span class="string">"CMCC"</span>);</span><br><span class="line">values.put(<span class="string">"APN"</span>, <span class="string">"CMCC"</span>);</span><br><span class="line">values.put(<span class="string">"PROXY"</span>, <span class="string">"192.168.0.171"</span>);</span><br><span class="line">values.put(<span class="string">"PORT"</span>, <span class="string">"80"</span>);</span><br><span class="line">values.put(<span class="string">"USER"</span>, <span class="string">""</span>);</span><br><span class="line">values.put(<span class="string">"PASSWORD"</span>, <span class="string">""</span>);</span><br><span class="line"><span class="keyword">this</span>.getContentResolver().insert(Uri.parse(<span class="string">"content://telephony/carriers"</span>), values);</span><br></pre></td></tr></table></figure>
+<ol>
 <li>在AndroidManifest.xml中添加如下内容：</li>
 </ol>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">uses-permission</span> <span class="attribute">android:name</span>=<span class="value">"android.permission.WRITE_APN_SETTINGS"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">uses-permission</span> <span class="attribute">android:name</span>=<span class="value">"android.permission.WRITE_APN_SETTINGS"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -349,7 +378,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * set default apn</span><br><span class="line"> * <span class="doctag">@param</span> id</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setDefaultApn</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">　　ContentResolver cr = getContentResolver();</span><br><span class="line">　　ContentValues cv = <span class="keyword">new</span> ContentValues();</span><br><span class="line">　　cv.put(<span class="string">"apn_id"</span>, id);</span><br><span class="line"></span><br><span class="line">　　<span class="keyword">try</span> &#123;</span><br><span class="line">　　　　cr.update(preferapnUri, cv, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">　  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">　　　　<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">     　 e.printStackTrace();</span><br><span class="line">　 &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * set default apn</span><br><span class="line"> * <span class="doctag">@param</span> id</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setDefaultApn</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">　　ContentResolver cr = getContentResolver();</span><br><span class="line">　　ContentValues cv = <span class="keyword">new</span> ContentValues();</span><br><span class="line">　　cv.put(<span class="string">"apn_id"</span>, id);</span><br><span class="line"></span><br><span class="line">　　<span class="keyword">try</span> &#123;</span><br><span class="line">　　　　cr.update(preferapnUri, cv, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">　  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">　　　　<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">     　 e.printStackTrace();</span><br><span class="line">　 &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -376,7 +405,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This connects to the openbsd ftp site and</span></span><br><span class="line"><span class="comment"># downloads the recursive directory listing.</span></span><br><span class="line"><span class="keyword">import</span> pexpect</span><br><span class="line">child = pexpect.spawn (<span class="string">'ftp ftp.openbsd.org'</span>)</span><br><span class="line">child.expect (<span class="string">'Name .*: '</span>)</span><br><span class="line">child.sendline (<span class="string">'anonymous'</span>)</span><br><span class="line">child.expect (<span class="string">'Password:'</span>)</span><br><span class="line">child.sendline (<span class="string">'noah@example.com'</span>)</span><br><span class="line">child.expect (<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'cd pub'</span>)</span><br><span class="line">child.expect(<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'get ls-lR.gz'</span>)</span><br><span class="line">child.expect(<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'bye'</span>)</span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This connects to the openbsd ftp site and</span></span><br><span class="line"><span class="comment"># downloads the recursive directory listing.</span></span><br><span class="line"><span class="keyword">import</span> pexpect</span><br><span class="line">child = pexpect.spawn (<span class="string">'ftp ftp.openbsd.org'</span>)</span><br><span class="line">child.expect (<span class="string">'Name .*: '</span>)</span><br><span class="line">child.sendline (<span class="string">'anonymous'</span>)</span><br><span class="line">child.expect (<span class="string">'Password:'</span>)</span><br><span class="line">child.sendline (<span class="string">'noah@example.com'</span>)</span><br><span class="line">child.expect (<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'cd pub'</span>)</span><br><span class="line">child.expect(<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'get ls-lR.gz'</span>)</span><br><span class="line">child.expect(<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'bye'</span>)</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -384,48 +413,6 @@
   
 </div>
 	<a type="button" href="/2010-06-24-pyexpect.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Jun 22 2010 </div>
-			<div class="article-title"><a href="/2010-06-22-emacs_python_ide.html" >emacs下配置python开发环境</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <ol>
-<li>安装Pymacs， &lt;a href=&quot;http://pymacs.progiciels-bpi.ca/pymacs.html&quot; target=&quot;_blank&quot;&gt;http://pymacs.progiciels-bpi.ca/pymacs.html&lt;/a&gt;</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python setup.py install</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li>安装ropemode，&lt;a href=&quot;http://pypi.python.org/pypi/ropemode&quot; target=&quot;_blank&quot;&gt; http://pypi.python.org/pypi/ropemode&lt;/a&gt;</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python setup.py install</span><br></pre></td></tr></table></figure></p>
-<ol start="3">
-<li>安装ropemacs，&lt;a href=&quot;http://rope.sourceforge.net/ropemacs.html&quot; target=&quot;_blank&quot;&gt;http://rope.sourceforge.net/ropemacs.html&lt;/a&gt;</li>
-</ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python setup.py install</span><br></pre></td></tr></table></figure></p>
-<ol start="4">
-<li>在.emacs中加入</li>
-</ol>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-apply</span> <span class="string">"pymacs"</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-call</span> <span class="string">"pymacs"</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-eval</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-exec</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-load</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">pymacs-load</span> <span class="string">"ropemacs"</span> <span class="string">"rope-"</span>)</span><span class="list">(<span class="keyword">setq</span> ropemacs-enable-autoimport <span class="literal">t</span>)</span></span><br></pre></td></tr></table></figure></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-06-22-emacs_python_ide.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -475,48 +462,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
-		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
-		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
-		
-			<li><a href="/tags/macos/">macos<span>9</span></a></li>
-		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
-		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
-		
-			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
 		
 			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+			<li><a href="/tags/tools/">tools<span>4</span></a></li>
 		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
-		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
-		
-			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
-		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
-		
-			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
-		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
-		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
-		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
 		
 			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
 		
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+		
+			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
+		
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
+		
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+		
+			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
+		
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+		
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+		
+			<li><a href="/tags/objc/">objc<span>1</span></a></li>
+		
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+		
+			<li><a href="/tags/video/">video<span>1</span></a></li>
+		
+			<li><a href="/tags/python/">python<span>31</span></a></li>
+		
+			<li><a href="/tags/english/">english<span>1</span></a></li>
+		
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -527,6 +514,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -542,10 +533,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

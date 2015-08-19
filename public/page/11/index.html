@@ -116,6 +116,48 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Oct 24 2011 </div>
+			<div class="article-title"><a href="/2011-10-24-archlinux_ssh_http_privoxy.html" >ArchLinux下配置ssh/http代理</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>被墙煎的滋味确实很难受，ssh转发大家的方法还是比较方便的。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -C <span class="operator">-f</span> -N -g -D port user@Server</span><br></pre></td></tr></table></figure>
+<p>但是很多的软件并不一定支持sock5代理，这个时候就需要将sock5代理转化为http代理。ArchLinux下的配置安装方法为：</p>
+<ol>
+<li>安装Privoxy</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S privoxy</span><br></pre></td></tr></table></figure>
+<ol>
+<li>修改<code>/etc/privoxy/config</code> , 添加以下语句</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5   /               127.0.0.1:sock_port .&#10;listen-address  0.0.0.0:http_port</span><br></pre></td></tr></table></figure>
+<ol>
+<li>重新启动privoxy </li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/rc.d/privoxy restart</span><br></pre></td></tr></table></figure>
+<p>Bingo! Enjoy it:) </p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-10-24-archlinux_ssh_http_privoxy.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Oct 21 2011 </div>
 			<div class="article-title"><a href="/2011-10-21-spark_display_chinese_on_linux.html" >Spark在Linux下的乱码解决</a></div>						
 		</h3>
@@ -128,16 +170,16 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>@ &lt;a href=&quot;http://www.cnblogs.com/highriver/archive/2010/06/24/1764520.html&quot;&gt;http://www.cnblogs.com/highriver/archive/2010/06/24/1764520.html&lt;/a&gt;</p>
-<p>解决Spark乱码：</p>
-<p>Linux下Java图形界面中文显示乱码问题往往是所合适的jre/fonts里面没有合适的字体。</p>
-<p>比如spark会往~/.install4j里面写入最后一行，说明spark使用的jre是其自带的jre.</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JRE_VERSION    /home/gaoyibo/work/jdk1<span class="number">.6</span><span class="number">.0</span>_05    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">05</span></span><br><span class="line">JRE_VERSION    /usr    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">0</span></span><br><span class="line">JRE_VERSION    /home/gaoyibo/comodo/openfire/Spark/jre    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">02</span></span><br></pre></td></tr></table></figure></p>
-<p>所以遇到乱码问题解决：</p>
-<p>1，找到jre路径，创建fallback文件夹</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;path_to_spark&gt;/Spark/jre/lib/fonts</span><br><span class="line">sudo mkdir fallback</span><br></pre></td></tr></table></figure></p>
-<p>进入fallback文件夹，链接中文字体（我选的是文泉驿正黑）</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fallback</span><br><span class="line">sudo ln <span class="operator">-s</span> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo mkfontscale</span><br></pre></td></tr></table></figure></p>
+	  <p>@ <a href="http://www.cnblogs.com/highriver/archive/2010/06/24/1764520.html" target="_blank" rel="external">http://www.cnblogs.com/highriver/archive/2010/06/24/1764520.html</a>  </p>
+<p>解决Spark乱码：   </p>
+<p>Linux下Java图形界面中文显示乱码问题往往是所合适的jre/fonts里面没有合适的字体。   </p>
+<p>比如spark会往~/.install4j里面写入最后一行，说明spark使用的jre是其自带的jre.    </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JRE_VERSION    /home/gaoyibo/work/jdk1<span class="number">.6</span><span class="number">.0</span>_05    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">05</span></span><br><span class="line">JRE_VERSION    /usr    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">0</span></span><br><span class="line">JRE_VERSION    /home/gaoyibo/comodo/openfire/Spark/jre    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">02</span></span><br></pre></td></tr></table></figure>
+<p>所以遇到乱码问题解决：   </p>
+<p>1，找到jre路径，创建fallback文件夹    </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;path_to_spark&gt;/Spark/jre/lib/fonts</span><br><span class="line">sudo mkdir fallback</span><br></pre></td></tr></table></figure>
+<p>进入fallback文件夹，链接中文字体（我选的是文泉驿正黑）    </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fallback</span><br><span class="line">sudo ln <span class="operator">-s</span> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo mkfontscale</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -164,9 +206,9 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>参考链接: &lt;a href=&quot;http://blog.pluskid.org/?p=328&quot;&gt;http://blog.pluskid.org/?p=328&lt;/a&gt;</p>
-<p>最简单的解决办法：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LC_CTYPE=zh_CN.utf8 emacs &amp;</span><br></pre></td></tr></table></figure></p>
+	  <p>参考链接: <a href="http://blog.pluskid.org/?p=328" target="_blank" rel="external">http://blog.pluskid.org/?p=328</a>   </p>
+<p>最简单的解决办法：     </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LC_CTYPE=zh_CN.utf8 emacs &amp;</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -195,24 +237,24 @@
 	
 	  <p>Since someone is asking me to provide an English version about git proxy configuration in my former blog. Here it is. 1). Basically, I know two ways to use git behind a proxy.</p>
 <ol>
-<li>Set the http_proxy environment if git repository supports http connections.</li>
+<li>Set the http_proxy environment if git repository supports http connections. </li>
 </ol>
-<p>find a proxy command to bypass the connection: &lt;a href=&quot;https://bitbucket.org/chenzaichun/org2blog/src/e82a0244f078/media/connect.c&quot;&gt;connect.c&lt;/a&gt;</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -o connect connect.c</span><br><span class="line">mv connect ~/bin</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li>Set up a wrapper</li>
+<p>find a proxy command to bypass the connection: <a href="https://bitbucket.org/chenzaichun/org2blog/src/e82a0244f078/media/connect.c" target="_blank" rel="external">connect.c</a> </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -o connect connect.c</span><br><span class="line">mv connect ~/bin</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Set up a wrapper </li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"/home/gigi/bin/connect -H proxy.bupt.edu.cn:8080 <span class="variable">$@</span>"</span> &gt;&gt; ~/bin/proxy</span><br><span class="line">chmod +x ~/bin/proxy</span><br></pre></td></tr></table></figure></p>
-<p>Here I'm using a http proxy offered by my school, which uses port 8080     The connect command also support socket proxy. Use -S host:port to indicate that.</p>
-<ol start="3">
-<li>Update bashrc</li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"/home/gigi/bin/connect -H proxy.bupt.edu.cn:8080 <span class="variable">$@</span>"</span> &gt;&gt; ~/bin/proxy</span><br><span class="line">chmod +x ~/bin/proxy</span><br></pre></td></tr></table></figure>
+<p>Here I’m using a http proxy offered by my school, which uses port 8080     The connect command also support socket proxy. Use -S host:port to indicate that. </p>
+<ol>
+<li>Update bashrc </li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"export CONNECT_USER=bergwolf"</span> &gt;&gt; .bashrc</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"export GIT_PROXY_COMMAND=proxexport GIT_PROXY_COMMAND=proxy"</span> &gt;&gt; .bashrc</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"export CONNECT_USER=bergwolf"</span> &gt;&gt; .bashrc</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"export GIT_PROXY_COMMAND=proxexport GIT_PROXY_COMMAND=proxy"</span> &gt;&gt; .bashrc</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>The connect command reads proxy username and password from <code>CONNECT_USER</code> and <code>CONNECT_PASSWORD</code> evironment. The default username is current login user if no CONNECT_USER is set. Password will be requested interactively if CONNECT_PASSWORD is empty.   GIT_PROXY_COMMAND indicates that git should use the command &quot;proxy&quot;(the wrapper we setup at step 2) as its proxy_command. This can also be set in .git/config.</p>
+<p>The connect command reads proxy username and password from <code>CONNECT_USER</code> and <code>CONNECT_PASSWORD</code> evironment. The default username is current login user if no CONNECT_USER is set. Password will be requested interactively if CONNECT_PASSWORD is empty.   GIT_PROXY_COMMAND indicates that git should use the command “proxy”(the wrapper we setup at step 2) as its proxy_command. This can also be set in .git/config. </p>
 </blockquote>
-<p>Now, everything we need is done. Have a try:</p>
-<p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[gigi-<span class="string">Ubuntu:</span>bin]$git clone <span class="string">git:</span><span class="comment">//git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git</span></span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> <span class="regexp">/home/</span>gigi<span class="regexp">/bin/</span>e2fsprogs<span class="regexp">/.git/</span></span><br><span class="line">Enter proxy authentication password <span class="keyword">for</span> bergwolf<span class="annotation">@proxy</span>.bupt.edu.<span class="string">cn:</span></span><br><span class="line"><span class="string">remote:</span> Counting <span class="string">objects:</span> <span class="number">24006</span>, done.</span><br><span class="line"><span class="string">remote:</span> Compressing <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">4701</span>/<span class="number">4701</span>), done.</span><br><span class="line">ceiving <span class="string">objects:</span> <span class="number">1</span>% (<span class="number">241</span><span class="regexp">/24006), 43.99 KiB | 56 KiB/</span>s</span><br></pre></td></tr></table></figure></p>
+<p>Now, everything we need is done. Have a try: </p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[gigi-<span class="string">Ubuntu:</span>bin]$git clone <span class="string">git:</span><span class="comment">//git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git</span></span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> <span class="regexp">/home/</span>gigi<span class="regexp">/bin/</span>e2fsprogs<span class="regexp">/.git/</span></span><br><span class="line">Enter proxy authentication password <span class="keyword">for</span> bergwolf<span class="annotation">@proxy</span>.bupt.edu.<span class="string">cn:</span></span><br><span class="line"><span class="string">remote:</span> Counting <span class="string">objects:</span> <span class="number">24006</span>, done.</span><br><span class="line"><span class="string">remote:</span> Compressing <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">4701</span>/<span class="number">4701</span>), done.</span><br><span class="line">ceiving <span class="string">objects:</span> <span class="number">1</span>% (<span class="number">241</span><span class="regexp">/24006), 43.99 KiB | 56 KiB/</span>s</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -240,9 +282,9 @@
 	  
 	
 	  <p>The respondsToSelector: method is declared in the NSObject protocol. You have to make sure that your custom protocols also conform to the NSObject protocol. Change the declarations of your custom protocols from:</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">MyCustomProtocol</span>...@<span class="title">end</span></span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">MyCustomProtocol</span>...@<span class="title">end</span></span></span><br></pre></td></tr></table></figure>
 <p>To:</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">MyCustomProtocol</span> &lt;<span class="title">NSObject</span>&gt;...@<span class="title">end</span></span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">MyCustomProtocol</span> &lt;<span class="title">NSObject</span>&gt;...@<span class="title">end</span></span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -270,7 +312,7 @@
 	  
 	
 	  <p>vmware跑mac确实卡呀。网上抄了一段，目前还在体验中，效果具体怎么样，还有待观察。</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MemTrimRate=0&#10;sched.mem.pshare.enable = &#34;FALSE&#34;&#10;prefvmx.useRecommendedLockedMemSize = &#34;TRUE&#34;&#10;prefvmx.minVmMemPct = &#34;100&#34;&#10;mainMem.useNamedFile = &#34;FALSE&#34;&#10;MemAllowAutoScaleDown = &#34;FALSE&#34;&#10;mks.enable3d = &#34;FALSE&#34;&#10;mks.noBeep = &#34;true&#34;&#10;logging = &#34;FALSE&#34;&#10;hv.enableIfUnlocked = &#34;TRUE&#34;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MemTrimRate=0&#10;sched.mem.pshare.enable = &#34;FALSE&#34;&#10;prefvmx.useRecommendedLockedMemSize = &#34;TRUE&#34;&#10;prefvmx.minVmMemPct = &#34;100&#34;&#10;mainMem.useNamedFile = &#34;FALSE&#34;&#10;MemAllowAutoScaleDown = &#34;FALSE&#34;&#10;mks.enable3d = &#34;FALSE&#34;&#10;mks.noBeep = &#34;true&#34;&#10;logging = &#34;FALSE&#34;&#10;hv.enableIfUnlocked = &#34;TRUE&#34;</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -298,8 +340,8 @@
 	  
 	
 	  <p>在用x server连接到hp-ux的时候，open view启动失败：</p>
-<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">Warning: Missing charsets in String to FontSet conversion</span><br><span class="line">Warning: Cannot convert string "-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*" to type FontSet</span><br><span class="line">Warning: Missing charsets in String to FontSet conversion</span><br><span class="line">Warning: Unable to <span class="operator"><span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line"><span class="keyword">Warning</span>:</span><br><span class="line"><span class="keyword">Name</span>: FONTLIST_DEFAULT_TAG_STRING</span><br><span class="line"><span class="keyword">Class</span>: XmRendition</span><br><span class="line">Conversion <span class="keyword">failed</span>. Cannot <span class="keyword">load</span> font.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>:</span><br><span class="line"><span class="keyword">Name</span>: FONTLIST_DEFAULT_TAG_STRING</span><br><span class="line"><span class="keyword">Class</span>: XmRendition</span><br><span class="line">Conversion <span class="keyword">failed</span>. Cannot <span class="keyword">load</span> font.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line"><span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line"><span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line"><span class="keyword">Warning</span>:</span><br><span class="line"><span class="keyword">Name</span>: FONTLIST_DEFAULT_TAG_STRING</span><br><span class="line"><span class="keyword">Class</span>: XmRendition</span><br><span class="line">Conversion <span class="keyword">failed</span>. Cannot <span class="keyword">load</span> font.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-140-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-120-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-100-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-80-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">/opt/OV/<span class="keyword">bin</span></span></span><br></pre></td></tr></table></figure></p>
-<p>解决办法：
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">Warning: Missing charsets in String to FontSet conversion</span><br><span class="line">Warning: Cannot convert string "-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*" to type FontSet</span><br><span class="line">Warning: Missing charsets in String to FontSet conversion</span><br><span class="line">Warning: Unable to <span class="operator"><span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line"><span class="keyword">Warning</span>:</span><br><span class="line"><span class="keyword">Name</span>: FONTLIST_DEFAULT_TAG_STRING</span><br><span class="line"><span class="keyword">Class</span>: XmRendition</span><br><span class="line">Conversion <span class="keyword">failed</span>. Cannot <span class="keyword">load</span> font.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>:</span><br><span class="line"><span class="keyword">Name</span>: FONTLIST_DEFAULT_TAG_STRING</span><br><span class="line"><span class="keyword">Class</span>: XmRendition</span><br><span class="line">Conversion <span class="keyword">failed</span>. Cannot <span class="keyword">load</span> font.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface system-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line"><span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line"><span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line"><span class="keyword">Warning</span>:</span><br><span class="line"><span class="keyword">Name</span>: FONTLIST_DEFAULT_TAG_STRING</span><br><span class="line"><span class="keyword">Class</span>: XmRendition</span><br><span class="line">Conversion <span class="keyword">failed</span>. Cannot <span class="keyword">load</span> font.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line"><span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*:"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontList</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-140-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-120-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-100-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Cannot <span class="keyword">convert</span> <span class="keyword">string</span> <span class="string">"-*-helvetica-medium-r-*-80-*"</span> <span class="keyword">to</span> <span class="keyword">type</span> FontSet</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: <span class="keyword">Missing</span> charsets <span class="keyword">in</span> <span class="keyword">String</span> <span class="keyword">to</span> FontSet conversion</span><br><span class="line">ovw: Xt <span class="keyword">Warning</span>: Unable <span class="keyword">to</span> <span class="keyword">load</span> <span class="keyword">any</span> <span class="keyword">usable</span> fontset</span><br><span class="line">/opt/OV/<span class="keyword">bin</span></span></span><br></pre></td></tr></table></figure>
+<p>解决办法：<br>
 	
 	</div>
 	
@@ -325,13 +367,12 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>原文链接：&lt;a href=&quot;http://www.cocos2d-iphone.org/forum/topic/1076&quot; target=&quot;_blank&quot;&gt;http://www.cocos2d-iphone.org/forum/topic/1076&lt;/a&gt;
-在CCDirector.h添加</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>) popSceneWithTransition: (Class)c duration:(ccTime)t;</span><br></pre></td></tr></table></figure></p>
+	  <p>原文链接：<a href="http://www.cocos2d-iphone.org/forum/topic/1076" target="_blank">http://www.cocos2d-iphone.org/forum/topic/1076</a><br>在CCDirector.h添加</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>) popSceneWithTransition: (Class)c duration:(ccTime)t;</span><br></pre></td></tr></table></figure>
 <p>在CCDirector.m中添加</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>) popSceneWithTransition: (Class)transitionClass duration:(ccTime)t;</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">NSAssert</span>( runningScene_ != <span class="literal">nil</span>, <span class="string">@"A running Scene is needed"</span>);</span><br><span class="line"></span><br><span class="line">	[scenesStack_ removeLastObject];</span><br><span class="line">	<span class="built_in">NSUInteger</span> c = [scenesStack_ count];</span><br><span class="line">	<span class="keyword">if</span>( c == <span class="number">0</span> ) &#123;</span><br><span class="line">		[<span class="keyword">self</span> end];</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		CCScene* scene = [transitionClass transitionWithDuration:t scene:[scenesStack_ objectAtIndex:c-<span class="number">1</span>]];</span><br><span class="line">		[scenesStack_ replaceObjectAtIndex:c-<span class="number">1</span> withObject:scene];</span><br><span class="line">		nextScene_ = scene;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>) popSceneWithTransition: (Class)transitionClass duration:(ccTime)t;</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">NSAssert</span>( runningScene_ != <span class="literal">nil</span>, <span class="string">@"A running Scene is needed"</span>);</span><br><span class="line"></span><br><span class="line">	[scenesStack_ removeLastObject];</span><br><span class="line">	<span class="built_in">NSUInteger</span> c = [scenesStack_ count];</span><br><span class="line">	<span class="keyword">if</span>( c == <span class="number">0</span> ) &#123;</span><br><span class="line">		[<span class="keyword">self</span> end];</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		CCScene* scene = [transitionClass transitionWithDuration:t scene:[scenesStack_ objectAtIndex:c-<span class="number">1</span>]];</span><br><span class="line">		[scenesStack_ replaceObjectAtIndex:c-<span class="number">1</span> withObject:scene];</span><br><span class="line">		nextScene_ = scene;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>调用方式</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[CCDirector sharedDirector] popSceneWithTransition:[CCSlideInRTransition class] duration:<span class="number">0.5</span>f];</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[CCDirector sharedDirector] popSceneWithTransition:[CCSlideInRTransition class] duration:<span class="number">0.5</span>f];</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -359,9 +400,9 @@
 	  
 	
 	  <p>如果想在程序里面添加一个按钮“退出”，可以调用</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] terminateWithSuccess];</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] terminateWithSuccess];</span><br></pre></td></tr></table></figure>
 <p>在cocos2d-iphone中添加退出按钮后的响应函数：</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[CCDirector sharedDirector] end];</span><br><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] terminateWithSuccess];</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[CCDirector sharedDirector] end];</span><br><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] terminateWithSuccess];</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -389,7 +430,7 @@
 	  
 	
 	  <p>实现delegate: shouldStartLoadWithRequest</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)webView:(<span class="built_in">UIWebView</span> *)webView shouldStartLoadWithRequest:(<span class="built_in">NSURLRequest</span> *)request navigationType:(<span class="built_in">UIWebViewNavigationType</span>)navigationType </span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">NSURL</span>* url = [request  URL];</span><br><span class="line">	<span class="keyword">self</span><span class="variable">.urlEdit</span><span class="variable">.text</span> = [url absoluteString];</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)webView:(<span class="built_in">UIWebView</span> *)webView shouldStartLoadWithRequest:(<span class="built_in">NSURLRequest</span> *)request navigationType:(<span class="built_in">UIWebViewNavigationType</span>)navigationType </span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">NSURL</span>* url = [request  URL];</span><br><span class="line">	<span class="keyword">self</span><span class="variable">.urlEdit</span><span class="variable">.text</span> = [url absoluteString];</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -397,34 +438,6 @@
   
 </div>
 	<a type="button" href="/2011-07-05-uiwebview_current_url.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Jul 5 2011 </div>
-			<div class="article-title"><a href="/2011-07-05-ios_input_dialog.html" >iOS弹出输入框</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>最简单的弹出输入框的方法是添加一个UITextField到UIAlertView中：</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIAlertView</span> *myAlertView = [[<span class="built_in">UIAlertView</span> alloc] initWithTitle:<span class="string">@"Your title here"</span> message:<span class="string">@"this gets covered"</span> delegate:<span class="keyword">self</span> cancelButtonTitle:<span class="string">@"Cancel"</span> otherButtonTitles:<span class="string">@"OK"</span>, <span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">UITextField</span> *myTextField = [[<span class="built_in">UITextField</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">12.0</span>, <span class="number">45.0</span>, <span class="number">260.0</span>, <span class="number">25.0</span>)];</span><br><span class="line"></span><br><span class="line"><span class="built_in">CGAffineTransform</span> myTransform = <span class="built_in">CGAffineTransformMakeTranslation</span>(<span class="number">0.0</span>, <span class="number">130.0</span>);</span><br><span class="line">[myAlertView setTransform:myTransform];</span><br><span class="line"></span><br><span class="line">[myTextField setBackgroundColor:[<span class="built_in">UIColor</span> whiteColor]];</span><br><span class="line">[myAlertView addSubview:myTextField];</span><br><span class="line">[myAlertView show];</span><br><span class="line">[myAlertView release];</span><br></pre></td></tr></table></figure></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-07-05-ios_input_dialog.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -474,48 +487,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
-		
-			<li><a href="/tags/soap/">soap<span>1</span></a></li>
-		
-			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/portable/">portable<span>1</span></a></li>
-		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
-		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
-		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
-		
-			<li><a href="/tags/redis/">redis<span>1</span></a></li>
-		
-			<li><a href="/tags/python/">python<span>31</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
-		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
 		
 			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
 		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
-		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
-		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
-		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
-		
-			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
 		
 			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
+			<li><a href="/tags/git/">git<span>12</span></a></li>
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+		
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+		
+			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+		
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+		
+			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
+		
+			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+		
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+		
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+		
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+		
+			<li><a href="/tags/norton/">norton<span>1</span></a></li>
+		
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+		
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+		
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -526,6 +539,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -541,10 +558,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

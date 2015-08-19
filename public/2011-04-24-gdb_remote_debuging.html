@@ -116,13 +116,12 @@
 
 	<!-- content -->
 	<div class="mypage">		
-	    <p>参考链接：&lt;a href=&quot;http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx&quot;&gt;http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx&lt;/a&gt;</p>
+	    <p>参考链接：<a href="http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx" target="_blank" rel="external">http://blog.csdn.net/fertiland/archive/2008/01/01/2007533.aspx</a></p>
 <p>前面已经做好跨平台的交叉编译的工作，如果需要调试怎么办呢？这个时候就可以GDB的远程调试来实现。</p>
-<p>P.S. 如果没有windows的GDB，可以去&lt;a href=&quot;http://www.gnu.org/software/gdb/&quot; target=&quot;_blank&quot;&gt;下载&lt;/a&gt;或者自行编译。
-在windows端执行</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdbserver localhost:<span class="number">2345</span> photorec.exe</span><br></pre></td></tr></table></figure></p>
+<p>P.S. 如果没有windows的GDB，可以去<a href="http://www.gnu.org/software/gdb/" target="_blank">下载</a>或者自行编译。<br>在windows端执行 </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdbserver localhost:<span class="number">2345</span> photorec.exe</span><br></pre></td></tr></table></figure>
 <p>在archlinux下执行</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里我用的virtualbox，所以ip为10.0.2.2，请自行替换成windows的ip</span></span><br><span class="line"><span class="variable">$gdb</span> photorec.exe</span><br><span class="line">gdb&gt; target remote <span class="number">10.0</span>.<span class="number">2.2</span>:<span class="number">2345</span></span><br><span class="line">gdb &gt; ....</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里我用的virtualbox，所以ip为10.0.2.2，请自行替换成windows的ip</span></span><br><span class="line"><span class="variable">$gdb</span> photorec.exe</span><br><span class="line">gdb&gt; target remote <span class="number">10.0</span>.<span class="number">2.2</span>:<span class="number">2345</span></span><br><span class="line">gdb &gt; ....</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	

@@ -117,7 +117,7 @@
 	<!-- content -->
 	<div class="mypage">		
 	    <p>实现delegate: shouldStartLoadWithRequest</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)webView:(<span class="built_in">UIWebView</span> *)webView shouldStartLoadWithRequest:(<span class="built_in">NSURLRequest</span> *)request navigationType:(<span class="built_in">UIWebViewNavigationType</span>)navigationType </span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">NSURL</span>* url = [request  URL];</span><br><span class="line">	<span class="keyword">self</span><span class="variable">.urlEdit</span><span class="variable">.text</span> = [url absoluteString];</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)webView:(<span class="built_in">UIWebView</span> *)webView shouldStartLoadWithRequest:(<span class="built_in">NSURLRequest</span> *)request navigationType:(<span class="built_in">UIWebViewNavigationType</span>)navigationType </span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">NSURL</span>* url = [request  URL];</span><br><span class="line">	<span class="keyword">self</span><span class="variable">.urlEdit</span><span class="variable">.text</span> = [url absoluteString];</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	
@@ -174,7 +174,7 @@
     <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
     <!--       
   <li>
-    <li><a href="/categories/programming/">programming<span>84</span></a></li>
+    <li><a href="/categories/programming/">programming<span>85</span></a></li>
   </li>
  -->
     <!-- </ul> -->

@@ -117,40 +117,6 @@
 	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> May 7 2010 </div>
-			<div class="article-title"><a href="/2010-05-07-git_windows.html" >git windows</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>在测试过很多中dvcs之后，最后决定用git。git在linux表现是非常完美的，不管是中文文件名，还是log，同时git svn clone也相当的完美。但是在windows下，乱码问题一直得不到解决。万般无赖之下只有抛弃以前的历史，直接svn co下来之后，生成一个新的git repo。</p>
-<p>要想中文显示正常，在msysgit的安装目录下的/etc/git-completion.bash中增加一行：</p>
-<p><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alias</span> <span class="keyword">ls</span>=<span class="string">'ls --show-control-chars --color=auto'</span></span><br></pre></td></tr></table></figure></p>
-<p>修改<code>/etc/inputrc</code>中对应的行：</p>
-<p><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alias</span> <span class="keyword">ls</span>=<span class="string">'ls --show-control-chars --color=auto'</span></span><br></pre></td></tr></table></figure></p>
-<p>在<code>/etc/profile</code>中增加一行：</p>
-<p><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alias</span> <span class="keyword">ls</span>=<span class="string">'ls --show-control-chars --color=auto'</span></span><br></pre></td></tr></table></figure></p>
-<p>windows下完美解决问题。可惜windows下的repo在linux下是不能够正常使用的！等待解决git官方utf-8支持吧</p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-05-07-git_windows.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> May 7 2010 </div>
 			<div class="article-title"><a href="/2010-05-07-ms_vc_stderr_file.html" >ms vc下stderr到文件</a></div>						
 		</h3>
 	
@@ -163,7 +129,7 @@
 	  
 	
 	  <p>msvc下使用<code>fprintf(stderr, ...)</code>的时候，如果系统不是<code>/subsystem:console</code>的话，我们将看不到信息。如果程序要将消息重定位到文件的话，可以使用</p>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">program begein : FILE* newstderr = freopen(<span class="string">"xxx.log"</span>, <span class="string">"w"</span>, <span class="built_in">stderr</span>);</span><br><span class="line">program end: fclose(newstderr)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">program begein : FILE* newstderr = freopen(<span class="string">"xxx.log"</span>, <span class="string">"w"</span>, <span class="built_in">stderr</span>);</span><br><span class="line">program end: fclose(newstderr)</span><br></pre></td></tr></table></figure>
 <p>就可以了</p>
 
 	
@@ -221,9 +187,9 @@
 	
 	  <p>hg不能像svn那样保存密码，每次都要输入密码不太方便，可以通过</p>
 <p>编辑工程目录下<code>.hg/hgrc</code></p>
-<p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[paths]</span><br><span class="line"><span class="keyword">default</span> = <span class="string">https:</span><span class="comment">//projectname.googlecode.com/hg</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[paths]</span><br><span class="line"><span class="keyword">default</span> = <span class="string">https:</span><span class="comment">//projectname.googlecode.com/hg</span></span><br></pre></td></tr></table></figure>
 <p>把密码和用户名填到<code>URL</code>里就行啦</p>
-<p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[paths]</span><br><span class="line"><span class="keyword">default</span> = <span class="string">https:</span><span class="comment">//user:pwd@projectname.googlecode.com/hg</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[paths]</span><br><span class="line"><span class="keyword">default</span> = <span class="string">https:</span><span class="comment">//user:pwd@projectname.googlecode.com/hg</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -231,6 +197,68 @@
   
 </div>
 	<a type="button" href="/2010-05-07-google_code_hg_password_save.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> May 7 2010 </div>
+			<div class="article-title"><a href="/2010-05-07-git_windows.html" >git windows</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>在测试过很多中dvcs之后，最后决定用git。git在linux表现是非常完美的，不管是中文文件名，还是log，同时git svn clone也相当的完美。但是在windows下，乱码问题一直得不到解决。万般无赖之下只有抛弃以前的历史，直接svn co下来之后，生成一个新的git repo。</p>
+<p>要想中文显示正常，在msysgit的安装目录下的/etc/git-completion.bash中增加一行：</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alias</span> <span class="keyword">ls</span>=<span class="string">'ls --show-control-chars --color=auto'</span></span><br></pre></td></tr></table></figure>
+<p>修改<code>/etc/inputrc</code>中对应的行：</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alias</span> <span class="keyword">ls</span>=<span class="string">'ls --show-control-chars --color=auto'</span></span><br></pre></td></tr></table></figure>
+<p>在<code>/etc/profile</code>中增加一行：</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alias</span> <span class="keyword">ls</span>=<span class="string">'ls --show-control-chars --color=auto'</span></span><br></pre></td></tr></table></figure>
+<p>windows下完美解决问题。可惜windows下的repo在linux下是不能够正常使用的！等待解决git官方utf-8支持吧</p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-05-07-git_windows.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> May 7 2010 </div>
+			<div class="article-title"><a href="/2010-05-07-get_glsl_version.html" >获取glsl version</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>直接上代码:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getGlslVersion</span><span class="params">(<span class="keyword">int</span>* major, <span class="keyword">int</span>* minor)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> gl_major, gl_minor;</span><br><span class="line">    getGlVersion(&amp;gl_major, &amp;gl_minor);</span><br><span class="line"></span><br><span class="line">    *major = *minor = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (gl_major == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">// GL v1.x can only provide GLSL v1.00 as an extension</span></span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">char</span>* extstr = (<span class="keyword">const</span> <span class="keyword">char</span>*)glGetString(GL_EXTENSIONS);</span><br><span class="line">        <span class="keyword">if</span> ((extstr != <span class="literal">NULL</span>) &amp;&amp;</span><br><span class="line">            (<span class="built_in">strstr</span>(extstr, <span class="string">"GL_ARB_shading_lanuage_100"</span>) != <span class="literal">NULL</span>)) &#123;</span><br><span class="line">            *major = <span class="number">1</span>;</span><br><span class="line">            *minor = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (gl_major &gt;= <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="comment">// GL v2.0 and greater must parse the version string</span></span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">char</span>* verstr =</span><br><span class="line">            (<span class="keyword">const</span> <span class="keyword">char</span>*)glGetString(GL_SHADING_LANGUAGE_VERSION);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ((verstr != <span class="literal">NULL</span>) ||</span><br><span class="line">            (<span class="built_in">sscanf</span>(verstr, <span class="string">"%d.%d"</span>, major, minor) != <span class="number">2</span>)) &#123;</span><br><span class="line">            *major = *minor = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,</span><br><span class="line">                    <span class="string">"Invalid GL_SHADING_LANGUAGE_VERSION format!!!n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-05-07-get_glsl_version.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -250,7 +278,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">unlink /usr/lib/libGL.so</span><br><span class="line">unlink /usr/lib/libGL.so.<span class="number">1</span></span><br><span class="line">unlink</span><br><span class="line">/usr/lib64/libGL.so</span><br><span class="line">unlink /usr/lib64/libGL.so.<span class="number">1</span></span><br><span class="line"></span><br><span class="line">ln <span class="operator">-s</span> /usr/lib/nvidia-current/libGL.so /usr/lib/libGL.so.<span class="number">1</span></span><br><span class="line">ln <span class="operator">-s</span> /usr/lib64/nvidia-current/libGL.so /usr/lib64/libGL.so.<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">unlink /usr/lib/libGL.so</span><br><span class="line">unlink /usr/lib/libGL.so.<span class="number">1</span></span><br><span class="line">unlink</span><br><span class="line">/usr/lib64/libGL.so</span><br><span class="line">unlink /usr/lib64/libGL.so.<span class="number">1</span></span><br><span class="line"></span><br><span class="line">ln <span class="operator">-s</span> /usr/lib/nvidia-current/libGL.so /usr/lib/libGL.so.<span class="number">1</span></span><br><span class="line">ln <span class="operator">-s</span> /usr/lib64/nvidia-current/libGL.so /usr/lib64/libGL.so.<span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -279,7 +307,7 @@
 	
 	  <p>当用<code>libcurl</code>下载http文件不存在的时候，如果使用<code>curl_easy_perform</code>得到的结果也是<code>CURLE_OK</code> ，此时不能通过直接通过返回值来判断结果。</p>
 <p>可以使用</p>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> code = <span class="number">0</span>;</span><br><span class="line">curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &amp;code);</span><br><span class="line"><span class="keyword">if</span> (code != <span class="number">200</span>) &#123;</span><br><span class="line">     <span class="comment">// download error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> code = <span class="number">0</span>;</span><br><span class="line">curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &amp;code);</span><br><span class="line"><span class="keyword">if</span> (code != <span class="number">200</span>) &#123;</span><br><span class="line">     <span class="comment">// download error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -336,48 +364,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
 		
-			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
+			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
 		
-			<li><a href="/tags/soap/">soap<span>1</span></a></li>
-		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
-		
-			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
-		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
-		
-			<li><a href="/tags/VC/">VC<span>8</span></a></li>
-		
-			<li><a href="/tags/python/">python<span>31</span></a></li>
-		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
-		
-			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
-		
-			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
-		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
 			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
 		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
+		
+			<li><a href="/tags/programming/">programming<span>8</span></a></li>
+		
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
+		
+			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
+		
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
 		
 			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
 		
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+		
+			<li><a href="/tags/database/">database<span>2</span></a></li>
+		
+			<li><a href="/tags/Google-Chrome/">Google Chrome<span>1</span></a></li>
+		
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
+		
 			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
 		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
 		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+			<li><a href="/tags/python/">python<span>31</span></a></li>
+		
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+		
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -388,6 +416,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -403,10 +435,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

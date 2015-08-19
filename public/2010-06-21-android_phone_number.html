@@ -117,12 +117,12 @@
 	<!-- content -->
 	<div class="mypage">		
 	    <p>android下获取手机的号码</p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建电话管理</span></span><br><span class="line">TelephonyManager tm = (TelephonyManager);</span><br><span class="line"><span class="comment">//与手机建立连接</span></span><br><span class="line">activity.getSystemService(Context.TELEPHONY_SERVICE);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取手机号码</span></span><br><span class="line">String phoneId = tm.getLine1Number();</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建电话管理</span></span><br><span class="line">TelephonyManager tm = (TelephonyManager);</span><br><span class="line"><span class="comment">//与手机建立连接</span></span><br><span class="line">activity.getSystemService(Context.TELEPHONY_SERVICE);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取手机号码</span></span><br><span class="line">String phoneId = tm.getLine1Number();</span><br></pre></td></tr></table></figure>
 <p>在manifest file中添加</p>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--  记得在manifest file中添加 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">uses-permission</span>   <span class="attribute">android:name</span>=<span class="value">"android.permission.READ_PHONE_STATE"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--  记得在manifest file中添加 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">uses-permission</span>   <span class="attribute">android:name</span>=<span class="value">"android.permission.READ_PHONE_STATE"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <p>程序在模拟器上无法获取，必须连接手机</p>
 <p>参考连接：</p>
-<p>&lt;a href=&quot;http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html&quot; target=&quot;_blank&quot;&gt;http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html&lt;/a&gt;</p>
+<p><a href="http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html" target="_blank">http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html</a></p>
 	  
 	</div>
 	
@@ -179,7 +179,7 @@
     <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
     <!--       
   <li>
-    <li><a href="/categories/programming/">programming<span>84</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
+    <li><a href="/categories/programming/">programming<span>85</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
  -->
     <!-- </ul> -->

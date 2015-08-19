@@ -117,21 +117,21 @@
 	<!-- content -->
 	<div class="mypage">		
 	    <p>被墙煎的滋味确实很难受，ssh转发大家的方法还是比较方便的。</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -C <span class="operator">-f</span> -N -g -D port user@Server</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -C <span class="operator">-f</span> -N -g -D port user@Server</span><br></pre></td></tr></table></figure>
 <p>但是很多的软件并不一定支持sock5代理，这个时候就需要将sock5代理转化为http代理。ArchLinux下的配置安装方法为：</p>
 <ol>
 <li>安装Privoxy</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S privoxy</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S privoxy</span><br></pre></td></tr></table></figure>
+<ol>
 <li>修改<code>/etc/privoxy/config</code> , 添加以下语句</li>
 </ol>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5   /               127.0.0.1:sock_port .&#10;listen-address  0.0.0.0:http_port</span><br></pre></td></tr></table></figure></p>
-<ol start="3">
-<li>重新启动privoxy</li>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5   /               127.0.0.1:sock_port .&#10;listen-address  0.0.0.0:http_port</span><br></pre></td></tr></table></figure>
+<ol>
+<li>重新启动privoxy </li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/rc.d/privoxy restart</span><br></pre></td></tr></table></figure></p>
-<p>Bingo! Enjoy it:)</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/rc.d/privoxy restart</span><br></pre></td></tr></table></figure>
+<p>Bingo! Enjoy it:) </p>
 	  
 	</div>
 	

@@ -116,10 +116,10 @@
 
 	<!-- content -->
 	<div class="mypage">		
-	    <p><a href="http://www.miscdebris.net/blog/2007/06/01/speed-up-ssh-x11-forwarding/%22" target="_blank" rel="external">参考链接</a>, 原理就是通过-C压缩传输，-c修改加密算法来提高传输</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -c arcfour,blowfish-cbc -XC host.com</span><br></pre></td></tr></table></figure></p>
+	    <p><a href="http://www.miscdebris.net/blog/2007/06/01/speed-up-ssh-x11-forwarding/&quot;" target="_blank" rel="external">参考链接</a>, 原理就是通过-C压缩传输，-c修改加密算法来提高传输</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -c arcfour,blowfish-cbc -XC host.com</span><br></pre></td></tr></table></figure>
 <p>通过alias设置:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> ssh-x=<span class="string">'ssh -c arcfour,blowfish-cbc -XC'</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> ssh-x=<span class="string">'ssh -c arcfour,blowfish-cbc -XC'</span></span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	

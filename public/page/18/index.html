@@ -116,6 +116,35 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Sep 15 2010 </div>
+			<div class="article-title"><a href="/2010-09-15-first_gtk_program.html" >第一个GTK+程序</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>直接显示一个空白窗口，代码hello.c如下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* compile command:</span><br><span class="line">   gcc -o simple simple.c `pkg-config --libs --cflags gtk+-2.0`</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;gtk/gtk.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( <span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	GtkWidget* window;</span><br><span class="line">	GtkWidget* frame;</span><br><span class="line">	GtkWidget* label;</span><br><span class="line"></span><br><span class="line">	gtk_init(&amp;argc, &amp;argv);</span><br><span class="line"></span><br><span class="line">	window = gtk_window_new(GTK_WINDOW_TOPLEVEL);</span><br><span class="line"></span><br><span class="line">	gtk_window_set_title(GTK_WINDOW(window), <span class="string">"Hello World"</span>);</span><br><span class="line">	gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);</span><br><span class="line"></span><br><span class="line">	frame = gtk_fixed_new();</span><br><span class="line">	gtk_container_add(GTK_CONTAINER(window), frame);</span><br><span class="line">	</span><br><span class="line">	label = gtk_label_new(<span class="string">"Hello World"</span>);</span><br><span class="line">	gtk_fixed_put(GTK_FIXED(frame), label, <span class="number">10</span>, <span class="number">10</span>);</span><br><span class="line">	</span><br><span class="line">	g_signal_connect_swapped(G_OBJECT(window), <span class="string">"destroy"</span>,</span><br><span class="line">							 G_CALLBACK(gtk_main_quit), <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">	gtk_widget_show_all(window);</span><br><span class="line">	gtk_main();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://commondatastorage.googleapis.com/czc_public/appspotimages/2010-09-15-231732_208x108_scrot.png" alt="" width="208" height="108"></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-09-15-first_gtk_program.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Sep 5 2010 </div>
 			<div class="article-title"><a href="/2010-09-05-chrome_html5.html" >原来chromium不支持youtube html5</a></div>						
 		</h3>
@@ -129,7 +158,7 @@
 	  
 	
 	  <p>今天用chromium打开youtube用html5播放，提示浏览器不支持，可是原来用chrome的时候是可以直接看的。google发现，chromium没有带解码，无奈之下只好重新安装chrome。</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaourt -S google-chrome-dev</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaourt -S google-chrome-dev</span><br></pre></td></tr></table></figure>
 <p>幸好aur中用chrome dev channel</p>
 
 	
@@ -158,7 +187,7 @@
 	  
 	
 	  <p>今天准备用latex改一下简历，但是原来坚哥配置的texlive已经无法使用（因为squashfs升级，不支持旧版的格式），想了一下，还是装个新版的texlive吧！archlinux下安装：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S texlive-core textlive-langcjk texlive-latexextra</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S texlive-core textlive-langcjk texlive-latexextra</span><br></pre></td></tr></table></figure>
 <p>新版的xelatex对中文支持比较好了，所以直接修改原来用moderncv写的简历，然后xelatex xxx.tex生成pdf，相当的简单！</p>
 
 	
@@ -187,7 +216,7 @@
 	  
 	
 	  <p>emacs23安装后不能切换输入法（在archlinux，ubuntu上测试过，无论什么输入法ibus，scim，fcitx等等），但是其他的程序是没有任何问题的。解决办法，将<code>export LC_CTYPE=zh_CN.UTF-8</code>加入你的profile（.bashrc, environment等都可以）</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LC_CTYPE=zh_CN.UTF-<span class="number">8</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LC_CTYPE=zh_CN.UTF-<span class="number">8</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -215,7 +244,7 @@
 	  
 	
 	  <p>archlinux在启动的时候grub使用的是800x600，修改为1280x800时没有这个选项，google得知加上启动vga参数865就可以了</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vga=865</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vga=865</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -242,8 +271,8 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>在用aur安装完软件之后，默认使用pacman -Syu或者yaourt -Syu是不会更新aur安装的软件的，但是yaourt有个--aur参数可以升级aur，所以可以用下面的方法升级aur</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从AUR升级本地软件数据库并安装更新</span></span><br><span class="line">yaourt -Syu --aur</span><br></pre></td></tr></table></figure></p>
+	  <p>在用aur安装完软件之后，默认使用pacman -Syu或者yaourt -Syu是不会更新aur安装的软件的，但是yaourt有个–aur参数可以升级aur，所以可以用下面的方法升级aur</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从AUR升级本地软件数据库并安装更新</span></span><br><span class="line">yaourt -Syu --aur</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -271,7 +300,7 @@
 	  
 	
 	  <p>lxde是没有音量调节的，如果需要调整，只能在term中使用aslamixer进行调节，这样很不方便，幸好可以绑定快捷键，修改~/.config/openbox/lxde-rc.xml，添加</p>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- volume --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">keybind</span> <span class="attribute">key</span>=<span class="value">"W-Right"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">action</span> <span class="attribute">name</span>=<span class="value">"Execute"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">command</span>&gt;</span>amixer -q set Master 3%-<span class="tag">&lt;/<span class="title">command</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">keybind</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">keybind</span> <span class="attribute">key</span>=<span class="value">"W-Left"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">action</span> <span class="attribute">name</span>=<span class="value">"Execute"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">command</span>&gt;</span>amixer -q set Master unmute 3%+<span class="tag">&lt;/<span class="title">command</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">keybind</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- volume --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">keybind</span> <span class="attribute">key</span>=<span class="value">"W-Right"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">action</span> <span class="attribute">name</span>=<span class="value">"Execute"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">command</span>&gt;</span>amixer -q set Master 3%-<span class="tag">&lt;/<span class="title">command</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">keybind</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">keybind</span> <span class="attribute">key</span>=<span class="value">"W-Left"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">action</span> <span class="attribute">name</span>=<span class="value">"Execute"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">command</span>&gt;</span>amixer -q set Master unmute 3%+<span class="tag">&lt;/<span class="title">command</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">keybind</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>我绑定的是window＋left，right，其他按键类似</p>
 
 	
@@ -300,9 +329,9 @@
 	  
 	
 	  <p>添加源：</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxfr]&#10;Server = http://repo.archlinux.fr/x86_64</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxfr]&#10;Server = http://repo.archlinux.fr/x86_64</span><br></pre></td></tr></table></figure>
 <p>安装x86_64版本的yaourt的时候，出现failed retrieving yaourt，解决办法：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syy yaourt</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syy yaourt</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -330,15 +359,15 @@
 	  
 	
 	  <p>首先安装bluez, obexfs</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S bluez obexfs</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S bluez obexfs</span><br></pre></td></tr></table></figure>
 <p>启动bluetooth（也可以加入/etc/rc.conf的daemon中）</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/rc.d/bluetooth start</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/rc.d/bluetooth start</span><br></pre></td></tr></table></figure>
 <p>获取蓝牙的mac地址</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hcitool scan</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hcitool scan</span><br></pre></td></tr></table></figure>
 <p>启动另外一个term，然后进行连接，如：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluez-simple-agent hci0 <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluez-simple-agent hci0 <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F</span><br></pre></td></tr></table></figure>
 <p>在其他term中可以进行文件传输了：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obexftp -b <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F -p xxx.txt</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obexftp -b <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F -p xxx.txt</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -368,13 +397,11 @@
 	  <ol>
 <li>安装alsa-lib alsa-utils alsa-oss</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S alsa-lib alsa-utils alsa-oss</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li>
-<p>执行alsaconf，选择自己的声卡</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S alsa-lib alsa-utils alsa-oss</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>执行alsaconf，选择自己的声卡</p>
 </li>
-<li>
-<p>使用alsamixer调整音量</p>
+<li><p>使用alsamixer调整音量</p>
 </li>
 </ol>
 
@@ -384,36 +411,6 @@
   
 </div>
 	<a type="button" href="/2010-08-23-archlinux_sound.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Aug 8 2010 </div>
-			<div class="article-title"><a href="/2010-08-08-fuse-python.html" >安装fuse-python出现错误</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>错误为:</p>
-<p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NameError: <span class="property">name</span> 'cflags' <span class="keyword">is</span> <span class="keyword">not</span> defined</span><br></pre></td></tr></table></figure></p>
-<p>解决办法:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libfuse-dev libfuse2 fuse-utils python-dev</span><br></pre></td></tr></table></figure></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-08-08-fuse-python.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -463,48 +460,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
 		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
 		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
-		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
-		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
-		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
+			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
 		
 			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
 		
-			<li><a href="/tags/macos/">macos<span>9</span></a></li>
+			<li><a href="/tags/video/">video<span>1</span></a></li>
 		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
-		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
 		
 			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
 		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
 		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+			<li><a href="/tags/python/">python<span>31</span></a></li>
 		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+			<li><a href="/tags/go/">go<span>2</span></a></li>
 		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
 		
-			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
+			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
 		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+			<li><a href="/tags/apache/">apache<span>1</span></a></li>
 		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
 		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+		
+			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/samba/">samba<span>1</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -515,6 +512,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -530,10 +531,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

@@ -117,6 +117,38 @@
 	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 26 2012 </div>
+			<div class="article-title"><a href="/2012-12-26-git-submodule-remove.html" >删除git submodule</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>git并没有提供删除submodule的方法，只有手动删除。</p>
+<ol>
+<li>删除<code>.gitmodules</code>下submodule的信息</li>
+<li>删除<code>.git/config</code>下submodule的信息</li>
+<li>git rm –cache <submodule path=""></submodule></li>
+</ol>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-12-26-git-submodule-remove.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Dec 26 2012 </div>
 			<div class="article-title"><a href="/2012-12-26-archlinux-fontconfig-for-chinese.html" >archlinux下修改默认中文字体</a></div>						
 		</h3>
 	
@@ -130,7 +162,6 @@
 	
 	  <p>archlinux中的字体看起来真的很搓，试过ubuntu patch过的版本，还是不尽如人意。后来发现了<code>fontconfig-infinality</code>, 整个世界突然美好了。跟windows下的<code>MacType</code>差不多。</p>
 <p>当我将ibus换成fcitx之后，问题又出现了，3.6版本之后的fcitx竟然没有字体设置了，对于字体的控制必须使用fontconfig。这必须的修改默认的中文字体。</p>
-<p>
 	
 	</div>
 	
@@ -157,11 +188,11 @@
 	  
 	
 	  <p>编辑<code>/etc/rc.config.d/xfs</code></p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RUN_X_FONT_SERVER=<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RUN_X_FONT_SERVER=<span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>然后启动</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/init.d/xfs start</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/init.d/xfs start</span><br></pre></td></tr></table></figure>
 <p>检查是否启动:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep xfs</span><br><span class="line">netstat -an|grep <span class="number">7000</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep xfs</span><br><span class="line">netstat -an|grep <span class="number">7000</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -188,7 +219,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> <span class="variable">*true-mac-cut-buffer*</span> <span class="string">""</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> <span class="variable">*true-mac-cut-buffer2*</span> <span class="literal">t</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> interprogram-cut-function</span><br><span class="line">      <span class="quoted">'(lambda (str push)</span><br><span class="line">         (setq *true-mac-cut-buffer* str)</span><br><span class="line">         (setq *true-mac-cut-buffer2* push))</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> interprogram-paste-function</span><br><span class="line">      <span class="quoted">'(lambda () nil)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-cut-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">progn</span> </span><br><span class="line">        <span class="list">(<span class="keyword">true-mac-copy-function</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">kill-region</span> <span class="list">(<span class="keyword">point</span>)</span> <span class="list">(<span class="keyword">mark</span>)</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">beep</span>)</span>)</span>)</span></span><br><span class="line">        </span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-copy-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">mac-cut-function</span> </span><br><span class="line">       <span class="variable">*true-mac-cut-buffer*</span></span><br><span class="line">       <span class="variable">*true-mac-cut-buffer2*</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">beep</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-paste-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">kill-region</span> <span class="list">(<span class="keyword">point</span>)</span> <span class="list">(<span class="keyword">mark</span>)</span>)</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> <span class="list">(<span class="keyword">mac-paste-function</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-x] <span class="quoted">'true-mac-cut-function</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> <span class="string">"\S-c"</span> <span class="quoted">'true-mac-copy-function</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-v] <span class="quoted">'true-mac-paste-function</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-a] <span class="quoted">'mark-whole-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-s] <span class="quoted">'save-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-S] <span class="quoted">'write-file</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-p] <span class="quoted">'ps-print-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-o] <span class="quoted">'find-file</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-q] <span class="quoted">'save-buffers-kill-emacs</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-w] <span class="quoted">'kill-buffer-and-window</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-z] <span class="quoted">'undo</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-f] <span class="quoted">'isearch-forward</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-g] <span class="quoted">'query-replace</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-l] <span class="quoted">'goto-line</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-m] <span class="quoted">'iconify-frame</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-n] <span class="quoted">'new-frame</span>)</span></span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> <span class="variable">*true-mac-cut-buffer*</span> <span class="string">""</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> <span class="variable">*true-mac-cut-buffer2*</span> <span class="literal">t</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> interprogram-cut-function</span><br><span class="line">      <span class="quoted">'(lambda (str push)</span><br><span class="line">         (setq *true-mac-cut-buffer* str)</span><br><span class="line">         (setq *true-mac-cut-buffer2* push))</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> interprogram-paste-function</span><br><span class="line">      <span class="quoted">'(lambda () nil)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-cut-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">progn</span> </span><br><span class="line">        <span class="list">(<span class="keyword">true-mac-copy-function</span>)</span></span><br><span class="line">        <span class="list">(<span class="keyword">kill-region</span> <span class="list">(<span class="keyword">point</span>)</span> <span class="list">(<span class="keyword">mark</span>)</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">beep</span>)</span>)</span>)</span></span><br><span class="line">        </span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-copy-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">mac-cut-function</span> </span><br><span class="line">       <span class="variable">*true-mac-cut-buffer*</span></span><br><span class="line">       <span class="variable">*true-mac-cut-buffer2*</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">beep</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> true-mac-paste-function <span class="list">()</span> <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> mark-active</span><br><span class="line">      <span class="list">(<span class="keyword">kill-region</span> <span class="list">(<span class="keyword">point</span>)</span> <span class="list">(<span class="keyword">mark</span>)</span>)</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> <span class="list">(<span class="keyword">mac-paste-function</span>)</span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-x] <span class="quoted">'true-mac-cut-function</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> <span class="string">"\S-c"</span> <span class="quoted">'true-mac-copy-function</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-v] <span class="quoted">'true-mac-paste-function</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-a] <span class="quoted">'mark-whole-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-s] <span class="quoted">'save-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-S] <span class="quoted">'write-file</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-p] <span class="quoted">'ps-print-buffer</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-o] <span class="quoted">'find-file</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-q] <span class="quoted">'save-buffers-kill-emacs</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-w] <span class="quoted">'kill-buffer-and-window</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-z] <span class="quoted">'undo</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-f] <span class="quoted">'isearch-forward</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-g] <span class="quoted">'query-replace</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-l] <span class="quoted">'goto-line</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-m] <span class="quoted">'iconify-frame</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">global-set-key</span> [?\A-n] <span class="quoted">'new-frame</span>)</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -243,7 +274,7 @@
 	  
 	
 	  <p>在linux下让进程强制生成core dump文件：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcore &lt;-o filename&gt; pid</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcore &lt;-o filename&gt; pid</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -271,7 +302,7 @@
 	  
 	
 	  <p>emacs中插入当前时间是可以自定义格式的，方法如下：</p>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> insert-current-time <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> <span class="list">(<span class="keyword">format-time-string</span> <span class="string">"%Y-%m-%d %H:%M:%S"</span> <span class="list">(<span class="keyword">current-time</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> insert-current-time <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> <span class="list">(<span class="keyword">format-time-string</span> <span class="string">"%Y-%m-%d %H:%M:%S"</span> <span class="list">(<span class="keyword">current-time</span>)</span>)</span>)</span>)</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -301,8 +332,8 @@
 	  <p>经常使用<code>emacs</code>来查看日志文件，当日至文件特别大的时候，<code>emacs</code>的反应速度实在是不敢恭维。</p>
 <p>网上查了一下，有两个有趣的elisp，分享一下：</p>
 <ol>
-<li>http://www.cnblogs.com/yangyingchao/archive/2011/09/20/2182176.html</li>
-<li>http://www.emacswiki.org/emacs/vlf.el</li>
+<li><a href="http://www.cnblogs.com/yangyingchao/archive/2011/09/20/2182176.html" target="_blank" rel="external">http://www.cnblogs.com/yangyingchao/archive/2011/09/20/2182176.html</a></li>
+<li><a href="http://www.emacswiki.org/emacs/vlf.el" target="_blank" rel="external">http://www.emacswiki.org/emacs/vlf.el</a></li>
 </ol>
 <p><code>logviewer-mode</code> 是针对log4j格式优化的，带有高亮显示，带有文件分块读取</p>
 <p><code>vlf</code> 则是将文件分块读取。</p>
@@ -333,7 +364,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># to set it globally</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; /etc/ssh/ssh_config</span><br><span class="line"></span><br><span class="line"><span class="comment"># For per-user configuration</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; ~/.ssh/config</span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># to set it globally</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; /etc/ssh/ssh_config</span><br><span class="line"></span><br><span class="line"><span class="comment"># For per-user configuration</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; ~/.ssh/config</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -363,7 +394,7 @@
 	  <p>默认情况下ibus-googlepinyin的默认候选词个数是5个，但是ibus-googlepinyin并没有提供设置选项的功能，同时也没有配置文件。研究ibus的代码发现原来是写死了的 :(</p>
 <p>解决办法，修改<code>/usr/share/ibus-googlepinyin/engine.py</code></p>
 <p>将下面一行中的<code>set_page_size</code>参数替换为自己想要的，比如10个</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Engine</span><span class="params">(ibus.EngineBase)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, bus, object_path)</span>:</span></span><br><span class="line">        super(Engine, self).__init__(bus, object_path)</span><br><span class="line">        im_open_decoder()</span><br><span class="line">        self.__is_invalidate = <span class="keyword">False</span></span><br><span class="line">        self.__prepinyin_string = <span class="string">u""</span></span><br><span class="line">        self.__lookup_table = ibus.LookupTable()</span><br><span class="line">        self.__lookup_table.set_page_size(<span class="number">10</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Engine</span><span class="params">(ibus.EngineBase)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, bus, object_path)</span>:</span></span><br><span class="line">        super(Engine, self).__init__(bus, object_path)</span><br><span class="line">        im_open_decoder()</span><br><span class="line">        self.__is_invalidate = <span class="keyword">False</span></span><br><span class="line">        self.__prepinyin_string = <span class="string">u""</span></span><br><span class="line">        self.__lookup_table = ibus.LookupTable()</span><br><span class="line">        self.__lookup_table.set_page_size(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
 <p>重启ibus就行了。</p>
 
 	
@@ -372,41 +403,6 @@
   
 </div>
 	<a type="button" href="/2012-11-21-change-ibus-googlepinyin-default-candidates-number.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Oct 26 2012 </div>
-			<div class="article-title"><a href="/2012-10-26-floating-point-exception-on-suse.html" >Floating point exception on SUSE</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>今天想将redhat上面的程序放到suse 10上面运行，结果遇到了这个错误：</p>
-<blockquote>
-<p>Floating point exception</p>
-</blockquote>
-<p>ldd的显示结果：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># on suse</span></span><br><span class="line">ldd /usr/bin/pkginfo</span><br><span class="line">	linux-vdso.so.<span class="number">1</span> =&gt;  (<span class="number">0</span>x00007fff1c7fe000)</span><br><span class="line">	libc.so.<span class="number">6</span> =&gt; /lib64/libc.so.<span class="number">6</span> (<span class="number">0</span>x00002afe8e51c000)</span><br><span class="line">	/lib64/ld-linux-x86-<span class="number">64</span>.so.<span class="number">2</span> (<span class="number">0</span>x00002afe8e400000)</span><br><span class="line"></span><br><span class="line"><span class="comment"># on redhat</span></span><br><span class="line">ldd /usr/bin/pkginfo</span><br><span class="line">	libc.so.<span class="number">6</span> =&gt; /lib64/libc.so.<span class="number">6</span> (<span class="number">0</span>x0000003dd0800000)</span><br><span class="line">	/lib64/ld-linux-x86-<span class="number">64</span>.so.<span class="number">2</span> (<span class="number">0</span>x0000003dd0400000)</span><br></pre></td></tr></table></figure></p>
-<p>系统版本:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># on suse</span></span><br><span class="line">uname <span class="operator">-a</span></span><br><span class="line">Linux vmsuse <span class="number">2.6</span>.<span class="number">16.60</span>-<span class="number">0.54</span>.<span class="number">5</span>-default <span class="comment">#1 Fri Sep 4 01:28:03 UTC 2009 x86_64 x86_64 x86_64 GNU/Linux</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># on redhat</span></span><br><span class="line">uname <span class="operator">-a</span></span><br><span class="line">Linux temipll1 <span class="number">2.6</span>.<span class="number">18</span>-<span class="number">92</span>.el5 <span class="comment">#1 SMP Tue Apr 29 13:16:15 EDT 2008 x86_64 x86_64 x86_64 GNU/Linux</span></span><br></pre></td></tr></table></figure></p>
-<p>gcc版本：</p>
-<p>
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2012-10-26-floating-point-exception-on-suse.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -456,48 +452,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
-		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
-		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
-		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
-		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
-		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
-		
 			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
 		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
+			<li><a href="/tags/iOS/">iOS<span>1</span></a></li>
+		
+			<li><a href="/tags/scm/">scm<span>1</span></a></li>
 		
 			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
 		
-			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
-		
-			<li><a href="/tags/programming/">programming<span>7</span></a></li>
-		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
-		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
-		
-			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
-		
-			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
+			<li><a href="/tags/english/">english<span>1</span></a></li>
 		
 			<li><a href="/tags/macos/">macos<span>9</span></a></li>
 		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
 		
-			<li><a href="/tags/eclipse/">eclipse<span>1</span></a></li>
+			<li><a href="/tags/android/">android<span>18</span></a></li>
+		
+			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
+		
+			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
+		
+			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
+		
+			<li><a href="/tags/video/">video<span>1</span></a></li>
+		
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+		
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
+		
+			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+		
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
+		
+			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
+		
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -508,6 +504,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -523,10 +523,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

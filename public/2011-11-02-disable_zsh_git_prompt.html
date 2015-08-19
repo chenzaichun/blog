@@ -117,12 +117,12 @@
 	<!-- content -->
 	<div class="mypage">		
 	    <p>git prompt很多时候其实挺方面的，但是的我cd到一个nfs目录的时候，会出现卡很久的情况。果断disable掉。</p>
-<p>首先根据你的theme找到$PROMPT</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PROMPT</span></span><br></pre></td></tr></table></figure></p>
-<p>比如我的是:</p>
-<p><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%&#123;<span class="variable">$fg</span>_bold[red]%&#125;➜ %&#123;<span class="variable">$fg</span>_bold[green]%&#125;<span class="decorator">%p</span> %&#123;<span class="variable">$fg</span>[cyan]%&#125;<span class="decorator">%c</span> %&#123;<span class="variable">$fg</span>_bold[blue]%&#125;$(git_prompt_info)%&#123;<span class="variable">$fg</span>_bold[blue]%&#125; % %&#123;<span class="variable">$reset</span>_color%&#125;</span><br></pre></td></tr></table></figure></p>
-<p>去掉<code>git_prompt_info</code>即可:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PROMPT=<span class="string">"%&#123;<span class="variable">$fg_bold</span>[red]%&#125;➜ %&#123;<span class="variable">$fg_bold</span>[green]%&#125;%p %&#123;<span class="variable">$fg</span>[cyan]%&#125;%c %&#123;<span class="variable">$fg_bold</span>[blue]%&#125;%&#123;<span class="variable">$fg_bold</span>[blue]%&#125; % %&#123;<span class="variable">$reset_color</span>%&#125;"</span></span><br></pre></td></tr></table></figure></p>
+<p>首先根据你的theme找到$PROMPT </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PROMPT</span></span><br></pre></td></tr></table></figure>
+<p>比如我的是: </p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%&#123;<span class="variable">$fg</span>_bold[red]%&#125;➜ %&#123;<span class="variable">$fg</span>_bold[green]%&#125;<span class="decorator">%p</span> %&#123;<span class="variable">$fg</span>[cyan]%&#125;<span class="decorator">%c</span> %&#123;<span class="variable">$fg</span>_bold[blue]%&#125;$(git_prompt_info)%&#123;<span class="variable">$fg</span>_bold[blue]%&#125; % %&#123;<span class="variable">$reset</span>_color%&#125;</span><br></pre></td></tr></table></figure>
+<p>去掉<code>git_prompt_info</code>即可: </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PROMPT=<span class="string">"%&#123;<span class="variable">$fg_bold</span>[red]%&#125;➜ %&#123;<span class="variable">$fg_bold</span>[green]%&#125;%p %&#123;<span class="variable">$fg</span>[cyan]%&#125;%c %&#123;<span class="variable">$fg_bold</span>[blue]%&#125;%&#123;<span class="variable">$fg_bold</span>[blue]%&#125; % %&#123;<span class="variable">$reset_color</span>%&#125;"</span></span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	

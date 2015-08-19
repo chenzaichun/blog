@@ -119,23 +119,23 @@
 	    <ol>
 <li>安装xinetd和telnetd</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xinetd telnetd</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xinetd telnetd</span><br></pre></td></tr></table></figure>
+<ol>
 <li>/etc/inetd.conf在安装过程中已经配置好，修改/etc/xinetd.conf</li>
 </ol>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults&#123;&#10;&#10;# Please note that you need a log_type line to be able to use log_on_success&#10;# and log_on_failure. The default is the following :&#10;# log_type = SYSLOG daemon info&#10;## Please note that you need a log_type line to be able to use log_on_success&#10;## and log_on_failure. The default is the following :## log_type = SYSLOG daemon info&#10;# &#10;## start the insert content&#10;#&#10;# if I have time, I will add some comments about this part.&#10;# instances =60#log_type = SYSLOG authpriv&#10;# log_on_success = HOST PID&#10;# log_on_failure = HOST&#10;# tcps = 25 30&#10;## end the insert content</span><br></pre></td></tr></table></figure></p>
-<ol start="3">
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults&#123;&#10;&#10;# Please note that you need a log_type line to be able to use log_on_success&#10;# and log_on_failure. The default is the following :&#10;# log_type = SYSLOG daemon info&#10;## Please note that you need a log_type line to be able to use log_on_success&#10;## and log_on_failure. The default is the following :## log_type = SYSLOG daemon info&#10;# &#10;## start the insert content&#10;#&#10;# if I have time, I will add some comments about this part.&#10;# instances =60#log_type = SYSLOG authpriv&#10;# log_on_success = HOST PID&#10;# log_on_failure = HOST&#10;# tcps = 25 30&#10;## end the insert content</span><br></pre></td></tr></table></figure>
+<ol>
 <li>添加/etc/xinet.d/telnet</li>
 </ol>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#service telnet&#10;#&#123;&#10;#disable = no&#10;#flags = REUSE&#10;#socket_type = stream&#10;#wait = no&#10;#user = root&#10;#server = /usr/sbin/in.telnetd&#10;#log_on_failure += USERID&#10;#&#125;</span><br></pre></td></tr></table></figure></p>
-<ol start="4">
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#service telnet&#10;#&#123;&#10;#disable = no&#10;#flags = REUSE&#10;#socket_type = stream&#10;#wait = no&#10;#user = root&#10;#server = /usr/sbin/in.telnetd&#10;#log_on_failure += USERID&#10;#&#125;</span><br></pre></td></tr></table></figure>
+<ol>
 <li>重启xinetd服务</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/xinetd restart</span><br></pre></td></tr></table></figure></p>
-<ol start="5">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/xinetd restart</span><br></pre></td></tr></table></figure>
+<ol>
 <li>测试一下</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet <span class="number">127.0</span>.<span class="number">0.1</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet <span class="number">127.0</span>.<span class="number">0.1</span></span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	

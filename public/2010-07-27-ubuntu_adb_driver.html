@@ -120,16 +120,16 @@
 <ol>
 <li>使用root账户(su到root账户)</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line"><span class="built_in">cd</span> android-tools-dir</span><br><span class="line">./adb <span class="built_in">kill</span>-server</span><br><span class="line">./adb start-server</span><br><span class="line">./adb devices</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li>修改udev的权限,&lt;a href=&quot;http://bradchow.wordpress.com/2009/02/16/adb-on-windows-and-ubuntu-linux/&quot; target=&quot;_blank&quot;&gt;猛击这里&lt;/a&gt;,添加/etc/udev/rules.d/50-android.rules</li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line"><span class="built_in">cd</span> android-tools-dir</span><br><span class="line">./adb <span class="built_in">kill</span>-server</span><br><span class="line">./adb start-server</span><br><span class="line">./adb devices</span><br></pre></td></tr></table></figure>
+<ol>
+<li>修改udev的权限,<a href="http://bradchow.wordpress.com/2009/02/16/adb-on-windows-and-ubuntu-linux/" target="_blank">猛击这里</a>,添加/etc/udev/rules.d/50-android.rules</li>
 </ol>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SUBSYSTEM==&#34;usb&#34;, SYSFS(idVendor)==&#34;18d1&#34;, MODE=&#34;0666&#34;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SUBSYSTEM==&#34;usb&#34;, SYSFS(idVendor)==&#34;18d1&#34;, MODE=&#34;0666&#34;</span><br></pre></td></tr></table></figure>
 <p>然后修改执行权限</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod a+rx /etc/udev/rules.d/<span class="number">50</span>-android.rules</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod a+rx /etc/udev/rules.d/<span class="number">50</span>-android.rules</span><br></pre></td></tr></table></figure>
 <p>重启udev</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo restart udev</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line"><span class="built_in">cd</span> android-tools-dir</span><br><span class="line">./adb <span class="built_in">kill</span>-server</span><br><span class="line">./adb start-server</span><br><span class="line">./adb devices</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo restart udev</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line"><span class="built_in">cd</span> android-tools-dir</span><br><span class="line">./adb <span class="built_in">kill</span>-server</span><br><span class="line">./adb start-server</span><br><span class="line">./adb devices</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	

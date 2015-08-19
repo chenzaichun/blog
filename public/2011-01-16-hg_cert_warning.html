@@ -117,12 +117,12 @@
 	<!-- content -->
 	<div class="mypage">		
 	    <p>升级到mercurial 1.7.3之后，频繁会遇到像这样的错误：</p>
-<p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warning: bitbucket<span class="class">.org</span> certificate not verified (check web<span class="class">.cacerts</span> config setting)</span><br></pre></td></tr></table></figure></p>
-<p>解决办法，参考链接：&lt;a href=&quot;http://mercurial.selenic.com/wiki/CACertificates&quot;&gt;http://mercurial.selenic.com/wiki/CACertificates&lt;/a&gt;</p>
-<p>下载&lt;a href=&quot;http://curl.haxx.se/ca/cacert.pem&quot; target=&quot;_blank&quot;&gt;http://curl.haxx.se/ca/cacert.pem&lt;/a&gt;到本地，然后在～/.hgrc里面添加这样一句：</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[web]&#10;cacerts=/path/to/cacert.pem</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warning: bitbucket<span class="class">.org</span> certificate not verified (check web<span class="class">.cacerts</span> config setting)</span><br></pre></td></tr></table></figure>
+<p>解决办法，参考链接：<a href="http://mercurial.selenic.com/wiki/CACertificates" target="_blank" rel="external">http://mercurial.selenic.com/wiki/CACertificates</a></p>
+<p>下载<a href="http://curl.haxx.se/ca/cacert.pem" target="_blank">http://curl.haxx.se/ca/cacert.pem</a>到本地，然后在～/.hgrc里面添加这样一句：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[web]&#10;cacerts=/path/to/cacert.pem</span><br></pre></td></tr></table></figure>
 <p>或者直接禁用：</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[web]&#10;cacerts =</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[web]&#10;cacerts =</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	
@@ -179,7 +179,7 @@
     <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
     <!--       
   <li>
-    <li><a href="/categories/programming/">programming<span>84</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
+    <li><a href="/categories/programming/">programming<span>85</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
  -->
     <!-- </ul> -->

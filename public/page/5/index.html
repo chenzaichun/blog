@@ -116,6 +116,35 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> May 24 2012 </div>
+			<div class="article-title"><a href="/2012-05-24-get-chinese-pinyin-python.html" >python获取中文拼音首字母以进行检索</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>主要的原理是GBK汉字是按拼音顺序编码的。</p>
+<p>源代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">multi_get_letter</span><span class="params">(str_input)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(str_input, unicode):</span><br><span class="line">        unicode_str = str_input</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            unicode_str = str_input.decode(<span class="string">'utf8'</span>)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                unicode_str = str_input.decode(<span class="string">'gbk'</span>)</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                <span class="keyword">print</span> <span class="string">'unknown coding'</span></span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    return_list = []</span><br><span class="line">    <span class="keyword">for</span> one_unicode <span class="keyword">in</span> unicode_str:</span><br><span class="line">        <span class="comment">#print single_get_first(one_unicode)</span></span><br><span class="line">        return_list.append(single_get_first(one_unicode))</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>.join(return_list)    </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">single_get_first</span><span class="params">(unicode1)</span>:</span></span><br><span class="line">    str1 = unicode1.encode(<span class="string">'gbk'</span>)</span><br><span class="line">    <span class="keyword">try</span>:        </span><br><span class="line">        ord(str1)</span><br><span class="line">        <span class="keyword">return</span> str1</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        asc = ord(str1[<span class="number">0</span>]) * <span class="number">256</span> + ord(str1[<span class="number">1</span>]) - <span class="number">65536</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">20319</span> <span class="keyword">and</span> asc &lt;= -<span class="number">20284</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'a'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">20283</span> <span class="keyword">and</span> asc &lt;= -<span class="number">19776</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'b'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">19775</span> <span class="keyword">and</span> asc &lt;= -<span class="number">19219</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'c'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">19218</span> <span class="keyword">and</span> asc &lt;= -<span class="number">18711</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'d'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">18710</span> <span class="keyword">and</span> asc &lt;= -<span class="number">18527</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'e'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">18526</span> <span class="keyword">and</span> asc &lt;= -<span class="number">18240</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'f'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">18239</span> <span class="keyword">and</span> asc &lt;= -<span class="number">17923</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'g'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">17922</span> <span class="keyword">and</span> asc &lt;= -<span class="number">17418</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'h'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">17417</span> <span class="keyword">and</span> asc &lt;= -<span class="number">16475</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'j'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">16474</span> <span class="keyword">and</span> asc &lt;= -<span class="number">16213</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'k'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">16212</span> <span class="keyword">and</span> asc &lt;= -<span class="number">15641</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'l'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">15640</span> <span class="keyword">and</span> asc &lt;= -<span class="number">15166</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'m'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">15165</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14923</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'n'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14922</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14915</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'o'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14914</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14631</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'p'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14630</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14150</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'q'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14149</span> <span class="keyword">and</span> asc &lt;= -<span class="number">14091</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'r'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">14090</span> <span class="keyword">and</span> asc &lt;= -<span class="number">13119</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'s'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">13118</span> <span class="keyword">and</span> asc &lt;= -<span class="number">12839</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'t'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">12838</span> <span class="keyword">and</span> asc &lt;= -<span class="number">12557</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'w'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">12556</span> <span class="keyword">and</span> asc &lt;= -<span class="number">11848</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'x'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">11847</span> <span class="keyword">and</span> asc &lt;= -<span class="number">11056</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'y'</span></span><br><span class="line">        <span class="keyword">if</span> asc &gt;= -<span class="number">11055</span> <span class="keyword">and</span> asc &lt;= -<span class="number">10247</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'z'</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printresult</span><span class="params">(str)</span>:</span></span><br><span class="line">    print(<span class="string">'中文: "%s" --&gt; 首字母拼音: "%s"'</span> % (str, multi_get_letter(str)))</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    printresult(<span class="string">'木哈哈'</span>)</span><br><span class="line">    printresult(<span class="string">'小李'</span>)</span><br><span class="line">    printresult(<span class="string">'大王'</span>)</span><br><span class="line">    printresult(<span class="string">'大d王m'</span>)</span><br></pre></td></tr></table></figure>
+<p>我的修改版本:</p>
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2012-05-24-get-chinese-pinyin-python.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> May 23 2012 </div>
 			<div class="article-title"><a href="/2012-05-23-pygments-dot-rb-on-heroku.html" >pygments.rb on heroku</a></div>						
 		</h3>
@@ -129,7 +158,7 @@
 	  
 	
 	  <p>如何在<code>heroku</code>中使用<code>pygments.rb</code>呢？在<code>plugin/pygments_code.rb</code>中添加：</p>
-<p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'rubypython'</span></span><br><span class="line"><span class="constant">RubyPython</span>.start(<span class="symbol">:python_exe</span> =&gt; <span class="string">"python2.6"</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'rubypython'</span></span><br><span class="line"><span class="constant">RubyPython</span>.start(<span class="symbol">:python_exe</span> =&gt; <span class="string">"python2.6"</span>)</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -166,8 +195,7 @@
 <ol>
 <li>ssh到dotcloud上：</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotcloud ssh</span><br></pre></td></tr></table></figure></p>
-<p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotcloud ssh</span><br></pre></td></tr></table></figure>
 	
 	</div>
 	
@@ -194,8 +222,7 @@
 	  
 	
 	  <p>使用<code>time(NULL)</code>得到的是从1970年1月1日到目前的秒，这种精度很多时候是不够用的。为了得到毫秒级的精度，需要使用<code>gettimeofday</code>:</p>
-<p>直接上代码:</p>
-<p>
+<p>直接上代码: </p>
 	
 	</div>
 	
@@ -222,7 +249,7 @@
 	  
 	
 	  <p>添加<code>source/robots.txt</code>:</p>
-<p><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">---</span><br><span class="line"></span><span class="header">layout: nil</span><br><span class="line">---</span></span><br><span class="line">User-agent: *</span><br><span class="line">Disallow: </span><br><span class="line">Sitemap: &#123;&#123; site.url &#125;&#125;/sitemap.xml</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">---</span><br><span class="line"></span><span class="header">layout: nil</span><br><span class="line">---</span></span><br><span class="line">User-agent: *</span><br><span class="line">Disallow: </span><br><span class="line">Sitemap: &#123;&#123; site.url &#125;&#125;/sitemap.xml</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -250,19 +277,14 @@
 	  
 	
 	  <ol>
-<li>
-<p><a href="http://jasongarber.com/blog/2012/01/10/deploying-octopress-to-heroku-with-a-custom-buildpack">Heroku上搭建octopress自动deploy环境</a> -- 这篇文章可以让你绕过生成静态页面的过程，通过heroku的build pack在push的时候自动将markdown编译成静态页面。</p>
+<li><p><a href="http://jasongarber.com/blog/2012/01/10/deploying-octopress-to-heroku-with-a-custom-buildpack">Heroku上搭建octopress自动deploy环境</a> – 这篇文章可以让你绕过生成静态页面的过程，通过heroku的build pack在push的时候自动将markdown编译成静态页面。</p>
 </li>
-<li>
-<p><a href="http://geron.heroku.com/blog/2012/03/octo-cate-cn-spo/">Octopress博客分类添加中文支持</a></p>
+<li><p><a href="http://geron.heroku.com/blog/2012/03/octo-cate-cn-spo/">Octopress博客分类添加中文支持</a></p>
 </li>
-<li>
-<p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/">如何從Wordpress Migrate到Octopress</a></p>
+<li><p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/">如何從Wordpress Migrate到Octopress</a></p>
 </li>
-<li>
-<p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/">301轉址</a> -- 重定向feed到atom.xml</p>
-<p>比如我的设置:</p>
-<p>
+<li><p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/">301轉址</a> – 重定向feed到atom.xml</p>
+<p> 比如我的设置:</p>
 	
 	</div>
 	
@@ -289,9 +311,8 @@
 	  
 	
 	  <p>今天准备用SOAPpy来写一个最简单的soap client，代码如下：</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> SOAPpy <span class="keyword">import</span> WSDL</span><br><span class="line">WSDLfile = <span class="string">"/path/to/webservice"</span></span><br><span class="line"></span><br><span class="line">wsdlObject = WSDL.Proxy(WSDLfile)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Available methods:'</span></span><br><span class="line"><span class="keyword">for</span> method <span class="keyword">in</span> wsdlObject.methods.keys() :</span><br><span class="line">    <span class="keyword">print</span> method</span><br><span class="line">    ci = wsdlObject.methods[method]</span><br><span class="line">    <span class="comment"># you can also use ci.inparams</span></span><br><span class="line">    <span class="keyword">for</span> param <span class="keyword">in</span> ci.outparams :</span><br><span class="line">        <span class="comment"># list of the function and type </span></span><br><span class="line">        <span class="comment"># depending of the wsdl...</span></span><br><span class="line">        <span class="keyword">print</span> param.name.ljust(<span class="number">20</span>) , param.type</span><br><span class="line">    <span class="keyword">print</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> SOAPpy <span class="keyword">import</span> WSDL</span><br><span class="line">WSDLfile = <span class="string">"/path/to/webservice"</span></span><br><span class="line"></span><br><span class="line">wsdlObject = WSDL.Proxy(WSDLfile)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Available methods:'</span></span><br><span class="line"><span class="keyword">for</span> method <span class="keyword">in</span> wsdlObject.methods.keys() :</span><br><span class="line">    <span class="keyword">print</span> method</span><br><span class="line">    ci = wsdlObject.methods[method]</span><br><span class="line">    <span class="comment"># you can also use ci.inparams</span></span><br><span class="line">    <span class="keyword">for</span> param <span class="keyword">in</span> ci.outparams :</span><br><span class="line">        <span class="comment"># list of the function and type </span></span><br><span class="line">        <span class="comment"># depending of the wsdl...</span></span><br><span class="line">        <span class="keyword">print</span> param.name.ljust(<span class="number">20</span>) , param.type</span><br><span class="line">    <span class="keyword">print</span></span><br></pre></td></tr></table></figure>
 <p>运行的时候出现了这个问题：</p>
-<p>
 	
 	</div>
 	
@@ -321,11 +342,11 @@
 <blockquote>
 <p>Error 500 fault: SOAP-ENV:Server[no subcode]</p>
 </blockquote>
-<p>通过tcpdump分析得到，gsoap强制加入了一个SOAP-ENV:mustUnderstand=&quot;1&quot;属性，而web service方不能解析该属性。</p>
-<p>解决办法,</p>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// set mustUnderstand to 0</span></span><br><span class="line">soap.mustUnderstand=<span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
+<p>通过tcpdump分析得到，gsoap强制加入了一个SOAP-ENV:mustUnderstand=”1”属性，而web service方不能解析该属性。</p>
+<p>解决办法, </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// set mustUnderstand to 0</span></span><br><span class="line">soap.mustUnderstand=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 <p>修改soapC.cpp, 注释掉<code>soap-&gt;mustUnderstand=1</code>这一行：</p>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 <span class="title">soap_out_SOAP_ENV__Header</span><span class="params">(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</span><br><span class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></span><br><span class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &amp;a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SOAP_FMAC3 <span class="keyword">int</span> SOAP_FMAC4 <span class="title">soap_out_SOAP_ENV__Header</span><span class="params">(<span class="keyword">struct</span> soap *soap, <span class="keyword">const</span> <span class="keyword">char</span> *tag, <span class="keyword">int</span> id, <span class="keyword">const</span> <span class="keyword">struct</span> SOAP_ENV__Header *a, <span class="keyword">const</span> <span class="keyword">char</span> *type)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">  (<span class="keyword">void</span>)soap; (<span class="keyword">void</span>)tag; (<span class="keyword">void</span>)id; (<span class="keyword">void</span>)type;</span><br><span class="line">  <span class="keyword">if</span> (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_SOAP_ENV__Header), type))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="comment">//soap-&gt;mustUnderstand = 1;</span></span><br><span class="line">  <span class="keyword">if</span> (soap_out_PointerTons1__AuthenticationInfo(soap, <span class="string">"ns1:AuthenticationInfo"</span>, -<span class="number">1</span>, &amp;a-&gt;ns1__AuthenticationInfo_, <span class="string">""</span>))</span><br><span class="line">    <span class="keyword">return</span> soap-&gt;error;</span><br><span class="line">  <span class="keyword">return</span> soap_element_end_out(soap, tag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -353,7 +374,7 @@
 	  
 	
 	  <p><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20090308/159740.html" target="_blank" rel="external">参考链接</a></p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -A <span class="operator">-s</span>0 host endpoint-host-name</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -A <span class="operator">-s</span>0 host endpoint-host-name</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -384,8 +405,8 @@
 <blockquote>
 <p>Error 200 fault: SOAP-ENV:Client[no subcode]</p>
 </blockquote>
-<p>解决办法：</p>
-<p>修改gsoap init的endpoint为全路径解决问题。</p>
+<p>解决办法： </p>
+<p>修改gsoap init的endpoint为全路径解决问题。 </p>
 
 	
 	</div>
@@ -393,35 +414,6 @@
   
 </div>
 	<a type="button" href="/2012-02-28-gsoap-error-200.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Feb 6 2012 </div>
-			<div class="article-title"><a href="/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html" >MacOS X emacs拖拽打开文件</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>emacs在mac os x中拖拽文件到buffer会在buffer中嵌入显示拖拽文件的内容，解决办法：</p>
-<p>在<code>.emacs</code>中加入</p>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">define-key</span> global-map [ns-drag-file] <span class="quoted">'my-ns-open-files</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> my-ns-open-files <span class="list">()</span></span><br><span class="line">  <span class="string">"Open files in the list `ns-input-file'."</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">mapc</span> <span class="quoted">'find-file</span> ns-input-file)</span></span><br><span class="line">  <span class="list">(<span class="keyword">setq</span> ns-input-file <span class="literal">nil</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2012-02-06-emacs-open-files-by-dragging-and-dropping-on-mac-os-x-7.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -471,48 +463,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
 		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
 		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
 		
-			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
 		
-			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
 		
-			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+		
+			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
+		
+			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
+		
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
 		
 			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
 		
-			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+		
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+		
+			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
 			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
 		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
 		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
 		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
+			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
 		
-			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
+			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
 		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
 		
-			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
-		
-			<li><a href="/tags/vs/">vs<span>2</span></a></li>
-		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
-		
-			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
-		
-			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
-		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+			<li><a href="/tags/database/">database<span>2</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -523,6 +515,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -538,10 +534,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

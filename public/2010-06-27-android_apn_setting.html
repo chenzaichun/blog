@@ -118,13 +118,13 @@
 	<div class="mypage">		
 	    <p>在android下如何通过程序设置APN连接呢，比如我想通过一个私有的APN连接到网络。查询到的结果是：</p>
 <ol>
-<li>第一步，创建activity，使用如下代码设置APN：</li>
+<li>第一步，创建activity，使用如下代码设置APN： </li>
 </ol>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ContentValues values = <span class="keyword">new</span> ContentValues();</span><br><span class="line">values.put(<span class="string">"NAME"</span>, <span class="string">"CMCC"</span>);</span><br><span class="line">values.put(<span class="string">"APN"</span>, <span class="string">"CMCC"</span>);</span><br><span class="line">values.put(<span class="string">"PROXY"</span>, <span class="string">"192.168.0.171"</span>);</span><br><span class="line">values.put(<span class="string">"PORT"</span>, <span class="string">"80"</span>);</span><br><span class="line">values.put(<span class="string">"USER"</span>, <span class="string">""</span>);</span><br><span class="line">values.put(<span class="string">"PASSWORD"</span>, <span class="string">""</span>);</span><br><span class="line"><span class="keyword">this</span>.getContentResolver().insert(Uri.parse(<span class="string">"content://telephony/carriers"</span>), values);</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ContentValues values = <span class="keyword">new</span> ContentValues();</span><br><span class="line">values.put(<span class="string">"NAME"</span>, <span class="string">"CMCC"</span>);</span><br><span class="line">values.put(<span class="string">"APN"</span>, <span class="string">"CMCC"</span>);</span><br><span class="line">values.put(<span class="string">"PROXY"</span>, <span class="string">"192.168.0.171"</span>);</span><br><span class="line">values.put(<span class="string">"PORT"</span>, <span class="string">"80"</span>);</span><br><span class="line">values.put(<span class="string">"USER"</span>, <span class="string">""</span>);</span><br><span class="line">values.put(<span class="string">"PASSWORD"</span>, <span class="string">""</span>);</span><br><span class="line"><span class="keyword">this</span>.getContentResolver().insert(Uri.parse(<span class="string">"content://telephony/carriers"</span>), values);</span><br></pre></td></tr></table></figure>
+<ol>
 <li>在AndroidManifest.xml中添加如下内容：</li>
 </ol>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">uses-permission</span> <span class="attribute">android:name</span>=<span class="value">"android.permission.WRITE_APN_SETTINGS"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">uses-permission</span> <span class="attribute">android:name</span>=<span class="value">"android.permission.WRITE_APN_SETTINGS"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	
@@ -181,7 +181,7 @@
     <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
     <!--       
   <li>
-    <li><a href="/categories/programming/">programming<span>84</span></a></li>
+    <li><a href="/categories/programming/">programming<span>85</span></a></li>
   </li>
  -->
     <!-- </ul> -->

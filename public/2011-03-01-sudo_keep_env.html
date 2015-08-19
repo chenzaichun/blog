@@ -118,7 +118,7 @@
 	<div class="mypage">		
 	    <p>由于很多时候访问网络需要通过代理，虽然export了http_proxy, https_proxy等等，但是sudo下这些环境变量是不会被保持的。</p>
 <p>解决办法：修改/etc/sudoers文件（visudo），添加你想保留的环境变量</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Defaults env_keep += &#34;http_proxy https_proxy ftp_proxy&#34;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Defaults env_keep += &#34;http_proxy https_proxy ftp_proxy&#34;</span><br></pre></td></tr></table></figure>
 <p>这样sudo就可以保留变量了</p>
 	  
 	</div>

@@ -116,6 +116,36 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Nov 15 2011 </div>
+			<div class="article-title"><a href="/2011-11-15-convert-hg-to-git.html" >将hg转换为git</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>首先安装<a href="http://repo.or.cz/w/fast-export.git" target="_blank" rel="external">fast-export</a></p>
+<p>基本命令: </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> somedir</span><br><span class="line">git init .</span><br><span class="line">/path/to/fast-export -r /path/to/hg/repo</span><br><span class="line">git reset HEAD</span><br><span class="line">git checkout .</span><br><span class="line">git remote add origin user@server/repo.git</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>That’s all! </p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-11-15-convert-hg-to-git.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Nov 13 2011 </div>
 			<div class="article-title"><a href="/2011-11-13-pymacs.html" >Pymacs</a></div>						
 		</h3>
@@ -134,15 +164,15 @@
 <p>Pymacs is a powerful tool which, once started from Emacs, allows both-way communication between Emacs Lisp and Python. Pymacs aims Python as an extension language for Emacs rather than the other way around, and this asymmetry is reflected in some design choices. Within Emacs Lisp code, one may load and use Python modules. Python functions may themselves use Emacs services, and handle Emacs Lisp objects kept in Emacs Lisp space.</p>
 </blockquote>
 <p>archlinux下安装pymacs：</p>
-<p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> pacman -S pymacs</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> pacman -S pymacs</span><br></pre></td></tr></table></figure>
 <p>配置pymacs, 在.emacs中添加：</p>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-apply</span> <span class="string">"pymacs"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-call</span> <span class="string">"pymacs"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-eval</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-exec</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-load</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">eval-after-load</span> <span class="string">"pymacs"</span></span><br><span class="line">  <span class="quoted">'(add-to-list 'pymacs-load-path <span class="string">"~/.emacs.d/my-lisp"</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-apply</span> <span class="string">"pymacs"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-call</span> <span class="string">"pymacs"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-eval</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-exec</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-load</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">eval-after-load</span> <span class="string">"pymacs"</span></span><br><span class="line">  <span class="quoted">'(add-to-list 'pymacs-load-path <span class="string">"~/.emacs.d/my-lisp"</span>)</span>)</span></span><br></pre></td></tr></table></figure>
 <p>现在我要将elisp的函数</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">(defun proxyfunc(server port)</span><br><span class="line">  (setenv "http_proxy" (concat "http://"server":"port))</span><br><span class="line">  (setenv "https_proxy" (concat "https://"server":"port))</span><br><span class="line">  (setenv "ftp_proxy" (concat "http://"server":"port))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">(defun proxyoff()</span><br><span class="line">  (interactive)</span><br><span class="line">  (setenv "http_proxy" "")</span><br><span class="line">  (setenv "https_proxy" "")</span><br><span class="line">  (setenv "ftp_proxy" "")</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">(defun proxyjpn()</span><br><span class="line">  (interactive)</span><br><span class="line">  (proxyfunc "16.146.32.100" "8080")</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">转换为Python, 如setproxy.py(将文件放到PYTHONPATH中）</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">    </span><br><span class="line">import os</span><br><span class="line">    </span><br><span class="line">def setproxy(server, port):</span><br><span class="line">    os.environ['http_proxy'] = 'http://'+server+':'+port</span><br><span class="line">    os.environ['https_proxy'] = 'https://'+server+':'+port</span><br><span class="line">	os.environ['ftp_proxy'] = 'http://'+server+':'+port</span><br><span class="line">    </span><br><span class="line">def setproxyoff():</span><br><span class="line">    os.environ['http_proxy'] = ""</span><br><span class="line">	os.environ['https_proxy'] = ""</span><br><span class="line">	os.environ['ftp_proxy'] = ""</span><br><span class="line">    </span><br><span class="line">def proxyjpn():</span><br><span class="line">    setproxy('16.146.32.100', '8080')</span><br><span class="line">    </span><br><span class="line">def proxysgn():</span><br><span class="line">    setproxy('16.158.235.10', '8080')</span><br><span class="line">    </span><br><span class="line"># need to set the property interaction</span><br><span class="line">proxyjpn.interaction = ""</span><br><span class="line">setproxyoff.interaction = ""</span><br><span class="line">proxysgn.interaction = ""</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">(defun proxyfunc(server port)</span><br><span class="line">  (setenv "http_proxy" (concat "http://"server":"port))</span><br><span class="line">  (setenv "https_proxy" (concat "https://"server":"port))</span><br><span class="line">  (setenv "ftp_proxy" (concat "http://"server":"port))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">(defun proxyoff()</span><br><span class="line">  (interactive)</span><br><span class="line">  (setenv "http_proxy" "")</span><br><span class="line">  (setenv "https_proxy" "")</span><br><span class="line">  (setenv "ftp_proxy" "")</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">(defun proxyjpn()</span><br><span class="line">  (interactive)</span><br><span class="line">  (proxyfunc "16.146.32.100" "8080")</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">转换为Python, 如setproxy.py(将文件放到PYTHONPATH中）</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">    </span><br><span class="line">import os</span><br><span class="line">    </span><br><span class="line">def setproxy(server, port):</span><br><span class="line">    os.environ['http_proxy'] = 'http://'+server+':'+port</span><br><span class="line">    os.environ['https_proxy'] = 'https://'+server+':'+port</span><br><span class="line">	os.environ['ftp_proxy'] = 'http://'+server+':'+port</span><br><span class="line">    </span><br><span class="line">def setproxyoff():</span><br><span class="line">    os.environ['http_proxy'] = ""</span><br><span class="line">	os.environ['https_proxy'] = ""</span><br><span class="line">	os.environ['ftp_proxy'] = ""</span><br><span class="line">    </span><br><span class="line">def proxyjpn():</span><br><span class="line">    setproxy('16.146.32.100', '8080')</span><br><span class="line">    </span><br><span class="line">def proxysgn():</span><br><span class="line">    setproxy('16.158.235.10', '8080')</span><br><span class="line">    </span><br><span class="line"># need to set the property interaction</span><br><span class="line">proxyjpn.interaction = ""</span><br><span class="line">setproxyoff.interaction = ""</span><br><span class="line">proxysgn.interaction = ""</span><br></pre></td></tr></table></figure>
 <p>通过pymacs-load加载python模块</p>
-<p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">M</span>-x pymacs-load <span class="keyword">RET</span> MODULE <span class="keyword">RET</span> PREFIX <span class="keyword">RET</span></span><br><span class="line"># <span class="keyword">e</span>.<span class="keyword">g</span>. <span class="keyword">M</span>-x pymacs-load setproxy <span class="keyword">RET</span> setproxy- <span class="keyword">RET</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">M</span>-x pymacs-load <span class="keyword">RET</span> MODULE <span class="keyword">RET</span> PREFIX <span class="keyword">RET</span></span><br><span class="line"># <span class="keyword">e</span>.<span class="keyword">g</span>. <span class="keyword">M</span>-x pymacs-load setproxy <span class="keyword">RET</span> setproxy- <span class="keyword">RET</span></span><br></pre></td></tr></table></figure>
 <p>调用python函数</p>
-<p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">M</span>-x setproxy-proxyjpn</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">M</span>-x setproxy-proxyjpn</span><br></pre></td></tr></table></figure>
 <p>对于pymacs的详细教程，中文版可以参考<a href="http://www.cnblogs.com/rockcode/archive/2011/08/20/2147404.html" target="_blank" rel="external">这里</a></p>
 
 	
@@ -171,7 +201,7 @@
 	  
 	
 	  <p>Emacs中获取进程（系统）环境变量并进行修改，比如<code>http_proxy</code>:</p>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">getenv</span> <span class="string">"http_proxy"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setenv</span> <span class="string">"http_proxy"</span> <span class="string">"http://proxy-server:port"</span>)</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">getenv</span> <span class="string">"http_proxy"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setenv</span> <span class="string">"http_proxy"</span> <span class="string">"http://proxy-server:port"</span>)</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -200,7 +230,7 @@
 	
 	  <p>由于经常登陆solaris和hp-ux，所以将默认的backspace key设置成了^H（Terminal中设置），可是当使用在本地使用sqlplus的时候，会出现backspace无法使用的情况（Linux默认stty erase可以为^?），解决办法：</p>
 <p>在<code>~/.profile</code>文件中加入：</p>
-<p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty <span class="keyword">erase</span> ^<span class="literal">H</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty <span class="keyword">erase</span> ^<span class="literal">H</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -230,15 +260,15 @@
 	  <ol>
 <li>安装rpm文件</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh *.rpm</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh *.rpm</span><br></pre></td></tr></table></figure>
+<ol>
 <li>查找已经安装的包</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh *.rpm</span><br></pre></td></tr></table></figure></p>
-<ol start="3">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh *.rpm</span><br></pre></td></tr></table></figure>
+<ol>
 <li>删除已经安装的包</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh *.rpm</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh *.rpm</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -265,7 +295,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">import</span> ftplib</span><br><span class="line">session = ftplib.FTP(<span class="string">'server'</span>,<span class="string">'usr'</span>,<span class="string">'pwd'</span>)</span><br><span class="line">myfile = open(<span class="string">'test.txt'</span>,<span class="string">'rb'</span>)</span><br><span class="line">session.storbinary(<span class="string">'STOR test.txt'</span>, myfile)</span><br><span class="line">myfile.close()</span><br><span class="line">session.quit()</span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">import</span> ftplib</span><br><span class="line">session = ftplib.FTP(<span class="string">'server'</span>,<span class="string">'usr'</span>,<span class="string">'pwd'</span>)</span><br><span class="line">myfile = open(<span class="string">'test.txt'</span>,<span class="string">'rb'</span>)</span><br><span class="line">session.storbinary(<span class="string">'STOR test.txt'</span>, myfile)</span><br><span class="line">myfile.close()</span><br><span class="line">session.quit()</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -292,7 +322,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> browse-url-generic-program <span class="list">(<span class="keyword">executable-find</span> <span class="string">"google-chrome"</span>)</span></span><br><span class="line">      browse-url-browser-function <span class="quoted">'browse-url-generic</span>)</span></span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> browse-url-generic-program <span class="list">(<span class="keyword">executable-find</span> <span class="string">"google-chrome"</span>)</span></span><br><span class="line">      browse-url-browser-function <span class="quoted">'browse-url-generic</span>)</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -320,8 +350,8 @@
 	  
 	
 	  <p>修改views/rss.xml， 在xml版本定义下加入：</p>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml-stylesheet type="text/css" href="&#123;&#123; blog.baseurl &#125;&#125;/themes/iNove/style.css" ?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>测试一下是否成功:)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml-stylesheet type="text/css" href="&#123;&#123; blog.baseurl &#125;&#125;/themes/iNove/style.css" ?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>测试一下是否成功:) </p>
 
 	
 	</div>
@@ -348,7 +378,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> my-org-post-process-hook<span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">while</span> <span class="list">(<span class="keyword">re-search-forward</span> <span class="string">"&lt;pre "</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">replace-match</span></span><br><span class="line">     <span class="string">"&lt;pre style="</span>background-color<span class="keyword">:#272821</span><span class="comment">; color: #F8F8F2" "</span></span><br><span class="line">          <span class="literal">t</span> <span class="literal">nil</span>)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">add-hook</span> <span class="quoted">'org-export-html-final-hook</span> <span class="quoted">'my-org-post-process-hook</span>)</span></span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> my-org-post-process-hook<span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">while</span> <span class="list">(<span class="keyword">re-search-forward</span> <span class="string">"&lt;pre "</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">replace-match</span></span><br><span class="line">     <span class="string">"&lt;pre style="</span>background-color<span class="keyword">:#272821</span><span class="comment">; color: #F8F8F2" "</span></span><br><span class="line">          <span class="literal">t</span> <span class="literal">nil</span>)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">add-hook</span> <span class="quoted">'org-export-html-final-hook</span> <span class="quoted">'my-org-post-process-hook</span>)</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -377,7 +407,7 @@
 	
 	  <p>大家可能注意到用阅读器读取rss的时候代码看不清（没有背景色的缘故)，所以修改了一下代码的输出：</p>
 <p>添加两个函数来插入代码：</p>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> i-babel-quote <span class="list">(<span class="keyword">beg</span> end str1 str2)</span></span><br><span class="line">  <span class="list">(<span class="keyword">goto-char</span> end)</span></span><br><span class="line">  <span class="list">(<span class="keyword">forward-line</span> <span class="number">1</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> str2)</span></span><br><span class="line">  <span class="list">(<span class="keyword">newline</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">goto-char</span> beg)</span></span><br><span class="line">  <span class="list">(<span class="keyword">forward-line</span> <span class="number">-1</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">newline</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> str1)</span></span><br><span class="line">)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> isrc <span class="list">(<span class="keyword">St</span> Ed)</span></span><br><span class="line">  <span class="string">"Enclose code for Emacser.cn"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span> <span class="string">"r"</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">beg</span> St)</span> <span class="list">(<span class="keyword">end</span> Ed)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"%s %s"</span> beg end)</span></span><br><span class="line">    <span class="list">(<span class="keyword">i-babel-quote</span> beg end</span></span></span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> i-babel-quote <span class="list">(<span class="keyword">beg</span> end str1 str2)</span></span><br><span class="line">  <span class="list">(<span class="keyword">goto-char</span> end)</span></span><br><span class="line">  <span class="list">(<span class="keyword">forward-line</span> <span class="number">1</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> str2)</span></span><br><span class="line">  <span class="list">(<span class="keyword">newline</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">goto-char</span> beg)</span></span><br><span class="line">  <span class="list">(<span class="keyword">forward-line</span> <span class="number">-1</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">newline</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> str1)</span></span><br><span class="line">)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> isrc <span class="list">(<span class="keyword">St</span> Ed)</span></span><br><span class="line">  <span class="string">"Enclose code for Emacser.cn"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span> <span class="string">"r"</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">beg</span> St)</span> <span class="list">(<span class="keyword">end</span> Ed)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"%s %s"</span> beg end)</span></span><br><span class="line">    <span class="list">(<span class="keyword">i-babel-quote</span> beg end</span></span></span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -385,39 +415,6 @@
   
 </div>
 	<a type="button" href="/2011-11-02-micolog_code_backgroud_in_rss_output.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Nov 2 2011 </div>
-			<div class="article-title"><a href="/2011-11-02-disable_zsh_git_prompt.html" >禁用zsh中的git prompt</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>git prompt很多时候其实挺方面的，但是的我cd到一个nfs目录的时候，会出现卡很久的情况。果断disable掉。</p>
-<p>首先根据你的theme找到$PROMPT</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PROMPT</span></span><br></pre></td></tr></table></figure></p>
-<p>比如我的是:</p>
-<p><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%&#123;<span class="variable">$fg</span>_bold[red]%&#125;➜ %&#123;<span class="variable">$fg</span>_bold[green]%&#125;<span class="decorator">%p</span> %&#123;<span class="variable">$fg</span>[cyan]%&#125;<span class="decorator">%c</span> %&#123;<span class="variable">$fg</span>_bold[blue]%&#125;$(git_prompt_info)%&#123;<span class="variable">$fg</span>_bold[blue]%&#125; % %&#123;<span class="variable">$reset</span>_color%&#125;</span><br></pre></td></tr></table></figure></p>
-<p>去掉<code>git_prompt_info</code>即可:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PROMPT=<span class="string">"%&#123;<span class="variable">$fg_bold</span>[red]%&#125;➜ %&#123;<span class="variable">$fg_bold</span>[green]%&#125;%p %&#123;<span class="variable">$fg</span>[cyan]%&#125;%c %&#123;<span class="variable">$fg_bold</span>[blue]%&#125;%&#123;<span class="variable">$fg_bold</span>[blue]%&#125; % %&#123;<span class="variable">$reset_color</span>%&#125;"</span></span><br></pre></td></tr></table></figure></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-11-02-disable_zsh_git_prompt.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -467,48 +464,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
-		
-			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
-		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
-		
-			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
-		
-			<li><a href="/tags/go/">go<span>2</span></a></li>
-		
-			<li><a href="/tags/dns/">dns<span>1</span></a></li>
-		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
-		
-			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
-		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
-		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
-		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
-		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
-		
-			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
-		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
-		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
-		
-			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
-		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
 		
 			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
 		
-			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+		
+			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+		
+			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
+		
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+		
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
+		
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+		
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
+		
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
+		
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+		
+			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+		
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
+		
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
+		
+			<li><a href="/tags/network/">network<span>1</span></a></li>
+		
+			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
+		
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
 		
 			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
 		
+			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -519,6 +516,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -534,10 +535,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

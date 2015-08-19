@@ -117,9 +117,9 @@
 	<!-- content -->
 	<div class="mypage">		
 	    <p>如果在使用boost::program_options的时候传递了未注册的参数，则会throw exception，要想无视我们不需要的参数，可以通过使用<code>basic_command_line_parser</code>类来分析 (而不是<code>parse_command_line</code>) ，并且调用该类的 allow_unregistered 方法：</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parsed_options = </span><br><span class="line">    command_line_parser(argv, argc).</span><br><span class="line">    options(desc).allow_unregistered().run();</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parsed_options = </span><br><span class="line">    command_line_parser(argv, argc).</span><br><span class="line">    options(desc).allow_unregistered().run();</span><br></pre></td></tr></table></figure>
 <p>如果使用配置文件，则在调用<code>parse_config_file</code>的时候第三个参数传递true:</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parse_config_file&lt;<span class="keyword">char</span>&gt;(cfgfilename, desc, <span class="literal">true</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parse_config_file&lt;<span class="keyword">char</span>&gt;(cfgfilename, desc, <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	
@@ -176,7 +176,7 @@
     <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
     <!--       
   <li>
-    <li><a href="/categories/programming/">programming<span>84</span></a></li>
+    <li><a href="/categories/programming/">programming<span>85</span></a></li>
   </li>
  -->
     <!-- </ul> -->

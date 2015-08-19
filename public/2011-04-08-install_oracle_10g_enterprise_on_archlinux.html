@@ -116,19 +116,12 @@
 
 	<!-- content -->
 	<div class="mypage">		
-	    <p>按照arch wiki做就可以了。参考链接&lt;a href=&quot;https://wiki.archlinux.org/index.php/Oracle&quot;&gt;https://wiki.archlinux.org/index.php/Oracle&lt;/a&gt;</p>
+	    <p>按照arch wiki做就可以了。参考链接<a href="https://wiki.archlinux.org/index.php/Oracle" target="_blank" rel="external">https://wiki.archlinux.org/index.php/Oracle</a></p>
 <p>这里，安装ksh的步骤可以跳过，直接安装pdksh</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S pdksh</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S pdksh</span><br></pre></td></tr></table></figure>
 <p>安装过程中可能在62%左右提示一个错误，点continue不影响使用。</p>
 <p>默认安装完成之后，重新启动archlinux之后，oracle是不会启动的。手动启动的方法：</p>
-<p>&lt;ol&gt;
-&lt;li&gt;su - oracle # 这里得以oracle启动&lt;/li&gt;
-&lt;li&gt;sqlplus /nologo&lt;/li&gt;
-&lt;li&gt;sql&gt; conn / as sysdba&lt;/li&gt;
-&lt;li&gt;sql&gt; startup&lt;/li&gt;
-&lt;li&gt;sql&gt; exit&lt;/li&gt;
-&lt;li&gt;lsnrctl start&lt;/li&gt;
-&lt;/ol&gt;</p>
+<ol><br><li>su - oracle # 这里得以oracle启动</li><br><li>sqlplus /nologo</li><br><li>sql&gt; conn / as sysdba</li><br><li>sql&gt; startup</li><br><li>sql&gt; exit</li><br><li>lsnrctl start</li><br></ol>
 	  
 	</div>
 	

@@ -116,10 +116,9 @@
 
 	<!-- content -->
 	<div class="mypage">		
-	    <p>在Linux上，用环境变量的方式可以直接让emacs使用代理，如设置http_proxy
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=xxx.xx.xx.xx:port</span><br></pre></td></tr></table></figure></p>
+	    <p>在Linux上，用环境变量的方式可以直接让emacs使用代理，如设置http_proxy<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=xxx.xx.xx.xx:port</span><br></pre></td></tr></table></figure></p>
 <p>但是在mac上这样做就不行了。由于elisp中一般http都是使用的<code>url package</code>，所以可以通过<code>url package</code>的接口来设置代理:</p>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> url-using-proxy <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> url-proxy-services <span class="quoted">'((<span class="string">"http"</span> . <span class="string">"proxyserver:port"</span>))</span>)</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> url-using-proxy <span class="literal">t</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> url-proxy-services <span class="quoted">'((<span class="string">"http"</span> . <span class="string">"proxyserver:port"</span>))</span>)</span></span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	

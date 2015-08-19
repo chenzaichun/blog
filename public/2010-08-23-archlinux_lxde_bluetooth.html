@@ -117,15 +117,15 @@
 	<!-- content -->
 	<div class="mypage">		
 	    <p>首先安装bluez, obexfs</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S bluez obexfs</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S bluez obexfs</span><br></pre></td></tr></table></figure>
 <p>启动bluetooth（也可以加入/etc/rc.conf的daemon中）</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/rc.d/bluetooth start</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/rc.d/bluetooth start</span><br></pre></td></tr></table></figure>
 <p>获取蓝牙的mac地址</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hcitool scan</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hcitool scan</span><br></pre></td></tr></table></figure>
 <p>启动另外一个term，然后进行连接，如：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluez-simple-agent hci0 <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bluez-simple-agent hci0 <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F</span><br></pre></td></tr></table></figure>
 <p>在其他term中可以进行文件传输了：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obexftp -b <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F -p xxx.txt</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obexftp -b <span class="number">00</span>:<span class="number">26</span>:<span class="number">37</span>:<span class="number">45</span>:<span class="number">29</span>:<span class="number">8</span>F -p xxx.txt</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	

@@ -116,6 +116,48 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Jun 22 2010 </div>
+			<div class="article-title"><a href="/2010-06-22-emacs_python_ide.html" >emacs下配置python开发环境</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <ol>
+<li>安装Pymacs， <a href="http://pymacs.progiciels-bpi.ca/pymacs.html" target="_blank">http://pymacs.progiciels-bpi.ca/pymacs.html</a></li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python setup.py install</span><br></pre></td></tr></table></figure>
+<ol>
+<li>安装ropemode，<a href="http://pypi.python.org/pypi/ropemode" target="_blank"> http://pypi.python.org/pypi/ropemode</a></li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python setup.py install</span><br></pre></td></tr></table></figure>
+<ol>
+<li>安装ropemacs，<a href="http://rope.sourceforge.net/ropemacs.html" target="_blank">http://rope.sourceforge.net/ropemacs.html</a></li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python setup.py install</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在.emacs中加入</li>
+</ol>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-apply</span> <span class="string">"pymacs"</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-call</span> <span class="string">"pymacs"</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-eval</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-exec</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span><span class="list">(<span class="keyword">autoload</span> <span class="quoted">'pymacs-load</span> <span class="string">"pymacs"</span> <span class="literal">nil</span> <span class="literal">t</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">pymacs-load</span> <span class="string">"ropemacs"</span> <span class="string">"rope-"</span>)</span><span class="list">(<span class="keyword">setq</span> ropemacs-enable-autoimport <span class="literal">t</span>)</span></span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-06-22-emacs_python_ide.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Jun 21 2010 </div>
 			<div class="article-title"><a href="/2010-06-21-ubuntu_telnet_server.html" >ubuntu下安装telnet服务器</a></div>						
 		</h3>
@@ -131,23 +173,23 @@
 	  <ol>
 <li>安装xinetd和telnetd</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xinetd telnetd</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xinetd telnetd</span><br></pre></td></tr></table></figure>
+<ol>
 <li>/etc/inetd.conf在安装过程中已经配置好，修改/etc/xinetd.conf</li>
 </ol>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults&#123;&#10;&#10;# Please note that you need a log_type line to be able to use log_on_success&#10;# and log_on_failure. The default is the following :&#10;# log_type = SYSLOG daemon info&#10;## Please note that you need a log_type line to be able to use log_on_success&#10;## and log_on_failure. The default is the following :## log_type = SYSLOG daemon info&#10;# &#10;## start the insert content&#10;#&#10;# if I have time, I will add some comments about this part.&#10;# instances =60#log_type = SYSLOG authpriv&#10;# log_on_success = HOST PID&#10;# log_on_failure = HOST&#10;# tcps = 25 30&#10;## end the insert content</span><br></pre></td></tr></table></figure></p>
-<ol start="3">
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults&#123;&#10;&#10;# Please note that you need a log_type line to be able to use log_on_success&#10;# and log_on_failure. The default is the following :&#10;# log_type = SYSLOG daemon info&#10;## Please note that you need a log_type line to be able to use log_on_success&#10;## and log_on_failure. The default is the following :## log_type = SYSLOG daemon info&#10;# &#10;## start the insert content&#10;#&#10;# if I have time, I will add some comments about this part.&#10;# instances =60#log_type = SYSLOG authpriv&#10;# log_on_success = HOST PID&#10;# log_on_failure = HOST&#10;# tcps = 25 30&#10;## end the insert content</span><br></pre></td></tr></table></figure>
+<ol>
 <li>添加/etc/xinet.d/telnet</li>
 </ol>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#service telnet&#10;#&#123;&#10;#disable = no&#10;#flags = REUSE&#10;#socket_type = stream&#10;#wait = no&#10;#user = root&#10;#server = /usr/sbin/in.telnetd&#10;#log_on_failure += USERID&#10;#&#125;</span><br></pre></td></tr></table></figure></p>
-<ol start="4">
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#service telnet&#10;#&#123;&#10;#disable = no&#10;#flags = REUSE&#10;#socket_type = stream&#10;#wait = no&#10;#user = root&#10;#server = /usr/sbin/in.telnetd&#10;#log_on_failure += USERID&#10;#&#125;</span><br></pre></td></tr></table></figure>
+<ol>
 <li>重启xinetd服务</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/xinetd restart</span><br></pre></td></tr></table></figure></p>
-<ol start="5">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/xinetd restart</span><br></pre></td></tr></table></figure>
+<ol>
 <li>测试一下</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet <span class="number">127.0</span>.<span class="number">0.1</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet <span class="number">127.0</span>.<span class="number">0.1</span></span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -175,12 +217,12 @@
 	  
 	
 	  <p>android下获取手机的号码</p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建电话管理</span></span><br><span class="line">TelephonyManager tm = (TelephonyManager);</span><br><span class="line"><span class="comment">//与手机建立连接</span></span><br><span class="line">activity.getSystemService(Context.TELEPHONY_SERVICE);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取手机号码</span></span><br><span class="line">String phoneId = tm.getLine1Number();</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建电话管理</span></span><br><span class="line">TelephonyManager tm = (TelephonyManager);</span><br><span class="line"><span class="comment">//与手机建立连接</span></span><br><span class="line">activity.getSystemService(Context.TELEPHONY_SERVICE);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取手机号码</span></span><br><span class="line">String phoneId = tm.getLine1Number();</span><br></pre></td></tr></table></figure>
 <p>在manifest file中添加</p>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--  记得在manifest file中添加 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">uses-permission</span>   <span class="attribute">android:name</span>=<span class="value">"android.permission.READ_PHONE_STATE"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--  记得在manifest file中添加 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">uses-permission</span>   <span class="attribute">android:name</span>=<span class="value">"android.permission.READ_PHONE_STATE"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <p>程序在模拟器上无法获取，必须连接手机</p>
 <p>参考连接：</p>
-<p>&lt;a href=&quot;http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html&quot; target=&quot;_blank&quot;&gt;http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html&lt;/a&gt;</p>
+<p><a href="http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html" target="_blank">http://hi.baidu.com/hencechen/blog/item/e4d983094c01b4c73ac76349.html</a></p>
 
 	
 	</div>
@@ -208,7 +250,7 @@
 	  
 	
 	  <p>参考limodou</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> telnetlib</span><br><span class="line"></span><br><span class="line">host = &#123;&#125;</span><br><span class="line">host[<span class="string">'ip'</span>]=<span class="string">'127.0.0.1'</span></span><br><span class="line">host[<span class="string">'user'</span>]=<span class="string">'user'</span></span><br><span class="line">host[<span class="string">'password'</span>]=<span class="string">'password***'</span></span><br><span class="line">host[<span class="string">'commands'</span>]=[<span class="string">'cd /home/xxxxx'</span>, <span class="string">'ls -l --color=no'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">do</span><span class="params">(host)</span>:</span>    </span><br><span class="line">    tn = telnetlib.Telnet(host[<span class="string">'ip'</span>])</span><br><span class="line"><span class="comment">#    tn.set_debuglevel(2)    </span></span><br><span class="line">    tn.read_until(<span class="string">"login: "</span>)    </span><br><span class="line">    tn.write(host[<span class="string">'user'</span>] + <span class="string">"n"</span>)    </span><br><span class="line">    tn.read_until(<span class="string">"Password: "</span>)    </span><br><span class="line">    tn.write(host[<span class="string">'password'</span>] + <span class="string">"n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#    tn.read_all()    </span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> command <span class="keyword">in</span> host[<span class="string">'commands'</span>]:        </span><br><span class="line">    	tn.write(command+<span class="string">'n'</span>)</span><br><span class="line"></span><br><span class="line">    tn.write(<span class="string">"exit"</span>)    </span><br><span class="line">    <span class="keyword">print</span> tn.read_all()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Finish!'</span></span><br><span class="line"></span><br><span class="line">do(host)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> telnetlib</span><br><span class="line"></span><br><span class="line">host = &#123;&#125;</span><br><span class="line">host[<span class="string">'ip'</span>]=<span class="string">'127.0.0.1'</span></span><br><span class="line">host[<span class="string">'user'</span>]=<span class="string">'user'</span></span><br><span class="line">host[<span class="string">'password'</span>]=<span class="string">'password***'</span></span><br><span class="line">host[<span class="string">'commands'</span>]=[<span class="string">'cd /home/xxxxx'</span>, <span class="string">'ls -l --color=no'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">do</span><span class="params">(host)</span>:</span>    </span><br><span class="line">    tn = telnetlib.Telnet(host[<span class="string">'ip'</span>])</span><br><span class="line"><span class="comment">#    tn.set_debuglevel(2)    </span></span><br><span class="line">    tn.read_until(<span class="string">"login: "</span>)    </span><br><span class="line">    tn.write(host[<span class="string">'user'</span>] + <span class="string">"n"</span>)    </span><br><span class="line">    tn.read_until(<span class="string">"Password: "</span>)    </span><br><span class="line">    tn.write(host[<span class="string">'password'</span>] + <span class="string">"n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#    tn.read_all()    </span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> command <span class="keyword">in</span> host[<span class="string">'commands'</span>]:        </span><br><span class="line">    	tn.write(command+<span class="string">'n'</span>)</span><br><span class="line"></span><br><span class="line">    tn.write(<span class="string">"exit"</span>)    </span><br><span class="line">    <span class="keyword">print</span> tn.read_all()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Finish!'</span></span><br><span class="line"></span><br><span class="line">do(host)</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -236,7 +278,7 @@
 	  
 	
 	  <p>原来chrome dev channel的更新源在</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://dl.google.com/linux/deb/ stable main #Google</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://dl.google.com/linux/deb/ stable main #Google</span><br></pre></td></tr></table></figure>
 <p>原来一直以为在unstable 目录下，一直不能更新，木哈哈！</p>
 
 	
@@ -265,7 +307,7 @@
 	  
 	
 	  <p>android下用md5加密一个字符串：</p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">md5</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           <span class="comment">// Create MD5 Hash</span></span><br><span class="line">           MessageDigest digest = java.security.MessageDigest.getInstance(<span class="string">"MD5"</span>);</span><br><span class="line">           digest.update(s.getBytes());</span><br><span class="line">           <span class="keyword">byte</span> messageDigest[] = digest.digest();</span><br><span class="line"></span><br><span class="line">           <span class="comment">// Create HEX String</span></span><br><span class="line">           StringBuffer hexString = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; messageDigest.length; i++) &#123;</span><br><span class="line">               hexString.append(Integer.toHexString(<span class="number">0xFF</span> &amp; messageDigest[i]));</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">return</span> hexString.toString();</span><br><span class="line">       &#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e) &#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">md5</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           <span class="comment">// Create MD5 Hash</span></span><br><span class="line">           MessageDigest digest = java.security.MessageDigest.getInstance(<span class="string">"MD5"</span>);</span><br><span class="line">           digest.update(s.getBytes());</span><br><span class="line">           <span class="keyword">byte</span> messageDigest[] = digest.digest();</span><br><span class="line"></span><br><span class="line">           <span class="comment">// Create HEX String</span></span><br><span class="line">           StringBuffer hexString = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; messageDigest.length; i++) &#123;</span><br><span class="line">               hexString.append(Integer.toHexString(<span class="number">0xFF</span> &amp; messageDigest[i]));</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">return</span> hexString.toString();</span><br><span class="line">       &#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e) &#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -295,41 +337,40 @@
 	  <ol>
 <li>首先安装jdk</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openjdk-<span class="number">6</span>-jdk</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li>
-<p>下载并解压android sdk</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openjdk-<span class="number">6</span>-jdk</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>下载并解压android sdk</p>
 </li>
-<li>
-<p>将adnroid sdk目录下的tools添加到PATH</p>
+<li><p>将adnroid sdk目录下的tools添加到PATH</p>
 </li>
-<li>
-<p>安装android-mode</p>
+<li><p>安装android-mode</p>
 </li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/remvee/android-mode.git</span><br></pre></td></tr></table></figure></p>
-<p>5. 创建一个android虚拟设备如test1，在.emacs中配置android-mode</p>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;; android-mode</span></span><br><span class="line"><span class="list">(<span class="keyword">add-to-list</span> <span class="quoted">'load-path</span> <span class="string">"~/android/android-mode"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'android-mode</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">custom-set-variables</span></span><br><span class="line"> <span class="quoted">'(android-mode-avd <span class="string">"test1"</span>)</span></span><br><span class="line"> <span class="quoted">'(android-mode-sdk-dir <span class="string">"~/android/"</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
-<ol start="6">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/remvee/android-mode.git</span><br></pre></td></tr></table></figure>
+<ol>
+<li>创建一个android虚拟设备如test1，在.emacs中配置android-mode</li>
+</ol>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;; android-mode</span></span><br><span class="line"><span class="list">(<span class="keyword">add-to-list</span> <span class="quoted">'load-path</span> <span class="string">"~/android/android-mode"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'android-mode</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">custom-set-variables</span></span><br><span class="line"> <span class="quoted">'(android-mode-avd <span class="string">"test1"</span>)</span></span><br><span class="line"> <span class="quoted">'(android-mode-sdk-dir <span class="string">"~/android/"</span>)</span>)</span></span><br></pre></td></tr></table></figure>
+<ol>
 <li>测试模拟器是否正常</li>
 </ol>
-<p><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android-<span class="built_in">start</span>-emulator</span><br></pre></td></tr></table></figure></p>
-<ol start="7">
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android-<span class="built_in">start</span>-emulator</span><br></pre></td></tr></table></figure>
+<ol>
 <li>安装ant</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get instal ant</span><br></pre></td></tr></table></figure></p>
-<ol start="8">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get instal ant</span><br></pre></td></tr></table></figure>
+<ol>
 <li>中创建一个android工程使用命令android create project</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android create project -n helloworld -t <span class="number">12</span> -p ./ -k org.example.helloworld <span class="operator">-a</span> helloworld</span><br></pre></td></tr></table></figure></p>
-<ol start="9">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android create project -n helloworld -t <span class="number">12</span> -p ./ -k org.example.helloworld <span class="operator">-a</span> helloworld</span><br></pre></td></tr></table></figure>
+<ol>
 <li>在emacs安装工程</li>
 </ol>
-<p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x android-ant-<span class="keyword">install</span></span><br></pre></td></tr></table></figure></p>
-<ol start="10">
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x android-ant-<span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+<ol>
 <li>重新安装工程使用</li>
 </ol>
-<p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x android-<span class="keyword">ant</span>-reinstall</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x android-<span class="keyword">ant</span>-reinstall</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -356,8 +397,8 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>默认configure的时候qt的编译程序会检测incredibuild的xge支持，所以如果安装了incredibuild的话，会检测到xge选项，而configure的时候得到using incredibuildxge --yes</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">configure -no-qt3support -no-webkit -release -opensource -platform win32-msvc2008</span><br></pre></td></tr></table></figure></p>
+	  <p>默认configure的时候qt的编译程序会检测incredibuild的xge支持，所以如果安装了incredibuild的话，会检测到xge选项，而configure的时候得到using incredibuildxge –yes</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">configure -no-qt3support -no-webkit -release -opensource -platform win32-msvc2008</span><br></pre></td></tr></table></figure>
 <p>完成configure之后，会在根目录生成一个projects.sln，这个时候就可以使用incredibuild编译了。</p>
 
 	
@@ -386,7 +427,7 @@
 	  
 	
 	  <p>今天将dns服务器换为诺顿的和google的了，诺顿默认情况下给出了一些危险网站的建议，加上google chrome的危险建议，所以相对来说上网就比较安全，我的dns服务器配置 cat /etc/resolve.conf</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nameserver 198.153.192.1&#10;nameserver 8.8.8.8</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nameserver 198.153.192.1&#10;nameserver 8.8.8.8</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -413,7 +454,7 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 来自C++ GUI Programming with Qt 4</span></span><br><span class="line"><span class="comment">// 编译：</span></span><br><span class="line"><span class="comment">//    qmake -project</span></span><br><span class="line"><span class="comment">//    qmake</span></span><br><span class="line"><span class="comment">//    make</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;QApplication&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;QLabel&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">QApplication <span class="title">app</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    QLabel* label = <span class="keyword">new</span> QLabel(<span class="string">"Hello qt!"</span>);</span><br><span class="line">    label-&gt;show();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> app.exec();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 来自C++ GUI Programming with Qt 4</span></span><br><span class="line"><span class="comment">// 编译：</span></span><br><span class="line"><span class="comment">//    qmake -project</span></span><br><span class="line"><span class="comment">//    qmake</span></span><br><span class="line"><span class="comment">//    make</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;QApplication&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;QLabel&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">QApplication <span class="title">app</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    QLabel* label = <span class="keyword">new</span> QLabel(<span class="string">"Hello qt!"</span>);</span><br><span class="line">    label-&gt;show();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> app.exec();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -421,35 +462,6 @@
   
 </div>
 	<a type="button" href="/2010-06-06-first_qt.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Jun 6 2010 </div>
-			<div class="article-title"><a href="/2010-06-06-debian_depends.html" >命令行下查看deb包的依赖</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>命令行下察看deb包的依赖(如察看google chrome的依赖）：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dpkg --info google-chrome-unstable_current_amd64.deb | grep Depends</span><br><span class="line"> Pre-Depends: dpkg (&gt;= <span class="number">1.14</span>.<span class="number">0</span>)</span><br><span class="line"> Depends: ca-certificates, libasound2, libatk1.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">1.13</span>.<span class="number">2</span>), libbz2-<span class="number">1.0</span>, libc6 (&gt;= <span class="number">2.6</span>-<span class="number">1</span>), libcairo2 (&gt;= <span class="number">1.4</span>.<span class="number">0</span>), libfontconfig1 (&gt;= <span class="number">2.4</span>.<span class="number">0</span>), libfreetype6 (&gt;= <span class="number">2.3</span>.<span class="number">5</span>), libgcc1 (&gt;= <span class="number">1</span>:<span class="number">4.2</span>.<span class="number">1</span>), libgconf2-<span class="number">4</span>, libglib2.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">2.14</span>.<span class="number">0</span>), libgtk2.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">2.12</span>.<span class="number">0</span>), libjpeg62, libnspr4-<span class="number">0</span>d (&gt;= <span class="number">4.7</span>.<span class="number">1</span>), libnss3-<span class="number">1</span>d (&gt;= <span class="number">3.12</span>.<span class="number">3</span>), libpango1.<span class="number">0</span>-<span class="number">0</span> (&gt;= <span class="number">1.18</span>.<span class="number">3</span>), libpng12-<span class="number">0</span>, libstdc++<span class="number">6</span> (&gt;= <span class="number">4.2</span>.<span class="number">1</span>), libxslt1.<span class="number">1</span>, libxss1, lsb-base (&gt;= <span class="number">3.2</span>), wget, xdg-utils (&gt;= <span class="number">1.0</span>.<span class="number">1</span>), zlib1g (&gt;= <span class="number">1</span>:<span class="number">1.2</span>.<span class="number">3.3</span>.dfsg-<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
-<p></p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-06-06-debian_depends.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -499,48 +511,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/english/">english<span>1</span></a></li>
+			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
 		
-			<li><a href="/tags/portable/">portable<span>1</span></a></li>
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
 		
-			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
+			<li><a href="/tags/tools/">tools<span>4</span></a></li>
 		
-			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
-		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
-		
-			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
-		
-			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
-		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
-		
-			<li><a href="/tags/network/">network<span>1</span></a></li>
-		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
-		
-			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
-		
-			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
-		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
-		
-			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
-		
-			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
-		
-			<li><a href="/tags/chrome/">chrome<span>9</span></a></li>
-		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
-		
-			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
 		
 			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
 		
-			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+		
+			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
+		
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
+		
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+		
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+		
+			<li><a href="/tags/objc/">objc<span>1</span></a></li>
+		
+			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
+		
+			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+		
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+		
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+		
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+		
+			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
+		
+			<li><a href="/tags/video/">video<span>1</span></a></li>
+		
+			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -551,6 +563,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -566,10 +582,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

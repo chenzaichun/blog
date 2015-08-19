@@ -119,41 +119,40 @@
 	    <ol>
 <li>首先安装jdk</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openjdk-<span class="number">6</span>-jdk</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li>
-<p>下载并解压android sdk</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openjdk-<span class="number">6</span>-jdk</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>下载并解压android sdk</p>
 </li>
-<li>
-<p>将adnroid sdk目录下的tools添加到PATH</p>
+<li><p>将adnroid sdk目录下的tools添加到PATH</p>
 </li>
-<li>
-<p>安装android-mode</p>
+<li><p>安装android-mode</p>
 </li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/remvee/android-mode.git</span><br></pre></td></tr></table></figure></p>
-<p>5. 创建一个android虚拟设备如test1，在.emacs中配置android-mode</p>
-<p><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;; android-mode</span></span><br><span class="line"><span class="list">(<span class="keyword">add-to-list</span> <span class="quoted">'load-path</span> <span class="string">"~/android/android-mode"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'android-mode</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">custom-set-variables</span></span><br><span class="line"> <span class="quoted">'(android-mode-avd <span class="string">"test1"</span>)</span></span><br><span class="line"> <span class="quoted">'(android-mode-sdk-dir <span class="string">"~/android/"</span>)</span>)</span></span><br></pre></td></tr></table></figure></p>
-<ol start="6">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/remvee/android-mode.git</span><br></pre></td></tr></table></figure>
+<ol>
+<li>创建一个android虚拟设备如test1，在.emacs中配置android-mode</li>
+</ol>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;; android-mode</span></span><br><span class="line"><span class="list">(<span class="keyword">add-to-list</span> <span class="quoted">'load-path</span> <span class="string">"~/android/android-mode"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">require</span> <span class="quoted">'android-mode</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">custom-set-variables</span></span><br><span class="line"> <span class="quoted">'(android-mode-avd <span class="string">"test1"</span>)</span></span><br><span class="line"> <span class="quoted">'(android-mode-sdk-dir <span class="string">"~/android/"</span>)</span>)</span></span><br></pre></td></tr></table></figure>
+<ol>
 <li>测试模拟器是否正常</li>
 </ol>
-<p><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android-<span class="built_in">start</span>-emulator</span><br></pre></td></tr></table></figure></p>
-<ol start="7">
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android-<span class="built_in">start</span>-emulator</span><br></pre></td></tr></table></figure>
+<ol>
 <li>安装ant</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get instal ant</span><br></pre></td></tr></table></figure></p>
-<ol start="8">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get instal ant</span><br></pre></td></tr></table></figure>
+<ol>
 <li>中创建一个android工程使用命令android create project</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android create project -n helloworld -t <span class="number">12</span> -p ./ -k org.example.helloworld <span class="operator">-a</span> helloworld</span><br></pre></td></tr></table></figure></p>
-<ol start="9">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android create project -n helloworld -t <span class="number">12</span> -p ./ -k org.example.helloworld <span class="operator">-a</span> helloworld</span><br></pre></td></tr></table></figure>
+<ol>
 <li>在emacs安装工程</li>
 </ol>
-<p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x android-ant-<span class="keyword">install</span></span><br></pre></td></tr></table></figure></p>
-<ol start="10">
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x android-ant-<span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+<ol>
 <li>重新安装工程使用</li>
 </ol>
-<p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x android-<span class="keyword">ant</span>-reinstall</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-x android-<span class="keyword">ant</span>-reinstall</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	

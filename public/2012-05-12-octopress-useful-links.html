@@ -117,31 +117,24 @@
 	<!-- content -->
 	<div class="mypage">		
 	    <ol>
-<li>
-<p><a href="http://jasongarber.com/blog/2012/01/10/deploying-octopress-to-heroku-with-a-custom-buildpack" target="_blank" rel="external">Heroku上搭建octopress自动deploy环境</a> -- 这篇文章可以让你绕过生成静态页面的过程，通过heroku的build pack在push的时候自动将markdown编译成静态页面。</p>
+<li><p><a href="http://jasongarber.com/blog/2012/01/10/deploying-octopress-to-heroku-with-a-custom-buildpack" target="_blank" rel="external">Heroku上搭建octopress自动deploy环境</a> – 这篇文章可以让你绕过生成静态页面的过程，通过heroku的build pack在push的时候自动将markdown编译成静态页面。</p>
 </li>
-<li>
-<p><a href="http://geron.heroku.com/blog/2012/03/octo-cate-cn-spo/" target="_blank" rel="external">Octopress博客分类添加中文支持</a></p>
+<li><p><a href="http://geron.heroku.com/blog/2012/03/octo-cate-cn-spo/" target="_blank" rel="external">Octopress博客分类添加中文支持</a></p>
 </li>
-<li>
-<p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/" target="_blank" rel="external">如何從Wordpress Migrate到Octopress</a></p>
+<li><p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/" target="_blank" rel="external">如何從Wordpress Migrate到Octopress</a></p>
 </li>
-<li>
-<p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/" target="_blank" rel="external">301轉址</a> -- 重定向feed到atom.xml</p>
-<p>比如我的设置:</p>
-<p><a id="more"></a></p>
+<li><p><a href="http://blog.xdite.net/posts/2011/10/09/how-to-migrate-blog-from-wordpress-to-octopress/" target="_blank" rel="external">301轉址</a> – 重定向feed到atom.xml</p>
+<p> 比如我的设置:</p>
+ <a id="more"></a>
 </li>
 </ol>
-<p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">use <span class="constant">Rack::Rewrite</span> <span class="keyword">do</span></span><br><span class="line"> r301 %r&#123;<span class="regexp">/\?feed=(.*)?&#125;, "&#123;&#123; site.url &#125;&#125;/atom</span>.xml<span class="string">"</span><br><span class="line"> r301 %r&#123;/feed&#125;, "</span>&#123;&#123; site.url &#125;&#125;/atom.xml<span class="string">"</span><br><span class="line">end</span></span><br></pre></td></tr></table></figure></p>
-<ol start="5">
-<li>
-<p><a href="http://imwuyu.me/blog/configuring-octopress.html/" target="_blank" rel="external">添加 related post</a></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">use <span class="constant">Rack::Rewrite</span> <span class="keyword">do</span></span><br><span class="line"> r301 %r&#123;<span class="regexp">/\?feed=(.*)?&#125;, "&#123;&#123; site.url &#125;&#125;/atom</span>.xml<span class="string">"</span><br><span class="line"> r301 %r&#123;/feed&#125;, "</span>&#123;&#123; site.url &#125;&#125;/atom.xml<span class="string">"</span><br><span class="line">end</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><a href="http://imwuyu.me/blog/configuring-octopress.html/" target="_blank" rel="external">添加 related post</a></p>
 </li>
-<li>
-<p><a href="https://github.com/robbyedwards/octopress-tag-pages" target="_blank" rel="external">Plugin for Octopress to generate tag pages</a></p>
+<li><p><a href="https://github.com/robbyedwards/octopress-tag-pages" target="_blank" rel="external">Plugin for Octopress to generate tag pages</a></p>
 </li>
-<li>
-<p><a href="https://github.com/robbyedwards/octopress-tag-cloud" target="_blank" rel="external">A tag cloud plugin for Octopress</a></p>
+<li><p><a href="https://github.com/robbyedwards/octopress-tag-cloud" target="_blank" rel="external">A tag cloud plugin for Octopress</a></p>
 </li>
 </ol>
 	  

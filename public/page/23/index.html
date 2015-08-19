@@ -116,6 +116,35 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> May 16 2010 </div>
+			<div class="article-title"><a href="/2010-05-16-mercurial_hg_proxy.html" >mercurial hg代理设置</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>由于在教育网中,sf上面的代码访问很慢,考虑为mercurial hg增加代理访问. 修改~/.hgrc, 增加</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[http_proxy]&#10;host=127.0.0.1:8580</span><br></pre></td></tr></table></figure>
+<p>详细的hgrc配置见官方文档: <a href="http://www.selenic.com/mercurial/hgrc.5.html" target="_blank">http://www.selenic.com/mercurial/hgrc.5.html</a></p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-05-16-mercurial_hg_proxy.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> May 11 2010 </div>
 			<div class="article-title"><a href="/2010-05-11-archlinux_x11_forwarding.html" >archlinux x11 forwarding</a></div>						
 		</h3>
@@ -129,7 +158,7 @@
 	  
 	
 	  <p>默认情况下archlinu是不允许x11 forwarding的,修改/etc/ssh/sshd_config</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AllowTcpForwarding yes&#10;X11Forwarding yes&#10;X11DisplayOffset 10&#10;X11UseLocalhost yes</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AllowTcpForwarding yes&#10;X11Forwarding yes&#10;X11DisplayOffset 10&#10;X11UseLocalhost yes</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -156,14 +185,14 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>参照arch wiki：&lt;a href=&quot;http://wiki.archlinux.org/index.php/Yaourt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&quot;&gt;http://wiki.archlinux.org/index.php/Yaourt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&lt;/a&gt;</p>
+	  <p>参照arch wiki：<a href="http://wiki.archlinux.org/index.php/Yaourt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="external">http://wiki.archlinux.org/index.php/Yaourt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a></p>
 <p>最简单安装Yaourt的方式是添加Yaourt源至您的 /etc/pacman.conf:</p>
 <p>i686架构：</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxfr]&#10;Server = http://repo.archlinux.fr/i686</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxfr]&#10;Server = http://repo.archlinux.fr/i686</span><br></pre></td></tr></table></figure>
 <p>x86-64架构：</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxfr]&#10;Server = http://repo.archlinux.fr/x86_64</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxfr]&#10;Server = http://repo.archlinux.fr/x86_64</span><br></pre></td></tr></table></figure>
 <p>同步并安装：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br><span class="line">pacman -S yaourt</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br><span class="line">pacman -S yaourt</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -190,11 +219,11 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>参考: &lt;a href=&quot;http://wiki.archlinux.org/index.php/Proxy_settings&quot;&gt;http://wiki.archlinux.org/index.php/Proxy_settings&lt;/a&gt;</p>
-<p>在教育网中使用aur或者abs,网速非常的慢,同时很多东西都不能正常的下载下来,如何给下载添加代理呢? 像wget等程序使用&quot;protocal_proxy&quot;环境变量,所以可以通过设置环境变量的方式来使用代理:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</span><br><span class="line"><span class="built_in">export</span> ftp_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</span><br></pre></td></tr></table></figure></p>
+	  <p>参考: <a href="http://wiki.archlinux.org/index.php/Proxy_settings" target="_blank" rel="external">http://wiki.archlinux.org/index.php/Proxy_settings</a></p>
+<p>在教育网中使用aur或者abs,网速非常的慢,同时很多东西都不能正常的下载下来,如何给下载添加代理呢? 像wget等程序使用”protocal_proxy”环境变量,所以可以通过设置环境变量的方式来使用代理:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</span><br><span class="line"><span class="built_in">export</span> ftp_proxy=http://<span class="number">10.203</span>.<span class="number">0.1</span>:<span class="number">5187</span>/</span><br></pre></td></tr></table></figure>
 <p>我们可以增加两个函数用来打开关闭代理,在.bashrc里面添加:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> -n “username:”</span><br><span class="line">    <span class="built_in">read</span> <span class="operator">-e</span> username</span><br><span class="line">    <span class="built_in">echo</span> -n “password:”</span><br><span class="line">    <span class="built_in">read</span> -es password</span><br><span class="line">    <span class="built_in">export</span> http_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">export</span> ftp_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable set.”</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxyoff</span></span>()&#123;</span><br><span class="line">    <span class="built_in">unset</span> HTTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> http_proxy</span><br><span class="line">    <span class="built_in">unset</span> FTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> ftp_proxy</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable removed.”</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> -n “username:”</span><br><span class="line">    <span class="built_in">read</span> <span class="operator">-e</span> username</span><br><span class="line">    <span class="built_in">echo</span> -n “password:”</span><br><span class="line">    <span class="built_in">read</span> -es password</span><br><span class="line">    <span class="built_in">export</span> http_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">export</span> ftp_proxy=”http://<span class="variable">$username</span>:<span class="variable">$password</span>@proxyserver:<span class="number">8080</span>/”</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable set.”</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxyoff</span></span>()&#123;</span><br><span class="line">    <span class="built_in">unset</span> HTTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> http_proxy</span><br><span class="line">    <span class="built_in">unset</span> FTP_PROXY</span><br><span class="line">    <span class="built_in">unset</span> ftp_proxy</span><br><span class="line">    <span class="built_in">echo</span> <span class="operator">-e</span> “nProxy environment variable removed.”</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -221,12 +250,12 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>将archlinux安装到优盘上！试了很多方法，在虚拟机上将优盘设置成硬盘安装和在虚拟机上设置usb设备安装，启动时都会出现找不到硬盘的情况。（使用虚拟机启动没有问题）解决办法（&lt;a href=&quot;http://blog.sina.com.cn/s/blog_59cf67260100cwqr.html&quot;&gt;参考地址&lt;/a&gt;）：</p>
+	  <p>将archlinux安装到优盘上！试了很多方法，在虚拟机上将优盘设置成硬盘安装和在虚拟机上设置usb设备安装，启动时都会出现找不到硬盘的情况。（使用虚拟机启动没有问题）解决办法（<a href="http://blog.sina.com.cn/s/blog_59cf67260100cwqr.html" target="_blank" rel="external">参考地址</a>）：</p>
 <p>设置系统的参数的时候，修改/etc/mkinitcpio.conf ，在HOOKS中加入usb选项，这似乎是让linux内核认usb。</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOOKS=&#34;base udev autodetect pata scsi sata usb filesystems&#34;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOOKS=&#34;base udev autodetect pata scsi sata usb filesystems&#34;</span><br></pre></td></tr></table></figure>
 <p>这样就可以正常启动了！如果出现</p>
-<p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The superblock could <span class="operator">not</span> be <span class="built_in">read</span> <span class="operator">or</span> does <span class="operator">not</span> describe <span class="operator">a</span> correct ext2 filesystem. If <span class="operator">the</span> device is valid <span class="operator">and</span> <span class="keyword">it</span> really <span class="operator">contains</span> <span class="operator">an</span> ext2 filesystem (<span class="operator">and</span> <span class="operator">not</span> swap <span class="operator">or</span> ufs <span class="operator">or</span> something <span class="keyword">else</span>), <span class="keyword">then</span> <span class="operator">the</span> superblock is corrupt, <span class="operator">and</span> you might <span class="keyword">try</span> running e2fsck <span class="operator">with</span> <span class="operator">an</span> alternate superblock:</span><br><span class="line">e2fsck -b <span class="number">8193</span></span><br></pre></td></tr></table></figure></p>
-<p>请修改fstab，使用uuid的方式，见&lt;a href=&quot;http://wiki.archlinux.org/index.php/Fstab&quot;&gt;http://wiki.archlinux.org/index.php/Fstab&lt;/a&gt;</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The superblock could <span class="operator">not</span> be <span class="built_in">read</span> <span class="operator">or</span> does <span class="operator">not</span> describe <span class="operator">a</span> correct ext2 filesystem. If <span class="operator">the</span> device is valid <span class="operator">and</span> <span class="keyword">it</span> really <span class="operator">contains</span> <span class="operator">an</span> ext2 filesystem (<span class="operator">and</span> <span class="operator">not</span> swap <span class="operator">or</span> ufs <span class="operator">or</span> something <span class="keyword">else</span>), <span class="keyword">then</span> <span class="operator">the</span> superblock is corrupt, <span class="operator">and</span> you might <span class="keyword">try</span> running e2fsck <span class="operator">with</span> <span class="operator">an</span> alternate superblock:</span><br><span class="line">e2fsck -b <span class="number">8193</span></span><br></pre></td></tr></table></figure>
+<p>请修改fstab，使用uuid的方式，见<a href="http://wiki.archlinux.org/index.php/Fstab" target="_blank" rel="external">http://wiki.archlinux.org/index.php/Fstab</a></p>
 
 	
 	</div>
@@ -254,7 +283,7 @@
 	  
 	
 	  <p>使用git从svn中clone特定版本：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git svn <span class="built_in">clone</span> --prefix=svn/ <span class="operator">-s</span> -r<span class="variable">$revision</span>:HEAD http://some/svn/repo</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git svn <span class="built_in">clone</span> --prefix=svn/ <span class="operator">-s</span> -r<span class="variable">$revision</span>:HEAD http://some/svn/repo</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -309,8 +338,8 @@
 	  
 	
 	  <p>用这个可以删除旧内核</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo aptitude purge ~ilinux-image-.*(!`uname -r`)</span><br></pre></td></tr></table></figure></p>
-<p>&lt;a class=&quot;postlink&quot; href=&quot;http://forum.ubuntu.org.cn/viewtopic.php?t=129876&quot;&gt;http://forum.ubuntu.org.cn/viewtopic.php?t=129876&lt;/a&gt;</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo aptitude purge ~ilinux-image-.*(!`uname -r`)</span><br></pre></td></tr></table></figure>
+<p><a class="postlink" href="http://forum.ubuntu.org.cn/viewtopic.php?t=129876" target="_blank" rel="external">http://forum.ubuntu.org.cn/viewtopic.php?t=129876</a></p>
 
 	
 	</div>
@@ -338,7 +367,7 @@
 	  
 	
 	  <p>在以往常用的Mount命令里，使用<code>umask=xxxx</code>设置挂载目录文件的权限，然后在使用Smbfs的Mount工具时，便不是使用umask了，而是用</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-o file_mode=0666 dir_mode=0755</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-o file_mode=0666 dir_mode=0755</span><br></pre></td></tr></table></figure>
 <p>这个问题纠结了我半天，终于在Google上找到答案</p>
 
 	
@@ -368,7 +397,7 @@
 	
 	  <p>VS2005之后版本的std::fstream对中文路径处理不正确的原因，所以加载中文路径或文件名不成功，解决办法：</p>
 <p>在主函数开始加入</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setlocale(LC_ALL,<span class="string">"Chinese-simplified"</span>);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setlocale(LC_ALL,<span class="string">"Chinese-simplified"</span>);</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -376,35 +405,6 @@
   
 </div>
 	<a type="button" href="/2010-05-08-ogre_chinese_path_filename.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> May 8 2010 </div>
-			<div class="article-title"><a href="/2010-05-08-ssh_sock_5.html" >ssh sock 5代理</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>由于学校使用drcom，在Windows下任何代理都无解。在linux下可以通过iptable  forward实现，在Windows下使用andlinux的时候如何挂代理呢，通过plink开sock5代理的方法：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink -C -D myip:port -N -pw pasword username@<span class="number">127.0</span>.<span class="number">0.1</span></span><br></pre></td></tr></table></figure></p>
-<p>则外面就能使用sock5代理上 网了（使用sockscap尤其方便）。</p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-05-08-ssh_sock_5.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -454,48 +454,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
+			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+		
+			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
+		
+			<li><a href="/tags/android/">android<span>18</span></a></li>
+		
+			<li><a href="/tags/VC/">VC<span>8</span></a></li>
+		
+			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+		
+			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
+		
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
+		
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
+		
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+		
 			<li><a href="/tags/hp-ux/">hp-ux<span>1</span></a></li>
-		
-			<li><a href="/tags/转载/">转载<span>7</span></a></li>
-		
-			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
-		
-			<li><a href="/tags/python/">python<span>31</span></a></li>
-		
-			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
-		
-			<li><a href="/tags/suse/">suse<span>3</span></a></li>
-		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
-		
-			<li><a href="/tags/apache/">apache<span>1</span></a></li>
-		
-			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
-		
-			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
-		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
-		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
-		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
-		
-			<li><a href="/tags/curl/">curl<span>1</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
-		
-			<li><a href="/tags/linux/">linux<span>13</span></a></li>
-		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
 		
 			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
 		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+			<li><a href="/tags/dvcs/">dvcs<span>2</span></a></li>
 		
-			<li><a href="/tags/macos/">macos<span>9</span></a></li>
+			<li><a href="/tags/kernel/">kernel<span>1</span></a></li>
+		
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+		
+			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+		
+			<li><a href="/tags/ogitor/">ogitor<span>1</span></a></li>
+		
+			<li><a href="/tags/database/">database<span>2</span></a></li>
+		
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
+		
+			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -506,6 +506,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -521,10 +525,6 @@
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

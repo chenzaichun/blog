@@ -119,14 +119,10 @@
 	    <p>ssh命令用法</p>
 <blockquote>
 <p>ssh -qTfnN -D 7070 用户名@远程ssh主机名</p>
-<p>-q :- be very quite, we are acting only as a tunnel.
--T :- Do not allocate a pseudo tty, we are only acting a tunnel.
--f :- move the ssh process to background, as we don’t want to interact with this ssh session directly.
--N :- Do not execute remote command.
--n :- redirect standard input to /dev/null.</p>
+<p>-q :- be very quite, we are acting only as a tunnel.<br>-T :- Do not allocate a pseudo tty, we are only acting a tunnel.<br>-f :- move the ssh process to background, as we don’t want to interact with this ssh session directly.<br>-N :- Do not execute remote command.<br>-n :- redirect standard input to /dev/null.</p>
 </blockquote>
 <p>plink用法</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink -C -D <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">7070</span> -N -pw 密码 用户名@服务器地址</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink -C -D <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">7070</span> -N -pw 密码 用户名@服务器地址</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	

@@ -117,24 +117,24 @@
 	<!-- content -->
 	<div class="mypage">		
 	    <p>首先更新:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
 <p>接着我们就安装pptp服务器:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install pptpd</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install pptpd</span><br></pre></td></tr></table></figure>
 <p>编辑<code>/etc/pptpd.conf</code>, 反注释掉以下内容：</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localip 192.168.0.1&#10;remoteip 192.168.0.234-238,192.168.0.245</span><br></pre></td></tr></table></figure></p>
-<p><a id="more"></a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localip 192.168.0.1&#10;remoteip 192.168.0.234-238,192.168.0.245</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>编辑<code>/etc/ppp/chap-secrets</code>, 添加用户，格式为：</p>
-<p><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># client        server  secret                  IP addresses</span></span><br><span class="line">yesokay          <span class="keyword">*</span>      password                <span class="keyword">*</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># client        server  secret                  IP addresses</span></span><br><span class="line">yesokay          <span class="keyword">*</span>      password                <span class="keyword">*</span></span><br></pre></td></tr></table></figure>
 <p>修改dns配置, <code>/etc/ppp/options</code>:</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ms-dns 8.8.8.8&#10;ms-dns 8.8.4.4</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ms-dns 8.8.8.8&#10;ms-dns 8.8.4.4</span><br></pre></td></tr></table></figure>
 <p>启用ip_forward, <code>/etc/sysctl.conf</code>:</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net.ipv4.ip_forward=1</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net.ipv4.ip_forward=1</span><br></pre></td></tr></table></figure>
 <p>启用新的配置：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure>
 <p>重启pptp服务器：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/pptpd restart</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/pptpd restart</span><br></pre></td></tr></table></figure>
 <p>最后开启iptables转发</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/iptables -t nat -A POSTROUTING <span class="operator">-s</span> <span class="number">192.168</span>.<span class="number">0.0</span>/<span class="number">24</span> -o eth0 -j MASQUERADE</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/iptables -t nat -A POSTROUTING <span class="operator">-s</span> <span class="number">192.168</span>.<span class="number">0.0</span>/<span class="number">24</span> -o eth0 -j MASQUERADE</span><br></pre></td></tr></table></figure>
 <p>当然还有更加方便的，有人做了一个一键安装脚本</p>
 <ol>
 <li>Debian系见<a href="http://www.8ke.in/soft/pptpandl2tpondebian.sh" target="_blank" rel="external">这里</a></li>
@@ -209,7 +209,7 @@
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/linux/">linux<span>13</span></a></li> <li><a href="/tags/programming/">programming<span>7</span></a></li>
+  <li><a href="/tags/linux/">linux<span>13</span></a></li> <li><a href="/tags/programming/">programming<span>8</span></a></li>
     </ul>
 	</div>
 		

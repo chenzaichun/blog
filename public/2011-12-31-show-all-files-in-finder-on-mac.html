@@ -116,12 +116,12 @@
 
 	<!-- content -->
 	<div class="mypage">		
-	    <p>Finder默认情况是不显示隐藏文件和.开头的文件和目录的，由于很多类unix/Linux的软件的配置文件（目录）是.开头的，有的时候我们想在Finder中使用怎么办呢？</p>
+	    <p>Finder默认情况是不显示隐藏文件和.开头的文件和目录的，由于很多类unix/Linux的软件的配置文件（目录）是.开头的，有的时候我们想在Finder中使用怎么办呢？ </p>
 <p>开启所有文件的显示：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles -bool <span class="literal">true</span></span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles -bool <span class="literal">true</span></span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure>
 <p>重新开启Finder就能看到所有文件了。</p>
 <p>关闭显示隐藏文件：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles -bool <span class="literal">false</span></span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles -bool <span class="literal">false</span></span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	

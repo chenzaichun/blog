@@ -119,7 +119,7 @@
 	    <p>默认情况下ibus-googlepinyin的默认候选词个数是5个，但是ibus-googlepinyin并没有提供设置选项的功能，同时也没有配置文件。研究ibus的代码发现原来是写死了的 :(</p>
 <p>解决办法，修改<code>/usr/share/ibus-googlepinyin/engine.py</code></p>
 <p>将下面一行中的<code>set_page_size</code>参数替换为自己想要的，比如10个</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Engine</span><span class="params">(ibus.EngineBase)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, bus, object_path)</span>:</span></span><br><span class="line">        super(Engine, self).__init__(bus, object_path)</span><br><span class="line">        im_open_decoder()</span><br><span class="line">        self.__is_invalidate = <span class="keyword">False</span></span><br><span class="line">        self.__prepinyin_string = <span class="string">u""</span></span><br><span class="line">        self.__lookup_table = ibus.LookupTable()</span><br><span class="line">        self.__lookup_table.set_page_size(<span class="number">10</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Engine</span><span class="params">(ibus.EngineBase)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, bus, object_path)</span>:</span></span><br><span class="line">        super(Engine, self).__init__(bus, object_path)</span><br><span class="line">        im_open_decoder()</span><br><span class="line">        self.__is_invalidate = <span class="keyword">False</span></span><br><span class="line">        self.__prepinyin_string = <span class="string">u""</span></span><br><span class="line">        self.__lookup_table = ibus.LookupTable()</span><br><span class="line">        self.__lookup_table.set_page_size(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
 <p>重启ibus就行了。</p>
 	  
 	</div>
@@ -177,7 +177,7 @@
     <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
     <!--       
   <li>
-    <li><a href="/categories/programming/">programming<span>84</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
+    <li><a href="/categories/programming/">programming<span>85</span></a></li> <li><a href="/categories/tools/">tools<span>48</span></a></li>
   </li>
  -->
     <!-- </ul> -->

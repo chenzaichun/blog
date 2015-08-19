@@ -117,6 +117,35 @@
 	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Dec 12 2010 </div>
+			<div class="article-title"><a href="/2010-12-12-pywin32_excel.html" >pywin32访问excel</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p><a href="http://www.blog.pythonlibrary.org/2010/07/16/python-and-microsoft-office-using-pywin32/" target="_blank">参考链接</a></p>
+<p>直接用上面的代码吧</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</span><br><span class="line"> </span><br><span class="line"><span class="comment">#----------------------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">excel</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">""""""</span></span><br><span class="line">    xl = win32.gencache.EnsureDispatch(<span class="string">'Excel.Application'</span>)</span><br><span class="line">    ss = xl.Workbooks.Add()</span><br><span class="line">    sh = ss.ActiveSheet</span><br><span class="line"> </span><br><span class="line">    xl.Visible = <span class="keyword">True</span></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"> </span><br><span class="line">    sh.Cells(<span class="number">1</span>,<span class="number">1</span>).Value = <span class="string">'Hacking Excel with Python Demo'</span></span><br><span class="line"> </span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">8</span>):</span><br><span class="line">        sh.Cells(i,<span class="number">1</span>).Value = <span class="string">'Line %i'</span> % i</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line"> </span><br><span class="line">    ss.Close(<span class="keyword">False</span>)</span><br><span class="line">    xl.Application.Quit()</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    excel()</span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-12-12-pywin32_excel.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Dec 12 2010 </div>
 			<div class="article-title"><a href="/2010-12-12-pywin32_access.html" >pywin32访问access数据</a></div>						
 		</h3>
 	
@@ -129,7 +158,7 @@
 	  
 	
 	  <p>pywin32真强大，可以通过com接口做你想做的事。比如操作excel, access等等。下面是访问access数据库的例子：</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> win32com.client</span><br><span class="line"></span><br><span class="line">conn = win32com.client.Dispatch(<span class="string">"ADODB.Connection"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Either way works: one is the Jet OLEDB driver, the other is the</span></span><br><span class="line"><span class="comment"># Access ODBC driver.  OLEDB is probably better.</span></span><br><span class="line"></span><br><span class="line">db = <span class="string">r"c:test.mdb"</span></span><br><span class="line">DSN=<span class="string">"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="</span> + db</span><br><span class="line"><span class="comment">#DSN="Driver=&#123;Microsoft Access Driver (*.mdb)&#125;;DBQ=" + db</span></span><br><span class="line">conn.Open(DSN)</span><br><span class="line"></span><br><span class="line">rs = win32com.client.Dispatch(<span class="string">"ADODB.Recordset"</span>)</span><br><span class="line">rs.Open( <span class="string">"[test]"</span>, conn, <span class="number">1</span>, <span class="number">3</span> )</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> rs.Fields.Count, <span class="string">" fields found:"</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(rs.Fields.Count):</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Name,</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Type,</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).DefinedSize,</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Value</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> win32com.client</span><br><span class="line"></span><br><span class="line">conn = win32com.client.Dispatch(<span class="string">"ADODB.Connection"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Either way works: one is the Jet OLEDB driver, the other is the</span></span><br><span class="line"><span class="comment"># Access ODBC driver.  OLEDB is probably better.</span></span><br><span class="line"></span><br><span class="line">db = <span class="string">r"c:test.mdb"</span></span><br><span class="line">DSN=<span class="string">"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="</span> + db</span><br><span class="line"><span class="comment">#DSN="Driver=&#123;Microsoft Access Driver (*.mdb)&#125;;DBQ=" + db</span></span><br><span class="line">conn.Open(DSN)</span><br><span class="line"></span><br><span class="line">rs = win32com.client.Dispatch(<span class="string">"ADODB.Recordset"</span>)</span><br><span class="line">rs.Open( <span class="string">"[test]"</span>, conn, <span class="number">1</span>, <span class="number">3</span> )</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> rs.Fields.Count, <span class="string">" fields found:"</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(rs.Fields.Count):</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Name,</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Type,</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).DefinedSize,</span><br><span class="line">    <span class="keyword">print</span> rs.Fields.Item(x).Value</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -157,7 +186,7 @@
 	  
 	
 	  <p>直接代码：</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pythoncom</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetURLFromShortcut</span><span class="params">(url)</span>:</span></span><br><span class="line">    shortcut = pythoncom.CoCreateInstance(</span><br><span class="line">                                shell.CLSID_ShellLink, <span class="keyword">None</span>,</span><br><span class="line">        			pythoncom.CLSCTX_INPROC_SERVER, shell.IID_IShellLink)</span><br><span class="line">    shortcut.QueryInterface( pythoncom.IID_IPersistFile ).Load(url)</span><br><span class="line">    url = shortcut.GetPath(shell.SLGP_SHORTPATH)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> url</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pythoncom</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetURLFromShortcut</span><span class="params">(url)</span>:</span></span><br><span class="line">    shortcut = pythoncom.CoCreateInstance(</span><br><span class="line">                                shell.CLSID_ShellLink, <span class="keyword">None</span>,</span><br><span class="line">        			pythoncom.CLSCTX_INPROC_SERVER, shell.IID_IShellLink)</span><br><span class="line">    shortcut.QueryInterface( pythoncom.IID_IPersistFile ).Load(url)</span><br><span class="line">    url = shortcut.GetPath(shell.SLGP_SHORTPATH)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> url</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -185,7 +214,7 @@
 	  
 	
 	  <p>通过pywin32中的win32api.GetFileVersionInfo来获取</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># Get the version information from Windows PE</span><br><span class="line"></span><br><span class="line">from win32api import GetFileVersionInfo, LOWORD, HIWORD</span><br><span class="line"></span><br><span class="line">def get_version_number (filename):</span><br><span class="line">    try:</span><br><span class="line">        info = GetFileVersionInfo (filename, "\")</span><br><span class="line">        ms = info['FileVersionMS']</span><br><span class="line">        ls = info['FileVersionLS']</span><br><span class="line">        return HIWORD (ms), LOWORD (ms), HIWORD (ls), LOWORD (ls)</span><br><span class="line">    except:</span><br><span class="line">        return 0,0,0,0</span><br><span class="line"></span><br><span class="line">def printOtherInfo(filename):</span><br><span class="line">    try:</span><br><span class="line">        info = GetFileVersionInfo(filename, "\")</span><br><span class="line">        print(info)</span><br><span class="line"></span><br><span class="line">	# In order to get the company information, we need to get the lang </span><br><span class="line">	# and code page first, then get the related strings</span><br><span class="line">        trans = GetFileVersionInfo(filename, "\VarFileInfo\Translation")</span><br><span class="line">        if not trans:</span><br><span class="line">            return </span><br><span class="line">        print(info)</span><br><span class="line"></span><br><span class="line">        # Common string lists:</span><br><span class="line">        # "CompanyName","FileDescription", "FileVersion", "InternalName",</span><br><span class="line">        # "LegalCopyright", "OriginalFilename", "ProductName", "ProductVersion"</span><br><span class="line">        # You can use this way to get custom defined strings.</span><br><span class="line"></span><br><span class="line">        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "CompanyName"))</span><br><span class="line">        print(info)</span><br><span class="line">        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "FileVersion"))</span><br><span class="line">        print(info)</span><br><span class="line">    except:</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    import os</span><br><span class="line">    filename = os.environ["COMSPEC"]</span><br><span class="line">    print ".".join ([str (i) for i in get_version_number (filename)])</span><br><span class="line">    printOtherInfo(filename)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># Get the version information from Windows PE</span><br><span class="line"></span><br><span class="line">from win32api import GetFileVersionInfo, LOWORD, HIWORD</span><br><span class="line"></span><br><span class="line">def get_version_number (filename):</span><br><span class="line">    try:</span><br><span class="line">        info = GetFileVersionInfo (filename, "\")</span><br><span class="line">        ms = info['FileVersionMS']</span><br><span class="line">        ls = info['FileVersionLS']</span><br><span class="line">        return HIWORD (ms), LOWORD (ms), HIWORD (ls), LOWORD (ls)</span><br><span class="line">    except:</span><br><span class="line">        return 0,0,0,0</span><br><span class="line"></span><br><span class="line">def printOtherInfo(filename):</span><br><span class="line">    try:</span><br><span class="line">        info = GetFileVersionInfo(filename, "\")</span><br><span class="line">        print(info)</span><br><span class="line"></span><br><span class="line">	# In order to get the company information, we need to get the lang </span><br><span class="line">	# and code page first, then get the related strings</span><br><span class="line">        trans = GetFileVersionInfo(filename, "\VarFileInfo\Translation")</span><br><span class="line">        if not trans:</span><br><span class="line">            return </span><br><span class="line">        print(info)</span><br><span class="line"></span><br><span class="line">        # Common string lists:</span><br><span class="line">        # "CompanyName","FileDescription", "FileVersion", "InternalName",</span><br><span class="line">        # "LegalCopyright", "OriginalFilename", "ProductName", "ProductVersion"</span><br><span class="line">        # You can use this way to get custom defined strings.</span><br><span class="line"></span><br><span class="line">        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "CompanyName"))</span><br><span class="line">        print(info)</span><br><span class="line">        info = GetFileVersionInfo(filename, "\StringFileInfo\%04x%04x\%s" % (trans[0][0], trans[0][1], "FileVersion"))</span><br><span class="line">        print(info)</span><br><span class="line">    except:</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    import os</span><br><span class="line">    filename = os.environ["COMSPEC"]</span><br><span class="line">    print ".".join ([str (i) for i in get_version_number (filename)])</span><br><span class="line">    printOtherInfo(filename)</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -212,19 +241,16 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>马克一下：&lt;a href=&quot;http://code.google.com/p/pefile/&quot;&gt;http://code.google.com/p/pefile/&lt;/a&gt;</p>
-<p>&lt;em&gt;pefile&lt;/em&gt; is a multi-platform &lt;a style=&quot;color: #0000cc;&quot; rel=&quot;nofollow&quot; href=&quot;http://python.org/&quot;&gt;Python&lt;/a&gt; module to read and work with &lt;a style=&quot;color: #0000cc;&quot; rel=&quot;nofollow&quot; href=&quot;http://en.wikipedia.org/wiki/Portable_Executable&quot;&gt;Portable Executable (aka PE) files&lt;/a&gt;. Most of the information in the PE Header is accessible, as well as all the sections, section's information and data.
-pefile requires some basic understanding of the layout of a PE file. Armed with it it's possible to explore nearly every single feature of the file.
-Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
-&lt;ul style=&quot;max-width: 65em; padding-left: 40px; font-family: arial, sans-serif; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px; line-height: normal;&quot;&gt;
-&lt;li&gt;Modifying and writing back to the PE image&lt;/li&gt;
-&lt;li&gt;Header Inspection&lt;/li&gt;
-&lt;li&gt;Sections analysis&lt;/li&gt;
-&lt;li&gt;Retrieving data&lt;/li&gt;
-&lt;li&gt;Warnings for suspicious and malformed values&lt;/li&gt;
-&lt;li&gt;Packer detection with PEiD’s signatures&lt;/li&gt;
-&lt;li&gt;PEiD signature generation&lt;/li&gt;
-&lt;/ul&gt;Please, refer to &lt;a style=&quot;color: #0000cc;&quot; href=&quot;http://code.google.com/p/pefile/wiki/UsageExamples&quot;&gt;UsageExamples&lt;/a&gt; for starting points on how to use &lt;em&gt;pefile&lt;/em&gt;</p>
+	  <p>马克一下：<a href="http://code.google.com/p/pefile/" target="_blank" rel="external">http://code.google.com/p/pefile/</a></p>
+<p><em>pefile</em> is a multi-platform <a style="color: #0000cc;" rel="external" href="http://python.org/" target="_blank">Python</a> module to read and work with <a style="color: #0000cc;" rel="external" href="http://en.wikipedia.org/wiki/Portable_Executable" target="_blank">Portable Executable (aka PE) files</a>. Most of the information in the PE Header is accessible, as well as all the sections, section’s information and data.<br>pefile requires some basic understanding of the layout of a PE file. Armed with it it’s possible to explore nearly every single feature of the file.<br>Some of the tasks that <em>pefile</em> makes possible are:</p>
+<p><ul style="max-width: 65em; padding-left: 40px; font-family: arial, sans-serif; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px; line-height: normal;"></ul></p>
+<p><li>Modifying and writing back to the PE image</li></p>
+<p><li>Header Inspection</li></p>
+<p><li>Sections analysis</li></p>
+<p><li>Retrieving data</li></p>
+<p><li>Warnings for suspicious and malformed values</li></p>
+<p><li>Packer detection with PEiD’s signatures</li></p>
+<p><li>PEiD signature generation</li><br>Please, refer to <a style="color: #0000cc;" href="http://code.google.com/p/pefile/wiki/UsageExamples" target="_blank" rel="external">UsageExamples</a> for starting points on how to use <em>pefile</em></p>
 
 	
 	</div>
@@ -251,7 +277,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 	<div class="col-md-12">
 	  
 	
-	  <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> win32com.shell <span class="keyword">import</span> shell</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetDesktoppath</span><span class="params">()</span>:</span></span><br><span class="line">    ilist = shell.SHGetSpecialFolderLocation(<span class="number">0</span>,shellcon.CSIDL_DESKTOP)</span><br><span class="line">    dtpath = shell.SHGetPathFromIDList(ilist)</span><br><span class="line">    <span class="keyword">return</span> dtpath</span><br></pre></td></tr></table></figure></p>
+	  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> win32com.shell <span class="keyword">import</span> shell</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetDesktoppath</span><span class="params">()</span>:</span></span><br><span class="line">    ilist = shell.SHGetSpecialFolderLocation(<span class="number">0</span>,shellcon.CSIDL_DESKTOP)</span><br><span class="line">    dtpath = shell.SHGetPathFromIDList(ilist)</span><br><span class="line">    <span class="keyword">return</span> dtpath</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -280,9 +306,8 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 	
 	  <p>总结一下有2种方法：</p>
 <ol>
-<li>通过注册表操作HKLMSYSTEMCurrentControlSetControlSession ManagerEnvironment以达到目的，参考&lt;a href=&quot;/python_access_windows_registry.html&quot; target=&quot;_blank&quot;&gt;_winreg修改注册表&lt;/a&gt;，如果要通知其他程序环境变量已改变，则可以使用pywin32中的win32gui模块来实现：</li>
+<li>通过注册表操作HKLMSYSTEMCurrentControlSetControlSession ManagerEnvironment以达到目的，参考<a href="/python_access_windows_registry.html" target="_blank">_winreg修改注册表</a>，如果要通知其他程序环境变量已改变，则可以使用pywin32中的win32gui模块来实现：</li>
 </ol>
-<p>
 	
 	</div>
 	
@@ -310,7 +335,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 	
 	  <p><a href="http://www.blog.pythonlibrary.org/2010/07/16/python-and-microsoft-office-using-pywin32/" target="_blank" rel="external">参考链接</a></p>
 <p>直接用上面的代码吧</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</span><br><span class="line"></span><br><span class="line"><span class="comment">#----------------------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">excel</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""这只是测试"""</span></span><br><span class="line">    xl = win32.gencache.EnsureDispatch(<span class="string">'Excel.Application'</span>)</span><br><span class="line">    ss = xl.Workbooks.Add()</span><br><span class="line">    sh = ss.ActiveSheet</span><br><span class="line"></span><br><span class="line">    xl.Visible = <span class="keyword">True</span></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    sh.Cells(<span class="number">1</span>,<span class="number">1</span>).Value = <span class="string">'Hacking Excel with Python Demo'</span></span><br><span class="line"></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">8</span>):</span><br><span class="line">        sh.Cells(i,<span class="number">1</span>).Value = <span class="string">'Line %i'</span> % i</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    ss.Close(<span class="keyword">False</span>)</span><br><span class="line">    xl.Application.Quit()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    excel()</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> win32com.client <span class="keyword">as</span> win32</span><br><span class="line"></span><br><span class="line"><span class="comment">#----------------------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">excel</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""这只是测试"""</span></span><br><span class="line">    xl = win32.gencache.EnsureDispatch(<span class="string">'Excel.Application'</span>)</span><br><span class="line">    ss = xl.Workbooks.Add()</span><br><span class="line">    sh = ss.ActiveSheet</span><br><span class="line"></span><br><span class="line">    xl.Visible = <span class="keyword">True</span></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    sh.Cells(<span class="number">1</span>,<span class="number">1</span>).Value = <span class="string">'Hacking Excel with Python Demo'</span></span><br><span class="line"></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">8</span>):</span><br><span class="line">        sh.Cells(i,<span class="number">1</span>).Value = <span class="string">'Line %i'</span> % i</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    ss.Close(<span class="keyword">False</span>)</span><br><span class="line">    xl.Application.Quit()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    excel()</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -337,8 +362,7 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 	<div class="col-md-12">
 	  
 	
-	  <p>&lt;object width=&quot;600&quot; height=&quot;480&quot; data=&quot;http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf&quot; type=&quot;application/x-shockwave-flash&quot;&gt;
-&lt;param name=&quot;src&quot; value=&quot;http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf&quot;&gt;&lt;/object&gt;</p>
+	  <object width="600" height="480" data="http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf" type="application/x-shockwave-flash"><br><param name="src" value="http://player.youku.com/player.php/sid/XMjI2MzQ3MzU2/v.swf"></object>
 
 	
 	</div>
@@ -365,9 +389,8 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 	<div class="col-md-12">
 	  
 	
-	  <p>&lt;object width=&quot;600&quot; height=&quot;480&quot; data=&quot;http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&amp;embedid=-&amp;showAd=0&quot; type=&quot;application/x-shockwave-flash&quot;&gt;
-&lt;param name=&quot;src&quot; value=&quot;http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&amp;embedid=-&amp;showAd=0&quot;&gt;&lt;/object&gt;
-&lt;a href=&quot;http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&amp;embedid=-&amp;showAd=0&quot; target=&quot;_blank&quot;&gt;弹出&lt;/a&gt;</p>
+	  <p><object width="600" height="480" data="http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&embedid=-&showAd=0" type="application/x-shockwave-flash"></object></p>
+<p><param name="src" value="http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&embedid=-&showAd=0"><br><a href="http://static.youku.com/v1.0.0133/v/swf/qplayer.swf?VideoIDS=XMjI2MjgxNDY0&embedid=-&showAd=0" target="_blank">弹出</a></p>
 
 	
 	</div>
@@ -375,36 +398,6 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
   
 </div>
 	<a type="button" href="/2010-12-09-ps.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Dec 8 2010 </div>
-			<div class="article-title"><a href="/2010-12-08-wuti.html" >无题</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>一群人出去旅游，遇到打劫，匪徒只有一个人，他对那群人说：“自觉的把钱交出来，第一个交的我只收他100元，第二个交的150元，第三个交的200元，以此类推，越早交钱越划算，越晚交越亏，还不快来交钱？”于是那帮人争先恐后的去向那个匪徒交钱，还打起架来了。匪徒一边收钱一边维持秩序，“不许打架，都排好队，谁插队谁排到最后面去。”众人顿时秩序井然。有些人没带那么多钱，怎么办？匪徒说：“没关系，把带的先交了，剩下的我借给你，然后你写下欠条，回头我去你家取，我借给你的那部分得算利息。”</p>
-<p>那群人中有几个小伙子是具有反抗精神的，他们想反正那个匪徒只是一个人，跟他拼了。谁知道那个匪徒根本不屑与那几个小伙子动手，他只是对已经交了钱的人说：“你们瞧，那儿有几个人不想交钱，他们想破坏游戏规则，如果他们不交钱那么你们先交钱的人不就成傻子了吗？他们在损害你们的利益。”于是先交了钱的人开始威逼不肯交钱的人向歹徒交钱，最后大家不管是情愿还是不情愿都向歹徒交了钱。</p>
-<p>歹徒得钱后扬长而去，留下那群人还在那儿攀比，第一名说：“瞧我多聪明，第一个交钱，我只交了100元。”第二名说：“我也不赖，只交了150元。”。。。。。。。。。。。</p>
-<p>网上看到的。原始链接找不到了。</p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-12-08-wuti.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -454,48 +447,48 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/转载/">转载<span>7</span></a></li>
-		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
-		
-			<li><a href="/tags/portable/">portable<span>1</span></a></li>
-		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
-		
-			<li><a href="/tags/boost/">boost<span>6</span></a></li>
-		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
-		
 			<li><a href="/tags/vcs/">vcs<span>3</span></a></li>
 		
-			<li><a href="/tags/python/">python<span>31</span></a></li>
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
 		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+			<li><a href="/tags/network/">network<span>1</span></a></li>
 		
-			<li><a href="/tags/git/">git<span>12</span></a></li>
+			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
 		
-			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
+			<li><a href="/tags/objc/">objc<span>1</span></a></li>
 		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+			<li><a href="/tags/Google/">Google<span>14</span></a></li>
 		
-			<li><a href="/tags/android/">android<span>18</span></a></li>
+			<li><a href="/tags/firefox/">firefox<span>1</span></a></li>
 		
-			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
-		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
-		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
-		
-			<li><a href="/tags/ubunut/">ubunut<span>1</span></a></li>
+			<li><a href="/tags/xml/">xml<span>1</span></a></li>
 		
 			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>69</span></a></li>
+			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
 		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
+			<li><a href="/tags/macos/">macos<span>9</span></a></li>
+		
+			<li><a href="/tags/go/">go<span>2</span></a></li>
+		
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
+		
+			<li><a href="/tags/android/">android<span>18</span></a></li>
+		
+			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
+		
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
+		
+			<li><a href="/tags/redis/">redis<span>1</span></a></li>
+		
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
+		
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>88</span></a></li>
+		   <li><a href="/tags">...<span>91</span></a></li>
 		 
 		</ul>
 	</div>
@@ -506,6 +499,10 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+      </li>
     
       <li>
         <a href="/2015-08-18-hexo-3-robots-txt-error.html" ><i class="fa fa-file-o"></i>升级到 Hexo 3后发现 robots.txt失效...</a>
@@ -521,10 +518,6 @@ Some of the tasks that &lt;em&gt;pefile&lt;/em&gt; makes possible are:
     
       <li>
         <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
-      </li>
-    
-      <li>
-        <a href="/2013-06-23-install-gevent-on-mac-os-x.html" ><i class="fa fa-file-o"></i>Mac OS X下安装gevent...</a>
       </li>
     
   </ul>

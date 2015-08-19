@@ -118,40 +118,31 @@
 	<div class="mypage">		
 	    <p>GNUStep 主要有一下四部分组成，对应着在 Archlinux 系统下面我们也需要安装四个软件包。</p>
 <ol>
-<li>
-<p>GNUstep Make: 提供类似 Makefile 的功能, 称为 GNUmakefile, 较 Makefile 好用许多。</p>
+<li><p>GNUstep Make: 提供类似 Makefile 的功能, 称为 GNUmakefile, 较 Makefile 好用许多。</p>
 </li>
-<li>
-<p>GNUstep Base: 提供 OpenStep 的 Foundation 程式库, 处理非图形介面的功能。</p>
+<li><p>GNUstep Base: 提供 OpenStep 的 Foundation 程式库, 处理非图形介面的功能。</p>
 </li>
-<li>
-<p>GNUstep GUI: 提供 OpenStep 的 AppKit 程式库, 处理图形介面的功能。</p>
+<li><p>GNUstep GUI: 提供 OpenStep 的 AppKit 程式库, 处理图形介面的功能。</p>
 </li>
-<li>
-<p>GNUstep Back: 提供与作业系统相关的后端处理, 提供 GNUstep GUI 有关绘图及字型的功能。</p>
+<li><p>GNUstep Back: 提供与作业系统相关的后端处理, 提供 GNUstep GUI 有关绘图及字型的功能。 </p>
 </li>
 </ol>
 <p>安装GNUStep：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S gnustep-base gnustep-make gnustep-gui gnustep-back</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S gnustep-base gnustep-make gnustep-gui gnustep-back</span><br></pre></td></tr></table></figure>
 <p>当然也需要安装gcc objc支持:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S gcc-objc</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S gcc-objc</span><br></pre></td></tr></table></figure>
 <p>编译obj-c所需命令:</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc xxx.m -o xxx</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc xxx.m -o xxx</span><br></pre></td></tr></table></figure>
 <p>Hello World测试:</p>
-<p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//helloworld.m</span></span><br><span class="line"><span class="preprocessor">#import <span class="title">"Foundation/Foundation.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSAutoreleasePool</span> *pool = [[<span class="built_in">NSAutoreleasePool</span> alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Hello World\n"</span>);</span><br><span class="line">    [pool drain];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//helloworld.m</span></span><br><span class="line"><span class="preprocessor">#import <span class="title">"Foundation/Foundation.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSAutoreleasePool</span> *pool = [[<span class="built_in">NSAutoreleasePool</span> alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Hello World\n"</span>);</span><br><span class="line">    [pool drain];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>编译运行：</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc helloworld.m -o helloworld</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc `gnustep-config --objc-flags` -lgnustep-base -lobjc helloworld.m -o helloworld</span><br></pre></td></tr></table></figure>
 <p>如果没有添加-lobjc的话，新版的gcc编辑器会出现链接错误：</p>
 <blockquote>
-<p>/usr/bin/ld: /usr/lib/gcc/i686-pc-linux-gnu/4.6.2/../../../libgnustep-base.so: undefined reference to symbol 'objc_get_class'
-/usr/bin/ld: note: 'objc_get_class' is defined in DSO /usr/lib/libobjc.so.3 so try adding it to the linker command line
-/usr/lib/libobjc.so.3: could not read symbols: Invalid operation
-collect2: ld returned 1 exit status</p>
+<p>/usr/bin/ld: /usr/lib/gcc/i686-pc-linux-gnu/4.6.2/../../../libgnustep-base.so: undefined reference to symbol ‘objc_get_class’<br>/usr/bin/ld: note: ‘objc_get_class’ is defined in DSO /usr/lib/libobjc.so.3 so try adding it to the linker command line<br>/usr/lib/libobjc.so.3: could not read symbols: Invalid operation<br>collect2: ld returned 1 exit status</p>
 </blockquote>
-<p>运行结果：
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ./helloworld</span><br><span class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.391</span> helloworld[<span class="number">6928</span>] No local time zone specified.</span><br><span class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.392</span> helloworld[<span class="number">6928</span>] Using time zone with absolute offset <span class="number">0.</span></span><br><span class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.338</span> helloworld[<span class="number">6928</span>] Hello World</span><br></pre></td></tr></table></figure></p>
-<p>这里有2个warning, 设置一下:
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write NSGlobalDomain <span class="string">"Local Time Zone"</span> <span class="string">'Asia/Chongqing'</span></span><br></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ./helloworld</span><br><span class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.391</span> helloworld[<span class="number">6928</span>] No local time zone specified.</span><br><span class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.392</span> helloworld[<span class="number">6928</span>] Using time zone with absolute offset <span class="number">0.</span></span><br><span class="line"><span class="number">2011</span>-<span class="number">12</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">27</span>:<span class="number">14.338</span> helloworld[<span class="number">6928</span>] Hello World</span><br></pre></td></tr></table></figure></p>
+<p>这里有2个warning, 设置一下:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write NSGlobalDomain <span class="string">"Local Time Zone"</span> <span class="string">'Asia/Chongqing'</span></span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 	

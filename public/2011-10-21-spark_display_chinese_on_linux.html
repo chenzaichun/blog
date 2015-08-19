@@ -116,16 +116,16 @@
 
 	<!-- content -->
 	<div class="mypage">		
-	    <p>@ &lt;a href=&quot;http://www.cnblogs.com/highriver/archive/2010/06/24/1764520.html&quot;&gt;http://www.cnblogs.com/highriver/archive/2010/06/24/1764520.html&lt;/a&gt;</p>
-<p>解决Spark乱码：</p>
-<p>Linux下Java图形界面中文显示乱码问题往往是所合适的jre/fonts里面没有合适的字体。</p>
-<p>比如spark会往~/.install4j里面写入最后一行，说明spark使用的jre是其自带的jre.</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JRE_VERSION    /home/gaoyibo/work/jdk1<span class="number">.6</span><span class="number">.0</span>_05    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">05</span></span><br><span class="line">JRE_VERSION    /usr    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">0</span></span><br><span class="line">JRE_VERSION    /home/gaoyibo/comodo/openfire/Spark/jre    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">02</span></span><br></pre></td></tr></table></figure></p>
-<p>所以遇到乱码问题解决：</p>
-<p>1，找到jre路径，创建fallback文件夹</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;path_to_spark&gt;/Spark/jre/lib/fonts</span><br><span class="line">sudo mkdir fallback</span><br></pre></td></tr></table></figure></p>
-<p>进入fallback文件夹，链接中文字体（我选的是文泉驿正黑）</p>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fallback</span><br><span class="line">sudo ln <span class="operator">-s</span> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo mkfontscale</span><br></pre></td></tr></table></figure></p>
+	    <p>@ <a href="http://www.cnblogs.com/highriver/archive/2010/06/24/1764520.html" target="_blank" rel="external">http://www.cnblogs.com/highriver/archive/2010/06/24/1764520.html</a>  </p>
+<p>解决Spark乱码：   </p>
+<p>Linux下Java图形界面中文显示乱码问题往往是所合适的jre/fonts里面没有合适的字体。   </p>
+<p>比如spark会往~/.install4j里面写入最后一行，说明spark使用的jre是其自带的jre.    </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JRE_VERSION    /home/gaoyibo/work/jdk1<span class="number">.6</span><span class="number">.0</span>_05    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">05</span></span><br><span class="line">JRE_VERSION    /usr    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">0</span></span><br><span class="line">JRE_VERSION    /home/gaoyibo/comodo/openfire/Spark/jre    <span class="number">1</span>    <span class="number">6</span>    <span class="number">0</span>    <span class="number">02</span></span><br></pre></td></tr></table></figure>
+<p>所以遇到乱码问题解决：   </p>
+<p>1，找到jre路径，创建fallback文件夹    </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;path_to_spark&gt;/Spark/jre/lib/fonts</span><br><span class="line">sudo mkdir fallback</span><br></pre></td></tr></table></figure>
+<p>进入fallback文件夹，链接中文字体（我选的是文泉驿正黑）    </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fallback</span><br><span class="line">sudo ln <span class="operator">-s</span> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo mkfontscale</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	

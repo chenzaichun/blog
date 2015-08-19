@@ -118,7 +118,7 @@
 	<div class="mypage">		
 	    <p>当用<code>libcurl</code>下载http文件不存在的时候，如果使用<code>curl_easy_perform</code>得到的结果也是<code>CURLE_OK</code> ，此时不能通过直接通过返回值来判断结果。</p>
 <p>可以使用</p>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> code = <span class="number">0</span>;</span><br><span class="line">curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &amp;code);</span><br><span class="line"><span class="keyword">if</span> (code != <span class="number">200</span>) &#123;</span><br><span class="line">     <span class="comment">// download error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> code = <span class="number">0</span>;</span><br><span class="line">curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &amp;code);</span><br><span class="line"><span class="keyword">if</span> (code != <span class="number">200</span>) &#123;</span><br><span class="line">     <span class="comment">// download error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 	  
 	</div>
 	
@@ -175,7 +175,7 @@
     <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
     <!--       
   <li>
-    <li><a href="/categories/programming/">programming<span>84</span></a></li>
+    <li><a href="/categories/programming/">programming<span>85</span></a></li>
   </li>
  -->
     <!-- </ul> -->

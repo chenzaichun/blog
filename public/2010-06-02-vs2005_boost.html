@@ -118,19 +118,17 @@
 	<div class="mypage">		
 	    <p>vs2005下编译boost速度比较慢，由于默认使用的是bjam，不能通过incredibuild直接联编，所以只能通过incredibuild的xge接口来编译。我的编译过程:</p>
 <ol>
-<li>
-<p>首先编译bjam，cd到tools/jam/src目录,执行build.bat vc8,拷贝bin.ntx86下bjam.exe到boost根目录</p>
+<li><p>首先编译bjam，cd到tools/jam/src目录,执行build.bat vc8,拷贝bin.ntx86下bjam.exe到boost根目录</p>
 </li>
-<li>
-<p>新建一个boostib.xml文件，内容如下</p>
+<li><p>新建一个boostib.xml文件，内容如下</p>
 </li>
 </ol>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8" standalone="no" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">Profile</span> <span class="attribute">FormatVersion</span>=<span class="value">"1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">Tools</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"python"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"bjam"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"cl"</span> <span class="attribute">AllowRemote</span>=<span class="value">"true"</span> <span class="attribute">VCCompiler</span>=<span class="value">"True"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"link"</span> <span class="attribute">AllowRemote</span>=<span class="value">"false"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">Tools</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">Profile</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<ol start="3">
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8" standalone="no" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">Profile</span> <span class="attribute">FormatVersion</span>=<span class="value">"1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">Tools</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"python"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"bjam"</span> <span class="attribute">AllowIntercept</span>=<span class="value">"true"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"cl"</span> <span class="attribute">AllowRemote</span>=<span class="value">"true"</span> <span class="attribute">VCCompiler</span>=<span class="value">"True"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Tool</span> <span class="attribute">Filename</span>=<span class="value">"link"</span> <span class="attribute">AllowRemote</span>=<span class="value">"false"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">Tools</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">Profile</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol>
 <li>新建一个boostib.bat文件，内容如下</li>
 </ol>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XGConsole /<span class="built_in">command</span>=<span class="string">"bjam -j16 --toolset=msvc-8.0 --build-type=complete stage"</span> /openmonitor /profile=<span class="string">"boostib.xml"</span></span><br></pre></td></tr></table></figure></p>
-<ol start="4">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XGConsole /<span class="built_in">command</span>=<span class="string">"bjam -j16 --toolset=msvc-8.0 --build-type=complete stage"</span> /openmonitor /profile=<span class="string">"boostib.xml"</span></span><br></pre></td></tr></table></figure>
+<ol>
 <li>执行boostlib.bat,库文件就在stage/lib目录下。至此完成编译！可是一看stage目录，这个硬盘占用也忒大了吧（2.58G）!!!</li>
 </ol>
 	  
@@ -189,7 +187,7 @@
     <!-- <ul id="categorys" class="tag_box list-unstyled collapse in"> -->
     <!--       
   <li>
-    <li><a href="/categories/programming/">programming<span>84</span></a></li>
+    <li><a href="/categories/programming/">programming<span>85</span></a></li>
   </li>
  -->
     <!-- </ul> -->
