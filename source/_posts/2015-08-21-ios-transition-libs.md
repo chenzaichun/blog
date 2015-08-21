@@ -4,7 +4,7 @@ categories: programming
 layout: true
 date: 2015-08-21 13:16
 toc: false
-feature: media/gallery.gif
+feature: media/animated-transition-gallery.gif
 ---
 
 最近尝试在程序使用`Transition`, 搜索了一下github，发现以下库很不错，记录一下
