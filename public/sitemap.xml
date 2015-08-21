@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yesokay.herokuapp.com/2015-08-21-ios-transition-libs.html</loc>
+    <lastmod>2015-08-21T05:21:22.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yesokay.herokuapp.com/2015-08-18-VKVideoPlayer-customization.html</loc>
-    <lastmod>2015-08-18T13:28:29.000Z</lastmod>
+    <lastmod>2015-08-19T07:29:25.000Z</lastmod>
   </url>
   
   <url>
@@ -52,12 +57,7 @@
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2012-11-26-open-large-file-with-emacs.html</loc>
-    <lastmod>2015-08-07T05:26:41.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yesokay.herokuapp.com/2012-11-26-insert-current-time-in-emacs.html</loc>
+    <loc>http://yesokay.herokuapp.com/2011-01-10-easy_install_upgrade.html</loc>
     <lastmod>2015-08-07T05:26:41.000Z</lastmod>
   </url>
   
@@ -642,22 +642,22 @@
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html</loc>
-    <lastmod>2015-08-07T05:26:41.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yesokay.herokuapp.com/2011-01-16-hg-git.html</loc>
-    <lastmod>2015-08-07T05:26:41.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://yesokay.herokuapp.com/2011-01-16-hg_cert_warning.html</loc>
     <lastmod>2015-08-07T05:26:41.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-01-10-easy_install_upgrade.html</loc>
+    <loc>http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html</loc>
+    <lastmod>2015-08-07T05:26:41.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yesokay.herokuapp.com/2011-01-16-compile_subversion_python2-7_binding_on_windows.html</loc>
+    <lastmod>2015-08-07T05:26:41.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yesokay.herokuapp.com/2011-01-16-hg-git.html</loc>
     <lastmod>2015-08-07T05:26:41.000Z</lastmod>
   </url>
   
@@ -1222,12 +1222,17 @@
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2010-05-07-get_glsl_version.html</loc>
+    <loc>http://yesokay.herokuapp.com/2012-11-26-open-large-file-with-emacs.html</loc>
     <lastmod>2015-08-07T05:26:41.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yesokay.herokuapp.com/2011-01-16-compile_subversion_python2-7_binding_on_windows.html</loc>
+    <loc>http://yesokay.herokuapp.com/2012-11-26-insert-current-time-in-emacs.html</loc>
+    <lastmod>2015-08-07T05:26:41.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yesokay.herokuapp.com/2010-05-07-get_glsl_version.html</loc>
     <lastmod>2015-08-07T05:26:41.000Z</lastmod>
   </url>
   

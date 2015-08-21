@@ -116,6 +116,33 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Jun 24 2010 </div>
+			<div class="article-title"><a href="/2010-06-24-pyexpect.html" >pyexpect</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This connects to the openbsd ftp site and</span></span><br><span class="line"><span class="comment"># downloads the recursive directory listing.</span></span><br><span class="line"><span class="keyword">import</span> pexpect</span><br><span class="line">child = pexpect.spawn (<span class="string">'ftp ftp.openbsd.org'</span>)</span><br><span class="line">child.expect (<span class="string">'Name .*: '</span>)</span><br><span class="line">child.sendline (<span class="string">'anonymous'</span>)</span><br><span class="line">child.expect (<span class="string">'Password:'</span>)</span><br><span class="line">child.sendline (<span class="string">'noah@example.com'</span>)</span><br><span class="line">child.expect (<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'cd pub'</span>)</span><br><span class="line">child.expect(<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'get ls-lR.gz'</span>)</span><br><span class="line">child.expect(<span class="string">'ftp&gt; '</span>)</span><br><span class="line">child.sendline (<span class="string">'bye'</span>)</span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2010-06-24-pyexpect.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Jun 22 2010 </div>
 			<div class="article-title"><a href="/2010-06-22-emacs_python_ide.html" >emacs下配置python开发环境</a></div>						
 		</h3>
@@ -438,33 +465,6 @@
 </div>
 
 		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Jun 6 2010 </div>
-			<div class="article-title"><a href="/2010-06-06-first_qt.html" >第一个Qt程序</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 来自C++ GUI Programming with Qt 4</span></span><br><span class="line"><span class="comment">// 编译：</span></span><br><span class="line"><span class="comment">//    qmake -project</span></span><br><span class="line"><span class="comment">//    qmake</span></span><br><span class="line"><span class="comment">//    make</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;QApplication&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;QLabel&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">QApplication <span class="title">app</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    QLabel* label = <span class="keyword">new</span> QLabel(<span class="string">"Hello qt!"</span>);</span><br><span class="line">    label-&gt;show();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> app.exec();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2010-06-06-first_qt.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -511,48 +511,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
 		
-			<li><a href="/tags/tools/">tools<span>4</span></a></li>
-		
-			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
-		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
-		
-			<li><a href="/tags/转载/">转载<span>7</span></a></li>
-		
-			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
-		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
-		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
-		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
-		
-			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
-		
-			<li><a href="/tags/objc/">objc<span>1</span></a></li>
+			<li><a href="/tags/vs/">vs<span>2</span></a></li>
 		
 			<li><a href="/tags/libjinglea/">libjinglea<span>1</span></a></li>
 		
-			<li><a href="/tags/svn/">svn<span>2</span></a></li>
+			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
 		
-			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+			<li><a href="/tags/dns/">dns<span>1</span></a></li>
 		
-			<li><a href="/tags/xml/">xml<span>1</span></a></li>
+			<li><a href="/tags/nvidia/">nvidia<span>2</span></a></li>
 		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
+			<li><a href="/tags/english/">english<span>1</span></a></li>
 		
-			<li><a href="/tags/redhat/">redhat<span>1</span></a></li>
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+		
+			<li><a href="/tags/python/">python<span>31</span></a></li>
+		
+			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
+		
+			<li><a href="/tags/objc/">objc<span>2</span></a></li>
+		
+			<li><a href="/tags/golang/">golang<span>1</span></a></li>
+		
+			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+		
+			<li><a href="/tags/ovo/">ovo<span>1</span></a></li>
+		
+			<li><a href="/tags/transition/">transition<span>1</span></a></li>
+		
+			<li><a href="/tags/redis/">redis<span>1</span></a></li>
 		
 			<li><a href="/tags/video/">video<span>1</span></a></li>
 		
-			<li><a href="/tags/DVCS/">DVCS<span>19</span></a></li>
+			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
+		
+			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>91</span></a></li>
+		   <li><a href="/tags">...<span>92</span></a></li>
 		 
 		</ul>
 	</div>
@@ -565,7 +565,11 @@
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+        <a href="/2015-08-21-ios-transition-libs.html" ><i class="fa fa-file-o"></i>iOS中Tranisition常用库...</a>
+      </li>
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer爬坑记...</a>
       </li>
     
       <li>
@@ -578,10 +582,6 @@
     
       <li>
         <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
-      </li>
-    
-      <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
   </ul>
@@ -632,15 +632,14 @@
 
 
 <script type="text/javascript">
-  var duoshuoQuery = { short_name: 'yesokay' };
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';
-    ds.async = true;
-    ds.src = 'http://static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
+var disqus_shortname = 'yesokay';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
 </script>
 
 

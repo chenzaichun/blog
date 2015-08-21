@@ -117,6 +117,36 @@
 	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Nov 15 2011 </div>
+			<div class="article-title"><a href="/2011-11-15-install-oracle-10gr2-on-archlinux.html" >Archlinux下安装oracle 10gr2 Enterprise</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>由于Oracle XE精简了很多，跟教科书上很多不一样，所以还是装一个企业版吧。</p>
+<p><a href="http://meansonw-work.blogspot.com/2008/10/archlinux-oracle-10g.html" target="_blank" rel="external">参考链接</a></p>
+<p>安装跟archlinux的wiki上差不多，注意两个链接必须创建：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="operator">-s</span> /usr/lib/libgcc_s.so.<span class="number">1</span> /lib/libgcc_s.so.<span class="number">1</span></span><br><span class="line">sudo ln <span class="operator">-s</span> /bin/tr /usr/bin/tr</span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-11-15-install-oracle-10gr2-on-archlinux.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Nov 15 2011 </div>
 			<div class="article-title"><a href="/2011-11-15-convert-hg-to-git.html" >将hg转换为git</a></div>						
 		</h3>
 	
@@ -139,6 +169,34 @@
   
 </div>
 	<a type="button" href="/2011-11-15-convert-hg-to-git.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Nov 13 2011 </div>
+			<div class="article-title"><a href="/2011-11-13-emacs_sys_process_environment.html" >Emacs进程/系统环境变量</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Emacs中获取进程（系统）环境变量并进行修改，比如<code>http_proxy</code>:</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">getenv</span> <span class="string">"http_proxy"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setenv</span> <span class="string">"http_proxy"</span> <span class="string">"http://proxy-server:port"</span>)</span></span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2011-11-13-emacs_sys_process_environment.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -181,34 +239,6 @@
   
 </div>
 	<a type="button" href="/2011-11-13-pymacs.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Nov 13 2011 </div>
-			<div class="article-title"><a href="/2011-11-13-emacs_sys_process_environment.html" >Emacs进程/系统环境变量</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Emacs中获取进程（系统）环境变量并进行修改，比如<code>http_proxy</code>:</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">getenv</span> <span class="string">"http_proxy"</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setenv</span> <span class="string">"http_proxy"</span> <span class="string">"http://proxy-server:port"</span>)</span></span><br></pre></td></tr></table></figure>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-11-13-emacs_sys_process_environment.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -389,35 +419,6 @@
 </div>
 
 		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Nov 2 2011 </div>
-			<div class="article-title"><a href="/2011-11-02-micolog_code_backgroud_in_rss_output.html" >Micolog RSS输出代码背景色问题</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>大家可能注意到用阅读器读取rss的时候代码看不清（没有背景色的缘故)，所以修改了一下代码的输出：</p>
-<p>添加两个函数来插入代码：</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> i-babel-quote <span class="list">(<span class="keyword">beg</span> end str1 str2)</span></span><br><span class="line">  <span class="list">(<span class="keyword">goto-char</span> end)</span></span><br><span class="line">  <span class="list">(<span class="keyword">forward-line</span> <span class="number">1</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> str2)</span></span><br><span class="line">  <span class="list">(<span class="keyword">newline</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">goto-char</span> beg)</span></span><br><span class="line">  <span class="list">(<span class="keyword">forward-line</span> <span class="number">-1</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">newline</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">insert</span> str1)</span></span><br><span class="line">)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> isrc <span class="list">(<span class="keyword">St</span> Ed)</span></span><br><span class="line">  <span class="string">"Enclose code for Emacser.cn"</span></span><br><span class="line">  <span class="list">(<span class="keyword">interactive</span> <span class="string">"r"</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">beg</span> St)</span> <span class="list">(<span class="keyword">end</span> Ed)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"%s %s"</span> beg end)</span></span><br><span class="line">    <span class="list">(<span class="keyword">i-babel-quote</span> beg end</span></span></span></span><br></pre></td></tr></table></figure>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2011-11-02-micolog_code_backgroud_in_rss_output.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -464,48 +465,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/autoproxy/">autoproxy<span>2</span></a></li>
-		
-			<li><a href="/tags/mingw/">mingw<span>2</span></a></li>
-		
-			<li><a href="/tags/ssh/">ssh<span>1</span></a></li>
-		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
-		
-			<li><a href="/tags/octopress/">octopress<span>4</span></a></li>
-		
-			<li><a href="/tags/ios/">ios<span>8</span></a></li>
-		
-			<li><a href="/tags/css3/">css3<span>1</span></a></li>
-		
-			<li><a href="/tags/golang/">golang<span>1</span></a></li>
-		
-			<li><a href="/tags/Ogre/">Ogre<span>2</span></a></li>
-		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
-		
-			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
-		
-			<li><a href="/tags/visualstudio/">visualstudio<span>1</span></a></li>
-		
-			<li><a href="/tags/Google/">Google<span>14</span></a></li>
-		
-			<li><a href="/tags/ubuntu/">ubuntu<span>9</span></a></li>
-		
 			<li><a href="/tags/network/">network<span>1</span></a></li>
 		
-			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
+			<li><a href="/tags/无所事事/">无所事事<span>29</span></a></li>
 		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
-		
-			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
 		
 			<li><a href="/tags/archlinux/">archlinux<span>24</span></a></li>
 		
-			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
+			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+		
+			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
+		
+			<li><a href="/tags/linux/">linux<span>13</span></a></li>
+		
+			<li><a href="/tags/gtk/">gtk<span>2</span></a></li>
+		
+			<li><a href="/tags/go/">go<span>2</span></a></li>
+		
+			<li><a href="/tags/micolog/">micolog<span>2</span></a></li>
+		
+			<li><a href="/tags/VCS/">VCS<span>11</span></a></li>
+		
+			<li><a href="/tags/xmpp/">xmpp<span>1</span></a></li>
+		
+			<li><a href="/tags/ios/">ios<span>8</span></a></li>
+		
+			<li><a href="/tags/GameDev/">GameDev<span>2</span></a></li>
+		
+			<li><a href="/tags/OpenGL/">OpenGL<span>1</span></a></li>
+		
+			<li><a href="/tags/VC/">VC<span>8</span></a></li>
+		
+			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+		
+			<li><a href="/tags/orkut/">orkut<span>1</span></a></li>
+		
+			<li><a href="/tags/portable/">portable<span>1</span></a></li>
+		
+			<li><a href="/tags/norton/">norton<span>1</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>91</span></a></li>
+		   <li><a href="/tags">...<span>92</span></a></li>
 		 
 		</ul>
 	</div>
@@ -518,7 +519,11 @@
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+        <a href="/2015-08-21-ios-transition-libs.html" ><i class="fa fa-file-o"></i>iOS中Tranisition常用库...</a>
+      </li>
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer爬坑记...</a>
       </li>
     
       <li>
@@ -531,10 +536,6 @@
     
       <li>
         <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
-      </li>
-    
-      <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
   </ul>
@@ -585,15 +586,14 @@
 
 
 <script type="text/javascript">
-  var duoshuoQuery = { short_name: 'yesokay' };
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';
-    ds.async = true;
-    ds.src = 'http://static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
+var disqus_shortname = 'yesokay';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
 </script>
 
 

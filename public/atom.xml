@@ -5,7 +5,7 @@
   <subtitle><![CDATA[阿尔萨斯，没有霜之哀伤你就是一坨屎！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yesokay.herokuapp.com//"/>
-  <updated>2015-08-18T13:28:29.000Z</updated>
+  <updated>2015-08-21T05:21:22.000Z</updated>
   <id>http://yesokay.herokuapp.com//</id>
   
   <author>
@@ -16,17 +16,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[VKVideoPlayer使用手记]]></title>
+    <title><![CDATA[iOS中Tranisition常用库]]></title>
+    <link href="http://yesokay.herokuapp.com/2015-08-21-ios-transition-libs.html"/>
+    <id>http://yesokay.herokuapp.com/2015-08-21-ios-transition-libs.html</id>
+    <published>2015-08-21T05:16:00.000Z</published>
+    <updated>2015-08-21T05:21:22.000Z</updated>
+    <content type="html"><![CDATA[<p>最近尝试在程序使用<code>Transition</code>, 搜索了一下github，发现以下库很不错，记录一下</p>
+<ul>
+<li><a href="https://github.com/ColinEberhardt/VCTransitionsLibrary" target="_blank" rel="external"><code>VCTransitionsLibrary</code></a></li>
+<li><a href="https://github.com/shu223/AnimatedTransitionGallery" target="_blank" rel="external"><code>AnimatedTransitionGallery</code></a></li>
+<li><a href="https://github.com/demonnico/PinterestSwift" target="_blank" rel="external"><code>PinterestSwift</code></a></li>
+<li><a href="https://github.com/xhzengAIB/PinterestAnimator" target="_blank" rel="external"><code>PinterestAnimator</code></a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近尝试在程序使用<code>Transition</code>, 搜索了一下github，发现以下库很不错，记录一下</p>
+<ul>
+<li><a href="https://github.com/ColinEberhardt/VCTransitionsLibrary"]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://yesokay.herokuapp.com/tags/iOS/"/>
+    
+      <category term="objc" scheme="http://yesokay.herokuapp.com/tags/objc/"/>
+    
+      <category term="programming" scheme="http://yesokay.herokuapp.com/tags/programming/"/>
+    
+      <category term="transition" scheme="http://yesokay.herokuapp.com/tags/transition/"/>
+    
+      <category term="programming" scheme="http://yesokay.herokuapp.com/categories/programming/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[VKVideoPlayer爬坑记]]></title>
     <link href="http://yesokay.herokuapp.com/2015-08-18-VKVideoPlayer-customization.html"/>
     <id>http://yesokay.herokuapp.com/2015-08-18-VKVideoPlayer-customization.html</id>
     <published>2015-08-18T06:33:00.000Z</published>
-    <updated>2015-08-18T13:28:29.000Z</updated>
+    <updated>2015-08-19T07:29:25.000Z</updated>
     <content type="html"><![CDATA[<h1 id="前言">前言</h1><p>在 iOS 开发过程中，视频播放相对来说还是比较简单，可以是用<code>MPMoviePlayerController</code>，<code>MPMoviePlayerViewController</code>, 或者 iOS8中引入的<code>AVPlayerViewController</code>，如果要更底层一点，也可以使用<code>AVKit</code>来做, 更极端的方式就是使用 <code>WebView</code> 来加载视频。</p>
 <p>这里简单说明一下他们的区别:</p>
 <ul>
 <li><code>MPMoviePlayerController</code>和<code>MPMoviePlayerViewController</code>使用起来类似，不足之处就是不能自定义控件，在使用<code>HDMI</code>来投影屏幕的时候会出现很多莫名其妙的问题，同时在 iOS9中将被标记为<code>deprecated</code>并不再维护</li>
 <li><code>AVPlayerViewController</code>使用起来也很方便，但是在 iOS8中同样有 HDMI 投影问题</li>
-<li><code>AVKit</code>自己实现，比较麻烦</li>
+<li><code>AVKit</code> <code>AVPlayer</code>自己实现，比较麻烦</li>
 <li><code>WebView</code>加载使用起来也很方便，HDMI投影也有问题</li>
 </ul>
 <p>最近想写一个简单的 Demo，需要播放视频，同时需要自定义播放控件，上面的都不满足条件，网上很多人说<code>VKVideoPlayer</code>很不错，查看了一下<a href="https://github.com/viki-org/VKVideoPlayer" target="_blank" rel="external">VKVideoPlayer</a>, 貌似 feature 特别多：</p>
@@ -45,12 +77,13 @@
 <p>看上了这一点<code>Fully customizable UI</code>, 这就是我想要的, <ruby>哈哈<rp> (</rp><rt>jiǎo qíng</rt><rp>) </rp></ruby></p>
 <h2 id="测试VKVideoPlayer_Demo">测试VKVideoPlayer Demo</h2><p>直接 clone 代码来试试看：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:viki-org/VKVideoPlayer.git</span><br><span class="line"></span><br><span class="line">pod install</span><br><span class="line"></span><br><span class="line">open VKVideoPlayer.xcworkspace</span><br></pre></td></tr></table></figure>
-<p>编译Demo, 因为使用xcode 7 beta的缘故，iOS9默认是禁用 http 访问的（貌似这样比较<ruby>操蛋<rp> (</rp><rt>ān quán</rt><rp>) </rp></ruby>），运行的时候会报错。<a href="所有使用iOS9编译的工程，默认都要这样添加才能使用http。">^1</a></p>
+<p>编译Demo, 因为使用xcode 7 beta的缘故，iOS9默认是禁用 http 访问的（貌似这样比较<ruby>操蛋<rp> (</rp><rt>ān quán</rt><rp>) </rp></ruby>），运行的时候会报错。</p>
 <blockquote>
 <p>2015-08-18 14:58:22.059 VKVideoPlayer[2845:41325] App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app’s Info.plist file.</p>
 </blockquote>
 <p>解决办法, 修改<code>Supporting Files</code>下<code>VKVideoPlayer-Info.plist</code>, 加入<code>NSAppTransportSecurity</code> dictionary，添加一个 bool 类型的 key <code>NSAllowsArbitraryLoads</code>, 设置为<code>YES</code></p>
 <p><img src="/media/ios9-http-load.png" alt="iOS 9 HTTP Load"></p>
+<div class="alert alert-success"><i class="fa fa-lightbulb-o"></i>  所有使用iOS9编译的工程，默认都要这样添加才能使用http。</div>
 <p>重新编译运行，默认界面有黑边，而且竟然在横屏和竖屏切换情况下layout有问题，</p>
 <p><img src="/media/vkvideoplayer-layout-issue-ios9.png" alt="VKVideoPlayer Layout Issue on iOS 9"></p>
 <p>原因在于<code>VKVideoPlayer</code>是为 iOS5设计的，并没有使用<code>Size Classes</code>和<code>Auto Layout</code>。<ruby>不用管<rp> (</rp><rt>méi bàn fǎ</rt><rp>) </rp></ruby></p>
@@ -58,12 +91,13 @@
 <figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function_or_atom">inhibit_all_warnings</span><span class="exclamation_mark">!</span></span><br><span class="line"><span class="function_or_atom">workspace</span> <span class="string">'vkplayertest'</span></span><br><span class="line"></span><br><span class="line"><span class="function_or_atom">pod</span> <span class="string">"VKVideoPlayer"</span>, <span class="string">"~&gt; 0.1.1"</span></span><br></pre></td></tr></table></figure>
 <p>安装依赖</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pod install</span><br><span class="line"></span><br><span class="line">open vkplayertest.xcworkspace</span><br></pre></td></tr></table></figure>
-<p>在View中添加一个按钮并绑定Action来播放视频<a href="自己动手丰衣足食">^3</a>：</p>
+<p>在View中添加一个按钮并绑定Action来播放视频：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">"VKVideoPlayerViewController.h"</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">IBAction</span>)playVideo:(<span class="keyword">id</span>)sender &#123;</span><br><span class="line">    VKVideoPlayerViewController *viewController = [[VKVideoPlayerViewController alloc] init];</span><br><span class="line">    [<span class="keyword">self</span> presentModalViewController:viewController animated:<span class="literal">YES</span>];</span><br><span class="line">    [viewController playVideoWithStreamURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://baobab.cdn.wandoujia.com/14394406774325.mp4"</span>]];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>layout问题在多次切换屏幕方向再一次出现：</p>
 <p><img src="/media/vkvideoplayer-layout-issue-2.png" alt="VKVideoPlayer Layout Issue"></p>
-<p>难道是我打开方式不对？</p>
-<p>不折腾，果断放弃之。</p>
+<p class="text-danger">难道是我打开方式不对？</p> 
+<h2 id="xcode_6测试">xcode 6测试</h2><p>用<code>xcode 6</code>来测试一下试试看。结果是一样的，将模拟器换成iPhone4S，结果还是一样。</p>
+<p>不折腾，果断放弃之。有空自己用<code>AVPlayer</code>实现一下。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="前言">前言</h1><p>在 iOS 开发过程中，视频播放相对来说还是比较简单，可以是用<code>MPMoviePlayerController</code>，<code>MPMoviePlayerViewController</code>, 或者 iOS8中引入的<code>AVPlayerViewController</code>，如果要更底层一点，也可以使用<code>AVKit</code>来做, 更极端的方式就是使用 <code>WebView</code> 来加载视频。</p>
@@ -71,7 +105,7 @@
 <ul>
 <li><code>MPMoviePlayerController</code>和<code>MPMoviePlayerViewController</code>使用起来类似，不足之处就是不能自定义控件，在使用<code>HDMI</code>来投影屏幕的时候会出现很多莫名其妙的问题，同时在 iOS9中将被标记为<code>deprecated</code>并不再维护</li>
 <li><code>AVPlayerViewController</code>使用起来也很方便，但是在 iOS8中同样有 HDMI 投影问题</li>
-<li><code>AVKit</code>自己实现，比较麻烦</li>
+<li><code>AVKit</code> <code>AVPlayer</code>自己实现，比较麻烦</li>
 <li><code>WebView</code>加载使用起来也很方便，HDMI投影也有问题</li>
 </ul>
 <p>最近想写一个简单的 Demo，需要播放视频，同时需要自定义播放控件，上面的都不满足条件，网上很多人说<code>VKVideoPlayer</code>很不错，查看了一下<a href="https://github.com/viki-org/VKVideoPlayer">VKVideoPlayer</a>, 貌似 feature 特别多：</p>]]>
@@ -221,29 +255,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[用travis-ci自动生成hexo]]></title>
-    <link href="http://yesokay.herokuapp.com/2013-06-23-test-auto-build.html"/>
-    <id>http://yesokay.herokuapp.com/2013-06-23-test-auto-build.html</id>
-    <published>2013-06-23T03:08:00.000Z</published>
-    <updated>2015-08-07T03:26:21.000Z</updated>
-    <content type="html"><![CDATA[<p>测试一下</p>
-<p>感谢<code>jkeylu</code></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Deploy hexo site by travis-ci&#10;# https://github.com/jkeylu/deploy-hexo-site-by-travis-ci&#10;# LICENSE: MIT&#10;#&#10;# 1. Copy this file to the root of your repository, then rename it to &#39;.travis.yml&#39;&#10;# 2. Replace &#39;YOUR NAME&#39; and &#39;YOUR EMAIL&#39; at line 29&#10;# 3. Add an Environment Variable &#39;DEPLOY_REPO&#39;&#10;#     1. Generate github access token on https://github.com/settings/applications#personal-access-tokens&#10;#     2. Add an Environment Variable on https://travis-ci.org/&#123;github username&#125;/&#123;repository name&#125;/settings/env_vars&#10;#         Variable Name: DEPLOY_REPO&#10;#         Variable Value: https://&#123;githb access token&#125;@github.com/&#123;github username&#125;/&#123;repository name&#125;.git &#10;#         Example: DEPLOY_REPO=https://6b75cfe9836f56e6d21187622730889874476c23@github.com/jkeylu/test-hexo-on-travis-ci.git&#10;&#10;language: node_js&#10;&#10;node_js:&#10;- 0.1&#10;&#10;branches:&#10;  only:&#10;  - master&#10;&#10;before_install:&#10;- npm install -g hexo&#10;&#10;install:&#10;- npm install&#10;&#10;# Notice: Replace &#39;YOUR NAME&#39; and &#39;YOUR EMAIL&#39;&#10;before_script:&#10;- git config --global user.name &#39;Chen, Zai-Chun&#39;&#10;- git config --global user.email &#39;chenzaichun@gmail.com&#39;&#10;# - git clone git://github.com/heroicyang/hexo-theme-modernist.git themes/modernist&#10;&#10;script:&#10;- hexo generate&#10;&#10;after_success:&#10;- mkdir .deploy&#10;- cd .deploy&#10;- git clone --depth 1 --branch master --single-branch $DEPLOY_REPO . || (git init &#38;&#38; git remote add -t master origin $DEPLOY_REPO)&#10;- rm -rf ./*&#10;- cp -r ../public/* .&#10;- git add -A .&#10;- git commit -m &#39;Site updated&#39;&#10;- git branch -m master&#10;- git push -q -u origin master</span><br></pre></td></tr></table></figure>
-<p>是不是很简单</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>测试一下</p>
-<p>感谢<code>jkeylu</code></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre><]]>
-    </summary>
-    
-      <category term="无所事事" scheme="http://yesokay.herokuapp.com/tags/%E6%97%A0%E6%89%80%E4%BA%8B%E4%BA%8B/"/>
-    
-      <category term="无所事事" scheme="http://yesokay.herokuapp.com/categories/%E6%97%A0%E6%89%80%E4%BA%8B%E4%BA%8B/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Mac OS X下安装gevent]]></title>
     <link href="http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html"/>
     <id>http://yesokay.herokuapp.com/2013-06-23-install-gevent-on-mac-os-x.html</id>
@@ -274,6 +285,29 @@
       <category term="tools" scheme="http://yesokay.herokuapp.com/tags/tools/"/>
     
       <category term="programming" scheme="http://yesokay.herokuapp.com/categories/programming/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[用travis-ci自动生成hexo]]></title>
+    <link href="http://yesokay.herokuapp.com/2013-06-23-test-auto-build.html"/>
+    <id>http://yesokay.herokuapp.com/2013-06-23-test-auto-build.html</id>
+    <published>2013-06-23T03:08:00.000Z</published>
+    <updated>2015-08-07T03:26:21.000Z</updated>
+    <content type="html"><![CDATA[<p>测试一下</p>
+<p>感谢<code>jkeylu</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Deploy hexo site by travis-ci&#10;# https://github.com/jkeylu/deploy-hexo-site-by-travis-ci&#10;# LICENSE: MIT&#10;#&#10;# 1. Copy this file to the root of your repository, then rename it to &#39;.travis.yml&#39;&#10;# 2. Replace &#39;YOUR NAME&#39; and &#39;YOUR EMAIL&#39; at line 29&#10;# 3. Add an Environment Variable &#39;DEPLOY_REPO&#39;&#10;#     1. Generate github access token on https://github.com/settings/applications#personal-access-tokens&#10;#     2. Add an Environment Variable on https://travis-ci.org/&#123;github username&#125;/&#123;repository name&#125;/settings/env_vars&#10;#         Variable Name: DEPLOY_REPO&#10;#         Variable Value: https://&#123;githb access token&#125;@github.com/&#123;github username&#125;/&#123;repository name&#125;.git &#10;#         Example: DEPLOY_REPO=https://6b75cfe9836f56e6d21187622730889874476c23@github.com/jkeylu/test-hexo-on-travis-ci.git&#10;&#10;language: node_js&#10;&#10;node_js:&#10;- 0.1&#10;&#10;branches:&#10;  only:&#10;  - master&#10;&#10;before_install:&#10;- npm install -g hexo&#10;&#10;install:&#10;- npm install&#10;&#10;# Notice: Replace &#39;YOUR NAME&#39; and &#39;YOUR EMAIL&#39;&#10;before_script:&#10;- git config --global user.name &#39;Chen, Zai-Chun&#39;&#10;- git config --global user.email &#39;chenzaichun@gmail.com&#39;&#10;# - git clone git://github.com/heroicyang/hexo-theme-modernist.git themes/modernist&#10;&#10;script:&#10;- hexo generate&#10;&#10;after_success:&#10;- mkdir .deploy&#10;- cd .deploy&#10;- git clone --depth 1 --branch master --single-branch $DEPLOY_REPO . || (git init &#38;&#38; git remote add -t master origin $DEPLOY_REPO)&#10;- rm -rf ./*&#10;- cp -r ../public/* .&#10;- git add -A .&#10;- git commit -m &#39;Site updated&#39;&#10;- git branch -m master&#10;- git push -q -u origin master</span><br></pre></td></tr></table></figure>
+<p>是不是很简单</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>测试一下</p>
+<p>感谢<code>jkeylu</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre><]]>
+    </summary>
+    
+      <category term="无所事事" scheme="http://yesokay.herokuapp.com/tags/%E6%97%A0%E6%89%80%E4%BA%8B%E4%BA%8B/"/>
+    
+      <category term="无所事事" scheme="http://yesokay.herokuapp.com/categories/%E6%97%A0%E6%89%80%E4%BA%8B%E4%BA%8B/"/>
     
   </entry>
   
@@ -557,26 +591,6 @@
     </summary>
     
       <category term="emacs" scheme="http://yesokay.herokuapp.com/tags/emacs/"/>
-    
-      <category term="programming" scheme="http://yesokay.herokuapp.com/categories/programming/"/>
-    
-      <category term="tools" scheme="http://yesokay.herokuapp.com/categories/tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Avoids ssh timeouts]]></title>
-    <link href="http://yesokay.herokuapp.com/2012-11-21-avoids-ssh-timeouts.html"/>
-    <id>http://yesokay.herokuapp.com/2012-11-21-avoids-ssh-timeouts.html</id>
-    <published>2012-11-21T08:17:00.000Z</published>
-    <updated>2015-08-07T05:26:41.000Z</updated>
-    <content type="html"><![CDATA[<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># to set it globally</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; /etc/ssh/ssh_config</span><br><span class="line"></span><br><span class="line"><span class="comment"># For per-user configuration</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ServerAliveInterval 60'</span> &gt;&gt; ~/.ssh/config</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="l]]>
-    </summary>
-    
-      <category term="linux" scheme="http://yesokay.herokuapp.com/tags/linux/"/>
     
       <category term="programming" scheme="http://yesokay.herokuapp.com/categories/programming/"/>
     

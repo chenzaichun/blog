@@ -116,8 +116,45 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> Aug 21 2015 </div>
+			<div class="article-title"><a href="/2015-08-21-ios-transition-libs.html" >iOS中Tranisition常用库</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-8">
+	
+	
+	  <p>最近尝试在程序使用<code>Transition</code>, 搜索了一下github，发现以下库很不错，记录一下</p>
+<ul>
+<li><a href="https://github.com/ColinEberhardt/VCTransitionsLibrary" target="_blank" rel="external"><code>VCTransitionsLibrary</code></a></li>
+<li><a href="https://github.com/shu223/AnimatedTransitionGallery" target="_blank" rel="external"><code>AnimatedTransitionGallery</code></a></li>
+<li><a href="https://github.com/demonnico/PinterestSwift" target="_blank" rel="external"><code>PinterestSwift</code></a></li>
+<li><a href="https://github.com/xhzengAIB/PinterestAnimator" target="_blank" rel="external"><code>PinterestAnimator</code></a></li>
+</ul>
+
+	
+	</div>
+	
+	<div class="col-md-4">
+	  <div class="thumbnail"><a href="/2015-08-21-ios-transition-libs.html"><img src="/media/gallery.gif" alt="iOS中Tranisition常用库"  class="nofancybox"></a></div>
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2015-08-21-ios-transition-libs.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> Aug 18 2015 </div>
-			<div class="article-title"><a href="/2015-08-18-VKVideoPlayer-customization.html" >VKVideoPlayer使用手记</a></div>						
+			<div class="article-title"><a href="/2015-08-18-VKVideoPlayer-customization.html" >VKVideoPlayer爬坑记</a></div>						
 		</h3>
 	
 
@@ -133,7 +170,7 @@
 <ul>
 <li><code>MPMoviePlayerController</code>和<code>MPMoviePlayerViewController</code>使用起来类似，不足之处就是不能自定义控件，在使用<code>HDMI</code>来投影屏幕的时候会出现很多莫名其妙的问题，同时在 iOS9中将被标记为<code>deprecated</code>并不再维护</li>
 <li><code>AVPlayerViewController</code>使用起来也很方便，但是在 iOS8中同样有 HDMI 投影问题</li>
-<li><code>AVKit</code>自己实现，比较麻烦</li>
+<li><code>AVKit</code> <code>AVPlayer</code>自己实现，比较麻烦</li>
 <li><code>WebView</code>加载使用起来也很方便，HDMI投影也有问题</li>
 </ul>
 <p>最近想写一个简单的 Demo，需要播放视频，同时需要自定义播放控件，上面的都不满足条件，网上很多人说<code>VKVideoPlayer</code>很不错，查看了一下<a href="https://github.com/viki-org/VKVideoPlayer">VKVideoPlayer</a>, 貌似 feature 特别多：</p>
@@ -141,7 +178,7 @@
 	</div>
 	
 	<div class="col-md-4">
-	  <div class="thumbnail"><a href="/2015-08-18-VKVideoPlayer-customization.html"><img src="/media/vkvideoplayer-demo.png" alt="VKVideoPlayer使用手记"  class="nofancybox"></a></div>
+	  <div class="thumbnail"><a href="/2015-08-18-VKVideoPlayer-customization.html"><img src="/media/vkvideoplayer-demo.png" alt="VKVideoPlayer爬坑记"  class="nofancybox"></a></div>
 	</div>
 	
   
@@ -291,36 +328,6 @@
 	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> Jun 23 2013 </div>
-			<div class="article-title"><a href="/2013-06-23-test-auto-build.html" >用travis-ci自动生成hexo</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>测试一下</p>
-<p>感谢<code>jkeylu</code></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Deploy hexo site by travis-ci&#10;# https://github.com/jkeylu/deploy-hexo-site-by-travis-ci&#10;# LICENSE: MIT&#10;#&#10;# 1. Copy this file to the root of your repository, then rename it to &#39;.travis.yml&#39;&#10;# 2. Replace &#39;YOUR NAME&#39; and &#39;YOUR EMAIL&#39; at line 29&#10;# 3. Add an Environment Variable &#39;DEPLOY_REPO&#39;&#10;#     1. Generate github access token on https://github.com/settings/applications#personal-access-tokens&#10;#     2. Add an Environment Variable on https://travis-ci.org/&#123;github username&#125;/&#123;repository name&#125;/settings/env_vars&#10;#         Variable Name: DEPLOY_REPO&#10;#         Variable Value: https://&#123;githb access token&#125;@github.com/&#123;github username&#125;/&#123;repository name&#125;.git &#10;#         Example: DEPLOY_REPO=https://6b75cfe9836f56e6d21187622730889874476c23@github.com/jkeylu/test-hexo-on-travis-ci.git&#10;&#10;language: node_js&#10;&#10;node_js:&#10;- 0.1&#10;&#10;branches:&#10;  only:&#10;  - master&#10;&#10;before_install:&#10;- npm install -g hexo&#10;&#10;install:&#10;- npm install&#10;&#10;# Notice: Replace &#39;YOUR NAME&#39; and &#39;YOUR EMAIL&#39;&#10;before_script:&#10;- git config --global user.name &#39;Chen, Zai-Chun&#39;&#10;- git config --global user.email &#39;chenzaichun@gmail.com&#39;&#10;# - git clone git://github.com/heroicyang/hexo-theme-modernist.git themes/modernist&#10;&#10;script:&#10;- hexo generate&#10;&#10;after_success:&#10;- mkdir .deploy&#10;- cd .deploy&#10;- git clone --depth 1 --branch master --single-branch $DEPLOY_REPO . || (git init &#38;&#38; git remote add -t master origin $DEPLOY_REPO)&#10;- rm -rf ./*&#10;- cp -r ../public/* .&#10;- git add -A .&#10;- git commit -m &#39;Site updated&#39;&#10;- git branch -m master&#10;- git push -q -u origin master</span><br></pre></td></tr></table></figure>
-<p>是不是很简单</p>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2013-06-23-test-auto-build.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Jun 23 2013 </div>
 			<div class="article-title"><a href="/2013-06-23-install-gevent-on-mac-os-x.html" >Mac OS X下安装gevent</a></div>						
 		</h3>
 	
@@ -350,6 +357,36 @@
   
 </div>
 	<a type="button" href="/2013-06-23-install-gevent-on-mac-os-x.html#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> Jun 23 2013 </div>
+			<div class="article-title"><a href="/2013-06-23-test-auto-build.html" >用travis-ci自动生成hexo</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>测试一下</p>
+<p>感谢<code>jkeylu</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Deploy hexo site by travis-ci&#10;# https://github.com/jkeylu/deploy-hexo-site-by-travis-ci&#10;# LICENSE: MIT&#10;#&#10;# 1. Copy this file to the root of your repository, then rename it to &#39;.travis.yml&#39;&#10;# 2. Replace &#39;YOUR NAME&#39; and &#39;YOUR EMAIL&#39; at line 29&#10;# 3. Add an Environment Variable &#39;DEPLOY_REPO&#39;&#10;#     1. Generate github access token on https://github.com/settings/applications#personal-access-tokens&#10;#     2. Add an Environment Variable on https://travis-ci.org/&#123;github username&#125;/&#123;repository name&#125;/settings/env_vars&#10;#         Variable Name: DEPLOY_REPO&#10;#         Variable Value: https://&#123;githb access token&#125;@github.com/&#123;github username&#125;/&#123;repository name&#125;.git &#10;#         Example: DEPLOY_REPO=https://6b75cfe9836f56e6d21187622730889874476c23@github.com/jkeylu/test-hexo-on-travis-ci.git&#10;&#10;language: node_js&#10;&#10;node_js:&#10;- 0.1&#10;&#10;branches:&#10;  only:&#10;  - master&#10;&#10;before_install:&#10;- npm install -g hexo&#10;&#10;install:&#10;- npm install&#10;&#10;# Notice: Replace &#39;YOUR NAME&#39; and &#39;YOUR EMAIL&#39;&#10;before_script:&#10;- git config --global user.name &#39;Chen, Zai-Chun&#39;&#10;- git config --global user.email &#39;chenzaichun@gmail.com&#39;&#10;# - git clone git://github.com/heroicyang/hexo-theme-modernist.git themes/modernist&#10;&#10;script:&#10;- hexo generate&#10;&#10;after_success:&#10;- mkdir .deploy&#10;- cd .deploy&#10;- git clone --depth 1 --branch master --single-branch $DEPLOY_REPO . || (git init &#38;&#38; git remote add -t master origin $DEPLOY_REPO)&#10;- rm -rf ./*&#10;- cp -r ../public/* .&#10;- git add -A .&#10;- git commit -m &#39;Site updated&#39;&#10;- git branch -m master&#10;- git push -q -u origin master</span><br></pre></td></tr></table></figure>
+<p>是不是很简单</p>
+
+	
+	</div>
+	
+  
+</div>
+	<a type="button" href="/2013-06-23-test-auto-build.html#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -408,38 +445,6 @@
 </div>
 
 		
-			
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> Jan 3 2013 </div>
-			<div class="article-title"><a href="/2013-01-03-archlinux-enable-vbox-service.html" >archlinux下启用virtualbox service</a></div>						
-		</h3>
-	
-
-
-			<div class="entry">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>安装好 <code>virtualbox-guest-utils</code> 之后，没有并没有启用 <code>vboxservice</code>, 这个时候如果windows休眠，则archlinux的时间将不会跟host同步，需要启动vboxservice才行。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> vboxservice.service</span><br></pre></td></tr></table></figure>
-<p>重启之后生效，当然也可以直接启动</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start vboxservice.service</span><br></pre></td></tr></table></figure>
-<p>virtualbox也提供了参数来控制同步，详情见<a href="http://www.virtualbox.org/manual/ch09.html#changetimesync" target="_blank" rel="external">这里</a></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VBoxManage guestproperty <span class="built_in">set</span> “the name of your guest VM” “/VirtualBox/GuestAdd/VBoxService/–timesync-set-threshold” <span class="number">15000</span></span><br></pre></td></tr></table></figure>
-
-	
-	</div>
-	
-  
-</div>
-	<a type="button" href="/2013-01-03-archlinux-enable-vbox-service.html#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -486,48 +491,48 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/GLSL/">GLSL<span>1</span></a></li>
+			<li><a href="/tags/iOS/">iOS<span>2</span></a></li>
 		
-			<li><a href="/tags/mercurial/">mercurial<span>7</span></a></li>
+			<li><a href="/tags/curl/">curl<span>1</span></a></li>
 		
-			<li><a href="/tags/samba/">samba<span>1</span></a></li>
+			<li><a href="/tags/VC/">VC<span>8</span></a></li>
 		
-			<li><a href="/tags/GLX/">GLX<span>1</span></a></li>
+			<li><a href="/tags/css3/">css3<span>1</span></a></li>
 		
-			<li><a href="/tags/iOS/">iOS<span>1</span></a></li>
+			<li><a href="/tags/git/">git<span>12</span></a></li>
 		
-			<li><a href="/tags/hg/">hg<span>9</span></a></li>
+			<li><a href="/tags/telnet/">telnet<span>2</span></a></li>
 		
-			<li><a href="/tags/unix/">unix<span>1</span></a></li>
+			<li><a href="/tags/network/">network<span>1</span></a></li>
 		
-			<li><a href="/tags/GUI/">GUI<span>2</span></a></li>
+			<li><a href="/tags/Unix/">Unix<span>1</span></a></li>
 		
-			<li><a href="/tags/norton/">norton<span>1</span></a></li>
+			<li><a href="/tags/extensions/">extensions<span>1</span></a></li>
 		
-			<li><a href="/tags/scm/">scm<span>1</span></a></li>
+			<li><a href="/tags/macosx/">macosx<span>1</span></a></li>
 		
-			<li><a href="/tags/google-voice/">google_voice<span>1</span></a></li>
+			<li><a href="/tags/gdb/">gdb<span>2</span></a></li>
 		
-			<li><a href="/tags/oracle/">oracle<span>4</span></a></li>
+			<li><a href="/tags/Qt/">Qt<span>3</span></a></li>
 		
-			<li><a href="/tags/dns/">dns<span>1</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>18</span></a></li>
 		
-			<li><a href="/tags/scribefire/">scribefire<span>1</span></a></li>
+			<li><a href="/tags/android/">android<span>18</span></a></li>
 		
-			<li><a href="/tags/转载/">转载<span>7</span></a></li>
+			<li><a href="/tags/org2blog/">org2blog<span>57</span></a></li>
 		
-			<li><a href="/tags/distcc/">distcc<span>1</span></a></li>
+			<li><a href="/tags/emacs/">emacs<span>71</span></a></li>
 		
-			<li><a href="/tags/video/">video<span>1</span></a></li>
+			<li><a href="/tags/transition/">transition<span>1</span></a></li>
 		
-			<li><a href="/tags/database/">database<span>2</span></a></li>
+			<li><a href="/tags/web-service/">web service<span>4</span></a></li>
 		
-			<li><a href="/tags/p2p/">p2p<span>1</span></a></li>
+			<li><a href="/tags/gsoap/">gsoap<span>3</span></a></li>
 		
-			<li><a href="/tags/adblock/">adblock<span>1</span></a></li>
+			<li><a href="/tags/grub2/">grub2<span>1</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>91</span></a></li>
+		   <li><a href="/tags">...<span>92</span></a></li>
 		 
 		</ul>
 	</div>
@@ -540,7 +545,11 @@
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer使用手记...</a>
+        <a href="/2015-08-21-ios-transition-libs.html" ><i class="fa fa-file-o"></i>iOS中Tranisition常用库...</a>
+      </li>
+    
+      <li>
+        <a href="/2015-08-18-VKVideoPlayer-customization.html" ><i class="fa fa-file-o"></i>VKVideoPlayer爬坑记...</a>
       </li>
     
       <li>
@@ -553,10 +562,6 @@
     
       <li>
         <a href="/2015-08-07-update-hexo-to-version3.html" ><i class="fa fa-file-o"></i>将 hexo 从2.8.3升级到了3.1.1...</a>
-      </li>
-    
-      <li>
-        <a href="/2015-08-06-hide-console-window-from-batch-process-starting.html" ><i class="fa fa-file-o"></i>bat 中启动进程并隐藏窗口...</a>
       </li>
     
   </ul>
@@ -607,15 +612,14 @@
 
 
 <script type="text/javascript">
-  var duoshuoQuery = { short_name: 'yesokay' };
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';
-    ds.async = true;
-    ds.src = 'http://static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
+var disqus_shortname = 'yesokay';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
 </script>
 
 
